@@ -2,6 +2,7 @@ import { KeyValuePipe } from '@angular/common'
 import {
     type AfterViewInit,
     Component,
+    computed,
     InjectionToken,
     inject,
     type OnDestroy,
@@ -22,46 +23,21 @@ import {
 } from '@components/shared/confirm-dialog/confirm-dialog'
 import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { type OsmGoChangeType, OsmGoFeature } from '@osmgo/type'
-import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
+import type { OsmGoFeature } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
-import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
 import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
+import {
+    UploadCoordinatorService,
+    type UploadFailure,
+    type UploadFeature,
+    type UploadSummary,
+} from '@services/upload-coordinator.service'
 import type { Geometry, Position } from 'geojson'
-import { cloneDeep } from 'lodash'
 import { firstValueFrom, timer } from 'rxjs'
 import { take } from 'rxjs/operators'
-
-interface UploadSummary {
-    Total: number
-    Create: number
-    Update: number
-    Delete: number
-}
-
-type UploadFeature = OsmGoFeature & {
-    error?: string
-}
-
-interface UploadError {
-    status: number
-    message: string
-    feature: UploadFeature | null
-}
-
-interface OsmRequestError {
-    status?: unknown
-    error?: unknown
-    message?: unknown
-}
-
-interface SubmittedUpload {
-    feature: UploadFeature
-    operation: OsmGoChangeType
-}
 
 export const UPLOAD_SUCCESS_DELAY_MS = new InjectionToken<number>(
     'Upload success feedback delay',
@@ -87,10 +63,10 @@ export const UPLOAD_SUCCESS_DELAY_MS = new InjectionToken<number>(
 })
 export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     readonly dataService = inject(DataService)
-    readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
     readonly configService = inject(ConfigService)
+    readonly uploadCoordinator = inject(UploadCoordinatorService)
     private readonly translate = inject(TranslateService)
     private readonly dialog = inject(MatDialog)
     private readonly overlayNavigation = inject(OverlayNavigationService)
@@ -103,18 +79,29 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         Update: 0,
         Delete: 0,
     })
-    changesetId = ''
     readonly commentChangeset = signal(this.configService.getChangeSetComment())
-    private readonly uploadInFlightState = signal(false)
-    readonly uploadInFlight = this.uploadInFlightState.asReadonly()
+    readonly uploadInFlight = this.uploadCoordinator.inFlight
     readonly isPushing = this.uploadInFlight
     readonly uploadStatusVisible = signal(false)
-    readonly uploadedOk = signal(false)
+    readonly uploadedOk = computed(
+        () => this.uploadCoordinator.state().kind === 'succeeded'
+    )
     readonly featuresChanges = signal<UploadFeature[]>(
         this.dataService.getGeojsonChanged().features
     )
-    readonly connectionError = signal<string | undefined>(undefined)
-    readonly error = signal<UploadError | undefined>(undefined)
+    private readonly localError = signal<UploadFailure | undefined>(undefined)
+    readonly connectionError = computed(() => {
+        const state = this.uploadCoordinator.state()
+        return state.kind === 'failed' && state.stage === 'connection'
+            ? state.error.message
+            : undefined
+    })
+    readonly error = computed(() => {
+        const localError = this.localError()
+        if (localError) return localError
+        const state = this.uploadCoordinator.state()
+        return state.kind === 'failed' ? state.error : undefined
+    })
     private destroyed = false
     private closeStarted = false
 
@@ -146,9 +133,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             })
             .afterClosed()
             .subscribe((confirmed) => {
-                if (confirmed) {
-                    void this.cancelAllFeatures()
-                }
+                if (confirmed) void this.cancelAllFeatures()
             })
     }
 
@@ -166,13 +151,15 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             Update: 0,
             Delete: 0,
         }
-        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
-        const featuresChanged = this.dataService.getGeojsonChanged().features
-
-        for (let i = 0; i < featuresChanged.length; i++) {
-            const featureChanged = featuresChanged[i]
-            const changeType = featureChanged.properties.changeType
-            if (changeType) {
+        const features = this.dataService.getGeojsonChanged().features
+        this.featuresChanges.set(features)
+        for (const feature of features) {
+            const changeType = feature.properties.changeType
+            if (
+                changeType === 'Create' ||
+                changeType === 'Update' ||
+                changeType === 'Delete'
+            ) {
                 summary[changeType]++
             }
             summary.Total++
@@ -180,419 +167,58 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         return summary
     }
 
-    private async updateLocalDataFromDiffResult(
-        diffResults: unknown,
-        oldFeaturesChanged: UploadFeature[]
-    ): Promise<void> {
-        if (
-            !Array.isArray(diffResults) ||
-            diffResults.length !== oldFeaturesChanged.length
-        ) {
-            throw new Error('OpenStreetMap returned an invalid upload result.')
-        }
-
-        const submittedById = new Map<string, SubmittedUpload>()
-        for (const feature of oldFeaturesChanged) {
-            const type = feature.properties.type
-            const id = feature.properties.id
-            const osmgoId = `${type}/${id}`
-            if (
-                !['node', 'way', 'relation'].includes(type) ||
-                !Number.isInteger(id) ||
-                id === 0 ||
-                feature.id !== osmgoId ||
-                submittedById.has(osmgoId)
-            ) {
-                throw new Error('The local OSM upload queue is invalid.')
-            }
-            submittedById.set(osmgoId, {
-                feature,
-                operation: this.getSubmittedOperation(feature),
-            })
-        }
-
-        const preparedResults: Array<{
-            oldId: string
-            feature?: OsmGoFeature
-        }> = []
-        const processedIds = new Set<string>()
-        for (const result of diffResults) {
-            if (!result || typeof result !== 'object') {
-                throw new Error(
-                    'OpenStreetMap returned an invalid upload result.'
-                )
-            }
-            const diff = result as OsmDiffResult
-            const oldId = diff.osmgoOldId
-            const submission = submittedById.get(oldId)
-            if (
-                typeof oldId !== 'string' ||
-                !submission ||
-                processedIds.has(oldId)
-            ) {
-                throw new Error(
-                    'The OSM upload result does not match local data.'
-                )
-            }
-            this.validateUploadReceipt(diff, submission)
-            processedIds.add(oldId)
-
-            const currentFeatureChanged = submission.feature
-            if (currentFeatureChanged.properties.changeType === 'Delete') {
-                preparedResults.push({ oldId })
-                continue
-            }
-
-            let newFeature = cloneDeep(currentFeatureChanged)
-            newFeature.id = diff.osmgoNewId!
-            newFeature.properties.id = Number(diff.new_id)
-            newFeature.properties.meta.version = diff.new_version!
-            newFeature['properties']['meta']['user'] =
-                this.configService.getUserInfo().display_name
-            newFeature['properties']['meta']['uid'] =
-                this.configService.getUserInfo().uid
-            newFeature.properties.meta.changeset = this.changesetId
-            newFeature['properties']['meta']['timestamp'] =
-                new Date().toISOString()
-            newFeature.properties.time = Date.now()
-            if (newFeature.properties.tags.fixme) {
-                newFeature.properties.fixme = true
-            } else {
-                delete newFeature.properties.fixme
-            }
-
-            delete newFeature.properties.deprecated
-            delete newFeature.properties.changeType
-            delete newFeature.properties.originalData
-
-            newFeature = this.mapService.getIconStyle(newFeature) // style
-            addAttributesToFeature(newFeature)
-
-            const hasTags =
-                Object.keys(newFeature['properties']['tags']).length > 0
-            preparedResults.push({
-                oldId,
-                feature:
-                    currentFeatureChanged.properties.changeType === 'Create' ||
-                    hasTags
-                        ? newFeature
-                        : undefined,
-            })
-        }
-
-        if (processedIds.size !== submittedById.size) {
-            throw new Error('OpenStreetMap returned an incomplete result.')
-        }
-
-        await this.dataService.applyUploadReceipt(preparedResults)
-    }
-
-    private getSubmittedOperation(feature: UploadFeature): OsmGoChangeType {
-        const changeType = feature.properties.changeType
-        if (
-            changeType !== 'Create' &&
-            changeType !== 'Update' &&
-            changeType !== 'Delete'
-        ) {
-            throw new Error('The local OSM upload queue is invalid.')
-        }
-        const usedByWays = feature.properties.usedByWays
-        if (
-            changeType === 'Delete' &&
-            (usedByWays === true ||
-                (Array.isArray(usedByWays) && usedByWays.length > 0))
-        ) {
-            return 'Update'
-        }
-        return changeType
-    }
-
-    private validateUploadReceipt(
-        diff: OsmDiffResult,
-        submission: SubmittedUpload
-    ): void {
-        const feature = submission.feature
-        const type = feature.properties.type
-        const oldId = String(feature.properties.id)
-        if (
-            diff.type !== type ||
-            diff.old_id !== oldId ||
-            diff.osmgoOldId !== `${type}/${oldId}`
-        ) {
-            throw new Error('The OSM upload result does not match local data.')
-        }
-
-        if (submission.operation === 'Delete') {
-            if (
-                diff.new_id !== undefined ||
-                diff.new_version !== undefined ||
-                diff.osmgoNewId !== undefined
-            ) {
-                throw new Error(
-                    'The OSM upload result does not match the submitted operation.'
-                )
-            }
-            return
-        }
-
-        const newId = Number(diff.new_id)
-        if (
-            typeof diff.new_id !== 'string' ||
-            !/^[1-9]\d*$/.test(diff.new_id) ||
-            !Number.isSafeInteger(newId) ||
-            typeof diff.new_version !== 'number' ||
-            !Number.isInteger(diff.new_version) ||
-            diff.new_version < 1 ||
-            diff.osmgoNewId !== `${type}/${diff.new_id}`
-        ) {
-            throw new Error('OpenStreetMap returned an incomplete result.')
-        }
-
-        if (submission.operation === 'Create') {
-            if (feature.properties.id >= 0 || diff.new_version !== 1) {
-                throw new Error(
-                    'The OSM upload result does not match the submitted operation.'
-                )
-            }
-            return
-        }
-
-        if (
-            feature.properties.id < 1 ||
-            newId !== feature.properties.id ||
-            diff.new_version !== feature.properties.meta.version + 1
-        ) {
-            throw new Error(
-                'The OSM upload result does not match the submitted operation.'
-            )
-        }
-    }
-
-    async userIsConnected(): Promise<boolean> {
-        try {
-            await firstValueFrom(this.osmApi.getUserDetail$(true))
-            return true
-        } catch (error) {
-            console.error(error)
-            throw this.getOsmErrorMessage(error)
-        }
-    }
-
-    getFeatureFromErrorResult(
-        status: number,
-        message: string
-    ): UploadFeature | null {
-        let resId: string | null | undefined
-        if (status === 409) {
-            // Version mismatch: Provided 3, server had: 4 of Node 4330909006
-            const rRes = message.match(/(Node|Way|Relation)\s\d+$/)
-            if (rRes) {
-                const type = rRes[0].split(' ')[0].toLowerCase()
-                const id = rRes[0].split(' ')[1]
-                resId = type && id ? `${type}/${id}` : null
-            }
-        } else if (status === 410) {
-            // The node with the id 4316641199 has already been deleted
-            const rRes = message.match(
-                /(node|way|relation)\swith\sthe\sid\s\d+/
-            )
-            if (!rRes) {
-                return null
-            }
-            const splited = rRes[0].split(' with the id ')
-            const type = splited[0]
-            const id = splited[1]
-            resId = type && id ? `${type}/${id}` : null
-        } else {
-            return null
-        }
-
-        if (!resId) {
-            return null
-        }
-        const feature = this.dataService
-            .getGeojsonChanged()
-            .features.find((feature) => feature.id === resId)
-        return feature ?? null
-    }
-
-    private getOsmErrorMessage(error: unknown): string {
-        const details = this.getOsmRequestError(error)
-        if (typeof details.error === 'string' && details.error.trim()) {
-            return details.error
-        }
-        if (typeof details.message === 'string' && details.message.trim()) {
-            return details.message
-        }
-        return 'OpenStreetMap could not process the request.'
-    }
-
-    private stopPushingWithError(
-        error: unknown,
-        feature: UploadFeature | null = null
-    ): void {
-        const details = this.getOsmRequestError(error)
-        this.error.set({
-            status: typeof details.status === 'number' ? details.status : 0,
-            message: this.getOsmErrorMessage(error),
-            feature,
-        })
-        this.uploadStatusVisible.set(false)
-    }
-
-    private isClosedChangesetError(error: unknown): boolean {
-        const details = this.getOsmRequestError(error)
-        if (details.status !== 409 || typeof details.error !== 'string') {
-            return false
-        }
-
-        const match = details.error
-            .trim()
-            .match(/^The changeset (\d+) was closed at .+\.?$/)
-        return match?.[1] === String(this.changesetId)
-    }
-
     async pushDataToOsm(commentChangeset: string): Promise<void> {
-        if (this.uploadInFlight()) {
-            console.log('Already pushing')
+        if (this.uploadInFlight()) return
+
+        this.localError.set(undefined)
+        this.uploadStatusVisible.set(true)
+        const state = await this.uploadCoordinator.start(commentChangeset)
+        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
+        this.summary.set(this.getSummary())
+
+        if (state.kind === 'failed') {
+            this.uploadStatusVisible.set(false)
+            const failedFeature = state.error.feature
+            if (failedFeature) {
+                this.featuresChanges.set([
+                    { ...failedFeature, error: state.error.message },
+                    ...this.featuresChanges().filter(
+                        (feature) => feature.id !== failedFeature.id
+                    ),
+                ])
+            }
             return
         }
-
-        this.uploadInFlightState.set(true)
-        this.uploadStatusVisible.set(true)
-        this.uploadedOk.set(false)
-        this.mapService.setIsProcessing(true)
-        let uploadSucceeded = false
-        let phase: 'prepare' | 'connection' | 'changeset' | 'diff' | 'persist' =
-            'prepare'
-
-        try {
-            this.configService.setChangeSetComment(commentChangeset)
-
-            phase = 'connection'
-            try {
-                await this.userIsConnected()
-            } catch (error) {
-                this.connectionError.set(
-                    typeof error === 'string'
-                        ? error
-                        : this.getOsmErrorMessage(error)
-                )
-                this.uploadStatusVisible.set(false)
-                return
-            }
-            this.connectionError.set(undefined)
-
-            phase = 'changeset'
-            const changesetId = await firstValueFrom(
-                this.osmApi.getValidChangeset(commentChangeset).pipe(take(1))
-            )
-            const features = this.dataService.getGeojsonChanged().features
-            this.changesetId = changesetId
-            const diffFile = this.osmApi.osmGoFeaturesToOsmDiffFile(
-                features,
-                this.changesetId
-            )
-
-            phase = 'diff'
-            const diffFileResult = await firstValueFrom(
-                this.osmApi
-                    .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
-                    .pipe(take(1))
-            )
-            this.configService.updateChangesetLastActivity()
-
-            phase = 'persist'
-            await this.updateLocalDataFromDiffResult(diffFileResult, features)
-            this.mapService.redrawMarkers(this.dataService.getGeojson())
-            this.mapService.redrawChangedMarkers(
-                this.dataService.getGeojsonChanged()
-            )
-            this.featuresChanges.set(
-                this.dataService.getGeojsonChanged().features
-            )
-            this.error.set(undefined)
-            this.summary.set(this.getSummary())
-            this.uploadedOk.set(true)
-            uploadSucceeded = true
-        } catch (error) {
-            const message = this.getOsmErrorMessage(error)
-            if (this.isClosedChangesetError(error)) {
-                this.configService.invalidateChangeset()
-                this.stopPushingWithError({
-                    ...(typeof error === 'object' && error !== null
-                        ? error
-                        : {}),
-                    error: `${message} Please retry to create a new changeset.`,
-                })
-            } else {
-                const details = this.getOsmRequestError(error)
-                const feature =
-                    phase === 'diff'
-                        ? this.getFeatureFromErrorResult(
-                              typeof details.status === 'number'
-                                  ? details.status
-                                  : 0,
-                              message
-                          )
-                        : null
-                this.stopPushingWithError(error, feature)
-                if (feature) {
-                    const failedFeature = this.featuresChanges().find(
-                        (item) => item.id === feature.id
-                    )
-                    if (failedFeature) {
-                        this.featuresChanges.set([
-                            { ...failedFeature, error: message },
-                            ...this.featuresChanges().filter(
-                                (item) => item.id !== feature.id
-                            ),
-                        ])
-                    }
-                }
-            }
-        } finally {
-            this.finishUploadAttempt()
-        }
-
-        if (!uploadSucceeded) return
+        if (state.kind !== 'succeeded') return
 
         await firstValueFrom(timer(this.successDelayMs).pipe(take(1)))
         this.uploadStatusVisible.set(false)
-        if (!this.destroyed) {
-            await this.closeOverlayOnce()
-        }
+        if (!this.destroyed) await this.closeOverlayOnce()
     }
 
     async cancelErrorFeature(feature: OsmGoFeature): Promise<void> {
         try {
             await this.dataService.cancelPendingChange(String(feature.id))
         } catch (error) {
-            this.stopPushingWithError(error, feature)
+            this.setLocalError(error, feature)
             return
         }
-        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
-        this.mapService.redrawMarkers(this.dataService.getGeojson())
-        this.mapService.redrawChangedMarkers(
-            this.dataService.getGeojsonChanged()
-        )
-        this.error.set(undefined)
+        this.refreshMapAndQueue()
+        this.localError.set(undefined)
+        this.uploadCoordinator.resetTerminalState()
     }
 
     async cancelAllFeatures(): Promise<void> {
         try {
             await this.dataService.cancelAllPendingChanges()
         } catch (error) {
-            this.stopPushingWithError(error)
+            this.setLocalError(error)
             return
         }
+        this.refreshMapAndQueue()
         this.summary.set(this.getSummary())
-        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
-        this.mapService.redrawMarkers(this.dataService.getGeojson())
-        this.mapService.redrawChangedMarkers(
-            this.dataService.getGeojsonChanged()
-        )
-        this.mapService.setIsProcessing(false)
+        this.localError.set(undefined)
+        this.uploadCoordinator.resetTerminalState()
         this.back()
     }
 
@@ -672,16 +298,44 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         this.summary.set(this.getSummary())
     }
 
-    private getOsmRequestError(error: unknown): OsmRequestError {
-        if (typeof error === 'object' && error !== null) {
-            return error as OsmRequestError
-        }
-        return {}
+    private setLocalError(
+        error: unknown,
+        feature: OsmGoFeature | null = null
+    ): void {
+        const details =
+            typeof error === 'object' && error !== null
+                ? (error as {
+                      status?: unknown
+                      error?: unknown
+                      message?: unknown
+                  })
+                : {}
+        const message =
+            typeof details.error === 'string' && details.error.trim()
+                ? details.error
+                : typeof details.message === 'string' && details.message.trim()
+                  ? details.message
+                  : error instanceof Error && error.message.trim()
+                    ? error.message
+                    : 'The local changes could not be updated.'
+        this.localError.set({
+            status: typeof details.status === 'number' ? details.status : 0,
+            message,
+            feature,
+            queuePreserved: true,
+            canClose: true,
+            canRetry: true,
+            recoveryAction: 'retry',
+        })
+        this.uploadStatusVisible.set(false)
     }
 
-    private finishUploadAttempt(): void {
-        this.uploadInFlightState.set(false)
-        this.mapService.setIsProcessing(false)
+    private refreshMapAndQueue(): void {
+        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
+        this.mapService.redrawMarkers(this.dataService.getGeojson())
+        this.mapService.redrawChangedMarkers(
+            this.dataService.getGeojsonChanged()
+        )
     }
 
     private async closeOverlayOnce(): Promise<void> {
