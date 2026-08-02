@@ -246,32 +246,29 @@ export class ModalsContentPage implements OnInit {
         }
     }
 
-    presentConfirm(feature: OsmGoFeature) {
-        this.alertCtrl
-            .create({
-                header: this.translate.instant(
-                    'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER'
-                ),
-                message: this.translate.instant(
-                    'MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE'
-                ),
-                buttons: [
-                    {
-                        text: this.translate.instant('SHARED.CANCEL'),
-                        role: 'cancel',
-                        handler: () => {},
+    async presentConfirm(): Promise<void> {
+        const alert = await this.alertCtrl.create({
+            header: this.translate.instant(
+                'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER'
+            ),
+            message: this.translate.instant(
+                'MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE'
+            ),
+            buttons: [
+                {
+                    text: this.translate.instant('SHARED.CANCEL'),
+                    role: 'cancel',
+                    handler: () => {},
+                },
+                {
+                    text: this.translate.instant('SHARED.CONFIRM'),
+                    handler: () => {
+                        this.deleteOsmElement()
                     },
-                    {
-                        text: this.translate.instant('SHARED.CONFIRM'),
-                        handler: () => {
-                            this.deleteOsmElement()
-                        },
-                    },
-                ],
-            })
-            .then((alert) => {
-                alert.present()
-            })
+                },
+            ],
+        })
+        await alert.present()
     }
 
     initComponent(tagConfig: TagConfig = null) {
@@ -750,7 +747,7 @@ export class ModalsContentPage implements OnInit {
     async handleSurveyNo() {
         // TODO: Ask if closed, disused or not existant
         if (this.feature.properties.type == 'node') {
-            this.presentConfirm(this.feature)
+            await this.presentConfirm()
         }
     }
 

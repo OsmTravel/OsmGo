@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { provideIonicAngular } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
@@ -7,12 +7,12 @@ describe('DialogMultiFeaturesComponent', () => {
     let component: DialogMultiFeaturesComponent
     let fixture: ComponentFixture<DialogMultiFeaturesComponent>
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             imports: [DialogMultiFeaturesComponent, TranslateModule.forRoot()],
             providers: [provideIonicAngular()],
         }).compileComponents()
-    }))
+    })
 
     beforeEach(() => {
         fixture = TestBed.createComponent(DialogMultiFeaturesComponent)

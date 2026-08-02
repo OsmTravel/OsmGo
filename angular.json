@@ -18,7 +18,6 @@
               "browser": ""
             },
             "index": "src/index.html",
-            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               {
@@ -98,8 +97,7 @@
                   "output": "/assets"
                 }
               ],
-              "styles": [],
-              "polyfills": ["src/zone-flags.ts", "zone.js"]
+              "styles": []
             }
           }
         },

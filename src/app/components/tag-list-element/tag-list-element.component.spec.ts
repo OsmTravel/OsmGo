@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { TagListElementComponent } from './tag-list-element.component'
 
 const tagsConfig: any = require('../../../assets/tagsAndPresets/tags.json')
@@ -8,12 +8,12 @@ describe('TagListElementComponent', () => {
     let component: TagListElementComponent
     let fixture: ComponentFixture<TagListElementComponent>
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             imports: [TagListElementComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
-    }))
+    })
 
     beforeEach(() => {
         fixture = TestBed.createComponent(TagListElementComponent)

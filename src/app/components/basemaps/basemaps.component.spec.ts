@@ -1,8 +1,4 @@
-import {
-    type ComponentFixture,
-    TestBed,
-    waitForAsync,
-} from '@angular/core/testing'
+import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { BasemapsService } from '@app/services/basemaps.service'
 import { NavController } from '@ionic/angular/standalone'
@@ -17,10 +13,10 @@ describe('BasemapsComponent', () => {
     let fixture: ComponentFixture<BasemapsComponent>
     let basemaps$: Subject<Array<{ id: string; name: string }>>
 
-    beforeEach(waitForAsync(() => {
+    beforeEach(async () => {
         basemaps$ = new Subject()
 
-        TestBed.configureTestingModule({
+        await TestBed.configureTestingModule({
             imports: [BasemapsComponent, TranslateModule.forRoot()],
             providers: [
                 {
@@ -48,7 +44,7 @@ describe('BasemapsComponent', () => {
 
         fixture = TestBed.createComponent(BasemapsComponent)
         fixture.autoDetectChanges()
-    }))
+    })
 
     it('renders asynchronously loaded basemaps without manual change detection', async () => {
         basemaps$.next([

@@ -1,10 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import {
-    fakeAsync,
-    flushMicrotasks,
-    TestBed,
-    tick,
-} from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { AlertService } from '@services/alert.service'
@@ -216,35 +211,40 @@ describe('OsmApiService', () => {
             service = createService({ http, configService, osmAuthService })
         })
 
-        function expectRequestToTimeOut(request: Observable<unknown>): void {
+        async function expectRequestToTimeOut(
+            request: Observable<unknown>
+        ): Promise<void> {
             let requestError
             request.subscribe({ error: (error) => (requestError = error) })
 
-            tick(30001)
+            await vi.advanceTimersByTimeAsync(30001)
 
             expect(requestError?.name).toBe('TimeoutError')
         }
 
-        it('times out user verification', fakeAsync(() => {
+        beforeEach(() => vi.useFakeTimers())
+        afterEach(() => vi.useRealTimers())
+
+        it('times out user verification', async () => {
             vi.spyOn(console, 'error').mockReturnValue(undefined)
             http.get.mockReturnValue(NEVER)
 
-            expectRequestToTimeOut(service.getUserDetail$())
-        }))
+            await expectRequestToTimeOut(service.getUserDetail$())
+        })
 
-        it('times out changeset creation', fakeAsync(() => {
+        it('times out changeset creation', async () => {
             http.put.mockReturnValue(NEVER)
 
-            expectRequestToTimeOut(service.createOSMChangeSet('Survey'))
-        }))
+            await expectRequestToTimeOut(service.createOSMChangeSet('Survey'))
+        })
 
-        it('times out diff uploads', fakeAsync(() => {
+        it('times out diff uploads', async () => {
             http.post.mockReturnValue(NEVER)
 
-            expectRequestToTimeOut(
+            await expectRequestToTimeOut(
                 service.apiOsmSendOsmDiffFile('<osmChange/>', '123')
             )
-        }))
+        })
     })
 
     describe('expired authorization', () => {
@@ -327,6 +327,7 @@ describe('OsmApiService', () => {
         })
 
         afterEach(() => {
+            vi.useRealTimers()
             ;(window as any).Worker = originalWorker
         })
 
@@ -339,7 +340,7 @@ describe('OsmApiService', () => {
             )
         }
 
-        it('resolves a successful structured response', fakeAsync(() => {
+        it('resolves a successful structured response', () => {
             let result
             startConversion().subscribe((value) => (result = value))
 
@@ -360,13 +361,11 @@ describe('OsmApiService', () => {
             FakeWorker.latest.onmessage({
                 data: { ok: true, data: { geojson: { features: [] } } },
             })
-            flushMicrotasks()
-
             expect(result).toEqual({ geojson: { features: [] } })
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-        }))
+        })
 
-        it('rejects an invalid worker response', fakeAsync(() => {
+        it('rejects an invalid worker response', () => {
             let resultError
             startConversion().subscribe({
                 error: (error) => (resultError = error),
@@ -375,13 +374,11 @@ describe('OsmApiService', () => {
             FakeWorker.latest.onmessage({
                 data: { ok: true, data: undefined },
             })
-            flushMicrotasks()
-
             expect(resultError.message).toContain('invalid response')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-        }))
+        })
 
-        it('rejects a conversion exception reported by the worker', fakeAsync(() => {
+        it('rejects a conversion exception reported by the worker', () => {
             let resultError
             startConversion().subscribe({
                 error: (error) => (resultError = error),
@@ -390,52 +387,46 @@ describe('OsmApiService', () => {
             FakeWorker.latest.onmessage({
                 data: { ok: false, error: 'Conversion failed' },
             })
-            flushMicrotasks()
-
             expect(resultError.message).toBe('Conversion failed')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
             expect(oldGeojson).toEqual({ features: [{ id: 'node/1' }] })
             expect(geojsonChanged).toEqual({ features: [{ id: 'node/-1' }] })
-        }))
+        })
 
-        it('rejects worker errors', fakeAsync(() => {
+        it('rejects worker errors', () => {
             let resultError
             startConversion().subscribe({
                 error: (error) => (resultError = error),
             })
 
             FakeWorker.latest.onerror({ message: 'Worker crashed' })
-            flushMicrotasks()
-
             expect(resultError.message).toBe('Worker crashed')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-        }))
+        })
 
-        it('rejects unreadable worker messages', fakeAsync(() => {
+        it('rejects unreadable worker messages', () => {
             let resultError
             startConversion().subscribe({
                 error: (error) => (resultError = error),
             })
 
             FakeWorker.latest.onmessageerror()
-            flushMicrotasks()
-
             expect(resultError.message).toContain('unreadable message')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-        }))
+        })
 
-        it('terminates a worker that times out', fakeAsync(() => {
+        it('terminates a worker that times out', async () => {
+            vi.useFakeTimers()
             let resultError
             startConversion().subscribe({
                 error: (error) => (resultError = error),
             })
 
-            tick(30001)
-            flushMicrotasks()
+            await vi.advanceTimersByTimeAsync(30001)
 
             expect(resultError.message).toContain('timed out')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-        }))
+        })
 
         it('terminates a worker when conversion is cancelled', () => {
             const subscription = startConversion().subscribe()

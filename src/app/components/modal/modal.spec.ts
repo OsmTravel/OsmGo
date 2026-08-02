@@ -55,6 +55,9 @@ describe('ModalsContentPage', () => {
         const tagsService = {
             presets: () => ({ gender: genderPreset }),
             tags: () => [],
+            jsonSprites: () => ({}),
+            bookmarksIds: () => [],
+            primaryKeys: () => [],
             savedFields: {},
             findPkey: () => ({ key: 'amenity', value: 'toilets' }),
         }
@@ -177,9 +180,9 @@ describe('ModalsContentPage', () => {
         const alertCtrl = { create: vi.fn().mockResolvedValue(alert) }
         const { page } = createPage({ amenity: 'toilets' }, { alertCtrl })
 
-        page.presentConfirm(page.feature)
+        await page.presentConfirm()
 
-        await vi.waitFor(() => expect(alert.present).toHaveBeenCalledOnce())
+        expect(alert.present).toHaveBeenCalledOnce()
         expect(alertCtrl.create).toHaveBeenCalledWith(
             expect.objectContaining({
                 header: 'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER',
