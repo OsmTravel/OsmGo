@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { inject, Service, signal } from '@angular/core'
+import { InjectionToken, inject, Service, signal } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { AppStorage } from '@services/app-storage.service'
@@ -19,10 +19,17 @@ interface OAuthTokenResponse {
     created_at?: number
 }
 
+export type OAuthBrowser = Pick<typeof Browser, 'close' | 'open'>
+
+export const OAUTH_BROWSER = new InjectionToken<OAuthBrowser>('OAuth browser', {
+    factory: () => Browser,
+})
+
 @Service()
 export class OsmAuthService {
     private readonly http = inject(HttpClient)
     private readonly configService = inject(ConfigService)
+    private readonly browser = inject(OAUTH_BROWSER)
     readonly localStorage = inject(AppStorage)
 
     oauthParam = {
@@ -98,7 +105,7 @@ export class OsmAuthService {
         return from(this.getLoginUrl()).pipe(
             switchMap((url) => {
                 if (Capacitor.isNativePlatform()) {
-                    return from(Browser.open({ url }))
+                    return from(this.browser.open({ url }))
                 }
 
                 // OAuth must stay in the current web tab. Opening a second tab
@@ -261,6 +268,6 @@ export class OsmAuthService {
     }
 
     private async closeNativeBrowser(): Promise<void> {
-        await Browser.close().catch(() => undefined)
+        await this.browser.close().catch(() => undefined)
     }
 }

@@ -1,20 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
-import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { AppStorage } from '@services/app-storage.service'
 import { ConfigService } from '@services/config.service'
-import { firstValueFrom, of } from 'rxjs'
+import { firstValueFrom, NEVER, of, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
-import { OsmAuthService } from './osm-auth.service'
-
-vi.mock('@capacitor/browser', () => ({
-    Browser: {
-        close: vi.fn().mockResolvedValue(undefined),
-        open: vi.fn().mockResolvedValue(undefined),
-    },
-}))
+import { OAUTH_BROWSER, OsmAuthService } from './osm-auth.service'
 
 describe('OsmAuthService', () => {
     let http: { post: Mock }
@@ -22,9 +14,13 @@ describe('OsmAuthService', () => {
     let configService: { config: Mock; resetUserInfo: Mock }
     let service: OsmAuthService
     let nativePlatform: Mock
+    let closeBrowser: Mock
+    let openBrowser: Mock
 
     beforeEach(() => {
         vi.clearAllMocks()
+        closeBrowser = vi.fn().mockResolvedValue(undefined)
+        openBrowser = vi.fn().mockResolvedValue(undefined)
         sessionStorage.clear()
         http = {
             post: vi.fn().mockName('HttpClient.post'),
@@ -49,6 +45,10 @@ describe('OsmAuthService', () => {
                 { provide: HttpClient, useValue: http },
                 { provide: ConfigService, useValue: configService },
                 { provide: AppStorage, useValue: storage },
+                {
+                    provide: OAUTH_BROWSER,
+                    useValue: { close: closeBrowser, open: openBrowser },
+                },
             ],
         })
         service = TestBed.runInInjectionContext(() => new OsmAuthService())
@@ -56,6 +56,8 @@ describe('OsmAuthService', () => {
 
     afterEach(() => {
         sessionStorage.clear()
+        nativePlatform.mockRestore()
+        vi.clearAllMocks()
     })
 
     it('creates a PKCE authorization URL with minimal scopes', async () => {
@@ -179,7 +181,6 @@ describe('OsmAuthService', () => {
 
     it('closes the Capacitor browser after the callback', async () => {
         nativePlatform.mockReturnValue(true)
-        const closeBrowser = vi.mocked(Browser.close)
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
         http.post.mockReturnValue(of({ access_token: 'access-token' }))
@@ -195,7 +196,43 @@ describe('OsmAuthService', () => {
         if (!lastCall) throw new Error('The token endpoint was not called.')
         const body = new URLSearchParams(lastCall[1] as string)
         expect(body.get('redirect_uri')).toBe('osmgo://auth')
-        await vi.waitFor(() => expect(closeBrowser).toHaveBeenCalledTimes(1))
+        expect(closeBrowser).toHaveBeenCalledTimes(1)
+    })
+
+    it('closes the Capacitor browser when token exchange fails', async () => {
+        nativePlatform.mockReturnValue(true)
+        sessionStorage.setItem('osmOAuthState', 'expected-state')
+        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
+        http.post.mockReturnValue(
+            throwError(() => new Error('Token exchange failed'))
+        )
+
+        await expect(
+            firstValueFrom(
+                service.handleCallback(
+                    'osmgo://auth?code=authorization-code&state=expected-state'
+                )
+            )
+        ).rejects.toThrow('Token exchange failed')
+
+        expect(closeBrowser).toHaveBeenCalledTimes(1)
+    })
+
+    it('closes the Capacitor browser when the callback is unsubscribed', () => {
+        nativePlatform.mockReturnValue(true)
+        sessionStorage.setItem('osmOAuthState', 'expected-state')
+        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
+        http.post.mockReturnValue(NEVER)
+
+        const subscription = service
+            .handleCallback(
+                'osmgo://auth?code=authorization-code&state=expected-state'
+            )
+            .subscribe()
+
+        expect(closeBrowser).not.toHaveBeenCalled()
+        subscription.unsubscribe()
+        expect(closeBrowser).toHaveBeenCalledTimes(1)
     })
 
     it('does not complete the callback before the token is persisted', async () => {
