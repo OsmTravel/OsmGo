@@ -7,6 +7,22 @@ import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from './config.service'
 
 describe('ConfigService', () => {
+    it('exposes the application version as read-only state', async () => {
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: {} },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        await service.loadAppVersion()
+
+        expect(service.appVersion()).toEqual(service.getAppVersion())
+    })
+
     it('exposes user updates as read-only state', () => {
         const storage = {
             set: vi.fn().mockName('Storage.set'),

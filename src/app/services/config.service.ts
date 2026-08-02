@@ -22,6 +22,15 @@ export interface Changeset {
     comment: string
 }
 
+export interface AppVersion {
+    appName: string
+    appVersionCode: string
+    appVersionNumber: string
+    platform?: string
+    branch?: string
+    shortHash?: string
+}
+
 export interface Config {
     mapMarginBuffer: number
     lockMapHeading: boolean
@@ -65,6 +74,15 @@ export class ConfigService {
         connected: false,
     })
     readonly userInfo = this.userInfoState.asReadonly()
+    private readonly appVersionState = signal<AppVersion>({
+        appName: 'Osm Go!',
+        appVersionCode: '12',
+        appVersionNumber: environment.version || '0.0.0',
+        platform: environment.platform || undefined,
+        branch: environment.branch || undefined,
+        shortHash: environment.shortHash || undefined,
+    })
+    readonly appVersion = this.appVersionState.asReadonly()
 
     changeset: Changeset = {
         id: '',
@@ -139,15 +157,6 @@ export class ConfigService {
     currentTagsCountryChoice = []
 
     geojsonIsLoadedFromCache = false
-
-    appVersion = {
-        appName: 'Osm Go!',
-        appVersionCode: '12',
-        appVersionNumber: environment.version || '0.0.0',
-        platform: environment.platform || undefined,
-        branch: environment.branch || undefined,
-        shortHash: environment.shortHash || undefined,
-    }
 
     getUserInfo() {
         return this.userInfo()
@@ -325,19 +334,23 @@ export class ConfigService {
     }
 
     async loadAppVersion() {
-        this.appVersion.appVersionNumber = environment.version
-        console.log(this.appVersion)
+        this.appVersionState.update((appVersion) => ({
+            ...appVersion,
+            appVersionNumber: environment.version,
+        }))
+        console.log(this.appVersion())
     }
 
     getAppVersion() {
-        return this.appVersion
+        return this.appVersion()
     }
 
     //Osm Go! 1.6.2-dev PWA
     getAppFullVersion() {
-        const isDev = this.appVersion.branch === 'develop'
-        const platform = this.appVersion.platform
-        return `${this.appVersion.appName} ${this.appVersion.appVersionNumber}${
+        const appVersion = this.appVersion()
+        const isDev = appVersion.branch === 'develop'
+        const platform = appVersion.platform
+        return `${appVersion.appName} ${appVersion.appVersionNumber}${
             isDev ? '-dev' : ''
         } ${platform ? platform : ''}`
     }
