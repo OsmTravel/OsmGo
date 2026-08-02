@@ -1,12 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    inject,
-    input,
-    NgZone,
-    OnInit,
-} from '@angular/core'
+import { Component, inject, input, OnInit, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
@@ -67,7 +59,6 @@ export interface ModalDismissData {
     selector: 'modal',
     templateUrl: './modal.html',
     styleUrls: ['./modal.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         AlertComponent,
         EditOtherTag,
@@ -106,21 +97,61 @@ export class ModalsContentPage implements OnInit {
     readonly alertService = inject(AlertService)
     readonly toastCtrl = inject(ToastController)
     private readonly alertCtrl = inject(AlertController)
-    private readonly zone = inject(NgZone)
     private readonly translate = inject(TranslateService)
-    private readonly cdr = inject(ChangeDetectorRef)
 
-    tags: Tag[] = [] // main data
+    private readonly tagsState = signal<Tag[]>([])
+    get tags(): Tag[] {
+        return this.tagsState()
+    }
+
     originalTags = []
-    feature: OsmGoFeature
+    private readonly featureState = signal<OsmGoFeature | undefined>(undefined)
+    get feature(): OsmGoFeature {
+        const feature = this.featureState()
+        if (!feature) {
+            throw new Error('The feature input has not been initialized.')
+        }
+        return feature
+    }
+
     origineData: string
-    typeFiche: string
-    displayCode: boolean = false
-    mode
-    tagConfig: TagConfig
+    private readonly typeFicheState = signal('Loading')
+    get typeFiche(): string {
+        return this.typeFicheState()
+    }
+
+    private readonly displayCodeState = signal(false)
+    get displayCode(): boolean {
+        return this.displayCodeState()
+    }
+
+    private readonly modeState = signal('')
+    get mode(): string {
+        return this.modeState()
+    }
+
+    private readonly tagConfigState = signal<TagConfig | undefined>(undefined)
+    get tagConfig(): TagConfig {
+        const tagConfig = this.tagConfigState()
+        if (!tagConfig) {
+            throw new Error('The tag configuration has not been initialized.')
+        }
+        return tagConfig
+    }
+
     primaryKey: PrimaryTag
-    savedFields
-    tagId: string
+    private readonly savedFieldsState = signal<
+        Record<string, Tag[]> | undefined
+    >(undefined)
+    get savedFields(): Record<string, Tag[]> | undefined {
+        return this.savedFieldsState()
+    }
+
+    private readonly tagIdState = signal('')
+    get tagId(): string {
+        return this.tagIdState()
+    }
+
     geometryType: 'point' | 'vertex' | 'line' | 'area'
     openPrimaryTagModalOnStart = false
     customValue = ''
@@ -129,7 +160,10 @@ export class ModalsContentPage implements OnInit {
     newPosition
     presetsIds = []
 
-    lastSurvey?: Date
+    private readonly lastSurveyState = signal<Date | undefined>(undefined)
+    get lastSurvey(): Date | undefined {
+        return this.lastSurveyState()
+    }
     readonly dataInput = input.required<OsmGoFeature>({ alias: 'data' })
     readonly modeInput = input.required<string>({ alias: 'type' })
     readonly newPositionInput = input<unknown>(false, {
@@ -142,7 +176,7 @@ export class ModalsContentPage implements OnInit {
 
     private initializeFromInputs(): void {
         this.newPosition = this.newPositionInput()
-        this.feature = cloneDeep(this.dataInput())
+        this.featureState.set(cloneDeep(this.dataInput()))
 
         const originalFeatureGeometry: any = this.feature.properties
             .way_geometry
@@ -167,10 +201,10 @@ export class ModalsContentPage implements OnInit {
             this.geometryType = 'area'
         }
 
-        this.mode = this.modeInput() // Read, Create, Update
+        this.modeState.set(this.modeInput()) // Read, Create, Update
         this.openPrimaryTagModalOnStart = this.openPrimaryTagModalOnStartInput()
         this.origineData = this.origineDataInput() // literal, sources
-        this.typeFiche = 'Loading' // Edit, Read, Loading
+        this.typeFicheState.set('Loading') // Edit, Read, Loading
 
         const surveyDates = []
 
@@ -191,12 +225,13 @@ export class ModalsContentPage implements OnInit {
             }
         }
 
-        this.lastSurvey =
+        this.lastSurveyState.set(
             surveyDates.length > 0
                 ? surveyDates.reduce((pr, cu) => {
                       return cu > pr ? cu : pr
                   })
-                : null
+                : undefined
+        )
 
         // clone
         this.originalTags = cloneDeep(this.tags)
@@ -251,10 +286,10 @@ export class ModalsContentPage implements OnInit {
         _primaryKey = this.tagsService.findPkey(_tags)
 
         feature.properties.primaryTag = _primaryKey
-        // this.feature.properties.primaryTag = this.primaryKey
         // Edit, Read, Loading
-        this.typeFiche =
-            this.mode === 'Update' || this.mode === 'Create' ? 'Edit' : 'Read' // ?
+        this.typeFicheState.set(
+            this.mode === 'Update' || this.mode === 'Create' ? 'Edit' : 'Read'
+        )
 
         _tags = _tags.filter(
             (tag) => tag.value && tag.value !== '' && !tag.isDefaultValue
@@ -275,11 +310,9 @@ export class ModalsContentPage implements OnInit {
             _tagConfig && _tagConfig.id
                 ? _tagConfig.id
                 : `${_primaryKey.key}/${_primaryKey.value}`
-        // this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
         _savedFields = this.tagsService.savedFields[_tagId]
-        this.savedFields = _savedFields
+        this.savedFieldsState.set(_savedFields)
 
-        // this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
         _presetsIds =
             _tagConfig && _tagConfig.presets ? _tagConfig.presets : undefined
 
@@ -310,12 +343,12 @@ export class ModalsContentPage implements OnInit {
             }
         }
 
-        this.tagId = _tagId
-        this.feature = feature
-        this.tags = _tags
+        this.tagIdState.set(_tagId)
+        this.featureState.set(feature)
         this.presetsIds = _presetsIds
-        this.tagConfig = _tagConfig
+        this.tagConfigState.set(_tagConfig)
         this.primaryKey = _primaryKey
+        this.tagsState.set(_tags)
         return { tagConfig: _tagConfig, tags: _tags, feature: feature }
     }
 
@@ -350,17 +383,12 @@ export class ModalsContentPage implements OnInit {
     }
 
     updateMode() {
-        this.zone.run(() => {
-            this.mode = 'Update'
-            this.typeFiche = 'Edit'
-        })
+        this.modeState.set('Update')
+        this.typeFicheState.set('Edit')
     }
 
     toogleCode() {
-        // affiche les tags originaux
-        this.zone.run(() => {
-            this.displayCode = this.displayCode ? false : true
-        })
+        this.displayCodeState.set(!this.displayCode)
     }
 
     addNewKey(key) {
@@ -371,12 +399,12 @@ export class ModalsContentPage implements OnInit {
 
         const genericPreset = this.tagsService.presets()[key]
         if (!genericPreset) {
-            this.tags = [
+            this.tagsState.set([
                 ...this.tags,
                 { key: key, value: '', isJustAdded: true },
-            ]
+            ])
         } else {
-            this.tags = [
+            this.tagsState.set([
                 ...this.tags,
                 {
                     key: key,
@@ -384,14 +412,17 @@ export class ModalsContentPage implements OnInit {
                     preset: genericPreset,
                     isJustAdded: true,
                 },
-            ]
+            ])
         }
     }
 
     deleteTag(tag) {
         const idx = findIndex(this.tags, { key: tag.key })
         if (idx !== -1) {
-            this.tags.splice(idx, 1)
+            this.tagsState.set([
+                ...this.tags.slice(0, idx),
+                ...this.tags.slice(idx + 1),
+            ])
         }
     }
 
@@ -416,7 +447,7 @@ export class ModalsContentPage implements OnInit {
     createOsmElement(tagconfig) {
         this.mapService.setIsProcessing(true)
 
-        this.typeFiche = 'Loading'
+        this.typeFicheState.set('Loading')
         this.tagsService.addTagTolastTagsUsed(tagconfig.id)
 
         if (this.configService.getAddSurveyDate()) {
@@ -436,7 +467,7 @@ export class ModalsContentPage implements OnInit {
 
     updateOsmElement(tagconfig) {
         this.mapService.setIsProcessing(true)
-        this.typeFiche = 'Loading'
+        this.typeFicheState.set('Loading')
 
         this.tagsService.addTagTolastTagsUsed(tagconfig ? tagconfig.id : null)
         // si les tags et la position n'ont pas changé, on ne fait rien!
@@ -464,7 +495,7 @@ export class ModalsContentPage implements OnInit {
 
     deleteOsmElement() {
         this.mapService.setIsProcessing(true)
-        this.typeFiche = 'Loading'
+        this.typeFicheState.set('Loading')
         this.osmApi.deleteOsmElement(this.feature).subscribe({
             next: (data) => {
                 this.dismiss({ redraw: true })
@@ -542,9 +573,8 @@ export class ModalsContentPage implements OnInit {
                 copyTags = this.addTags(newTagConfig.addTags, copyTags)
             }
 
-            this.tags = [...copyTags]
+            this.tagsState.set([...copyTags])
             this.initComponent(newTagConfig)
-            this.cdr.detectChanges()
         })
     }
 
@@ -562,15 +592,19 @@ export class ModalsContentPage implements OnInit {
         modal.onDidDismiss().then((d) => {
             const _data = d.data
             if (_data) {
-                this.tags.filter((tag) => tag.key === _data.key)[0].value =
-                    _data.value
+                this.tagsState.set(
+                    this.tags.map((tag) =>
+                        tag.key === _data.key
+                            ? { ...tag, value: _data.value }
+                            : tag
+                    )
+                )
                 if (_data.tags) {
                     // add or remplace tags...
-                    this.tags = this.addTags(_data.tags, this.tags)
+                    this.tagsState.set(this.addTags(_data.tags, this.tags))
                     this.initComponent(this.tagConfig)
                 }
             }
-            this.cdr.detectChanges()
         })
     }
 
@@ -592,7 +626,6 @@ export class ModalsContentPage implements OnInit {
             if (!newTag) return
 
             this.addNewKey(newTag)
-            this.cdr.detectChanges()
         })
     }
 
@@ -615,10 +648,9 @@ export class ModalsContentPage implements OnInit {
 
     addPresetsTags(newTags) {
         if (newTags) {
-            this.tags = this.addTags(newTags, this.tags)
+            this.tagsState.set(this.addTags(newTags, this.tags))
             this.initComponent(this.tagConfig)
         }
-        this.cdr.detectChanges()
     }
 
     cancelChange() {
@@ -765,8 +797,10 @@ export class ModalsContentPage implements OnInit {
             .filter((t) => t.key !== 'survey:date')
             .filter((t) => t.key !== 'check_date')
         this.tagsService.addSavedField(tagId, savedTags)
-        if (!this.savedFields) this.savedFields = {}
-        this.savedFields['tags'] = [...savedTags]
+        this.savedFieldsState.set({
+            ...this.savedFields,
+            tags: [...savedTags],
+        })
     }
 
     restoreFields(tagId, tags) {
@@ -782,15 +816,16 @@ export class ModalsContentPage implements OnInit {
                 }
             }
         }
-        this.tags = [...newTags]
+        this.tagsState.set([...newTags])
         this.initComponent(this.tagConfig)
-        this.cdr.detectChanges()
     }
 
     fixDeprecated(deprecated: any) {
         const deprecadetKeys = Object.keys(deprecated.old)
         // delete old tags
-        this.tags = this.tags.filter((t) => !deprecadetKeys.includes(t.key))
+        this.tagsState.set(
+            this.tags.filter((t) => !deprecadetKeys.includes(t.key))
+        )
 
         for (const depold of deprecadetKeys) {
             if (this.feature.properties[depold]) {
@@ -803,16 +838,18 @@ export class ModalsContentPage implements OnInit {
         }
         // add new
         for (const k in deprecated.replace) {
-            this.tags = [{ key: k, value: deprecated.replace[k] }, ...this.tags]
+            this.tagsState.set([
+                { key: k, value: deprecated.replace[k] },
+                ...this.tags,
+            ])
         }
 
         if (this.mode !== 'Update') {
-            this.mode = 'Update'
-            this.typeFiche = 'Edit'
+            this.modeState.set('Update')
+            this.typeFicheState.set('Edit')
         }
 
         this.initComponent()
-        this.cdr.detectChanges()
     }
 
     addOrRemoveBookmark(tag: TagConfig) {
@@ -821,6 +858,5 @@ export class ModalsContentPage implements OnInit {
         } else {
             this.tagsService.removeBookMark(tag)
         }
-        this.cdr.detectChanges()
     }
 }
