@@ -1,8 +1,9 @@
 import type { OsmGoFeatureCollection } from '@osmgo/type'
 import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
 import { Subscription } from 'rxjs'
-
 import { MapService } from './map.service'
+import { MapLayerController } from './map-layer.controller'
+import { MapLifecycleController } from './map-lifecycle.controller'
 
 describe('MapService lifecycle', () => {
     const setPrivate = (service: MapService, key: string, value: unknown) => {
@@ -33,17 +34,11 @@ describe('MapService lifecycle', () => {
         setPrivate(service, 'loadingDataState', { set: vi.fn() })
         setPrivate(service, 'markerMovingState', { set: vi.fn() })
         setPrivate(service, 'markerMoveMovingState', { set: vi.fn() })
-        setPrivate(
-            service,
-            'mapSessionSubscriptions',
-            new Subscription(unsubscribeSession)
-        )
-        setPrivate(
-            service,
-            'mapInitSubscription',
-            new Subscription(unsubscribeInit)
-        )
-        setPrivate(service, 'mapEventCleanup', [firstCleanup, secondCleanup])
+        const lifecycle = new MapLifecycleController()
+        lifecycle.trackSession(new Subscription(unsubscribeSession))
+        lifecycle.trackInitialization(new Subscription(unsubscribeInit))
+        lifecycle.trackCleanup(firstCleanup, secondCleanup)
+        setPrivate(service, 'lifecycle', lifecycle)
 
         service.destroyMap()
         service.destroyMap()
@@ -83,7 +78,11 @@ describe('MapService lifecycle', () => {
 
 describe('MapService filters', () => {
     function createService(): MapService {
-        return Object.create(MapService.prototype) as MapService
+        const service = Object.create(MapService.prototype) as MapService
+        Object.defineProperty(service, 'layerController', {
+            value: new MapLayerController(),
+        })
+        return service
     }
 
     it('adds the measurement filter when enabled', () => {

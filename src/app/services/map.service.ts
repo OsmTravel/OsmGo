@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { DOCUMENT, inject, NgZone, Service, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
-import { cloneDeep } from '@app/utils/clone'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { TranslateService } from '@ngx-translate/core'
 import {
@@ -21,6 +20,11 @@ import type { Basemap } from '@services/basemaps.service'
 import { type Config, ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { LocationService } from '@services/location.service'
+import {
+    FEATURE_VISIBILITY_LAYER_IDS,
+    MapLayerController,
+} from '@services/map-layer.controller'
+import { MapLifecycleController } from '@services/map-lifecycle.controller'
 import { TagsService } from '@services/tags.service'
 import destination from '@turf/destination'
 import { point } from '@turf/helpers'
@@ -48,7 +52,7 @@ import {
     ScaleControl,
     type StyleSpecification,
 } from 'maplibre-gl'
-import { type Observable, Subject, Subscription } from 'rxjs'
+import { type Observable, Subject } from 'rxjs'
 import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
 import type { ModalDismissData } from '../components/modal/modal'
 
@@ -85,9 +89,8 @@ export class MapService {
     readonly isProcessing = this.processingState.asReadonly()
     private mapCreated = false
     private styleReady = false
-    private mapInitSubscription?: Subscription
-    private mapSessionSubscriptions = new Subscription()
-    private mapEventCleanup: Array<() => void> = []
+    private readonly lifecycle = new MapLifecycleController()
+    private readonly layerController = new MapLayerController()
     private officialRenderRevision = 0
     private pendingRenderRevision = 0
     private activeRenderCount = 0
@@ -271,41 +274,12 @@ export class MapService {
 
     filterMakerByIds(ids: string[]): void {
         if (!this.mapCreated || !this.layersAreLoaded) return
-        const layersIds = [
-            'way_fill',
-            'way_fill_changed',
-            'way_line',
-            'way_line_changed',
-            'label',
-            'label_changed',
-            'icon-old',
-            'icon-fixme',
-            'marker',
-            'marker_changed',
-            'icon-change',
-        ]
-        const hiddenIds = [...new Set(ids.filter((id) => id !== ''))]
-
-        for (const layerId of layersIds) {
-            if (!this.map.getLayer(layerId)) continue
-            const currentFilter = cloneDeep(this.map.getFilter(layerId))
-            if (!Array.isArray(currentFilter)) continue
-            const nextFilter = currentFilter.filter(
-                (clause, index) =>
-                    index === 0 ||
-                    !this.isPropertyMatchFilter(clause, 'configId')
-            )
-            if (hiddenIds.length > 0) {
-                nextFilter.push([
-                    'match',
-                    ['get', 'configId'],
-                    hiddenIds,
-                    false,
-                    true,
-                ])
-            }
-            this.map.setFilter(layerId, nextFilter as FilterSpecification)
-        }
+        this.layerController.excludePropertyValues(
+            this.map,
+            FEATURE_VISIBILITY_LAYER_IDS,
+            'configId',
+            ids
+        )
     }
 
     drawWaysPoly(
@@ -635,13 +609,10 @@ export class MapService {
     }
 
     initMap(config: Config): void {
-        if (
-            this.mapCreated ||
-            (this.mapInitSubscription && !this.mapInitSubscription.closed)
-        ) {
+        if (this.mapCreated || this.lifecycle.initializationInProgress) {
             return
         }
-        this.mapInitSubscription = this.getMapStyle().subscribe((mapStyle) => {
+        const initialization = this.getMapStyle().subscribe((mapStyle) => {
             if (this.mapCreated) return
             const canvas = this.document.createElement('canvas')
             if (!canvas.getContext('webgl2')) {
@@ -720,14 +691,14 @@ export class MapService {
                 activeMap.on('move', onMove)
                 activeMap.on('moveend', onMoveEnd)
                 activeMap.on('zoom', onZoom)
-                this.mapEventCleanup.push(
+                this.lifecycle.trackCleanup(
                     () => activeMap.off('load', onLoad),
                     () => activeMap.off('move', onMove),
                     () => activeMap.off('moveend', onMoveEnd),
                     () => activeMap.off('zoom', onZoom)
                 )
 
-                this.mapSessionSubscriptions.add(
+                this.lifecycle.trackSession(
                     this.bboxChanged$.subscribe((geojsonPolygon) => {
                         if (!this.layersAreLoaded || this.map !== activeMap) {
                             return
@@ -738,7 +709,7 @@ export class MapService {
                         source?.setData(geojsonPolygon)
                     })
                 )
-                this.mapSessionSubscriptions.add(
+                this.lifecycle.trackSession(
                     this.moveElement$.subscribe((data) => {
                         if (
                             this.map !== activeMap ||
@@ -783,13 +754,10 @@ export class MapService {
                 )
             })
         })
+        this.lifecycle.trackInitialization(initialization)
     }
 
     destroyMap(): void {
-        this.mapInitSubscription?.unsubscribe()
-        this.mapInitSubscription = undefined
-        this.mapSessionSubscriptions.unsubscribe()
-        this.mapSessionSubscriptions = new Subscription()
         this.endMarkerMovement()
         const activeMap = this.mapCreated ? this.map : undefined
         this.mapCreated = false
@@ -798,10 +766,7 @@ export class MapService {
         this.officialRenderRevision++
         this.pendingRenderRevision++
         this.loadingDataState.set(false)
-        for (const cleanup of this.mapEventCleanup.splice(0).reverse()) {
-            cleanup()
-        }
-        activeMap?.remove()
+        this.lifecycle.destroy(activeMap)
         this.lastRenderedHeading = null
         this.isFirstPosition = true
     }
@@ -846,18 +811,13 @@ export class MapService {
         value: number,
         _map: Map
     ): FilterSpecification | undefined {
-        if (!_map.getLayer(layerName)) return undefined
-        const rawFilter = cloneDeep(_map.getFilter(layerName))
-        if (!Array.isArray(rawFilter)) return undefined
-        const nextFilter = rawFilter.filter(
-            (clause, index) =>
-                index === 0 ||
-                !this.isPropertyComparisonFilter(clause, 'mesure')
+        return this.layerController.toggleLessThanFilter(
+            _map,
+            layerName,
+            'mesure',
+            enable,
+            value
         )
-        if (enable) nextFilter.push(['<', ['get', 'mesure'], value])
-        const filter = nextFilter as FilterSpecification
-        _map.setFilter(layerName, filter)
-        return filter
     }
 
     selectFeature(feature: MapGeoJSONFeature): void {
@@ -913,16 +873,14 @@ export class MapService {
         }
         const oneYear = 31_536_000_000
         const threshold = Date.now() - oneYear * maxYearAgo
-        const currentFilter = cloneDeep(this.map.getFilter('icon-old'))
-        if (!Array.isArray(currentFilter)) return
-        const nextFilter = currentFilter.filter(
-            (clause, index) =>
-                index === 0 ||
-                !this.isPropertyComparisonFilter(clause, 'time', '>')
+        this.layerController.replaceComparisonFilter(
+            this.map,
+            'icon-old',
+            'time',
+            '>',
+            ['>', threshold, ['get', 'time']]
         )
-        nextFilter.push(['>', threshold, ['get', 'time']])
-        this.map.setFilter('icon-old', nextFilter as FilterSpecification)
-        this.map.setLayoutProperty('icon-old', 'visibility', 'visible')
+        this.layerController.setVisibility(this.map, 'icon-old', 'visible')
     }
 
     hideOldTagIcon(): void {
@@ -933,7 +891,7 @@ export class MapService {
         ) {
             return
         }
-        this.map.setLayoutProperty('icon-old', 'visibility', 'none')
+        this.layerController.setVisibility(this.map, 'icon-old', 'none')
     }
 
     showFixmeIcon(): void {
@@ -944,7 +902,7 @@ export class MapService {
         ) {
             return
         }
-        this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible')
+        this.layerController.setVisibility(this.map, 'icon-fixme', 'visible')
     }
     hideFixmeIcon(): void {
         if (
@@ -954,7 +912,7 @@ export class MapService {
         ) {
             return
         }
-        this.map.setLayoutProperty('icon-fixme', 'visibility', 'none')
+        this.layerController.setVisibility(this.map, 'icon-fixme', 'none')
     }
 
     mapIsLoaded(): void {
@@ -1337,13 +1295,13 @@ export class MapService {
         activeMap.on('click', onClick)
         activeMap.on('touchmove', onTouchMove)
         activeMap.on('rotate', onRotate)
-        this.mapEventCleanup.push(
+        this.lifecycle.trackCleanup(
             () => activeMap.off('click', onClick),
             () => activeMap.off('touchmove', onTouchMove),
             () => activeMap.off('rotate', onRotate)
         )
 
-        this.mapSessionSubscriptions.add(
+        this.lifecycle.trackSession(
             this.locationService.compassHeadingChanges$
                 .pipe(
                     filter((heading): heading is HeadingWithTrueHeading => {
@@ -1393,7 +1351,7 @@ export class MapService {
                 })
         )
 
-        this.mapSessionSubscriptions.add(
+        this.lifecycle.trackSession(
             this.locationService.newLocation$.subscribe(
                 (geojsonPos: FeatureCollection) => {
                     if (!this.mapCreated || this.map !== activeMap) return
@@ -1612,33 +1570,5 @@ export class MapService {
                 }
             })
         })
-    }
-
-    private isPropertyMatchFilter(
-        value: unknown,
-        propertyName: string
-    ): boolean {
-        if (!Array.isArray(value) || value[0] !== 'match') return false
-        const getter = value[1]
-        return (
-            Array.isArray(getter) &&
-            getter[0] === 'get' &&
-            getter[1] === propertyName
-        )
-    }
-
-    private isPropertyComparisonFilter(
-        value: unknown,
-        propertyName: string,
-        operator?: string
-    ): boolean {
-        if (!Array.isArray(value) || value.length !== 3) return false
-        if (operator && value[0] !== operator) return false
-        return value.some(
-            (part) =>
-                Array.isArray(part) &&
-                part[0] === 'get' &&
-                part[1] === propertyName
-        )
     }
 }
