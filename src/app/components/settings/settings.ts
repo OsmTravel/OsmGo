@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -31,7 +31,6 @@ import { TagsService } from '@services/tags.service'
     selector: 'page-settings',
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonButton,
         IonButtons,
