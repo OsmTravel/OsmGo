@@ -8,6 +8,13 @@ import {
 import { DataService } from '@services/data.service'
 import { featureCollection, point } from '@turf/turf'
 
+function pointFeature(
+    id: string,
+    coordinates: [number, number] = [0, 0]
+): OsmGoFeature {
+    return point(coordinates, {}, { id }) as OsmGoFeature
+}
+
 describe('DataService', () => {
     let service: DataService
     let storageSpy: any
@@ -95,7 +102,8 @@ describe('DataService', () => {
 
     describe('id generation/handling', () => {
         it('should be possible to get next free id', async () => {
-            const feature = point([0, 0], { id: -10 }) as OsmGoFeature
+            const feature = pointFeature('node/-10')
+            feature.properties.id = -10
             const fc = featureCollection([feature]) as OsmGoFeatureCollection
             await service.setGeojsonChanged(fc)
             ;(service as any).forceNextFeatureIdSync() // ids have been set manually -> force refresh
@@ -194,6 +202,22 @@ describe('DataService', () => {
             // ...and a copy of the original feature in `originalData` property
             // should have been re-created in the original data
             expect(service.getGeojson().features[0]).toEqual(originalFeature)
+        })
+
+        it('keeps an update when its original data is missing', async () => {
+            const changedFeature = pointFeature('node/3')
+            changedFeature.properties.changeType = 'Update'
+            changedFeature.properties.originalData = null
+            await service.setGeojsonChanged(
+                featureCollection([changedFeature]) as OsmGoFeatureCollection
+            )
+
+            expect(() => service.cancelFeatureChange(changedFeature)).toThrow(
+                'The original feature data is missing.'
+            )
+            expect(service.getGeojsonChanged().features).toEqual([
+                changedFeature,
+            ])
         })
     })
 
@@ -427,7 +451,7 @@ describe('DataService', () => {
     describe('read/write geojson data', () => {
         describe('geojson', () => {
             it('should be possible to read geojson data', async () => {
-                const sample = featureCollection([point([0, 0])])
+                const sample = featureCollection([pointFeature('node/1')])
                 storageSpy.get.mockResolvedValue(sample)
                 const obs = service.loadGeojson$()
                 const actual = await obs.toPromise()
@@ -451,7 +475,7 @@ describe('DataService', () => {
 
             it('should be possible to set geojson data', () => {
                 const fc = featureCollection([
-                    point([0, 0]),
+                    pointFeature('node/1'),
                 ]) as OsmGoFeatureCollection
 
                 service.setGeojson(fc)
@@ -469,10 +493,29 @@ describe('DataService', () => {
                 expect(service.geojson).not.toEqual(fc)
             })
 
+            it('keeps existing data when a feature ID is missing', () => {
+                const existingFeature = pointFeature('node/1')
+                service.setGeojson(
+                    featureCollection([
+                        existingFeature,
+                    ]) as OsmGoFeatureCollection
+                )
+                const featureWithoutId = point([1, 2]) as OsmGoFeature
+
+                expect(() =>
+                    service.setGeojson(
+                        featureCollection([
+                            featureWithoutId,
+                        ]) as OsmGoFeatureCollection
+                    )
+                ).toThrow('A feature ID is required.')
+                expect(service.getGeojson().features).toEqual([existingFeature])
+            })
+
             it('should be possible to add a feature to geojson collection', () => {
                 expect(service.getGeojson().features.length).toBe(0)
 
-                const newFeature = point([1, 2]) as OsmGoFeature
+                const newFeature = pointFeature('node/1', [1, 2])
                 service.addFeatureToGeojson(newFeature)
 
                 expect(service.getGeojson().features.length).toBe(1)
@@ -534,7 +577,7 @@ describe('DataService', () => {
             })
 
             it('should be possible to reset data', () => {
-                const featureA = point([0, 0]) as OsmGoFeature
+                const featureA = pointFeature('node/1')
                 const fc = featureCollection([
                     featureA,
                 ]) as OsmGoFeatureCollection
@@ -555,7 +598,7 @@ describe('DataService', () => {
 
         describe('geojsonChanged', () => {
             it('should be possible to read changed geojson data', async () => {
-                const sample = featureCollection([point([0, 0])])
+                const sample = featureCollection([pointFeature('node/1')])
                 storageSpy.get.mockResolvedValue(sample)
                 const obs = service.loadGeojsonChanged$()
                 const actual = await obs.toPromise()
@@ -580,7 +623,7 @@ describe('DataService', () => {
             it('should be possible to add a feature to changed geojson collection', () => {
                 expect(service.getGeojsonChanged().features.length).toBe(0)
 
-                const newFeature = point([1, 2]) as OsmGoFeature
+                const newFeature = pointFeature('node/1', [1, 2])
                 service.addFeatureToGeojsonChanged(newFeature)
 
                 expect(service.getGeojsonChanged().features.length).toBe(1)
@@ -589,7 +632,7 @@ describe('DataService', () => {
             it('should be able to determine the number of changed features', async () => {
                 expect(service.getCountGeojsonChanged()).toBe(0)
 
-                const newFeature = point([1, 2]) as OsmGoFeature
+                const newFeature = pointFeature('node/1', [1, 2])
                 const fc = featureCollection([
                     newFeature,
                 ]) as OsmGoFeatureCollection
@@ -656,7 +699,7 @@ describe('DataService', () => {
             })
 
             it('should be possible to reset data', async () => {
-                const featureA = point([0, 0]) as OsmGoFeature
+                const featureA = pointFeature('node/1')
                 const fc = featureCollection([
                     featureA,
                 ]) as OsmGoFeatureCollection
