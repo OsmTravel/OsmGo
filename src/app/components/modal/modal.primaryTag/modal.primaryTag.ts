@@ -1,5 +1,10 @@
 import { LowerCasePipe } from '@angular/common'
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    input,
+    OnInit,
+} from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
@@ -14,7 +19,6 @@ import {
     IonSearchbar,
     IonTitle,
     ModalController,
-    NavParams,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
@@ -75,22 +79,24 @@ export class ModalPrimaryTag implements OnInit {
     geometryType: 'point' | 'vertex' | 'line' | 'area'
     displayType = 'lastTags'
     countryTags
+    readonly tagConfigInput = input.required<TagConfig>({ alias: 'tagConfig' })
+    readonly geometryTypeInput = input.required<
+        'point' | 'vertex' | 'line' | 'area'
+    >({ alias: 'geometryType' })
 
     constructor(
-        public params: NavParams,
         public modalCtrl: ModalController,
         public tagsService: TagsService,
         public configService: ConfigService
-    ) {
-        this.oldTagConfig = this.params.data.tagConfig
-    }
+    ) {}
 
     ngOnInit() {
         this.displayType =
             this.configService.config.defaultPrimarykeyWindows == 'bookmarks'
                 ? 'bookmarks'
                 : 'lastTags'
-        this.geometryType = this.params.data.geometryType
+        this.oldTagConfig = this.tagConfigInput()
+        this.geometryType = this.geometryTypeInput()
         this.currentListOfTags = this.tagsService.tags
         this.loading = false
     }

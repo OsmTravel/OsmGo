@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing'
 import { ModalPrimaryTag } from './modal.primaryTag'
 
 describe('ModalPrimaryTag swipes', () => {
@@ -5,11 +6,8 @@ describe('ModalPrimaryTag swipes', () => {
         ({ clientX }) as PointerEvent
 
     const createModal = (): ModalPrimaryTag =>
-        new ModalPrimaryTag(
-            { data: { tagConfig: null } } as any,
-            null,
-            null,
-            null
+        TestBed.runInInjectionContext(
+            () => new ModalPrimaryTag(null, null, null)
         )
 
     it('shows bookmarks after a left swipe', () => {

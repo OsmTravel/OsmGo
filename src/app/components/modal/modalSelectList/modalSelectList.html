@@ -1,6 +1,6 @@
 <ion-toolbar>
     <ion-title>
-        {{ data.preset.lbl[language] || data.preset.lbl['en'] }}
+        {{ data().preset.lbl[language] || data().preset.lbl['en'] }}
     </ion-title>
 </ion-toolbar>
 <div id="divContentSB">
@@ -16,7 +16,7 @@
     <!-- radio-group [(ngModel)]="data.value" (ionChange)="selected($event)" -->
     <ion-list>
         <ion-radio-group (ionChange)="selected($event)">
-            @for (option of data.preset.options |
+            @for (option of data().preset.options |
             filterByCountryCode:countryCode |
             filterByPresetsContent:[language]:searchText; track option) {
             <ion-item>

@@ -18,7 +18,7 @@
                         <th>{{ 'SHARED.ID' | translate }}</th>
                     </tr>
                 </thead>
-                @for (feature of features; track feature) {
+                @for (feature of features(); track feature.properties.id) {
                     <tbody>
                         <tr (click)="selectFeature(feature)">
                             <td
@@ -29,7 +29,7 @@
                             >
                                 <app-icon
                                     [icon]="feature.properties.icon"
-                                    [jsonSprites]="jsonSprites"
+                                    [jsonSprites]="jsonSprites()"
                                 >
                                 </app-icon>
                             </td>

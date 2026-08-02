@@ -1,7 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
+    input,
     OnInit,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
@@ -11,9 +11,20 @@ import {
     IonTitle,
     IonToolbar,
     ModalController,
-    NavParams,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
+import { OsmGoFeature } from '@osmgo/type'
+
+interface SpritePosition {
+    height: number
+    width: number
+    x: number
+    y: number
+}
+
+type DialogFeature = OsmGoFeature & {
+    properties: OsmGoFeature['properties'] & { _name?: string }
+}
 
 @Component({
     selector: 'app-dialog-multi-features',
@@ -30,16 +41,10 @@ import { TranslateModule } from '@ngx-translate/core'
     ],
 })
 export class DialogMultiFeaturesComponent implements OnInit {
-    features: any
-    jsonSprites: any
-    constructor(
-        navParams: NavParams,
-        public modalCtrl: ModalController
-    ) {
-        // console.log(this.features)
-        this.features = navParams.get('features')
-        this.jsonSprites = navParams.get('jsonSprites')
-    }
+    readonly features = input.required<DialogFeature[]>()
+    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
+
+    constructor(public modalCtrl: ModalController) {}
 
     ngOnInit() {}
 

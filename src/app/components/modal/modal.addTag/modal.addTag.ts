@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonButton,
@@ -11,7 +11,6 @@ import {
     IonItemGroup,
     IonLabel,
     ModalController,
-    NavParams,
 } from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
@@ -49,8 +48,8 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class ModalAddTag {
-    moreFields: Array<string>
-    usedList: Array<string>
+    readonly moreFields = input<string[]>([])
+    readonly usedList = input<string[]>([])
 
     language: string
     countryCode: string
@@ -59,15 +58,11 @@ export class ModalAddTag {
     searchFilter: string
 
     constructor(
-        public params: NavParams,
         public modalCtrl: ModalController,
         public tagsService: TagsService,
         public configService: ConfigService,
         public translate: TranslateService
     ) {
-        this.moreFields = params.data.moreFields
-        this.usedList = params.data.usedList
-
         this.language = this.configService.config.languageTags
         this.countryCode = this.configService.config.countryTags
 

@@ -12,7 +12,6 @@ import {
     IonTitle,
     IonToolbar,
     ModalController,
-    NavParams,
 } from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
@@ -40,7 +39,6 @@ import { CharLimitPipe } from '@pipes/charLimit.pipe'
 })
 export class ModalAddOpeningHoursIntervalComponent implements OnInit {
     constructor(
-        public params: NavParams,
         public modalCtrl: ModalController,
         private translate: TranslateService
     ) {}
