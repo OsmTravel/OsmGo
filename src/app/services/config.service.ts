@@ -337,83 +337,11 @@ export class ConfigService {
         )
     }
 
-    // TODO: add userInfo
-    loadConfig2$(_i18nConfig: I18nConfig): Observable<
-        Promise<{
-            config: Config
-            user_info: User
-            changeset: Changeset
-        }>
-    > {
-        return from(this.localStorage.get('config')).pipe(
-            map(async (d) => {
-                const basemap = this.normalizeBasemap(
-                    d?.basemap || this.config().basemap
-                )
-                const config = {
-                    ...this.config(),
-                    ...d,
-                    basemap,
-                    languageTags:
-                        d?.languageTags || this.config().languageTags || 'en',
-                    countryTags:
-                        d?.countryTags || this.config().countryTags || 'GB',
-                }
-                this.configState.set(config)
-                if (!d || basemap !== d.basemap) {
-                    this.localStorage.set('config', config)
-                }
-
-                this.setIsSelectableLine(config.isSelectableLine)
-                this.setIsSelectablePolygon(config.isSelectablePolygon)
-
-                const userInfo = await this.localStorage.get('user_info')
-                if (userInfo && userInfo.connected) {
-                    this.userInfoState.set(userInfo)
-                } else {
-                    this.userInfoState.set({
-                        uid: '',
-                        display_name: '',
-                        connected: false,
-                    })
-                }
-
-                const changeset =
-                    await this.localStorage.get<Changeset>('changeset')
-                if (changeset) {
-                    this.changeset = changeset
-                } else {
-                    this.changeset = {
-                        id: '',
-                        last_changeset_activity: 0,
-                        created_at: 0,
-                        comment: this.getChangeSetComment(),
-                    }
-                }
-                console.log({
-                    config: this.config(),
-                    user_info: this.userInfo(),
-                    changeset: this.changeset,
-                })
-                return {
-                    config: this.config(),
-                    user_info: this.userInfo(),
-                    changeset: this.changeset,
-                }
-            })
-        )
-    }
-
     async loadAppVersion(): Promise<void> {
         this.appVersionState.update((appVersion) => ({
             ...appVersion,
             appVersionNumber: environment.version,
         }))
-        console.log(this.appVersion())
-    }
-
-    getAppVersion() {
-        return this.appVersion()
     }
 
     //Osm Go! 1.6.2-dev PWA

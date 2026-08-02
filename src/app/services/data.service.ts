@@ -58,9 +58,6 @@ export class DataService {
         return Object.keys(this._geojsonChanged).length
     })
 
-    geojsonWay: OsmGoFeatureCollection = featureCollection(
-        []
-    ) as OsmGoFeatureCollection
     private _geojsonBbox: OsmGoFeatureCollection = featureCollection(
         []
     ) as OsmGoFeatureCollection
@@ -167,30 +164,12 @@ export class DataService {
     }
 
     async clearCache(): Promise<void> {
-        try {
-            await this.localStorage.clear()
-        } catch (error) {
-            console.error(error)
-        }
-
-        try {
-            window.indexedDB.deleteDatabase('_ionickv')
-        } catch (error) {
-            console.log(error)
-        }
+        await this.localStorage.clear()
         localStorage.clear()
     }
 
     getGeojsonBbox(): OsmGoFeatureCollection {
         return cloneDeep(this._geojsonBbox)
-    }
-
-    setGeojsonWay(data: OsmGoFeatureCollection): void {
-        this.geojsonWay = cloneDeep(data)
-    }
-
-    addFeatureToGeojsonWay(feature: OsmGoFeature): void {
-        this.geojsonWay.features.push(feature)
     }
 
     getGeojson(): OsmGoFeatureCollection {

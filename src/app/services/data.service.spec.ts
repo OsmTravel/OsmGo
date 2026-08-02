@@ -621,5 +621,33 @@ describe('DataService', () => {
             expect(await service.clearIconCache()).toBe(3)
             expect(storageSpy.remove).toHaveBeenCalledTimes(3)
         })
+
+        it('clears the configured store without deleting a wrongly named database', async () => {
+            const indexedDbDescriptor = Object.getOwnPropertyDescriptor(
+                window,
+                'indexedDB'
+            )
+            const deleteDatabase = vi.fn()
+            Object.defineProperty(window, 'indexedDB', {
+                configurable: true,
+                value: { deleteDatabase },
+            })
+            try {
+                await service.clearCache()
+            } finally {
+                if (indexedDbDescriptor) {
+                    Object.defineProperty(
+                        window,
+                        'indexedDB',
+                        indexedDbDescriptor
+                    )
+                } else {
+                    Reflect.deleteProperty(window, 'indexedDB')
+                }
+            }
+
+            expect(storageSpy.clear).toHaveBeenCalledOnce()
+            expect(deleteDatabase).not.toHaveBeenCalled()
+        })
     })
 })

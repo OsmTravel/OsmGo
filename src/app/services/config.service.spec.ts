@@ -158,7 +158,7 @@ describe('ConfigService', () => {
 
         await service.loadAppVersion()
 
-        expect(service.appVersion()).toEqual(service.getAppVersion())
+        expect(service.appVersion().appVersionNumber).toBeTruthy()
     })
 
     it('exposes user updates as read-only state', () => {

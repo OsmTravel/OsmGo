@@ -112,7 +112,6 @@ export class LocationService {
         } else if (typeof window['ondeviceorientation'] == 'object') {
             this.orientationEventName = 'deviceorientation'
         } else {
-            console.log('utiliser le heading du gps ?')
             return
         }
 

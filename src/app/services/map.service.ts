@@ -1428,7 +1428,6 @@ export class MapService {
                     color: '#000000',
                     id: 'maki-circle',
                 }
-                console.log('no match', iconId)
             }
 
             promises.push(
