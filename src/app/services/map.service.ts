@@ -551,13 +551,10 @@ export class MapService {
 
         if (tags) {
             newTag = { ...tags }
-        } else if (
-            this.tagsService.lastTagsUsedIds &&
-            this.tagsService.lastTagsUsedIds[0]
-        ) {
+        } else if (this.tagsService.lastTagsUsedIds().length > 0) {
             // on récupere le dernier tag créé si il existe
             const lastTagsUsed = this.tagsService.tags.find(
-                (t) => t.id === this.tagsService.lastTagsUsedIds[0]
+                (t) => t.id === this.tagsService.lastTagsUsedIds()[0]
             )
             if (lastTagsUsed) {
                 newTag = { ...lastTagsUsed.tags }
@@ -1256,7 +1253,7 @@ export class MapService {
 
         this.layersAreLoaded = true
 
-        this.filterMakerByIds(this.tagsService.hiddenTagsIds)
+        this.filterMakerByIds(this.tagsService.hiddenTagsIds())
 
         const configOldTagIcon = this.configService.getOldTagsIcon()
         if (configOldTagIcon.display) {

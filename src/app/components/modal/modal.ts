@@ -815,7 +815,7 @@ export class ModalsContentPage implements OnInit {
     }
 
     addOrRemoveBookmark(tag: TagConfig) {
-        if (!this.tagsService.bookmarksIds.includes(tag.id)) {
+        if (!this.tagsService.bookmarksIds().includes(tag.id)) {
             this.tagsService.addBookMark(tag)
         } else {
             this.tagsService.removeBookMark(tag)

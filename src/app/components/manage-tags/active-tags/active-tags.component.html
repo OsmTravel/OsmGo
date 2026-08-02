@@ -33,7 +33,7 @@
             <ion-list style="overflow-y: auto">
                 @for (
                     tag of tagsService.tags
-                        | filtersTagsByIds: tagsService.hiddenTagsIds : true
+                        | filtersTagsByIds: tagsService.hiddenTagsIds() : true
                         | filterDeprecatedTag
                         | filterByTagsContent
                             : [
@@ -51,7 +51,7 @@
                             [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="['point']"
-                            [bookmarksIds]="tagsService.bookmarksIds"
+                            [bookmarksIds]="tagsService.bookmarksIds()"
                             [showHideTagButton]="true"
                             (removeBookmark)="tagsService.removeBookMark(tag)"
                             (addBookmark)="tagsService.addBookMark(tag)"

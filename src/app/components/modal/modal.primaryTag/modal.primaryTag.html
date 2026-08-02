@@ -18,7 +18,7 @@
         <div class="listTag">
             <ion-list style="overflow-y: auto">
                 @for (tag of currentListOfTags |
-                filtersTagsByIds:tagsService.hiddenTagsIds:true |
+                filtersTagsByIds:tagsService.hiddenTagsIds():true |
                 filterDeprecatedTag | filterBySearchable |
                 filterExcludeTagByCountryCode:countryTags |
                 filterByByGeometryType:[geometryType] |
@@ -33,7 +33,7 @@
                         [languageTags]="configService.config().languageTags"
                         [jsonSprites]="tagsService.jsonSprites"
                         [geometriesFilter]="geometriesPossible"
-                        [bookmarksIds]="tagsService.bookmarksIds"
+                        [bookmarksIds]="tagsService.bookmarksIds()"
                         [oldTagConfig]="oldTagConfig"
                         (removeBookmark)="tagsService.removeBookMark(tag)"
                         (addBookmark)="tagsService.addBookMark(tag)"
@@ -96,7 +96,7 @@
                 </h4>
                 <ion-list style="overflow-y: auto">
                     @for (tag of tagsService.tags |
-                    filtersTagsByIds:tagsService.lastTagsUsedIds |
+                    filtersTagsByIds:tagsService.lastTagsUsedIds() |
                     filterDeprecatedTag | filterBySearchable |
                     filterExcludeTagByCountryCode:countryTags |
                     filterByByGeometryType:[geometryType]; track tag) {
@@ -108,7 +108,7 @@
                             [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="geometriesPossible"
-                            [bookmarksIds]="tagsService.bookmarksIds"
+                            [bookmarksIds]="tagsService.bookmarksIds()"
                             [oldTagConfig]="oldTagConfig"
                             (removeBookmark)="removeBookmark($event)"
                             (addBookmark)="addBookmark($event)"
@@ -126,7 +126,7 @@
                 </h4>
                 <ion-list style="overflow-y: auto">
                     @for (tag of tagsService.tags |
-                    filtersTagsByIds:tagsService.bookmarksIds |
+                    filtersTagsByIds:tagsService.bookmarksIds() |
                     filterExcludeTagByCountryCode:countryTags |
                     filterByByGeometryType:[geometryType]; track tag) {
                     <ion-item class="ion-no-padding">
@@ -137,7 +137,7 @@
                             [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="geometriesPossible"
-                            [bookmarksIds]="tagsService.bookmarksIds"
+                            [bookmarksIds]="tagsService.bookmarksIds()"
                             [oldTagConfig]="oldTagConfig"
                             (removeBookmark)="removeBookmark($event)"
                             (addBookmark)="addBookmark($event)"

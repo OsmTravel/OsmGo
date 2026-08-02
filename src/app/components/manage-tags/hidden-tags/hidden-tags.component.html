@@ -33,7 +33,7 @@
             <!-- TODO: filter by ids, (like bookmark, etc...) -->
             @for (
                 tag of tagsService.tags
-                    | filtersTagsByIds: this.tagsService.hiddenTagsIds
+                    | filtersTagsByIds: this.tagsService.hiddenTagsIds()
                     | filterByTagsContent
                         : [
                               configService.config().languageTags,
@@ -50,7 +50,7 @@
                         [languageTags]="configService.config().languageTags"
                         [jsonSprites]="tagsService.jsonSprites"
                         [geometriesFilter]="['point']"
-                        [bookmarksIds]="tagsService.bookmarksIds"
+                        [bookmarksIds]="tagsService.bookmarksIds()"
                         [isHiddenTag]="true"
                         (removeHiddenTag)="removeHiddenTag($event)"
                     >

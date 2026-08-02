@@ -100,7 +100,7 @@ export class ManageTagsComponent implements OnInit {
     back() {
         if (this.mapService.map) {
             //&& this.refreshFilterMapAfterClose === true
-            this.mapService.filterMakerByIds(this.tagsService.hiddenTagsIds)
+            this.mapService.filterMakerByIds(this.tagsService.hiddenTagsIds())
         }
 
         this.navCtrl.back()

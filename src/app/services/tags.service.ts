@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable, inject } from '@angular/core'
+import { Injectable, inject, signal } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     JsonSprites,
@@ -20,16 +20,18 @@ export class TagsService {
     readonly localStorage = inject(Storage)
     readonly configService = inject(ConfigService)
 
-    lastTagsUsedIds: string[]
+    private readonly lastTagsUsedIdsState = signal<string[]>([])
+    readonly lastTagsUsedIds = this.lastTagsUsedIdsState.asReadonly()
+    private readonly bookmarksIdsState = signal<string[]>([])
+    readonly bookmarksIds = this.bookmarksIdsState.asReadonly()
+    private readonly hiddenTagsIdsState = signal<string[]>([])
+    readonly hiddenTagsIds = this.hiddenTagsIdsState.asReadonly()
 
-    bookmarksIds: string[] = []
     savedFields: Record<string, any> = {}
     tags: TagConfig[]
     userTags: TagConfig[]
     primaryKeys: string[] = []
     presets: Record<string, Preset> = {}
-    hiddenTagsIds: string[]
-
     basemaps
     jsonSprites: JsonSprites
 
@@ -172,30 +174,29 @@ export class TagsService {
 
     setBookMarksIds(bookmarksIds: string[]): void {
         this.localStorage.set('bookmarksIds', bookmarksIds)
-        this.bookmarksIds = bookmarksIds
+        this.bookmarksIdsState.set(bookmarksIds)
     }
 
     setLastTagsUsedIds(lastTagsUsedIds: string[]): void {
         this.localStorage.set('lastTagsUsedIds', lastTagsUsedIds)
-        this.lastTagsUsedIds = lastTagsUsedIds
+        this.lastTagsUsedIdsState.set(lastTagsUsedIds)
     }
 
     removeBookMark(tag: TagConfig): void {
-        this.bookmarksIds = this.bookmarksIds.filter((b) => b !== tag.id)
-        this.setBookMarksIds(this.bookmarksIds)
+        this.setBookMarksIds(
+            this.bookmarksIds().filter((bookmarkId) => bookmarkId !== tag.id)
+        )
     }
 
     addBookMark(tag: TagConfig): TagConfig {
-        if (this.bookmarksIds.includes(tag.id)) {
+        if (this.bookmarksIds().includes(tag.id)) {
             return
         }
         const currentTag = this.tags.find((t) => t.id === tag.id)
         if (!currentTag) {
             this.addUserTags(tag)
         }
-        this.bookmarksIds = [tag.id, ...this.bookmarksIds]
-
-        this.setBookMarksIds(this.bookmarksIds)
+        this.setBookMarksIds([tag.id, ...this.bookmarksIds()])
         // TODO : si tag inconnu => ajouter à userTag
         return currentTag
     }
@@ -204,7 +205,7 @@ export class TagsService {
         return from(this.localStorage.get('bookmarksIds')).pipe(
             map((bookmarksIds: string[]) => {
                 bookmarksIds = bookmarksIds ? bookmarksIds : []
-                this.bookmarksIds = bookmarksIds
+                this.bookmarksIdsState.set(bookmarksIds)
                 return bookmarksIds
             })
         )
@@ -217,7 +218,7 @@ export class TagsService {
                 hiddenTagsIds = hiddenTagsIds
                     ? hiddenTagsIds
                     : [...this.defaultHiddenTagsIds]
-                this.hiddenTagsIds = hiddenTagsIds
+                this.hiddenTagsIdsState.set(hiddenTagsIds)
                 return hiddenTagsIds
             })
         )
@@ -225,14 +226,14 @@ export class TagsService {
 
     setHiddenTagsIds(hiddenTagsIds: string[]): void {
         this.localStorage.set('hiddenTagsIds', hiddenTagsIds)
-        this.hiddenTagsIds = hiddenTagsIds
+        this.hiddenTagsIdsState.set(hiddenTagsIds)
     }
 
     removeHiddenTag(tag: TagConfig): void {
         if (!tag.id) {
             return
         }
-        const newHiddenTags = this.hiddenTagsIds.filter((t) => t !== tag.id)
+        const newHiddenTags = this.hiddenTagsIds().filter((t) => t !== tag.id)
         this.setHiddenTagsIds(newHiddenTags)
     }
 
@@ -241,8 +242,8 @@ export class TagsService {
         if (!tag.id) {
             return
         }
-        if (!this.hiddenTagsIds.includes(tag.id)) {
-            const newHiddenTags = [tag.id, ...this.hiddenTagsIds]
+        if (!this.hiddenTagsIds().includes(tag.id)) {
+            const newHiddenTags = [tag.id, ...this.hiddenTagsIds()]
             this.setHiddenTagsIds(newHiddenTags)
             // delete bookmark...
             this.removeBookMark(tag)
@@ -262,7 +263,7 @@ export class TagsService {
         return from(this.localStorage.get('lastTagsUsedIds')).pipe(
             map((lastTagsUsedIds: string[]) => {
                 lastTagsUsedIds = lastTagsUsedIds ? lastTagsUsedIds : []
-                this.lastTagsUsedIds = lastTagsUsedIds
+                this.lastTagsUsedIdsState.set(lastTagsUsedIds)
                 return lastTagsUsedIds
             })
         )
@@ -272,19 +273,15 @@ export class TagsService {
         if (!tagId) {
             return
         }
-        if (this.lastTagsUsedIds.includes(tagId)) {
-            this.lastTagsUsedIds = this.lastTagsUsedIds.filter(
-                (tu) => tu !== tagId
-            )
-        }
+        const previousTagIds = this.lastTagsUsedIds().filter(
+            (previousTagId) => previousTagId !== tagId
+        )
         const currentTag = this.tags.find((t) => t.id === tagId)
         if (!currentTag) {
             return
         }
 
-        this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0, 20)
-
-        this.setLastTagsUsedIds(this.lastTagsUsedIds)
+        this.setLastTagsUsedIds([tagId, ...previousTagIds].slice(0, 20))
         return currentTag
     }
 

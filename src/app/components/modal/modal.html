@@ -161,7 +161,7 @@
                 [tagConfig]="tagConfig"
                 [jsonSprites]="tagsService.jsonSprites"
                 [isEditMode]="true"
-                [isBookmarked]="tagConfig | isBookmarked:tagsService.bookmarksIds"
+                [isBookmarked]="tagConfig | isBookmarked:tagsService.bookmarksIds()"
                 (openPrimaryTagModal)="openPrimaryTagModal()"
                 (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
             >
