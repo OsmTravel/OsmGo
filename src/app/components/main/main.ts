@@ -2,11 +2,10 @@ declare const ResizeObserver: any
 
 import {
     AfterViewInit,
-    ChangeDetectionStrategy,
     Component,
     ElementRef,
     inject,
-    NgZone,
+    signal,
     viewChild,
 } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
@@ -50,7 +49,6 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
     templateUrl: './main.html',
     selector: 'main',
     styleUrls: ['./main.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonBadge,
         IonContent,
@@ -74,7 +72,6 @@ export class MainPage implements AfterViewInit {
     readonly alertService = inject(AlertService)
     readonly configService = inject(ConfigService)
     private readonly alertCtrl = inject(AlertController)
-    private readonly _ngZone = inject(NgZone)
     private readonly router = inject(Router)
     readonly translate = inject(TranslateService)
     readonly loadingController = inject(LoadingController)
@@ -84,9 +81,8 @@ export class MainPage implements AfterViewInit {
     private readonly route = inject(ActivatedRoute)
 
     modalIsOpen: boolean = false
-    menuIsOpen: boolean = false
-    newVersion: boolean = false
-    loading: boolean = true
+    readonly menuIsOpen = signal(false)
+    readonly newVersion = signal(false)
     centerOnStart?: number[]
     zoomOnStart?: number
     loadOsmDataOnStart: boolean = false
@@ -276,7 +272,7 @@ export class MainPage implements AfterViewInit {
                 }))
             )
             .subscribe((event) => {
-                this.newVersion = true
+                this.newVersion.set(true)
             })
     }
 
@@ -293,14 +289,14 @@ export class MainPage implements AfterViewInit {
 
     openMenu(): void {
         this.configService.freezeMapRenderer = true
-        this.menuIsOpen = true
+        this.menuIsOpen.set(true)
         // history.pushState({menu:'open'}, 'menu')
         // TODO history.pushState({msg:'openned side bar', menu:'open'}, 'menu')
     }
 
     closeMenu(): void {
         this.configService.freezeMapRenderer = false
-        this.menuIsOpen = false
+        this.menuIsOpen.set(false)
     }
 
     presentConfirm(): void {
@@ -334,9 +330,7 @@ export class MainPage implements AfterViewInit {
     loadData$(): Observable<any> {
         this.mapService.setIsProcessing(true)
         // L'utilisateur charge les données, on supprime donc le tooltip
-        this._ngZone.run(() => {
-            this.alertService.displayToolTipRefreshData = false
-        })
+        this.alertService.displayToolTipRefreshData = false
 
         // return a promise
 
@@ -423,7 +417,6 @@ export class MainPage implements AfterViewInit {
                 )
             }
 
-            this.loading = false
             if (this.loadOsmDataOnStart) {
                 this.loadData$()
                     .pipe(take(1))
@@ -527,7 +520,7 @@ export class MainPage implements AfterViewInit {
             // TODO: add state only when popup or action are in progress
             // TODO: add a popup "Are you sure to quit OsmGo!"
             // window.history.pushState({ msg: 'here a new state' }, 'after popstate')
-            if (this.menuIsOpen) {
+            if (this.menuIsOpen()) {
                 window.history.pushState({ noBackExitsApp: true }, '')
                 this.closeMenu()
             } else if (this.modalIsOpen) {

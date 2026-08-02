@@ -100,6 +100,20 @@ const createPage = ({
 }
 
 describe('MainPage', () => {
+    it('updates menu state and renderer state together', () => {
+        const { page, configService } = createPage()
+
+        page.openMenu()
+
+        expect(page.menuIsOpen()).toBe(true)
+        expect(configService.freezeMapRenderer).toBe(true)
+
+        page.closeMenu()
+
+        expect(page.menuIsOpen()).toBe(false)
+        expect(configService.freezeMapRenderer).toBe(false)
+    })
+
     it('opens and closes the feature modal with its input data', async () => {
         const showModal$ = new Subject<{
             type: string

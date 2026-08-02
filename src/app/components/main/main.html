@@ -5,7 +5,7 @@
             style="left: 0px; top: 0px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.MENU')"
         >
-            @if (newVersion) {
+            @if (newVersion()) {
             <ion-badge
                 color="danger"
                 style="position: absolute; z-index: 1; left: 36px"
@@ -197,8 +197,8 @@
 </ion-content>
 
 <menu-component
-    [menuIsOpen]="menuIsOpen"
-    [newVersion]="newVersion"
+    [menuIsOpen]="menuIsOpen()"
+    [newVersion]="newVersion()"
     (closeEvent)="closeMenu()"
 >
 </menu-component>
