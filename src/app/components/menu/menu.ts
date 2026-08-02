@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatDialog } from '@angular/material/dialog'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatIconModule } from '@angular/material/icon'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import {
     ConfirmDialogComponent,
@@ -34,6 +35,7 @@ export class MenuPage {
     private readonly dialog = inject(MatDialog)
     private readonly translate = inject(TranslateService)
     private readonly overlayNavigation = inject(OverlayNavigationService)
+    private readonly snackBar = inject(MatSnackBar)
     readonly osmAuthService = inject(OsmAuthService)
 
     private swipeStartX: number | null = null
@@ -61,10 +63,22 @@ export class MenuPage {
             .afterClosed()
             .subscribe((confirmed) => {
                 if (confirmed) {
-                    this.mapService.resetDataMap()
-                    this.closeMenu()
+                    void this.resetMapData()
                 }
             })
+    }
+
+    private async resetMapData(): Promise<void> {
+        try {
+            await this.mapService.resetDataMap()
+            this.closeMenu()
+        } catch (error) {
+            this.snackBar.open(
+                error instanceof Error ? error.message : String(error),
+                this.translate.instant('SHARED.CLOSE'),
+                { duration: 4000 }
+            )
+        }
     }
 
     pushPage(path: string): void {

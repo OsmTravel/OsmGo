@@ -598,9 +598,13 @@ export class MapService {
         return marker
     }
 
-    resetDataMap(): void {
-        this.redrawBbox(this.dataService.resetGeojsonBbox())
-        this.redrawMarkers(this.dataService.resetGeojsonData())
+    async resetDataMap(): Promise<void> {
+        const [bbox, geojson] = await Promise.all([
+            this.dataService.resetGeojsonBbox(),
+            this.dataService.resetGeojsonData(),
+        ])
+        this.redrawBbox(bbox)
+        this.redrawMarkers(geojson)
     }
 
     getMapStyle(): Observable<StyleSpecification> {

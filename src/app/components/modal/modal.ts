@@ -784,11 +784,18 @@ export class ObjectEditorContentComponent {
         }
     }
 
-    cancelChange(): void {
+    async cancelChange(): Promise<void> {
         const originalFeature = cloneDeep(
             this.feature.properties.originalData ?? undefined
         )
-        this.dataService.cancelFeatureChange(this.feature)
+        try {
+            await this.dataService.cancelFeatureChange(this.feature)
+        } catch (error) {
+            this.presentToast(
+                error instanceof Error ? error.message : String(error)
+            )
+            return
+        }
         if (originalFeature) {
             this.dismiss({
                 redraw: true,

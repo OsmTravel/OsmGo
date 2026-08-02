@@ -565,8 +565,13 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         }
     }
 
-    cancelErrorFeature(feature: OsmGoFeature): void {
-        this.dataService.cancelFeatureChange(feature)
+    async cancelErrorFeature(feature: OsmGoFeature): Promise<void> {
+        try {
+            await this.dataService.cancelFeatureChange(feature)
+        } catch (error) {
+            this.stopPushingWithError(error, feature)
+            return
+        }
         this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
         this.mapService.redrawMarkers(this.dataService.getGeojson())
         this.mapService.redrawChangedMarkers(
@@ -577,22 +582,23 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
 
     async cancelAllFeatures(): Promise<void> {
         const featuresChanged = this.dataService.getGeojsonChanged().features
-        for (const feature of featuresChanged) {
-            this.dataService.cancelFeatureChange(feature)
+        try {
+            for (const feature of featuresChanged) {
+                await this.dataService.cancelFeatureChange(feature)
+            }
+            await this.dataService.resetGeojsonChanged()
+        } catch (error) {
+            this.stopPushingWithError(error)
+            return
         }
-        await this.dataService.resetGeojsonChanged()
         this.summary.set(this.getSummary())
         this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
-        timer(100)
-            .pipe(take(1))
-            .subscribe(() => {
-                this.mapService.redrawMarkers(this.dataService.getGeojson())
-                this.mapService.redrawChangedMarkers(
-                    this.dataService.getGeojsonChanged()
-                )
-                this.mapService.setIsProcessing(false)
-                this.back()
-            })
+        this.mapService.redrawMarkers(this.dataService.getGeojson())
+        this.mapService.redrawChangedMarkers(
+            this.dataService.getGeojsonChanged()
+        )
+        this.mapService.setIsProcessing(false)
+        this.back()
     }
 
     centerToElement(geometry: OsmGoFeature['geometry']): void {

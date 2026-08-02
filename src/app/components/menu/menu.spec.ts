@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing'
 import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { Router } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
@@ -26,6 +27,7 @@ describe('MenuPage swipes', () => {
                 { provide: ConfigService, useValue: {} },
                 { provide: AlertService, useValue: {} },
                 { provide: MatDialog, useValue: {} },
+                { provide: MatSnackBar, useValue: {} },
                 { provide: TranslateService, useValue: {} },
                 { provide: Router, useValue: {} },
                 { provide: OsmAuthService, useValue: {} },

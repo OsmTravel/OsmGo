@@ -27,6 +27,21 @@ export interface PersistedOsmStateV1 {
     uploadJournal?: PersistedUploadJournal
 }
 
+export class OsmStatePersistenceError extends Error {
+    readonly name = 'OsmStatePersistenceError'
+
+    constructor(
+        readonly operation: string,
+        readonly revision: number,
+        options: ErrorOptions
+    ) {
+        super(
+            `Could not persist OSM state revision ${revision} (${operation}).`,
+            options
+        )
+    }
+}
+
 export interface LegacyOsmState {
     geojson?: OsmGoFeatureCollection | null
     geojsonChanged?: OsmGoFeatureCollection | null

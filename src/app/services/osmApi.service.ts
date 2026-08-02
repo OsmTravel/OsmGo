@@ -530,11 +530,19 @@ export class OsmApiService {
             }
             feature.properties.changeType = 'Update'
             feature.properties.originalData = originalData
-            this.dataService.deleteFeatureFromGeojson(feature)
             const changedFeature = this.mapService.getIconStyle(feature)
             return from(
-                this.dataService.addFeatureToGeojsonChanged(changedFeature)
-            ).pipe(map(() => changedFeature))
+                this.dataService.deleteFeatureFromGeojson(feature)
+            ).pipe(
+                switchMap(() =>
+                    from(
+                        this.dataService.addFeatureToGeojsonChanged(
+                            changedFeature
+                        )
+                    )
+                ),
+                map(() => changedFeature)
+            )
         }
     }
 
@@ -553,13 +561,18 @@ export class OsmApiService {
                         () => new Error('The original feature data is missing.')
                     )
                 }
-                this.dataService.updateFeatureToGeojson(
-                    feature.properties.originalData
-                )
                 feature.properties.changeType = 'Delete'
                 return from(
-                    this.dataService.updateFeatureToGeojsonChanged(
-                        this.mapService.getIconStyle(feature)
+                    this.dataService.updateFeatureToGeojson(
+                        feature.properties.originalData
+                    )
+                ).pipe(
+                    switchMap(() =>
+                        from(
+                            this.dataService.updateFeatureToGeojsonChanged(
+                                this.mapService.getIconStyle(feature)
+                            )
+                        )
                     )
                 )
             }
@@ -578,10 +591,15 @@ export class OsmApiService {
             }
             feature.properties.changeType = 'Delete'
             feature.properties.originalData = originalData
-            this.dataService.deleteFeatureFromGeojson(feature)
             return from(
-                this.dataService.addFeatureToGeojsonChanged(
-                    this.mapService.getIconStyle(feature)
+                this.dataService.deleteFeatureFromGeojson(feature)
+            ).pipe(
+                switchMap(() =>
+                    from(
+                        this.dataService.addFeatureToGeojsonChanged(
+                            this.mapService.getIconStyle(feature)
+                        )
+                    )
                 )
             )
         }

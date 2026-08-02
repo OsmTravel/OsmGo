@@ -44,7 +44,7 @@ import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
 import type { BBox } from 'geojson'
 import { LngLat } from 'maplibre-gl'
-import { EMPTY, type Observable, take, timer } from 'rxjs'
+import { EMPTY, from, type Observable, take, timer } from 'rxjs'
 import { catchError, filter, finalize, map, switchMap } from 'rxjs/operators'
 import { MapControlsComponent } from './map-controls/map-controls'
 import {
@@ -573,15 +573,24 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         return this.osmApi
             .getDataFromBbox(bbox, this.configService.getLimitFeatures())
             .pipe(
-                map((newDataJson) => {
+                switchMap((newDataJson) => {
                     if (!this.isMapDataResult(newDataJson)) {
                         throw new Error('The map worker returned invalid data.')
                     }
-                    this.dataService.setGeojsonBbox(newDataJson.geojsonBbox)
-                    this.mapService.redrawBbox(newDataJson.geojsonBbox)
-                    this.dataService.setGeojson(newDataJson.geojson)
-                    this.mapService.redrawMarkers(newDataJson.geojson)
-                    this.mapService.setIsProcessing(false)
+                    return from(
+                        Promise.all([
+                            this.dataService.setGeojsonBbox(
+                                newDataJson.geojsonBbox
+                            ),
+                            this.dataService.setGeojson(newDataJson.geojson),
+                        ])
+                    ).pipe(
+                        map(() => {
+                            this.mapService.redrawBbox(newDataJson.geojsonBbox)
+                            this.mapService.redrawMarkers(newDataJson.geojson)
+                            this.mapService.setIsProcessing(false)
+                        })
+                    )
                 }),
 
                 catchError((error: unknown) => {
