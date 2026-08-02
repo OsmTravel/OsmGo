@@ -16,16 +16,24 @@ import type { DatetimeChangeEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
-interface OpeningHoursTimeRange {
-    id: number
+export interface OpeningHoursTime {
     start: string
     end: string
 }
 
-interface OpeningHoursDay {
+interface OpeningHoursTimeRange extends OpeningHoursTime {
+    id: number
+}
+
+export interface OpeningHoursDay {
     index: number
     selected: boolean
     label: string
+}
+
+export interface OpeningHoursDialogResult {
+    times: OpeningHoursTime[]
+    days: OpeningHoursDay[]
 }
 
 @Component({

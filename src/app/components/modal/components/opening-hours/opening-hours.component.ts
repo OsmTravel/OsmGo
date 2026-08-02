@@ -1,6 +1,7 @@
 import { Component, inject, input, model, OnInit, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
+    type InputCustomEvent,
     IonButton,
     IonIcon,
     IonInput,
@@ -14,7 +15,12 @@ import Interval from '@scripts/YoHours/Interval.js'
 import OpeningHoursBuilder from '@scripts/YoHours/OpeningHoursBuilder.js'
 import OpeningHoursParser from '@scripts/YoHours/OpeningHoursParser.js'
 import WideInterval from '@scripts/YoHours/WideInterval.js'
-import { ModalAddOpeningHoursIntervalComponent } from './modal-add-opening-hours-interval/modal-add-opening-hours-interval.component'
+import {
+    ModalAddOpeningHoursIntervalComponent,
+    type OpeningHoursDay,
+    type OpeningHoursDialogResult,
+    type OpeningHoursTime,
+} from './modal-add-opening-hours-interval/modal-add-opening-hours-interval.component'
 
 const parser = new OpeningHoursParser()
 const builder = new OpeningHoursBuilder()
@@ -38,11 +44,11 @@ export class OpeningHoursComponent implements OnInit {
     private readonly translate = inject(TranslateService)
 
     readonly openingHours = model('')
-    readonly displayCode = input(undefined)
+    readonly displayCode = input(false)
     readonly editMode = input(false)
 
     readonly valueChangeEvent = output<string>()
-    intervals: any
+    intervals: DateRange[] = []
     isError = false
     isTooComplex = false
 
@@ -56,12 +62,12 @@ export class OpeningHoursComponent implements OnInit {
         { index: 6, text: this.translate.instant('DAYS.SUNDAY') },
     ]
 
-    valueChange(e) {
-        this.valueChangeEvent.emit(e.target.value)
+    valueChange(event: InputCustomEvent): void {
+        this.valueChangeEvent.emit(String(event.detail.value ?? ''))
         this.parseOpeningHours()
     }
 
-    parseOpeningHours() {
+    parseOpeningHours(): void {
         try {
             this.intervals = parser.parse(this.openingHours())
             this.isError = false
@@ -92,50 +98,53 @@ export class OpeningHoursComponent implements OnInit {
         }
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.parseOpeningHours()
     }
 
-    findIntervalsByDay(intervals, day) {
+    findIntervalsByDay(intervals: Interval[], day: number): Interval[] {
         const intervalsByDay = intervals.filter(
-            (interval) => interval && interval._dayStart == day
+            (interval) => interval._dayStart === day
         )
         return intervalsByDay
     }
 
-    deleteCurrentInterval(_dataRange, _interval) {
-        const _wideIntervalType = _dataRange._wideInterval._type
+    deleteCurrentInterval(dataRange: DateRange, interval: Interval): void {
+        const wideIntervalType = dataRange._wideInterval._type
         const currentDataRange = this.intervals.find(
-            (dr) => (dr._wideInterval._type = _wideIntervalType)
+            (candidate) => candidate._wideInterval._type === wideIntervalType
         )
+        if (!currentDataRange) return
 
         const intervals2 = currentDataRange.getTypical().getIntervals()
 
         const currentIntervalIndex = intervals2.findIndex(
-            (int) =>
-                int &&
-                int._dayStart == _interval._dayStart &&
-                int._dayEnd == _interval._dayEnd &&
-                int._start == _interval._start &&
-                int._end == _interval._end
+            (candidate) =>
+                candidate._dayStart === interval._dayStart &&
+                candidate._dayEnd === interval._dayEnd &&
+                candidate._start === interval._start &&
+                candidate._end === interval._end
         )
 
-        currentDataRange.getTypical().removeInterval(currentIntervalIndex)
+        if (currentIntervalIndex >= 0) {
+            currentDataRange.getTypical().removeInterval(currentIntervalIndex)
+        }
 
         this.openingHours.set(builder.build(this.intervals))
         this.valueChangeEvent.emit(this.openingHours())
     }
 
-    addIntervals(times, days) {
-        const _wideIntervalType = 'always'
-        if (!this.intervals || this.intervals.length == 0) {
+    addIntervals(times: OpeningHoursTime[], days: OpeningHoursDay[]): void {
+        const wideIntervalType = 'always'
+        if (this.intervals.length === 0) {
             const wi = new WideInterval()
             this.intervals = [new DateRange(wi.always())]
         }
 
         const currentDataRange = this.intervals.find(
-            (dr) => (dr._wideInterval._type = _wideIntervalType)
+            (dateRange) => dateRange._wideInterval._type === wideIntervalType
         )
+        if (!currentDataRange) return
         const daysIndex = days.filter((d) => d.selected).map((d) => d.index)
 
         for (const dayIndex of daysIndex) {
@@ -159,18 +168,18 @@ export class OpeningHoursComponent implements OnInit {
         return min + hour * 60
     }
 
-    async openModalAddOpeningHours(data) {
+    async openModalAddOpeningHours(
+        data: Record<string, unknown> | null
+    ): Promise<void> {
         const modal = await this.modalCtrl.create({
             component: ModalAddOpeningHoursIntervalComponent,
-            componentProps: data,
+            componentProps: data ?? undefined,
         })
         await modal.present()
 
-        modal.onDidDismiss().then((d) => {
-            const _data = d.data
-            if (_data) {
-                this.addIntervals(_data.times, _data.days)
-            }
-        })
+        const result = await modal.onDidDismiss<OpeningHoursDialogResult>()
+        if (result.data) {
+            this.addIntervals(result.data.times, result.data.days)
+        }
     }
 }
