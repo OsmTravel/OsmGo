@@ -181,6 +181,99 @@ describe('PushDataToOsmPage', () => {
         )
     })
 
+    it('centers and zooms a point before closing the upload screen', () => {
+        const map = {
+            getZoom: vi.fn(() => 16),
+            setZoom: vi.fn(),
+            setCenter: vi.fn(),
+            fitBounds: vi.fn(),
+        }
+        const close = vi.fn().mockResolvedValue(true)
+        const page = createPage({
+            dataService: { getGeojsonChanged: () => ({ features: [] }) },
+            configService: { getChangeSetComment: () => '' },
+            mapService: { map },
+            overlayNavigation: { close },
+        })
+
+        page.centerToElement({ type: 'Point', coordinates: [2.3, 48.8] })
+
+        expect(map.setZoom).toHaveBeenCalledWith(18.5)
+        expect(map.setCenter).toHaveBeenCalledWith([2.3, 48.8])
+        expect(map.fitBounds).not.toHaveBeenCalled()
+        expect(close).toHaveBeenCalledOnce()
+    })
+
+    it.each([
+        [
+            'LineString',
+            {
+                type: 'LineString',
+                coordinates: [
+                    [2.1, 48.7],
+                    [2.4, 48.9],
+                    [2.2, 48.6],
+                ],
+            },
+            [
+                [2.1, 48.6],
+                [2.4, 48.9],
+            ],
+        ],
+        [
+            'MultiPolygon',
+            {
+                type: 'MultiPolygon',
+                coordinates: [
+                    [
+                        [
+                            [1, 4],
+                            [3, 2],
+                            [1, 4],
+                        ],
+                    ],
+                    [
+                        [
+                            [-1, 5],
+                            [2, 1],
+                            [-1, 5],
+                        ],
+                    ],
+                ],
+            },
+            [
+                [-1, 1],
+                [3, 5],
+            ],
+        ],
+    ])(
+        'fits the complete %s geometry before closing',
+        (_, geometry, bounds) => {
+            const map = {
+                getZoom: vi.fn(),
+                setZoom: vi.fn(),
+                setCenter: vi.fn(),
+                fitBounds: vi.fn(),
+            }
+            const close = vi.fn().mockResolvedValue(true)
+            const page = createPage({
+                dataService: { getGeojsonChanged: () => ({ features: [] }) },
+                configService: { getChangeSetComment: () => '' },
+                mapService: { map },
+                overlayNavigation: { close },
+            })
+
+            page.centerToElement(geometry as any)
+
+            expect(map.fitBounds).toHaveBeenCalledWith(bounds, {
+                maxZoom: 18.5,
+                padding: 48,
+            })
+            expect(map.setCenter).not.toHaveBeenCalled()
+            expect(close).toHaveBeenCalledOnce()
+        }
+    )
+
     it('returns to the screen after user verification times out', async () => {
         const queuedFeature = { id: 'node/-1' }
         const changedData = { features: [queuedFeature] }

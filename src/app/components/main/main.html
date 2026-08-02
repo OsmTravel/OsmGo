@@ -1,7 +1,11 @@
 <section
     class="map-screen"
     [class.has-selection]="selectedFeature()"
-    [class.sheet-expanded]="sheetLevel() === 'expanded'"
+    [class.sheet-expanded]="
+        sheetLevel() === 'expanded' &&
+        !mapService.markerMoving() &&
+        !mapService.markerMoveMoving()
+    "
     [style.--map-controls-bottom]="mapControlsBottom()"
     [attr.inert]="overlayOpen() ? '' : null"
     [attr.aria-hidden]="overlayOpen() ? 'true' : null"
@@ -10,8 +14,20 @@
 
     <app-map-controls
         [newVersion]="newVersion()"
-        [attr.inert]="sheetLevel() === 'expanded' ? '' : null"
-        [attr.aria-hidden]="sheetLevel() === 'expanded' ? 'true' : null"
+        [attr.inert]="
+            sheetLevel() === 'expanded' &&
+            !mapService.markerMoving() &&
+            !mapService.markerMoveMoving()
+                ? ''
+                : null
+        "
+        [attr.aria-hidden]="
+            sheetLevel() === 'expanded' &&
+            !mapService.markerMoving() &&
+            !mapService.markerMoveMoving()
+                ? 'true'
+                : null
+        "
         (menuRequested)="openMenu()"
         (refreshRequested)="loadData()"
         (addRequested)="startAddingObject()"

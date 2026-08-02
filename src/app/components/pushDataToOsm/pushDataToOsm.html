@@ -122,9 +122,20 @@
                 >
                     <div
                         class="change-type"
-                        [attr.aria-label]="item.properties.changeType"
+                        role="img"
+                        [attr.aria-label]="
+                            (item.properties.changeType === 'Create'
+                                ? 'SEND_DATA.ADDED_ITEMS'
+                                : item.properties.changeType === 'Update'
+                                  ? 'SEND_DATA.UPDATED_ITEMS'
+                                  : 'SEND_DATA.DELETED_ITEMS'
+                            ) | translate
+                        "
                     >
-                        <mat-icon fontSet="material-symbols-rounded">
+                        <mat-icon
+                            fontSet="material-symbols-rounded"
+                            aria-hidden="true"
+                        >
                             @switch (item.properties.changeType) { @case
                             ('Create') { add } @case ('Update') { edit } @case
                             ('Delete') { delete } }

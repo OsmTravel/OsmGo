@@ -85,6 +85,70 @@ describe('OsmApiService', () => {
         }
     })
 
+    it('serializes validated relation members before tags', () => {
+        const service = createService()
+        const feature: OsmGoFeature = {
+            type: 'Feature',
+            id: 'relation/42',
+            properties: {
+                hexColor: '',
+                icon: '',
+                id: 42,
+                marker: '',
+                meta: {
+                    changeset: '10',
+                    timestamp: '',
+                    uid: '1',
+                    user: 'mapper',
+                    version: 3,
+                },
+                primaryTag: { key: 'type', value: 'multipolygon' },
+                tags: { type: 'multipolygon', name: 'Park & lake' },
+                type: 'relation',
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+            members: [
+                { type: 'way', ref: 10, role: 'outer' },
+                { type: 'relation', ref: '-2', role: 'sub & area' },
+            ],
+        }
+
+        const xml = service.geojson2OsmUpdate(feature, '123')
+
+        expect(xml).toBe(
+            '<relation id="42" changeset="123" version="3">' +
+                '<member type="way" ref="10" role="outer"/>' +
+                '<member type="relation" ref="-2" role="sub &amp; area"/>' +
+                '<tag k="type" v="multipolygon"/>' +
+                '<tag k="name" v="Park &amp; lake"/>' +
+                '</relation>'
+        )
+        expect(xml.indexOf('<member')).toBeLessThan(xml.indexOf('<tag'))
+    })
+
+    it.each([
+        [{ type: 'invalid', ref: 1, role: '' }, 'invalid type'],
+        [{ type: 'way', ref: 0, role: '' }, 'invalid reference'],
+        [{ type: 'node', ref: 'abc', role: '' }, 'invalid reference'],
+        [{ type: 'relation', ref: 1, role: undefined }, 'invalid role'],
+    ])('rejects a relation member with an %s', (member, message) => {
+        const service = createService()
+        const feature = {
+            type: 'Feature',
+            id: 'relation/42',
+            properties: {
+                id: 42,
+                meta: { version: 1 },
+                tags: { type: 'multipolygon' },
+                type: 'relation',
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+            members: [member],
+        } as any
+
+        expect(() => service.geojson2OsmUpdate(feature, '123')).toThrow(message)
+    })
+
     it.each([0, 1])(
         'rejects the non-negative temporary creation ID %s',
         (id) => {

@@ -30,6 +30,7 @@ import { MapService } from '@services/map.service'
 import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
 import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
+import type { Geometry, Position } from 'geojson'
 import { cloneDeep } from 'lodash'
 import { firstValueFrom, timer } from 'rxjs'
 import { take } from 'rxjs/operators'
@@ -491,14 +492,75 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     }
 
     centerToElement(geometry: OsmGoFeature['geometry']): void {
-        if (!('coordinates' in geometry)) {
-            return
+        if (geometry.type === 'Point') {
+            const [longitude, latitude] = geometry.coordinates
+            if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
+                return
+            }
+            if (this.mapService.map.getZoom() < 18.5) {
+                this.mapService.map.setZoom(18.5)
+            }
+            this.mapService.map.setCenter([longitude, latitude])
+        } else {
+            const bounds = this.geometryBounds(geometry)
+            if (!bounds) return
+            this.mapService.map.fitBounds(bounds, {
+                maxZoom: 18.5,
+                padding: 48,
+            })
         }
-        if (this.mapService.map.getZoom() < 18.5) {
-            this.mapService.map.setZoom(18.5)
-        }
-        this.mapService.map.setCenter(geometry.coordinates as [number, number])
         this.back()
+    }
+
+    private geometryBounds(
+        geometry: Exclude<Geometry, { type: 'Point' }>
+    ): [[number, number], [number, number]] | null {
+        const positions: Position[] = []
+        const collectPositions = (value: unknown): void => {
+            if (
+                Array.isArray(value) &&
+                value.length >= 2 &&
+                typeof value[0] === 'number' &&
+                typeof value[1] === 'number' &&
+                Number.isFinite(value[0]) &&
+                Number.isFinite(value[1])
+            ) {
+                positions.push(value as Position)
+                return
+            }
+            if (Array.isArray(value)) {
+                for (const child of value) collectPositions(child)
+            }
+        }
+
+        if (geometry.type === 'GeometryCollection') {
+            for (const child of geometry.geometries) {
+                if (child.type === 'Point') {
+                    collectPositions(child.coordinates)
+                } else {
+                    const childBounds = this.geometryBounds(child)
+                    if (childBounds) collectPositions(childBounds)
+                }
+            }
+        } else {
+            collectPositions(geometry.coordinates)
+        }
+        if (positions.length === 0) return null
+
+        let west = positions[0][0]
+        let east = positions[0][0]
+        let south = positions[0][1]
+        let north = positions[0][1]
+        for (const [longitude, latitude] of positions.slice(1)) {
+            west = Math.min(west, longitude)
+            east = Math.max(east, longitude)
+            south = Math.min(south, latitude)
+            north = Math.max(north, latitude)
+        }
+        return [
+            [west, south],
+            [east, north],
+        ]
     }
 
     ngAfterViewInit(): void {

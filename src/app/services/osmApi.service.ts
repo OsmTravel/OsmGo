@@ -449,18 +449,29 @@ export class OsmApiService {
             return `<way id="${id}" changeset="${changesetId}" version="${version}">${nodeReferences}${tagsXml}</way>`
         }
         if (objectType === 'relation') {
-            if (!feature.members) {
+            if (!Array.isArray(feature.members)) {
                 throw new Error('An OSM relation requires members.')
             }
             const members = feature.members
-                .map(
-                    (member) =>
-                        `<member type="${member.type}" role="${this.escapeXmlValue(member.role)}" ref="${member.ref}"/>`
-                )
+                .map((member) => this.osmRelationMemberToXml(member))
                 .join('')
-            return `<relation id="${id}" changeset="${changesetId}" version="${version}">${tagsXml}${members}</relation>`
+            return `<relation id="${id}" changeset="${changesetId}" version="${version}">${members}${tagsXml}</relation>`
         }
         throw new Error(`Unsupported OSM object type: ${objectType}`)
+    }
+
+    private osmRelationMemberToXml(member: OsmRelationMember): string {
+        if (!['node', 'way', 'relation'].includes(member?.type)) {
+            throw new Error('An OSM relation member has an invalid type.')
+        }
+        const ref = String(member.ref).trim()
+        if (!/^-?[1-9]\d*$/.test(ref)) {
+            throw new Error('An OSM relation member has an invalid reference.')
+        }
+        if (typeof member.role !== 'string') {
+            throw new Error('An OSM relation member has an invalid role.')
+        }
+        return `<member type="${member.type}" ref="${ref}" role="${this.escapeXmlValue(member.role)}"/>`
     }
 
     private isValidOsmTag(key: string, value: unknown): boolean {
