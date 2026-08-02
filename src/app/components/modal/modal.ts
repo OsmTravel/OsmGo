@@ -3,6 +3,7 @@ import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
+    input,
     NgZone,
     OnInit,
 } from '@angular/core'
@@ -29,7 +30,6 @@ import {
     IonToolbar,
     LoadingController,
     ModalController,
-    NavParams,
     Platform,
     ToastController,
 } from '@ionic/angular/standalone'
@@ -116,10 +116,18 @@ export class ModalsContentPage implements OnInit {
     presetsIds = []
 
     lastSurvey?: Date
+    readonly dataInput = input.required<OsmGoFeature>({ alias: 'data' })
+    readonly modeInput = input.required<string>({ alias: 'type' })
+    readonly newPositionInput = input<unknown>(false, {
+        alias: 'newPosition',
+    })
+    readonly origineDataInput = input('', { alias: 'origineData' })
+    readonly openPrimaryTagModalOnStartInput = input(false, {
+        alias: 'openPrimaryTagModalOnStart',
+    })
 
     constructor(
         public platform: Platform,
-        public params: NavParams,
         public loadingCtrl: LoadingController,
         public osmApi: OsmApiService,
         public tagsService: TagsService,
@@ -133,9 +141,11 @@ export class ModalsContentPage implements OnInit {
         private zone: NgZone,
         private translate: TranslateService,
         private cdr: ChangeDetectorRef
-    ) {
-        this.newPosition = params.data.newPosition
-        this.feature = cloneDeep(params.data.data)
+    ) {}
+
+    private initializeFromInputs(): void {
+        this.newPosition = this.newPositionInput()
+        this.feature = cloneDeep(this.dataInput())
 
         const originalFeatureGeometry: any = this.feature.properties
             .way_geometry
@@ -160,16 +170,16 @@ export class ModalsContentPage implements OnInit {
             this.geometryType = 'area'
         }
 
-        this.mode = params.data.type // Read, Create, Update
-        this.openPrimaryTagModalOnStart = params.data.openPrimaryTagModalOnStart
-        this.origineData = this.params.data.origineData // literal, sources
+        this.mode = this.modeInput() // Read, Create, Update
+        this.openPrimaryTagModalOnStart = this.openPrimaryTagModalOnStartInput()
+        this.origineData = this.origineDataInput() // literal, sources
         this.typeFiche = 'Loading' // Edit, Read, Loading
 
         const surveyDates = []
 
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
         for (const tag in this.feature.properties.tags) {
-            const preset = tagsService.presets[tag.replace(':', '/')]
+            const preset = this.tagsService.presets[tag.replace(':', '/')]
             const data: Tag = {
                 key: tag,
                 value: this.feature.properties.tags[tag],
@@ -196,9 +206,9 @@ export class ModalsContentPage implements OnInit {
     }
 
     ngOnInit() {
+        this.initializeFromInputs()
         // override
         this.initComponent()
-        this.cdr.detectChanges()
         if (this.mode === 'Create' && this.openPrimaryTagModalOnStart) {
             this.openPrimaryTagModal()
         }
@@ -516,7 +526,6 @@ export class ModalsContentPage implements OnInit {
                 }
             }
             if (!newTagConfig) {
-                this.cdr.detectChanges()
                 return
             }
             const newTagsKeys = Object.keys(newTagConfig.tags)

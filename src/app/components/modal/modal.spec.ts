@@ -1,3 +1,18 @@
+import { TestBed } from '@angular/core/testing'
+import {
+    AlertController,
+    LoadingController,
+    ModalController,
+    Platform,
+    ToastController,
+} from '@ionic/angular/standalone'
+import { TranslateModule } from '@ngx-translate/core'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 import { ModalsContentPage } from './modal'
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
 
@@ -24,7 +39,6 @@ describe('ModalsContentPage', () => {
             },
             alertCtrl = { create: vi.fn() },
             toastCtrl = { create: vi.fn() },
-            changeDetectorRef = { detectChanges: vi.fn() },
         }: any = {}
     ) {
         const feature = {
@@ -38,42 +52,49 @@ describe('ModalsContentPage', () => {
                 meta: { version: 1 },
             },
         }
-        const params = {
-            data: {
-                data: feature,
-                type,
-                origineData: 'data',
-            },
-        }
         const tagsService = {
             presets: { gender: genderPreset },
             tags: [],
             savedFields: {},
             findPkey: () => ({ key: 'amenity', value: 'toilets' }),
         }
-        const page = new ModalsContentPage(
-            {} as any,
-            params as any,
-            {} as any,
-            {} as any,
-            tagsService as any,
-            modalCtrl as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            toastCtrl as any,
-            alertCtrl as any,
-            { run: (callback) => callback() } as any,
-            { instant: (key) => key } as any,
-            changeDetectorRef as any
-        )
+        TestBed.resetTestingModule()
+        TestBed.configureTestingModule({
+            imports: [ModalsContentPage, TranslateModule.forRoot()],
+            providers: [
+                { provide: Platform, useValue: {} },
+                { provide: LoadingController, useValue: {} },
+                { provide: OsmApiService, useValue: {} },
+                { provide: TagsService, useValue: tagsService },
+                { provide: ModalController, useValue: modalCtrl },
+                { provide: MapService, useValue: {} },
+                { provide: DataService, useValue: {} },
+                {
+                    provide: ConfigService,
+                    useValue: {
+                        config: {
+                            countryTags: 'US',
+                            languageTags: 'en',
+                            languageUi: 'en',
+                        },
+                    },
+                },
+                { provide: AlertService, useValue: {} },
+                { provide: ToastController, useValue: toastCtrl },
+                { provide: AlertController, useValue: alertCtrl },
+            ],
+        })
+        const fixture = TestBed.createComponent(ModalsContentPage)
+        fixture.componentRef.setInput('data', feature)
+        fixture.componentRef.setInput('type', type)
+        fixture.componentRef.setInput('origineData', 'data')
+        const page = fixture.componentInstance
+        page.ngOnInit()
         return {
             page,
             modalCtrl,
             alertCtrl,
             toastCtrl,
-            changeDetectorRef,
         }
     }
 
@@ -134,11 +155,7 @@ describe('ModalsContentPage', () => {
             create: vi.fn().mockResolvedValue(primaryTagModal),
             dismiss: vi.fn(),
         }
-        const changeDetectorRef = { detectChanges: vi.fn() }
-        const { page } = createPage(
-            { amenity: 'toilets' },
-            { modalCtrl, changeDetectorRef }
-        )
+        const { page } = createPage({ amenity: 'toilets' }, { modalCtrl })
         page.initComponent(tagConfig as any)
 
         await page.openPrimaryTagModal()
@@ -153,9 +170,6 @@ describe('ModalsContentPage', () => {
             },
         })
         expect(primaryTagModal.present).toHaveBeenCalledOnce()
-        await vi.waitFor(() =>
-            expect(changeDetectorRef.detectChanges).toHaveBeenCalledOnce()
-        )
     })
 
     it('presents a confirmation alert', async () => {
