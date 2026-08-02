@@ -1,4 +1,4 @@
-import { HostListener, Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { filter, map } from 'rxjs'
 
@@ -6,9 +6,9 @@ import { filter, map } from 'rxjs'
     providedIn: 'root',
 })
 export class PwaService {
-    promptEvent
+    private readonly swUpdate = inject(SwUpdate)
 
-    constructor(private swUpdate: SwUpdate) {}
+    promptEvent
 
     updateAvailable() {
         const updatesAvailable = this.swUpdate.versionUpdates
