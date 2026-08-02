@@ -44,9 +44,16 @@ describe('InitService', () => {
             loadHiddenTagsIds$: vi.fn(() => of([])),
         }
         const dataService = {
-            loadGeojson$: vi.fn(() => of(emptyCollection)),
-            loadGeojsonChanged$: vi.fn(() => of(emptyCollection)),
-            loadGeojsonBbox$: vi.fn(() => of(emptyCollection)),
+            loadOsmState$: vi.fn(() =>
+                of({
+                    schemaVersion: 2,
+                    revision: 0,
+                    officialById: {},
+                    pendingById: {},
+                    bbox: emptyCollection,
+                    nextTemporaryId: -1,
+                })
+            ),
         }
         const osmApi = {
             getFirstCoordFromIdObject$: vi.fn(() => {

@@ -46,9 +46,7 @@ export class InitService {
             lastTagsUsedIds: this.tagsService.loadLastTagsUsedIds$(),
             hiddenTagsIds: this.tagsService.loadHiddenTagsIds$(),
 
-            geojson: this.dataService.loadGeojson$(),
-            geojsonChanged: this.dataService.loadGeojsonChanged$(),
-            geojsonBbox: this.dataService.loadGeojsonBbox$(),
+            osmState: this.dataService.loadOsmState$(),
             objectOnStartCoords: idOsmObjectOnStart
                 ? config$.pipe(
                       switchMap(() =>

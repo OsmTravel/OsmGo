@@ -72,6 +72,68 @@ describe('DataService', () => {
         }
     })
 
+    it('migrates legacy map keys to a V2 OsmState without removing them', async () => {
+        const official = pointFeature('node/10')
+        official.properties.id = 10
+        official.properties.type = 'node'
+        const pending = pointFeature('node/0')
+        pending.properties.id = 0
+        pending.properties.type = 'node'
+        pending.properties.changeType = 'Create'
+        const empty = featureCollection([]) as OsmGoFeatureCollection
+        storageSpy.get.mockImplementation((key: string) => {
+            if (key === 'osmState') return Promise.resolve(null)
+            if (key === 'geojson') {
+                return Promise.resolve(featureCollection([official]))
+            }
+            if (key === 'geojsonChanged') {
+                return Promise.resolve(featureCollection([pending]))
+            }
+            if (key === 'geojsonBbox') return Promise.resolve(empty)
+            return Promise.resolve(null)
+        })
+        storageSpy.set.mockImplementation((_key: string, value: unknown) =>
+            Promise.resolve(value)
+        )
+
+        const state = await firstValueFrom(service.loadOsmState$())
+
+        expect(state).toMatchObject({
+            schemaVersion: 2,
+            revision: 0,
+            nextTemporaryId: -2,
+        })
+        expect(Object.keys(state.officialById)).toEqual(['node/10'])
+        expect(Object.keys(state.pendingById)).toEqual(['node/-1'])
+        expect(service.getGeojson().features[0].id).toBe('node/10')
+        expect(service.getGeojsonChanged().features[0].id).toBe('node/-1')
+        expect(service.nextFeatureId).toBe(-2)
+        expect(storageSpy.set).toHaveBeenCalledWith('osmState', state)
+        expect(storageSpy.remove).not.toHaveBeenCalled()
+    })
+
+    it('loads an existing V2 OsmState without consulting legacy keys', async () => {
+        const official = pointFeature('node/10')
+        const persisted = {
+            schemaVersion: 2,
+            revision: 7,
+            officialById: { 'node/10': official },
+            pendingById: {},
+            bbox: featureCollection([]),
+            nextTemporaryId: -4,
+        }
+        storageSpy.get.mockResolvedValue(persisted)
+
+        const state = await firstValueFrom(service.loadOsmState$())
+
+        expect(state).toEqual(persisted)
+        expect(storageSpy.get).toHaveBeenCalledTimes(1)
+        expect(storageSpy.get).toHaveBeenCalledWith('osmState')
+        expect(storageSpy.set).not.toHaveBeenCalled()
+        expect(service.getGeojson().features).toEqual([official])
+        expect(service.nextFeatureId).toBe(-4)
+    })
+
     it('should be possible to copy data from changed model to original', async () => {
         const originalFeature = point([0, 0], {}, { id: 3 }) as OsmGoFeature
         const originalFc = featureCollection([
@@ -315,7 +377,7 @@ describe('DataService', () => {
                 vi
                     .mocked(storageSpy.set)
                     .mock.calls.map((args: unknown[]) => args[0])
-            ).toEqual(['geojson', 'geojsonChanged'])
+            ).toEqual(['geojson', 'geojsonChanged', 'osmState'])
         })
 
         it('keeps every feature that was not confirmed', async () => {
@@ -541,11 +603,12 @@ describe('DataService', () => {
                 service.setGeojson(fc)
 
                 expect(service.geojson).toEqual(fc)
-                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(1)
-                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
-                    'geojson',
-                    fc,
-                ])
+                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(2)
+                expect(storageSpy.set).toHaveBeenCalledWith('geojson', fc)
+                expect(storageSpy.set).toHaveBeenCalledWith(
+                    'osmState',
+                    expect.objectContaining({ schemaVersion: 2 })
+                )
 
                 // test if object has been deeply cloned
                 fc.features[0].properties.id = 123
@@ -649,10 +712,10 @@ describe('DataService', () => {
                 service.resetGeojsonData()
 
                 expect(service.getGeojson().features.length).toBe(0)
-                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
+                expect(storageSpy.set).toHaveBeenCalledWith(
                     'geojson',
-                    featureCollection([]),
-                ])
+                    featureCollection([])
+                )
             })
         })
 
@@ -771,10 +834,10 @@ describe('DataService', () => {
                 await service.resetGeojsonChanged()
 
                 expect(service.getGeojsonChanged().features.length).toBe(0)
-                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
+                expect(storageSpy.set).toHaveBeenCalledWith(
                     'geojsonChanged',
-                    featureCollection([]),
-                ])
+                    featureCollection([])
+                )
             })
         })
 
@@ -810,11 +873,12 @@ describe('DataService', () => {
 
                 expect(service.geojsonBbox).toEqual(fc)
                 // ensure that data is persisted in storage
-                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(1)
-                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
-                    'geojsonBbox',
-                    fc,
-                ])
+                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(2)
+                expect(storageSpy.set).toHaveBeenCalledWith('geojsonBbox', fc)
+                expect(storageSpy.set).toHaveBeenCalledWith(
+                    'osmState',
+                    expect.objectContaining({ schemaVersion: 2 })
+                )
             })
 
             it('should be possible to get bbox geojson data', () => {
