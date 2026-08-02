@@ -9,8 +9,13 @@ import {
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import { AboutPage } from '@components/about/about'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
-import { AlertController, NavController, Platform } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import {
+    AlertController,
+    IonicModule,
+    NavController,
+    Platform,
+} from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -25,7 +30,7 @@ import { menuAnimations } from './menu.animations'
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class MenuPage {
     private swipeStartX: number | null = null

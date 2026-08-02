@@ -1,4 +1,3 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import {
     type ComponentFixture,
     TestBed,
@@ -24,8 +23,7 @@ describe('BasemapsComponent', () => {
         ]
 
         TestBed.configureTestingModule({
-            declarations: [BasemapsComponent],
-            imports: [TranslateModule.forRoot()],
+            imports: [BasemapsComponent, TranslateModule.forRoot()],
             providers: [
                 {
                     provide: ActivatedRoute,
@@ -46,7 +44,6 @@ describe('BasemapsComponent', () => {
                 },
                 { provide: NavController, useValue: { back: vi.fn() } },
             ],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
 
         fixture = TestBed.createComponent(BasemapsComponent)

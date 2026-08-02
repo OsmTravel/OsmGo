@@ -1,3 +1,4 @@
+import { KeyValuePipe } from '@angular/common'
 import {
     type AfterViewInit,
     ChangeDetectionStrategy,
@@ -5,9 +6,16 @@ import {
     type OnDestroy,
     type OnInit,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { IconComponent } from '@components/icon/icon.component'
 
-import { AlertController, NavController, Platform } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import {
+    AlertController,
+    IonicModule,
+    NavController,
+    Platform,
+} from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
@@ -25,7 +33,13 @@ import { take } from 'rxjs/operators'
     templateUrl: './pushDataToOsm.html',
     styleUrls: ['./pushDataToOsm.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FormsModule,
+        IconComponent,
+        IonicModule,
+        KeyValuePipe,
+        TranslateModule,
+    ],
 })
 export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     summary = { Total: 0, Create: 0, Update: 0, Delete: 0 }

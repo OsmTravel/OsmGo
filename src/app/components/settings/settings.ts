@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { LoadingController, NavController, Platform } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import {
+    IonicModule,
+    LoadingController,
+    NavController,
+    Platform,
+} from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { InitService } from '@services/init.service'
@@ -13,7 +18,7 @@ import { TagsService } from '@services/tags.service'
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class SettingsPage {
     constructor(
@@ -177,7 +182,7 @@ export class SettingsPage {
     async deleteCache() {
         await this.dataService.clearCache()
         const cachesKeys = await caches.keys()
-        for (let key of cachesKeys) {
+        for (const key of cachesKeys) {
             await caches.delete(key)
         }
 

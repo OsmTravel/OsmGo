@@ -1,17 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import {
+    IonicModule,
     ModalController,
     NavController,
     Platform,
     ToastController,
 } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 
 import { ConfigService } from '@services/config.service'
 @Component({
     selector: 'page-about',
     templateUrl: './about.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class AboutPage {
     constructor(

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { NavController } from '@ionic/angular'
+import { IonicModule, NavController } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 import { BasemapsService } from '@services/basemaps.service'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
@@ -11,7 +12,7 @@ import { MapService } from '@services/map.service'
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class BasemapsComponent implements OnInit {
     lat: number
