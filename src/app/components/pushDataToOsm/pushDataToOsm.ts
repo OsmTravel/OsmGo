@@ -1,11 +1,11 @@
 import { KeyValuePipe } from '@angular/common'
 import {
     type AfterViewInit,
-    ChangeDetectionStrategy,
     Component,
     inject,
     type OnDestroy,
     type OnInit,
+    signal,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { IconComponent } from '@components/icon/icon.component'
@@ -41,11 +41,28 @@ import { cloneDeep } from 'lodash'
 import { timer } from 'rxjs'
 import { take } from 'rxjs/operators'
 
+interface UploadSummary {
+    Total: number
+    Create: number
+    Update: number
+    Delete: number
+}
+
+type UploadFeature = OsmGoFeature & {
+    properties: OsmGoFeature['properties'] & { _name?: string }
+    error?: string
+}
+
+interface UploadError {
+    status: number
+    message: string
+    feature: UploadFeature | null
+}
+
 @Component({
     selector: 'page-push-data-to-osm',
     templateUrl: './pushDataToOsm.html',
     styleUrls: ['./pushDataToOsm.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FormsModule,
         IconComponent,
@@ -78,20 +95,21 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     private readonly translate = inject(TranslateService)
     readonly initService = inject(InitService)
 
-    summary = { Total: 0, Create: 0, Update: 0, Delete: 0 }
+    readonly summary = signal<UploadSummary>({
+        Total: 0,
+        Create: 0,
+        Update: 0,
+        Delete: 0,
+    })
     changesetId = ''
-    commentChangeset = ''
-    isPushing = false
-    uploadedOk = false
-    featuresChanges = []
-    basicPassword = null
-    connectionError
-    error: { status: number; message: string; feature: any }
-
-    constructor() {
-        this.commentChangeset = this.configService.getChangeSetComment()
-        this.featuresChanges = this.dataService.getGeojsonChanged().features
-    }
+    readonly commentChangeset = signal(this.configService.getChangeSetComment())
+    readonly isPushing = signal(false)
+    readonly uploadedOk = signal(false)
+    readonly featuresChanges = signal<UploadFeature[]>(
+        this.dataService.getGeojsonChanged().features
+    )
+    readonly connectionError = signal<string | undefined>(undefined)
+    readonly error = signal<UploadError | undefined>(undefined)
     ngOnInit(): void {
         if (!this.initService.isLoaded) {
             // We need to instantiate the map
@@ -148,7 +166,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
 
     getSummary() {
         const summary = { Total: 0, Create: 0, Update: 0, Delete: 0 }
-        this.featuresChanges = this.dataService.getGeojsonChanged().features
+        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
         const featuresChanged = this.dataService.getGeojsonChanged().features
 
         for (let i = 0; i < featuresChanged.length; i++) {
@@ -252,7 +270,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                     (err) => {
                         console.error(err)
                         reject(this.getOsmErrorMessage(err))
-                        this.isPushing = false
+                        this.isPushing.set(false)
                     }
                 )
         })
@@ -301,12 +319,12 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     }
 
     private stopPushingWithError(error, feature = null): void {
-        this.error = {
+        this.error.set({
             status: typeof error?.status === 'number' ? error.status : 0,
             message: this.getOsmErrorMessage(error),
             feature,
-        }
-        this.isPushing = false
+        })
+        this.isPushing.set(false)
         this.mapService.setIsProcessing(false)
     }
 
@@ -322,12 +340,12 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     }
 
     async pushDataToOsm(commentChangeset) {
-        if (this.isPushing) {
+        if (this.isPushing()) {
             console.log('Already pushing')
             return
         }
 
-        this.isPushing = true
+        this.isPushing.set(true)
         this.mapService.setIsProcessing(true)
 
         try {
@@ -339,16 +357,20 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
 
         this.configService.setChangeSetComment(commentChangeset)
 
-        this.uploadedOk = false
+        this.uploadedOk.set(false)
         try {
             await this.userIsConnected()
         } catch (error) {
-            this.connectionError = error
-            this.isPushing = false
+            this.connectionError.set(
+                typeof error === 'string'
+                    ? error
+                    : this.getOsmErrorMessage(error)
+            )
+            this.isPushing.set(false)
             this.mapService.setIsProcessing(false)
             return
         }
-        this.connectionError = undefined
+        this.connectionError.set(undefined)
 
         this.osmApi
             .getValidChangset(commentChangeset)
@@ -379,11 +401,13 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                     this.mapService.redrawChangedMarkers(
                                         this.dataService.getGeojsonChanged()
                                     )
-                                    this.featuresChanges =
-                                        this.dataService.getGeojsonChanged().features
-                                    this.error = undefined
-                                    this.summary = this.getSummary()
-                                    this.uploadedOk = true
+                                    this.featuresChanges.set(
+                                        this.dataService.getGeojsonChanged()
+                                            .features
+                                    )
+                                    this.error.set(undefined)
+                                    this.summary.set(this.getSummary())
+                                    this.uploadedOk.set(true)
                                     this.mapService.setIsProcessing(false)
                                     timer(1000)
                                         .pipe(take(1))
@@ -410,18 +434,21 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                 )
                                 this.stopPushingWithError(err, feature)
                                 if (feature) {
-                                    const featureWithError = {
-                                        ...this.featuresChanges.find(
-                                            (f) => f.id == feature.id
-                                        ),
-                                        error: message,
+                                    const failedFeature =
+                                        this.featuresChanges().find(
+                                            (item) => item.id == feature.id
+                                        )
+                                    if (failedFeature) {
+                                        this.featuresChanges.set([
+                                            {
+                                                ...failedFeature,
+                                                error: message,
+                                            },
+                                            ...this.featuresChanges().filter(
+                                                (item) => item.id !== feature.id
+                                            ),
+                                        ])
                                     }
-                                    this.featuresChanges = [
-                                        featureWithError,
-                                        ...this.featuresChanges.filter(
-                                            (f) => f.id !== feature.id
-                                        ),
-                                    ]
                                 }
                             },
                         })
@@ -434,12 +461,12 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
 
     cancelErrorFeature(feature) {
         this.dataService.cancelFeatureChange(feature)
-        this.featuresChanges = this.dataService.getGeojsonChanged().features
+        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
         this.mapService.redrawMarkers(this.dataService.getGeojson())
         this.mapService.redrawChangedMarkers(
             this.dataService.getGeojsonChanged()
         )
-        this.error = undefined
+        this.error.set(undefined)
     }
 
     async cancelAllFeatures() {
@@ -449,8 +476,8 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             this.dataService.cancelFeatureChange(feature)
         }
         await this.dataService.resetGeojsonChanged()
-        this.summary = this.getSummary()
-        this.featuresChanges = this.dataService.getGeojsonChanged().features
+        this.summary.set(this.getSummary())
+        this.featuresChanges.set(this.dataService.getGeojsonChanged().features)
         timer(100)
             .pipe(take(1))
             .subscribe((t) => {
@@ -463,15 +490,18 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             })
     }
 
-    centerToElement(pointCoordinates) {
+    centerToElement(geometry: OsmGoFeature['geometry']): void {
+        if (!('coordinates' in geometry)) {
+            return
+        }
         if (this.mapService.map.getZoom() < 18.5) {
             this.mapService.map.setZoom(18.5)
         }
-        this.mapService.map.setCenter(pointCoordinates)
+        this.mapService.map.setCenter(geometry.coordinates as [number, number])
         this.navCtrl.pop()
     }
 
     ngAfterViewInit() {
-        this.summary = this.getSummary()
+        this.summary.set(this.getSummary())
     }
 }

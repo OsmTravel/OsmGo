@@ -125,10 +125,10 @@ describe('PushDataToOsmPage', () => {
                 typeof creationError.error === 'string'
                     ? creationError.error
                     : creationError.message
-            expect(page.isPushing).toBe(false)
+            expect(page.isPushing()).toBe(false)
             expect(processing.value).toBe(false)
             expect(processingValues).toEqual([false, true, false])
-            expect(page.error).toEqual({
+            expect(page.error()).toEqual({
                 status: creationError.status,
                 message: expectedMessage,
                 feature: null,
@@ -170,10 +170,10 @@ describe('PushDataToOsmPage', () => {
         await page.pushDataToOsm('Survey')
 
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
-        expect(page.isPushing).toBe(false)
+        expect(page.isPushing()).toBe(false)
         expect(processing.value).toBe(false)
-        expect(page.error.message).toContain('Timeout')
-        expect(page.featuresChanges).toEqual([queuedFeature])
+        expect(page.error()?.message).toContain('Timeout')
+        expect(page.featuresChanges()).toEqual([queuedFeature])
         expect(changedData.features).toEqual([queuedFeature])
     })
 
@@ -204,9 +204,9 @@ describe('PushDataToOsmPage', () => {
 
         await page.pushDataToOsm('Survey')
 
-        expect(page.isPushing).toBe(false)
+        expect(page.isPushing()).toBe(false)
         expect(processing.value).toBe(false)
-        expect(page.connectionError).toContain('Timeout')
+        expect(page.connectionError()).toContain('Timeout')
         expect(osmApi.getValidChangset).not.toHaveBeenCalled()
         expect(changedData.features).toEqual([queuedFeature])
     })
@@ -249,10 +249,10 @@ describe('PushDataToOsmPage', () => {
 
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
         expect(configService.invalidateChangeset).toHaveBeenCalledTimes(1)
-        expect(page.isPushing).toBe(false)
+        expect(page.isPushing()).toBe(false)
         expect(processing.value).toBe(false)
-        expect(page.error.message).toContain('Please retry')
-        expect(page.featuresChanges).toEqual([queuedFeature])
+        expect(page.error()?.message).toContain('Please retry')
+        expect(page.featuresChanges()).toEqual([queuedFeature])
         expect(changedData.features).toEqual([queuedFeature])
 
         closedChangesetError.error =
@@ -449,6 +449,6 @@ describe('PushDataToOsmPage', () => {
         await new Promise((resolve) => setTimeout(resolve))
 
         expect(applyUploadResults).toHaveBeenCalledTimes(1)
-        expect(page.uploadedOk).toBe(true)
+        expect(page.uploadedOk()).toBe(true)
     })
 })
