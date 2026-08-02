@@ -28,6 +28,15 @@ const presets = require('../assets/tagsAndPresets/presets.json') as Record<
     string,
     Preset
 >
+const sprites = require('../assets/mapStyle/sprites/sprites.json') as Record<
+    string,
+    unknown
+>
+const sprites2x =
+    require('../assets/mapStyle/sprites/sprites@2x.json') as Record<
+        string,
+        unknown
+    >
 
 const presetTypes = [
     'select',
@@ -172,5 +181,33 @@ describe('generated tags and presets', () => {
                 expect(preset.options?.length).toBeGreaterThan(0)
             }
         }
+    })
+
+    it('uses unique option values in every preset', () => {
+        for (const [presetId, preset] of Object.entries(presets)) {
+            const values = (preset.options ?? []).map((option) => option.v)
+            expect(new Set(values).size, presetId).toBe(values.length)
+        }
+    })
+
+    it('references available sprites at both pixel ratios', () => {
+        expect(Object.keys(sprites2x).sort()).toEqual(
+            Object.keys(sprites).sort()
+        )
+        expect(sprites['maki-circle']).toBeTruthy()
+        for (const tag of tagsConfig.tags) {
+            if ((tag as TagConfig & { icon?: string }).icon) {
+                expect(
+                    sprites[(tag as TagConfig & { icon: string }).icon],
+                    tag.id
+                ).toBeTruthy()
+            }
+        }
+    })
+
+    it('keeps progressive catalog count floors', () => {
+        expect(tagsConfig.tags.length).toBeGreaterThanOrEqual(1500)
+        expect(Object.keys(presets).length).toBeGreaterThanOrEqual(850)
+        expect(Object.keys(sprites).length).toBeGreaterThanOrEqual(700)
     })
 })

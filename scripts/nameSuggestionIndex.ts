@@ -25,6 +25,64 @@ export interface BrandOption extends NameSuggestionPreset {
     countryCodes?: Array<string>
 }
 
+const intersectRecords = (
+    records: Array<Record<string, string>>
+): Record<string, string> => {
+    const [first = {}, ...rest] = records
+    return Object.fromEntries(
+        Object.entries(first).filter(([key, value]) =>
+            rest.every((record) => record[key] === value)
+        )
+    )
+}
+
+/**
+ * The NSI can contain distinct regional entities with the same OSM brand
+ * value. OsmGo stores that value as the option identity, so keeping several
+ * entries would make selection order-dependent. Merge them conservatively:
+ * countries are combined and conflicting extra tags are omitted.
+ */
+export const mergeBrandOptionsByValue = (
+    options: Array<BrandOption>
+): Array<BrandOption> => {
+    const grouped = new Map<string, BrandOption[]>()
+    for (const option of options) {
+        grouped.set(option.v, [...(grouped.get(option.v) ?? []), option])
+    }
+    return [...grouped.entries()].map(([value, candidates]) => {
+        const canonical = [...candidates].sort((left, right) => {
+            const leftLabel = left.lbl.en
+            const rightLabel = right.lbl.en
+            return (
+                leftLabel.length - rightLabel.length ||
+                leftLabel.localeCompare(rightLabel)
+            )
+        })[0]
+        const isGlobal = candidates.some((candidate) => !candidate.countryCodes)
+        const countryCodes = isGlobal
+            ? undefined
+            : [
+                  ...new Set(
+                      candidates.flatMap(
+                          (candidate) => candidate.countryCodes ?? []
+                      )
+                  ),
+              ].sort()
+
+        return {
+            ...canonical,
+            v: value,
+            tags: intersectRecords(
+                candidates.map((candidate) => candidate.tags)
+            ),
+            addTags: intersectRecords(
+                candidates.map((candidate) => candidate.addTags)
+            ),
+            ...(countryCodes ? { countryCodes } : {}),
+        }
+    })
+}
+
 const readNameSuggestionData = (): Record<string, unknown> => {
     const packageEntry = require.resolve('name-suggestion-index')
     const dataPath = path.resolve(
@@ -76,5 +134,10 @@ export const getBrandOptions = (): Record<string, Array<BrandOption>> => {
         brandOptions[parentId].push(option)
     }
 
-    return brandOptions
+    return Object.fromEntries(
+        Object.entries(brandOptions).map(([presetId, options]) => [
+            presetId,
+            mergeBrandOptionsByValue(options),
+        ])
+    )
 }

@@ -27,3 +27,9 @@ npm run importDescriptions
 ```
 
 Commit all changed files under `src/assets/tagsAndPresets` and `src/assets/mapStyle/sprites`. CI verifies that preset generation is deterministic and that its output is committed.
+
+`npm run catalog:validate` checks IDs and option values for uniqueness,
+references, geometries, sprite parity and progressive count floors. Name
+Suggestion Index entries sharing one `brand` value are merged by country;
+ancillary tags whose values conflict are deliberately omitted instead of
+attaching an arbitrary Wikidata entity.
