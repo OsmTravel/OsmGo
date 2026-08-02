@@ -373,10 +373,10 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                         diffFileResult,
                                         features
                                     )
-                                    this.mapService.eventMarkerReDraw.emit(
+                                    this.mapService.redrawMarkers(
                                         this.dataService.getGeojson()
                                     )
-                                    this.mapService.eventMarkerChangedReDraw.emit(
+                                    this.mapService.redrawChangedMarkers(
                                         this.dataService.getGeojsonChanged()
                                     )
                                     this.featuresChanges =
@@ -435,8 +435,8 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     cancelErrorFeature(feature) {
         this.dataService.cancelFeatureChange(feature)
         this.featuresChanges = this.dataService.getGeojsonChanged().features
-        this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson())
-        this.mapService.eventMarkerChangedReDraw.emit(
+        this.mapService.redrawMarkers(this.dataService.getGeojson())
+        this.mapService.redrawChangedMarkers(
             this.dataService.getGeojsonChanged()
         )
         this.error = undefined
@@ -454,10 +454,8 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         timer(100)
             .pipe(take(1))
             .subscribe((t) => {
-                this.mapService.eventMarkerReDraw.emit(
-                    this.dataService.getGeojson()
-                )
-                this.mapService.eventMarkerChangedReDraw.emit(
+                this.mapService.redrawMarkers(this.dataService.getGeojson())
+                this.mapService.redrawChangedMarkers(
                     this.dataService.getGeojsonChanged()
                 )
                 this.mapService.setIsProcessing(false)

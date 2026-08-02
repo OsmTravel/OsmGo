@@ -418,12 +418,8 @@ describe('PushDataToOsmPage', () => {
         const mapService = {
             ...createProcessingMapService(),
             getIconStyle: (value) => value,
-            eventMarkerReDraw: {
-                emit: vi.fn().mockName('EventEmitter.emit'),
-            },
-            eventMarkerChangedReDraw: {
-                emit: vi.fn().mockName('EventEmitter.emit'),
-            },
+            redrawMarkers: vi.fn().mockName('redrawMarkers'),
+            redrawChangedMarkers: vi.fn().mockName('redrawChangedMarkers'),
         }
         const configService = {
             getChangeSetComment: () => '',

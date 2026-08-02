@@ -1,12 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import {
-    DOCUMENT,
-    EventEmitter,
-    Inject,
-    Injectable,
-    NgZone,
-    signal,
-} from '@angular/core'
+import { DOCUMENT, Inject, Injectable, NgZone, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { AlertController } from '@ionic/angular/standalone'
@@ -118,7 +111,7 @@ export class MapService {
             }
         })
 
-        this.eventMarkerReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
+        this.markerRedraw$.subscribe((geojson) => {
             const missingMarker = []
             for (const feature of geojson.features) {
                 const marker = feature.properties.marker
@@ -151,8 +144,8 @@ export class MapService {
                 })
         })
 
-        this.eventMarkerChangedReDraw.subscribe(
-            (geojson?: OsmGoFeatureCollection) => {
+        this.changedMarkerRedraw$.subscribe(
+            (geojson: OsmGoFeatureCollection) => {
                 const missingMarker = []
                 for (const feature of geojson.features) {
                     const marker = feature.properties.marker
@@ -184,7 +177,7 @@ export class MapService {
             }
         )
 
-        this.eventMapMove.pipe(debounceTime(700)).subscribe(() => {
+        this.mapMove$.pipe(debounceTime(700)).subscribe(() => {
             const mapCenter = this.map.getCenter()
             const mapBearing = this.map.getBearing()
             const mapZoom = this.map.getZoom()
@@ -215,25 +208,31 @@ export class MapService {
 
     markersLoaded = []
 
-    eventDomMainReady = new EventEmitter()
-    eventCreateNewMap = new EventEmitter()
-    eventNewBboxPolygon = new EventEmitter<OsmGoFeatureCollection>()
-    eventMoveElement = new EventEmitter<ModalDismissData>()
-    eventShowModal = new EventEmitter<EventShowModal>()
-    eventOsmElementUpdated = new EventEmitter()
-    eventOsmElementDeleted = new EventEmitter()
-    eventOsmElementCreated = new EventEmitter()
-    eventMarkerReDraw = new EventEmitter<OsmGoFeatureCollection>()
-    eventMapIsLoaded = new EventEmitter<void>()
-    eventMarkerChangedReDraw = new EventEmitter<OsmGoFeatureCollection>()
-    eventShowDialogMultiFeatures = new EventEmitter<MapGeoJSONFeature[]>()
+    private readonly bboxChangedSubject = new Subject<OsmGoFeatureCollection>()
+    readonly bboxChanged$ = this.bboxChangedSubject.asObservable()
+    private readonly moveElementSubject = new Subject<ModalDismissData>()
+    readonly moveElement$ = this.moveElementSubject.asObservable()
+    private readonly showModalSubject = new Subject<EventShowModal>()
+    readonly showModal$ = this.showModalSubject.asObservable()
+    private readonly markerRedrawSubject = new Subject<OsmGoFeatureCollection>()
+    readonly markerRedraw$ = this.markerRedrawSubject.asObservable()
+    private readonly mapLoadedSubject = new Subject<void>()
+    readonly mapLoaded$ = this.mapLoadedSubject.asObservable()
+    private readonly changedMarkerRedrawSubject =
+        new Subject<OsmGoFeatureCollection>()
+    readonly changedMarkerRedraw$ =
+        this.changedMarkerRedrawSubject.asObservable()
+    private readonly featureChoiceSubject = new Subject<MapGeoJSONFeature[]>()
+    readonly featureChoiceRequested$ = this.featureChoiceSubject.asObservable()
     markersLayer: OsmGoMarker[] = []
 
     attributionControl: AttributionControl
 
     // CREATE NEW MARKER
-    eventMarkerMove = new EventEmitter()
-    eventMapMove = new EventEmitter()
+    private readonly markerMoveSubject = new Subject<LngLat>()
+    readonly markerMove$ = this.markerMoveSubject.asObservable()
+    private readonly mapMoveSubject = new Subject<void>()
+    readonly mapMove$ = this.mapMoveSubject.asObservable()
     private readonly markerMovingState = signal(false)
     readonly markerMoving = this.markerMovingState.asReadonly()
     markerPositionate: OsmGoMarker
@@ -245,6 +244,26 @@ export class MapService {
 
     setIsProcessing(isProcessing: boolean): void {
         this.processingState.set(isProcessing)
+    }
+
+    redrawBbox(geojson: OsmGoFeatureCollection): void {
+        this.bboxChangedSubject.next(geojson)
+    }
+
+    moveElement(data: ModalDismissData): void {
+        this.moveElementSubject.next(data)
+    }
+
+    showModal(data: EventShowModal): void {
+        this.showModalSubject.next(data)
+    }
+
+    redrawMarkers(geojson: OsmGoFeatureCollection): void {
+        this.markerRedrawSubject.next(geojson)
+    }
+
+    redrawChangedMarkers(geojson: OsmGoFeatureCollection): void {
+        this.changedMarkerRedrawSubject.next(geojson)
     }
 
     async loadUnknownMarker(factor: number): Promise<void> {
@@ -531,7 +550,7 @@ export class MapService {
         )
         this.markerMovingState.set(true)
         this.markerPositionate.addTo(this.map)
-        this.eventMarkerMove.subscribe((center) => {
+        this.markerMove$.subscribe((center) => {
             this.markerPositionate.setLngLat(center)
         })
     }
@@ -566,7 +585,7 @@ export class MapService {
             tags: newTag,
         }) as OsmGoFeature
         this.mode = 'Create'
-        this.eventShowModal.emit({
+        this.showModal({
             type: 'Create',
             geojson: pt,
             origineData: null,
@@ -589,7 +608,7 @@ export class MapService {
         const origineData = geojson.properties.changeType
             ? 'data_changed'
             : 'data'
-        this.eventShowModal.emit({
+        this.showModal({
             type: this.mode,
             geojson: geojson,
             newPosition: true,
@@ -603,7 +622,7 @@ export class MapService {
         const origineData = geojson.properties.changeType
             ? 'data_changed'
             : 'data'
-        this.eventShowModal.emit({
+        this.showModal({
             type: this.mode,
             geojson: geojson,
             origineData: origineData,
@@ -626,8 +645,8 @@ export class MapService {
     }
 
     resetDataMap(): void {
-        this.eventNewBboxPolygon.emit(this.dataService.resetGeojsonBbox())
-        this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData())
+        this.redrawBbox(this.dataService.resetGeojsonBbox())
+        this.redrawMarkers(this.dataService.resetGeojsonData())
     }
 
     getMapStyle(): Observable<any> {
@@ -696,9 +715,9 @@ export class MapService {
                 })
 
                 this.map.on('move', (e) => {
-                    this.eventMapMove.emit()
+                    this.mapMoveSubject.next()
                     if (this.markerMoving() || this.markerMoveMoving()) {
-                        this.eventMarkerMove.emit(this.map.getCenter())
+                        this.markerMoveSubject.next(this.map.getCenter())
                     }
                 })
 
@@ -758,7 +777,7 @@ export class MapService {
                         console.error(err)
                     })
                     .finally(() => {
-                        this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
+                        this.bboxChanged$.subscribe((geojsonPolygon) => {
                             const mapSource = this.map.getSource(
                                 'bbox'
                             ) as GeoJSONSource
@@ -772,32 +791,30 @@ export class MapService {
         // un nouveau polygon!
 
         // un marker est à déplacer!
-        this.subscriptionMoveElement = this.eventMoveElement.subscribe(
-            (data) => {
-                this.mode = data.mode
-                const geojson = data.geojson
-                // on recupere le marker concerné
-                let marker = null
-                for (let i = 0; i < this.markersLayer.length; i++) {
-                    const m = this.markersLayer[i]
-                    if (m.id === geojson.id) {
-                        marker = m
-                        break
-                    }
+        this.subscriptionMoveElement = this.moveElement$.subscribe((data) => {
+            this.mode = data.mode
+            const geojson = data.geojson
+            // on recupere le marker concerné
+            let marker = null
+            for (let i = 0; i < this.markersLayer.length; i++) {
+                const m = this.markersLayer[i]
+                if (m.id === geojson.id) {
+                    marker = m
+                    break
                 }
-                const coordinates = (geojson.geometry as GeoJSON.Point)
-                    .coordinates as LngLatLike
-                this.map.setCenter(coordinates)
-                this.markerMove = this.createDomMoveMarker(coordinates, geojson)
-                this.markerMoveMovingState.set(true)
-                this.markerMove.addTo(this.map)
-                this.subscriptionMarkerMove = this.eventMarkerMove.subscribe(
-                    (center) => {
-                        this.markerMove.setLngLat(center)
-                    }
-                )
             }
-        )
+            const coordinates = (geojson.geometry as GeoJSON.Point)
+                .coordinates as LngLatLike
+            this.map.setCenter(coordinates)
+            this.markerMove = this.createDomMoveMarker(coordinates, geojson)
+            this.markerMoveMovingState.set(true)
+            this.markerMove.addTo(this.map)
+            this.subscriptionMarkerMove = this.markerMove$.subscribe(
+                (center) => {
+                    this.markerMove.setLngLat(center)
+                }
+            )
+        })
     }
 
     setCenterInUrl(): void {
@@ -913,7 +930,7 @@ export class MapService {
             })
         }
 
-        this.eventShowModal.emit({
+        this.showModal({
             type: 'Read',
             geojson: geojson,
             origineData: origineData,
@@ -1000,9 +1017,9 @@ export class MapService {
         })
 
         // this.loadDataFromLocalStorage();
-        this.eventNewBboxPolygon.emit(this.dataService.geojsonBbox)
-        this.eventMarkerChangedReDraw.emit(this.dataService.geojsonChanged)
-        this.eventMarkerReDraw.emit(this.dataService.geojson)
+        this.redrawBbox(this.dataService.geojsonBbox)
+        this.redrawChangedMarkers(this.dataService.geojsonChanged)
+        this.redrawMarkers(this.dataService.geojson)
 
         this.map.addLayer({
             id: 'bboxLayer',
@@ -1302,7 +1319,7 @@ export class MapService {
             )
 
             if (uniqFeaturesById.length > 1) {
-                this.eventShowDialogMultiFeatures.emit(uniqFeaturesById)
+                this.featureChoiceSubject.next(uniqFeaturesById)
             } else {
                 this.selectFeature(uniqFeaturesById[0])
             }
@@ -1426,7 +1443,7 @@ export class MapService {
             this.locationService.publishCurrentLocation()
         }
 
-        this.eventMapIsLoaded.emit()
+        this.mapLoadedSubject.next()
     }
 
     async addMissingIconsToMap(iconsIds) {

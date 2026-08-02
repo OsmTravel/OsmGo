@@ -35,8 +35,8 @@ interface MainPageDependencies {
 }
 
 interface MainPageMapServiceStub extends Record<string, unknown> {
-    eventShowDialogMultiFeatures: Subject<unknown>
-    eventShowModal: Subject<unknown>
+    featureChoiceRequested$: Subject<unknown>
+    showModal$: Subject<unknown>
     setCenterInUrl: Mock
 }
 
@@ -49,8 +49,8 @@ const createPage = ({
     configService = {},
 }: MainPageDependencies = {}) => {
     const resolvedMapService: MainPageMapServiceStub = {
-        eventShowDialogMultiFeatures: new Subject(),
-        eventShowModal: new Subject(),
+        featureChoiceRequested$: new Subject(),
+        showModal$: new Subject(),
         setCenterInUrl: vi.fn(),
         ...mapService,
     } as MainPageMapServiceStub
@@ -101,7 +101,7 @@ const createPage = ({
 
 describe('MainPage', () => {
     it('opens and closes the feature modal with its input data', async () => {
-        const eventShowModal = new Subject<{
+        const showModal$ = new Subject<{
             type: string
             geojson: { id: string }
             origineData: string
@@ -123,12 +123,12 @@ describe('MainPage', () => {
         const { page, configService, mapService } = createPage({
             modalCtrl,
             mapService: {
-                eventShowModal,
+                showModal$,
                 setCenterInUrl: vi.fn(),
             },
         })
 
-        eventShowModal.next({
+        showModal$.next({
             type: 'Read',
             geojson: feature,
             origineData: 'data',
@@ -157,12 +157,8 @@ describe('MainPage', () => {
 
     it('keeps existing data and clears processing after a download failure', () => {
         const mapService = {
-            eventNewBboxPolygon: {
-                emit: vi.fn().mockName('EventEmitter.emit'),
-            },
-            eventMarkerReDraw: {
-                emit: vi.fn().mockName('EventEmitter.emit'),
-            },
+            redrawBbox: vi.fn().mockName('redrawBbox'),
+            redrawMarkers: vi.fn().mockName('redrawMarkers'),
             getBbox: () => [1, 2, 3, 4],
             setIsProcessing: vi.fn().mockName('setIsProcessing'),
         }
@@ -210,10 +206,8 @@ describe('MainPage', () => {
     })
 
     it('forwards marker movement after the modal closes', async () => {
-        const eventShowModal = new Subject<any>()
-        const eventMoveElement = {
-            emit: vi.fn().mockName('eventMoveElement.emit'),
-        }
+        const showModal$ = new Subject<any>()
+        const moveElement = vi.fn().mockName('moveElement')
         const movedFeature = {
             type: 'Move',
             geojson: { id: 'node/1' },
@@ -228,20 +222,20 @@ describe('MainPage', () => {
                 create: vi.fn().mockResolvedValue(modal),
             },
             mapService: {
-                eventShowModal,
-                eventMoveElement,
+                showModal$,
+                moveElement,
                 setCenterInUrl: vi.fn(),
             },
         })
 
-        eventShowModal.next({
+        showModal$.next({
             type: 'Read',
             geojson: movedFeature.geojson,
             origineData: 'data',
         })
 
         await vi.waitFor(() => {
-            expect(eventMoveElement.emit).toHaveBeenCalledWith(movedFeature)
+            expect(moveElement).toHaveBeenCalledWith(movedFeature)
         })
         expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
     })

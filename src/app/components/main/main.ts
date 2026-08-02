@@ -114,28 +114,26 @@ export class MainPage implements AfterViewInit {
             }
         })
 
-        this.mapService.eventShowDialogMultiFeatures.subscribe(
-            async (features) => {
-                const modal = await this.modalCtrl.create({
-                    component: DialogMultiFeaturesComponent,
-                    cssClass: 'dialog-multi-features',
-                    componentProps: {
-                        features: features,
-                        jsonSprites: this.tagsService.jsonSprites,
-                    },
-                })
-                await modal.present()
+        this.mapService.featureChoiceRequested$.subscribe(async (features) => {
+            const modal = await this.modalCtrl.create({
+                component: DialogMultiFeaturesComponent,
+                cssClass: 'dialog-multi-features',
+                componentProps: {
+                    features: features,
+                    jsonSprites: this.tagsService.jsonSprites,
+                },
+            })
+            await modal.present()
 
-                modal.onDidDismiss().then((d) => {
-                    if (d && d.data) {
-                        const feature = d.data
-                        this.mapService.selectFeature(feature) // bof
-                    }
-                })
-            }
-        )
+            modal.onDidDismiss().then((d) => {
+                if (d && d.data) {
+                    const feature = d.data
+                    this.mapService.selectFeature(feature) // bof
+                }
+            })
+        })
 
-        this.mapService.eventShowModal.subscribe(async (_data) => {
+        this.mapService.showModal$.subscribe(async (_data) => {
             this.configService.freezeMapRenderer = true
             const newPosition = _data.newPosition ? _data.newPosition : false
 
@@ -159,14 +157,14 @@ export class MainPage implements AfterViewInit {
                 this.configService.freezeMapRenderer = false
                 if (data) {
                     if (data.type === 'Move') {
-                        this.mapService.eventMoveElement.emit(data)
+                        this.mapService.moveElement(data)
                     }
                     if (data.redraw) {
                         timer(50).subscribe((t) => {
-                            this.mapService.eventMarkerReDraw.emit(
+                            this.mapService.redrawMarkers(
                                 this.dataService.getGeojson()
                             )
-                            this.mapService.eventMarkerChangedReDraw.emit(
+                            this.mapService.redrawChangedMarkers(
                                 this.dataService.getGeojsonChanged()
                             )
                         })
@@ -348,13 +346,9 @@ export class MainPage implements AfterViewInit {
             .pipe(
                 map((newDataJson) => {
                     this.dataService.setGeojsonBbox(newDataJson['geojsonBbox'])
-                    this.mapService.eventNewBboxPolygon.emit(
-                        newDataJson['geojsonBbox']
-                    )
+                    this.mapService.redrawBbox(newDataJson['geojsonBbox'])
                     this.dataService.setGeojson(newDataJson['geojson'])
-                    this.mapService.eventMarkerReDraw.emit(
-                        newDataJson['geojson']
-                    )
+                    this.mapService.redrawMarkers(newDataJson['geojson'])
                     this.mapService.setIsProcessing(false)
                 }),
 
@@ -421,7 +415,7 @@ export class MainPage implements AfterViewInit {
                 }
             )
 
-        this.mapService.eventMapIsLoaded.subscribe(() => {
+        this.mapService.mapLoaded$.subscribe(() => {
             if (this.addOsmObjectOnStart) {
                 this.mapService.openModalOsm(
                     this.addOsmObjectOnStart.coords,
@@ -459,7 +453,7 @@ export class MainPage implements AfterViewInit {
                                     return
                                 }
                                 // this.mapService.selectFeature(feature)
-                                this.mapService.eventShowModal.emit({
+                                this.mapService.showModal({
                                     type: 'Read',
                                     geojson: feature,
                                     origineData: origineData,
