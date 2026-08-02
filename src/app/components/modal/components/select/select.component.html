@@ -7,7 +7,7 @@
             ) {
                 <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             } @else {
-                <ion-icon name="code"></ion-icon>
+                <ion-icon aria-hidden="true" name="code"></ion-icon>
                 {{ preset()?.key }}
             }
         </ion-card-header>
@@ -79,7 +79,14 @@
                 <div class="buttonEdit2cols">
                     <ion-col width-10 class="ion-col10">
                         <ion-icon
+                            role="button"
+                            tabindex="0"
+                            [attr.aria-label]="'SHARED.CLEAR' | translate"
                             (click)="tag().value = ''"
+                            (keydown.enter)="tag().value = ''"
+                            (keydown.space)="
+                                tag().value = ''; $event.preventDefault()
+                            "
                             name="close"
                             style="width: 2em; height: 2em"
                         ></ion-icon>

@@ -5,7 +5,11 @@
         <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate}}</h2>
     </div>
     <div style="margin: 1em">
-        <ion-icon class="uploadingIcon" name="globe"></ion-icon>
+        <ion-icon
+            aria-hidden="true"
+            class="uploadingIcon"
+            name="globe"
+        ></ion-icon>
     </div>
     <div style="text-align: center">
         <h2>{{ 'SEND_DATA.DONT_CLOSE' | translate}}</h2>
@@ -13,6 +17,7 @@
     } @if (uploadedOk()) {
     <div style="margin: 1em">
         <ion-icon
+            aria-hidden="true"
             class="uploadedOkIcon"
             name="checkmark-circle-outline"
         ></ion-icon>
@@ -24,8 +29,13 @@
 <ion-header color="primary">
     <ion-toolbar color="primary">
         <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="navCtrl.back()" [disabled]="isPushing()">
+            <ion-button
+                [attr.aria-label]="'SHARED.CLOSE' | translate"
+                (click)="navCtrl.back()"
+                [disabled]="isPushing()"
+            >
                 <ion-icon
+                    aria-hidden="true"
                     name="chevron-back-outline"
                     slot="icon-only"
                 ></ion-icon>
@@ -124,7 +134,12 @@
             <th>{{ 'SEND_DATA.NAME' | translate}}</th>
             <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
 
-            <th style="width: 45px"><ion-icon name="locate"></ion-icon></th>
+            <th
+                style="width: 45px"
+                [attr.aria-label]="'A11Y.LOCATION' | translate"
+            >
+                <ion-icon aria-hidden="true" name="locate"></ion-icon>
+            </th>
             <th style="width: 45px">{{ 'SEND_DATA.ERROR' | translate}}</th>
         </tr>
         @for (item of featuresChanges(); track item) {
@@ -132,18 +147,21 @@
             <td>
                 @if (item.properties.changeType === 'Create') {
                 <ion-icon
+                    [attr.aria-label]="'SHARED.CREATE' | translate"
                     name="add"
                     class="iconType"
                     style="color: green"
                 ></ion-icon>
                 } @if (item.properties.changeType === 'Update') {
                 <ion-icon
+                    [attr.aria-label]="'SHARED.EDIT' | translate"
                     name="create"
                     class="iconType"
                     style="color: blue"
                 ></ion-icon>
                 } @if (item.properties.changeType === 'Delete') {
                 <ion-icon
+                    [attr.aria-label]="'SHARED.DELETE' | translate"
                     name="trash"
                     class="iconType"
                     style="color: red"
@@ -165,13 +183,24 @@
                 {{item.properties?.primaryTag.key}}:
                 {{item.properties?.primaryTag.value}}
             </td>
-            <td (click)="centerToElement(item.geometry)">
-                <ion-icon style="font-size: 2em" name="locate"></ion-icon>
+            <td
+                role="button"
+                tabindex="0"
+                [attr.aria-label]="'A11Y.CENTER_FEATURE' | translate"
+                (click)="centerToElement(item.geometry)"
+                (keydown.enter)="centerToElement(item.geometry)"
+                (keydown.space)="centerToElement(item.geometry); $event.preventDefault()"
+            >
+                <ion-icon
+                    aria-hidden="true"
+                    style="font-size: 2em"
+                    name="locate"
+                ></ion-icon>
             </td>
             <td>
                 @if (item.error) {
                 <div (click)="displayError(item.error)">
-                    <ion-icon name="bug"></ion-icon>
+                    <ion-icon aria-hidden="true" name="bug"></ion-icon>
                 </div>
                 }
             </td>

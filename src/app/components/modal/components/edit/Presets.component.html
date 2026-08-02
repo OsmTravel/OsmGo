@@ -10,15 +10,24 @@
 }
 @if (preset()?.type === 'list') {
     <ion-card>
-        <ion-card-header (click)="emitOpenModal(tag())">
+        <ion-card-header
+            role="button"
+            tabindex="0"
+            (click)="emitOpenModal(tag())"
+            (keydown.enter)="emitOpenModal(tag())"
+            (keydown.space)="emitOpenModal(tag()); $event.preventDefault()"
+        >
             @if (!displayCode()) {
                 <b
                     >{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}
-                    <ion-icon name="settings"></ion-icon>
+                    <ion-icon aria-hidden="true" name="settings"></ion-icon>
                 </b>
             }
             @if (displayCode()) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
+                <b>
+                    <ion-icon aria-hidden="true" name="code"></ion-icon>
+                    {{ preset()?.key }}
+                </b>
             }
         </ion-card-header>
         <ion-card-content>
@@ -52,7 +61,7 @@
                         </ion-item>
                     } @else {
                         <ion-label color="primary">
-                            <ion-icon name="code"></ion-icon>
+                            <ion-icon aria-hidden="true" name="code"></ion-icon>
                         </ion-label>
                         <ion-input
                             type="text"
@@ -63,7 +72,14 @@
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
+                        role="button"
+                        tabindex="0"
+                        [attr.aria-label]="'SHARED.CLEAR' | translate"
                         (click)="tag().value = ''"
+                        (keydown.enter)="tag().value = ''"
+                        (keydown.space)="
+                            tag().value = ''; $event.preventDefault()
+                        "
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -79,7 +95,10 @@
                 <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
             @if (displayCode()) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
+                <b>
+                    <ion-icon aria-hidden="true" name="code"></ion-icon>
+                    {{ preset()?.key }}
+                </b>
             }
         </ion-card-header>
         <ion-card-content>
@@ -95,7 +114,14 @@
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
+                        role="button"
+                        tabindex="0"
+                        [attr.aria-label]="'SHARED.CLEAR' | translate"
                         (click)="tag().value = ''"
+                        (keydown.enter)="tag().value = ''"
+                        (keydown.space)="
+                            tag().value = ''; $event.preventDefault()
+                        "
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -115,11 +141,17 @@
                 <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
             @if (displayCode()) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
+                <b>
+                    <ion-icon aria-hidden="true" name="code"></ion-icon>
+                    {{ preset()?.key }}
+                </b>
             }
             @if (preset()?.type === 'url' && tag().value) {
-                <a href="{{ tag().value }}" target="_blank"
-                    ><ion-icon name="link"></ion-icon
+                <a
+                    href="{{ tag().value }}"
+                    target="_blank"
+                    [attr.aria-label]="'A11Y.OPEN_LINK' | translate"
+                    ><ion-icon aria-hidden="true" name="link"></ion-icon
                 ></a>
             }
         </ion-card-header>
@@ -136,7 +168,14 @@
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
+                        role="button"
+                        tabindex="0"
+                        [attr.aria-label]="'SHARED.CLEAR' | translate"
                         (click)="tag().value = ''"
+                        (keydown.enter)="tag().value = ''"
+                        (keydown.space)="
+                            tag().value = ''; $event.preventDefault()
+                        "
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -152,7 +191,10 @@
                 <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
             @if (displayCode()) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
+                <b>
+                    <ion-icon aria-hidden="true" name="code"></ion-icon>
+                    {{ preset()?.key }}
+                </b>
             }
         </ion-card-header>
         <ion-card-content>
@@ -177,7 +219,14 @@
                     </div>
                     <div class="buttonEdit2cols">
                         <ion-icon
+                            role="button"
+                            tabindex="0"
+                            [attr.aria-label]="'SHARED.CLEAR' | translate"
                             (click)="tag().value = ''"
+                            (keydown.enter)="tag().value = ''"
+                            (keydown.space)="
+                                tag().value = ''; $event.preventDefault()
+                            "
                             name="close"
                             style="width: 2em; height: 2em"
                         ></ion-icon>

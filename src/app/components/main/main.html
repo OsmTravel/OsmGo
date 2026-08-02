@@ -12,8 +12,15 @@
                 >!</ion-badge
             >
             }
-            <ion-fab-button tappable ion-fab fab-bottom (click)="openMenu()">
-                <ion-icon name="menu"></ion-icon>
+            <ion-fab-button
+                data-testid="open-menu"
+                tappable
+                ion-fab
+                fab-bottom
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.MENU')"
+                (click)="openMenu()"
+            >
+                <ion-icon aria-hidden="true" name="menu"></ion-icon>
             </ion-fab-button>
         </ion-fab>
 
@@ -26,9 +33,10 @@
         >
             <ion-fab-button
                 data-testid="open-upload"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.UPLOAD')"
                 (click)="navCtrl.navigateForward('/pushData')"
             >
-                <ion-icon name="cloud-upload"></ion-icon>
+                <ion-icon aria-hidden="true" name="cloud-upload"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -41,6 +49,7 @@
         >
             <ion-fab-button
                 data-testid="load-osm-data"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
                 tappable
                 (click)="loadData()"
                 arrow="true"
@@ -48,7 +57,7 @@
                 [disabled]="(configService.currentZoom() ?? 0) < 14"
             >
                 @if (!mapService.isProcessing()) {
-                <ion-icon name="refresh"></ion-icon>
+                <ion-icon aria-hidden="true" name="refresh"></ion-icon>
                 } @if (mapService.isProcessing()) {
                 <ion-spinner></ion-spinner>
                 }
@@ -61,7 +70,11 @@
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
         >
-            <ion-fab-button data-testid="loading-osm-data" disabled>
+            <ion-fab-button
+                data-testid="loading-osm-data"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
+                disabled
+            >
                 <ion-spinner></ion-spinner>
             </ion-fab-button>
         </ion-fab>
@@ -76,8 +89,9 @@
                 [color]="mapService.isDisplaySatelliteBaseMap() ? 'light' : 'secondary'  "
                 (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap())"
                 [title]="translate.instant(mapService.isDisplaySatelliteBaseMap() ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
+                [attr.aria-label]="translate.instant(mapService.isDisplaySatelliteBaseMap() ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
             >
-                <ion-icon name="image"></ion-icon>
+                <ion-icon aria-hidden="true" name="image"></ion-icon>
             </ion-fab-button>
         </ion-fab>
 
@@ -95,10 +109,11 @@
                 ion-fab
                 fab-bottom
                 color="danger"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
                 (click)="mapService.positionateMarker()"
                 [disabled]="mapService.loadingData()"
             >
-                <ion-icon name="add"></ion-icon>
+                <ion-icon aria-hidden="true" name="add"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -115,10 +130,11 @@
                 tappable
                 ion-fab
                 fab-bottom
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
                 (click)="mapService.centerOnMyPosition()"
                 [disabled]="!locationService.gpsIsReady()"
             >
-                <ion-icon name="locate"></ion-icon>
+                <ion-icon aria-hidden="true" name="locate"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -135,9 +151,10 @@
                 tappable
                 fab-bottom
                 color="secondary"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CONFIRM_ADD')"
                 (click)="mapService.openModalOsm()"
             >
-                <ion-icon name="checkmark"></ion-icon>
+                <ion-icon aria-hidden="true" name="checkmark"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -152,9 +169,10 @@
                 tappable
                 fab-bottom
                 color="danger"
+                [attr.aria-label]="translate.instant('SHARED.CANCEL')"
                 (click)="mapService.cancelNewMarker()"
             >
-                <ion-icon name="close"></ion-icon>
+                <ion-icon aria-hidden="true" name="close"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -169,9 +187,10 @@
                 data-testid="confirm-marker-move"
                 fab-bottom
                 color="secondary"
+                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
                 (click)="mapService.openModalWithNewPosition()"
             >
-                <ion-icon name="checkmark"></ion-icon>
+                <ion-icon aria-hidden="true" name="checkmark"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }
@@ -187,9 +206,10 @@
                 ion-fab
                 fab-bottom
                 color="danger"
+                [attr.aria-label]="translate.instant('SHARED.CANCEL')"
                 (click)="mapService.cancelNewPosition()"
             >
-                <ion-icon name="close"></ion-icon>
+                <ion-icon aria-hidden="true" name="close"></ion-icon>
             </ion-fab-button>
         </ion-fab>
         }

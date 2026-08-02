@@ -5,6 +5,11 @@ th {
     padding: 4px;
 }
 
+ion-card-header,
+ion-card-content th {
+    color: #333;
+}
+
 .footerButton {
     width: 45%;
 }

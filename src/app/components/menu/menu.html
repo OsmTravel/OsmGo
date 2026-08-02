@@ -17,8 +17,12 @@
                     ></ion-title
                 >
                 <ion-buttons slot="start">
-                    <ion-button (click)="closeMenu()">
+                    <ion-button
+                        [attr.aria-label]="'SHARED.CLOSE' | translate"
+                        (click)="closeMenu()"
+                    >
                         <ion-icon
+                            aria-hidden="true"
                             slot="icon-only"
                             name="chevron-back-outline"
                         ></ion-icon>
@@ -30,40 +34,40 @@
             <ion-list style="padding-top: 0">
                 @if (newVersion()) {
                 <ion-item color="black" (click)="reloadApp()">
-                    <ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="refresh"></ion-icon>
+                    {{'MENU.NEW_VERSION' | translate }}
                 </ion-item>
                 } @if (!this.configService.userInfo().connected) {
                 <ion-item (click)="login()">
-                    <ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="log-in"></ion-icon>
+                    {{'MENU.CONNECTION' | translate }}
                 </ion-item>
                 }
                 <ion-item (click)="openBaseMapsPage()">
-                    <ion-icon name="map"></ion-icon> {{
+                    <ion-icon aria-hidden="true" name="map"></ion-icon> {{
                     'SETTINGS.AERIAL_IMAGERY' | translate}}
                 </ion-item>
                 <ion-item (click)="pushPage('/tags')">
-                    <ion-icon name="pricetags"></ion-icon>
+                    <ion-icon aria-hidden="true" name="pricetags"></ion-icon>
                     {{'MENU.TAG_MANAGEMENT' | translate }}
                 </ion-item>
                 <ion-item (click)="pushPage('/settings')">
-                    <ion-icon name="settings"></ion-icon> {{'MENU.SETTINGS' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="settings"></ion-icon>
+                    {{'MENU.SETTINGS' | translate }}
                 </ion-item>
                 <ion-item (click)="pushPage('/about')">
-                    <ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="help-circle"></ion-icon>
+                    {{'MENU.ABOUT' | translate }}
                 </ion-item>
                 @if (this.configService.userInfo().connected) {
                 <ion-item (click)="logout()">
-                    <ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="log-out"></ion-icon>
+                    {{'MENU.SIGN_OUT' | translate }}
                 </ion-item>
                 }
                 <ion-item (click)="deleteDatapresentConfirm()">
-                    <ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' |
-                    translate }}
+                    <ion-icon aria-hidden="true" name="trash"></ion-icon>
+                    {{'MENU.DELETE_DATA' | translate }}
                 </ion-item>
             </ion-list>
         </ion-content>

@@ -14,7 +14,7 @@
         <ion-card-content (click)="emitOpenModal()">
             @if (displayCode()) {
             <p class="code">
-                <ion-icon name="code"></ion-icon>
+                <ion-icon aria-hidden="true" name="code"></ion-icon>
                 {{ config.tags | displayTags }}
             </p>
             } @else { @if (config.lbl) {
@@ -32,9 +32,14 @@
         @if (isEditMode()) {
         <div class="actions">
             <ion-icon
+                role="button"
+                tabindex="0"
+                [attr.aria-label]="(isBookmarked() ? 'A11Y.REMOVE_BOOKMARK' : 'A11Y.ADD_BOOKMARK') | translate"
                 [style.color]="isBookmarked() ? '#f71000' : '#d8d8d8'"
                 name="heart"
                 (click)="emitToggleBookmark()"
+                (keydown.enter)="emitToggleBookmark()"
+                (keydown.space)="emitToggleBookmark(); $event.preventDefault()"
             ></ion-icon>
         </div>
         }

@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
+import { TranslateModule } from '@ngx-translate/core'
 import type { JsonSprites, TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 
@@ -8,7 +9,14 @@ import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
     selector: 'primary-key',
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
-    imports: [DisplayTagsPipe, IconComponent, IonCard, IonCardContent, IonIcon],
+    imports: [
+        DisplayTagsPipe,
+        IconComponent,
+        IonCard,
+        IonCardContent,
+        IonIcon,
+        TranslateModule,
+    ],
 })
 export class PrimaryKey {
     readonly openPrimaryTagModal = output<void>()

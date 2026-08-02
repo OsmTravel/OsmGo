@@ -1,8 +1,12 @@
 <ion-header color="primary">
     <ion-toolbar color="primary">
         <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="navCtrl.back()">
+            <ion-button
+                [attr.aria-label]="'SHARED.CLOSE' | translate"
+                (click)="navCtrl.back()"
+            >
                 <ion-icon
+                    aria-hidden="true"
                     name="chevron-back-outline"
                     slot="icon-only"
                 ></ion-icon>
@@ -15,7 +19,7 @@
 <ion-content class="ion-padding-bottom">
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="map" slot="start"></ion-icon>
+            <ion-icon aria-hidden="true" name="map" slot="start"></ion-icon>
             <ion-label>{{ 'SETTINGS.MAP' | translate}}</ion-label>
         </ion-item-divider>
 
@@ -25,6 +29,7 @@
                 <p>{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.POSITION_TRACKING' | translate"
                 [checked]="this.configService.config().followPosition"
                 (ionChange)="followPositionChange($event)"
             ></ion-toggle>
@@ -36,6 +41,7 @@
                 <p>{{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.ORIENTATION_TRACKING' | translate"
                 [checked]="this.configService.config().lockMapHeading"
                 (ionChange)="lockMapHeadingChange($event)"
             ></ion-toggle>
@@ -47,6 +53,7 @@
                 <p>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate"
                 [checked]="this.configService.config().centerWhenGpsIsReady"
                 (ionChange)="centerWhenGpsIsReadyChange($event)"
             ></ion-toggle>
@@ -58,6 +65,7 @@
                 <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate"
                 [checked]="this.configService.config().oldTagsIcon.display"
                 (ionChange)="displayOldTagIconChange($event)"
             ></ion-toggle>
@@ -69,6 +77,7 @@
                 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate}}
             </ion-label>
             <ion-range
+                [attr.aria-label]="'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate"
                 [disabled]="!this.configService.config().oldTagsIcon.display"
                 [value]="this.configService.config().oldTagsIcon.year"
                 debounce="300"
@@ -87,6 +96,7 @@
                 <p>{{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.DISPLAY_FIXME_ICON' | translate"
                 [checked]="this.configService.config().displayFixmeIcon"
                 (ionChange)="displayFixmeIconChange($event)"
             ></ion-toggle>
@@ -98,6 +108,7 @@
                 <p>{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.HIDE_LARGE_POLYGON' | translate"
                 [checked]="this.configService.config().filterWayByArea"
                 (ionChange)="filterWayByArea($event)"
             ></ion-toggle>
@@ -109,6 +120,7 @@
                 <p>{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.HIDE_LONG_LINE' | translate"
                 [checked]="this.configService.config().filterWayByLength"
                 (ionChange)="filterWayByLength($event)"
             ></ion-toggle>
@@ -120,6 +132,7 @@
                 <p>{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.LINES_SELECTABLE' | translate"
                 [checked]="this.configService.config().isSelectableLine"
                 (ionChange)="isSelectableLineChange($event)"
             ></ion-toggle>
@@ -131,6 +144,7 @@
                 <p>{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.POLYGONS_SELECTABLE' | translate"
                 [checked]="this.configService.config().isSelectablePolygon"
                 (ionChange)="isSelectablePolygonChange($event)"
             ></ion-toggle>
@@ -139,7 +153,11 @@
 
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="pricetags" slot="start"></ion-icon>
+            <ion-icon
+                aria-hidden="true"
+                name="pricetags"
+                slot="start"
+            ></ion-icon>
             <ion-label>{{ 'SETTINGS.TAGS' | translate}}</ion-label>
         </ion-item-divider>
 
@@ -166,6 +184,7 @@
                 <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'SETTINGS.ADD_SURVEY_DATE' | translate"
                 [checked]="this.configService.config().addSurveyDate"
                 (ionChange)="addSurveyDateChange($event)"
             ></ion-toggle>
@@ -202,6 +221,7 @@
                 SETTINGS.SURVEY_CARD_RANGE
             </ion-label>
             <ion-range
+                [attr.aria-label]="'SETTINGS.SURVEY_CARD_RANGE' | translate"
                 [disabled]="this.configService.config().surveyCard.display != 'when_older'"
                 [value]="this.configService.config().surveyCard.year"
                 debounce="300"
@@ -217,7 +237,7 @@
 
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="library" slot="start"></ion-icon>
+            <ion-icon aria-hidden="true" name="library" slot="start"></ion-icon>
             <ion-label>{{ 'SETTINGS.DATA' | translate}}</ion-label>
         </ion-item-divider>
 
@@ -233,6 +253,7 @@
                     </p>
                 </ion-label>
                 <ion-range
+                    [attr.aria-label]="'SETTINGS.LIMIT_FEATURES' | translate"
                     [value]="this.configService.config().limitFeatures"
                     debounce="300"
                     step="2000"
@@ -254,6 +275,7 @@
                     <p class="hint">{{ 'SETTINGS.MARGIN_HINT' | translate}}</p>
                 </ion-label>
                 <ion-range
+                    [attr.aria-label]="'SETTINGS.MARGIN' | translate"
                     [value]="this.configService.config().mapMarginBuffer"
                     debounce="300"
                     snaps
@@ -267,7 +289,11 @@
 
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="language" slot="start"></ion-icon>
+            <ion-icon
+                aria-hidden="true"
+                name="language"
+                slot="start"
+            ></ion-icon>
             <ion-label
                 >{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</ion-label
             >
@@ -329,7 +355,11 @@
 
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="file-tray" slot="start"></ion-icon>
+            <ion-icon
+                aria-hidden="true"
+                name="file-tray"
+                slot="start"
+            ></ion-icon>
             <ion-label>{{ 'SETTINGS.CACHE' | translate}}</ion-label>
         </ion-item-divider>
 
@@ -340,18 +370,20 @@
             </ion-label>
             <ion-button
                 color="danger"
+                [attr.aria-label]="'SHARED.DELETE' | translate"
                 shape="round"
                 (click)="deleteCache()"
                 size="big"
             >
-                <ion-icon slot="icon-only" name="trash"> </ion-icon>
+                <ion-icon aria-hidden="true" slot="icon-only" name="trash">
+                </ion-icon>
             </ion-button>
         </ion-item>
     </ion-item-group>
 
     <ion-item-group>
         <ion-item-divider>
-            <ion-icon name="bug" slot="start"></ion-icon>
+            <ion-icon aria-hidden="true" name="bug" slot="start"></ion-icon>
             <ion-label>Developer mode</ion-label>
         </ion-item-divider>
 
@@ -364,6 +396,7 @@
                 </p>
             </ion-label>
             <ion-toggle
+                [attr.aria-label]="'A11Y.USE_OSM_DEV_SERVER' | translate"
                 [checked]="this.configService.config().isDevServer"
                 (ionChange)="changeIsDevServer($event['detail']['checked'])"
             ></ion-toggle>

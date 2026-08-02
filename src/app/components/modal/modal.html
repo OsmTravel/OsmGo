@@ -1,10 +1,14 @@
 <div class="wrapper">
     <ion-fab class="toogleCodeButton">
-        <ion-fab-button size="small" (click)="toogleCode()">
+        <ion-fab-button
+            size="small"
+            [attr.aria-label]="'A11Y.CODE' | translate"
+            (click)="toogleCode()"
+        >
             @if (displayCode) {
-            <ion-icon name="code-working"> </ion-icon>
+            <ion-icon aria-hidden="true" name="code-working"> </ion-icon>
             } @if (!displayCode) {
-            <ion-icon name="code"> </ion-icon>
+            <ion-icon aria-hidden="true" name="code"> </ion-icon>
             }
         </ion-fab-button>
     </ion-fab>
@@ -73,7 +77,7 @@
         <ion-footer>
             @if (feature.properties['changeType']) {
             <div class="modifiedWarning">
-                <ion-icon name="warning"></ion-icon>
+                <ion-icon aria-hidden="true" name="warning"></ion-icon>
                 <span
                     >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
                     }}</span
@@ -84,7 +88,11 @@
                     color="danger"
                     [disabled]="mapService.isProcessing()"
                 >
-                    <ion-icon name="reload" slot="start"></ion-icon>
+                    <ion-icon
+                        aria-hidden="true"
+                        name="reload"
+                        slot="start"
+                    ></ion-icon>
                     {{ 'SHARED.CLEAR' | translate }}
                 </ion-button>
             </div>
@@ -92,7 +100,11 @@
             <div class="actions">
                 <div class="left section">
                     <ion-button (click)="dismiss()" fill="clear">
-                        <ion-icon name="close" slot="start"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            name="close"
+                            slot="start"
+                        ></ion-icon>
                         {{ 'SHARED.CLOSE' | translate }}
                     </ion-button>
                 </div>
@@ -102,7 +114,11 @@
                         (click)="updateMode()"
                         [disabled]="mapService.isProcessing()"
                     >
-                        <ion-icon name="pencil" slot="start"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            name="pencil"
+                            slot="start"
+                        ></ion-icon>
                         {{ 'SHARED.EDIT' | translate }}
                     </ion-button>
                 </div>
@@ -130,18 +146,26 @@
                 <ion-fab>
                     <ion-fab-button
                         size="small"
+                        [attr.aria-label]="'A11Y.COPY_FIELDS' | translate"
                         (click)="saveFields(tagId, tags)"
                     >
-                        <ion-icon src="./assets/fa/copy-solid.svg"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            src="./assets/fa/copy-solid.svg"
+                        ></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
                 @if (savedFields) {
                 <ion-fab style="margin-left: 45px">
                     <ion-fab-button
                         size="small"
+                        [attr.aria-label]="'A11Y.PASTE_FIELDS' | translate"
                         (click)="restoreFields(tagId, tags)"
                     >
-                        <ion-icon src="./assets/fa/paste-solid.svg"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            src="./assets/fa/paste-solid.svg"
+                        ></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
                 }
@@ -192,17 +216,18 @@
             <ion-button
                 tappable
                 color="secondary"
+                [attr.aria-label]="'SHARED.ADD' | translate"
                 (click)="openModalAddTag()"
                 style="margin: 5px 10px 10px"
                 expand="block"
             >
-                <ion-icon name="add"> </ion-icon>
+                <ion-icon aria-hidden="true" name="add"> </ion-icon>
             </ion-button>
         </div>
         <ion-footer>
             @if (feature.properties['changeType']) {
             <div class="modifiedWarning">
-                <ion-icon name="warning"></ion-icon>
+                <ion-icon aria-hidden="true" name="warning"></ion-icon>
                 <span
                     >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
                     }}</span
@@ -213,7 +238,11 @@
                     color="danger"
                     [disabled]="mapService.isProcessing()"
                 >
-                    <ion-icon name="reload" slot="start"></ion-icon>
+                    <ion-icon
+                        aria-hidden="true"
+                        name="reload"
+                        slot="start"
+                    ></ion-icon>
                     {{ 'SHARED.CLEAR' | translate }}
                 </ion-button>
             </div>
@@ -221,7 +250,11 @@
             <div class="actions">
                 <div class="left section">
                     <ion-button tappable (click)="dismiss()" fill="clear">
-                        <ion-icon name="close" slot="start"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            name="close"
+                            slot="start"
+                        ></ion-icon>
                         {{ 'SHARED.CLOSE' | translate }}
                     </ion-button>
                 </div>
@@ -229,21 +262,23 @@
                     @if (feature.properties.type === 'node') {
                     <ion-button
                         data-testid="move-poi"
+                        [attr.aria-label]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
                         tappable
                         [disabled]="feature.properties.usedByWays || mapService.isProcessing()"
                         (click)="moveOsmElement()"
                     >
-                        <ion-icon name="move"></ion-icon>
+                        <ion-icon aria-hidden="true" name="move"></ion-icon>
                     </ion-button>
                     } @if (feature.properties.type === 'node' && mode ===
                     'Update') {
                     <ion-button
                         tappable
                         color="danger"
+                        [attr.aria-label]="'SHARED.DELETE' | translate"
                         [disabled]="mapService.isProcessing()"
                         (click)="presentConfirm()"
                     >
-                        <ion-icon name="trash"></ion-icon>
+                        <ion-icon aria-hidden="true" name="trash"></ion-icon>
                     </ion-button>
                     }
                 </div>
@@ -256,7 +291,11 @@
                         [disabled]="mapService.isProcessing()"
                         (click)="updateOsmElement(tagConfig)"
                     >
-                        <ion-icon name="checkmark" slot="start"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            name="checkmark"
+                            slot="start"
+                        ></ion-icon>
                         {{ 'SHARED.SAVE' | translate }}
                     </ion-button>
                     } @if (mode === 'Create') {
@@ -267,7 +306,11 @@
                         [disabled]="mapService.isProcessing()"
                         (click)="createOsmElement(tagConfig)"
                     >
-                        <ion-icon name="checkmark" slot="start"></ion-icon>
+                        <ion-icon
+                            aria-hidden="true"
+                            name="checkmark"
+                            slot="start"
+                        ></ion-icon>
                         {{ 'SHARED.CREATE' | translate }}
                     </ion-button>
                     }

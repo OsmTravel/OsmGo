@@ -19,6 +19,17 @@
         "DELETE": "Delete",
         "CLEAR": "Clear"
     },
+    "A11Y": {
+        "ADD_BOOKMARK": "Add bookmark",
+        "CENTER_FEATURE": "Center feature on map",
+        "CODE": "Show or hide tag codes",
+        "COPY_FIELDS": "Copy fields",
+        "LOCATION": "Location",
+        "OPEN_LINK": "Open link",
+        "PASTE_FIELDS": "Paste fields",
+        "REMOVE_BOOKMARK": "Remove bookmark",
+        "USE_OSM_DEV_SERVER": "Use the OSM development server"
+    },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Are you sure?",
         "EXIT_CONFIRM_MESSAGE": "Leave Osm Go!?",
