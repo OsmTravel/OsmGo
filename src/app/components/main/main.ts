@@ -138,18 +138,22 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     private resizeObserver?: ResizeObserver
     private backButtonListener?: PluginListenerHandle
     private activeOverlayContent?: RouteOverlayContent
-    private initializeHistory(): void {
-        window.history.pushState({ noBackExitsApp: true }, '')
-    }
     private readonly handlePopState = (): void => {
-        window.history.pushState({ noBackExitsApp: true }, '')
+        this.closeInternalState()
+    }
+
+    private closeInternalState(): boolean {
         if (this.overlayOpen()) {
             this.closeOverlay()
+            return true
         } else if (this.menuIsOpen()) {
             this.closeMenu()
+            return true
         } else if (this.selectedFeature()) {
             this.objectSheet()?.requestExit()
+            return true
         }
+        return false
     }
 
     readonly mapElement = viewChild.required<ElementRef<HTMLElement>>('map')
@@ -696,16 +700,9 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                     })
             })
 
-        this.initializeHistory()
         window.addEventListener('popstate', this.handlePopState)
         void CapacitorApp.addListener('backButton', () => {
-            if (this.overlayOpen()) {
-                this.closeOverlay()
-            } else if (this.menuIsOpen()) {
-                this.closeMenu()
-            } else if (this.selectedFeature()) {
-                this.objectSheet()?.requestExit()
-            } else {
+            if (!this.closeInternalState()) {
                 this.presentConfirm()
             }
         }).then((listener) => {

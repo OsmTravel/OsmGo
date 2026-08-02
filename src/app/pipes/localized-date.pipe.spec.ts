@@ -19,5 +19,7 @@ describe('LocalizedDatePipe', () => {
     it('returns an empty string for missing or invalid dates', () => {
         expect(pipe.transform(null, 'fr-FR')).toBe('')
         expect(pipe.transform('not-a-date', 'fr-FR')).toBe('')
+        expect(pipe.transform('2026-02-31', 'fr-FR')).toBe('')
+        expect(pipe.transform(new Date('invalid'), 'fr-FR')).toBe('')
     })
 })

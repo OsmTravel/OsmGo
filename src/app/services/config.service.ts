@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common'
 import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
 import type { DeviceInfo } from '@capacitor/device'
@@ -77,6 +78,7 @@ export class ConfigService {
     readonly localStorage = inject(AppStorage)
     private readonly http = inject(HttpClient)
     private readonly translate = inject(TranslateService)
+    private readonly document = inject(DOCUMENT)
     private readonly currentZoomState = signal<number | undefined>(undefined)
     readonly currentZoom = this.currentZoomState.asReadonly()
     private readonly userInfoState = signal<User>({
@@ -428,8 +430,13 @@ export class ConfigService {
     }
 
     setUiLanguage(lang: string): void {
-        this.translate.use(lang)
+        this.applyUiLanguage(lang)
         void this.updateConfig({ languageUi: lang })
+    }
+
+    applyUiLanguage(lang: string): void {
+        this.document.documentElement.lang = lang
+        this.translate.use(lang)
     }
 
     getUiLanguage() {

@@ -4,19 +4,20 @@ import {
     includesNormalizedSearch,
     nameToOsmKey,
     normalizeSearchText,
+    osmTagKeyToPresetId,
+    presetIdMatchesQuery,
 } from '@osmgo/utils'
 
 @Pipe({
     name: 'searchFor',
-    pure: false,
 })
 export class SearchForPipe {
     transform(items: Array<Preset>, name: string, language: string) {
-        const key = nameToOsmKey(name)
+        const key = osmTagKeyToPresetId(nameToOsmKey(name))
         const query = normalizeSearchText(name)
         return items.filter((e) => {
             if (key && key === e._id) return false
-            if (key && e._id.includes(key)) return true
+            if (presetIdMatchesQuery(e._id, key)) return true
             const searchableId = e._id.replace(/[/:_-]+/g, ' ')
             return [searchableId, e.lbl[language] ?? e.lbl.en ?? ''].some(
                 (value) => includesNormalizedSearch(value, query)

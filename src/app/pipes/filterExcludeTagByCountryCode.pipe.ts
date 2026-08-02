@@ -3,7 +3,6 @@ import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterExcludeTagByCountryCode',
-    pure: false,
 })
 export class FilterExcludeTagByCountryCode {
     transform(items: TagConfig[], countryCode: string): TagConfig[] {

@@ -10,6 +10,44 @@ const emptyFeatureCollection = {
     features: [],
 }
 
+interface StoredOsmState {
+    schemaVersion: 2
+    revision: number
+    officialById: Record<string, StoredFeature>
+    pendingById: Record<string, StoredFeature>
+    bbox: typeof emptyFeatureCollection
+    nextTemporaryId: number
+}
+
+interface StoredFeature {
+    id: string
+    properties: {
+        id: number
+        tags: Record<string, string | number>
+    }
+    geometry: { coordinates: number[] }
+}
+
+const createStoredOsmState = (
+    officialFeatures: StoredFeature[] = [],
+    pendingFeatures: StoredFeature[] = []
+): StoredOsmState => ({
+    schemaVersion: 2,
+    revision: 1,
+    officialById: Object.fromEntries(
+        officialFeatures.map((feature) => [feature.id, feature])
+    ),
+    pendingById: Object.fromEntries(
+        pendingFeatures.map((feature) => [feature.id, feature])
+    ),
+    bbox: emptyFeatureCollection,
+    nextTemporaryId:
+        Math.min(
+            -1,
+            ...pendingFeatures.map((feature) => feature.properties.id)
+        ) - 1,
+})
+
 const changedPoi = {
     type: 'Feature',
     id: 'node/-1',
@@ -179,17 +217,13 @@ async function seedPendingChange(page: Page): Promise<void> {
                 bearing: 0,
             },
         },
-        geojson: emptyFeatureCollection,
-        geojsonChanged: {
-            type: 'FeatureCollection',
-            features: [changedPoi],
-        },
+        osmState: createStoredOsmState([], [changedPoi]),
         user_info: {
             uid: '7',
             display_name: 'Fixture user',
             connected: true,
         },
-        osmToken: 'fixture-token',
+        'osmToken:prod': 'fixture-token',
     })
     await page.reload()
     await expect(page.getByTestId('open-upload')).toBeVisible()
@@ -280,7 +314,12 @@ test.describe('PWA installation', () => {
                 JSON.stringify(nextManifest)
             )
 
-            await expect.poll(() => requestServiceWorkerUpdate(page)).toBe(true)
+            await expect
+                .poll(() => requestServiceWorkerUpdate(page), {
+                    intervals: [500, 1_000, 2_000],
+                    timeout: 30_000,
+                })
+                .toBe(true)
             await page.getByTestId('open-menu').click()
             const updateButton = page.getByRole('button', {
                 name: /New version available!/,
@@ -359,10 +398,11 @@ test('downloads a small OSM area from a fixture', async ({ page }) => {
     await page.getByTestId('load-osm-data').click()
     await expect
         .poll(async () => {
-            const geojson = await readStoredValue<{
-                features: Array<{ id: string }>
-            }>(page, 'geojson')
-            return geojson?.features.some((feature) => feature.id === 'node/1')
+            const osmState = await readStoredValue<StoredOsmState>(
+                page,
+                'osmState'
+            )
+            return Boolean(osmState?.officialById['node/1'])
         })
         .toBe(true)
 })
@@ -443,11 +483,11 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
     await createButton.click()
     await expect
         .poll(async () => {
-            const queue = await readStoredValue<{ features: unknown[] }>(
+            const osmState = await readStoredValue<StoredOsmState>(
                 page,
-                'geojsonChanged'
+                'osmState'
             )
-            return queue?.features.length
+            return Object.keys(osmState?.pendingById ?? {}).length
         })
         .toBe(1)
 
@@ -460,10 +500,11 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
 
     await expect
         .poll(async () => {
-            const queue = await readStoredValue<{
-                features: Array<{ properties: { tags: { name: string } } }>
-            }>(page, 'geojsonChanged')
-            return queue?.features[0]?.properties.tags.name
+            const osmState = await readStoredValue<StoredOsmState>(
+                page,
+                'osmState'
+            )
+            return osmState?.pendingById['node/-1']?.properties.tags.name
         })
         .toBe('Edited bench')
 })
@@ -491,17 +532,9 @@ test('uploads a pending change with fixture responses', async ({ page }) => {
         timeout: 10_000,
     })
 
-    const queue = await readStoredValue<{ features: unknown[] }>(
-        page,
-        'geojsonChanged'
-    )
-    expect(queue.features).toHaveLength(0)
-    const geojson = await readStoredValue<{
-        features: Array<{ id: string }>
-    }>(page, 'geojson')
-    expect(geojson.features.some((feature) => feature.id === 'node/100')).toBe(
-        true
-    )
+    const osmState = await readStoredValue<StoredOsmState>(page, 'osmState')
+    expect(Object.keys(osmState.pendingById)).toHaveLength(0)
+    expect(osmState.officialById['node/100']).toBeDefined()
 })
 
 test('keeps the queue when changeset creation fails', async ({ page }) => {
@@ -524,11 +557,8 @@ test('keeps the queue when changeset creation fails', async ({ page }) => {
         'Fixture changeset failure'
     )
 
-    const queue = await readStoredValue<{ features: unknown[] }>(
-        page,
-        'geojsonChanged'
-    )
-    expect(queue.features).toHaveLength(1)
+    const osmState = await readStoredValue<StoredOsmState>(page, 'osmState')
+    expect(Object.keys(osmState.pendingById)).toHaveLength(1)
 })
 
 test('accepts a valid OAuth callback and rejects an invalid state', async ({
@@ -547,28 +577,44 @@ test('accepts a valid OAuth callback and rejects an invalid state', async ({
     await openApp(page)
 
     await page.evaluate(() => {
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'fixture-verifier')
+        sessionStorage.setItem(
+            'osmOAuthTransaction:prod',
+            JSON.stringify({
+                state: 'expected-state',
+                verifier: 'fixture-verifier',
+                environment: 'prod',
+                redirectUri: document.baseURI,
+                createdAt: Date.now(),
+            })
+        )
     })
     await page.goto('/?code=fixture-code&state=expected-state')
     await expect.poll(() => tokenRequests).toBe(1)
     await expect
-        .poll(() => readStoredValue(page, 'osmToken'))
+        .poll(() => readStoredValue(page, 'osmToken:prod'))
         .toBe('callback-token')
     await expect(page).not.toHaveURL(/code=|state=/)
 
     await page.evaluate(() => {
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'fixture-verifier')
+        sessionStorage.setItem(
+            'osmOAuthTransaction:prod',
+            JSON.stringify({
+                state: 'expected-state',
+                verifier: 'fixture-verifier',
+                environment: 'prod',
+                redirectUri: document.baseURI,
+                createdAt: Date.now(),
+            })
+        )
     })
     await page.goto('/?code=fixture-code&state=wrong-state')
     await expect(page).not.toHaveURL(/code=|state=/)
     expect(tokenRequests).toBe(1)
-    const pendingAuthorization = await page.evaluate(() => ({
-        state: sessionStorage.getItem('osmOAuthState'),
-        verifier: sessionStorage.getItem('osmOAuthCodeVerifier'),
-    }))
-    expect(pendingAuthorization).toEqual({ state: null, verifier: null })
+    expect(
+        await page.evaluate(() =>
+            sessionStorage.getItem('osmOAuthTransaction:prod')
+        )
+    ).toBeNull()
 })
 
 test('keeps the placement marker aligned at fixed map coordinates', async ({
@@ -630,19 +676,12 @@ test('cancels and confirms moving an existing POI', async ({ page }) => {
     await page.getByTestId('cancel-marker-move').click()
     await expect(page.getByTestId('move-poi')).toBeVisible()
 
-    const queueAfterCancel = await readStoredValue<
-        { features: unknown[] } | undefined
-    >(page, 'geojsonChanged')
-    expect(queueAfterCancel?.features ?? []).toHaveLength(0)
-    const dataAfterCancel = await readStoredValue<{
-        features: Array<{
-            id: string
-            geometry: { coordinates: number[] }
-        }>
-    }>(page, 'geojson')
-    const originalFeature = dataAfterCancel.features.find(
-        (feature) => feature.id === 'node/1'
+    const stateAfterCancel = await readStoredValue<StoredOsmState>(
+        page,
+        'osmState'
     )
+    expect(Object.keys(stateAfterCancel.pendingById)).toHaveLength(0)
+    const originalFeature = stateAfterCancel.officialById['node/1']
     expect(originalFeature?.geometry.coordinates).toEqual([2.2945, 48.8584])
 
     await page.getByTestId('move-poi').click()
@@ -656,24 +695,16 @@ test('cancels and confirms moving an existing POI', async ({ page }) => {
 
     await expect
         .poll(async () => {
-            const queue = await readStoredValue<{
-                features: Array<{
-                    id: string
-                    geometry: { coordinates: number[] }
-                }>
-            }>(page, 'geojsonChanged')
-            return queue.features.some((feature) => feature.id === 'node/1')
+            const osmState = await readStoredValue<StoredOsmState>(
+                page,
+                'osmState'
+            )
+            return Boolean(osmState.pendingById['node/1'])
         })
         .toBe(true)
-    const savedQueue = await readStoredValue<{
-        features: Array<{
-            id: string
-            geometry: { coordinates: number[] }
-        }>
-    }>(page, 'geojsonChanged')
-    const savedCoordinates = savedQueue.features.find(
-        (feature) => feature.id === 'node/1'
-    )?.geometry.coordinates
+    const savedState = await readStoredValue<StoredOsmState>(page, 'osmState')
+    const savedCoordinates =
+        savedState.pendingById['node/1']?.geometry.coordinates
     expect(savedCoordinates).toBeDefined()
     expect(savedCoordinates?.[0]).toBeCloseTo(confirmedCoordinates[0], 6)
     expect(savedCoordinates?.[1]).toBeCloseTo(confirmedCoordinates[1], 6)
@@ -684,9 +715,6 @@ test('restores a pending queue after a page restart', async ({ page }) => {
     await page.reload()
 
     await expect(page.getByTestId('open-upload')).toBeVisible()
-    const queue = await readStoredValue<{ features: Array<{ id: string }> }>(
-        page,
-        'geojsonChanged'
-    )
-    expect(queue.features.map((feature) => feature.id)).toEqual(['node/-1'])
+    const osmState = await readStoredValue<StoredOsmState>(page, 'osmState')
+    expect(Object.keys(osmState.pendingById)).toEqual(['node/-1'])
 })

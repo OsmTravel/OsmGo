@@ -11,6 +11,7 @@ import stringify from 'json-stringify-pretty-compact'
 import path from 'path'
 import { fetchJson, fetchResponse } from './_fetch'
 import { assetsDir } from './_paths'
+import { buildTileTestUrl, compareImageryPriority } from './basemap-utils'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
@@ -39,7 +40,9 @@ const checkUrl = async (feature: any) => {
         coordinates: coords,
     }
 
-    const [x, y, z] = cover.tiles(pointGeometry, limits)[0]
+    const testTile = cover.tiles(pointGeometry, limits)[0]
+    if (!testTile) return false
+    const [x, y, z] = testTile
     const quadkey = tileToQuadkey(x, y, z)
 
     const merc = new SphericalMercator({
@@ -48,13 +51,9 @@ const checkUrl = async (feature: any) => {
     })
     const bbox = merc.bbox(x, y, z, false, '900913')
 
-    const testUrl = feature.properties['tiles'][0]
-        .replace('{x}', x)
-        .replace('{y}', y)
-        .replace('{-y}', -y)
-        .replace('{z}', z)
-        .replace('{bbox-epsg-3857}', bbox.join(','))
-        .replace('{quadkey}', quadkey)
+    const tileTemplate = feature.properties['tiles']?.[0]
+    if (typeof tileTemplate !== 'string') return false
+    const testUrl = buildTileTestUrl(tileTemplate, x, y, z, bbox, quadkey)
 
     try {
         const response = await fetchResponse(testUrl, 5_000)
@@ -208,13 +207,7 @@ const run = async () => {
                 ['photo'].includes(f.properties.category) &&
                 !['bing'].includes(f.properties.type)
         )
-        .sort((a, b) => {
-            if (b.propertiesbest !== a.properties.best) {
-                return b.properties.best - a.properties.best
-            } else {
-                return b.properties.local - a.properties.local
-            }
-        })
+        .sort(compareImageryPriority)
 
     const catHistoricphoto = resultFeatures.filter((f) =>
         ['historicphoto'].includes(f.properties.category)

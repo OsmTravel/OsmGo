@@ -36,7 +36,10 @@
         </section>
         }
 
-        <section class="summary-card" aria-label="Résumé des modifications">
+        <section
+            class="summary-card"
+            [attr.aria-label]="'A11Y.CHANGE_SUMMARY' | translate"
+        >
             <div>
                 <strong>{{ summary().Total }}</strong>
                 <span>{{ 'SEND_DATA.TOTAL_ITEMS' | translate }}</span>

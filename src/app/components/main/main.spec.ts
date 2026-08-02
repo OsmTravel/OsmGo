@@ -145,6 +145,15 @@ describe('MainPage', () => {
         })
     })
 
+    it('does not trap browser history when no internal state is open', () => {
+        const pushState = vi.spyOn(window.history, 'pushState')
+        const { page } = createPage()
+
+        ;(page as unknown as { handlePopState: () => void }).handlePopState()
+
+        expect(pushState).not.toHaveBeenCalled()
+    })
+
     it('stops reacting to modal requests after destruction', () => {
         const showModal$ = new Subject<unknown>()
         const modalCtrl = { open: vi.fn().mockName('MatDialog.open') }

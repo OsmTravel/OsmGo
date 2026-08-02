@@ -16,7 +16,15 @@ export function parseLocalizedDate(value: Date | number | string): Date | null {
                 Number(month) - 1,
                 Number(day)
             )
-            return Number.isNaN(parsed.getTime()) ? null : parsed
+            if (
+                Number.isNaN(parsed.getTime()) ||
+                parsed.getFullYear() !== Number(year) ||
+                parsed.getMonth() !== Number(month) - 1 ||
+                parsed.getDate() !== Number(day)
+            ) {
+                return null
+            }
+            return parsed
         }
     }
 

@@ -56,7 +56,10 @@
         ></survey-card>
         }
 
-        <section class="object-fields" aria-label="Informations de l’objet">
+        <section
+            class="object-fields"
+            [attr.aria-label]="'A11Y.OBJECT_INFORMATION' | translate"
+        >
             @for ( tag of tags | filterExcludeKeys : tagConfig :
             configService.config().countryTags : tagsService.primaryKeys() :
             tagsService.presets() | orderByPreset: tagConfig; track tag.key ) {
@@ -190,7 +193,7 @@
 
         <section
             class="object-fields object-fields--edit"
-            aria-label="Champs de l’objet"
+            [attr.aria-label]="'A11Y.OBJECT_FIELDS' | translate"
         >
             @for ( tag of tags | filterExcludeKeys : tagConfig :
             configService.config().countryTags : tagsService.primaryKeys() :

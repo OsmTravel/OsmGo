@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 import {
     ModalAddOpeningHoursIntervalComponent,
     type OpeningHoursDialogData,
+    openingHoursScheduleIsValid,
 } from './modal-add-opening-hours-interval.component'
 
 describe('ModalAddOpeningHoursIntervalComponent', () => {
@@ -101,5 +102,48 @@ describe('ModalAddOpeningHoursIntervalComponent', () => {
         expect(component.groups()[0].times[0]).toEqual(
             expect.objectContaining({ start: '08:00', end: '12:00' })
         )
+    })
+
+    it('accepts 24:00 only as an end and rejects reversed ranges', () => {
+        const days = [{ index: 0, selected: true, label: 'DAYS.MONDAY' }]
+
+        expect(openingHoursScheduleIsValid([])).toBe(false)
+        expect(
+            openingHoursScheduleIsValid([
+                { days, times: [{ start: '20:00', end: '24:00' }] },
+            ])
+        ).toBe(true)
+        expect(
+            openingHoursScheduleIsValid([
+                { days, times: [{ start: '24:00', end: '24:00' }] },
+            ])
+        ).toBe(false)
+        expect(
+            openingHoursScheduleIsValid([
+                { days, times: [{ start: '12:00', end: '09:00' }] },
+            ])
+        ).toBe(false)
+    })
+
+    it('rejects duplicate and overlapping ranges on the same day', () => {
+        const days = [{ index: 0, selected: true, label: 'DAYS.MONDAY' }]
+
+        expect(
+            openingHoursScheduleIsValid([
+                {
+                    days,
+                    times: [
+                        { start: '09:00', end: '12:00' },
+                        { start: '11:30', end: '13:00' },
+                    ],
+                },
+            ])
+        ).toBe(false)
+        expect(
+            openingHoursScheduleIsValid([
+                { days, times: [{ start: '09:00', end: '12:00' }] },
+                { days, times: [{ start: '09:00', end: '12:00' }] },
+            ])
+        ).toBe(false)
     })
 })

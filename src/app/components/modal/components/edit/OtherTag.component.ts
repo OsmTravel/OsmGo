@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
+import { TranslateModule } from '@ngx-translate/core'
 import { Tag } from '@osmgo/type'
 
 @Component({
@@ -15,7 +16,7 @@ import { Tag } from '@osmgo/type'
                 <mat-form-field appearance="outline" subscriptSizing="dynamic">
                     <input matInput type="text" [(ngModel)]="tag().value" [placeholder]="tag().key" />
                 </mat-form-field>
-                <button mat-icon-button type="button" aria-label="Supprimer ce tag" (click)="eventDeleteTag()">
+                <button mat-icon-button type="button" [attr.aria-label]="'A11Y.REMOVE_TAG' | translate" (click)="eventDeleteTag()">
                     <mat-icon fontSet="material-symbols-rounded">delete</mat-icon>
                 </button>
             </div>
@@ -38,6 +39,7 @@ import { Tag } from '@osmgo/type'
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
+        TranslateModule,
     ],
 })
 export class EditOtherTag {

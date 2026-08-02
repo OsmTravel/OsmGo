@@ -217,6 +217,19 @@ describe('MapService filters', () => {
     })
 })
 
+describe('MapService heading normalization', () => {
+    it.each([
+        [0, 0, 0],
+        [10, 350, 20],
+        [350, 10, 340],
+        [720, -360, 0],
+    ])('normalizes %s° against a %s° bearing', (heading, bearing, expected) => {
+        const service = Object.create(MapService.prototype) as MapService
+
+        expect(service.getIconRotate(heading, bearing)).toBe(expected)
+    })
+})
+
 describe('MapService redraw ordering', () => {
     const setPrivate = (service: MapService, key: string, value: unknown) => {
         Object.defineProperty(service, key, {

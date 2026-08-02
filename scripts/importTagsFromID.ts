@@ -2,11 +2,10 @@
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
 
+import { isDeepStrictEqual } from 'node:util'
 import { TagConfig } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import intersection from 'lodash/intersection'
-import isEqual from 'lodash/isEqual'
 import { tapPresetsPath, tapTagsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
@@ -94,7 +93,7 @@ for (const iDid in tagsID) {
     }
 
     //TODO rework
-    if (intersection(tagIDKeys, osmgoPkeys).length == 0) {
+    if (!tagIDKeys.some((key) => osmgoPkeys.includes(key))) {
         continue
     }
 
@@ -168,7 +167,7 @@ for (const iDid in tagsID) {
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
     const currenOsmgoTag = tagsOsmgo.find((ogT) => {
-        return isEqual(tagiD.tags, ogT.tags)
+        return isDeepStrictEqual(tagiD.tags, ogT.tags)
     })
 
     const rootTag = iDid.split('/')[0]

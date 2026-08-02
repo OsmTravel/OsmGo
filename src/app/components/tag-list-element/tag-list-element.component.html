@@ -39,13 +39,13 @@
                 [class.is-bookmarked]="tag() | isBookmarked: bookmarksIds()"
                 [matTooltip]="
                     (tag() | isBookmarked: bookmarksIds())
-                        ? 'Retirer des favoris'
-                        : 'Ajouter aux favoris'
+                        ? ('A11Y.REMOVE_BOOKMARK' | translate)
+                        : ('A11Y.ADD_BOOKMARK' | translate)
                 "
                 [attr.aria-label]="
                     (tag() | isBookmarked: bookmarksIds())
-                        ? 'Retirer des favoris'
-                        : 'Ajouter aux favoris'
+                        ? ('A11Y.REMOVE_BOOKMARK' | translate)
+                        : ('A11Y.ADD_BOOKMARK' | translate)
                 "
                 (click)="addOrRemoveBookmark(tag())"
             >
@@ -60,7 +60,10 @@
         }
 
         @if (oldTagConfig()?.id === tag().id) {
-            <span class="current-indicator" aria-label="Sélectionné">
+            <span
+                class="current-indicator"
+                [attr.aria-label]="'A11Y.SELECTED' | translate"
+            >
                 <mat-icon fontSet="material-symbols-rounded"
                     >check_circle</mat-icon
                 >
@@ -72,7 +75,7 @@
                 mat-icon-button
                 class="show-action"
                 type="button"
-                aria-label="Afficher ce tag"
+                [attr.aria-label]="'A11Y.SHOW_TAG' | translate"
                 (click)="removeHiddenTag.emit(tag())"
             >
                 <mat-icon fontSet="material-symbols-rounded"
@@ -86,7 +89,7 @@
                 mat-icon-button
                 class="hide-action"
                 type="button"
-                aria-label="Masquer ce tag"
+                [attr.aria-label]="'A11Y.HIDE_TAG' | translate"
                 (click)="addHiddenTag.emit(tag())"
             >
                 <mat-icon fontSet="material-symbols-rounded"

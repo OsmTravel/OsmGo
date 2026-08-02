@@ -1,5 +1,4 @@
 import { inject, Service, signal } from '@angular/core'
-import { TranslateService } from '@ngx-translate/core'
 import { AppStorage } from '@services/app-storage.service'
 import type { Config } from '@services/config.service'
 import { ConfigService } from '@services/config.service'
@@ -54,7 +53,6 @@ export class InitService {
     readonly tagsService = inject(TagsService)
     readonly dataService = inject(DataService)
     private readonly storage = inject(AppStorage)
-    private readonly translate = inject(TranslateService)
     private readonly osmApi = inject(OsmApiService)
     private readonly uploadCoordinator = inject(UploadCoordinatorService)
 
@@ -230,7 +228,9 @@ export class InitService {
                 ),
                 tap(() => {
                     this.isLoaded = true
-                    this.translate.use(this.configService.config().languageUi)
+                    this.configService.applyUiLanguage(
+                        this.configService.config().languageUi
+                    )
                 }),
                 catchError((error: unknown) => {
                     const resource =

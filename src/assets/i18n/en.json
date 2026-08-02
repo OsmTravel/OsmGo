@@ -23,13 +23,24 @@
     },
     "A11Y": {
         "ADD_BOOKMARK": "Add bookmark",
+        "CATEGORY_SOURCE": "Category source",
         "CENTER_FEATURE": "Center feature on map",
+        "CHANGE_SUMMARY": "Change summary",
         "CODE": "Show or hide tag codes",
         "COPY_FIELDS": "Copy fields",
+        "HIDE_TAG": "Hide this tag",
         "LOCATION": "Location",
+        "MAIN_NAVIGATION": "Main navigation",
+        "OBJECT_FIELDS": "Object fields",
+        "OBJECT_INFORMATION": "Object information",
         "OPEN_LINK": "Open link",
+        "OSM_ACCOUNT": "OpenStreetMap account",
+        "OSM_METADATA": "OpenStreetMap metadata",
         "PASTE_FIELDS": "Paste fields",
         "REMOVE_BOOKMARK": "Remove bookmark",
+        "REMOVE_TAG": "Remove this tag",
+        "SELECTED": "Selected",
+        "SHOW_TAG": "Show this tag",
         "USE_OSM_DEV_SERVER": "Use the OSM development server"
     },
     "MAIN": {
@@ -98,6 +109,7 @@
         "SIGN_OUT": "Log out",
         "EXIT": "Exit",
         "NEW_VERSION": "New version available!",
+        "INSTALL_UPDATE": "Install the latest version",
         "TAG_MANAGEMENT": "Tag management"
     },
     "ABOUT": {
@@ -185,6 +197,9 @@
         "LINES_SELECTABLE_HINT": "Ability to click on a line to open the element sheet.",
         "POLYGONS_SELECTABLE": "Make polygons selectable",
         "POLYGONS_SELECTABLE_HINT": "Ability to click on a polygon to open the element sheet.",
+        "SWITCH_SERVER_CONFIRM": "Switch server",
+        "SWITCH_SERVER_MESSAGE": "Changing server deletes every pending local edit. This cannot be undone.",
+        "SWITCH_SERVER_TITLE": "Switch OpenStreetMap server?",
         "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible.",
         "LIMIT_FEATURES": "Maximum number of objects in memory",

@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core'
 })
 export class SortArrayPipe implements PipeTransform {
     transform(values: any[]): any {
-        return values.sort()
+        return [...values].sort()
     }
 }

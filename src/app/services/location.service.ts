@@ -12,6 +12,12 @@ const EMPTY_COMPASS_HEADING: CompassHeading = {
     timestamp: null,
 }
 
+const GEOLOCATION_TIMEOUT_MS = 15_000
+
+type DeviceOrientationPermission = typeof DeviceOrientationEvent & {
+    requestPermission?: () => Promise<'granted' | 'denied'>
+}
+
 @Service()
 export class LocationService {
     readonly configService = inject(ConfigService)
@@ -49,12 +55,14 @@ export class LocationService {
             (position: GeolocationPosition) => {
                 if (position?.coords) {
                     this.setLocation(position)
+                    this.gpsReadyState.set(true)
                 }
             },
             (err) => {
                 console.error(err)
+                this.gpsReadyState.set(false)
             },
-            { enableHighAccuracy: true }
+            { enableHighAccuracy: true, timeout: GEOLOCATION_TIMEOUT_MS }
         )
     }
 
@@ -67,19 +75,23 @@ export class LocationService {
                 (err) => {
                     reject(err)
                 },
-                { enableHighAccuracy: true }
+                { enableHighAccuracy: true, timeout: GEOLOCATION_TIMEOUT_MS }
             )
         })
     }
 
     enableGeolocation(): void {
         this.heading()
-        this.getCurrentPosition().then((position: GeolocationPosition) => {
-            this.setLocation(position)
-            this.gpsReadyState.set(true)
-            this.locationReadySubject.next(position)
-            this.watchPosition()
-        })
+        void this.getCurrentPosition()
+            .then((position: GeolocationPosition) => {
+                this.setLocation(position)
+                this.gpsReadyState.set(true)
+                this.locationReadySubject.next(position)
+                this.watchPosition()
+            })
+            .catch(() => {
+                this.gpsReadyState.set(false)
+            })
     }
 
     disableGeolocation(): void {
@@ -115,18 +127,27 @@ export class LocationService {
             return
         }
 
-        window.addEventListener(
-            this.orientationEventName,
-            this.onDeviceOrientation,
-            true
-        )
+        const orientationApi = window.DeviceOrientationEvent as
+            | DeviceOrientationPermission
+            | undefined
+        if (orientationApi?.requestPermission) {
+            void orientationApi
+                .requestPermission()
+                .then((permission) => {
+                    if (permission === 'granted') this.listenForHeading()
+                })
+                .catch(() => undefined)
+            return
+        }
+        this.listenForHeading()
     }
 
     private readonly onDeviceOrientation = (event: DeviceOrientationEvent) => {
-        if (!event.absolute) {
-            return
-        }
-        if (!event.alpha || !event.beta || !event.gamma) {
+        if (
+            event.alpha === null ||
+            event.beta === null ||
+            event.gamma === null
+        ) {
             return
         }
 
@@ -143,17 +164,13 @@ export class LocationService {
         const rA = -cA * sG - sA * sB * cG
         const rB = -sA * sG + cA * sB * cG
 
-        let heading = Math.atan(rA / rB)
-        if (rB < 0) {
-            heading += Math.PI
-        } else if (rA < 0) {
-            heading += 2 * Math.PI
-        }
-        heading *= 180 / Math.PI
+        const screenAngle = window.screen.orientation?.angle ?? 0
+        const heading =
+            ((Math.atan2(rA, rB) * 180) / Math.PI + screenAngle + 360) % 360
 
         const newCompassHeading: CompassHeading = {
             magneticHeading: heading,
-            trueHeading: heading,
+            trueHeading: event.absolute ? heading : null,
             headingAccuracy: null,
             timestamp: Date.now(),
         }
@@ -193,7 +210,9 @@ export class LocationService {
                     },
                     properties: {
                         accuracy: location.coords.accuracy,
-                        trueHeading: this.compassHeading().magneticHeading,
+                        trueHeading:
+                            this.compassHeading().trueHeading ??
+                            this.compassHeading().magneticHeading,
                     },
                 },
             ],
@@ -203,6 +222,15 @@ export class LocationService {
     publishCurrentLocation(): void {
         const point = this.getGeojsonPos()
         if (point) this.newLocationSubject.next(point)
+    }
+
+    private listenForHeading(): void {
+        if (!this.orientationEventName) return
+        window.addEventListener(
+            this.orientationEventName,
+            this.onDeviceOrientation,
+            true
+        )
     }
 
     getGeoJSONCirclePosition(points: number = 64): FeatureCollection {

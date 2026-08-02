@@ -4,7 +4,6 @@ import { includesNormalizedSearch, normalizeSearchText } from '@osmgo/utils'
 
 @Pipe({
     name: 'filterByPresetsContent',
-    pure: false,
 })
 export class FilterByPresetsContentPipe implements PipeTransform {
     transform(

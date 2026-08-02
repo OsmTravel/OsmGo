@@ -8,6 +8,23 @@ const emptyFeatureCollection = {
     features: [],
 }
 
+const storedOsmState = (
+    pendingFeatures: Array<{ id: string; properties: { id: number } }>
+) => ({
+    schemaVersion: 2,
+    revision: 1,
+    officialById: {},
+    pendingById: Object.fromEntries(
+        pendingFeatures.map((feature) => [feature.id, feature])
+    ),
+    bbox: emptyFeatureCollection,
+    nextTemporaryId:
+        Math.min(
+            -1,
+            ...pendingFeatures.map((feature) => feature.properties.id)
+        ) - 1,
+})
+
 const pendingFeature = {
     type: 'Feature',
     id: 'node/-1',
@@ -131,17 +148,13 @@ async function seedPendingFeature(page: Page): Promise<void> {
             languageUi: 'en',
             languageTags: 'en',
         },
-        geojson: emptyFeatureCollection,
-        geojsonChanged: {
-            type: 'FeatureCollection',
-            features: [pendingFeature],
-        },
+        osmState: storedOsmState([pendingFeature]),
         user_info: {
             uid: '7',
             display_name: 'Fixture user',
             connected: true,
         },
-        osmToken: 'fixture-token',
+        'osmToken:prod': 'fixture-token',
     })
 }
 
@@ -174,13 +187,21 @@ async function openStoredFeature(page: Page): Promise<void> {
 }
 
 async function expectAccessible(page: Page, context: string): Promise<void> {
+    await page.evaluate(async () => {
+        const animations = [
+            ...document.querySelectorAll('.mat-mdc-snack-bar-container'),
+        ].flatMap((element) => element.getAnimations())
+        await Promise.allSettled(
+            animations.map((animation) => animation.finished)
+        )
+    })
     const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze()
     const details = results.violations
         .map(
             (violation) =>
-                `${violation.id}: ${violation.help} (${violation.nodes.length} node(s))\n${violation.nodes.map((node) => node.target.join(' > ')).join('\n')}`
+                `${violation.id}: ${violation.help} (${violation.nodes.length} node(s))\n${violation.nodes.map((node) => `${node.target.join(' > ')}\n${node.failureSummary ?? ''}`).join('\n')}`
         )
         .join('\n')
 

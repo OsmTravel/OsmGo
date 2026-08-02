@@ -12,7 +12,7 @@ import {
     type ConfirmDialogData,
 } from '@components/shared/confirm-dialog/confirm-dialog'
 import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
-import { TranslateModule } from '@ngx-translate/core'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
@@ -43,6 +43,7 @@ export class SettingsPage {
     readonly dataService = inject(DataService)
     private readonly osmAuthService = inject(OsmAuthService)
     private readonly dialog = inject(MatDialog)
+    private readonly translate = inject(TranslateService)
     private readonly overlayNavigation = inject(OverlayNavigationService)
 
     back(): void {
@@ -171,20 +172,21 @@ export class SettingsPage {
             await caches.delete(key)
         }
 
-        const mainLocation = `${window.location.origin}/`
-        window.location.replace(mainLocation)
-        window.location.reload()
+        window.location.replace(document.baseURI)
     }
 
     async changeIsDevServer(isDev: boolean): Promise<void> {
         if (isDev === this.configService.config().isDevServer) return
         if (this.dataService.changedFeatureCount() > 0) {
             const data: ConfirmDialogData = {
-                title: 'Switch OpenStreetMap server?',
-                message:
-                    'Changing server deletes every pending local edit. This cannot be undone.',
-                cancelLabel: 'Cancel',
-                confirmLabel: 'Switch server',
+                title: this.translate.instant('SETTINGS.SWITCH_SERVER_TITLE'),
+                message: this.translate.instant(
+                    'SETTINGS.SWITCH_SERVER_MESSAGE'
+                ),
+                cancelLabel: this.translate.instant('SHARED.CANCEL'),
+                confirmLabel: this.translate.instant(
+                    'SETTINGS.SWITCH_SERVER_CONFIRM'
+                ),
                 destructive: true,
             }
             const confirmed = await firstValueFrom(
@@ -202,6 +204,5 @@ export class SettingsPage {
         await this.osmAuthService.clearAllAuthentication()
         await this.configService.switchOsmEnvironment(isDev)
         window.location.replace(document.baseURI)
-        window.location.reload()
     }
 }

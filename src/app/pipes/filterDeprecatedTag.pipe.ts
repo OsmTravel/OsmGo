@@ -3,7 +3,6 @@ import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterDeprecatedTag',
-    pure: false,
 })
 export class FilterDeprecatedTagPipe {
     transform(items: TagConfig[] | null | undefined): TagConfig[] {

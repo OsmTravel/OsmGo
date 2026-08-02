@@ -3,7 +3,6 @@ import cheerio from 'cheerio'
 import fs from 'fs-extra'
 import path from 'path'
 import sharp from 'sharp'
-import Spritesmith from 'spritesmith'
 // const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
 import { assetsDir, iconsSvgDir } from './_paths'
@@ -22,6 +21,102 @@ interface SpriteSheetOptions {
 interface SpriteResult {
     image: Buffer
     coordinates: Record<string, Record<string, number>>
+}
+
+const packSprites = async (
+    sprites: string[],
+    factor: number
+): Promise<SpriteResult> => {
+    const maxRowWidth = 1024 * factor
+    const coordinates: Record<string, Record<string, number>> = {}
+    const composite: sharp.OverlayOptions[] = []
+    let x = 0
+    let y = 0
+    let rowHeight = 0
+    let sheetWidth = 0
+
+    for (const filePath of sprites) {
+        const image = await fs.readFile(filePath)
+        const metadata = await sharp(image).metadata()
+        if (!metadata.width || !metadata.height) {
+            throw new Error(
+                `Cannot read rendered sprite dimensions: ${filePath}`
+            )
+        }
+        if (x > 0 && x + metadata.width > maxRowWidth) {
+            x = 0
+            y += rowHeight
+            rowHeight = 0
+        }
+        coordinates[filePath] = {
+            x,
+            y,
+            width: metadata.width,
+            height: metadata.height,
+        }
+        composite.push({ input: image, left: x, top: y })
+        x += metadata.width
+        rowHeight = Math.max(rowHeight, metadata.height)
+        sheetWidth = Math.max(sheetWidth, x)
+    }
+
+    const sheetHeight = y + rowHeight
+    if (!sheetWidth || !sheetHeight) {
+        throw new Error('Cannot generate an empty sprite sheet.')
+    }
+    const image = await sharp({
+        create: {
+            width: sheetWidth,
+            height: sheetHeight,
+            channels: 4,
+            background: { r: 0, g: 0, b: 0, alpha: 0 },
+        },
+    })
+        .composite(composite)
+        .png()
+        .toBuffer()
+
+    return { image, coordinates }
+}
+
+const commitSpritePair = async (
+    stagedPngPath: string,
+    stagedJsonPath: string,
+    pngPath: string,
+    jsonPath: string
+): Promise<void> => {
+    const suffix = `${process.pid}-${Date.now()}`
+    const pngBackup = `${pngPath}.backup-${suffix}`
+    const jsonBackup = `${jsonPath}.backup-${suffix}`
+    const hadPng = await fs.pathExists(pngPath)
+    const hadJson = await fs.pathExists(jsonPath)
+    let commitStarted = false
+
+    try {
+        if (hadPng) await fs.copy(pngPath, pngBackup)
+        if (hadJson) await fs.copy(jsonPath, jsonBackup)
+        commitStarted = true
+        await fs.move(stagedPngPath, pngPath, { overwrite: true })
+        await fs.move(stagedJsonPath, jsonPath, { overwrite: true })
+        await fs.remove(pngBackup)
+        await fs.remove(jsonBackup)
+    } catch (error) {
+        if (commitStarted) {
+            if (hadPng && (await fs.pathExists(pngBackup))) {
+                await fs.copy(pngBackup, pngPath, { overwrite: true })
+            } else if (!hadPng) {
+                await fs.remove(pngPath)
+            }
+            if (hadJson && (await fs.pathExists(jsonBackup))) {
+                await fs.copy(jsonBackup, jsonPath, { overwrite: true })
+            } else if (!hadJson) {
+                await fs.remove(jsonPath)
+            }
+        }
+        await fs.remove(pngBackup)
+        await fs.remove(jsonBackup)
+        throw error
+    }
 }
 
 export const renderSvgToPng: SvgRenderer = async (filePath, factor) => {
@@ -56,26 +151,20 @@ export const generateSpriteSheet = async ({
         await fs.writeFile(path.join(temporaryFolder, `${fileName}.png`), image)
     }
 
-    const pngFileNames = await fs.readdir(temporaryFolder)
+    const pngFileNames = (await fs.readdir(temporaryFolder)).sort()
     const sprites = pngFileNames.map((fileName) =>
         path.join(temporaryFolder, fileName)
     )
-    const result = await new Promise<SpriteResult>((resolve, reject) => {
-        Spritesmith.run({ src: sprites }, (error, spriteResult) => {
-            if (error) {
-                reject(error)
-                return
-            }
-            resolve(spriteResult)
-        })
-    })
+    const result = await packSprites(sprites, factor)
 
     const outputName = factor === 1 ? 'sprites' : `sprites@${factor}x`
     const pngPath = path.join(outputFolder, `${outputName}.png`)
     const jsonPath = path.join(outputFolder, `${outputName}.json`)
-    await fs.writeFile(pngPath, result.image)
+    const stagedPngPath = path.join(temporaryFolder, `${outputName}.png`)
+    const stagedJsonPath = path.join(temporaryFolder, `${outputName}.json`)
+    await fs.writeFile(stagedPngPath, result.image)
 
-    const jsonSprites = {}
+    const jsonSprites: Record<string, Record<string, number>> = {}
     for (const filePath in result.coordinates) {
         const basename = path.basename(filePath).replace('.png', '')
         jsonSprites[basename] = {
@@ -83,14 +172,27 @@ export const generateSpriteSheet = async ({
             pixelRatio: factor,
         }
     }
-    await fs.writeFile(jsonPath, JSON.stringify(jsonSprites))
+    await fs.writeFile(stagedJsonPath, JSON.stringify(jsonSprites))
+
+    const validatedJson = JSON.parse(await fs.readFile(stagedJsonPath, 'utf8'))
+    const metadata = await sharp(stagedPngPath).metadata()
+    if (
+        metadata.format !== 'png' ||
+        !metadata.width ||
+        !metadata.height ||
+        Object.keys(validatedJson).length !== fileNames.length
+    ) {
+        throw new Error(`Generated ${outputName} assets failed validation.`)
+    }
+
+    await commitSpritePair(stagedPngPath, stagedJsonPath, pngPath, jsonPath)
     await fs.remove(temporaryFolder)
 
     return { json: jsonPath, png: pngPath }
 }
 
 export const generateSprites = () => {
-    let iconsUsed = []
+    const iconsUsed = []
     const markerColorUsed = []
 
     const markersModelPath = path.join(
@@ -127,7 +229,7 @@ export const generateSprites = () => {
         'location-with-orientation',
     ]
 
-    let iconsSVG = []
+    const iconsSVG = []
 
     const generateMarkerColor = (colorMarker) => {
         let pathMarkerXMLCircle: string
@@ -136,7 +238,7 @@ export const generateSprites = () => {
             fs
                 .readFileSync(path.join(markersModelPath, 'marker-circle.svg'))
                 .toString(),
-            function (err, result) {
+            (err, result) => {
                 pathMarkerXMLCircle =
                     '<path fill="' +
                     colorMarker +
@@ -155,7 +257,7 @@ export const generateSprites = () => {
             fs
                 .readFileSync(path.join(markersModelPath, 'marker-square.svg'))
                 .toString(),
-            function (err, result) {
+            (err, result) => {
                 pathMarkerXMLSquare =
                     '<path fill="' +
                     colorMarker +
@@ -197,7 +299,7 @@ export const generateSprites = () => {
             .readFileSync(path.join(iconsSvgDir, iconName + '.svg'))
             .toString()
 
-        let $ = cheerio.load(iconSVG)
+        const $ = cheerio.load(iconSVG)
         let pathIconXMLstr = ''
 
         let width: number
@@ -215,7 +317,7 @@ export const generateSprites = () => {
         const translateX = 4.5 + (15 - width) / 2 // width - 11.5
         const translateY = 4.5 + (15 - height) / 2
 
-        $('path').attr('d', function (a, b) {
+        $('path').attr('d', (a, b) => {
             pathIconXMLstr += `<path fill='${colorIcon}' transform='translate(${translateX} ${translateY})' d='${b}'></path> `
             return pathIconXMLstr
         })

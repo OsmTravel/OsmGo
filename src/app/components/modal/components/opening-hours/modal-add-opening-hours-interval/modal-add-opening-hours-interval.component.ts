@@ -51,6 +51,57 @@ const DAY_LABELS = [
     'DAYS.SUNDAY',
 ]
 
+const START_TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/
+const END_TIME_PATTERN = /^(?:(?:[01]\d|2[0-3]):[0-5]\d|24:00)$/
+
+const timeToMinutes = (value: string): number => {
+    const [hours, minutes] = value.split(':').map(Number)
+    return hours * 60 + minutes
+}
+
+export function openingHoursScheduleIsValid(
+    groups: OpeningHoursScheduleGroup[]
+): boolean {
+    if (groups.length === 0) return false
+    const intervalsByDay = new Map<number, Array<[number, number]>>()
+
+    for (const group of groups) {
+        const selectedDays = group.days
+            .filter((day) => day.selected)
+            .map((day) => day.index)
+        if (selectedDays.length === 0 || group.times.length === 0) return false
+
+        const intervals: Array<[number, number]> = []
+        for (const time of group.times) {
+            if (
+                !START_TIME_PATTERN.test(time.start) ||
+                !END_TIME_PATTERN.test(time.end)
+            ) {
+                return false
+            }
+            const start = timeToMinutes(time.start)
+            const end = timeToMinutes(time.end)
+            if (end <= start) return false
+            intervals.push([start, end])
+        }
+
+        for (const day of selectedDays) {
+            intervalsByDay.set(day, [
+                ...(intervalsByDay.get(day) ?? []),
+                ...intervals,
+            ])
+        }
+    }
+
+    for (const intervals of intervalsByDay.values()) {
+        intervals.sort(([left], [right]) => left - right)
+        for (let index = 1; index < intervals.length; index++) {
+            if (intervals[index][0] < intervals[index - 1][1]) return false
+        }
+    }
+    return true
+}
+
 @Component({
     selector: 'app-modal-add-opening-hours-interval',
     templateUrl: './modal-add-opening-hours-interval.component.html',
@@ -78,19 +129,8 @@ export class ModalAddOpeningHoursIntervalComponent {
         this.createInitialGroups(this.data?.groups)
     )
 
-    readonly groupsAreValid = computed(
-        () =>
-            this.groups().length > 0 &&
-            this.groups().every(
-                (group) =>
-                    this.dayIsSelected(group) &&
-                    group.times.length > 0 &&
-                    group.times.every(
-                        (time) =>
-                            this.isValidTime(time.start) &&
-                            this.isValidTime(time.end)
-                    )
-            )
+    readonly groupsAreValid = computed(() =>
+        openingHoursScheduleIsValid(this.groups())
     )
 
     dayIsSelected(group: EditableScheduleGroup): boolean {
@@ -217,9 +257,5 @@ export class ModalAddOpeningHoursIntervalComponent {
         time: OpeningHoursTime = { start: '09:00', end: '12:00' }
     ): OpeningHoursTimeRange {
         return { id: this.nextTimeRangeId++, ...time }
-    }
-
-    private isValidTime(value: string): boolean {
-        return /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value)
     }
 }

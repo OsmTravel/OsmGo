@@ -35,7 +35,10 @@
         </header>
 
         @if (osmAuthService.isAuthenticated()) {
-        <section class="account-card" aria-label="Compte OpenStreetMap">
+        <section
+            class="account-card"
+            [attr.aria-label]="'A11Y.OSM_ACCOUNT' | translate"
+        >
             <div class="account-avatar" aria-hidden="true">
                 <mat-icon fontSet="material-symbols-rounded">person</mat-icon>
             </div>
@@ -49,7 +52,10 @@
         </section>
         }
 
-        <nav class="menu-navigation" aria-label="Navigation principale">
+        <nav
+            class="menu-navigation"
+            [attr.aria-label]="'A11Y.MAIN_NAVIGATION' | translate"
+        >
             @if (newVersion()) {
             <button
                 mat-button
@@ -60,7 +66,7 @@
                 <mat-icon fontSet="material-symbols-rounded">refresh</mat-icon>
                 <span class="menu-item__copy">
                     <strong>{{ 'MENU.NEW_VERSION' | translate }}</strong>
-                    <small>Installer la dernière version</small>
+                    <small>{{ 'MENU.INSTALL_UPDATE' | translate }}</small>
                 </span>
             </button>
             } @if (!osmAuthService.isAuthenticated()) {

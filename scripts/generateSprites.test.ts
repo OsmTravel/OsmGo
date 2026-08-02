@@ -103,6 +103,34 @@ const run = async () => {
                 )
             }
         }
+
+        const previousPng = await fs.readFile(
+            path.join(outputFolder, 'sprites.png')
+        )
+        const previousJson = await fs.readFile(
+            path.join(outputFolder, 'sprites.json')
+        )
+        await assert.rejects(
+            generateSpriteSheet({
+                fileNames,
+                inputFolder,
+                outputFolder,
+                temporaryFolder: path.join(temporaryRoot, 'failed-png'),
+                factor: 1,
+                render: async () => {
+                    throw new Error('Invalid SVG fixture')
+                },
+            }),
+            /Invalid SVG fixture/
+        )
+        assert.deepStrictEqual(
+            await fs.readFile(path.join(outputFolder, 'sprites.png')),
+            previousPng
+        )
+        assert.deepStrictEqual(
+            await fs.readFile(path.join(outputFolder, 'sprites.json')),
+            previousJson
+        )
     } finally {
         await fs.remove(temporaryRoot)
     }

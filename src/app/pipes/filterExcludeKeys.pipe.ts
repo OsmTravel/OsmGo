@@ -7,7 +7,6 @@ interface CountrySpecificPreset extends Preset {
 
 @Pipe({
     name: 'filterExcludeKeys',
-    pure: false,
 })
 export class FilterExcludeKeysPipe {
     transform(

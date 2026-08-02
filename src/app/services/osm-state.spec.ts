@@ -182,4 +182,50 @@ describe('OsmState migrations', () => {
     ])('rejects a persisted state with an invalid %s', (state, message) => {
         expect(() => migratePersistedOsmState(state)).toThrow(message)
     })
+
+    it.each([
+        {
+            source: 'fresh',
+            persisted: undefined,
+            expectedRevision: 0,
+            expectedNextId: -1,
+        },
+        {
+            source: 'V1',
+            persisted: {
+                schemaVersion: 1,
+                revision: 3,
+                geojson: collection([feature(10)]),
+                geojsonChanged: collection([feature(-4, 'Create')]),
+                geojsonBbox: collection([]),
+            },
+            expectedRevision: 3,
+            expectedNextId: -5,
+        },
+        {
+            source: 'V2',
+            persisted: {
+                schemaVersion: 2,
+                revision: 7,
+                officialById: { 'node/10': feature(10) },
+                pendingById: { 'node/-8': feature(-8, 'Create') },
+                bbox: collection([]),
+                nextTemporaryId: -9,
+            },
+            expectedRevision: 7,
+            expectedNextId: -9,
+        },
+    ])(
+        'loads the $source release migration fixture idempotently',
+        ({ persisted, expectedRevision, expectedNextId }) => {
+            const first = persisted
+                ? migratePersistedOsmState(persisted)
+                : createEmptyOsmState()
+            const second = migratePersistedOsmState(first)
+
+            expect(second).toEqual(first)
+            expect(second.revision).toBe(expectedRevision)
+            expect(second.nextTemporaryId).toBe(expectedNextId)
+        }
+    )
 })

@@ -31,6 +31,7 @@ import type {
     Preset,
     TagConfig,
 } from '@osmgo/type'
+import { osmTagKeyToPresetId } from '@osmgo/utils'
 import { formatLocalizedDate } from '@pipes/localized-date.pipe'
 import { RelativeTimePipe } from '@pipes/relative-time.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
@@ -215,7 +216,8 @@ export class ObjectSheetComponent {
                 )
             })
             .map(([key, value]) => {
-                const preset = this.tagsService.presets()[key.replace(':', '/')]
+                const preset =
+                    this.tagsService.presets()[osmTagKeyToPresetId(key)]
                 return {
                     key,
                     icon: SUMMARY_ICONS[key] ?? 'sell',

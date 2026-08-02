@@ -3,7 +3,6 @@ import type { Tag, TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'orderByPreset',
-    pure: false,
 })
 export class OrderByPresetPipe {
     transform(items: Tag[], tagConfig: TagConfig): Tag[] {

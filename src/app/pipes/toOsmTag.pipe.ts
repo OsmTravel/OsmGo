@@ -4,7 +4,6 @@ import { nameToOsmKey } from '@osmgo/utils'
 
 @Pipe({
     name: 'toOsmTag',
-    pure: false,
 })
 export class ToOsmTagPipe {
     transform(name: string) {

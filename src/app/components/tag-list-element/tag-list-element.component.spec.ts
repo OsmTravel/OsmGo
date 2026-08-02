@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { TranslateModule } from '@ngx-translate/core'
 import { TagListElementComponent } from './tag-list-element.component'
 
 const tagsConfig: any = require('../../../assets/tagsAndPresets/tags.json')
@@ -10,7 +11,7 @@ describe('TagListElementComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [TagListElementComponent],
+            imports: [TranslateModule.forRoot(), TagListElementComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
     })

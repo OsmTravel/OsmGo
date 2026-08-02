@@ -1,4 +1,12 @@
-import { Component, inject, input, model, OnInit, output } from '@angular/core'
+import {
+    Component,
+    effect,
+    inject,
+    input,
+    model,
+    OnInit,
+    output,
+} from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialog } from '@angular/material/dialog'
@@ -50,6 +58,13 @@ export class OpeningHoursComponent implements OnInit {
     intervals: DateRange[] = []
     isError = false
     isTooComplex = false
+
+    constructor() {
+        effect(() => {
+            this.openingHours()
+            this.parseOpeningHours()
+        })
+    }
 
     days = [
         { index: 0, text: this.translate.instant('DAYS.MONDAY') },

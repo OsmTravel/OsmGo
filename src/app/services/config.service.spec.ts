@@ -115,6 +115,28 @@ describe('ConfigService', () => {
         expect(storage.set).toHaveBeenCalledWith('config', service.config())
     })
 
+    it('keeps the translation service and document language in sync', () => {
+        const storage = { set: vi.fn() }
+        const translate = { use: vi.fn() }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: translate },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        service.setUiLanguage('fr')
+
+        expect(document.documentElement.lang).toBe('fr')
+        expect(translate.use).toHaveBeenCalledWith('fr')
+        expect(storage.set).toHaveBeenCalledWith(
+            'config',
+            expect.objectContaining({ languageUi: 'fr' })
+        )
+    })
+
     it('removes unified and legacy OSM state when switching servers', async () => {
         const storage = {
             set: vi.fn().mockResolvedValue(undefined),

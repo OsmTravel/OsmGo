@@ -21,6 +21,28 @@
         "CLEAR": "Annuler",
         "ERROR": "Une erreur est survenue. Vos modifications ont été conservées."
     },
+    "A11Y": {
+        "ADD_BOOKMARK": "Ajouter aux favoris",
+        "CATEGORY_SOURCE": "Source des catégories",
+        "CENTER_FEATURE": "Centrer l’objet sur la carte",
+        "CHANGE_SUMMARY": "Résumé des modifications",
+        "CODE": "Afficher ou masquer les codes des tags",
+        "COPY_FIELDS": "Copier les champs",
+        "HIDE_TAG": "Masquer ce tag",
+        "LOCATION": "Position",
+        "MAIN_NAVIGATION": "Navigation principale",
+        "OBJECT_FIELDS": "Champs de l’objet",
+        "OBJECT_INFORMATION": "Informations de l’objet",
+        "OPEN_LINK": "Ouvrir le lien",
+        "OSM_ACCOUNT": "Compte OpenStreetMap",
+        "OSM_METADATA": "Métadonnées OpenStreetMap",
+        "PASTE_FIELDS": "Coller les champs",
+        "REMOVE_BOOKMARK": "Retirer des favoris",
+        "REMOVE_TAG": "Supprimer ce tag",
+        "SELECTED": "Sélectionné",
+        "SHOW_TAG": "Afficher ce tag",
+        "USE_OSM_DEV_SERVER": "Utiliser le serveur de développement OSM"
+    },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Vraiment ?",
         "EXIT_CONFIRM_MESSAGE": "Voulez-vous vraiment quitter Osm Go! ?",
@@ -87,6 +109,7 @@
         "SIGN_OUT": "Se déconnecter",
         "EXIT": "Quitter",
         "NEW_VERSION": "Nouvelle version disponible !",
+        "INSTALL_UPDATE": "Installer la dernière version",
         "TAG_MANAGEMENT": "Gestion des tags"
     },
     "ABOUT": {
@@ -174,6 +197,9 @@
         "LINES_SELECTABLE_HINT": "Possibilité de cliquer sur une ligne pour ouvrir la fiche de l'élément",
         "POLYGONS_SELECTABLE": "Rendre les polygones sélectionnables",
         "POLYGONS_SELECTABLE_HINT": "Possibilité de cliquer sur un polygone pour ouvrir la fiche de l'élément",
+        "SWITCH_SERVER_CONFIRM": "Changer de serveur",
+        "SWITCH_SERVER_MESSAGE": "Changer de serveur supprime toutes les modifications locales en attente. Cette action est irréversible.",
+        "SWITCH_SERVER_TITLE": "Changer de serveur OpenStreetMap ?",
         "CENTER_WHEN_GPS_IS_READY": "Au démarrage, centrer la carte sur votre position",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible",
         "LIMIT_FEATURES": "Nombre maximum d'objets en mémoire",

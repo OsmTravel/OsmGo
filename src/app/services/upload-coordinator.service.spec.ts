@@ -566,6 +566,72 @@ describe('UploadCoordinator', () => {
         ).toHaveBeenCalledWith('attempt-1')
     })
 
+    describe('release restart recovery matrix', () => {
+        const feature = queuedFeature('Create', -1)
+        const acknowledged = acknowledgedJournal(feature)
+        if (acknowledged.phase !== 'acknowledged') {
+            throw new Error('Invalid acknowledged journal fixture.')
+        }
+        const applied: PersistedUploadJournal = {
+            ...acknowledged,
+            phase: 'applied',
+            appliedAt: '2026-08-02T10:00:01.000Z',
+        }
+
+        it.each([
+            {
+                phase: 'none',
+                journal: undefined,
+                expectedState: 'idle',
+                applyCount: 0,
+                clearCount: 0,
+            },
+            {
+                phase: 'prepared',
+                journal: {
+                    ...journalBase(feature),
+                    phase: 'prepared',
+                } as const,
+                expectedState: 'failed',
+                applyCount: 0,
+                clearCount: 0,
+            },
+            {
+                phase: 'acknowledged',
+                journal: acknowledged,
+                expectedState: 'succeeded',
+                applyCount: 1,
+                clearCount: 1,
+            },
+            {
+                phase: 'applied',
+                journal: applied,
+                expectedState: 'succeeded',
+                applyCount: 0,
+                clearCount: 1,
+            },
+        ])(
+            'recovers $phase without resubmitting',
+            async ({ journal, expectedState, applyCount, clearCount }) => {
+                const harness = createHarness({
+                    features: journal?.phase === 'applied' ? [] : [feature],
+                    journal,
+                })
+
+                const state = await harness.coordinator.recoverJournal()
+
+                expect(state.kind).toBe(expectedState)
+                expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
+                expect(
+                    harness.dependencies.applyAcknowledgedReceipt
+                ).toHaveBeenCalledTimes(applyCount)
+                expect(
+                    harness.dependencies.clearAppliedUploadAttempt
+                ).toHaveBeenCalledTimes(clearCount)
+            }
+        )
+    })
+
     it('blocks resubmission when the acknowledgement journal cannot be persisted', async () => {
         const harness = createHarness({
             acknowledgeUploadAttempt: async () => {

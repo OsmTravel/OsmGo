@@ -34,6 +34,7 @@ describe('InitService', () => {
             getCountryConfig$: vi.fn(() => of([])),
             loadUserInfo$: vi.fn(() => of(undefined)),
             loadChangeSet$: vi.fn(() => of(undefined)),
+            applyUiLanguage: vi.fn(),
             config: vi.fn(() => config),
             userInfo: vi.fn(() => ({
                 uid: '',

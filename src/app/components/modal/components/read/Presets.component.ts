@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core'
 import { MatIconModule } from '@angular/material/icon'
+import { TranslateModule } from '@ngx-translate/core'
 import { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
@@ -8,7 +9,12 @@ import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
     selector: 'read-presets',
     templateUrl: 'Presets.component.html',
     styleUrls: ['Presets.component.scss'],
-    imports: [DisplayPresetLabelPipe, MatIconModule, OpeningHoursComponent],
+    imports: [
+        DisplayPresetLabelPipe,
+        MatIconModule,
+        OpeningHoursComponent,
+        TranslateModule,
+    ],
 })
 export class ReadPresets {
     readonly displayCode = input(false)

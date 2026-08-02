@@ -48,8 +48,10 @@ import {
     Tag,
     TagConfig,
 } from '@osmgo/type'
+import { osmTagKeyToPresetId } from '@osmgo/utils'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
+import { parseLocalizedDate } from '@pipes/localized-date.pipe'
 import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
@@ -331,7 +333,7 @@ export class ObjectEditorContentComponent {
         const tags: Tag[] = []
 
         for (const tag in this.feature.properties.tags) {
-            const preset = this.tagsService.presets()[tag.replace(':', '/')]
+            const preset = this.tagsService.presets()[osmTagKeyToPresetId(tag)]
             const data: Tag = {
                 key: tag,
                 value: this.feature.properties.tags[tag],
@@ -340,9 +342,13 @@ export class ObjectEditorContentComponent {
             tags.push(data)
 
             if (['survey:date', 'check_date'].includes(tag)) {
-                const surveyValue = new Date(this.feature.properties.tags[tag])
-                surveyValue.setHours(0, 0, 0, 0)
-                surveyDates.push(surveyValue)
+                const surveyValue = parseLocalizedDate(
+                    this.feature.properties.tags[tag]
+                )
+                if (surveyValue) {
+                    surveyValue.setHours(0, 0, 0, 0)
+                    surveyDates.push(surveyValue)
+                }
             }
         }
 

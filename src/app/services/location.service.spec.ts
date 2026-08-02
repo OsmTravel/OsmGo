@@ -41,4 +41,35 @@ describe('LocationService', () => {
             2.35, 48.85,
         ])
     })
+
+    it('contains a denied current position without reporting GPS ready', async () => {
+        const service = createService()
+        vi.spyOn(service, 'getCurrentPosition').mockRejectedValue(
+            new Error('Permission denied')
+        )
+        vi.spyOn(service, 'heading').mockReturnValue(undefined)
+
+        service.enableGeolocation()
+
+        await vi.waitFor(() => expect(service.gpsIsReady()).toBe(false))
+        expect(service.location()).toBeUndefined()
+    })
+
+    it('accepts zero-valued orientation angles and normalizes heading', () => {
+        const service = createService()
+        const headings: number[] = []
+        service.compassHeadingChanges$.subscribe((heading) => {
+            if (heading.trueHeading !== null) headings.push(heading.trueHeading)
+        })
+
+        ;(
+            service as unknown as {
+                onDeviceOrientation: (
+                    event: Partial<DeviceOrientationEvent>
+                ) => void
+            }
+        ).onDeviceOrientation({ absolute: true, alpha: 0, beta: 0, gamma: 0 })
+
+        expect(headings).toEqual([0])
+    })
 })

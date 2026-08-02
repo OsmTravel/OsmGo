@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { DOCUMENT, inject, NgZone, Service, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
+import { resolveAppUrl } from '@app/utils/asset-url'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { TranslateService } from '@ngx-translate/core'
 import {
@@ -100,8 +101,8 @@ export class MapService {
         // Preload sprites
         const pathSprites =
             window.devicePixelRatio === 1
-                ? `assets/mapStyle/sprites/sprites.png`
-                : `assets/mapStyle/sprites/sprites@2x.png`
+                ? this.assetUrl('assets/mapStyle/sprites/sprites.png')
+                : this.assetUrl('assets/mapStyle/sprites/sprites@2x.png')
         const spriteImage = new Image()
         spriteImage.onload = () => {
             this.spritesCache = spriteImage
@@ -265,7 +266,9 @@ export class MapService {
         await Promise.all(
             markerShapes.map(async (shape) => {
                 const response = await this.map.loadImage(
-                    `./assets/mapStyle/unknown-marker/${shape}-unknown@${roundedFactor}X.png`
+                    this.assetUrl(
+                        `assets/mapStyle/unknown-marker/${shape}-unknown@${roundedFactor}X.png`
+                    )
                 )
                 this.markerMaplibreUnknown[shape] = response.data
             })
@@ -314,6 +317,7 @@ export class MapService {
     getPixelDistFromMeter(_map: Map, dist: number): number {
         const y = _map.getContainer().clientHeight / 2
         const mapWidth = _map.getContainer().clientWidth
+        if (mapWidth <= 0 || !Number.isFinite(dist)) return 0
 
         function getDistance(latlng1: LngLat, latlng2: LngLat): number {
             const R = 6371000
@@ -325,13 +329,14 @@ export class MapService {
                     Math.cos(lat1) *
                         Math.cos(lat2) *
                         Math.cos((latlng2.lng - latlng1.lng) * rad)
-            const maxMeters = R * Math.acos(Math.min(a, 1))
+            const maxMeters = R * Math.acos(Math.max(-1, Math.min(a, 1)))
             return maxMeters
         }
         const distWidth = getDistance(
             _map.unproject([0, y]),
             _map.unproject([mapWidth, y])
         )
+        if (!Number.isFinite(distWidth) || distWidth <= 0) return 0
         const pxPerMeter = mapWidth / distWidth
 
         return Math.round(dist * pxPerMeter)
@@ -592,11 +597,14 @@ export class MapService {
 
     getMapStyle(): Observable<StyleSpecification> {
         return this.http
-            .get<StyleSpecification>('assets/mapStyle/brigthCustom.json')
+            .get<StyleSpecification>(
+                this.assetUrl('assets/mapStyle/brigthCustom.json')
+            )
             .pipe(
                 map((maplibreStyle) => {
-                    const baseUrl = this.document.location.origin
-                    const spritesFullPath = `${baseUrl}/assets/mapStyle/sprites/sprites`
+                    const spritesFullPath = this.assetUrl(
+                        'assets/mapStyle/sprites/sprites'
+                    )
 
                     return { ...maplibreStyle, sprite: spritesFullPath }
                 })
@@ -794,15 +802,7 @@ export class MapService {
     }
 
     getIconRotate(heading: number, mapBearing: number): number {
-        heading = heading > 354 ? 0 : heading + 5
-        mapBearing = mapBearing < 0 ? 360 + mapBearing : mapBearing
-        let iconRotate = heading - mapBearing
-        if (iconRotate >= 360) {
-            iconRotate = iconRotate - 360
-        } else if (iconRotate <= 0) {
-            iconRotate = iconRotate + 360
-        }
-        return iconRotate
+        return (((heading - mapBearing) % 360) + 360) % 360
     }
 
     toogleMesureFilter(
@@ -1252,9 +1252,9 @@ export class MapService {
                 } catch {}
             }
 
-            const seenFeatureIds = new Set<string | number>()
+            const seenFeatureIds = new Set<string>()
             const uniqFeaturesById = features.filter((feature) => {
-                const id = feature.properties.id
+                const id = `${feature.properties.type}/${feature.properties.id}`
                 if (seenFeatureIds.has(id)) return false
                 seenFeatureIds.add(id)
                 return true
@@ -1470,8 +1470,8 @@ export class MapService {
             const pxRatio = spriteParams.pixelRatio || 1
             const pathSprites =
                 pxRatio === 1
-                    ? `assets/mapStyle/sprites/sprites.png`
-                    : `assets/mapStyle/sprites/sprites@2x.png`
+                    ? this.assetUrl('assets/mapStyle/sprites/sprites.png')
+                    : this.assetUrl('assets/mapStyle/sprites/sprites@2x.png')
 
             if (this.spritesCache) {
                 const spriteImage = this.spritesCache
@@ -1569,5 +1569,9 @@ export class MapService {
                 }
             })
         })
+    }
+
+    private assetUrl(path: string): string {
+        return resolveAppUrl(path, this.document.baseURI)
     }
 }

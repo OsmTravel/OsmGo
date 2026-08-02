@@ -3,7 +3,6 @@ import type { PresetOption } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByCountryCode',
-    pure: false,
 })
 export class FilterByCountryCode {
     transform(

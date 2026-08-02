@@ -9,10 +9,6 @@ const config: CapacitorConfig = {
     // The directory of your compiled web assets.
     webDir: 'www',
     plugins: {
-        App: {
-            url: 'osmgo',
-            androidScheme: 'osmgo',
-        },
         SystemBars: {
             insetsHandling: 'css',
             style: 'DEFAULT',

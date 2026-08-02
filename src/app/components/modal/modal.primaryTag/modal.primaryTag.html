@@ -79,7 +79,7 @@
         <mat-button-toggle-group
             class="category-tabs"
             [value]="displayType"
-            aria-label="Source des catégories"
+            [attr.aria-label]="'A11Y.CATEGORY_SOURCE' | translate"
             (change)="changePageLastTagsBookmarks($event.value)"
         >
             <mat-button-toggle value="lastTags">
