@@ -6,7 +6,7 @@ import {
 import {
     ApplicationConfig,
     importProvidersFrom,
-    provideZoneChangeDetection,
+    provideCheckNoChangesConfig,
 } from '@angular/core'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { provideRouter, RouteReuseStrategy } from '@angular/router'
@@ -24,7 +24,14 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),
-        provideZoneChangeDetection(),
+        ...(environment.production
+            ? []
+            : [
+                  provideCheckNoChangesConfig({
+                      exhaustive: true,
+                      interval: 1000,
+                  }),
+              ]),
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideHttpClient(withXhr(), withInterceptorsFromDi()),
         provideServiceWorker('ngsw-worker.js', {

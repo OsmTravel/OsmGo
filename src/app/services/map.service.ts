@@ -681,6 +681,7 @@ export class MapService {
                     pitchWithRotate: false,
                     collectResourceTiming: false,
                 })
+                this.configService.setCurrentZoom(this.map.getZoom())
 
                 this.map.addControl(new NavigationControl(null))
 
@@ -1336,10 +1337,8 @@ export class MapService {
             }
         })
 
-        this.map.on('zoom', (e) => {
-            this._ngZone.run(() => {
-                this.configService.setCurrentZoom(this.map.getZoom())
-            })
+        this.map.on('zoom', () => {
+            this.configService.setCurrentZoom(this.map.getZoom())
         })
 
         this.locationService.compassHeadingChanges$
