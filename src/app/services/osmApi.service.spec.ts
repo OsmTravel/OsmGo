@@ -1,21 +1,57 @@
-import { fakeAsync, flushMicrotasks, tick } from '@angular/core/testing'
+import { HttpClient } from '@angular/common/http'
+import {
+    fakeAsync,
+    flushMicrotasks,
+    TestBed,
+    tick,
+} from '@angular/core/testing'
+import { Platform } from '@ionic/angular/standalone'
+import { Storage } from '@ionic/storage-angular'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { MapService } from '@services/map.service'
+import { OsmAuthService } from '@services/osm-auth.service'
+import { TagsService } from '@services/tags.service'
 import { NEVER, Observable, of, throwError } from 'rxjs'
 
 import { OsmApiService } from './osmApi.service'
 
+interface ServiceDependencies {
+    http?: object
+    tagsService?: object
+    dataService?: object
+    configService?: object
+    osmAuthService?: object
+}
+
+function createService({
+    http = {},
+    tagsService = {},
+    dataService = {},
+    configService = {},
+    osmAuthService = {},
+}: ServiceDependencies = {}): OsmApiService {
+    TestBed.resetTestingModule()
+    TestBed.configureTestingModule({
+        providers: [
+            { provide: Platform, useValue: {} },
+            { provide: HttpClient, useValue: http },
+            { provide: MapService, useValue: {} },
+            { provide: TagsService, useValue: tagsService },
+            { provide: DataService, useValue: dataService },
+            { provide: AlertService, useValue: {} },
+            { provide: ConfigService, useValue: configService },
+            { provide: Storage, useValue: {} },
+            { provide: OsmAuthService, useValue: osmAuthService },
+        ],
+    })
+    return TestBed.inject(OsmApiService)
+}
+
 describe('OsmApiService', () => {
     it('does not serialize empty or undefined OSM tag keys', () => {
-        const service = new OsmApiService(
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const service = createService()
         const feature = {
             properties: {
                 id: -1,
@@ -69,17 +105,7 @@ describe('OsmApiService', () => {
                 prod: { url: 'https://api.openstreetmap.org' },
             },
         }
-        const service = new OsmApiService(
-            {} as any,
-            http as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            osmAuthService as any
-        )
+        const service = createService({ http, configService, osmAuthService })
         vi.spyOn(navigator, 'language', 'get').mockReturnValue(
             `fr-FR & "test" <locale>`
         )
@@ -106,17 +132,7 @@ describe('OsmApiService', () => {
         let service: OsmApiService
 
         beforeEach(() => {
-            service = new OsmApiService(
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any
-            )
+            service = createService()
         })
 
         it('parses created, updated and deleted OSM elements', () => {
@@ -197,17 +213,7 @@ describe('OsmApiService', () => {
                     prod: { url: 'https://api.openstreetmap.org' },
                 },
             }
-            service = new OsmApiService(
-                {} as any,
-                http,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                configService as any,
-                {} as any,
-                osmAuthService as any
-            )
+            service = createService({ http, configService, osmAuthService })
         })
 
         function expectRequestToTimeOut(request: Observable<unknown>): void {
@@ -259,17 +265,11 @@ describe('OsmApiService', () => {
                     },
                 }
                 const configService = { getIsDevServer: () => false }
-                const service = new OsmApiService(
-                    {} as any,
-                    http as any,
-                    {} as any,
-                    {} as any,
-                    {} as any,
-                    {} as any,
-                    configService as any,
-                    {} as any,
-                    osmAuthService as any
-                )
+                const service = createService({
+                    http,
+                    configService,
+                    osmAuthService,
+                })
                 vi.spyOn(console, 'error').mockReturnValue(undefined)
 
                 service.getUserDetail$().subscribe({ error: () => {} })
@@ -323,17 +323,7 @@ describe('OsmApiService', () => {
                 tags: [{ key: 'amenity' }],
                 primaryKeys: ['amenity'],
             }
-            service = new OsmApiService(
-                {} as any,
-                {} as any,
-                {} as any,
-                tagsService as any,
-                dataService as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any
-            )
+            service = createService({ tagsService, dataService })
         })
 
         afterEach(() => {

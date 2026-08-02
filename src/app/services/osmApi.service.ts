@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
@@ -20,17 +20,15 @@ const OSM_WORKER_TIMEOUT_MS = 30_000
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-    constructor(
-        private platform: Platform,
-        private http: HttpClient,
-        public mapService: MapService,
-        public tagsService: TagsService,
-        public dataService: DataService,
-        public alertService: AlertService,
-        public configService: ConfigService,
-        private localStorage: Storage,
-        public osmAuthService: OsmAuthService
-    ) {}
+    private readonly platform = inject(Platform)
+    private readonly http = inject(HttpClient)
+    readonly mapService = inject(MapService)
+    readonly tagsService = inject(TagsService)
+    readonly dataService = inject(DataService)
+    readonly alertService = inject(AlertService)
+    readonly configService = inject(ConfigService)
+    private readonly localStorage = inject(Storage)
+    readonly osmAuthService = inject(OsmAuthService)
 
     isAuthenticated(): boolean {
         return this.osmAuthService.isAuthenticated()
