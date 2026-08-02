@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { EventEmitter, Injectable } from '@angular/core'
-import { Platform } from '@ionic/angular'
+import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { AlertService } from '@services/alert.service'

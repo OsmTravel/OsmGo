@@ -1,7 +1,20 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
-import { IonicModule, ModalController } from '@ionic/angular'
+import {
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonList,
+    IonSearchbar,
+    IonTitle,
+    IonToolbar,
+    ModalController,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
 import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
@@ -17,7 +30,17 @@ import { TagsService } from '@services/tags.service'
         FilterByTagsContentPipe,
         FiltersTagsByIdsPipe,
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonButtons,
+        IonContent,
+        IonFooter,
+        IonHeader,
+        IonIcon,
+        IonItem,
+        IonList,
+        IonSearchbar,
+        IonTitle,
+        IonToolbar,
         TagListElementComponent,
         TranslateModule,
     ],

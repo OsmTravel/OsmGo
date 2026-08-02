@@ -6,7 +6,14 @@ import {
     Output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule } from '@ionic/angular'
+import {
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonIcon,
+    IonInput,
+    IonItem,
+} from '@ionic/angular/standalone'
 
 @Component({
     selector: 'edit-other-tag',
@@ -40,7 +47,15 @@ import { IonicModule } from '@ionic/angular'
         </ion-card>
     `,
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [FormsModule, IonicModule],
+    imports: [
+        FormsModule,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonIcon,
+        IonInput,
+        IonItem,
+    ],
 })
 export class EditOtherTag {
     @Input() tag

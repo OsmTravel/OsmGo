@@ -1,11 +1,21 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import {
-    IonicModule,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonItemGroup,
+    IonLabel,
+    IonThumbnail,
+    IonTitle,
+    IonToolbar,
     ModalController,
     NavController,
     Platform,
     ToastController,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 
 import { ConfigService } from '@services/config.service'
@@ -13,7 +23,20 @@ import { ConfigService } from '@services/config.service'
     selector: 'page-about',
     templateUrl: './about.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [
+        IonButton,
+        IonButtons,
+        IonContent,
+        IonHeader,
+        IonIcon,
+        IonItem,
+        IonItemGroup,
+        IonLabel,
+        IonThumbnail,
+        IonTitle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class AboutPage {
     constructor(

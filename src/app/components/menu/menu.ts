@@ -11,10 +11,18 @@ import { AboutPage } from '@components/about/about'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import {
     AlertController,
-    IonicModule,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonList,
+    IonTitle,
+    IonToolbar,
     NavController,
     Platform,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -30,7 +38,18 @@ import { menuAnimations } from './menu.animations'
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [
+        IonButton,
+        IonButtons,
+        IonContent,
+        IonHeader,
+        IonIcon,
+        IonItem,
+        IonList,
+        IonTitle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class MenuPage {
     private swipeStartX: number | null = null

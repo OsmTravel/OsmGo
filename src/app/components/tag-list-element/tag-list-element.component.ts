@@ -7,7 +7,7 @@ import {
     Output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
-import { IonicModule } from '@ionic/angular'
+import { IonButton, IonIcon } from '@ionic/angular/standalone'
 import { TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
@@ -17,7 +17,13 @@ import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
     templateUrl: './tag-list-element.component.html',
     styleUrls: ['./tag-list-element.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [DisplayTagsPipe, IconComponent, IonicModule, IsBookmarkedPipe],
+    imports: [
+        DisplayTagsPipe,
+        IconComponent,
+        IonButton,
+        IonIcon,
+        IsBookmarkedPipe,
+    ],
 })
 export class TagListElementComponent implements OnInit {
     @Input() tag: any

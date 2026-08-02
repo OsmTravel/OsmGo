@@ -5,7 +5,7 @@ import {
 } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { BasemapsService } from '@app/services/basemaps.service'
-import { NavController } from '@ionic/angular'
+import { NavController } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'

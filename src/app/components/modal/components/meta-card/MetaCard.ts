@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common'
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
-import { IonicModule } from '@ionic/angular'
+import { IonCard, IonCardContent } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { RelativeTimePipe } from '@pipes/relative-time.pipe'
 
@@ -9,7 +9,13 @@ import { RelativeTimePipe } from '@pipes/relative-time.pipe'
     styleUrls: ['MetaCard.scss'],
     templateUrl: './MetaCard.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [DatePipe, IonicModule, RelativeTimePipe, TranslateModule],
+    imports: [
+        DatePipe,
+        IonCard,
+        IonCardContent,
+        RelativeTimePipe,
+        TranslateModule,
+    ],
 })
 export class MetaCard {
     @Input() feature

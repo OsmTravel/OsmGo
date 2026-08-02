@@ -7,7 +7,17 @@ import {
     Output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule } from '@ionic/angular'
+import {
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCol,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonSelect,
+    IonSelectOption,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 
@@ -19,7 +29,15 @@ import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
-        IonicModule,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonCol,
+        IonIcon,
+        IonInput,
+        IonItem,
+        IonSelect,
+        IonSelectOption,
         TranslateModule,
     ],
 })

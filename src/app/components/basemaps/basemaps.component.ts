@@ -1,6 +1,20 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { IonicModule, NavController } from '@ionic/angular'
+import {
+    IonButton,
+    IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonTitle,
+    IonToolbar,
+    NavController,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { BasemapsService } from '@services/basemaps.service'
 import { ConfigService } from '@services/config.service'
@@ -12,7 +26,21 @@ import { MapService } from '@services/map.service'
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [
+        IonButton,
+        IonButtons,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonCardSubtitle,
+        IonCardTitle,
+        IonContent,
+        IonHeader,
+        IonIcon,
+        IonTitle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class BasemapsComponent implements OnInit {
     lat: number

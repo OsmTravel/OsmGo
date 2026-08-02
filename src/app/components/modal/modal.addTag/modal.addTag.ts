@@ -1,6 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import {
+    IonButton,
+    IonContent,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonItemGroup,
+    IonLabel,
+    ModalController,
+    NavParams,
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
@@ -21,7 +33,15 @@ import { TagsService } from '@services/tags.service'
         FilterByListPipe,
         FilterPresetsByListPipe,
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonContent,
+        IonFooter,
+        IonHeader,
+        IonIcon,
+        IonInput,
+        IonItem,
+        IonItemGroup,
+        IonLabel,
         RemoveBrandsPipe,
         SearchForPipe,
         ToOsmTagPipe,

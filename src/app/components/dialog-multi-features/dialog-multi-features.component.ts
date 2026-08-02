@@ -5,7 +5,14 @@ import {
     OnInit,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
-import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import {
+    IonHeader,
+    IonIcon,
+    IonTitle,
+    IonToolbar,
+    ModalController,
+    NavParams,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
@@ -13,7 +20,14 @@ import { TranslateModule } from '@ngx-translate/core'
     templateUrl: './dialog-multi-features.component.html',
     styleUrls: ['./dialog-multi-features.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IconComponent, IonicModule, TranslateModule],
+    imports: [
+        IconComponent,
+        IonHeader,
+        IonIcon,
+        IonTitle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class DialogMultiFeaturesComponent implements OnInit {
     // @Input() features: string;

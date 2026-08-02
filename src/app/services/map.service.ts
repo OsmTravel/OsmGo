@@ -8,7 +8,7 @@ import {
 } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
-import { AlertController } from '@ionic/angular'
+import { AlertController } from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
 import {
     type EventShowModal,

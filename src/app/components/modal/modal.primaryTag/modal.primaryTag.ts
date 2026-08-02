@@ -2,7 +2,20 @@ import { LowerCasePipe } from '@angular/common'
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
-import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import {
+    IonButton,
+    IonChip,
+    IonContent,
+    IonFooter,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonSearchbar,
+    IonTitle,
+    ModalController,
+    NavParams,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 import { FilterByByGeometryTypePipe } from '@pipes/filter-by-geometry-type.pipe'
@@ -29,7 +42,16 @@ import { TagsService } from '@services/tags.service'
         FilterExcludeTagByCountryCode,
         FiltersTagsByIdsPipe,
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonChip,
+        IonContent,
+        IonFooter,
+        IonIcon,
+        IonItem,
+        IonLabel,
+        IonList,
+        IonSearchbar,
+        IonTitle,
         LimitDisplayTagsPipe,
         LowerCasePipe,
         SortArrayPipe,

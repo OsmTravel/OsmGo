@@ -1,6 +1,19 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import {
+    IonBadge,
+    IonButton,
+    IonCard,
+    IonContent,
+    IonDatetime,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonTitle,
+    IonToolbar,
+    ModalController,
+    NavParams,
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
@@ -9,7 +22,21 @@ import { CharLimitPipe } from '@pipes/charLimit.pipe'
     templateUrl: './modal-add-opening-hours-interval.component.html',
     styleUrls: ['./modal-add-opening-hours-interval.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [CharLimitPipe, FormsModule, IonicModule, TranslateModule],
+    imports: [
+        CharLimitPipe,
+        FormsModule,
+        IonBadge,
+        IonButton,
+        IonCard,
+        IonContent,
+        IonDatetime,
+        IonFooter,
+        IonHeader,
+        IonIcon,
+        IonTitle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class ModalAddOpeningHoursIntervalComponent implements OnInit {
     constructor(

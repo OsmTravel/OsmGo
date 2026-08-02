@@ -1,10 +1,24 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import {
-    IonicModule,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonItemDivider,
+    IonItemGroup,
+    IonLabel,
+    IonRange,
+    IonSelect,
+    IonSelectOption,
+    IonTitle,
+    IonToggle,
+    IonToolbar,
     LoadingController,
     NavController,
     Platform,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -18,7 +32,24 @@ import { TagsService } from '@services/tags.service'
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [
+        IonButton,
+        IonButtons,
+        IonContent,
+        IonHeader,
+        IonIcon,
+        IonItem,
+        IonItemDivider,
+        IonItemGroup,
+        IonLabel,
+        IonRange,
+        IonSelect,
+        IonSelectOption,
+        IonTitle,
+        IonToggle,
+        IonToolbar,
+        TranslateModule,
+    ],
 })
 export class SettingsPage {
     constructor(

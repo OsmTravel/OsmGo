@@ -7,7 +7,13 @@ import {
     Output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule, ModalController } from '@ionic/angular'
+import {
+    IonButton,
+    IonIcon,
+    IonInput,
+    IonItem,
+    ModalController,
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { MinutesToHoursMinutesPipe } from '@pipes/minutes-to-hours-minutes.pipe'
 import DateRange from '@scripts/YoHours/DateRange.js'
@@ -27,7 +33,10 @@ const builder = new OpeningHoursBuilder()
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonIcon,
+        IonInput,
+        IonItem,
         MinutesToHoursMinutesPipe,
         TranslateModule,
     ],

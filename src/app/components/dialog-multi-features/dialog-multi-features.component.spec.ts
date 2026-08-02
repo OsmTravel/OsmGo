@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-import { IonicModule, NavParams } from '@ionic/angular'
+import { NavParams, provideIonicAngular } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
 
@@ -23,12 +23,11 @@ describe('DialogMultiFeaturesComponent', () => {
     beforeEach(waitForAsync(() => {
         NavParamsMock.setParams(null) //set your own params here
         TestBed.configureTestingModule({
-            imports: [
-                DialogMultiFeaturesComponent,
-                IonicModule.forRoot(),
-                TranslateModule.forRoot(),
+            imports: [DialogMultiFeaturesComponent, TranslateModule.forRoot()],
+            providers: [
+                provideIonicAngular(),
+                { provide: NavParams, useClass: NavParamsMock },
             ],
-            providers: [{ provide: NavParams, useClass: NavParamsMock }],
         }).compileComponents()
     }))
 

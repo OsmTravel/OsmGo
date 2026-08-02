@@ -6,7 +6,12 @@ import {
     OnInit,
     Output,
 } from '@angular/core'
-import { IonicModule } from '@ionic/angular'
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonIcon,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
@@ -14,7 +19,7 @@ import { TranslateModule } from '@ngx-translate/core'
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class AlertComponent implements OnInit {
     @Input() tagConfig

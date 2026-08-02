@@ -27,11 +27,6 @@
                 "output": "assets"
               },
               {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
-              },
-              {
                 "glob": "maplibre-gl-worker.mjs",
                 "input": "node_modules/maplibre-gl/dist",
                 "output": "/"

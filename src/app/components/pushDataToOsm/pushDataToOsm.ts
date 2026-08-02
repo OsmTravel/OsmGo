@@ -11,10 +11,22 @@ import { IconComponent } from '@components/icon/icon.component'
 
 import {
     AlertController,
-    IonicModule,
+    IonButton,
+    IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonContent,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonTitle,
+    IonToolbar,
     NavController,
     Platform,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
@@ -36,7 +48,19 @@ import { take } from 'rxjs/operators'
     imports: [
         FormsModule,
         IconComponent,
-        IonicModule,
+        IonButton,
+        IonButtons,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonContent,
+        IonFooter,
+        IonHeader,
+        IonIcon,
+        IonInput,
+        IonItem,
+        IonTitle,
+        IonToolbar,
         KeyValuePipe,
         TranslateModule,
     ],

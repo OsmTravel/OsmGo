@@ -6,7 +6,7 @@ import {
     Output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
-import { IonicModule } from '@ionic/angular'
+import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
 import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 
@@ -15,7 +15,7 @@ import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [DisplayTagsPipe, IconComponent, IonicModule],
+    imports: [DisplayTagsPipe, IconComponent, IonCard, IonCardContent, IonIcon],
 })
 export class PrimaryKey {
     @Output() openPrimaryTagModal = new EventEmitter()

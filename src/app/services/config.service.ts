@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { EventEmitter, Injectable } from '@angular/core'
 import { environment } from '@environments/environment.prod'
-import { Platform } from '@ionic/angular'
+import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { TranslateService } from '@ngx-translate/core'
 import { CountryCode, TagConfig } from '@osmgo/type'
@@ -286,7 +286,7 @@ export class ConfigService {
                 this.setIsSelectableLine(this.config.isSelectableLine)
                 this.setIsSelectablePolygon(this.config.isSelectablePolygon)
 
-                let userInfo = await this.localStorage.get('user_info')
+                const userInfo = await this.localStorage.get('user_info')
                 if (userInfo && userInfo.connected) {
                     this.user_info = userInfo
                 } else {
@@ -297,7 +297,7 @@ export class ConfigService {
                     }
                 }
 
-                let changeset: Changeset =
+                const changeset: Changeset =
                     await this.localStorage.get('changeset')
                 if (changeset) {
                     this.changeset = changeset

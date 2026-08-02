@@ -17,13 +17,22 @@ import { ReadPresets } from '@components/modal/components/read/Presets.component
 import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
     AlertController,
-    IonicModule,
+    IonButton,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonInput,
+    IonTitle,
+    IonToolbar,
     LoadingController,
     ModalController,
     NavParams,
     Platform,
     ToastController,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature, Preset, PrimaryTag, Tag, TagConfig } from '@osmgo/type'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
@@ -66,7 +75,16 @@ export interface ModalDismissData {
         EditPresets,
         FilterExcludeKeysPipe,
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonContent,
+        IonFab,
+        IonFabButton,
+        IonFooter,
+        IonHeader,
+        IonIcon,
+        IonInput,
+        IonTitle,
+        IonToolbar,
         IsBookmarkedPipe,
         MetaCard,
         OrderByPresetPipe,

@@ -6,7 +6,15 @@ import {
     Output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { IonicModule } from '@ionic/angular'
+import {
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonLabel,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
@@ -20,7 +28,13 @@ import { SelectComponent } from '../select/select.component'
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
-        IonicModule,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonIcon,
+        IonInput,
+        IonItem,
+        IonLabel,
         OpeningHoursComponent,
         SelectComponent,
         TranslateModule,

@@ -13,7 +13,10 @@ import { provideRouter, RouteReuseStrategy } from '@angular/router'
 import { provideServiceWorker } from '@angular/service-worker'
 import { routes } from '@app/app.routes'
 import { environment } from '@environments/environment'
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
+import {
+    IonicRouteStrategy,
+    provideIonicAngular,
+} from '@ionic/angular/standalone'
 import { IonicStorageModule } from '@ionic/storage-angular'
 import { TranslateModule } from '@ngx-translate/core'
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
@@ -30,9 +33,9 @@ export const appConfig: ApplicationConfig = {
         provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
         importProvidersFrom(
             BrowserAnimationsModule,
-            IonicModule.forRoot({ mode: 'md' }),
             IonicStorageModule.forRoot(),
             TranslateModule.forRoot({ fallbackLang: 'en' })
         ),
+        provideIonicAngular({ mode: 'md' }),
     ],
 }

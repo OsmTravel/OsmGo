@@ -5,7 +5,12 @@ import {
     Input,
     Output,
 } from '@angular/core'
-import { IonicModule } from '@ionic/angular'
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonIcon,
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
@@ -13,7 +18,7 @@ import { TranslateModule } from '@ngx-translate/core'
     styleUrls: ['SurveyCard.scss'],
     templateUrl: './SurveyCard.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IonicModule, TranslateModule],
+    imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class SurveyCard {
     @Output() yes = new EventEmitter()

@@ -1,11 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
-    IonicModule,
+    IonButton,
+    IonFooter,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonRadio,
+    IonRadioGroup,
+    IonSearchbar,
+    IonTitle,
+    IonToolbar,
     ModalController,
     NavParams,
     Platform,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
@@ -20,7 +29,16 @@ import { ConfigService } from '@services/config.service'
         FilterByCountryCode,
         FilterByPresetsContentPipe,
         FormsModule,
-        IonicModule,
+        IonButton,
+        IonFooter,
+        IonItem,
+        IonLabel,
+        IonList,
+        IonRadio,
+        IonRadioGroup,
+        IonSearchbar,
+        IonTitle,
+        IonToolbar,
         TranslateModule,
     ],
 })

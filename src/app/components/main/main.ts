@@ -19,14 +19,19 @@ import { MenuPage } from '@components/menu/menu'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 import {
     AlertController,
-    IonicModule,
+    IonBadge,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonIcon,
+    IonSpinner,
     LoadingController,
     MenuController,
     ModalController,
     NavController,
     Platform,
     ToastController,
-} from '@ionic/angular'
+} from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
 import { FeatureIdSource } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
@@ -47,7 +52,16 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
     selector: 'main',
     styleUrls: ['./main.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [AsyncPipe, IonicModule, MenuPage],
+    imports: [
+        AsyncPipe,
+        IonBadge,
+        IonContent,
+        IonFab,
+        IonFabButton,
+        IonIcon,
+        IonSpinner,
+        MenuPage,
+    ],
 })
 export class MainPage implements AfterViewInit {
     modalIsOpen: boolean = false
