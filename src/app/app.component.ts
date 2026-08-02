@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { Router } from '@angular/router'
 import { App } from '@capacitor/app'
 import { Capacitor } from '@capacitor/core'
@@ -16,13 +16,13 @@ import { TagsService } from '@services/tags.service'
     imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-    constructor(
-        private platform: Platform,
-        public configService: ConfigService,
-        public tagService: TagsService,
-        private storage: Storage,
-        private router: Router
-    ) {
+    private readonly platform = inject(Platform)
+    readonly configService = inject(ConfigService)
+    readonly tagService = inject(TagsService)
+    private readonly storage = inject(Storage)
+    private readonly router = inject(Router)
+
+    constructor() {
         this.initializeApp()
     }
 

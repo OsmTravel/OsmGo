@@ -1,6 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
     NgZone,
     output,
@@ -49,24 +50,23 @@ import { menuAnimations } from './menu.animations'
     ],
 })
 export class MenuPage {
+    readonly mapService = inject(MapService)
+    readonly osmApi = inject(OsmApiService)
+    readonly dataService = inject(DataService)
+    readonly configService = inject(ConfigService)
+    readonly alertService = inject(AlertService)
+    private readonly alertCtrl = inject(AlertController)
+    readonly platform = inject(Platform)
+    private readonly translate = inject(TranslateService)
+    private readonly navCtrl = inject(NavController)
+    private readonly osmAuthService = inject(OsmAuthService)
+
     private swipeStartX: number | null = null
 
     readonly closeEvent = output<void>()
     readonly exitApp = output<void>()
     readonly menuIsOpen = input(false)
     readonly newVersion = input(false)
-    constructor(
-        public mapService: MapService,
-        public osmApi: OsmApiService,
-        public dataService: DataService,
-        public configService: ConfigService,
-        public alertService: AlertService,
-        private alertCtrl: AlertController,
-        public platform: Platform,
-        private translate: TranslateService,
-        private navCtrl: NavController,
-        private osmAuthService: OsmAuthService
-    ) {}
 
     deleteDatapresentConfirm() {
         this.alertCtrl

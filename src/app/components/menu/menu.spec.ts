@@ -1,4 +1,16 @@
 import { TestBed } from '@angular/core/testing'
+import {
+    AlertController,
+    NavController,
+    Platform,
+} from '@ionic/angular/standalone'
+import { TranslateService } from '@ngx-translate/core'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { MapService } from '@services/map.service'
+import { OsmAuthService } from '@services/osm-auth.service'
+import { OsmApiService } from '@services/osmApi.service'
 import { MenuPage } from './menu'
 
 describe('MenuPage swipes', () => {
@@ -6,21 +18,24 @@ describe('MenuPage swipes', () => {
         ({ clientX }) as PointerEvent
 
     const createPage = (): MenuPage =>
-        TestBed.runInInjectionContext(
-            () =>
-                new MenuPage(
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null
-                )
-        )
+        TestBed.runInInjectionContext(() => new MenuPage())
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: MapService, useValue: {} },
+                { provide: OsmApiService, useValue: {} },
+                { provide: DataService, useValue: {} },
+                { provide: ConfigService, useValue: {} },
+                { provide: AlertService, useValue: {} },
+                { provide: AlertController, useValue: {} },
+                { provide: Platform, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+                { provide: NavController, useValue: {} },
+                { provide: OsmAuthService, useValue: {} },
+            ],
+        })
+    })
 
     it('closes the menu after a left swipe', () => {
         const page = createPage()

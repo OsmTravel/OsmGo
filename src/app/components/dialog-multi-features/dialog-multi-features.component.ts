@@ -1,8 +1,8 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
-    OnInit,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import {
@@ -40,13 +40,11 @@ type DialogFeature = OsmGoFeature & {
         TranslateModule,
     ],
 })
-export class DialogMultiFeaturesComponent implements OnInit {
+export class DialogMultiFeaturesComponent {
+    readonly modalCtrl = inject(ModalController)
+
     readonly features = input.required<DialogFeature[]>()
     readonly jsonSprites = input.required<Record<string, SpritePosition>>()
-
-    constructor(public modalCtrl: ModalController) {}
-
-    ngOnInit() {}
 
     selectFeature(feature) {
         this.modalCtrl.dismiss(feature)

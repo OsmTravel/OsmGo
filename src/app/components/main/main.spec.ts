@@ -1,9 +1,46 @@
+import { ChangeDetectorRef } from '@angular/core'
 import { TestBed } from '@angular/core/testing'
+import { ActivatedRoute, Router } from '@angular/router'
+import { SwUpdate } from '@angular/service-worker'
+import {
+    AlertController,
+    LoadingController,
+    MenuController,
+    ModalController,
+    NavController,
+    ToastController,
+} from '@ionic/angular/standalone'
+import { TranslateService } from '@ngx-translate/core'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { InitService } from '@services/init.service'
+import { LocationService } from '@services/location.service'
+import { MapService } from '@services/map.service'
+import { OsmAuthService } from '@services/osm-auth.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 import { Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
 import { ModalsContentPage } from '../modal/modal'
 import { MainPage } from './main'
+
+interface MainPageDependencies {
+    modalCtrl?: Record<string, unknown>
+    osmApi?: Record<string, unknown>
+    mapService?: Record<string, unknown>
+    dataService?: Record<string, unknown>
+    alertService?: Record<string, unknown>
+    configService?: Record<string, unknown>
+    changeDetectorRef?: Record<string, unknown>
+}
+
+interface MainPageMapServiceStub extends Record<string, unknown> {
+    eventShowDialogMultiFeatures: Subject<unknown>
+    eventShowModal: Subject<unknown>
+    setCenterInUrl: Mock
+}
 
 const createPage = ({
     modalCtrl = {},
@@ -13,12 +50,13 @@ const createPage = ({
     alertService = {},
     configService = {},
     changeDetectorRef = { detectChanges: vi.fn() },
-}: any = {}) => {
-    const resolvedMapService = {
+}: MainPageDependencies = {}) => {
+    const resolvedMapService: MainPageMapServiceStub = {
         eventShowDialogMultiFeatures: new Subject(),
         eventShowModal: new Subject(),
+        setCenterInUrl: vi.fn(),
         ...mapService,
-    }
+    } as MainPageMapServiceStub
     const resolvedAlertService = {
         eventNewAlert: new Subject(),
         ...alertService,
@@ -28,33 +66,32 @@ const createPage = ({
         ...configService,
     }
     const router = { events: new Subject() }
-    const ngZone = { run: (callback) => callback() }
-    const page = TestBed.runInInjectionContext(
-        () =>
-            new MainPage(
-                {} as any,
-                modalCtrl as any,
-                {} as any,
-                {} as any,
-                osmApi as any,
-                {} as any,
-                resolvedMapService as any,
-                dataService as any,
-                {} as any,
-                resolvedAlertService as any,
-                resolvedConfigService as any,
-                {} as any,
-                ngZone as any,
-                router as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                {} as any,
-                changeDetectorRef as any
-            )
-    )
+    TestBed.resetTestingModule()
+    TestBed.configureTestingModule({
+        providers: [
+            { provide: NavController, useValue: {} },
+            { provide: ModalController, useValue: modalCtrl },
+            { provide: ToastController, useValue: {} },
+            { provide: MenuController, useValue: {} },
+            { provide: OsmApiService, useValue: osmApi },
+            { provide: TagsService, useValue: {} },
+            { provide: MapService, useValue: resolvedMapService },
+            { provide: DataService, useValue: dataService },
+            { provide: LocationService, useValue: {} },
+            { provide: AlertService, useValue: resolvedAlertService },
+            { provide: ConfigService, useValue: resolvedConfigService },
+            { provide: AlertController, useValue: {} },
+            { provide: Router, useValue: router },
+            { provide: TranslateService, useValue: {} },
+            { provide: LoadingController, useValue: {} },
+            { provide: SwUpdate, useValue: {} },
+            { provide: InitService, useValue: {} },
+            { provide: OsmAuthService, useValue: {} },
+            { provide: ActivatedRoute, useValue: {} },
+            { provide: ChangeDetectorRef, useValue: changeDetectorRef },
+        ],
+    })
+    const page = TestBed.runInInjectionContext(() => new MainPage())
 
     return {
         page,

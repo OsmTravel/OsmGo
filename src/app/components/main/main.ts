@@ -7,6 +7,7 @@ import {
     ChangeDetectorRef,
     Component,
     ElementRef,
+    inject,
     NgZone,
     viewChild,
 } from '@angular/core'
@@ -64,6 +65,28 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
     ],
 })
 export class MainPage implements AfterViewInit {
+    readonly navCtrl = inject(NavController)
+    readonly modalCtrl = inject(ModalController)
+    readonly toastCtrl = inject(ToastController)
+    readonly menuCtrl = inject(MenuController)
+    readonly osmApi = inject(OsmApiService)
+    readonly tagsService = inject(TagsService)
+    readonly mapService = inject(MapService)
+    readonly dataService = inject(DataService)
+    readonly locationService = inject(LocationService)
+    readonly alertService = inject(AlertService)
+    readonly configService = inject(ConfigService)
+    private readonly alertCtrl = inject(AlertController)
+    private readonly _ngZone = inject(NgZone)
+    private readonly router = inject(Router)
+    readonly translate = inject(TranslateService)
+    readonly loadingController = inject(LoadingController)
+    private readonly swUpdate = inject(SwUpdate)
+    readonly initService = inject(InitService)
+    private readonly osmAuthService = inject(OsmAuthService)
+    private readonly route = inject(ActivatedRoute)
+    private readonly changeDetectorRef = inject(ChangeDetectorRef)
+
     modalIsOpen: boolean = false
     menuIsOpen: boolean = false
     newVersion: boolean = false
@@ -78,30 +101,7 @@ export class MainPage implements AfterViewInit {
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
-    constructor(
-        public navCtrl: NavController,
-        public modalCtrl: ModalController,
-        public toastCtrl: ToastController,
-        public menuCtrl: MenuController,
-        public osmApi: OsmApiService,
-        public tagsService: TagsService,
-        public mapService: MapService,
-        public dataService: DataService,
-        public locationService: LocationService,
-        public alertService: AlertService,
-        public configService: ConfigService,
-
-        private alertCtrl: AlertController,
-        private _ngZone: NgZone,
-        private router: Router,
-        public translate: TranslateService,
-        public loadingController: LoadingController,
-        private swUpdate: SwUpdate,
-        public initService: InitService,
-        private osmAuthService: OsmAuthService,
-        private route: ActivatedRoute,
-        private changeDetectorRef: ChangeDetectorRef
-    ) {
+    constructor() {
         this.router.events.subscribe((e) => {
             if (e instanceof NavigationEnd) {
                 if (e.urlAfterRedirects === '/main') {
@@ -118,26 +118,28 @@ export class MainPage implements AfterViewInit {
             }
         })
 
-        mapService.eventShowDialogMultiFeatures.subscribe(async (features) => {
-            const modal = await this.modalCtrl.create({
-                component: DialogMultiFeaturesComponent,
-                cssClass: 'dialog-multi-features',
-                componentProps: {
-                    features: features,
-                    jsonSprites: this.tagsService.jsonSprites,
-                },
-            })
-            await modal.present()
+        this.mapService.eventShowDialogMultiFeatures.subscribe(
+            async (features) => {
+                const modal = await this.modalCtrl.create({
+                    component: DialogMultiFeaturesComponent,
+                    cssClass: 'dialog-multi-features',
+                    componentProps: {
+                        features: features,
+                        jsonSprites: this.tagsService.jsonSprites,
+                    },
+                })
+                await modal.present()
 
-            modal.onDidDismiss().then((d) => {
-                if (d && d.data) {
-                    const feature = d.data
-                    this.mapService.selectFeature(feature) // bof
-                }
-            })
-        })
+                modal.onDidDismiss().then((d) => {
+                    if (d && d.data) {
+                        const feature = d.data
+                        this.mapService.selectFeature(feature) // bof
+                    }
+                })
+            }
+        )
 
-        mapService.eventShowModal.subscribe(async (_data) => {
+        this.mapService.eventShowModal.subscribe(async (_data) => {
             this.configService.freezeMapRenderer = true
             const newPosition = _data.newPosition ? _data.newPosition : false
 
