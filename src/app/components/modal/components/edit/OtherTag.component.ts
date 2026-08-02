@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonCard,
@@ -46,7 +41,6 @@ import { Tag } from '@osmgo/type'
             </ion-card-content>
         </ion-card>
     `,
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FormsModule,
         IonCard,
@@ -61,7 +55,7 @@ export class EditOtherTag {
     readonly tag = input.required<Tag>()
     readonly deleteTag = output<Tag>()
 
-    eventDeleteTag() {
+    eventDeleteTag(): void {
         this.deleteTag.emit(this.tag())
     }
 }

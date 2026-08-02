@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonCard,
@@ -24,7 +19,6 @@ import { SelectComponent } from '../select/select.component'
     selector: 'edit-presets',
     styleUrls: ['../style.scss'],
     templateUrl: './Presets.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
@@ -61,7 +55,7 @@ export class EditPresets {
         return String(this.tag().value ?? '')
     }
 
-    emitOpenModal(tag) {
+    emitOpenModal(tag: Tag): void {
         if (!this.displayCode() && this.preset().type === 'list') {
             this.openPrimaryListModal.emit(tag)
         }
