@@ -9,9 +9,9 @@ const emptyFeatureCollection = {
 
 const changedPoi = {
     type: 'Feature',
-    id: 'node/0',
+    id: 'node/-1',
     properties: {
-        id: 0,
+        id: -1,
         type: 'node',
         tags: { amenity: 'bench', name: 'Fixture bench' },
         meta: { timestamp: 0, version: 0, user: '' },
@@ -326,12 +326,12 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
             }),
         })
     )
-    await page.route('**/api/0.6/node/0.json', (route) =>
+    await page.route('**/api/0.6/node/-1.json', (route) =>
         route.fulfill({
             status: 200,
             contentType: 'application/json',
             body: JSON.stringify({
-                elements: [{ type: 'node', id: 0, lon: 2.2945, lat: 48.8584 }],
+                elements: [{ type: 'node', id: -1, lon: 2.2945, lat: 48.8584 }],
             }),
         })
     )
@@ -354,7 +354,7 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
         })
         .toBe(1)
 
-    await page.goto('/?id=node/0')
+    await page.goto('/?id=node/-1')
     await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
     await page.getByTestId('edit-selected-poi').click()
     const nameInput = page.getByPlaceholder('Name')
@@ -591,5 +591,5 @@ test('restores a pending queue after a page restart', async ({ page }) => {
         page,
         'geojsonChanged'
     )
-    expect(queue.features.map((feature) => feature.id)).toEqual(['node/0'])
+    expect(queue.features.map((feature) => feature.id)).toEqual(['node/-1'])
 })

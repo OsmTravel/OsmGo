@@ -412,6 +412,11 @@ export class OsmApiService {
         const lng = feature.geometry.coordinates[0]
         const lat = feature.geometry.coordinates[1]
         const id = feature.properties.id
+        if (!Number.isInteger(id) || id >= 0) {
+            throw new Error(
+                'A created OSM feature requires a strictly negative temporary ID.'
+            )
+        }
         const header = `<node changeset="${changesetId}" id="${id}" lat="${lat}" lon="${lng}">`
         return `${header}${this.osmTagsToXml(feature.properties.tags)}</node>`
     }

@@ -102,12 +102,17 @@ describe('DataService', () => {
     })
 
     describe('id generation/handling', () => {
+        it('starts with strictly negative temporary IDs', () => {
+            expect(service.nextFeatureId).toBe(-1)
+            expect(service.nextFeatureId).toBe(-2)
+            expect(service.nextFeatureId).toBe(-3)
+        })
+
         it('should be possible to get next free id', async () => {
             const feature = pointFeature('node/-10')
             feature.properties.id = -10
             const fc = featureCollection([feature]) as OsmGoFeatureCollection
             await service.setGeojsonChanged(fc)
-            ;(service as any).forceNextFeatureIdSync() // ids have been set manually -> force refresh
 
             let actual = service.nextFeatureId
             expect(actual).toBe(-11)
@@ -139,16 +144,58 @@ describe('DataService', () => {
                 featureB,
             ]) as OsmGoFeatureCollection
             await service.setGeojsonChanged(fc)
-            ;(service as any).forceNextFeatureIdSync() // ids have been set manually -> force refresh
 
             await service.replaceIdGenerateByOldVersion()
 
             const actual = service.getGeojsonChanged().features
-            expect(actual[0].properties.id).toBe(0)
-            expect(actual[0].id).toBe('foo/0')
+            expect(actual[0].properties.id).toBe(-1)
+            expect(actual[0].id).toBe('foo/-1')
 
-            expect(actual[1].properties.id).toBe(-1)
-            expect(actual[1].id).toBe('foo/-1')
+            expect(actual[1].properties.id).toBe(-2)
+            expect(actual[1].id).toBe('foo/-2')
+        })
+
+        it('restores the counter below pending IDs after a restart', async () => {
+            const feature = pointFeature('node/-7')
+            feature.properties.id = -7
+            storageSpy.get.mockResolvedValue(
+                featureCollection([feature]) as OsmGoFeatureCollection
+            )
+
+            await firstValueFrom(service.loadGeojsonChanged$())
+
+            expect(service.nextFeatureId).toBe(-8)
+        })
+
+        it('migrates legacy IDs without colliding with negative IDs', async () => {
+            const existing = pointFeature('node/-2')
+            existing.properties.id = -2
+            existing.properties.type = 'node'
+            existing.properties.changeType = 'Create'
+            const legacy = pointFeature('tmp_123')
+            legacy.properties.id = 'tmp_123' as any
+            legacy.properties.type = 'node'
+            legacy.properties.changeType = 'Create'
+            await service.setGeojsonChanged(
+                featureCollection([existing, legacy]) as OsmGoFeatureCollection
+            )
+
+            await service.replaceIdGenerateByOldVersion()
+
+            expect(
+                service
+                    .getGeojsonChanged()
+                    .features.map((feature) => feature.id)
+                    .sort()
+            ).toEqual(['node/-2', 'node/-3'])
+        })
+
+        it('restarts allocation at -1 after pending data is reset', async () => {
+            expect(service.nextFeatureId).toBe(-1)
+
+            await service.resetGeojsonChanged()
+
+            expect(service.nextFeatureId).toBe(-1)
         })
     })
 

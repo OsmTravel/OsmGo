@@ -85,6 +85,38 @@ describe('OsmApiService', () => {
         }
     })
 
+    it.each([0, 1])(
+        'rejects the non-negative temporary creation ID %s',
+        (id) => {
+            const service = createService()
+            const feature = {
+                type: 'Feature',
+                id: `node/${id}`,
+                properties: {
+                    hexColor: '',
+                    icon: '',
+                    id,
+                    marker: '',
+                    meta: {
+                        changeset: '',
+                        timestamp: '',
+                        uid: '',
+                        user: '',
+                        version: 0,
+                    },
+                    primaryTag: { key: 'amenity', value: 'bench' },
+                    tags: { amenity: 'bench' },
+                    type: 'node',
+                },
+                geometry: { type: 'Point', coordinates: [1, 2] },
+            } as OsmGoFeature
+
+            expect(() => service.geojson2OsmCreate(feature, '123')).toThrow(
+                'strictly negative temporary ID'
+            )
+        }
+    )
+
     it('escapes every changeset XML attribute value', () => {
         const http = {
             put: vi.fn().mockName('HttpClient.put'),

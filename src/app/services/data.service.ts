@@ -47,7 +47,7 @@ export class DataService {
     ) as OsmGoFeatureCollection
 
     /** Next unused ID that can be used for a new feature. */
-    private _nextFeatureId = 0
+    private _nextFeatureId = -1
 
     /**
      * Getter that translates the internal storage representation of OSM POIs
@@ -267,10 +267,8 @@ export class DataService {
     private forceNextFeatureIdSync(): void {
         const ids = Object.values(this._geojsonChanged)
             .map((feature) => feature.properties.id)
-            // in the new format only non-positive values are allowed, skip all
-            // others
-            .filter((id) => id <= 0)
-        this._nextFeatureId = ids.length > 0 ? Math.min(...ids) - 1 : 0
+            .filter((id) => Number.isInteger(id) && id < 0)
+        this._nextFeatureId = ids.length > 0 ? Math.min(...ids) - 1 : -1
     }
 
     private notifyChangedData(): void {
@@ -284,6 +282,7 @@ export class DataService {
                 cloneDeep(feature)
         }
         this._geojsonChanged = nextGeojsonChanged
+        this.forceNextFeatureIdSync()
         this.notifyChangedData()
         await this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
@@ -399,7 +398,7 @@ export class DataService {
         this._geojsonChanged = {}
         this.notifyChangedData()
         await this.localStorage.set('geojsonChanged', this.geojsonChanged)
-        this._nextFeatureId = 0
+        this._nextFeatureId = -1
     }
 
     resetGeojsonData(): OsmGoFeatureCollection {
