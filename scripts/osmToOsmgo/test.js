@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { convert, mergeOldNewGeojsonData } from './index.js'
+import { convert, mergeOldNewGeojsonData, wayToPoint } from './index.js'
 
 const converterDirectory = path.dirname(fileURLToPath(import.meta.url))
 const tagConfigPath = path.join(
@@ -147,3 +147,147 @@ assert.deepEqual(
     ),
     ['new']
 )
+
+const measuredGeometries = [
+    {
+        type: 'Polygon',
+        coordinates: [
+            [
+                [0, 0],
+                [0.01, 0],
+                [0.01, 0.01],
+                [0, 0.01],
+                [0, 0],
+            ],
+        ],
+    },
+    {
+        type: 'MultiPolygon',
+        coordinates: [
+            [
+                [
+                    [0, 0],
+                    [0.01, 0],
+                    [0.01, 0.01],
+                    [0, 0.01],
+                    [0, 0],
+                ],
+            ],
+            [
+                [
+                    [0.02, 0.02],
+                    [0.03, 0.02],
+                    [0.03, 0.03],
+                    [0.02, 0.03],
+                    [0.02, 0.02],
+                ],
+            ],
+        ],
+    },
+    {
+        type: 'LineString',
+        coordinates: [
+            [0, 0],
+            [0.01, 0.01],
+        ],
+    },
+    {
+        type: 'MultiLineString',
+        coordinates: [
+            [
+                [0, 0],
+                [0.01, 0.01],
+            ],
+            [
+                [0.02, 0.02],
+                [0.03, 0.03],
+            ],
+        ],
+    },
+]
+
+for (const geometry of measuredGeometries) {
+    const feature = {
+        type: 'Feature',
+        id: `way/${geometry.type}`,
+        properties: { tags: {}, meta: {} },
+        geometry: structuredClone(geometry),
+    }
+
+    wayToPoint(feature)
+
+    assert.equal(feature.geometry.type, 'Point')
+    assert.equal(feature.properties.way_geometry.type, geometry.type)
+    assert.ok(feature.properties.mesure > 0)
+}
+
+const relationFixture = (elements) => ({
+    bounds: { minlat: 0, minlon: 0, maxlat: 1, maxlon: 1 },
+    elements,
+})
+
+assert.doesNotThrow(() =>
+    convert(
+        relationFixture([
+            { type: 'relation', id: 1 },
+            { type: 'relation', id: 2, members: [null] },
+        ]),
+        {}
+    )
+)
+
+assert.doesNotThrow(() =>
+    convert(
+        relationFixture([
+            {
+                type: 'relation',
+                id: 3,
+                tags: { type: 'multipolygon', amenity: 'school' },
+                members: [{ type: 'way', ref: 999, role: 'outer' }],
+            },
+        ]),
+        {}
+    )
+)
+
+const squareElements = [
+    { type: 'node', id: 1, lat: 0, lon: 0 },
+    { type: 'node', id: 2, lat: 0, lon: 0.01 },
+    { type: 'node', id: 3, lat: 0.01, lon: 0.01 },
+    { type: 'node', id: 4, lat: 0.01, lon: 0 },
+    { type: 'way', id: 10, nodes: [1, 2, 3, 4, 1] },
+]
+const nestedRelations = convert(
+    relationFixture([
+        ...squareElements,
+        {
+            type: 'relation',
+            id: 200,
+            tags: { type: 'multipolygon', amenity: 'school' },
+            members: [{ type: 'relation', ref: 100, role: 'outer' }],
+        },
+        {
+            type: 'relation',
+            id: 100,
+            tags: { type: 'multipolygon', amenity: 'park' },
+            members: [{ type: 'way', ref: 10, role: 'outer' }],
+        },
+    ]),
+    {}
+)
+const nestedParent = nestedRelations.geojson.features.find(
+    (feature) => feature.id === 'relation/200'
+)
+const nestedChild = nestedRelations.geojson.features.find(
+    (feature) => feature.id === 'relation/100'
+)
+assert.ok(nestedParent)
+assert.ok(nestedChild)
+assert.equal(nestedParent.properties.way_geometry.type, 'Polygon')
+assert.deepEqual(nestedChild.properties.relations, [
+    {
+        rel: 'relation/200',
+        reltags: { type: 'multipolygon', amenity: 'school' },
+        role: 'outer',
+    },
+])

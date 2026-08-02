@@ -26,17 +26,41 @@ const inside = (point, vs) => {
     return inside
 }
 
-const wayToPoint = (feature) => {
+const osmElementId = (type, id) => {
+    const value = String(id)
+    return value.startsWith(`${type}/`) ? value : `${type}/${value}`
+}
+
+const normalizeRelationMembers = (members) => {
+    const values = Array.isArray(members) ? members : members ? [members] : []
+    return values
+        .filter(
+            (member) =>
+                member &&
+                ['node', 'way', 'relation'].includes(member.type) &&
+                member.ref !== undefined &&
+                member.ref !== null
+        )
+        .map((member) => ({
+            type: member.type,
+            ref: member.ref,
+            role: typeof member.role === 'string' ? member.role : '',
+        }))
+}
+
+export const wayToPoint = (feature) => {
     // /!\ mutable !
 
     if (feature.geometry.type !== 'Point') {
         // stock the original geometry in  feature.properties.way_geometry  .way_geometry
         feature.properties.way_geometry = { ...feature.geometry }
         switch (feature.geometry.type) {
-            case 'Polygon' || 'MultiPolygon':
+            case 'Polygon':
+            case 'MultiPolygon':
                 feature.properties['mesure'] = area(feature.geometry)
                 break
-            case 'LineString' || 'MultiLineString':
+            case 'LineString':
+            case 'MultiLineString':
                 // May be we can use CheapRuler
                 feature.properties['mesure'] = length(feature)
                 break
@@ -468,25 +492,61 @@ export const convert = (osmData, options) => {
 
     const getMultiPolygon = (_rel, _features) => {
         const rel = { ..._rel }
-        let members = Array.isArray(rel.members) ? rel.members : [rel.members]
+        const members = []
         rel['tainted'] = false
-        for (let i = 0; i < members.length; i++) {
-            const member = members[i]
-            const memberId = `${member.type}/${member.ref}`
+        for (const member of normalizeRelationMembers(rel.members)) {
+            const memberId = osmElementId(member.type, member.ref)
+            const geometry = _features[memberId]?.geometry
 
-            if (_features[memberId]) {
-                const g = _features[memberId].geometry
-                let ring
-                if (g.type === 'LineString') {
-                    member['typeGeom'] = 'LineString'
-                    ring = [...g.coordinates]
-                } else if (g.type === 'Polygon') {
-                    member['typeGeom'] = 'Polygon'
-                    ring = [...g.coordinates[0]]
+            if (!geometry) {
+                rel['tainted'] = true
+                continue
+            }
+            if (geometry.type === 'LineString') {
+                members.push({
+                    ...member,
+                    typeGeom: 'LineString',
+                    ring: [...geometry.coordinates],
+                })
+            } else if (geometry.type === 'MultiLineString') {
+                members.push(
+                    ...geometry.coordinates.map((ring) => ({
+                        ...member,
+                        typeGeom: 'LineString',
+                        ring: [...ring],
+                    }))
+                )
+            } else if (geometry.type === 'Polygon') {
+                members.push({
+                    ...member,
+                    typeGeom: 'Polygon',
+                    ring: [...geometry.coordinates[0]],
+                })
+                members.push(
+                    ...geometry.coordinates.slice(1).map((ring) => ({
+                        ...member,
+                        role: 'inner',
+                        typeGeom: 'Polygon',
+                        ring: [...ring],
+                    }))
+                )
+            } else if (geometry.type === 'MultiPolygon') {
+                for (const polygon of geometry.coordinates) {
+                    members.push({
+                        ...member,
+                        typeGeom: 'Polygon',
+                        ring: [...polygon[0]],
+                    })
+                    members.push(
+                        ...polygon.slice(1).map((ring) => ({
+                            ...member,
+                            role: 'inner',
+                            typeGeom: 'Polygon',
+                            ring: [...ring],
+                        }))
+                    )
                 }
-                member['ring'] = ring
             } else {
-                member['ring'] = null
                 rel['tainted'] = true
             }
         }
@@ -495,9 +555,6 @@ export const convert = (osmData, options) => {
             return null
         }
 
-        if (!Array.isArray(members)) {
-            members = [members]
-        }
         const outersPolygons = members.filter(
             (m) => m.role === 'outer' && m.typeGeom === 'Polygon' && m.ring
         )
@@ -726,12 +783,13 @@ export const convert = (osmData, options) => {
 
     const multiPolygonIds = []
     const _features = []
+    const relationElements = []
     for (const el of osm.elements) {
         if (el.type === 'node') {
             const node = el
             const n = {
                 type: 'Feature',
-                id: `node/${el.id}`,
+                id: osmElementId('node', el.id),
                 properties: {
                     type: 'node',
                     id: el.id,
@@ -750,12 +808,12 @@ export const convert = (osmData, options) => {
             if (el.tags) {
                 n.properties['tags'] = el.tags
             }
-            _features[`node/${node.id}`] = n
+            _features[osmElementId('node', node.id)] = n
         } else if (el.type === 'way') {
             const way = el
             const w = {
                 type: 'Feature',
-                id: `way/${el.id}`,
+                id: osmElementId('way', el.id),
 
                 properties: {
                     type: 'way',
@@ -780,74 +838,88 @@ export const convert = (osmData, options) => {
                 const ndRefs = []
                 for (const refNodeId of el.nodes) {
                     ndRefs.push(refNodeId)
-                    const nodeRef = _features[`node/${refNodeId}`] // add to the node
+                    const nodeRef = _features[osmElementId('node', refNodeId)]
                     if (nodeRef) {
                         if (!nodeRef.properties['usedByWays']) {
                             nodeRef.properties['usedByWays'] = []
                         }
-                        nodeRef.properties['usedByWays'].push(`way/${el.id}`)
+                        nodeRef.properties['usedByWays'].push(
+                            osmElementId('way', el.id)
+                        )
                     }
                 }
                 w['ndRefs'] = ndRefs
                 w['geometry'] = getWayGeometry(ndRefs, _features)
             }
-            _features[`way/${el.id}`] = w
+            _features[osmElementId('way', el.id)] = w
         } else if (el.type === 'relation') {
-            const r = {
-                type: 'Feature',
-                id: `relation/${el.id}`,
-                properties: {
-                    type: 'relation',
-                    id: el.id,
-                    meta: {
-                        timestamp: el.timestamp,
-                        version: el.version,
-                        changeset: el.changeset,
-                        user: el.user,
-                        uid: el.uid,
-                    },
-                },
-                members: el.members,
-                tainted: false,
-            }
-
-            if (el.tags) {
-                r.properties['tags'] = el.tags
-            }
-
-            if (!Array.isArray(el.members)) {
-                el.members = [el.members]
-            }
-            for (const m of el.members) {
-                const refId = `${m.type}/${m.ref}`
-
-                if (_features[refId]) {
-                    if (!_features[refId]['properties']['relations'])
-                        _features[refId]['properties']['relations'] = []
-                    _features[refId].properties.relations.push({
-                        rel: r.id,
-                        reltags: r.properties.tags,
-                        role: m.role,
-                    })
-                } else {
-                    r['tainted'] = true
-                    // le node référencé nexiste pas, rel => tained
-                }
-            }
-
-            if (r.properties.tags.type === 'multipolygon') {
-                // => We have to have all the relation first
-                multiPolygonIds.push(`relation/${r.id}`)
-            }
-            _features[`relation/${r.id}`] = r
+            relationElements.push(el)
         }
     }
 
-    for (const idMPolygon of multiPolygonIds) {
-        // console.log(_features[idMPolygon]);
-        const geom = getMultiPolygon(_features[idMPolygon], _features)
-        if (geom) {
-            _features[idMPolygon]['geometry'] = geom
+    for (const el of relationElements) {
+        const id = osmElementId('relation', el.id)
+        _features[id] = {
+            type: 'Feature',
+            id,
+            properties: {
+                type: 'relation',
+                id: el.id,
+                tags:
+                    el.tags &&
+                    typeof el.tags === 'object' &&
+                    !Array.isArray(el.tags)
+                        ? el.tags
+                        : {},
+                meta: {
+                    timestamp: el.timestamp,
+                    version: el.version,
+                    changeset: el.changeset,
+                    user: el.user,
+                    uid: el.uid,
+                },
+            },
+            members: normalizeRelationMembers(el.members),
+            tainted: false,
+        }
+    }
+
+    for (const el of relationElements) {
+        const id = osmElementId('relation', el.id)
+        const r = _features[id]
+        for (const member of r.members) {
+            const refId = osmElementId(member.type, member.ref)
+            const referencedFeature = _features[refId]
+            if (referencedFeature) {
+                if (!referencedFeature.properties.relations) {
+                    referencedFeature.properties.relations = []
+                }
+                referencedFeature.properties.relations.push({
+                    rel: id,
+                    reltags: r.properties.tags,
+                    role: member.role,
+                })
+            } else {
+                r.tainted = true
+            }
+        }
+
+        if (r.properties.tags.type === 'multipolygon') {
+            multiPolygonIds.push(id)
+        }
+    }
+
+    const unresolvedMultiPolygons = new Set(multiPolygonIds)
+    let geometryResolved = true
+    while (geometryResolved && unresolvedMultiPolygons.size > 0) {
+        geometryResolved = false
+        for (const idMPolygon of unresolvedMultiPolygons) {
+            const geom = getMultiPolygon(_features[idMPolygon], _features)
+            if (geom) {
+                _features[idMPolygon]['geometry'] = geom
+                unresolvedMultiPolygons.delete(idMPolygon)
+                geometryResolved = true
+            }
         }
     }
 

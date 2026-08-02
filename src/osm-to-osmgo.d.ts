@@ -39,6 +39,8 @@ declare module '@scripts/osmToOsmgo/index.js' {
         tagsConfig: readonly TagConfig[]
     ): T
 
+    export function wayToPoint<T extends OsmGoFeature>(feature: T): void
+
     export function convert(
         osmData: unknown,
         options: ConvertOptions
