@@ -2,9 +2,8 @@ import {
     ChangeDetectionStrategy,
     Component,
     inject,
-    OnInit,
+    signal,
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -20,6 +19,7 @@ import {
     IonToolbar,
     ModalController,
 } from '@ionic/angular/standalone'
+import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
 import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
@@ -34,7 +34,6 @@ import { TagsService } from '@services/tags.service'
     imports: [
         FilterByTagsContentPipe,
         FiltersTagsByIdsPipe,
-        FormsModule,
         IonButton,
         IonButtons,
         IonContent,
@@ -50,12 +49,14 @@ import { TagsService } from '@services/tags.service'
         TranslateModule,
     ],
 })
-export class BookmarkedTagsComponent implements OnInit {
+export class BookmarkedTagsComponent {
     readonly configService = inject(ConfigService)
     readonly tagsService = inject(TagsService)
     readonly modalCtrl = inject(ModalController)
 
-    searchText = ''
+    readonly searchText = signal('')
 
-    ngOnInit() {}
+    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
+        this.searchText.set(event.detail.value ?? '')
+    }
 }

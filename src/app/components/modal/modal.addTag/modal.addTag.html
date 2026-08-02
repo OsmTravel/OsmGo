@@ -2,13 +2,14 @@
     <div class="searchContainer">
         <ion-input
             [placeholder]="translate.instant('MODAL_SELECTED_ITEM.ADD_TAG_PLACEHOLDER')"
-            [(ngModel)]="searchFilter"
+            [value]="searchFilter()"
+            (ionInput)="onSearchInput($event)"
         ></ion-input>
     </div>
 </ion-header>
 
 <ion-content>
-    @if (searchFilter.length == 0) {
+    @if (searchFilter().length == 0) {
     <ion-item-group>
         @for (field of moreFields() | filterByList:usedList(); track field) {
         <ion-item>
@@ -19,24 +20,24 @@
         </ion-item>
         }
     </ion-item-group>
-    } @if (searchFilter.length > 0) {
+    } @if (searchFilter().length > 0) {
     <ion-item-group>
-        @if (!usedList().includes(nameToOsmKey(searchFilter)) &&
-        nameToOsmKey(searchFilter).length != 0) {
+        @if (!usedList().includes(nameToOsmKey(searchFilter())) &&
+        nameToOsmKey(searchFilter()).length != 0) {
         <ion-item>
-            <ion-label (click)="select(searchFilter)">
-                @if (tagsService.presets[nameToOsmKey(searchFilter)]) {
+            <ion-label (click)="select(searchFilter())">
+                @if (tagsService.presets[nameToOsmKey(searchFilter())]) {
                 <h3>
                     {{
-                    tagsService.presets[nameToOsmKey(searchFilter)].lbl[language]
+                    tagsService.presets[nameToOsmKey(searchFilter())].lbl[language]
                     }}
                 </h3>
                 }
-                <p>{{ searchFilter | toOsmTag }}</p>
+                <p>{{ searchFilter() | toOsmTag }}</p>
             </ion-label>
         </ion-item>
         } @for (preset of presets | filterPresetsByList:usedList() |
-        removeBrands | searchFor:searchFilter:language; track preset) {
+        removeBrands | searchFor:searchFilter():language; track preset) {
         <ion-item>
             <ion-label (click)="select(preset._id)">
                 <h3>{{ preset.lbl[language] }}</h3>

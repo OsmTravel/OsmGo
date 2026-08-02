@@ -4,8 +4,8 @@ import {
     Component,
     input,
     OnInit,
+    signal,
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -20,6 +20,7 @@ import {
     IonTitle,
     ModalController,
 } from '@ionic/angular/standalone'
+import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 import { FilterByByGeometryTypePipe } from '@pipes/filter-by-geometry-type.pipe'
@@ -45,7 +46,6 @@ import { TagsService } from '@services/tags.service'
         FilterDeprecatedTagPipe,
         FilterExcludeTagByCountryCode,
         FiltersTagsByIdsPipe,
-        FormsModule,
         IonButton,
         IonChip,
         IonContent,
@@ -70,7 +70,7 @@ export class ModalPrimaryTag implements OnInit {
     tagsOfselectedKey
     loading = true
     allTags: TagConfig[]
-    searchText = ''
+    readonly searchText = signal('')
     currentListOfTags: TagConfig[] = []
     typeFiche = 'list'
     customValue = ''
@@ -99,6 +99,10 @@ export class ModalPrimaryTag implements OnInit {
         this.geometryType = this.geometryTypeInput()
         this.currentListOfTags = this.tagsService.tags
         this.loading = false
+    }
+
+    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
+        this.searchText.set(event.detail.value ?? '')
     }
 
     dismiss(data = null) {

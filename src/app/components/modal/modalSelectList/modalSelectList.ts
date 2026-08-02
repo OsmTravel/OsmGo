@@ -3,8 +3,8 @@ import {
     Component,
     input,
     OnInit,
+    signal,
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import {
     IonButton,
     IonFooter,
@@ -19,6 +19,7 @@ import {
     ModalController,
     Platform,
 } from '@ionic/angular/standalone'
+import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
@@ -39,7 +40,6 @@ interface ModalSelectListData {
     imports: [
         FilterByCountryCode,
         FilterByPresetsContentPipe,
-        FormsModule,
         IonButton,
         IonFooter,
         IonItem,
@@ -55,7 +55,7 @@ interface ModalSelectListData {
 })
 export class ModalSelectList implements OnInit {
     readonly data = input.required<ModalSelectListData>()
-    searchText = ''
+    readonly searchText = signal('')
     initvalue: string
     language: string
     countryCode: string
@@ -74,6 +74,10 @@ export class ModalSelectList implements OnInit {
 
     ngOnInit(): void {
         this.initvalue = this.data().value
+    }
+
+    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
+        this.searchText.set(event.detail.value ?? '')
     }
 
     dismiss(data = null) {

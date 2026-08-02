@@ -7,13 +7,14 @@
                 autocorrect="off"
                 autocapitalize="none"
                 inputmode="text"
-                [(ngModel)]="searchText"
+                [value]="searchText()"
+                (ionInput)="onSearchInput($event)"
                 [debounce]="300"
             ></ion-searchbar>
         </div>
     </div>
     <ion-content>
-        @if (searchText.length > 2 ) {
+        @if (searchText().length > 2 ) {
         <div class="listTag">
             <ion-list style="overflow-y: auto">
                 @for (tag of currentListOfTags |
@@ -22,7 +23,7 @@
                 filterExcludeTagByCountryCode:countryTags |
                 filterByByGeometryType:[geometryType] |
                 filterByTagsContent:[configService.config.languageTags,
-                configService.config.countryTags]:searchText |
+                configService.config.countryTags]:searchText() |
                 limitDisplayTags:50; track tag) {
                 <ion-item class="ion-no-padding">
                     <app-tag-list-element
@@ -49,14 +50,14 @@
                 <ion-chip>
                     <ion-label
                         color="primary"
-                        (click)="addCustomValue(k,searchText.toLowerCase())"
-                        >{{ k }}={{searchText | lowercase}}</ion-label
+                        (click)="addCustomValue(k,searchText().toLowerCase())"
+                        >{{ k }}={{searchText() | lowercase}}</ion-label
                     >
                 </ion-chip>
                 }
             </div>
         </div>
-        } @if (searchText.length < 3 ) {
+        } @if (searchText().length < 3 ) {
         <div
             class="listTag"
             (pointerdown)="startSwipe($event)"

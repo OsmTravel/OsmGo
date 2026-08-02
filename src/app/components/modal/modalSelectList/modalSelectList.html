@@ -6,19 +6,19 @@
 <div id="divContentSB">
     <div id="searchDiv">
         <ion-searchbar
-            [(ngModel)]="searchText"
+            [value]="searchText()"
+            (ionInput)="onSearchInput($event)"
             [debounce]="300"
         ></ion-searchbar>
     </div>
 </div>
 
 <div class="listTag">
-    <!-- radio-group [(ngModel)]="data.value" (ionChange)="selected($event)" -->
     <ion-list>
         <ion-radio-group (ionChange)="selected($event)">
             @for (option of data().preset.options |
             filterByCountryCode:countryCode |
-            filterByPresetsContent:[language]:searchText; track option) {
+            filterByPresetsContent:[language]:searchText(); track option) {
             <ion-item>
                 <ion-label>
                     <b>{{option.lbl[language] || option.lbl['en'] }}</b>

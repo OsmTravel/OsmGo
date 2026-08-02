@@ -22,7 +22,8 @@
                 autocorrect="off"
                 autocapitalize="none"
                 inputmode="text"
-                [(ngModel)]="searchText"
+                [value]="searchText()"
+                (ionInput)="onSearchInput($event)"
                 [debounce]="300"
             ></ion-searchbar>
         </div>
@@ -38,7 +39,7 @@
                               configService.config.languageTags,
                               configService.config.countryTags,
                           ]
-                        : searchText;
+                        : searchText();
                 track tag
             ) {
                 <ion-item class="ion-no-padding">

@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing'
+import type { SearchbarInputEventDetail } from '@ionic/core'
 import { ModalPrimaryTag } from './modal.primaryTag'
 
-describe('ModalPrimaryTag swipes', () => {
+describe('ModalPrimaryTag', () => {
     const pointerAt = (clientX: number): PointerEvent =>
         ({ clientX }) as PointerEvent
 
@@ -9,6 +10,23 @@ describe('ModalPrimaryTag swipes', () => {
         TestBed.runInInjectionContext(
             () => new ModalPrimaryTag(null, null, null)
         )
+
+    it('updates the search signal from the Ionic event', () => {
+        const modal = createModal()
+        const event = {
+            detail: { value: 'cafe' },
+        } as CustomEvent<SearchbarInputEventDetail>
+
+        modal.onSearchInput(event)
+
+        expect(modal.searchText()).toBe('cafe')
+
+        modal.onSearchInput({
+            detail: { value: null },
+        } as CustomEvent<SearchbarInputEventDetail>)
+
+        expect(modal.searchText()).toBe('')
+    })
 
     it('shows bookmarks after a left swipe', () => {
         const modal = createModal()

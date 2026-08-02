@@ -2,9 +2,8 @@ import {
     ChangeDetectionStrategy,
     Component,
     inject,
-    OnInit,
+    signal,
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -20,6 +19,7 @@ import {
     IonToolbar,
     ModalController,
 } from '@ionic/angular/standalone'
+import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
@@ -37,7 +37,6 @@ import { TagsService } from '@services/tags.service'
         FilterByTagsContentPipe,
         FilterDeprecatedTagPipe,
         FiltersTagsByIdsPipe,
-        FormsModule,
         IonButton,
         IonButtons,
         IonContent,
@@ -53,15 +52,17 @@ import { TagsService } from '@services/tags.service'
         TranslateModule,
     ],
 })
-export class ActiveTagsComponent implements OnInit {
+export class ActiveTagsComponent {
     readonly configService = inject(ConfigService)
     readonly tagsService = inject(TagsService)
     readonly modalCtrl = inject(ModalController)
 
-    searchText = ''
+    readonly searchText = signal('')
     refreshFilterMapAfterClose = false
 
-    ngOnInit() {}
+    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
+        this.searchText.set(event.detail.value ?? '')
+    }
 
     removeHiddenTag(tag: TagConfig) {
         this.tagsService.removeHiddenTag(tag)

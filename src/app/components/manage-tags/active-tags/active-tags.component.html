@@ -22,13 +22,14 @@
                 autocorrect="off"
                 autocapitalize="none"
                 inputmode="text"
-                [(ngModel)]="searchText"
+                [value]="searchText()"
+                (ionInput)="onSearchInput($event)"
                 [debounce]="300"
             ></ion-searchbar>
         </div>
     </div>
     <div class="listTag">
-        @if (searchText.length > 2) {
+        @if (searchText().length > 2) {
             <ion-list style="overflow-y: auto">
                 @for (
                     tag of tagsService.tags
@@ -39,7 +40,7 @@
                                   configService.config.languageTags,
                                   configService.config.countryTags,
                               ]
-                            : searchText;
+                            : searchText();
                     track tag
                 ) {
                     <ion-item class="ion-no-padding">
@@ -61,7 +62,7 @@
                 }
             </ion-list>
         }
-        @if (searchText.length <= 2) {
+        @if (searchText().length <= 2) {
             <div>
                 <h4 style="text-align: center">
                     {{

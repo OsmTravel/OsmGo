@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
-import { FormsModule } from '@angular/forms'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    input,
+    signal,
+} from '@angular/core'
 import {
     IonButton,
     IonContent,
@@ -12,6 +16,7 @@ import {
     IonLabel,
     ModalController,
 } from '@ionic/angular/standalone'
+import type { InputInputEventDetail } from '@ionic/core'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
@@ -31,7 +36,6 @@ import { TagsService } from '@services/tags.service'
     imports: [
         FilterByListPipe,
         FilterPresetsByListPipe,
-        FormsModule,
         IonButton,
         IonContent,
         IonFooter,
@@ -55,7 +59,7 @@ export class ModalAddTag {
     countryCode: string
 
     presets: Array<Preset>
-    searchFilter: string
+    readonly searchFilter = signal('')
 
     constructor(
         public modalCtrl: ModalController,
@@ -67,7 +71,10 @@ export class ModalAddTag {
         this.countryCode = this.configService.config.countryTags
 
         this.presets = Object.values(tagsService.presets)
-        this.searchFilter = ''
+    }
+
+    onSearchInput(event: CustomEvent<InputInputEventDetail>): void {
+        this.searchFilter.set(event.detail.value ?? '')
     }
 
     dismiss(data = null) {
