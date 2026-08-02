@@ -230,6 +230,23 @@ test('loads interface translations', async ({ page }) => {
     )
 })
 
+test.describe('touch menu', () => {
+    test.use({
+        hasTouch: true,
+        isMobile: true,
+        viewport: { width: 302, height: 416 },
+    })
+
+    test('navigates to settings', async ({ page }) => {
+        await openApp(page)
+        await page.getByTestId('open-menu').tap()
+        await page.getByRole('button', { name: 'Settings', exact: true }).tap()
+
+        await expect(page).toHaveURL(/\/settings$/)
+        await expect(page.locator('ion-title').last()).toHaveText('Settings')
+    })
+})
+
 test('downloads a small OSM area from a fixture', async ({ page }) => {
     await page.route('**/api/0.6/map?bbox=*', (route) =>
         route.fulfill({
