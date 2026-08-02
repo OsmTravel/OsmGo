@@ -484,10 +484,6 @@ export class OsmApiService {
 
     createOsmNode(featureToCreate: OsmGoFeature): Observable<OsmGoFeature> {
         const feature = cloneDeep(featureToCreate)
-        const id = this.dataService.nextFeatureId
-
-        feature.id = 'node/' + id
-        feature.properties.id = id
         feature.properties.meta = {
             timestamp: '0',
             version: 0,
@@ -495,13 +491,9 @@ export class OsmApiService {
             uid: '',
             changeset: '',
         }
-        feature.properties.changeType = 'Create'
-        feature.properties.originalData = null
         addAttributesToFeature(feature)
         const styledFeature = this.mapService.getIconStyle(feature)
-        return from(
-            this.dataService.addFeatureToGeojsonChanged(styledFeature)
-        ).pipe(map(() => styledFeature))
+        return from(this.dataService.createPendingFeature(styledFeature))
     }
 
     updateOsmElement(
@@ -511,99 +503,29 @@ export class OsmApiService {
         const feature = cloneDeep(featureToUpdate)
         addAttributesToFeature(feature)
         const styledFeature = this.mapService.getIconStyle(feature)
+        if (!feature.id) {
+            return throwError(() => new Error('A feature ID is required.'))
+        }
         if (origineData === 'data_changed') {
             return from(
-                this.dataService.updateFeatureToGeojsonChanged(styledFeature)
-            ).pipe(map(() => styledFeature))
-        } else {
-            if (!feature.id) {
-                return throwError(() => new Error('A feature ID is required.'))
-            }
-            const originalData = this.dataService.getFeatureById(
-                feature.id,
-                'data'
+                this.dataService.updatePendingFeature(feature.id, styledFeature)
             )
-            if (!originalData) {
-                return throwError(
-                    () => new Error('The original feature data is missing.')
-                )
-            }
-            feature.properties.changeType = 'Update'
-            feature.properties.originalData = originalData
-            const changedFeature = this.mapService.getIconStyle(feature)
+        } else {
             return from(
-                this.dataService.deleteFeatureFromGeojson(feature)
-            ).pipe(
-                switchMap(() =>
-                    from(
-                        this.dataService.addFeatureToGeojsonChanged(
-                            changedFeature
-                        )
-                    )
-                ),
-                map(() => changedFeature)
+                this.dataService.moveOfficialToPending(
+                    feature.id,
+                    styledFeature
+                )
             )
         }
     }
 
     deleteOsmElement(featureToDelete: OsmGoFeature): Observable<unknown> {
         const feature = cloneDeep(featureToDelete)
-        addAttributesToFeature(feature)
-
-        if (feature.properties.changeType) {
-            if (feature.properties.changeType === 'Create') {
-                return from(
-                    this.dataService.deleteFeatureFromGeojsonChanged(feature)
-                )
-            } else if (feature.properties.changeType === 'Update') {
-                if (!feature.properties.originalData) {
-                    return throwError(
-                        () => new Error('The original feature data is missing.')
-                    )
-                }
-                feature.properties.changeType = 'Delete'
-                return from(
-                    this.dataService.updateFeatureToGeojson(
-                        feature.properties.originalData
-                    )
-                ).pipe(
-                    switchMap(() =>
-                        from(
-                            this.dataService.updateFeatureToGeojsonChanged(
-                                this.mapService.getIconStyle(feature)
-                            )
-                        )
-                    )
-                )
-            }
-        } else {
-            if (!feature.id) {
-                return throwError(() => new Error('A feature ID is required.'))
-            }
-            const originalData = this.dataService.getFeatureById(
-                feature.id,
-                'data'
-            )
-            if (!originalData) {
-                return throwError(
-                    () => new Error('The original feature data is missing.')
-                )
-            }
-            feature.properties.changeType = 'Delete'
-            feature.properties.originalData = originalData
-            return from(
-                this.dataService.deleteFeatureFromGeojson(feature)
-            ).pipe(
-                switchMap(() =>
-                    from(
-                        this.dataService.addFeatureToGeojsonChanged(
-                            this.mapService.getIconStyle(feature)
-                        )
-                    )
-                )
-            )
+        if (!feature.id) {
+            return throwError(() => new Error('A feature ID is required.'))
         }
-        return throwError(() => new Error('Unsupported feature change type.'))
+        return from(this.dataService.markPendingDeleted(feature.id))
     }
 
     formatOsmJsonData$(

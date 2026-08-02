@@ -12,6 +12,7 @@ import {
 import type { CountryCode, Iso6391Language } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
 import type { Basemap } from '@services/basemaps.service'
+import { OSM_STATE_STORAGE_KEY } from '@services/osm-state'
 import { TagsService } from '@services/tags.service'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
@@ -601,6 +602,7 @@ export class ConfigService {
         await this.localStorage.remove('geojsonBbox')
         await this.localStorage.remove('user_info')
         await this.localStorage.remove('geojsonChanged')
+        await this.localStorage.remove(OSM_STATE_STORAGE_KEY)
         return isDevServer
     }
 

@@ -382,9 +382,9 @@ describe('OsmApiService', () => {
     })
 
     it('returns an observable when deleting a locally created feature', async () => {
-        const deleteFeatureFromGeojsonChanged = vi
+        const markPendingDeleted = vi
             .fn()
-            .mockName('deleteFeatureFromGeojsonChanged')
+            .mockName('markPendingDeleted')
             .mockResolvedValue(undefined)
         const feature: OsmGoFeature = {
             type: 'Feature',
@@ -409,14 +409,95 @@ describe('OsmApiService', () => {
             geometry: { type: 'Point', coordinates: [1, 2] },
         }
         const service = createService({
-            dataService: { deleteFeatureFromGeojsonChanged },
+            dataService: { markPendingDeleted },
             mapService: { getIconStyle: (value: OsmGoFeature) => value },
         })
 
         await firstValueFrom(service.deleteOsmElement(feature))
 
-        expect(deleteFeatureFromGeojsonChanged).toHaveBeenCalledWith(feature)
+        expect(markPendingDeleted).toHaveBeenCalledWith('node/-1')
     })
+
+    it('delegates temporary ID allocation to the atomic create command', async () => {
+        const input: OsmGoFeature = {
+            type: 'Feature',
+            id: undefined,
+            geometry: { type: 'Point', coordinates: [1, 2] },
+            properties: {
+                hexColor: '',
+                icon: '',
+                id: 999,
+                marker: '',
+                meta: {
+                    changeset: '',
+                    timestamp: '',
+                    uid: '',
+                    user: '',
+                    version: 0,
+                },
+                primaryTag: { key: 'amenity', value: 'bench' },
+                tags: { amenity: 'bench' },
+                type: 'node',
+            },
+        }
+        const created = structuredClone(input)
+        created.id = 'node/-1'
+        created.properties.id = -1
+        created.properties.changeType = 'Create'
+        const createPendingFeature = vi.fn().mockResolvedValue(created)
+        const service = createService({
+            dataService: { createPendingFeature },
+            mapService: { getIconStyle: (value: OsmGoFeature) => value },
+        })
+
+        const result = await firstValueFrom(service.createOsmNode(input))
+
+        expect(result).toEqual(created)
+        expect(createPendingFeature).toHaveBeenCalledTimes(1)
+        expect(createPendingFeature.mock.calls[0][0].properties.id).toBe(999)
+    })
+
+    it.each([
+        ['data', 'moveOfficialToPending'],
+        ['data_changed', 'updatePendingFeature'],
+    ] as const)(
+        'uses one atomic command when updating %s',
+        async (source, commandName) => {
+            const feature: OsmGoFeature = {
+                type: 'Feature',
+                id: 'node/10',
+                geometry: { type: 'Point', coordinates: [1, 2] },
+                properties: {
+                    hexColor: '',
+                    icon: '',
+                    id: 10,
+                    marker: '',
+                    meta: {
+                        changeset: '',
+                        timestamp: '',
+                        uid: '',
+                        user: '',
+                        version: 1,
+                    },
+                    primaryTag: { key: 'amenity', value: 'bench' },
+                    tags: { amenity: 'bench' },
+                    type: 'node',
+                },
+            }
+            const command = vi.fn().mockResolvedValue(feature)
+            const service = createService({
+                dataService: { [commandName]: command },
+                mapService: { getIconStyle: (value: OsmGoFeature) => value },
+            })
+
+            const result = await firstValueFrom(
+                service.updateOsmElement(feature, source)
+            )
+
+            expect(result).toEqual(feature)
+            expect(command).toHaveBeenCalledWith('node/10', feature)
+        }
+    )
 
     describe('request timeouts', () => {
         let http: any

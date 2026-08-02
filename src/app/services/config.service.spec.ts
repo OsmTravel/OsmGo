@@ -115,6 +115,31 @@ describe('ConfigService', () => {
         expect(storage.set).toHaveBeenCalledWith('config', service.config())
     })
 
+    it('removes unified and legacy OSM state when switching servers', async () => {
+        const storage = {
+            set: vi.fn().mockResolvedValue(undefined),
+            remove: vi.fn().mockResolvedValue(undefined),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        await service.setIsDevServer(true)
+
+        expect(storage.remove.mock.calls.map(([key]) => key)).toEqual([
+            'geojson',
+            'geojsonBbox',
+            'user_info',
+            'geojsonChanged',
+            'osmState',
+        ])
+    })
+
     it('exposes the application version as read-only state', async () => {
         TestBed.configureTestingModule({
             providers: [

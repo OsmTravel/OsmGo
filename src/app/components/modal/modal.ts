@@ -789,7 +789,7 @@ export class ObjectEditorContentComponent {
             this.feature.properties.originalData ?? undefined
         )
         try {
-            await this.dataService.cancelFeatureChange(this.feature)
+            await this.dataService.cancelPendingChange(String(this.feature.id))
         } catch (error) {
             this.presentToast(
                 error instanceof Error ? error.message : String(error)

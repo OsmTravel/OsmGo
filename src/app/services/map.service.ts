@@ -599,12 +599,9 @@ export class MapService {
     }
 
     async resetDataMap(): Promise<void> {
-        const [bbox, geojson] = await Promise.all([
-            this.dataService.resetGeojsonBbox(),
-            this.dataService.resetGeojsonData(),
-        ])
-        this.redrawBbox(bbox)
-        this.redrawMarkers(geojson)
+        const emptyData = await this.dataService.resetDownloadedData()
+        this.redrawBbox(emptyData.geojsonBbox)
+        this.redrawMarkers(emptyData.geojson)
     }
 
     getMapStyle(): Observable<StyleSpecification> {
@@ -949,7 +946,7 @@ export class MapService {
             data: { type: 'FeatureCollection', features: [] },
         })
 
-        this.redrawBbox(this.dataService.geojsonBbox)
+        this.redrawBbox(this.dataService.getGeojsonBbox())
         this.redrawChangedMarkers(this.dataService.geojsonChanged)
         this.redrawMarkers(this.dataService.geojson)
 

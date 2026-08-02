@@ -284,7 +284,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             throw new Error('OpenStreetMap returned an incomplete result.')
         }
 
-        await this.dataService.applyUploadResults(preparedResults)
+        await this.dataService.applyUploadReceipt(preparedResults)
     }
 
     private getSubmittedOperation(feature: UploadFeature): OsmGoChangeType {
@@ -467,7 +467,6 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             'prepare'
 
         try {
-            await this.dataService.replaceIdGenerateByOldVersion()
             this.configService.setChangeSetComment(commentChangeset)
 
             phase = 'connection'
@@ -567,7 +566,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
 
     async cancelErrorFeature(feature: OsmGoFeature): Promise<void> {
         try {
-            await this.dataService.cancelFeatureChange(feature)
+            await this.dataService.cancelPendingChange(String(feature.id))
         } catch (error) {
             this.stopPushingWithError(error, feature)
             return
@@ -581,12 +580,8 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     }
 
     async cancelAllFeatures(): Promise<void> {
-        const featuresChanged = this.dataService.getGeojsonChanged().features
         try {
-            for (const feature of featuresChanged) {
-                await this.dataService.cancelFeatureChange(feature)
-            }
-            await this.dataService.resetGeojsonChanged()
+            await this.dataService.cancelAllPendingChanges()
         } catch (error) {
             this.stopPushingWithError(error)
             return

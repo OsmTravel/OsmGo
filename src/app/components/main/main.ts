@@ -578,12 +578,10 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                         throw new Error('The map worker returned invalid data.')
                     }
                     return from(
-                        Promise.all([
-                            this.dataService.setGeojsonBbox(
-                                newDataJson.geojsonBbox
-                            ),
-                            this.dataService.setGeojson(newDataJson.geojson),
-                        ])
+                        this.dataService.applyDownload({
+                            geojson: newDataJson.geojson,
+                            geojsonBbox: newDataJson.geojsonBbox,
+                        })
                     ).pipe(
                         map(() => {
                             this.mapService.redrawBbox(newDataJson.geojsonBbox)

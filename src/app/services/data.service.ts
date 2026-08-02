@@ -19,6 +19,16 @@ import { cloneDeep } from 'lodash'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
+export interface OsmDownload {
+    geojson: OsmGoFeatureCollection
+    geojsonBbox: OsmGoFeatureCollection
+}
+
+export interface UploadReceiptEntry {
+    oldId: string
+    feature?: OsmGoFeature
+}
+
 @Service()
 export class DataService {
     readonly localStorage = inject(AppStorage)
@@ -51,12 +61,12 @@ export class DataService {
     geojsonWay: OsmGoFeatureCollection = featureCollection(
         []
     ) as OsmGoFeatureCollection
-    geojsonBbox: OsmGoFeatureCollection = featureCollection(
+    private _geojsonBbox: OsmGoFeatureCollection = featureCollection(
         []
     ) as OsmGoFeatureCollection
 
     /** Next unused ID that can be used for a new feature. */
-    private _nextFeatureId = -1
+    private _nextTemporaryId = -1
     private _osmStateRevision = 0
     private _uploadJournal?: PersistedUploadJournal
     private osmStateMutationQueue: Promise<void> = Promise.resolve()
@@ -68,9 +78,9 @@ export class DataService {
      * Data source is the `_geojson` member variable.
      */
     get geojson(): OsmGoFeatureCollection {
-        const fc = featureCollection([]) as OsmGoFeatureCollection
-        fc.features = Object.values(this._geojson)
-        return fc
+        return featureCollection(
+            Object.values(this._geojson).map((feature) => cloneDeep(feature))
+        ) as OsmGoFeatureCollection
     }
 
     /**
@@ -80,9 +90,11 @@ export class DataService {
      * Data source is the `_geojsonChanged` member variable.
      */
     get geojsonChanged(): OsmGoFeatureCollection {
-        const fc = featureCollection([]) as OsmGoFeatureCollection
-        fc.features = Object.values(this._geojsonChanged)
-        return fc
+        return featureCollection(
+            Object.values(this._geojsonChanged).map((feature) =>
+                cloneDeep(feature)
+            )
+        ) as OsmGoFeatureCollection
     }
 
     addIconCache(idIcon: string, uri: string): void {
@@ -93,62 +105,13 @@ export class DataService {
         return this.localStorage.get(idIcon)
     }
 
-    loadGeojson$(): Observable<OsmGoFeatureCollection> {
-        return from(this.localStorage.get('geojson')).pipe(
-            map((geojson: OsmGoFeatureCollection | null | undefined) => {
-                geojson = geojson
-                    ? geojson
-                    : (featureCollection([]) as OsmGoFeatureCollection)
-                const loadedFeatures: Record<string, OsmGoFeature> = {}
-                for (const feature of geojson.features) {
-                    loadedFeatures[this.requireFeatureId(feature)] = feature
-                }
-                this._geojson = loadedFeatures
-                return geojson
-            })
-        )
-    }
-
-    loadGeojsonChanged$(): Observable<OsmGoFeatureCollection> {
-        return from(this.localStorage.get('geojsonChanged')).pipe(
-            map((geojson: OsmGoFeatureCollection | null | undefined) => {
-                geojson = geojson
-                    ? geojson
-                    : (featureCollection([]) as OsmGoFeatureCollection)
-                const loadedFeatures: Record<string, OsmGoFeature> = {}
-                for (const feature of geojson.features) {
-                    loadedFeatures[this.requireFeatureId(feature)] = feature
-                }
-                this._geojsonChanged = loadedFeatures
-
-                // At this point we know previously created elements from which we can determine the min ID.
-                this.forceNextFeatureIdSync()
-                this.notifyChangedData()
-
-                return geojson
-            })
-        )
-    }
-
-    loadGeojsonBbox$(): Observable<OsmGoFeatureCollection> {
-        return from(this.localStorage.get('geojsonBbox')).pipe(
-            map((geojson: OsmGoFeatureCollection | null | undefined) => {
-                geojson = geojson
-                    ? geojson
-                    : (featureCollection([]) as OsmGoFeatureCollection)
-                this.geojsonBbox = geojson
-                return geojson
-            })
-        )
-    }
-
     loadOsmState$(): Observable<PersistedOsmStateV2> {
         return from(this.loadPersistedOsmState()).pipe(
             map((state) => {
                 this._geojson = cloneDeep(state.officialById)
                 this._geojsonChanged = cloneDeep(state.pendingById)
-                this.geojsonBbox = cloneDeep(state.bbox)
-                this._nextFeatureId = state.nextTemporaryId
+                this._geojsonBbox = cloneDeep(state.bbox)
+                this._nextTemporaryId = state.nextTemporaryId
                 this._osmStateRevision = state.revision
                 this._uploadJournal = cloneDeep(state.uploadJournal)
                 this.notifyChangedData()
@@ -218,20 +181,8 @@ export class DataService {
         localStorage.clear()
     }
 
-    setGeojsonBbox(geojsonBbox: OsmGoFeatureCollection): Promise<void> {
-        const bbox = cloneDeep(geojsonBbox)
-        return this.enqueueOsmStateMutation('set bbox', (state) => {
-            state.bbox = bbox
-        })
-    }
     getGeojsonBbox(): OsmGoFeatureCollection {
-        return this.geojsonBbox
-    }
-
-    async resetGeojsonBbox(): Promise<OsmGoFeatureCollection> {
-        const fc = featureCollection([]) as OsmGoFeatureCollection
-        await this.setGeojsonBbox(fc)
-        return fc
+        return cloneDeep(this._geojsonBbox)
     }
 
     setGeojsonWay(data: OsmGoFeatureCollection): void {
@@ -243,50 +194,20 @@ export class DataService {
     }
 
     getGeojson(): OsmGoFeatureCollection {
-        if (this.geojson) {
-            return this.geojson
-        } else {
-            return featureCollection([]) as OsmGoFeatureCollection
-        }
+        return this.geojson
     }
 
-    setGeojson(data: OsmGoFeatureCollection): Promise<void> {
-        const nextGeojson: Record<string, OsmGoFeature> = {}
-        for (const feature of data.features) {
-            nextGeojson[this.requireFeatureId(feature)] = cloneDeep(feature)
-        }
-        return this.enqueueOsmStateMutation('set official data', (state) => {
-            state.officialById = nextGeojson
-        })
-    }
-
-    addFeatureToGeojson(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
-        const snapshot = cloneDeep(feature)
-        return this.enqueueOsmStateMutation('add official feature', (state) => {
-            state.officialById[id] = snapshot
-        })
-    }
-
-    updateFeatureToGeojson(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
-        const snapshot = cloneDeep(feature)
-        return this.enqueueOsmStateMutation(
-            'update official feature',
-            (state) => {
-                state.officialById[id] = snapshot
-            }
+    applyDownload(download: OsmDownload): Promise<void> {
+        const officialById = this.collectionToRecord(
+            download.geojson,
+            'downloaded feature',
+            true
         )
-    }
-
-    deleteFeatureFromGeojson(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
-        return this.enqueueOsmStateMutation(
-            'delete official feature',
-            (state) => {
-                delete state.officialById[id]
-            }
-        )
+        const bbox = cloneDeep(download.geojsonBbox)
+        return this.enqueueOsmStateMutation('apply download', (state) => {
+            state.officialById = officialById
+            state.bbox = bbox
+        })
     }
 
     /**
@@ -301,17 +222,11 @@ export class DataService {
         id: string,
         source: FeatureIdSource
     ): OsmGoFeature | undefined {
-        const features =
+        const feature =
             source === 'data_changed'
-                ? this.getGeojsonChanged().features
-                : this.getGeojson().features
-
-        const feature = features.find((f) => f.id === id)
-        if (feature) {
-            return cloneDeep(feature)
-        } else {
-            return undefined
-        }
+                ? this._geojsonChanged[id]
+                : this._geojson[id]
+        return feature ? cloneDeep(feature) : undefined
     }
 
     /**
@@ -322,118 +237,170 @@ export class DataService {
      * elements.
      */
     getGeojsonChanged(): OsmGoFeatureCollection {
-        return cloneDeep(this.geojsonChanged)
-    }
-
-    /** Returns the next available identifier for a feature (auto-incremented). */
-    get nextFeatureId(): number {
-        return this._nextFeatureId--
-    }
-
-    /**
-     * Synchronizes the next feature ID by looping through all existing changes
-     * and identifying the lowest ID.
-     * Looping through all entries is slow. Use this method only if really
-     * needed, e.g., if a new feature collection is set from outside the
-     * service.
-     */
-    private forceNextFeatureIdSync(): void {
-        const ids = Object.values(this._geojsonChanged)
-            .map((feature) => feature.properties.id)
-            .filter((id) => Number.isInteger(id) && id < 0)
-        this._nextFeatureId = ids.length > 0 ? Math.min(...ids) - 1 : -1
+        return this.geojsonChanged
     }
 
     private notifyChangedData(): void {
         this.changedDataRevisionState.update((revision) => revision + 1)
     }
 
-    async setGeojsonChanged(data: OsmGoFeatureCollection): Promise<void> {
-        const nextGeojsonChanged: Record<string, OsmGoFeature> = {}
-        for (const feature of data.features) {
-            nextGeojsonChanged[this.requireFeatureId(feature)] =
-                cloneDeep(feature)
-        }
-        await this.enqueueOsmStateMutation('set pending data', (state) => {
+    async replacePendingFeatures(data: OsmGoFeatureCollection): Promise<void> {
+        const nextGeojsonChanged = this.collectionToRecord(
+            data,
+            'pending feature'
+        )
+        await this.enqueueOsmStateMutation('replace pending data', (state) => {
             state.pendingById = nextGeojsonChanged
             state.nextTemporaryId = this.getNextTemporaryId(nextGeojsonChanged)
         })
     }
 
-    // Replace IDs generated by version 1.5 and earlier with numeric IDs.
-    async replaceIdGenerateByOldVersion(): Promise<void> {
-        await this.enqueueOsmStateMutation(
-            'migrate pending feature IDs',
+    createPendingFeature(input: OsmGoFeature): Promise<OsmGoFeature> {
+        const feature = cloneDeep(input)
+        return this.enqueueOsmStateMutation(
+            'create pending feature',
             (state) => {
-                for (const [id, sourceFeature] of Object.entries(
-                    state.pendingById
-                )) {
-                    if (
-                        sourceFeature.properties.changeType === 'Create' &&
-                        (!Number.isInteger(sourceFeature.properties.id) ||
-                            sourceFeature.properties.id >= 0)
-                    ) {
-                        const feature = cloneDeep(sourceFeature)
-                        const nextId = state.nextTemporaryId--
-                        feature.properties.id = nextId
-                        feature.id = `${feature.properties.type}/${nextId}`
-                        console.info('Fixed legacy feature ID:', feature.id)
-
-                        state.pendingById[this.requireFeatureId(feature)] =
-                            feature
-                        delete state.pendingById[id]
-                    }
+                const temporaryId = state.nextTemporaryId
+                if (!Number.isInteger(temporaryId) || temporaryId >= 0) {
+                    throw new Error('The temporary ID allocator is invalid.')
                 }
+                const type = feature.properties.type
+                if (!['node', 'way', 'relation'].includes(type)) {
+                    throw new Error('A valid OSM feature type is required.')
+                }
+
+                feature.id = `${type}/${temporaryId}`
+                feature.properties.id = temporaryId
+                feature.properties.changeType = 'Create'
+                feature.properties.originalData = null
+                state.pendingById[this.requireFeatureId(feature)] = feature
+                state.nextTemporaryId = temporaryId - 1
+                return cloneDeep(feature)
             }
         )
     }
 
-    getCountGeojsonChanged(): number {
-        if (this.getGeojsonChanged().features) {
-            return this.getGeojsonChanged().features.length
-        } else {
-            return 0
-        }
+    moveOfficialToPending(
+        id: string,
+        patch: OsmGoFeature
+    ): Promise<OsmGoFeature> {
+        const changedFeature = cloneDeep(patch)
+        return this.enqueueOsmStateMutation(
+            'move official feature to pending',
+            (state) => {
+                const original = state.officialById[id]
+                if (!original) {
+                    throw new Error('The original feature data is missing.')
+                }
+                this.copyCanonicalIdentity(changedFeature, original)
+                changedFeature.properties.changeType = 'Update'
+                changedFeature.properties.originalData = cloneDeep(original)
+                delete state.officialById[id]
+                state.pendingById[id] = changedFeature
+                return cloneDeep(changedFeature)
+            }
+        )
     }
 
-    addFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
-        const snapshot = cloneDeep(feature)
-        return this.enqueueOsmStateMutation('add pending feature', (state) => {
-            state.pendingById[id] = snapshot
-            state.nextTemporaryId = Math.min(
-                state.nextTemporaryId,
-                this._nextFeatureId
-            )
-        })
-    }
-
-    updateFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
-        const snapshot = cloneDeep(feature)
+    updatePendingFeature(
+        id: string,
+        patch: OsmGoFeature
+    ): Promise<OsmGoFeature> {
+        const changedFeature = cloneDeep(patch)
         return this.enqueueOsmStateMutation(
             'update pending feature',
             (state) => {
-                state.pendingById[id] = snapshot
+                const current = state.pendingById[id]
+                if (!current) {
+                    throw new Error('The pending feature data is missing.')
+                }
+                this.copyCanonicalIdentity(changedFeature, current)
+                changedFeature.properties.changeType =
+                    current.properties.changeType
+                changedFeature.properties.originalData = cloneDeep(
+                    current.properties.originalData
+                )
+                state.pendingById[id] = changedFeature
+                return cloneDeep(changedFeature)
             }
         )
     }
 
-    deleteFeatureFromGeojsonChanged(feature: OsmGoFeature): Promise<void> {
-        const id = this.requireFeatureId(feature)
+    markPendingDeleted(id: string): Promise<OsmGoFeature | undefined> {
         return this.enqueueOsmStateMutation(
-            'delete pending feature',
+            'mark pending feature deleted',
             (state) => {
+                const pending = state.pendingById[id]
+                if (pending?.properties.changeType === 'Create') {
+                    delete state.pendingById[id]
+                    return undefined
+                }
+
+                const official = state.officialById[id]
+                const source = pending ?? official
+                if (!source) {
+                    throw new Error('The feature data is missing.')
+                }
+                const original = pending
+                    ? this.requireOriginalFeature(pending)
+                    : cloneDeep(official)
+                if (!original) {
+                    throw new Error('The original feature data is missing.')
+                }
+
+                const deletedFeature = cloneDeep(source)
+                this.copyCanonicalIdentity(deletedFeature, original)
+                deletedFeature.properties.changeType = 'Delete'
+                deletedFeature.properties.originalData = cloneDeep(original)
+                delete state.officialById[id]
+                state.pendingById[id] = deletedFeature
+                return cloneDeep(deletedFeature)
+            }
+        )
+    }
+
+    cancelPendingChange(id: string): Promise<void> {
+        return this.enqueueOsmStateMutation(
+            'cancel pending change',
+            (state) => {
+                const pending = state.pendingById[id]
+                if (!pending) {
+                    throw new Error('The pending feature data is missing.')
+                }
+                if (pending.properties.changeType !== 'Create') {
+                    const original = this.requireOriginalFeature(pending)
+                    state.officialById[id] = original
+                }
                 delete state.pendingById[id]
             }
         )
     }
 
-    async applyUploadResults(
-        results: Array<{ oldId: string; feature?: OsmGoFeature }>
-    ): Promise<void> {
-        await this.enqueueOsmStateMutation('apply upload results', (state) => {
-            const oldIds = results.map((result) => result.oldId)
+    cancelAllPendingChanges(): Promise<void> {
+        return this.enqueueOsmStateMutation(
+            'cancel all pending changes',
+            (state) => {
+                for (const [id, pending] of Object.entries(state.pendingById)) {
+                    if (pending.properties.changeType !== 'Create') {
+                        state.officialById[id] =
+                            this.requireOriginalFeature(pending)
+                    }
+                }
+                state.pendingById = {}
+                state.nextTemporaryId = -1
+            }
+        )
+    }
+
+    async applyUploadReceipt(results: UploadReceiptEntry[]): Promise<void> {
+        const receipt = cloneDeep(results)
+        for (const result of receipt) {
+            if (result.feature) {
+                this.requireCanonicalFeatureId(result.feature)
+            }
+        }
+        await this.enqueueOsmStateMutation('apply upload receipt', (state) => {
+            const oldIds = receipt.map((result) => result.oldId)
             if (
                 new Set(oldIds).size !== oldIds.length ||
                 oldIds.some((id) => !state.pendingById[id])
@@ -443,7 +410,7 @@ export class DataService {
                 )
             }
 
-            for (const result of results) {
+            for (const result of receipt) {
                 delete state.pendingById[result.oldId]
                 delete state.officialById[result.oldId]
                 if (result.feature) {
@@ -454,49 +421,31 @@ export class DataService {
         })
     }
 
-    getMergedGeojsonGeojsonChanged(): OsmGoFeatureCollection {
-        const changedIds = Object.keys(this._geojsonChanged)
-        for (const id of changedIds) {
-            delete this._geojson[id]
-        }
-        for (const feature of Object.values(this._geojsonChanged)) {
-            this._geojson[this.requireFeatureId(feature)] = feature
-        }
-        return cloneDeep(this.geojson)
-    }
-
-    cancelFeatureChange(feature: OsmGoFeature): Promise<void> {
-        const originalFeature = cloneDeep(feature.properties.originalData)
-        if (feature.properties.changeType !== 'Create' && !originalFeature) {
-            throw new Error('The original feature data is missing.')
-        }
-        const id = this.requireFeatureId(feature)
+    resetDownloadedData(): Promise<OsmDownload> {
         return this.enqueueOsmStateMutation(
-            'cancel pending change',
+            'reset downloaded data',
             (state) => {
-                delete state.pendingById[id]
-                if (
-                    feature.properties.changeType !== 'Create' &&
-                    originalFeature
-                ) {
-                    state.officialById[this.requireFeatureId(originalFeature)] =
-                        originalFeature
-                }
+                const emptyGeojson = featureCollection(
+                    []
+                ) as OsmGoFeatureCollection
+                const emptyBbox = featureCollection(
+                    []
+                ) as OsmGoFeatureCollection
+                state.officialById = {}
+                state.bbox = emptyBbox
+                return { geojson: emptyGeojson, geojsonBbox: emptyBbox }
             }
         )
     }
 
-    async resetGeojsonChanged(): Promise<void> {
-        await this.enqueueOsmStateMutation('reset pending data', (state) => {
+    resetAllData(): Promise<void> {
+        return this.enqueueOsmStateMutation('reset all OSM data', (state) => {
+            state.officialById = {}
             state.pendingById = {}
+            state.bbox = featureCollection([]) as OsmGoFeatureCollection
             state.nextTemporaryId = -1
+            delete state.uploadJournal
         })
-    }
-
-    async resetGeojsonData(): Promise<OsmGoFeatureCollection> {
-        const fc = featureCollection([]) as OsmGoFeatureCollection
-        await this.setGeojson(fc)
-        return fc
     }
 
     private requireFeatureId(feature: OsmGoFeature): string {
@@ -506,27 +455,78 @@ export class DataService {
         return String(feature.id)
     }
 
+    private collectionToRecord(
+        collection: OsmGoFeatureCollection,
+        label: string,
+        requireCanonicalIdentity = false
+    ): Record<string, OsmGoFeature> {
+        const featuresById: Record<string, OsmGoFeature> = {}
+        for (const sourceFeature of collection.features) {
+            const feature = cloneDeep(sourceFeature)
+            const id = requireCanonicalIdentity
+                ? this.requireCanonicalFeatureId(feature)
+                : this.requireFeatureId(feature)
+            if (featuresById[id]) {
+                throw new Error(`The ${label} collection has duplicate IDs.`)
+            }
+            featuresById[id] = feature
+        }
+        return featuresById
+    }
+
+    /** A persisted feature key is always the canonical `type/id` pair. */
+    private requireCanonicalFeatureId(feature: OsmGoFeature): string {
+        const id = this.requireFeatureId(feature)
+        const objectId = feature.properties.id
+        const type = feature.properties.type
+        if (
+            !['node', 'way', 'relation'].includes(type) ||
+            !Number.isInteger(objectId) ||
+            id !== `${type}/${objectId}`
+        ) {
+            throw new Error('The feature has an inconsistent canonical ID.')
+        }
+        return id
+    }
+
+    private copyCanonicalIdentity(
+        target: OsmGoFeature,
+        source: OsmGoFeature
+    ): void {
+        target.id = this.requireFeatureId(source)
+        target.properties.id = source.properties.id
+        target.properties.type = source.properties.type
+    }
+
+    private requireOriginalFeature(feature: OsmGoFeature): OsmGoFeature {
+        const original = feature.properties.originalData
+        if (!original) {
+            throw new Error('The original feature data is missing.')
+        }
+        return cloneDeep(original)
+    }
+
     private createOsmStateSnapshot(): PersistedOsmStateV2 {
         return {
             schemaVersion: OSM_STATE_SCHEMA_VERSION,
             revision: this._osmStateRevision + 1,
             officialById: cloneDeep(this._geojson),
             pendingById: cloneDeep(this._geojsonChanged),
-            bbox: cloneDeep(this.geojsonBbox),
-            nextTemporaryId: this._nextFeatureId,
+            bbox: cloneDeep(this._geojsonBbox),
+            nextTemporaryId: this._nextTemporaryId,
             ...(this._uploadJournal
                 ? { uploadJournal: cloneDeep(this._uploadJournal) }
                 : {}),
         }
     }
 
-    private enqueueOsmStateMutation(
+    private enqueueOsmStateMutation<Result>(
         operation: string,
-        mutate: (state: PersistedOsmStateV2) => void
-    ): Promise<void> {
+        mutate: (state: PersistedOsmStateV2) => Result
+    ): Promise<Result> {
         const mutation = this.osmStateMutationQueue.then(async () => {
             const state = this.createOsmStateSnapshot()
-            mutate(state)
+            const result = mutate(state)
             try {
                 await this.localStorage.set(
                     OSM_STATE_STORAGE_KEY,
@@ -538,16 +538,20 @@ export class DataService {
                 })
             }
             this.publishOsmState(state)
+            return result
         })
-        this.osmStateMutationQueue = mutation.catch(() => undefined)
+        this.osmStateMutationQueue = mutation.then(
+            () => undefined,
+            () => undefined
+        )
         return mutation
     }
 
     private publishOsmState(state: PersistedOsmStateV2): void {
         this._geojson = cloneDeep(state.officialById)
         this._geojsonChanged = cloneDeep(state.pendingById)
-        this.geojsonBbox = cloneDeep(state.bbox)
-        this._nextFeatureId = state.nextTemporaryId
+        this._geojsonBbox = cloneDeep(state.bbox)
+        this._nextTemporaryId = state.nextTemporaryId
         this._osmStateRevision = state.revision
         this._uploadJournal = cloneDeep(state.uploadJournal)
         this.notifyChangedData()

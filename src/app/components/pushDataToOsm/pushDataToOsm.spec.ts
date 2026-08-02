@@ -129,7 +129,6 @@ describe('PushDataToOsmPage', () => {
             const changedData = { features: [queuedFeature] }
             const dataService = {
                 getGeojsonChanged: () => changedData,
-                replaceIdGenerateByOldVersion: () => Promise.resolve(),
             }
             const osmApi = {
                 getValidChangeset: vi
@@ -180,7 +179,6 @@ describe('PushDataToOsmPage', () => {
         const changedData = { features: [queuedFeature] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
         }
         const osmApi = {
             getValidChangeset: () => of('123'),
@@ -323,7 +321,6 @@ describe('PushDataToOsmPage', () => {
         const changedData = { features: [queuedFeature] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
         }
         const osmApi = {
             getUserDetail$: () => throwError(() => new TimeoutError()),
@@ -357,7 +354,6 @@ describe('PushDataToOsmPage', () => {
         const changedData = { features: [queuedFeature] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
         }
         const closedChangesetError = {
             status: 409,
@@ -405,20 +401,10 @@ describe('PushDataToOsmPage', () => {
     })
 
     it('starts only one upload when the button is clicked twice', async () => {
-        let continuePreparation: () => void = () => {
-            throw new Error('Upload preparation did not start.')
-        }
-        const preparation = new Promise<void>(
-            (resolve) => (continuePreparation = resolve)
-        )
         const uploadResult = new Subject<never>()
         const changedData = { features: [{ id: 'node/-1' }] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: vi
-                .fn()
-                .mockName('replaceIdGenerateByOldVersion')
-                .mockReturnValue(preparation),
         }
         const osmApi = {
             getValidChangeset: () => of('123'),
@@ -444,16 +430,12 @@ describe('PushDataToOsmPage', () => {
 
         const firstUpload = page.pushDataToOsm('Survey')
         const secondUpload = page.pushDataToOsm('Survey')
-        continuePreparation()
         await vi.waitFor(() =>
             expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
         )
         uploadResult.error(new Error('Fixture upload stopped'))
         await Promise.all([firstUpload, secondUpload])
 
-        expect(dataService.replaceIdGenerateByOldVersion).toHaveBeenCalledTimes(
-            1
-        )
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
         expect(page.uploadInFlight()).toBe(false)
     })
@@ -471,13 +453,13 @@ describe('PushDataToOsmPage', () => {
                 meta: { version: 0 },
             },
         }))
-        const applyUploadResults = vi
+        const applyUploadReceipt = vi
             .fn()
-            .mockName('applyUploadResults')
+            .mockName('applyUploadReceipt')
             .mockResolvedValue(undefined)
         const dataService = {
             getGeojsonChanged: () => ({ features }),
-            applyUploadResults,
+            applyUploadReceipt,
         }
         const mapService = { getIconStyle: (feature: unknown) => feature }
         const configService = {
@@ -497,7 +479,7 @@ describe('PushDataToOsmPage', () => {
 
         await (page as any).updateLocalDataFromDiffResult(diffResults, features)
 
-        const preparedResults = vi.mocked(applyUploadResults).mock.lastCall?.[0]
+        const preparedResults = vi.mocked(applyUploadReceipt).mock.lastCall?.[0]
         expect(preparedResults).toBeDefined()
         if (!preparedResults)
             throw new Error('Upload results were not applied.')
@@ -521,10 +503,10 @@ describe('PushDataToOsmPage', () => {
                 meta: { version: 0 },
             },
         }
-        const applyUploadResults = vi.fn().mockName('applyUploadResults')
+        const applyUploadReceipt = vi.fn().mockName('applyUploadReceipt')
         const dataService = {
             getGeojsonChanged: () => ({ features: [feature] }),
-            applyUploadResults,
+            applyUploadReceipt,
         }
         const configService = { getChangeSetComment: () => '' }
         const page = createPage({ dataService, configService })
@@ -547,7 +529,7 @@ describe('PushDataToOsmPage', () => {
             )
         ).rejects.toThrow()
 
-        expect(applyUploadResults).not.toHaveBeenCalled()
+        expect(applyUploadReceipt).not.toHaveBeenCalled()
     })
 
     it.each([
@@ -632,11 +614,11 @@ describe('PushDataToOsmPage', () => {
         ],
     ])('keeps the queue intact for a %s diff result', async (_, arrange) => {
         const { features, results } = arrange()
-        const applyUploadResults = vi.fn().mockName('applyUploadResults')
+        const applyUploadReceipt = vi.fn().mockName('applyUploadReceipt')
         const page = createPage({
             dataService: {
                 getGeojsonChanged: () => ({ features }),
-                applyUploadResults,
+                applyUploadReceipt,
             },
             configService: { getChangeSetComment: () => '' },
         })
@@ -645,16 +627,16 @@ describe('PushDataToOsmPage', () => {
             (page as any).updateLocalDataFromDiffResult(results, features)
         ).rejects.toThrow()
 
-        expect(applyUploadResults).not.toHaveBeenCalled()
+        expect(applyUploadReceipt).not.toHaveBeenCalled()
     })
 
     it('accepts a deletion receipt without a new ID or version', async () => {
         const feature = queuedFeature('Delete', 12)
-        const applyUploadResults = vi.fn().mockResolvedValue(undefined)
+        const applyUploadReceipt = vi.fn().mockResolvedValue(undefined)
         const page = createPage({
             dataService: {
                 getGeojsonChanged: () => ({ features: [feature] }),
-                applyUploadResults,
+                applyUploadReceipt,
             },
             configService: { getChangeSetComment: () => '' },
         })
@@ -664,16 +646,16 @@ describe('PushDataToOsmPage', () => {
             [feature]
         )
 
-        expect(applyUploadResults).toHaveBeenCalledWith([{ oldId: 'node/12' }])
+        expect(applyUploadReceipt).toHaveBeenCalledWith([{ oldId: 'node/12' }])
     })
 
     it('accepts an acknowledged tag removal sent as a modification', async () => {
         const feature = queuedFeature('Delete', 12, 'node', 3, true)
-        const applyUploadResults = vi.fn().mockResolvedValue(undefined)
+        const applyUploadReceipt = vi.fn().mockResolvedValue(undefined)
         const page = createPage({
             dataService: {
                 getGeojsonChanged: () => ({ features: [feature] }),
-                applyUploadResults,
+                applyUploadReceipt,
             },
             configService: { getChangeSetComment: () => '' },
         })
@@ -692,7 +674,7 @@ describe('PushDataToOsmPage', () => {
             [feature]
         )
 
-        expect(applyUploadResults).toHaveBeenCalledWith([{ oldId: 'node/12' }])
+        expect(applyUploadReceipt).toHaveBeenCalledWith([{ oldId: 'node/12' }])
     })
 
     it('finishes an acknowledged upload after the page is backgrounded', async () => {
@@ -709,15 +691,14 @@ describe('PushDataToOsmPage', () => {
         }
         const changedData = { features: [feature] }
         const uploadResult = new Subject<any[]>()
-        const applyUploadResults = vi
+        const applyUploadReceipt = vi
             .fn()
-            .mockName('applyUploadResults')
+            .mockName('applyUploadReceipt')
             .mockResolvedValue(undefined)
         const dataService = {
             getGeojsonChanged: () => changedData,
             getGeojson: () => ({ features: [] }),
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
-            applyUploadResults,
+            applyUploadReceipt,
         }
         const apiOsmSendOsmDiffFile = vi
             .fn()
@@ -767,7 +748,7 @@ describe('PushDataToOsmPage', () => {
         ])
         await upload
 
-        expect(applyUploadResults).toHaveBeenCalledTimes(1)
+        expect(applyUploadReceipt).toHaveBeenCalledTimes(1)
         expect(page.uploadedOk()).toBe(true)
         expect(page.uploadInFlight()).toBe(false)
         expect(mapService.isProcessing.value).toBe(false)
@@ -790,8 +771,7 @@ describe('PushDataToOsmPage', () => {
         const dataService = {
             getGeojsonChanged: () => changedData,
             getGeojson: () => ({ features: [] }),
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
-            applyUploadResults: vi.fn().mockImplementation(async () => {
+            applyUploadReceipt: vi.fn().mockImplementation(async () => {
                 changedData.features = []
             }),
         }
@@ -863,8 +843,7 @@ describe('PushDataToOsmPage', () => {
         const changedData = { features: [feature] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: () => Promise.resolve(),
-            applyUploadResults: vi
+            applyUploadReceipt: vi
                 .fn()
                 .mockRejectedValue(new Error('Storage unavailable')),
         }

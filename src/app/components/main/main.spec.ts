@@ -14,7 +14,7 @@ import { MapService } from '@services/map.service'
 import { OsmAuthService } from '@services/osm-auth.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
-import { of, Subject, throwError } from 'rxjs'
+import { firstValueFrom, of, Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
 import { MainPage } from './main'
@@ -318,8 +318,7 @@ describe('MainPage', () => {
                 .mockReturnValue(throwError(() => downloadError)),
         }
         const dataService = {
-            setGeojsonBbox: vi.fn().mockName('DataService.setGeojsonBbox'),
-            setGeojson: vi.fn().mockName('DataService.setGeojson'),
+            applyDownload: vi.fn().mockName('DataService.applyDownload'),
         }
         const alertService = {
             newAlert$: new Subject(),
@@ -345,12 +344,55 @@ describe('MainPage', () => {
             [true],
             [false],
         ])
-        expect(dataService.setGeojsonBbox).not.toHaveBeenCalled()
-        expect(dataService.setGeojson).not.toHaveBeenCalled()
+        expect(dataService.applyDownload).not.toHaveBeenCalled()
         expect(page.presentToast).toHaveBeenCalledTimes(1)
         expect(page.presentToast).toHaveBeenCalledWith(
             'Worker conversion failed'
         )
+    })
+
+    it('persists a complete download atomically before redrawing it', async () => {
+        let acknowledgeDownload!: () => void
+        const persisted = new Promise<void>((resolve) => {
+            acknowledgeDownload = resolve
+        })
+        const result = {
+            geojson: { type: 'FeatureCollection', features: [] },
+            geojsonBbox: { type: 'FeatureCollection', features: [] },
+        }
+        const applyDownload = vi.fn().mockReturnValue(persisted)
+        const mapService = {
+            redrawBbox: vi.fn(),
+            redrawMarkers: vi.fn(),
+            getBbox: () => [1, 2, 3, 4],
+            setIsProcessing: vi.fn(),
+        }
+        const { page } = createPage({
+            osmApi: { getDataFromBbox: () => of(result) },
+            dataService: { applyDownload },
+            mapService,
+            alertService: {
+                newAlert$: new Subject(),
+                displayToolTipRefreshData: true,
+            },
+            configService: {
+                getLimitFeatures: () => 100,
+                freezeMapRenderer: false,
+            },
+        })
+
+        const completed = firstValueFrom(page.loadData$())
+        await Promise.resolve()
+
+        expect(applyDownload).toHaveBeenCalledWith(result)
+        expect(mapService.redrawMarkers).not.toHaveBeenCalled()
+
+        acknowledgeDownload()
+        await completed
+
+        expect(mapService.redrawBbox).toHaveBeenCalledWith(result.geojsonBbox)
+        expect(mapService.redrawMarkers).toHaveBeenCalledWith(result.geojson)
+        expect(mapService.setIsProcessing).toHaveBeenLastCalledWith(false)
     })
 
     it('keeps existing data when the worker result is incomplete', () => {
@@ -361,8 +403,7 @@ describe('MainPage', () => {
             setIsProcessing: vi.fn(),
         }
         const dataService = {
-            setGeojsonBbox: vi.fn(),
-            setGeojson: vi.fn(),
+            applyDownload: vi.fn(),
         }
         const { page } = createPage({
             osmApi: {
@@ -387,8 +428,7 @@ describe('MainPage', () => {
 
         page.loadData$().subscribe()
 
-        expect(dataService.setGeojsonBbox).not.toHaveBeenCalled()
-        expect(dataService.setGeojson).not.toHaveBeenCalled()
+        expect(dataService.applyDownload).not.toHaveBeenCalled()
         expect(mapService.setIsProcessing).toHaveBeenLastCalledWith(false)
         expect(page.presentToast).toHaveBeenCalledWith(
             'The map worker returned invalid data.'
