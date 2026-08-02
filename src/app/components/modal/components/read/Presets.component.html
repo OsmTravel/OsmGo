@@ -37,7 +37,7 @@
         <ion-card-content>
             @if (!displayCode()) {
                 <app-opening-hours
-                    [openingHours]="tag().value"
+                    [openingHours]="openingHoursValue"
                     [displayCode]="displayCode()"
                 >
                 </app-opening-hours>

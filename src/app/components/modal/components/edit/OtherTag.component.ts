@@ -1,7 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
+    input,
     output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
@@ -13,6 +13,7 @@ import {
     IonInput,
     IonItem,
 } from '@ionic/angular/standalone'
+import { Tag } from '@osmgo/type'
 
 @Component({
     selector: 'edit-other-tag',
@@ -20,7 +21,7 @@ import {
     template: `
         <ion-card>
             <ion-card-header>
-                <ion-icon name="code"></ion-icon> <b>{{ tag.key }}</b>
+                <ion-icon name="code"></ion-icon> <b>{{ tag().key }}</b>
             </ion-card-header>
             <ion-card-content>
                 <div class="wrapperEdit2cols">
@@ -28,8 +29,8 @@ import {
                         <ion-item>
                             <ion-input
                                 type="text"
-                                [(ngModel)]="tag.value"
-                                [placeholder]="tag.key"
+                                [(ngModel)]="tag().value"
+                                [placeholder]="tag().key"
                             ></ion-input>
                         </ion-item>
                     </div>
@@ -57,12 +58,10 @@ import {
     ],
 })
 export class EditOtherTag {
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() tag
-    readonly deleteTag = output<unknown>()
+    readonly tag = input.required<Tag>()
+    readonly deleteTag = output<Tag>()
 
     eventDeleteTag() {
-        this.deleteTag.emit(this.tag)
+        this.deleteTag.emit(this.tag())
     }
 }

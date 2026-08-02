@@ -30,7 +30,6 @@ import { TranslateModule } from '@ngx-translate/core'
     ],
 })
 export class DialogMultiFeaturesComponent implements OnInit {
-    // @Input() features: string;
     features: any
     jsonSprites: any
     constructor(

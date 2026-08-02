@@ -10,11 +10,10 @@ describe('SelectComponent', () => {
     }
 
     function createComponent(tag) {
-        const component = TestBed.runInInjectionContext(
-            () => new SelectComponent()
-        )
-        component.preset = genderPreset
-        component.tag = tag
+        const fixture = TestBed.createComponent(SelectComponent)
+        fixture.componentRef.setInput('preset', genderPreset)
+        fixture.componentRef.setInput('tag', tag)
+        const component = fixture.componentInstance
         return component
     }
 

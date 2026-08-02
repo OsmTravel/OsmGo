@@ -2,13 +2,15 @@
     <div
         class="tag-icon"
         style="width: 50px"
-        [style.background-color]="tag.markerColor ? tag.markerColor : 'black'"
+        [style.background-color]="
+            tag().markerColor ? tag().markerColor : 'black'
+        "
     >
         <div class="icon-wrapper">
             <app-icon
-                [icon]="tag.icon"
+                [icon]="tag().icon"
                 style="display: block"
-                [jsonSprites]="jsonSprites"
+                [jsonSprites]="jsonSprites()"
             >
             </app-icon>
         </div>
@@ -16,13 +18,15 @@
 
     @if (!isHiddenTag()) {
         <div
-            (click)="addOrRemoveBookmark(tag)"
+            (click)="addOrRemoveBookmark(tag())"
             style="width: 36px"
             class="bookmark"
         >
             <ion-icon
                 [style.color]="
-                    (tag | isBookmarked: bookmarksIds()) ? '#f71000' : '#d8d8d8'
+                    (tag() | isBookmarked: bookmarksIds())
+                        ? '#f71000'
+                        : '#d8d8d8'
                 "
                 name="heart"
                 item-left
@@ -31,32 +35,41 @@
         </div>
     }
 
-    <div class="tag-text spacer" (click)="selected.emit(tag)">
-        <b [style.color]="oldTagConfig?.id === tag.id ? '#3b22dd' : 'black'">{{
-            tag?.lbl ? (tag?.lbl)[languageTags()] || (tag?.lbl)['en'] : null
-        }}</b>
+    <div class="tag-text spacer" (click)="selected.emit(tag())">
+        <b
+            [style.color]="
+                oldTagConfig()?.id === tag().id ? '#3b22dd' : 'black'
+            "
+            >{{
+                tag()?.lbl
+                    ? (tag()?.lbl)[languageTags()] || (tag()?.lbl)['en']
+                    : null
+            }}</b
+        >
 
         <br />
         <span style="font-size: 0.8em">{{
-            $safeNavigationMigration(tag?.tags) | displayTags
+            $safeNavigationMigration(tag()?.tags) | displayTags
         }}</span>
         <br />
         <span style="font-size: 11px; font-style: italic">
             {{
-                tag?.description
-                    ? (tag?.description)[languageTags()] ||
-                      (tag?.description)['en']
+                tag()?.description
+                    ? (tag()?.description)[languageTags()] ||
+                      (tag()?.description)['en']
                     : ''
             }}
         </span>
     </div>
 
-    @if (oldTagConfig?.id === tag.id) {
+    @if (oldTagConfig()?.id === tag().id) {
         <div class="action">
             <ion-icon
                 name="checkmark"
                 item-left
-                [style.color]="oldTagConfig?.id === tag.id ? 'green' : 'black'"
+                [style.color]="
+                    oldTagConfig()?.id === tag().id ? 'green' : 'black'
+                "
                 style="font-size: 26px; height: 100%"
             ></ion-icon>
         </div>
@@ -66,7 +79,7 @@
             <ion-button
                 class="ion-no-margin buttonUnhideTag"
                 color="success"
-                (click)="removeHiddenTag.emit(tag)"
+                (click)="removeHiddenTag.emit(tag())"
             >
                 <ion-icon name="add-circle"> </ion-icon>
             </ion-button>
@@ -77,7 +90,7 @@
             <ion-button
                 class="ion-no-margin buttonUnhideTag"
                 color="danger"
-                (click)="addHiddenTag.emit(tag)"
+                (click)="addHiddenTag.emit(tag())"
             >
                 <ion-icon name="remove-circle"> </ion-icon>
             </ion-button>

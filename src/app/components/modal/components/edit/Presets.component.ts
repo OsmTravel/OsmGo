@@ -1,7 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
+    input,
     output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
@@ -15,6 +15,7 @@ import {
     IonLabel,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
+import { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
 import { SelectComponent } from '../select/select.component'
@@ -40,34 +41,28 @@ import { SelectComponent } from '../select/select.component'
     ],
 })
 export class EditPresets {
-    // TODO: Skipped for migration because:
-    //  Class of this input is manually instantiated. This is discouraged and prevents
-    //  migration.
-    @Input() displayCode
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() tag
-    // TODO: Skipped for migration because:
-    //  Class of this input is manually instantiated. This is discouraged and prevents
-    //  migration.
-    @Input() language
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() preset
+    readonly displayCode = input(false)
+    readonly tag = input.required<Tag>()
+    readonly language = input('en')
+    readonly preset = input.required<Preset>()
 
     readonly openPrimaryListModal = output<unknown>()
     readonly addTags = output<Record<string, string>>()
 
     get isMultiKeyPreset(): boolean {
         return (
-            !this.preset?.key &&
-            this.preset?.keys?.length > 0 &&
-            this.preset?.options?.length > 0
+            !this.preset()?.key &&
+            this.preset()?.keys?.length > 0 &&
+            this.preset()?.options?.length > 0
         )
     }
 
+    get openingHoursValue(): string {
+        return String(this.tag().value ?? '')
+    }
+
     emitOpenModal(tag) {
-        if (!this.displayCode && this.preset.type === 'list') {
+        if (!this.displayCode() && this.preset().type === 'list') {
             this.openPrimaryListModal.emit(tag)
         }
     }

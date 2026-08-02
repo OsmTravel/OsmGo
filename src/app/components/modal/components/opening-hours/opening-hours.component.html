@@ -10,7 +10,7 @@
                 {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
             </ion-button>
         }
-        @if (openingHours) {
+        @if (openingHours()) {
             <div>
                 <!-- Only 1 member in this iteration -->
                 @for (
@@ -88,7 +88,7 @@
                 }
             </div>
         }
-        @if (!openingHours) {
+        @if (!openingHours()) {
             <div>
                 {{ 'OPENINGHOURS.UNKNOW' | translate }}
             </div>
@@ -102,7 +102,8 @@
                     <ion-input
                         type="text"
                         debounce="200"
-                        [(ngModel)]="openingHours"
+                        [ngModel]="openingHours()"
+                        (ngModelChange)="openingHours.set($event)"
                         [placeholder]="'opening_hours'"
                         (ionChange)="valueChange($event)"
                     ></ion-input>
@@ -110,7 +111,7 @@
             </div>
             <div class="buttonEdit2cols">
                 <ion-icon
-                    (click)="openingHours = ''"
+                    (click)="openingHours.set('')"
                     name="close"
                     style="width: 2em; height: 2em"
                 ></ion-icon>
@@ -119,7 +120,7 @@
     }
     @if (!editMode()) {
         <div>
-            {{ openingHours }}
+            {{ openingHours() }}
             @if (isTooComplex) {
                 <div class="tooComplex">
                     {{ 'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}

@@ -18,12 +18,12 @@ describe('TagListElementComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(TagListElementComponent)
         component = fixture.componentInstance
-        component.tag = tagsConfig.tags[0]
+        fixture.componentRef.setInput('tag', tagsConfig.tags[0])
         const sprite = { height: 16, width: 16, x: 0, y: 0 }
-        component.jsonSprites = {
-            [component.tag.icon]: sprite,
+        fixture.componentRef.setInput('jsonSprites', {
+            [tagsConfig.tags[0].icon]: sprite,
             'wiki-question': sprite,
-        }
+        })
         fixture.detectChanges()
     })
 

@@ -1,8 +1,8 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
     input,
+    model,
     OnInit,
     output,
 } from '@angular/core'
@@ -42,9 +42,7 @@ const builder = new OpeningHoursBuilder()
     ],
 })
 export class OpeningHoursComponent implements OnInit {
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() openingHours
+    readonly openingHours = model('')
     readonly displayCode = input(undefined)
     readonly editMode = input(false)
 
@@ -75,11 +73,11 @@ export class OpeningHoursComponent implements OnInit {
 
     parseOpeningHours() {
         try {
-            this.intervals = parser.parse(this.openingHours)
+            this.intervals = parser.parse(this.openingHours())
             this.isError = false
             this.isTooComplex = false
 
-            if (this.openingHours == '') {
+            if (this.openingHours() == '') {
                 this.isError = false
                 return
             }
@@ -134,8 +132,8 @@ export class OpeningHoursComponent implements OnInit {
 
         currentDataRange.getTypical().removeInterval(currentIntervalIndex)
 
-        this.openingHours = builder.build(this.intervals)
-        this.valueChangeEvent.emit(this.openingHours)
+        this.openingHours.set(builder.build(this.intervals))
+        this.valueChangeEvent.emit(this.openingHours())
     }
 
     addIntervals(times, days) {
@@ -161,8 +159,8 @@ export class OpeningHoursComponent implements OnInit {
                     .addInterval(new Interval(dayIndex, dayEnd, start, end))
             }
         }
-        this.openingHours = builder.build(this.intervals)
-        this.valueChangeEvent.emit(this.openingHours)
+        this.openingHours.set(builder.build(this.intervals))
+        this.valueChangeEvent.emit(this.openingHours())
         this.parseOpeningHours()
     }
 

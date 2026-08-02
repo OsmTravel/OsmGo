@@ -29,5 +29,9 @@ export class ReadPresets {
     readonly language = input(undefined)
     readonly countryCode = input(undefined)
 
+    get openingHoursValue(): string {
+        return String(this.tag().value ?? '')
+    }
+
     ngOnInit(): void {}
 }

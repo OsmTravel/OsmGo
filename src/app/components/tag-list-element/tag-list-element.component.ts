@@ -1,7 +1,6 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
     input,
     OnInit,
     output,
@@ -11,6 +10,13 @@ import { IonButton, IonIcon } from '@ionic/angular/standalone'
 import { TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
+
+interface SpritePosition {
+    height: number
+    width: number
+    x: number
+    y: number
+}
 
 @Component({
     selector: 'app-tag-list-element',
@@ -26,20 +32,13 @@ import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
     ],
 })
 export class TagListElementComponent implements OnInit {
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() tag: any
+    readonly tag = input.required<TagConfig>()
     readonly countryTags = input(undefined)
     readonly languageTags = input(undefined)
-    // TODO: Skipped for migration because:
-    //  Your application code writes to the input. This prevents migration.
-    @Input() jsonSprites
+    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
     readonly geometriesFilter = input<string[]>(undefined)
     readonly bookmarksIds = input<string[]>(undefined)
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() oldTagConfig: TagConfig
+    readonly oldTagConfig = input<TagConfig>()
     readonly isHiddenTag = input<boolean>(undefined)
     readonly showHideTagButton = input<boolean>(undefined)
 

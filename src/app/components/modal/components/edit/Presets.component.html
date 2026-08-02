@@ -1,42 +1,42 @@
-@if (preset?.type === 'select' || isMultiKeyPreset) {
+@if (preset()?.type === 'select' || isMultiKeyPreset) {
     <app-select
-        [tag]="tag"
-        [preset]="preset"
-        [language]="language"
-        [displayCode]="displayCode"
+        [tag]="tag()"
+        [preset]="preset()"
+        [language]="language()"
+        [displayCode]="displayCode()"
         (addTags)="addTags.emit($event)"
     >
     </app-select>
 }
-@if (preset?.type === 'list') {
+@if (preset()?.type === 'list') {
     <ion-card>
-        <ion-card-header (click)="emitOpenModal(tag)">
-            @if (!displayCode) {
+        <ion-card-header (click)="emitOpenModal(tag())">
+            @if (!displayCode()) {
                 <b
-                    >{{ preset?.lbl[language] || preset?.lbl['en'] }}
+                    >{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}
                     <ion-icon name="settings"></ion-icon>
                 </b>
             }
-            @if (displayCode) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset?.key }}</b>
+            @if (displayCode()) {
+                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
             }
         </ion-card-header>
         <ion-card-content>
             <div class="wrapperEdit2cols">
                 <div class="contentEdit2cols">
                     @if (
-                        !displayCode &&
-                            ((tag | displayPresetLabel: preset) ||
-                                tag.value == '');
+                        !displayCode() &&
+                            ((tag() | displayPresetLabel: preset()) ||
+                                tag().value == '');
                         as pr
                     ) {
-                        <ion-item (click)="emitOpenModal(tag)">
-                            @if (tag.value != '') {
+                        <ion-item (click)="emitOpenModal(tag())">
+                            @if (tag().value != '') {
                                 <p class="displayLabelListValue">
-                                    {{ pr?.lbl[language] || pr?.lbl['en'] }}
+                                    {{ pr?.lbl[language()] || pr?.lbl['en'] }}
                                 </p>
                             }
-                            @if (tag.value == '') {
+                            @if (tag().value == '') {
                                 <p class="undefindedListValue">
                                     {{
                                         'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'
@@ -51,14 +51,14 @@
                         </ion-label>
                         <ion-input
                             type="text"
-                            [(ngModel)]="tag.value"
-                            [placeholder]="tag.key"
+                            [(ngModel)]="tag().value"
+                            [placeholder]="tag().key"
                         ></ion-input>
                     }
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
-                        (click)="tag.value = ''"
+                        (click)="tag().value = ''"
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -67,14 +67,14 @@
         </ion-card-content>
     </ion-card>
 }
-@if (preset?.type === 'number') {
+@if (preset()?.type === 'number') {
     <ion-card>
         <ion-card-header>
-            @if (!displayCode) {
-                <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+            @if (!displayCode()) {
+                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
-            @if (displayCode) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset?.key }}</b>
+            @if (displayCode()) {
+                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
             }
         </ion-card-header>
         <ion-card-content>
@@ -83,14 +83,14 @@
                     <ion-item style="padding-left: 0px">
                         <ion-input
                             type="number"
-                            [(ngModel)]="tag.value"
-                            [placeholder]="tag.key"
+                            [(ngModel)]="tag().value"
+                            [placeholder]="tag().key"
                         ></ion-input>
                     </ion-item>
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
-                        (click)="tag.value = ''"
+                        (click)="tag().value = ''"
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -101,17 +101,19 @@
 }
 
 <!-- Type : TEL / URL / EMAIL -->
-@if (['tel', 'email', 'url'].includes($safeNavigationMigration(preset?.type))) {
+@if (
+    ['tel', 'email', 'url'].includes($safeNavigationMigration(preset()?.type))
+) {
     <ion-card>
         <ion-card-header>
-            @if (!displayCode) {
-                <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+            @if (!displayCode()) {
+                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
-            @if (displayCode) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset?.key }}</b>
+            @if (displayCode()) {
+                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
             }
-            @if (preset?.type == 'url' && tag.value) {
-                <a href="{{ tag.value }}" target="_blank"
+            @if (preset()?.type == 'url' && tag().value) {
+                <a href="{{ tag().value }}" target="_blank"
                     ><ion-icon name="link"></ion-icon
                 ></a>
             }
@@ -121,15 +123,15 @@
                 <div class="contentEdit2cols">
                     <ion-item style="padding-left: 0px">
                         <ion-input
-                            [type]="preset.type"
-                            [(ngModel)]="tag.value"
-                            [placeholder]="tag.key"
+                            [type]="preset().type"
+                            [(ngModel)]="tag().value"
+                            [placeholder]="tag().key"
                         ></ion-input>
                     </ion-item>
                 </div>
                 <div class="buttonEdit2cols">
                     <ion-icon
-                        (click)="tag.value = ''"
+                        (click)="tag().value = ''"
                         name="close"
                         style="width: 2em; height: 2em"
                     ></ion-icon>
@@ -138,24 +140,24 @@
         </ion-card-content>
     </ion-card>
 }
-@if (preset?.type === 'text' && !isMultiKeyPreset) {
+@if (preset()?.type === 'text' && !isMultiKeyPreset) {
     <ion-card>
         <ion-card-header>
-            @if (!displayCode) {
-                <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+            @if (!displayCode()) {
+                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
             }
-            @if (displayCode) {
-                <b> <ion-icon name="code"></ion-icon> {{ preset?.key }}</b>
+            @if (displayCode()) {
+                <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
             }
         </ion-card-header>
         <ion-card-content>
             <div class="wrapperEdit2cols">
-                @if (preset?.key === 'opening_hours') {
+                @if (preset()?.key === 'opening_hours') {
                     <app-opening-hours
-                        [openingHours]="tag.value"
-                        [displayCode]="displayCode"
+                        [openingHours]="openingHoursValue"
+                        [displayCode]="displayCode()"
                         [editMode]="true"
-                        (valueChangeEvent)="tag.value = $event"
+                        (valueChangeEvent)="tag().value = $event"
                     >
                     </app-opening-hours>
                 } @else {
@@ -163,14 +165,14 @@
                         <ion-item style="padding-left: 0px">
                             <ion-input
                                 type="text"
-                                [(ngModel)]="tag.value"
-                                [placeholder]="tag.key"
+                                [(ngModel)]="tag().value"
+                                [placeholder]="tag().key"
                             ></ion-input>
                         </ion-item>
                     </div>
                     <div class="buttonEdit2cols">
                         <ion-icon
-                            (click)="tag.value = ''"
+                            (click)="tag().value = ''"
                             name="close"
                             style="width: 2em; height: 2em"
                         ></ion-icon>
