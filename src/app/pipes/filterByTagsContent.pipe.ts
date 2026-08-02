@@ -1,13 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core'
+import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByTagsContent',
     pure: false,
 })
 export class FilterByTagsContentPipe implements PipeTransform {
-    replaceCharSpe(text: string) {
+    replaceCharSpe(text: string): string {
         if (!text) {
-            return
+            return ''
         }
         return text
             .replace(/[û]/gi, 'u')
@@ -18,9 +19,13 @@ export class FilterByTagsContentPipe implements PipeTransform {
             .replace(/ç/g, 'c')
     }
 
-    transform(items, args: string[], searchText: string) {
+    transform(
+        items: TagConfig[],
+        args: string[],
+        searchText: string
+    ): TagConfig[] {
         const patt = new RegExp(searchText, 'i')
-        const [language, countryCode] = args
+        const [language] = args
         if (!searchText) {
             return items
         }
@@ -35,9 +40,8 @@ export class FilterByTagsContentPipe implements PipeTransform {
 
             // By label
             if (item.lbl) {
-                const it = item.lbl[language]
-                    ? item.lbl[language]
-                    : item.lbl['en']
+                const labels = item.lbl as Record<string, string>
+                const it = labels[language] ?? labels.en ?? ''
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
@@ -47,15 +51,14 @@ export class FilterByTagsContentPipe implements PipeTransform {
 
             // By terms
             if (item.terms) {
-                const it = item.terms[language]
-                    ? item.terms[language]
-                    : item.terms['en']
+                const it = item.terms[language] ?? item.terms.en ?? ''
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
                     return true
                 }
             }
+            return false
         })
     }
 }

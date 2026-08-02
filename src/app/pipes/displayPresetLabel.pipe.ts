@@ -1,15 +1,15 @@
 import { Pipe } from '@angular/core'
+import type { Preset, PresetOption, Tag } from '@osmgo/type'
 
 @Pipe({
     name: 'displayPresetLabel',
     pure: false,
 })
 export class DisplayPresetLabelPipe {
-    transform(tag, preset) {
+    transform(tag: Tag, preset: Preset | undefined): PresetOption | undefined {
         if (!preset || !preset.options) {
             return
         }
-        const res = preset.options.find((p) => p.v === tag.value) || undefined
-        return res
+        return preset.options.find((option) => option.v === tag.value)
     }
 }

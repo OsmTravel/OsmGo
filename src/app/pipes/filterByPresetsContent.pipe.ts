@@ -1,5 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core'
 
+interface SearchablePresetOption {
+    v: string
+    lbl?: Record<string, string>
+    terms?: Record<string, string>
+}
+
 @Pipe({
     name: 'filterByPresetsContent',
     pure: false,
@@ -15,22 +21,24 @@ export class FilterByPresetsContentPipe implements PipeTransform {
             .replace(/ç/g, 'c')
     }
 
-    transform(items, args: string[], searchText: string) {
+    transform(
+        items: SearchablePresetOption[],
+        args: string[],
+        searchText: string
+    ): SearchablePresetOption[] {
         const patt = new RegExp(searchText, 'i')
-        const [language, countryCode] = args
+        const [language] = args
         return items.filter((item) => {
             // By Key
-            if (patt.test(item['v'])) {
+            if (patt.test(item.v)) {
                 return true
-            } else if (patt.test(this.replaceCharSpe(item['v']))) {
+            } else if (patt.test(this.replaceCharSpe(item.v))) {
                 return true
             }
 
             // By label ()
             if (item.lbl) {
-                const it = item.lbl[language]
-                    ? item.lbl[language]
-                    : item.lbl['en']
+                const it = item.lbl[language] ?? item.lbl.en ?? ''
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
@@ -39,9 +47,7 @@ export class FilterByPresetsContentPipe implements PipeTransform {
             }
 
             if (item.terms) {
-                const it = item.terms[language]
-                    ? item.terms[language]
-                    : item.terms['en']
+                const it = item.terms[language] ?? item.terms.en ?? ''
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
@@ -49,7 +55,7 @@ export class FilterByPresetsContentPipe implements PipeTransform {
                 }
             }
 
-            // }
+            return false
         })
     }
 }

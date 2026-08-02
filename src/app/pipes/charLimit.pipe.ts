@@ -5,7 +5,7 @@ import { Pipe } from '@angular/core'
     pure: false,
 })
 export class CharLimitPipe {
-    transform(string, charNumber) {
-        return string.substring(0, charNumber)
+    transform(value: string, characterCount: number): string {
+        return value.substring(0, characterCount)
     }
 }

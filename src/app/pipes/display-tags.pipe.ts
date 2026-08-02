@@ -4,16 +4,20 @@ import { Pipe, PipeTransform } from '@angular/core'
     name: 'displayTags',
 })
 export class DisplayTagsPipe implements PipeTransform {
-    transform(tags: any, ...args: any[]): any {
+    transform(
+        tags: Record<
+            string,
+            string | number | boolean | null | undefined
+        > | null
+    ): string | undefined {
         if (!tags) {
             return
         }
-        let results = []
+        const results: string[] = []
         for (const v in tags) {
-            results = [...results, `${v}=${tags[v]}`]
+            results.push(`${v}=${tags[v]}`)
         }
 
-        // console.log( tags)
         return results.join(' & ')
     }
 }

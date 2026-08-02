@@ -1,22 +1,28 @@
 import { Pipe } from '@angular/core'
 
+interface CountrySpecificItem {
+    countryCodes?: string[]
+}
+
 @Pipe({
     name: 'filterByCountryCode',
     pure: false,
 })
 export class FilterByCountryCode {
-    transform(items, countryCode: string) {
+    transform<T extends CountrySpecificItem>(
+        items: T[] | null | undefined,
+        countryCode: string
+    ): T[] | null | undefined {
         if (!items) {
             return items
         }
 
-        return items.filter((item) => {
-            return (
+        return items.filter(
+            (item) =>
                 !item.countryCodes ||
                 item.countryCodes
-                    .map((o) => o.toUpperCase())
+                    .map((code) => code.toUpperCase())
                     .includes(countryCode)
-            )
-        })
+        )
     }
 }

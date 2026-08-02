@@ -1,5 +1,9 @@
 import { Pipe } from '@angular/core'
-import { TagConfig } from '@osmgo/type'
+import type { Preset, Tag, TagConfig } from '@osmgo/type'
+
+interface CountrySpecificPreset extends Preset {
+    countryCode?: string[]
+}
 
 @Pipe({
     name: 'filterExcludeKeys',
@@ -7,13 +11,13 @@ import { TagConfig } from '@osmgo/type'
 })
 export class FilterExcludeKeysPipe {
     transform(
-        items,
-        tagConfig: TagConfig,
+        items: Tag[],
+        tagConfig: TagConfig | null | undefined,
         countryCode: string,
-        primaryKeys,
-        presets,
+        primaryKeys: string[],
+        presets: Record<string, CountrySpecificPreset> | null | undefined,
         excludeOtherPresets = false
-    ) {
+    ): Tag[] {
         // let excludesKeys = ['name', ...primaryKeys]
         let excludesKeys = ['name']
 
@@ -24,27 +28,29 @@ export class FilterExcludeKeysPipe {
         excludesKeys = [...excludesKeys, ...Object.keys(tagConfig.tags)]
 
         if (presets && excludeOtherPresets) {
-            const keysInPresetsConfig = []
+            const keysInPresetsConfig: string[] = []
             for (const pid of tagConfig.presets) {
                 const currentPreset = presets[pid]
-                //countryCodes TODO exclude
-                keysInPresetsConfig.push(currentPreset.key)
+                if (currentPreset?.key) {
+                    keysInPresetsConfig.push(currentPreset.key)
+                }
             }
             excludesKeys = [...excludesKeys, ...keysInPresetsConfig]
         }
 
         if (countryCode && presets) {
-            const excludeByCountryconde = []
+            const excludedKeys: string[] = []
             for (const pid of tagConfig.presets) {
                 const currentPreset = presets[pid]
                 if (
-                    currentPreset.countryCode &&
-                    !currentPreset.countryCode.includes(countryCode)
+                    currentPreset?.countryCode &&
+                    !currentPreset.countryCode.includes(countryCode) &&
+                    currentPreset.key
                 ) {
-                    excludeByCountryconde.push(presets[pid])
+                    excludedKeys.push(currentPreset.key)
                 }
             }
-            excludesKeys = [...excludesKeys, ...excludeByCountryconde]
+            excludesKeys = [...excludesKeys, ...excludedKeys]
         }
 
         return items.filter((item) => !excludesKeys.includes(item.key))

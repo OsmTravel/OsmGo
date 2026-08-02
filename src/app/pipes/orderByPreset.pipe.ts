@@ -1,17 +1,17 @@
 import { Pipe } from '@angular/core'
-import { TagConfig } from '@osmgo/type'
+import type { Tag, TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'orderByPreset',
     pure: false,
 })
 export class OrderByPresetPipe {
-    transform(items, tagConfig: TagConfig) {
-        const fields = []
-        const moreFields = []
-        const extraTags = []
-        const newFields = []
-        items.forEach((element) => {
+    transform(items: Tag[], tagConfig: TagConfig): Tag[] {
+        const fields: Tag[] = []
+        const moreFields: Tag[] = []
+        const extraTags: Tag[] = []
+        const newFields: Tag[] = []
+        items.forEach((element: Tag) => {
             if (element.isJustAdded) {
                 newFields.push(element)
             } else if (tagConfig.presets.includes(element.key)) {
