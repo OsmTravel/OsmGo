@@ -15,7 +15,7 @@
 @if (this.initService.isLoaded) {
     <ion-content class="ion-padding">
         <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}</h4>
-        @for (bm of basemaps; track bm) {
+        @for (bm of basemaps(); track bm) {
             <ion-card
                 (click)="selectBaseMap(bm)"
                 [class.selectedCard]="

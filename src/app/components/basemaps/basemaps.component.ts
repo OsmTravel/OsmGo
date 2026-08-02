@@ -1,9 +1,5 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    OnInit,
-} from '@angular/core'
+import { Component, inject, OnInit } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
 import { ActivatedRoute } from '@angular/router'
 import {
     IonButton,
@@ -25,12 +21,12 @@ import { BasemapsService } from '@services/basemaps.service'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
+import { catchError, of, switchMap } from 'rxjs'
 
 @Component({
     selector: 'app-basemaps',
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonButton,
         IonButtons,
@@ -55,32 +51,26 @@ export class BasemapsComponent implements OnInit {
     readonly configService = inject(ConfigService)
     readonly mapService = inject(MapService)
 
-    lat: number
-    lng: number
-    basemaps: Record<string, any>[]
+    readonly basemaps = toSignal(
+        this.route.params.pipe(
+            switchMap((params) =>
+                this.basemapsService.getBasemaps$(
+                    Number.parseFloat(params.lng),
+                    Number.parseFloat(params.lat)
+                )
+            ),
+            catchError((error: unknown) => {
+                console.error('Unable to load basemaps:', error)
+                return of([])
+            })
+        ),
+        { initialValue: [] }
+    )
 
     ngOnInit() {
         if (!this.initService.isLoaded) {
             // We need to instantiate the map
             this.navCtrl.back()
-        }
-
-        if (this.route.params) {
-            this.route.params.subscribe({
-                next: (params) => {
-                    this.lng = parseFloat(params.lng)
-                    this.lat = parseFloat(params.lat)
-
-                    this.basemapsService
-                        .getBasemaps$(this.lng, this.lat)
-                        .subscribe((basemaps) => {
-                            this.basemaps = basemaps
-                        })
-                },
-                error: (err) => {
-                    console.error('Error: ', err)
-                },
-            })
         }
     }
 

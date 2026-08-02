@@ -10,17 +10,15 @@ import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
-import { of } from 'rxjs'
+import { of, Subject } from 'rxjs'
 import { BasemapsComponent } from './basemaps.component'
 
 describe('BasemapsComponent', () => {
     let fixture: ComponentFixture<BasemapsComponent>
+    let basemaps$: Subject<Array<{ id: string; name: string }>>
 
     beforeEach(waitForAsync(() => {
-        const basemaps = [
-            { id: 'selected', name: 'Selected map' },
-            { id: 'other', name: 'Other map' },
-        ]
+        basemaps$ = new Subject()
 
         TestBed.configureTestingModule({
             imports: [BasemapsComponent, TranslateModule.forRoot()],
@@ -31,7 +29,7 @@ describe('BasemapsComponent', () => {
                 },
                 {
                     provide: BasemapsService,
-                    useValue: { getBasemaps$: () => of(basemaps) },
+                    useValue: { getBasemaps$: () => basemaps$ },
                 },
                 {
                     provide: ConfigService,
@@ -49,10 +47,16 @@ describe('BasemapsComponent', () => {
         }).compileComponents()
 
         fixture = TestBed.createComponent(BasemapsComponent)
-        fixture.detectChanges()
+        fixture.autoDetectChanges()
     }))
 
-    it('marks only the configured basemap as selected', () => {
+    it('renders asynchronously loaded basemaps without manual change detection', async () => {
+        basemaps$.next([
+            { id: 'selected', name: 'Selected map' },
+            { id: 'other', name: 'Other map' },
+        ])
+        await fixture.whenStable()
+
         const cards = fixture.nativeElement.querySelectorAll('ion-card')
 
         expect(cards).toHaveLength(2)
