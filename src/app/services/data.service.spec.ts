@@ -10,7 +10,7 @@ import {
     OsmStatePersistenceError,
     type PersistedOsmStateV2,
 } from '@services/osm-state'
-import { featureCollection, point } from '@turf/turf'
+import { featureCollection, point } from '@turf/helpers'
 import { firstValueFrom } from 'rxjs'
 
 type StorageSpy = {

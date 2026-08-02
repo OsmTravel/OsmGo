@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { DOCUMENT, inject, NgZone, Service, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
+import { cloneDeep } from '@app/utils/clone'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { TranslateService } from '@ngx-translate/core'
 import {
@@ -21,7 +22,8 @@ import { type Config, ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { LocationService } from '@services/location.service'
 import { TagsService } from '@services/tags.service'
-import { destination, point } from '@turf/turf'
+import destination from '@turf/destination'
+import { point } from '@turf/helpers'
 import type {
     BBox,
     Feature,
@@ -31,7 +33,6 @@ import type {
     MultiPoint,
     Point,
 } from 'geojson'
-import { cloneDeep, uniqBy } from 'lodash'
 import {
     AttributionControl,
     type FilterSpecification,
@@ -1293,10 +1294,13 @@ export class MapService {
                 } catch {}
             }
 
-            const uniqFeaturesById = uniqBy(
-                features,
-                (o) => o['properties']['id']
-            )
+            const seenFeatureIds = new Set<string | number>()
+            const uniqFeaturesById = features.filter((feature) => {
+                const id = feature.properties.id
+                if (seenFeatureIds.has(id)) return false
+                seenFeatureIds.add(id)
+                return true
+            })
 
             if (uniqFeaturesById.length > 1) {
                 this.featureChoiceSubject.next(uniqFeaturesById)

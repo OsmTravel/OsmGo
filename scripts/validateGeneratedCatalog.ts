@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import path from 'node:path'
-import { assetsDir, tapPresetsPath, tapTagsPath } from './_paths'
+import {
+    assetsDir,
+    tapBrandPresetsPath,
+    tapPresetsPath,
+    tapTagsPath,
+} from './_paths'
 
 interface TagConfig {
     id: string
@@ -22,10 +27,13 @@ const tagsConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8')) as {
     primaryKeys: string[]
     tags: TagConfig[]
 }
-const presets = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8')) as Record<
-    string,
-    Preset
->
+const basePresets = JSON.parse(
+    fs.readFileSync(tapPresetsPath, 'utf8')
+) as Record<string, Preset>
+const brandPresets = JSON.parse(
+    fs.readFileSync(tapBrandPresetsPath, 'utf8')
+) as Record<string, Preset>
+const presets = { ...basePresets, ...brandPresets }
 const spritesDirectory = path.join(assetsDir, 'mapStyle', 'sprites')
 const sprites = JSON.parse(
     fs.readFileSync(path.join(spritesDirectory, 'sprites.json'), 'utf8')
@@ -48,8 +56,22 @@ const supportedGeometries = new Set([
 const tagIds = tagsConfig.tags.map((tag) => tag.id)
 const presetIds = Object.keys(presets)
 const spriteIds = Object.keys(sprites)
+const generatedFileBudgets = new Map([
+    [tapTagsPath, 8_000_000],
+    [tapPresetsPath, 3_000_000],
+    [tapBrandPresetsPath, 6_500_000],
+    [path.join(assetsDir, 'imagery.json'), 3_500_000],
+])
 
 unique(tagIds, 'Tag IDs')
+assert.ok(
+    Object.keys(basePresets).every((id) => !id.endsWith('#brand')),
+    'Base presets must not contain brand catalogs'
+)
+assert.ok(
+    Object.keys(brandPresets).every((id) => id.endsWith('#brand')),
+    'The lazy brand catalog must only contain brand presets'
+)
 unique(tagsConfig.primaryKeys, 'Primary keys')
 assert.deepEqual(
     Object.keys(sprites2x).sort(),
@@ -105,6 +127,13 @@ for (const fileName of ['sprites.png', 'sprites@2x.png']) {
     assert.ok(
         fs.statSync(path.join(spritesDirectory, fileName)).size > 0,
         `${fileName} must be a non-empty file`
+    )
+}
+
+for (const [filePath, maximumBytes] of generatedFileBudgets) {
+    assert.ok(
+        fs.statSync(filePath).size <= maximumBytes,
+        `${path.basename(filePath)} exceeds its ${maximumBytes} byte budget`
     )
 }
 

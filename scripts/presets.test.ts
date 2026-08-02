@@ -2,7 +2,12 @@ import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import fs from 'node:fs'
-import { rootDir, tapPresetsPath, tapTagsPath } from './_paths'
+import {
+    rootDir,
+    tapBrandPresetsPath,
+    tapPresetsPath,
+    tapTagsPath,
+} from './_paths'
 
 const generatePresets = (): Array<string> => {
     execFileSync('npm', ['run', 'presets:generate'], {
@@ -10,11 +15,13 @@ const generatePresets = (): Array<string> => {
         stdio: 'pipe',
     })
 
-    return [tapTagsPath, tapPresetsPath].map((filePath) => {
-        return createHash('sha256')
-            .update(fs.readFileSync(filePath))
-            .digest('hex')
-    })
+    return [tapTagsPath, tapPresetsPath, tapBrandPresetsPath].map(
+        (filePath) => {
+            return createHash('sha256')
+                .update(fs.readFileSync(filePath))
+                .digest('hex')
+        }
+    )
 }
 
 const firstGeneration = generatePresets()

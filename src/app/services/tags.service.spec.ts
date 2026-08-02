@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 import type { OsmGoFeature } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
-import { firstValueFrom, of } from 'rxjs'
+import { firstValueFrom, forkJoin, of } from 'rxjs'
 
 import { TagsService } from './tags.service'
 
@@ -33,6 +33,58 @@ describe('TagsService', () => {
 
         expect(service.primaryKeys()).toEqual(['amenity'])
         expect(service.presets()).toBe(presets)
+    })
+
+    it('loads and caches the separate brand catalog only on demand', async () => {
+        const basePresets = {
+            name: { key: 'name', lbl: { en: 'Name' }, type: 'text' },
+        }
+        const brandPresets = {
+            'shop#books#brand': {
+                key: 'brand',
+                lbl: { en: 'Brand' },
+                type: 'list',
+                options: [],
+            },
+        }
+        const http = {
+            get: vi.fn((url: string) =>
+                of(
+                    url.endsWith('brandPresets.json')
+                        ? brandPresets
+                        : basePresets
+                )
+            ),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: AppStorage, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        await firstValueFrom(service.loadPresets$())
+        expect(service.presets()['shop#books#brand']).toBeUndefined()
+        expect(service.brandPresetsLoaded()).toBe(false)
+
+        await firstValueFrom(
+            forkJoin([service.loadBrandPresets$(), service.loadBrandPresets$()])
+        )
+
+        expect(service.brandPresetsLoaded()).toBe(true)
+        expect(service.presets()).toMatchObject({
+            name: basePresets.name,
+            'shop#books#brand': brandPresets['shop#books#brand'],
+        })
+        expect(
+            http.get.mock.calls.filter(([url]) =>
+                String(url).endsWith('brandPresets.json')
+            )
+        ).toHaveLength(1)
+
+        await firstValueFrom(service.loadBrandPresets$())
+        expect(http.get).toHaveBeenCalledTimes(2)
     })
 
     it('exposes tag list preferences as read-only signals', () => {
@@ -228,5 +280,15 @@ describe('TagsService', () => {
 
         expect(tags).toEqual([builtIn, userOnly])
         expect(service.tags()).toEqual([builtIn, userOnly])
+        expect(service.tagsById()).toEqual({
+            'amenity/cafe': builtIn,
+            'amenity/custom': userOnly,
+        })
+        expect(service.catalogMetrics().tags).toMatchObject({
+            characters: expect.any(Number),
+            downloadMs: expect.any(Number),
+            parseMs: expect.any(Number),
+            indexMs: expect.any(Number),
+        })
     })
 })

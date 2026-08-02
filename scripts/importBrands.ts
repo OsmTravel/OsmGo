@@ -1,12 +1,13 @@
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { tapPresetsPath, tapTagsPath } from './_paths'
+import { tapBrandPresetsPath, tapPresetsPath, tapTagsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 import { type BrandOption, getBrandOptions } from './nameSuggestionIndex'
 
 const tagsConfig = readTapTagsFromJson()
 const tags = tagsConfig.tags
 const presets = readTapPresetsFromJson()
+const brandPresets: Record<string, unknown> = {}
 
 const addBrandPreset = (
     presets: any,
@@ -56,7 +57,7 @@ const run = () => {
             if (brandsData[`${pkey}/${value}`]) {
                 const brandOptions = brandsData[`${pkey}/${value}`]
                 const id = `${pkey}#${value}#brand`
-                addBrandPreset(presets, id, brandOptions)
+                addBrandPreset(brandPresets, id, brandOptions)
 
                 tagConfig.presets = [id, ...tagConfig.presets]
             }
@@ -64,6 +65,7 @@ const run = () => {
     }
 
     fs.writeFileSync(tapPresetsPath, stringify(presets), 'utf8')
+    fs.writeFileSync(tapBrandPresetsPath, stringify(brandPresets), 'utf8')
     fs.writeFileSync(tapTagsPath, stringify(tagsConfig), 'utf8')
 }
 run()

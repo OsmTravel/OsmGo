@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { inject, Service } from '@angular/core'
+import { cloneDeep } from '@app/utils/clone'
 import { normalizeOsmTags } from '@app/utils/osm-tags'
 import type {
     FeatureIdSource,
@@ -17,7 +18,6 @@ import { MapService } from '@services/map.service'
 import { TagsService } from '@services/tags.service'
 import { XMLParser, XMLValidator } from 'fast-xml-parser'
 import type { BBox } from 'geojson'
-import { cloneDeep } from 'lodash'
 import { from, Observable, of, throwError } from 'rxjs'
 import { catchError, map, switchMap, take, timeout } from 'rxjs/operators'
 import { OsmAuthService } from './osm-auth.service'

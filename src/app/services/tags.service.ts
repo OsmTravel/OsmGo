@@ -10,11 +10,18 @@ import {
     TagsJson,
 } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
-import { forkJoin, from, Observable } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { defer, forkJoin, from, Observable, of } from 'rxjs'
+import { finalize, map, shareReplay, tap } from 'rxjs/operators'
 
 export interface SavedField {
     tags: Tag[]
+}
+
+export interface CatalogLoadMetric {
+    characters: number
+    downloadMs: number
+    parseMs: number
+    indexMs?: number
 }
 
 @Service()
@@ -32,11 +39,20 @@ export class TagsService {
     savedFields: Record<string, SavedField> = {}
     private readonly tagsState = signal<TagConfig[]>([])
     readonly tags = this.tagsState.asReadonly()
+    private readonly tagsByIdState = signal<Record<string, TagConfig>>({})
+    readonly tagsById = this.tagsByIdState.asReadonly()
+    private readonly catalogMetricsState = signal<
+        Partial<Record<'tags' | 'presets' | 'brands', CatalogLoadMetric>>
+    >({})
+    readonly catalogMetrics = this.catalogMetricsState.asReadonly()
     userTags: TagConfig[] = []
     private readonly primaryKeysState = signal<string[]>([])
     readonly primaryKeys = this.primaryKeysState.asReadonly()
     private readonly presetsState = signal<Record<string, Preset>>({})
     readonly presets = this.presetsState.asReadonly()
+    private readonly brandPresetsLoadedState = signal(false)
+    readonly brandPresetsLoaded = this.brandPresetsLoadedState.asReadonly()
+    private brandPresetsRequest$?: Observable<Record<string, Preset>>
     private readonly jsonSpritesState = signal<JsonSprites>({})
     readonly jsonSprites = this.jsonSpritesState.asReadonly()
 
@@ -174,7 +190,10 @@ export class TagsService {
     ]
 
     getTagConfigFromTagsID(tagIds: string[]): TagConfig[] {
-        return this.tags().filter((tag) => tagIds.includes(tag.id))
+        const tagsById = this.tagsById()
+        return tagIds.flatMap((tagId) =>
+            tagsById[tagId] ? [tagsById[tagId]] : []
+        )
     }
 
     setBookMarksIds(bookmarksIds: string[]): void {
@@ -205,7 +224,7 @@ export class TagsService {
             return
         }
         this.removeHiddenTag(tag)
-        const currentTag = this.tags().find((t) => t.id === tag.id)
+        const currentTag = this.tagsById()[tag.id]
         if (!currentTag) {
             this.addUserTags(tag)
         }
@@ -307,7 +326,7 @@ export class TagsService {
         const previousTagIds = this.lastTagsUsedIds().filter(
             (previousTagId) => previousTagId !== tagId
         )
-        const currentTag = this.tags().find((t) => t.id === tagId)
+        const currentTag = this.tagsById()[tagId]
         if (!currentTag) {
             return
         }
@@ -344,11 +363,9 @@ export class TagsService {
             markerColor: '#000000',
         }
         this.userTags = [...this.userTags, normalizedTag]
-        this.tagsState.update((tags) =>
-            tags.some((tag) => tag.id === newTagId)
-                ? tags
-                : [...tags, normalizedTag]
-        )
+        if (!this.tagsById()[newTagId]) {
+            this.setTags([...this.tags(), normalizedTag])
+        }
         this.setUserTags(this.userTags)
     }
 
@@ -390,7 +407,10 @@ export class TagsService {
     }
 
     getTagsConfig$(): Observable<TagsJson> {
-        return this.http.get<TagsJson>(`assets/tagsAndPresets/tags.json`).pipe(
+        return this.loadJsonAsset$<TagsJson>(
+            `assets/tagsAndPresets/tags.json`,
+            'tags'
+        ).pipe(
             map((tagsConfig) => {
                 this.primaryKeysState.set(tagsConfig.primaryKeys)
                 return tagsConfig
@@ -399,18 +419,46 @@ export class TagsService {
     }
 
     loadPresets$(): Observable<Record<string, Preset>> {
-        return this.http
-            .get<Record<string, Preset>>(`assets/tagsAndPresets/presets.json`)
-            .pipe(
-                map((p) => {
-                    const json = p
-                    for (const k in json) {
-                        json[k]._id = k
-                    }
-                    this.presetsState.set(json)
-                    return json
-                })
-            )
+        return this.loadJsonAsset$<Record<string, Preset>>(
+            `assets/tagsAndPresets/presets.json`,
+            'presets'
+        ).pipe(
+            map((p) => {
+                const json = p
+                for (const k in json) {
+                    json[k]._id = k
+                }
+                this.presetsState.set(json)
+                return json
+            })
+        )
+    }
+
+    loadBrandPresets$(): Observable<Record<string, Preset>> {
+        if (this.brandPresetsLoaded()) return of(this.presets())
+        if (this.brandPresetsRequest$) return this.brandPresetsRequest$
+
+        this.brandPresetsRequest$ = this.loadJsonAsset$<Record<string, Preset>>(
+            `assets/tagsAndPresets/brandPresets.json`,
+            'brands'
+        ).pipe(
+            tap((brandPresets) => {
+                for (const [id, preset] of Object.entries(brandPresets)) {
+                    preset._id = id
+                }
+                this.presetsState.update((presets) => ({
+                    ...presets,
+                    ...brandPresets,
+                }))
+                this.brandPresetsLoadedState.set(true)
+            }),
+            map(() => this.presets()),
+            finalize(() => {
+                this.brandPresetsRequest$ = undefined
+            }),
+            shareReplay({ bufferSize: 1, refCount: false })
+        )
+        return this.brandPresetsRequest$
     }
 
     loadJsonSprites$(): Observable<JsonSprites> {
@@ -437,9 +485,63 @@ export class TagsService {
                     ...tagsConfig.tags,
                     ...userTags.filter((tag) => !builtInIds.has(tag.id)),
                 ]
-                this.tagsState.set(tags)
+                this.setTags(tags)
                 return tags
             })
         )
+    }
+
+    private setTags(tags: TagConfig[]): void {
+        const startedAt = performance.now()
+        const tagsById = Object.fromEntries(tags.map((tag) => [tag.id, tag]))
+        const indexMs = performance.now() - startedAt
+        this.tagsState.set(tags)
+        this.tagsByIdState.set(tagsById)
+        this.catalogMetricsState.update((metrics) => ({
+            ...metrics,
+            tags: {
+                characters: metrics.tags?.characters ?? 0,
+                downloadMs: metrics.tags?.downloadMs ?? 0,
+                parseMs: metrics.tags?.parseMs ?? 0,
+                indexMs,
+            },
+        }))
+    }
+
+    private loadJsonAsset$<T>(
+        url: string,
+        resource: 'tags' | 'presets' | 'brands'
+    ): Observable<T> {
+        return defer(() => {
+            const requestedAt = performance.now()
+            return this.http.get(url, { responseType: 'text' }).pipe(
+                map((response) => {
+                    const receivedAt = performance.now()
+                    const parseStartedAt = performance.now()
+                    // Production receives text so JSON parsing can be timed.
+                    // Object responses keep lightweight test doubles possible.
+                    const parsed =
+                        typeof response === 'string'
+                            ? (JSON.parse(response) as T)
+                            : (response as T)
+                    const parsedAt = performance.now()
+                    this.catalogMetricsState.update((metrics) => ({
+                        ...metrics,
+                        [resource]: {
+                            characters:
+                                typeof response === 'string'
+                                    ? response.length
+                                    : JSON.stringify(response).length,
+                            downloadMs: receivedAt - requestedAt,
+                            parseMs: parsedAt - parseStartedAt,
+                            ...(metrics[resource]?.indexMs === undefined
+                                ? {}
+                                : { indexMs: metrics[resource].indexMs }),
+                        },
+                    }))
+                    return parsed
+                })
+            )
+        })
     }
 }

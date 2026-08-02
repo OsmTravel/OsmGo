@@ -33,3 +33,8 @@ references, geometries, sprite parity and progressive count floors. Name
 Suggestion Index entries sharing one `brand` value are merged by country;
 ancillary tags whose values conflict are deliberately omitted instead of
 attaching an arbitrary Wikidata entity.
+
+Brand option lists are emitted to `brandPresets.json`. The application loads
+the smaller base preset catalog at startup and fetches the brand catalog only
+when an editor needs it. The imagery index follows the same on-demand policy
+and is cached after its first request.

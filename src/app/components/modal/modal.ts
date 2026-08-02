@@ -17,6 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+import { cloneDeep } from '@app/utils/clone'
 import {
     normalizedOsmTagMap,
     normalizeEditorTags,
@@ -57,8 +58,7 @@ import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { type SavedField, TagsService } from '@services/tags.service'
 import type { Geometry } from 'geojson'
-import { cloneDeep, findIndex } from 'lodash'
-import { finalize } from 'rxjs/operators'
+import { finalize, take } from 'rxjs/operators'
 import { ModalAddTag } from './modal.addTag/modal.addTag'
 import { ModalSelectList } from './modalSelectList/modalSelectList'
 
@@ -458,6 +458,19 @@ export class ObjectEditorContentComponent {
         this.tagConfigState.set(_tagConfig)
         this.primaryKey = _primaryKey
         this.tagsState.set(_tags)
+        if (
+            _presetsIds.some((presetId) => presetId.endsWith('#brand')) &&
+            !this.tagsService.brandPresetsLoaded()
+        ) {
+            this.tagsService
+                .loadBrandPresets$()
+                .pipe(take(1))
+                .subscribe({
+                    next: () => this.initComponent(_tagConfig),
+                    error: (error) =>
+                        console.warn('Unable to load brand presets.', error),
+                })
+        }
         return { tagConfig: _tagConfig, tags: _tags, feature: feature }
     }
 
@@ -514,7 +527,9 @@ export class ObjectEditorContentComponent {
     }
 
     deleteTag(tag: Tag): void {
-        const idx = findIndex(this.tags, { key: tag.key })
+        const idx = this.tags.findIndex(
+            (candidate) => candidate.key === tag.key
+        )
         if (idx !== -1) {
             this.tagsState.set([
                 ...this.tags.slice(0, idx),
@@ -528,7 +543,10 @@ export class ObjectEditorContentComponent {
     }
 
     findElement(array: Tag[], kv: Partial<Tag>): Tag {
-        const idx = findIndex(array, kv)
+        const entries = Object.entries(kv) as Array<[keyof Tag, Tag[keyof Tag]]>
+        const idx = array.findIndex((candidate) =>
+            entries.every(([key, value]) => candidate[key] === value)
+        )
         if (idx !== -1) {
             return array[idx]
         }

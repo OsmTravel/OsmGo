@@ -26,5 +26,7 @@ export const tapDir = path.join(assetsDir, 'tagsAndPresets')
 export const tapTagsPath = path.join(tapDir, 'tags.json')
 /** Path to the presets JSON file within tags and presets. */
 export const tapPresetsPath = path.join(tapDir, 'presets.json')
+/** Path to the lazily loaded brand preset file. */
+export const tapBrandPresetsPath = path.join(tapDir, 'brandPresets.json')
 /** Path to the basemap JSON file within tags and presets. */
 export const tapBasemapPath = path.join(tapDir, 'basemap.json')

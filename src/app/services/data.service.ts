@@ -1,4 +1,5 @@
 import { computed, inject, Service, signal } from '@angular/core'
+import { cloneDeep } from '@app/utils/clone'
 import {
     FeatureIdSource,
     OsmGoFeature,
@@ -14,8 +15,7 @@ import {
     type PersistedOsmStateV2,
     type PersistedUploadJournal,
 } from '@services/osm-state'
-import { featureCollection } from '@turf/turf'
-import { cloneDeep } from 'lodash'
+import { featureCollection } from '@turf/helpers'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 

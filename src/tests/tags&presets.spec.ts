@@ -24,10 +24,16 @@ const tagsConfig = require('../assets/tagsAndPresets/tags.json') as {
     primaryKeys: Array<string>
     tags: Array<TagConfig>
 }
-const presets = require('../assets/tagsAndPresets/presets.json') as Record<
+const basePresets = require('../assets/tagsAndPresets/presets.json') as Record<
     string,
     Preset
 >
+const brandPresets =
+    require('../assets/tagsAndPresets/brandPresets.json') as Record<
+        string,
+        Preset
+    >
+const presets = { ...basePresets, ...brandPresets }
 const sprites = require('../assets/mapStyle/sprites/sprites.json') as Record<
     string,
     unknown
@@ -51,6 +57,14 @@ const presetTypes = [
 const geometryTypes = ['point', 'vertex', 'line', 'area', 'relation']
 
 describe('generated tags and presets', () => {
+    it('keeps brand options in the lazy catalog', () => {
+        expect(
+            Object.keys(basePresets).every((id) => !id.endsWith('#brand'))
+        ).toBe(true)
+        expect(
+            Object.keys(brandPresets).every((id) => id.endsWith('#brand'))
+        ).toBe(true)
+    })
     it('keeps the expected primary tag groups', () => {
         expect(tagsConfig.primaryKeys).toEqual(
             expect.arrayContaining([

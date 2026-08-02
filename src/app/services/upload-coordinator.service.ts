@@ -1,4 +1,5 @@
 import { computed, inject, Service, signal } from '@angular/core'
+import { cloneDeep } from '@app/utils/clone'
 import type { OsmGoChangeType, OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService, type User } from '@services/config.service'
@@ -9,7 +10,6 @@ import type {
     PersistedUploadSummary,
 } from '@services/osm-state'
 import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
-import { cloneDeep } from 'lodash'
 import { firstValueFrom, type Observable } from 'rxjs'
 import { take } from 'rxjs/operators'
 
