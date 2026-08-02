@@ -72,11 +72,11 @@ describe('ModalsContentPage', () => {
                 {
                     provide: ConfigService,
                     useValue: {
-                        config: {
+                        config: () => ({
                             countryTags: 'US',
                             languageTags: 'en',
                             languageUi: 'en',
-                        },
+                        }),
                     },
                 },
                 { provide: AlertService, useValue: {} },

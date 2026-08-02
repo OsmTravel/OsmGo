@@ -91,7 +91,7 @@ export class ModalPrimaryTag implements OnInit {
 
     ngOnInit() {
         this.displayType =
-            this.configService.config.defaultPrimarykeyWindows == 'bookmarks'
+            this.configService.config().defaultPrimarykeyWindows == 'bookmarks'
                 ? 'bookmarks'
                 : 'lastTags'
         this.oldTagConfig = this.tagConfigInput()

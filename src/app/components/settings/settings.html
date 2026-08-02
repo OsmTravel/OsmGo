@@ -25,7 +25,7 @@
                 <p>{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.followPosition"
+                [checked]="this.configService.config().followPosition"
                 (ionChange)="followPositionChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -36,7 +36,7 @@
                 <p>{{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.lockMapHeading"
+                [checked]="this.configService.config().lockMapHeading"
                 (ionChange)="lockMapHeadingChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -47,7 +47,7 @@
                 <p>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.centerWhenGpsIsReady"
+                [checked]="this.configService.config().centerWhenGpsIsReady"
                 (ionChange)="centerWhenGpsIsReadyChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -58,19 +58,19 @@
                 <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.oldTagsIcon.display"
+                [checked]="this.configService.config().oldTagsIcon.display"
                 (ionChange)="displayOldTagIconChange($event)"
             ></ion-toggle>
         </ion-item>
         <ion-item lines="inset">
             <ion-label position="stacked">
                 {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate}} {{
-                this.configService.config.oldTagsIcon.year }} {{
+                this.configService.config().oldTagsIcon.year }} {{
                 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate}}
             </ion-label>
             <ion-range
-                [disabled]="!this.configService.config.oldTagsIcon.display"
-                [value]="this.configService.config.oldTagsIcon.year"
+                [disabled]="!this.configService.config().oldTagsIcon.display"
+                [value]="this.configService.config().oldTagsIcon.year"
                 debounce="300"
                 snaps
                 (ionChange)="yearOldTagIconChange($event)"
@@ -87,7 +87,7 @@
                 <p>{{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.displayFixmeIcon"
+                [checked]="this.configService.config().displayFixmeIcon"
                 (ionChange)="displayFixmeIconChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -98,7 +98,7 @@
                 <p>{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.filterWayByArea"
+                [checked]="this.configService.config().filterWayByArea"
                 (ionChange)="filterWayByArea($event)"
             ></ion-toggle>
         </ion-item>
@@ -109,7 +109,7 @@
                 <p>{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.filterWayByLength"
+                [checked]="this.configService.config().filterWayByLength"
                 (ionChange)="filterWayByLength($event)"
             ></ion-toggle>
         </ion-item>
@@ -120,7 +120,7 @@
                 <p>{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.isSelectableLine"
+                [checked]="this.configService.config().isSelectableLine"
                 (ionChange)="isSelectableLineChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -131,7 +131,7 @@
                 <p>{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.isSelectablePolygon"
+                [checked]="this.configService.config().isSelectablePolygon"
                 (ionChange)="isSelectablePolygonChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -148,7 +148,7 @@
                 <h3>{{ 'SETTINGS.CHECKED_KEY' | translate}}</h3>
             </ion-label>
             <ion-select
-                [value]="this.configService.config.checkedKey"
+                [value]="this.configService.config().checkedKey"
                 (ionChange)="checkedKeyChange($event)"
             >
                 <ion-select-option value="survey:date">
@@ -166,7 +166,7 @@
                 <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.addSurveyDate"
+                [checked]="this.configService.config().addSurveyDate"
                 (ionChange)="addSurveyDateChange($event)"
             ></ion-toggle>
         </ion-item>
@@ -177,7 +177,7 @@
                 <p>{{ 'SETTINGS.DISPLAY_SURVEY_CARD_HINT' | translate}}</p>
             </ion-label>
             <ion-select
-                [value]="this.configService.config.surveyCard.display"
+                [value]="this.configService.config().surveyCard.display"
                 (ionChange)="displaySurveyCardChange($event)"
                 [interfaceOptions]="displaySurveyCardOptions()"
             >
@@ -202,8 +202,8 @@
                 SETTINGS.SURVEY_CARD_RANGE
             </ion-label>
             <ion-range
-                [disabled]="this.configService.config.surveyCard.display != 'when_older'"
-                [value]="this.configService.config.surveyCard.year"
+                [disabled]="this.configService.config().surveyCard.display != 'when_older'"
+                [value]="this.configService.config().surveyCard.year"
                 debounce="300"
                 snaps
                 (ionChange)="yearOldSurveyCardChange($event)"
@@ -226,14 +226,14 @@
                 <ion-label>
                     <h3>
                         {{ 'SETTINGS.LIMIT_FEATURES' | translate}}
-                        ({{this.configService.config.limitFeatures}})
+                        ({{this.configService.config().limitFeatures}})
                     </h3>
                     <p class="hint">
                         {{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate}}
                     </p>
                 </ion-label>
                 <ion-range
-                    [value]="this.configService.config.limitFeatures"
+                    [value]="this.configService.config().limitFeatures"
                     debounce="300"
                     step="2000"
                     snaps
@@ -249,12 +249,12 @@
                 <ion-label>
                     <h3>
                         {{ 'SETTINGS.MARGIN' | translate}}
-                        ({{this.configService.config.mapMarginBuffer}} m)
+                        ({{this.configService.config().mapMarginBuffer}} m)
                     </h3>
                     <p class="hint">{{ 'SETTINGS.MARGIN_HINT' | translate}}</p>
                 </ion-label>
                 <ion-range
-                    [value]="this.configService.config.mapMarginBuffer"
+                    [value]="this.configService.config().mapMarginBuffer"
                     debounce="300"
                     snaps
                     (ionChange)="mapMarginBufferChange($event)"
@@ -273,12 +273,12 @@
             >
         </ion-item-divider>
 
-        @if (this.configService.config.languageUi &&
+        @if (this.configService.config().languageUi &&
         this.configService.i18nConfig) {
         <ion-item lines="inset">
             <ion-label>{{ 'SETTINGS.UI_LANGUAGE' | translate}}</ion-label>
             <ion-select
-                [value]="this.configService.config.languageUi"
+                [value]="this.configService.config().languageUi"
                 (ionChange)="languageUiChange($event)"
             >
                 @for (lang of this.configService.i18nConfig.language; track
@@ -289,12 +289,12 @@
                 }
             </ion-select>
         </ion-item>
-        } @if (this.configService.config.languageTags &&
+        } @if (this.configService.config().languageTags &&
         this.configService.i18nConfig) {
         <ion-item lines="inset">
             <ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
             <ion-select
-                [value]="this.configService.config.languageTags"
+                [value]="this.configService.config().languageTags"
                 (ionChange)="languageTagsChange($event)"
             >
                 @for (lang of this.configService.i18nConfig.language; track
@@ -313,7 +313,7 @@
                 <p>{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</p>
             </ion-label>
             <ion-select
-                [value]="this.configService.config.countryTags"
+                [value]="this.configService.config().countryTags"
                 [interfaceOptions]="countryTagsOptions()"
                 (ionChange)="countryTagsChange($event)"
             >
@@ -364,7 +364,7 @@
                 </p>
             </ion-label>
             <ion-toggle
-                [checked]="this.configService.config.isDevServer"
+                [checked]="this.configService.config().isDevServer"
                 (ionChange)="changeIsDevServer($event['detail']['checked'])"
             ></ion-toggle>
         </ion-item>

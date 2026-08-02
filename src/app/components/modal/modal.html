@@ -32,15 +32,15 @@
             }
             <app-alert
                 [tagConfig]="tagConfig"
-                [language]="this.configService.config.languageTags"
-                [countryCode]="this.configService.config.countryTags"
+                [language]="this.configService.config().languageTags"
+                [countryCode]="this.configService.config().countryTags"
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
             <!--Primary Key-->
             <primary-key
                 [displayCode]="displayCode"
-                [language]="configService.config.languageTags"
+                [language]="configService.config().languageTags"
                 [tagConfig]="tagConfig"
                 [jsonSprites]="tagsService.jsonSprites"
             >
@@ -52,7 +52,7 @@
                 (no)="handleSurveyNo()"
             ></survey-card>
             } @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets
+            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys:tagsService.presets
             | orderByPreset:tagConfig; track tag) {
             <div>
                 @if (tag.preset && tag.value !== '') {
@@ -60,8 +60,8 @@
                     [displayCode]="displayCode"
                     [tag]="tag"
                     [preset]="tag.preset"
-                    [language]="this.configService.config.languageTags"
-                    [countryCode]="this.configService.config.countryTags"
+                    [language]="this.configService.config().languageTags"
+                    [countryCode]="this.configService.config().countryTags"
                 >
                 </read-presets>
                 } @else { @if (!tag.preset ) {
@@ -149,15 +149,15 @@
             <!--Alert-->
             <app-alert
                 [tagConfig]="tagConfig"
-                [language]="this.configService.config.languageTags"
-                [countryCode]="this.configService.config.countryTags"
+                [language]="this.configService.config().languageTags"
+                [countryCode]="this.configService.config().countryTags"
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
             <!--Primary key-->
             <primary-key
                 [displayCode]="displayCode"
-                [language]="configService.config.languageTags"
+                [language]="configService.config().languageTags"
                 [tagConfig]="tagConfig"
                 [jsonSprites]="tagsService.jsonSprites"
                 [isEditMode]="true"
@@ -169,7 +169,7 @@
             <!--Les presets-->
             <!--Le reste des tags-->
             @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets
+            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys:tagsService.presets
             | orderByPreset:tagConfig; track tag) {
             <div>
                 @if ((tag.preset || tagsService.presets[tag.key.replace(':',
@@ -178,7 +178,7 @@
                     [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]"
                     [displayCode]="displayCode"
                     [tag]="tag"
-                    [language]="this.configService.config.languageTags"
+                    [language]="this.configService.config().languageTags"
                     (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]))"
                     (addTags)="addPresetsTags($event)"
                 >

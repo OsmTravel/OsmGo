@@ -55,13 +55,13 @@ export class OsmAuthService {
     }
 
     get clientId(): string {
-        return this.configService.config.isDevServer
+        return this.configService.config().isDevServer
             ? this.oauthParam.dev.clientId
             : this.oauthParam.prod.clientId
     }
 
     get oauthUrl(): string {
-        const server = this.configService.config.isDevServer
+        const server = this.configService.config().isDevServer
             ? this.oauthParam.dev.url
             : this.oauthParam.prod.url
         return `${server}/oauth2`

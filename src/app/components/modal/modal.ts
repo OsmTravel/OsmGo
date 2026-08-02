@@ -726,7 +726,7 @@ export class ModalsContentPage implements OnInit {
 
         let tagSurveyIndex = -1
         for (let i = 0; i < this.tags.length; i++) {
-            if (this.tags[i].key === this.configService.config.checkedKey) {
+            if (this.tags[i].key === this.configService.config().checkedKey) {
                 tagSurveyIndex = i
                 break
             }
@@ -736,7 +736,7 @@ export class ModalsContentPage implements OnInit {
             this.tags[tagSurveyIndex].value = isoDate
         } else {
             this.tags.push({
-                key: this.configService.config.checkedKey,
+                key: this.configService.config().checkedKey,
                 value: isoDate,
             })
         }
@@ -746,7 +746,7 @@ export class ModalsContentPage implements OnInit {
         for (let i = 0; i < this.tags.length; i++) {
             const key = this.tags[i].key
             if (
-                key !== this.configService.config.checkedKey &&
+                key !== this.configService.config().checkedKey &&
                 possibleCheckedKeys.includes(key)
             ) {
                 this.tags.splice(i, 1)

@@ -37,8 +37,8 @@
                         | filterDeprecatedTag
                         | filterByTagsContent
                             : [
-                                  configService.config.languageTags,
-                                  configService.config.countryTags,
+                                  configService.config().languageTags,
+                                  configService.config().countryTags,
                               ]
                             : searchText();
                     track tag
@@ -47,8 +47,8 @@
                         <app-tag-list-element
                             style="width: 100%"
                             [tag]="tag"
-                            [countryTags]="configService.config.countryTags"
-                            [languageTags]="configService.config.languageTags"
+                            [countryTags]="configService.config().countryTags"
+                            [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="['point']"
                             [bookmarksIds]="tagsService.bookmarksIds"

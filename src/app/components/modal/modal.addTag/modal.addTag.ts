@@ -61,8 +61,8 @@ export class ModalAddTag {
     readonly moreFields = input<string[]>([])
     readonly usedList = input<string[]>([])
 
-    readonly language = this.configService.config.languageTags
-    readonly countryCode = this.configService.config.countryTags
+    readonly language = this.configService.config().languageTags
+    readonly countryCode = this.configService.config().countryTags
 
     readonly presets: Array<Preset> = Object.values(this.tagsService.presets)
     readonly searchFilter = signal('')

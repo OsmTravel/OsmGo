@@ -60,8 +60,8 @@ export class ModalSelectList implements OnInit {
     readonly data = input.required<ModalSelectListData>()
     readonly searchText = signal('')
     initvalue: string
-    readonly language = this.configService.config.languageTags
-    readonly countryCode = this.configService.config.countryTags
+    readonly language = this.configService.config().languageTags
+    readonly countryCode = this.configService.config().countryTags
 
     ngOnInit(): void {
         this.initvalue = this.data().value

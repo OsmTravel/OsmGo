@@ -36,7 +36,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-    @if (this.configService.config.isDevServer) {
+    @if (this.configService.config().isDevServer) {
     <h1>DEV SERVER</h1>
     } @if (connectionError) {
     <ion-card color="danger">

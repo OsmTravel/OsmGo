@@ -122,7 +122,7 @@ export class ConfigService {
         ],
     }
 
-    config: Config = {
+    private readonly configState = signal<Config>({
         mapMarginBuffer: 50,
         lockMapHeading: true,
         followPosition: true,
@@ -152,11 +152,18 @@ export class ConfigService {
         lastView: { lng: -0.127758, lat: 51.507351, zoom: 18, bearing: 0 }, // London
         centerWhenGpsIsReady: true,
         limitFeatures: 10000,
-    }
+    })
+    readonly config = this.configState.asReadonly()
 
     currentTagsCountryChoice = []
 
     geojsonIsLoadedFromCache = false
+
+    private updateConfig(update: Partial<Config>): Promise<unknown> {
+        const config = { ...this.config(), ...update }
+        this.configState.set(config)
+        return this.localStorage.set('config', config)
+    }
 
     getUserInfo() {
         return this.userInfo()
@@ -224,21 +231,23 @@ export class ConfigService {
     loadConfig$(_i18nConfig): Observable<Config> {
         return from(this.localStorage.get('config')).pipe(
             map((d) => {
-                if (d) {
-                    for (const key in d) {
-                        this.config[key] = d[key]
-                    }
-                } else {
-                    this.localStorage.set('config', this.config)
+                const config = {
+                    ...this.config(),
+                    ...d,
+                    languageTags:
+                        d?.languageTags || this.config().languageTags || 'en',
+                    countryTags:
+                        d?.countryTags || this.config().countryTags || 'GB',
+                }
+                this.configState.set(config)
+                if (!d) {
+                    this.localStorage.set('config', config)
                 }
 
-                this.config.languageTags = this.config.languageTags || 'en'
-                this.config.countryTags = this.config.countryTags || 'GB'
+                this.setIsSelectableLine(config.isSelectableLine)
+                this.setIsSelectablePolygon(config.isSelectablePolygon)
 
-                this.setIsSelectableLine(this.config.isSelectableLine)
-                this.setIsSelectablePolygon(this.config.isSelectablePolygon)
-
-                return this.config
+                return this.config()
             })
         )
     }
@@ -282,19 +291,21 @@ export class ConfigService {
     loadConfig2$(_i18nConfig) {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
-                if (d) {
-                    for (const key in d) {
-                        this.config[key] = d[key]
-                    }
-                } else {
-                    this.localStorage.set('config', this.config)
+                const config = {
+                    ...this.config(),
+                    ...d,
+                    languageTags:
+                        d?.languageTags || this.config().languageTags || 'en',
+                    countryTags:
+                        d?.countryTags || this.config().countryTags || 'GB',
+                }
+                this.configState.set(config)
+                if (!d) {
+                    this.localStorage.set('config', config)
                 }
 
-                this.config.languageTags = this.config.languageTags || 'en'
-                this.config.countryTags = this.config.countryTags || 'GB'
-
-                this.setIsSelectableLine(this.config.isSelectableLine)
-                this.setIsSelectablePolygon(this.config.isSelectablePolygon)
+                this.setIsSelectableLine(config.isSelectableLine)
+                this.setIsSelectablePolygon(config.isSelectablePolygon)
 
                 const userInfo = await this.localStorage.get('user_info')
                 if (userInfo && userInfo.connected) {
@@ -320,12 +331,12 @@ export class ConfigService {
                     }
                 }
                 console.log({
-                    config: this.config,
+                    config: this.config(),
                     user_info: this.userInfo(),
                     changeset: this.changeset,
                 })
                 return {
-                    config: this.config,
+                    config: this.config(),
                     user_info: this.userInfo(),
                     changeset: this.changeset,
                 }
@@ -355,172 +366,155 @@ export class ConfigService {
         } ${platform ? platform : ''}`
     }
 
-    setMapMarginBuffer(buffer: number) {
-        this.config.mapMarginBuffer = buffer
-        this.localStorage.set('config', this.config)
+    setMapMarginBuffer(buffer: number): void {
+        void this.updateConfig({ mapMarginBuffer: buffer })
     }
 
     setCurrentZoom(zoom: number): void {
         this.currentZoomState.set(zoom)
     }
     getMapMarginBuffer() {
-        return this.config.mapMarginBuffer
+        return this.config().mapMarginBuffer
     }
 
-    setLimitFeatures(limit: number) {
-        this.config.limitFeatures = limit
-        this.localStorage.set('config', this.config)
+    setLimitFeatures(limit: number): void {
+        void this.updateConfig({ limitFeatures: limit })
     }
     getLimitFeatures() {
-        return this.config.limitFeatures
+        return this.config().limitFeatures
     }
 
-    setChangeSetComment(comment: string) {
-        this.config.changeSetComment = comment
-        this.localStorage.set('config', this.config)
+    setChangeSetComment(comment: string): void {
+        void this.updateConfig({ changeSetComment: comment })
     }
     getChangeSetComment() {
-        return this.config.changeSetComment
+        return this.config().changeSetComment
     }
 
-    setLockMapHeading(isLockMapHeading: boolean) {
-        this.config.lockMapHeading = isLockMapHeading
-        this.localStorage.set('config', this.config)
+    setLockMapHeading(isLockMapHeading: boolean): void {
+        void this.updateConfig({ lockMapHeading: isLockMapHeading })
     }
     getLockMapHeading() {
-        return this.config.lockMapHeading
+        return this.config().lockMapHeading
     }
 
-    setFollowPosition(isFollowingPosition: boolean) {
-        this.config.followPosition = isFollowingPosition
-        this.localStorage.set('config', this.config)
+    setFollowPosition(isFollowingPosition: boolean): void {
+        void this.updateConfig({ followPosition: isFollowingPosition })
     }
     getFollowPosition() {
-        return this.config.followPosition
+        return this.config().followPosition
     }
 
     setDefaultPrimarykeyWindows(
         defaultPrimarykeyWindows: 'lastTags' | 'bookmarks'
-    ) {
-        this.config.defaultPrimarykeyWindows = defaultPrimarykeyWindows
-        this.localStorage.set('config', this.config)
+    ): void {
+        void this.updateConfig({ defaultPrimarykeyWindows })
     }
 
     getDefaultPrimarykeyWindows() {
-        return this.config.defaultPrimarykeyWindows
+        return this.config().defaultPrimarykeyWindows
     }
 
-    setBasemap(basemap: any) {
-        this.config.basemap = basemap
-        this.localStorage.set('config', this.config)
+    setBasemap(basemap: any): void {
+        void this.updateConfig({ basemap })
     }
 
     getBasemap() {
-        return this.config.basemap
+        return this.config().basemap
     }
 
     /* Boolean, activé ou pas */
-    setFilterWayByArea(enable: boolean) {
-        this.config.filterWayByArea = enable
-        this.localStorage.set('config', this.config)
+    setFilterWayByArea(enable: boolean): void {
+        void this.updateConfig({ filterWayByArea: enable })
     }
     getFilterWayByArea() {
-        return this.config.filterWayByArea
+        return this.config().filterWayByArea
     }
 
-    setFilterWayByLength(enable: boolean) {
-        this.config.filterWayByLength = enable
-        this.localStorage.set('config', this.config)
+    setFilterWayByLength(enable: boolean): void {
+        void this.updateConfig({ filterWayByLength: enable })
     }
 
     getFilterWayByLength() {
-        return this.config.filterWayByLength
+        return this.config().filterWayByLength
     }
 
-    setUiLanguage(lang: string) {
-        this.config.languageUi = lang
+    setUiLanguage(lang: string): void {
         this.translate.use(lang)
-        this.localStorage.set('config', this.config)
+        void this.updateConfig({ languageUi: lang })
     }
 
     getUiLanguage() {
-        return this.config.languageUi
+        return this.config().languageUi
     }
 
-    setLanguageTags(lang: string) {
-        this.config.languageTags = lang
-        // this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == lang).country;
-        // this.config.countryTags = this.currentTagsCountryChoice[0].region;
-        this.localStorage.set('config', this.config)
+    setLanguageTags(lang: string): void {
+        void this.updateConfig({ languageTags: lang })
     }
 
-    setCountryTags(country: string) {
-        this.config.countryTags = country
-        this.localStorage.set('config', this.config)
+    setCountryTags(country: string): void {
+        void this.updateConfig({ countryTags: country })
     }
 
     getOldTagsIcon() {
-        return this.config.oldTagsIcon
+        return this.config().oldTagsIcon
     }
 
-    setOldTagsIcon(display: boolean, year: number) {
-        this.config.oldTagsIcon = { display: display, year: year }
-        this.localStorage.set('config', this.config)
+    setOldTagsIcon(display: boolean, year: number): void {
+        void this.updateConfig({ oldTagsIcon: { display, year } })
     }
 
     getDisplayFixmeIcon() {
-        return this.config.displayFixmeIcon
+        return this.config().displayFixmeIcon
     }
 
-    setDisplayFixmeIcon(display: boolean) {
-        this.config.displayFixmeIcon = display
-        this.localStorage.set('config', this.config)
+    setDisplayFixmeIcon(display: boolean): void {
+        void this.updateConfig({ displayFixmeIcon: display })
     }
 
     getAddSurveyDate() {
-        return this.config.addSurveyDate
+        return this.config().addSurveyDate
     }
 
-    setAddSurveyDate(add: boolean) {
-        this.config.addSurveyDate = add
-        this.localStorage.set('config', this.config)
+    setAddSurveyDate(add: boolean): void {
+        void this.updateConfig({ addSurveyDate: add })
     }
 
     getCheckedKey(): 'survey:date' | 'check_date' {
-        return this.config.checkedKey
+        return this.config().checkedKey
     }
 
-    setCheckedKey(key: 'survey:date' | 'check_date') {
-        this.config.checkedKey = key
-        this.localStorage.set('config', this.config)
+    setCheckedKey(key: 'survey:date' | 'check_date'): void {
+        void this.updateConfig({ checkedKey: key })
     }
 
     getDisplaySurveyCard(): 'never' | 'when_older' | 'always' {
-        return this.config.surveyCard.display
+        return this.config().surveyCard.display
     }
 
-    setDisplaySurveyCard(value: 'never' | 'when_older' | 'always') {
-        this.config.surveyCard.display = value
-        this.localStorage.set('config', this.config)
+    setDisplaySurveyCard(value: 'never' | 'when_older' | 'always'): void {
+        void this.updateConfig({
+            surveyCard: { ...this.config().surveyCard, display: value },
+        })
     }
 
     getSurveyCardYear(): number {
-        return this.config.surveyCard.year
+        return this.config().surveyCard.year
     }
 
-    setSurveyCardYear(value: number) {
-        this.config.surveyCard.year = value
-        this.localStorage.set('config', this.config)
+    setSurveyCardYear(value: number): void {
+        void this.updateConfig({
+            surveyCard: { ...this.config().surveyCard, year: value },
+        })
     }
 
     getIsDevServer() {
-        return this.config.isDevServer
+        return this.config().isDevServer
     }
 
-    setIsSelectableLine(isSelectableLine: boolean) {
+    setIsSelectableLine(isSelectableLine: boolean): void {
         const layers = ['way_line', 'way_line_changed'] // way_line_changed TODO: add properties...
-        this.config.isSelectableLine = isSelectableLine
-        this.localStorage.set('config', this.config)
+        void this.updateConfig({ isSelectableLine })
         let newSelectableLayers = this.selecableLayers.filter(
             (l) => !layers.includes(l)
         )
@@ -530,10 +524,9 @@ export class ConfigService {
         this.selecableLayers = [...newSelectableLayers]
     }
 
-    setIsSelectablePolygon(isSelectablePolygon: boolean) {
+    setIsSelectablePolygon(isSelectablePolygon: boolean): void {
         const layers = ['way_fill', 'way_fill_changed'] //   TODO: add properties...
-        this.config.isSelectablePolygon = isSelectablePolygon
-        this.localStorage.set('config', this.config)
+        void this.updateConfig({ isSelectablePolygon })
         let newSelectableLayers = this.selecableLayers.filter(
             (l) => !layers.includes(l)
         )
@@ -544,8 +537,7 @@ export class ConfigService {
     }
 
     async setIsDevServer(isDevServer: boolean) {
-        this.config.isDevServer = isDevServer
-        await this.localStorage.set('config', this.config)
+        await this.updateConfig({ isDevServer })
         await this.localStorage.remove('geojson')
         await this.localStorage.remove('geojsonBbox')
         await this.localStorage.remove('user_info')
@@ -553,18 +545,15 @@ export class ConfigService {
         return isDevServer
     }
 
-    setPasswordSaved(isSaved: boolean) {
-        this.config.passwordSaved = isSaved
-        this.localStorage.set('config', this.config)
+    setPasswordSaved(isSaved: boolean): void {
+        void this.updateConfig({ passwordSaved: isSaved })
     }
 
-    setCenterWhenGpsIsReady(center: boolean) {
-        this.config.centerWhenGpsIsReady = center
-        this.localStorage.set('config', this.config)
+    setCenterWhenGpsIsReady(center: boolean): void {
+        void this.updateConfig({ centerWhenGpsIsReady: center })
     }
 
-    setLastView(lastView) {
-        this.config.lastView = lastView
-        this.localStorage.set('config', this.config)
+    setLastView(lastView): void {
+        void this.updateConfig({ lastView })
     }
 }

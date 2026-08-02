@@ -94,7 +94,7 @@ export class MapService {
         spriteImage.src = pathSprites
 
         this.locationService.locationReady$.subscribe(() => {
-            if (this.map && this.configService.config.centerWhenGpsIsReady) {
+            if (this.map && this.configService.config().centerWhenGpsIsReady) {
                 this.map.setZoom(19)
             }
         })
@@ -444,7 +444,7 @@ export class MapService {
             this.map.removeControl(this.attributionControl)
         }
 
-        if (this.configService.config.basemap !== baseMap.id) {
+        if (this.configService.config().basemap !== baseMap.id) {
             if (this.map.getLayer('basemap')) {
                 this.map.removeLayer('basemap')
             }
@@ -496,13 +496,13 @@ export class MapService {
     }
     centerOnMyPosition(): void {
         const currentZoom = this.map.getZoom()
-        if (this.configService.config.lockMapHeading) {
+        if (this.configService.config().lockMapHeading) {
             this.headingIsLocked = true
         }
         let bearing = 0
-        if (this.configService.config.followPosition) {
+        if (this.configService.config().followPosition) {
             this.positionIsFollow = true
-            if (this.configService.config.lockMapHeading) {
+            if (this.configService.config().lockMapHeading) {
                 bearing = this.locationService.compassHeading().trueHeading
 
                 this.map.setLayoutProperty('location_user', 'icon-rotate', 0)
@@ -1321,7 +1321,7 @@ export class MapService {
         this.map.on('rotate', async (e) => {
             if (
                 this.locationService.compassHeading().trueHeading &&
-                (!this.configService.config.lockMapHeading ||
+                (!this.configService.config().lockMapHeading ||
                     !this.headingIsLocked)
             ) {
                 // on suit l'orientation, la map tourne
@@ -1365,7 +1365,7 @@ export class MapService {
                 this.lastRenderedHeading = heading.trueHeading
 
                 if (
-                    this.configService.config.lockMapHeading &&
+                    this.configService.config().lockMapHeading &&
                     this.headingIsLocked
                 ) {
                     // on suit l'orientation, la map tourne
@@ -1413,7 +1413,7 @@ export class MapService {
                     }
 
                     if (
-                        this.configService.config.followPosition &&
+                        this.configService.config().followPosition &&
                         this.positionIsFollow
                     ) {
                         this.map.setCenter(coordinates)

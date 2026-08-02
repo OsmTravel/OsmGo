@@ -22,15 +22,15 @@
                 filterDeprecatedTag | filterBySearchable |
                 filterExcludeTagByCountryCode:countryTags |
                 filterByByGeometryType:[geometryType] |
-                filterByTagsContent:[configService.config.languageTags,
-                configService.config.countryTags]:searchText() |
+                filterByTagsContent:[configService.config().languageTags,
+                configService.config().countryTags]:searchText() |
                 limitDisplayTags:50; track tag) {
                 <ion-item class="ion-no-padding">
                     <app-tag-list-element
                         style="width: 100%"
                         [tag]="tag"
-                        [countryTags]="configService.config.countryTags"
-                        [languageTags]="configService.config.languageTags"
+                        [countryTags]="configService.config().countryTags"
+                        [languageTags]="configService.config().languageTags"
                         [jsonSprites]="tagsService.jsonSprites"
                         [geometriesFilter]="geometriesPossible"
                         [bookmarksIds]="tagsService.bookmarksIds"
@@ -104,8 +104,8 @@
                         <app-tag-list-element
                             style="width: 100%"
                             [tag]="tag"
-                            [countryTags]="configService.config.countryTags"
-                            [languageTags]="configService.config.languageTags"
+                            [countryTags]="configService.config().countryTags"
+                            [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="geometriesPossible"
                             [bookmarksIds]="tagsService.bookmarksIds"
@@ -133,8 +133,8 @@
                         <app-tag-list-element
                             style="width: 100%"
                             [tag]="tag"
-                            [countryTags]="configService.config.countryTags"
-                            [languageTags]="configService.config.languageTags"
+                            [countryTags]="configService.config().countryTags"
+                            [languageTags]="configService.config().languageTags"
                             [jsonSprites]="tagsService.jsonSprites"
                             [geometriesFilter]="geometriesPossible"
                             [bookmarksIds]="tagsService.bookmarksIds"

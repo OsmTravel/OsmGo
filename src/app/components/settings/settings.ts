@@ -123,11 +123,11 @@ export class SettingsPage {
     displayOldTagIconChange(e) {
         this.configService.setOldTagsIcon(
             e.detail.checked,
-            this.configService.config.oldTagsIcon.year
+            this.configService.config().oldTagsIcon.year
         )
         if (e.detail.checked) {
             this.mapService.showOldTagIcon(
-                this.configService.config.oldTagsIcon.year
+                this.configService.config().oldTagsIcon.year
             )
         } else {
             this.mapService.hideOldTagIcon()
@@ -137,10 +137,10 @@ export class SettingsPage {
 
     yearOldTagIconChange(e) {
         this.configService.setOldTagsIcon(
-            this.configService.config.oldTagsIcon.display,
+            this.configService.config().oldTagsIcon.display,
             e.detail.value
         )
-        if (this.configService.config.oldTagsIcon.display) {
+        if (this.configService.config().oldTagsIcon.display) {
             this.mapService.showOldTagIcon(e.detail.value)
         }
     }

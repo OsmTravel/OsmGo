@@ -79,7 +79,7 @@ export class InitService {
             }),
             tap(() => {
                 this.isLoaded = true
-                this.translate.use(this.configService.config.languageUi)
+                this.translate.use(this.configService.config().languageUi)
             })
         )
     }

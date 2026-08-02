@@ -35,7 +35,9 @@ describe('BasemapsComponent', () => {
                 },
                 {
                     provide: ConfigService,
-                    useValue: { config: { basemap: { id: 'selected' } } },
+                    useValue: {
+                        config: () => ({ basemap: { id: 'selected' } }),
+                    },
                 },
                 { provide: InitService, useValue: { isLoaded: true } },
                 {

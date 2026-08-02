@@ -29,7 +29,7 @@ describe('OsmAuthService', () => {
         storage.set.mockResolvedValue()
         storage.remove.mockResolvedValue()
         configService = {
-            config: { isDevServer: false },
+            config: vi.fn(() => ({ isDevServer: false })),
             resetUserInfo: vi.fn().mockName('resetUserInfo'),
         }
         nativePlatform = vi
@@ -71,7 +71,7 @@ describe('OsmAuthService', () => {
     })
 
     it('keeps the Android callback on the OSM development server', async () => {
-        configService.config.isDevServer = true
+        configService.config.mockReturnValue({ isDevServer: true })
         nativePlatform.mockReturnValue(true)
 
         const loginUrl = new URL(await service.getLoginUrl())

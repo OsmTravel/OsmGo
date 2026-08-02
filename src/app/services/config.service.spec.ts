@@ -3,10 +3,59 @@ import { TestBed } from '@angular/core/testing'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { TranslateService } from '@ngx-translate/core'
+import { firstValueFrom } from 'rxjs'
 
 import { ConfigService } from './config.service'
 
 describe('ConfigService', () => {
+    it('merges stored configuration with current defaults', async () => {
+        const storage = {
+            get: vi.fn().mockResolvedValue({ limitFeatures: 250 }),
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: storage },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+        const defaultLanguage = service.config().languageTags
+
+        const config = await firstValueFrom(service.loadConfig$(undefined))
+
+        expect(config.limitFeatures).toBe(250)
+        expect(config.languageTags).toBe(defaultLanguage)
+        expect(service.config()).toBe(config)
+    })
+
+    it('replaces and persists configuration updates', () => {
+        const storage = {
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: storage },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+        const initialConfig = service.config()
+
+        service.setOldTagsIcon(false, 8)
+
+        expect(service.config()).not.toBe(initialConfig)
+        expect(service.config().oldTagsIcon).toEqual({
+            display: false,
+            year: 8,
+        })
+        expect(storage.set).toHaveBeenCalledWith('config', service.config())
+    })
+
     it('exposes the application version as read-only state', async () => {
         TestBed.configureTestingModule({
             providers: [
