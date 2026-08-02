@@ -47,6 +47,35 @@
     }
 </section>
 
+@if (initService.loading()) {
+<section class="startup-state" role="status" aria-live="polite">
+    <p>{{ 'SHARED.LOADING' | translate }}</p>
+</section>
+} @else if (initService.fatalError(); as startupError) {
+<section class="startup-state startup-state--error" role="alert">
+    <h1>{{ 'MAIN.STARTUP.TITLE' | translate }}</h1>
+    <p>{{ startupError.messageKey | translate }}</p>
+    <div class="startup-state__actions">
+        <button
+            type="button"
+            class="secondary-button"
+            (click)="reloadApplication()"
+        >
+            {{ 'MAIN.STARTUP.RETRY' | translate }}
+        </button>
+        @if (startupError.canResetLocalData) {
+        <button
+            type="button"
+            class="danger-button"
+            (click)="resetStartupData()"
+        >
+            {{ 'MAIN.STARTUP.RESET_LOCAL_DATA' | translate }}
+        </button>
+        }
+    </div>
+</section>
+}
+
 <menu-component
     [menuIsOpen]="menuIsOpen()"
     [newVersion]="newVersion()"

@@ -39,6 +39,13 @@
         "WHAT_ITEM": "Which?",
         "LOAD_BBOX": "Load data?",
         "CREATING_MISSING_ICONS": "Creating missing icons…",
+        "STARTUP": {
+            "TITLE": "Osm Go! could not start",
+            "REQUIRED_RESOURCE_FAILED": "A required application resource could not be loaded. Check your connection, then try again.",
+            "CORRUPTED_STORAGE": "The local map data is unreadable. Retry first, or reset it if the problem persists. Resetting removes downloaded data and pending edits.",
+            "RETRY": "Try again",
+            "RESET_LOCAL_DATA": "Reset local map data"
+        },
         "OVERLAY": {
             "LABEL": "OsmGo secondary page"
         },

@@ -28,6 +28,13 @@
         "WHAT_ITEM": "Lequel ?",
         "LOAD_BBOX": "Charger les données de l'emprise ?",
         "CREATING_MISSING_ICONS": "Création des icônes manquantes…",
+        "STARTUP": {
+            "TITLE": "Osm Go! n’a pas pu démarrer",
+            "REQUIRED_RESOURCE_FAILED": "Une ressource indispensable n’a pas pu être chargée. Vérifiez votre connexion, puis réessayez.",
+            "CORRUPTED_STORAGE": "Les données cartographiques locales sont illisibles. Réessayez d’abord, puis réinitialisez-les si le problème persiste. La réinitialisation supprime les données téléchargées et les modifications en attente.",
+            "RETRY": "Réessayer",
+            "RESET_LOCAL_DATA": "Réinitialiser les données locales"
+        },
         "OVERLAY": {
             "LABEL": "Page secondaire OsmGo"
         },

@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing'
 import { TranslateService } from '@ngx-translate/core'
+import { AppStorage } from '@services/app-storage.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
@@ -34,6 +35,17 @@ describe('InitService', () => {
             loadUserInfo$: vi.fn(() => of(undefined)),
             loadChangeSet$: vi.fn(() => of(undefined)),
             config: vi.fn(() => config),
+            userInfo: vi.fn(() => ({
+                uid: '',
+                display_name: '',
+                connected: false,
+            })),
+            getChangeset: vi.fn(() => ({
+                id: '',
+                last_changeset_activity: 0,
+                created_at: 0,
+                comment: '',
+            })),
         }
         const tagsService = {
             loadSavedFields$: vi.fn(() => of([])),
@@ -66,6 +78,7 @@ describe('InitService', () => {
             recoverJournal: vi.fn(async () => ({ kind: 'idle' })),
         }
         const translate = { use: vi.fn() }
+        const storage = { remove: vi.fn(async () => undefined) }
 
         TestBed.configureTestingModule({
             providers: [
@@ -78,6 +91,7 @@ describe('InitService', () => {
                     provide: UploadCoordinatorService,
                     useValue: uploadCoordinator,
                 },
+                { provide: AppStorage, useValue: storage },
                 { provide: TranslateService, useValue: translate },
             ],
         })
@@ -85,8 +99,11 @@ describe('InitService', () => {
         return {
             service: TestBed.inject(InitService),
             configService,
+            tagsService,
+            dataService,
             osmApi,
             uploadCoordinator,
+            storage,
         }
     }
 
@@ -121,6 +138,90 @@ describe('InitService', () => {
 
         expect(result.objectOnStartCoords).toBeUndefined()
         expect(result.config.lastView).toMatchObject({ lng: 2, lat: 48 })
+        expect(service.isLoaded).toBe(true)
+    })
+
+    it('uses isolated fallbacks when optional startup resources fail', async () => {
+        const { service, configService, tagsService } = configure()
+        configService.getCountryConfig$.mockReturnValue(
+            throwError(() => new Error('country unavailable'))
+        )
+        configService.loadUserInfo$.mockReturnValue(
+            throwError(() => new Error('storage unavailable'))
+        )
+        tagsService.loadJsonSprites$.mockReturnValue(
+            throwError(() => new Error('sprites unavailable'))
+        )
+        tagsService.loadBookMarksIds$.mockReturnValue(
+            throwError(() => new Error('bookmarks unavailable'))
+        )
+
+        const result = await firstValueFrom(service.initLoadData$())
+
+        expect(result.country).toEqual([])
+        expect(result.jsonSprites).toEqual({})
+        expect(result.bookMarksIds).toEqual([])
+        expect(service.isLoaded).toBe(true)
+        expect(service.loading()).toBe(false)
+        expect(service.fatalError()).toBeNull()
+        expect(service.recoverableIssues()).toEqual([
+            'country',
+            'userInfo',
+            'jsonSprites',
+            'bookMarksIds',
+        ])
+    })
+
+    it('stops on a missing required tag catalog and finalizes loading', async () => {
+        const { service, tagsService, uploadCoordinator } = configure()
+        tagsService.loadTags$.mockReturnValue(
+            throwError(() => new Error('tags unavailable'))
+        )
+
+        await expect(firstValueFrom(service.initLoadData$())).rejects.toThrow(
+            'Could not load required startup resource: tags.'
+        )
+
+        expect(service.isLoaded).toBe(false)
+        expect(service.loading()).toBe(false)
+        expect(service.fatalError()).toEqual({
+            resource: 'tags',
+            canResetLocalData: false,
+            messageKey: 'MAIN.STARTUP.REQUIRED_RESOURCE_FAILED',
+        })
+        expect(uploadCoordinator.recoverJournal).not.toHaveBeenCalled()
+    })
+
+    it('offers a targeted reset when the persisted OSM state is unreadable', async () => {
+        const { service, dataService, storage } = configure()
+        dataService.loadOsmState$.mockReturnValue(
+            throwError(() => new Error('invalid persisted state'))
+        )
+
+        await expect(firstValueFrom(service.initLoadData$())).rejects.toThrow(
+            'Could not load required startup resource: osmState.'
+        )
+
+        expect(service.fatalError()).toMatchObject({
+            resource: 'osmState',
+            canResetLocalData: true,
+            messageKey: 'MAIN.STARTUP.CORRUPTED_STORAGE',
+        })
+
+        await service.resetFatalResource()
+        expect(storage.remove).toHaveBeenCalledWith('osmState')
+    })
+
+    it('recovers the upload journal before marking startup as loaded', async () => {
+        const { service, uploadCoordinator } = configure()
+        uploadCoordinator.recoverJournal.mockImplementation(async () => {
+            expect(service.isLoaded).toBe(false)
+            return { kind: 'idle' }
+        })
+
+        await firstValueFrom(service.initLoadData$())
+
+        expect(uploadCoordinator.recoverJournal).toHaveBeenCalledOnce()
         expect(service.isLoaded).toBe(true)
     })
 })

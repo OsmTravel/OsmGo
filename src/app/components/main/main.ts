@@ -626,12 +626,17 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                 this.idOsmObjectOnStart
             )
             .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe(({ config }) => {
-                this.initialDataLoaded = true
-                this.tryHandleAuthCallback()
-                this.refreshStoredAuthentication()
-                this.locationService.enableGeolocation()
-                this.mapService.initMap(config)
+            .subscribe({
+                next: ({ config }) => {
+                    this.initialDataLoaded = true
+                    this.tryHandleAuthCallback()
+                    this.refreshStoredAuthentication()
+                    this.locationService.enableGeolocation()
+                    this.mapService.initMap(config)
+                },
+                error: (error) => {
+                    console.error('Application initialization failed.', error)
+                },
             })
 
         this.mapService.mapLoaded$
@@ -706,6 +711,15 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         }).then((listener) => {
             this.backButtonListener = listener
         })
+    }
+
+    reloadApplication(): void {
+        window.location.reload()
+    }
+
+    async resetStartupData(): Promise<void> {
+        await this.initService.resetFatalResource()
+        this.reloadApplication()
     }
 
     ngOnDestroy(): void {
