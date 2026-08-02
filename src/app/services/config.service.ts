@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable, inject, signal } from '@angular/core'
+import type { DeviceInfo } from '@capacitor/device'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { TranslateService } from '@ngx-translate/core'
-import { CountryCode, TagConfig } from '@osmgo/type'
+import type { CountryCode, Iso6391Language } from '@osmgo/type'
+import type { Basemap } from '@services/basemaps.service'
 import { TagsService } from '@services/tags.service'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
@@ -31,12 +33,16 @@ export interface AppVersion {
     shortHash?: string
 }
 
+interface I18nConfig {
+    language: Iso6391Language[]
+}
+
 export interface Config {
     mapMarginBuffer: number
     lockMapHeading: boolean
     followPosition: boolean
     defaultPrimarykeyWindows: 'lastTags' | 'bookmarks'
-    basemap: any
+    basemap: Basemap
     filterWayByArea: boolean
     filterWayByLength: boolean
     changeSetComment: string
@@ -90,16 +96,16 @@ export class ConfigService {
         created_at: 0,
         comment: '',
     }
-    i18nConfig
-    countryConfig: CountryCode[]
+    i18nConfig: I18nConfig = { language: [] }
+    countryConfig: CountryCode[] = []
 
     freezeMapRenderer = false
     platforms: string[] = []
-    deviceInfo
-    baseMapSources = null
+    deviceInfo: DeviceInfo | undefined
+    baseMapSources: Basemap[] | null = null
     selecableLayers: string[] = ['marker', 'marker_changed', 'icon-change']
 
-    defautBaseMap: any = {
+    defaultBaseMap: Basemap = {
         default: true,
         description: 'Satellite and aerial imagery.',
         i18n: true,
@@ -127,16 +133,16 @@ export class ConfigService {
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'lastTags',
-        basemap: this.defautBaseMap,
+        basemap: this.defaultBaseMap,
         filterWayByArea: true,
         filterWayByLength: true,
         changeSetComment: '',
-        languageUi: window.navigator.language.split('-')[0] || null,
-        languageTags: window.navigator.language.split('-')[0] || null,
+        languageUi: window.navigator.language.split('-')[0] || 'en',
+        languageTags: window.navigator.language.split('-')[0] || 'en',
         countryTags:
             window.navigator.language && window.navigator.language.split('-')[1]
                 ? window.navigator.language.split('-')[1].toUpperCase()
-                : null,
+                : 'GB',
         oldTagsIcon: { display: true, year: 4 },
         displayFixmeIcon: true,
         addSurveyDate: true,
@@ -155,7 +161,7 @@ export class ConfigService {
     })
     readonly config = this.configState.asReadonly()
 
-    currentTagsCountryChoice = []
+    currentTagsCountryChoice: string[] = []
 
     geojsonIsLoadedFromCache = false
 
@@ -188,14 +194,18 @@ export class ConfigService {
         return this.changeset
     }
 
-    setChangeset(_id: string, _created_at, _last_changeset_activity, _comment) {
-        // alimente changeset + localstorage
+    setChangeset(
+        id: string,
+        createdAt: number,
+        lastActivity: number,
+        comment: string
+    ): void {
         this.changeset = {
-            id: _id,
-            last_changeset_activity: _last_changeset_activity,
-            created_at: _created_at,
-            comment: _comment,
-        } // to do => ajouter le serveur?
+            id,
+            last_changeset_activity: lastActivity,
+            created_at: createdAt,
+            comment,
+        }
         this.localStorage.set('changeset', this.changeset)
     }
 
@@ -210,8 +220,8 @@ export class ConfigService {
         this.localStorage.set('last_changeset_activity', time.toString())
     }
 
-    getI18nConfig$() {
-        return this.http.get('./assets/i18n/i18n.json').pipe(
+    getI18nConfig$(): Observable<I18nConfig> {
+        return this.http.get<I18nConfig>('./assets/i18n/i18n.json').pipe(
             map((i18nConfig) => {
                 this.i18nConfig = i18nConfig
                 return i18nConfig
@@ -220,15 +230,15 @@ export class ConfigService {
     }
 
     getCountryConfig$(): Observable<CountryCode[]> {
-        return this.http.get('./assets/countryCode.json').pipe(
-            map((countryCode: CountryCode[]) => {
+        return this.http.get<CountryCode[]>('./assets/countryCode.json').pipe(
+            map((countryCode) => {
                 this.countryConfig = countryCode
                 return countryCode
             })
         )
     }
 
-    loadConfig$(_i18nConfig): Observable<Config> {
+    loadConfig$(_i18nConfig: I18nConfig | undefined): Observable<Config> {
         return from(this.localStorage.get('config')).pipe(
             map((d) => {
                 const config = {
@@ -288,7 +298,13 @@ export class ConfigService {
     }
 
     // TODO: add userInfo
-    loadConfig2$(_i18nConfig) {
+    loadConfig2$(_i18nConfig: I18nConfig): Observable<
+        Promise<{
+            config: Config
+            user_info: User
+            changeset: Changeset
+        }>
+    > {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
                 const config = {
@@ -344,7 +360,7 @@ export class ConfigService {
         )
     }
 
-    async loadAppVersion() {
+    async loadAppVersion(): Promise<void> {
         this.appVersionState.update((appVersion) => ({
             ...appVersion,
             appVersionNumber: environment.version,
@@ -415,7 +431,7 @@ export class ConfigService {
         return this.config().defaultPrimarykeyWindows
     }
 
-    setBasemap(basemap: any): void {
+    setBasemap(basemap: Basemap): void {
         void this.updateConfig({ basemap })
     }
 
@@ -536,7 +552,7 @@ export class ConfigService {
         this.selecableLayers = [...newSelectableLayers]
     }
 
-    async setIsDevServer(isDevServer: boolean) {
+    async setIsDevServer(isDevServer: boolean): Promise<boolean> {
         await this.updateConfig({ isDevServer })
         await this.localStorage.remove('geojson')
         await this.localStorage.remove('geojsonBbox')
@@ -553,7 +569,7 @@ export class ConfigService {
         void this.updateConfig({ centerWhenGpsIsReady: center })
     }
 
-    setLastView(lastView): void {
+    setLastView(lastView: Config['lastView']): void {
         void this.updateConfig({ lastView })
     }
 }
