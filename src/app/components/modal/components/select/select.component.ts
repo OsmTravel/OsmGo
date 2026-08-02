@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonCard,
@@ -24,7 +19,6 @@ import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
     selector: 'app-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss', '../style.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
@@ -56,10 +50,10 @@ export class SelectComponent {
             : this.tag().value
     }
 
-    selectChange(e) {
-        if (!e?.detail) return
+    selectChange(event?: { detail: { value: string } }): void {
+        if (!event?.detail) return
 
-        const newValue = e.detail.value
+        const newValue = event.detail.value
         if (this.isMultiKeyPreset()) {
             const selectedKey = this.preset().keys.includes(newValue)
                 ? newValue
