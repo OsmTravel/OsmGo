@@ -11,7 +11,7 @@ interface MetaFeature {
             user?: string
             version: number
         }
-        usedByWays?: unknown[]
+        usedByWays?: boolean | unknown[]
     }
 }
 
@@ -32,7 +32,11 @@ export class MetaCard {
     readonly lastSurvey = input<Date>()
     readonly displayCode = input(undefined)
     readonly languageUi = input(undefined)
-    readonly usedByWays = computed(
-        () => this.feature().properties.usedByWays || null
-    )
+    readonly usedByWaysCount = computed(() => {
+        const usedByWays = this.feature().properties.usedByWays
+        if (Array.isArray(usedByWays)) {
+            return usedByWays.length
+        }
+        return usedByWays ? 1 : 0
+    })
 }
