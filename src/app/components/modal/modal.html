@@ -14,7 +14,7 @@
         <ion-header>
             <ion-toolbar>
                 <ion-title>
-                    {{(findElement(tags,{key:'name'}).value != '') ?
+                    {{(findElement(tags,{key:'name'}).value !== '') ?
                     findElement(tags,{key:'name'}).value :
                     ('MODAL_SELECTED_ITEM.NO_NAME' | translate) }}
                 </ion-title>
@@ -37,7 +37,7 @@
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
-            <!--Primary Key-->
+            <!-- Primary tag -->
             <primary-key
                 [displayCode]="displayCode"
                 [language]="configService.config().languageTags"
@@ -53,7 +53,7 @@
             ></survey-card>
             } @for (tag of tags |
             filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
-            | orderByPreset:tagConfig; track tag) {
+            | orderByPreset:tagConfig; track tag.key) {
             <div>
                 @if (tag.preset && tag.value !== '') {
                 <read-presets
@@ -146,7 +146,7 @@
                 </ion-fab>
                 }
             </div>
-            <!--Alert-->
+            <!-- Alert -->
             <app-alert
                 [tagConfig]="tagConfig"
                 [language]="this.configService.config().languageTags"
@@ -154,7 +154,7 @@
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
-            <!--Primary key-->
+            <!-- Primary tag -->
             <primary-key
                 [displayCode]="displayCode"
                 [language]="configService.config().languageTags"
@@ -166,11 +166,10 @@
                 (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
             >
             </primary-key>
-            <!--Les presets-->
-            <!--Le reste des tags-->
+            <!-- Preset fields and remaining tags -->
             @for (tag of tags |
             filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
-            | orderByPreset:tagConfig; track tag) {
+            | orderByPreset:tagConfig; track tag.key) {
             <div>
                 @if ((tag.preset || tagsService.presets()[tag.key.replace(':',
                 '/')]) ) {
@@ -189,7 +188,7 @@
                 }
             </div>
             }
-            <!--Nouveaux tag-->
+            <!-- Add a tag -->
             <ion-button
                 tappable
                 color="secondary"
@@ -236,8 +235,8 @@
                     >
                         <ion-icon name="move"></ion-icon>
                     </ion-button>
-                    } @if (feature.properties.type == 'node' && mode=='Update')
-                    {
+                    } @if (feature.properties.type === 'node' && mode ===
+                    'Update') {
                     <ion-button
                         tappable
                         color="danger"
@@ -249,7 +248,7 @@
                     }
                 </div>
                 <div class="right section">
-                    @if (mode =='Update') {
+                    @if (mode === 'Update') {
                     <ion-button
                         data-testid="save-poi"
                         tappable
@@ -260,7 +259,7 @@
                         <ion-icon name="checkmark" slot="start"></ion-icon>
                         {{ 'SHARED.SAVE' | translate }}
                     </ion-button>
-                    } @if (mode =='Create') {
+                    } @if (mode === 'Create') {
                     <ion-button
                         data-testid="create-poi"
                         tappable

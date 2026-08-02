@@ -76,6 +76,7 @@ describe('ModalsContentPage', () => {
                     provide: ConfigService,
                     useValue: {
                         config: () => ({
+                            checkedKey: 'survey:date',
                             countryTags: 'US',
                             languageTags: 'en',
                             languageUi: 'en',
@@ -138,6 +139,19 @@ describe('ModalsContentPage', () => {
 
         expect(page.mode).toBe('Update')
         expect(page.typeFiche).toBe('Edit')
+    })
+
+    it('updates survey tags with a new signal value', () => {
+        const { page } = createPage({ amenity: 'toilets' })
+        const previousTags = page.tags
+
+        page.addSurveyDate()
+
+        expect(page.tags).not.toBe(previousTags)
+        expect(page.tags).toContainEqual({
+            key: 'survey:date',
+            value: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
+        })
     })
 
     it('dismisses the feature modal with its result', () => {
