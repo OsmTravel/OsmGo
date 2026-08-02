@@ -7,8 +7,6 @@ import {
     Output,
 } from '@angular/core'
 import { OsmAuthService } from '@app/services/osm-auth.service'
-import { AboutPage } from '@components/about/about'
-import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import {
     AlertController,
     IonButton,
@@ -58,9 +56,6 @@ export class MenuPage {
     @Output() exitApp = new EventEmitter()
     @Input() menuIsOpen
     @Input() newVersion
-    aboutPage = AboutPage
-    pushDataToOsmPage = PushDataToOsmPage
-
     constructor(
         public mapService: MapService,
         public osmApi: OsmApiService,

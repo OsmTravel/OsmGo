@@ -1,10 +1,5 @@
 import { Routes } from '@angular/router'
-import { AboutPage } from '@components/about/about'
-import { BasemapsComponent } from '@components/basemaps/basemaps.component'
 import { MainPage } from '@components/main/main'
-import { ManageTagsComponent } from '@components/manage-tags/manage-tags.component'
-import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
-import { SettingsPage } from '@components/settings/settings'
 
 export const routes: Routes = [
     {
@@ -12,10 +7,40 @@ export const routes: Routes = [
         component: MainPage,
         children: [{ path: 'callback', component: MainPage }],
     },
-    { path: 'about', component: AboutPage },
-    { path: 'settings', component: SettingsPage },
-    { path: 'pushData', component: PushDataToOsmPage },
-    { path: 'tags', component: ManageTagsComponent },
-    { path: 'basemaps/:lng/:lat', component: BasemapsComponent },
+    {
+        path: 'about',
+        loadComponent: () =>
+            import('@components/about/about').then(
+                (module) => module.AboutPage
+            ),
+    },
+    {
+        path: 'settings',
+        loadComponent: () =>
+            import('@components/settings/settings').then(
+                (module) => module.SettingsPage
+            ),
+    },
+    {
+        path: 'pushData',
+        loadComponent: () =>
+            import('@components/pushDataToOsm/pushDataToOsm').then(
+                (module) => module.PushDataToOsmPage
+            ),
+    },
+    {
+        path: 'tags',
+        loadComponent: () =>
+            import('@components/manage-tags/manage-tags.component').then(
+                (module) => module.ManageTagsComponent
+            ),
+    },
+    {
+        path: 'basemaps/:lng/:lat',
+        loadComponent: () =>
+            import('@components/basemaps/basemaps.component').then(
+                (module) => module.BasemapsComponent
+            ),
+    },
     { path: '**', pathMatch: 'full', redirectTo: '' },
 ]
