@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnInit,
+} from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -41,17 +46,15 @@ import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
     ],
 })
 export class ManageTagsComponent implements OnInit {
+    readonly modalCtrl = inject(ModalController)
+    readonly initService = inject(InitService)
+    readonly configService = inject(ConfigService)
+    readonly mapService = inject(MapService)
+    readonly tagsService = inject(TagsService)
+    readonly navCtrl = inject(NavController)
+
     tags: TagConfig[]
     refreshFilterMapAfterClose = false
-
-    constructor(
-        public modalCtrl: ModalController,
-        public initService: InitService,
-        public configService: ConfigService,
-        public mapService: MapService,
-        public tagsService: TagsService,
-        public navCtrl: NavController
-    ) {}
 
     ngOnInit() {
         if (!this.initService.isLoaded) {

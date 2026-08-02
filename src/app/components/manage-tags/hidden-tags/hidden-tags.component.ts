@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnInit,
+} from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
@@ -47,11 +52,9 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class HiddenTagsComponent implements OnInit {
-    constructor(
-        public configService: ConfigService,
-        public tagsService: TagsService,
-        public modalCtrl: ModalController
-    ) {}
+    readonly configService = inject(ConfigService)
+    readonly tagsService = inject(TagsService)
+    readonly modalCtrl = inject(ModalController)
 
     searchText = ''
     refreshFilterMapAfterClose = false
