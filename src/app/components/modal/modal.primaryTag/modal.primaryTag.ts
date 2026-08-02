@@ -1,12 +1,5 @@
 import { LowerCasePipe } from '@angular/common'
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    OnInit,
-    signal,
-} from '@angular/core'
+import { Component, inject, input, OnInit, signal } from '@angular/core'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -39,7 +32,6 @@ import { TagsService } from '@services/tags.service'
     selector: 'modal-primary-tag',
     templateUrl: './modal.primaryTag.html',
     styleUrls: ['./modal.primaryTag.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FilterByByGeometryTypePipe,
         FilterBySearchablePipe,

@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    signal,
-} from '@angular/core'
+import { Component, inject, input, signal } from '@angular/core'
 import {
     IonButton,
     IonContent,
@@ -33,7 +27,6 @@ import { TagsService } from '@services/tags.service'
     selector: 'modal-add-tag',
     templateUrl: './modal.addTag.html',
     styleUrls: ['./modal.addTag.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FilterByListPipe,
         FilterPresetsByListPipe,

@@ -1,11 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    OnInit,
-    signal,
-} from '@angular/core'
+import { Component, inject, input, OnInit, signal } from '@angular/core'
 import {
     IonButton,
     IonFooter,
@@ -36,7 +29,6 @@ interface ModalSelectListData {
     templateUrl: './modalSelectList.html',
     styleUrls: ['./modalSelectList.scss'],
     selector: 'modal-select-list',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FilterByCountryCode,
         FilterByPresetsContentPipe,
