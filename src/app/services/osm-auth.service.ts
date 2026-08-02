@@ -4,13 +4,21 @@ import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { AppStorage } from '@services/app-storage.service'
 import { defer, from, map, Observable, of } from 'rxjs'
-import { finalize, switchMap } from 'rxjs/operators'
+import { finalize, switchMap, timeout } from 'rxjs/operators'
 
 import { ConfigService } from './config.service'
 
 const OAUTH_SCOPES = 'read_prefs write_api'
-const OAUTH_STATE_KEY = 'osmOAuthState'
-const OAUTH_VERIFIER_KEY = 'osmOAuthCodeVerifier'
+const OAUTH_TRANSACTION_TTL_MS = 10 * 60 * 1000
+const OAUTH_TOKEN_TIMEOUT_MS = 30_000
+
+interface OAuthTransaction {
+    state: string
+    verifier: string
+    environment: 'prod' | 'dev'
+    redirectUri: string
+    createdAt: number
+}
 
 interface OAuthTokenResponse {
     access_token?: string
@@ -48,10 +56,31 @@ export class OsmAuthService {
     private tokenRevision = 0
     private tokenPersistence = Promise.resolve()
 
+    private get environmentId(): 'prod' | 'dev' {
+        return this.configService.config().isDevServer ? 'dev' : 'prod'
+    }
+
+    private get tokenStorageKey(): string {
+        return `osmToken:${this.environmentId}`
+    }
+
+    private get transactionStorageKey(): string {
+        return `osmOAuthTransaction:${this.environmentId}`
+    }
+
     async loadToken(): Promise<string | null> {
         const revision = this.tokenRevision
         try {
-            const value = await this.localStorage.get<string>('osmToken')
+            let value = await this.localStorage.get<string>(
+                this.tokenStorageKey
+            )
+            if (!value) {
+                value = await this.localStorage.get<string>('osmToken')
+                if (value) {
+                    await this.localStorage.set(this.tokenStorageKey, value)
+                    await this.localStorage.remove('osmToken')
+                }
+            }
             if (revision === this.tokenRevision && value) {
                 this.tokenState.set(value)
             }
@@ -86,8 +115,14 @@ export class OsmAuthService {
         const state = this.createRandomValue()
         const challenge = await this.createCodeChallenge(verifier)
 
-        sessionStorage.setItem(OAUTH_VERIFIER_KEY, verifier)
-        sessionStorage.setItem(OAUTH_STATE_KEY, state)
+        const transaction: OAuthTransaction = {
+            state,
+            verifier,
+            environment: this.environmentId,
+            redirectUri: this.redirectUri,
+            createdAt: Date.now(),
+        }
+        await this.persistAuthorization(transaction)
 
         const parameters = new URLSearchParams()
         parameters.set('client_id', this.clientId)
@@ -118,31 +153,11 @@ export class OsmAuthService {
     }
 
     handleCallback(url: string): Observable<OAuthTokenResponse> {
-        const shouldCloseBrowser =
-            Capacitor.isNativePlatform() ||
-            new URL(url, window.location.origin).protocol.startsWith('osmgo')
-
-        return defer(() => {
-            const callbackUrl = new URL(url, window.location.origin)
-            const code = callbackUrl.searchParams.get('code')
-            const state = callbackUrl.searchParams.get('state')
-            const expectedState = sessionStorage.getItem(OAUTH_STATE_KEY)
-            const verifier = sessionStorage.getItem(OAUTH_VERIFIER_KEY)
-
-            this.clearPendingAuthorization()
-
-            if (!code) {
-                throw new Error('No authorization code found in callback URL.')
-            }
-            if (!state || !expectedState || state !== expectedState) {
-                throw new Error('Invalid OAuth state.')
-            }
-            if (!verifier) {
-                throw new Error('No PKCE verifier found for this callback.')
-            }
-
-            return this.exchangeCodeForToken(code, verifier)
-        }).pipe(
+        const shouldCloseBrowser = Capacitor.isNativePlatform()
+        return defer(() => from(this.consumeAuthorization(url))).pipe(
+            switchMap(({ code, verifier }) =>
+                this.exchangeCodeForToken(code, verifier)
+            ),
             finalize(() => {
                 if (shouldCloseBrowser) {
                     void this.closeNativeBrowser()
@@ -174,6 +189,7 @@ export class OsmAuthService {
                 }
             )
             .pipe(
+                timeout(OAUTH_TOKEN_TIMEOUT_MS),
                 switchMap((response) => {
                     if (!response.access_token) {
                         throw new Error(
@@ -195,7 +211,7 @@ export class OsmAuthService {
 
         try {
             await this.queueTokenPersistence(() =>
-                this.localStorage.set('osmToken', token)
+                this.localStorage.set(this.tokenStorageKey, token)
             )
         } catch (error) {
             if (revision === this.tokenRevision) {
@@ -208,11 +224,35 @@ export class OsmAuthService {
     clearToken(): void {
         this.tokenRevision++
         this.tokenState.set(null)
-        void this.queueTokenPersistence(() =>
-            this.localStorage.remove('osmToken')
-        ).catch((error) => {
+        const tokenKey = this.tokenStorageKey
+        void this.queueTokenPersistence(async () => {
+            await Promise.all([
+                this.localStorage.remove(tokenKey),
+                this.localStorage.remove('osmToken'),
+            ])
+        }).catch((error) => {
             console.error(error)
         })
+        this.configService.resetUserInfo()
+        this.configService.resetChangeset()
+    }
+
+    async clearAllAuthentication(): Promise<void> {
+        this.tokenRevision++
+        this.tokenState.set(null)
+        await this.queueTokenPersistence(async () => {
+            await Promise.all(
+                [
+                    'osmToken',
+                    'osmToken:prod',
+                    'osmToken:dev',
+                    'osmOAuthTransaction:prod',
+                    'osmOAuthTransaction:dev',
+                ].map((key) => this.localStorage.remove(key))
+            )
+        })
+        sessionStorage.removeItem('osmOAuthTransaction:prod')
+        sessionStorage.removeItem('osmOAuthTransaction:dev')
         this.configService.resetUserInfo()
         this.configService.resetChangeset()
     }
@@ -251,9 +291,89 @@ export class OsmAuthService {
             .replace(/=+$/, '')
     }
 
-    private clearPendingAuthorization(): void {
-        sessionStorage.removeItem(OAUTH_STATE_KEY)
-        sessionStorage.removeItem(OAUTH_VERIFIER_KEY)
+    private async persistAuthorization(
+        transaction: OAuthTransaction
+    ): Promise<void> {
+        if (Capacitor.isNativePlatform()) {
+            await this.localStorage.set(this.transactionStorageKey, transaction)
+            return
+        }
+        sessionStorage.setItem(
+            this.transactionStorageKey,
+            JSON.stringify(transaction)
+        )
+    }
+
+    private async consumeAuthorization(
+        url: string
+    ): Promise<{ code: string; verifier: string }> {
+        const callbackUrl = new URL(url, document.baseURI)
+        const isNative = Capacitor.isNativePlatform()
+        if (isNative) {
+            if (
+                callbackUrl.protocol !== 'osmgo:' ||
+                callbackUrl.hostname !== 'auth'
+            ) {
+                throw new Error('Invalid native OAuth callback URL.')
+            }
+        } else {
+            const redirectUrl = new URL(document.baseURI)
+            if (
+                callbackUrl.origin !== redirectUrl.origin ||
+                callbackUrl.pathname !== redirectUrl.pathname
+            ) {
+                throw new Error('Invalid web OAuth callback URL.')
+            }
+        }
+
+        const storageKey = this.transactionStorageKey
+        let transaction: OAuthTransaction | null = null
+        if (isNative) {
+            transaction =
+                await this.localStorage.get<OAuthTransaction>(storageKey)
+            await this.localStorage.remove(storageKey)
+        } else {
+            const persisted = sessionStorage.getItem(storageKey)
+            sessionStorage.removeItem(storageKey)
+            if (persisted) {
+                try {
+                    transaction = JSON.parse(persisted) as OAuthTransaction
+                } catch {
+                    throw new Error('The OAuth transaction is corrupted.')
+                }
+            }
+        }
+
+        const oauthError = callbackUrl.searchParams.get('error')
+        if (oauthError) {
+            const description =
+                callbackUrl.searchParams.get('error_description')
+            throw new Error(description || oauthError)
+        }
+        const code = callbackUrl.searchParams.get('code')
+        if (!code) {
+            throw new Error('No authorization code found in callback URL.')
+        }
+        const state = callbackUrl.searchParams.get('state')
+        if (
+            !transaction ||
+            transaction.environment !== this.environmentId ||
+            transaction.redirectUri !== this.redirectUri ||
+            !state ||
+            state !== transaction.state
+        ) {
+            throw new Error('Invalid OAuth state.')
+        }
+        if (
+            !Number.isFinite(transaction.createdAt) ||
+            Date.now() - transaction.createdAt > OAUTH_TRANSACTION_TTL_MS
+        ) {
+            throw new Error('The OAuth authorization request has expired.')
+        }
+        if (!transaction.verifier) {
+            throw new Error('No PKCE verifier found for this callback.')
+        }
+        return { code, verifier: transaction.verifier }
     }
 
     private queueTokenPersistence(

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
 import type { DeviceInfo } from '@capacitor/device'
-import { environment } from '@environments/environment.prod'
+import { environment } from '@environments/environment'
 import { TranslateService } from '@ngx-translate/core'
 import {
     BING_MAX_ZOOM,
@@ -596,14 +596,36 @@ export class ConfigService {
         this.selecableLayers = [...newSelectableLayers]
     }
 
-    async setIsDevServer(isDevServer: boolean): Promise<boolean> {
+    async switchOsmEnvironment(isDevServer: boolean): Promise<boolean> {
+        if (this.config().isDevServer === isDevServer) return isDevServer
         await this.updateConfig({ isDevServer })
-        await this.localStorage.remove('geojson')
-        await this.localStorage.remove('geojsonBbox')
-        await this.localStorage.remove('user_info')
-        await this.localStorage.remove('geojsonChanged')
-        await this.localStorage.remove(OSM_STATE_STORAGE_KEY)
+        this.userInfoState.set({ uid: '', display_name: '', connected: false })
+        this.changeset = {
+            id: '',
+            last_changeset_activity: 0,
+            created_at: 0,
+            comment: '',
+        }
+        await Promise.all(
+            [
+                'geojson',
+                'geojsonBbox',
+                'geojsonChanged',
+                OSM_STATE_STORAGE_KEY,
+                'user_info',
+                'changeset',
+                'osmToken',
+                'osmToken:prod',
+                'osmToken:dev',
+                'osmOAuthTransaction:prod',
+                'osmOAuthTransaction:dev',
+            ].map((key) => this.localStorage.remove(key))
+        )
         return isDevServer
+    }
+
+    setIsDevServer(isDevServer: boolean): Promise<boolean> {
+        return this.switchOsmEnvironment(isDevServer)
     }
 
     setPasswordSaved(isSaved: boolean): void {

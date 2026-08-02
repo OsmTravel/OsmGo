@@ -4,4 +4,9 @@
 
 export const environment = {
     production: false,
+    version: '0.0.0',
+    branch: undefined,
+    shortHash: undefined,
+    date: undefined,
+    platform: undefined,
 }

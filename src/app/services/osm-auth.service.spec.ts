@@ -20,12 +20,40 @@ describe('OsmAuthService', () => {
     let nativePlatform: Mock
     let closeBrowser: Mock
     let openBrowser: Mock
+    let persistedStorage: Map<string, unknown>
+
+    const callbackUrl = (parameters: Record<string, string>): string => {
+        const url = new URL(document.baseURI)
+        for (const [key, value] of Object.entries(parameters)) {
+            url.searchParams.set(key, value)
+        }
+        return url.href
+    }
+
+    const prepareAuthorization = async (): Promise<{
+        state: string
+        verifier: string
+    }> => {
+        const loginUrl = new URL(await service.getLoginUrl())
+        const state = loginUrl.searchParams.get('state')
+        const rawTransaction = sessionStorage.getItem(
+            'osmOAuthTransaction:prod'
+        )
+        if (!state || !rawTransaction) {
+            throw new Error('The OAuth transaction was not prepared.')
+        }
+        const transaction = JSON.parse(rawTransaction) as {
+            verifier: string
+        }
+        return { state, verifier: transaction.verifier }
+    }
 
     beforeEach(() => {
         vi.clearAllMocks()
         closeBrowser = vi.fn().mockResolvedValue(undefined)
         openBrowser = vi.fn().mockResolvedValue(undefined)
         sessionStorage.clear()
+        persistedStorage = new Map()
         http = {
             post: vi.fn().mockName('HttpClient.post'),
         }
@@ -34,9 +62,17 @@ describe('OsmAuthService', () => {
             set: vi.fn().mockName('Storage.set'),
             remove: vi.fn().mockName('Storage.remove'),
         }
-        storage.get.mockResolvedValue(null)
-        storage.set.mockResolvedValue(undefined)
-        storage.remove.mockResolvedValue(undefined)
+        storage.get.mockImplementation((key: string) =>
+            Promise.resolve(persistedStorage.get(key) ?? null)
+        )
+        storage.set.mockImplementation((key: string, value: unknown) => {
+            persistedStorage.set(key, value)
+            return Promise.resolve(undefined)
+        })
+        storage.remove.mockImplementation((key: string) => {
+            persistedStorage.delete(key)
+            return Promise.resolve(undefined)
+        })
         configService = {
             config: vi.fn(() => ({ isDevServer: false })),
             resetUserInfo: vi.fn().mockName('resetUserInfo'),
@@ -67,8 +103,11 @@ describe('OsmAuthService', () => {
 
     it('creates a PKCE authorization URL with minimal scopes', async () => {
         const loginUrl = new URL(await service.getLoginUrl())
-        const verifier = sessionStorage.getItem('osmOAuthCodeVerifier')
-        const state = sessionStorage.getItem('osmOAuthState')
+        const transaction = JSON.parse(
+            sessionStorage.getItem('osmOAuthTransaction:prod') ?? '{}'
+        ) as { verifier?: string; state?: string }
+        const verifier = transaction.verifier
+        const state = transaction.state
 
         expect(loginUrl.origin + loginUrl.pathname).toBe(
             'https://www.openstreetmap.org/oauth2/authorize'
@@ -99,14 +138,69 @@ describe('OsmAuthService', () => {
         expect(loginUrl.searchParams.get('redirect_uri')).toBe('osmgo://auth')
     })
 
+    it('recovers a native PKCE transaction after service recreation', async () => {
+        nativePlatform.mockReturnValue(true)
+        const loginUrl = new URL(await service.getLoginUrl())
+        const state = loginUrl.searchParams.get('state')
+        if (!state) throw new Error('Missing state fixture.')
+        sessionStorage.clear()
+        http.post.mockReturnValue(of({ access_token: 'native-token' }))
+        const recreated = TestBed.runInInjectionContext(
+            () => new OsmAuthService()
+        )
+
+        await firstValueFrom(
+            recreated.handleCallback(
+                `osmgo://auth?code=authorization-code&state=${state}`
+            )
+        )
+
+        expect(recreated.getToken()).toBe('native-token')
+        expect(persistedStorage.has('osmOAuthTransaction:prod')).toBe(false)
+    })
+
+    it('rejects an expired native authorization transaction', async () => {
+        nativePlatform.mockReturnValue(true)
+        const loginUrl = new URL(await service.getLoginUrl())
+        const state = loginUrl.searchParams.get('state')
+        const transaction = persistedStorage.get(
+            'osmOAuthTransaction:prod'
+        ) as { createdAt: number }
+        transaction.createdAt = Date.now() - 11 * 60 * 1000
+        if (!state) throw new Error('Missing state fixture.')
+
+        await expect(
+            firstValueFrom(
+                service.handleCallback(
+                    `osmgo://auth?code=authorization-code&state=${state}`
+                )
+            )
+        ).rejects.toThrow('expired')
+        expect(http.post).not.toHaveBeenCalled()
+        expect(closeBrowser).toHaveBeenCalledOnce()
+    })
+
+    it('keeps production and development tokens isolated', async () => {
+        await service.setToken('production-token')
+        configService.config.mockReturnValue({ isDevServer: true })
+        const developmentService = TestBed.runInInjectionContext(
+            () => new OsmAuthService()
+        )
+
+        await developmentService.loadToken()
+        await developmentService.setToken('development-token')
+
+        expect(persistedStorage.get('osmToken:prod')).toBe('production-token')
+        expect(persistedStorage.get('osmToken:dev')).toBe('development-token')
+    })
+
     it('exchanges a valid callback without a client secret', async () => {
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
+        const { state, verifier } = await prepareAuthorization()
         http.post.mockReturnValue(of({ access_token: 'access-token' }))
 
         await firstValueFrom(
             service.handleCallback(
-                'https://osmgo.com/?code=authorization-code&state=expected-state'
+                callbackUrl({ code: 'authorization-code', state })
             )
         )
 
@@ -128,44 +222,74 @@ describe('OsmAuthService', () => {
         ])
         expect(body.get('grant_type')).toBe('authorization_code')
         expect(body.get('code')).toBe('authorization-code')
-        expect(body.get('code_verifier')).toBe('stored-verifier')
+        expect(body.get('code_verifier')).toBe(verifier)
         expect(body.has('client_secret')).toBe(false)
         expect(
             (options as { headers: HttpHeaders }).headers.get('Content-Type')
         ).toBe('application/x-www-form-urlencoded')
-        expect(storage.set).toHaveBeenCalledWith('osmToken', 'access-token')
+        expect(storage.set).toHaveBeenCalledWith(
+            'osmToken:prod',
+            'access-token'
+        )
         expect(service.getToken()).toBe('access-token')
-        expect(sessionStorage.getItem('osmOAuthState')).toBeNull()
-        expect(sessionStorage.getItem('osmOAuthCodeVerifier')).toBeNull()
+        expect(sessionStorage.getItem('osmOAuthTransaction:prod')).toBeNull()
     })
 
-    it('rejects a callback with an invalid state', () => {
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        let callbackError: Error | undefined
+    it('consumes an authorization callback only once', async () => {
+        const { state } = await prepareAuthorization()
+        const url = callbackUrl({ code: 'authorization-code', state })
+        http.post.mockReturnValue(of({ access_token: 'access-token' }))
 
-        service
-            .handleCallback(
-                'https://osmgo.com/?code=authorization-code&state=wrong-state'
+        await firstValueFrom(service.handleCallback(url))
+        await expect(
+            firstValueFrom(service.handleCallback(url))
+        ).rejects.toThrow('Invalid OAuth state.')
+
+        expect(http.post).toHaveBeenCalledOnce()
+    })
+
+    it('times out a stalled token exchange', async () => {
+        vi.useFakeTimers()
+        const { state } = await prepareAuthorization()
+        http.post.mockReturnValue(NEVER)
+        const callback = firstValueFrom(
+            service.handleCallback(
+                callbackUrl({ code: 'authorization-code', state })
             )
-            .subscribe({ error: (error: Error) => (callbackError = error) })
+        )
+        const rejected = expect(callback).rejects.toMatchObject({
+            name: 'TimeoutError',
+        })
 
-        expect(callbackError?.message).toBe('Invalid OAuth state.')
-        expect(http.post).not.toHaveBeenCalled()
-        expect(sessionStorage.getItem('osmOAuthState')).toBeNull()
-        expect(sessionStorage.getItem('osmOAuthCodeVerifier')).toBeNull()
+        await vi.advanceTimersByTimeAsync(30_001)
+
+        await rejected
+        vi.useRealTimers()
     })
 
-    it('rejects a callback without an authorization code', () => {
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        let callbackError: Error | undefined
+    it('rejects a callback with an invalid state', async () => {
+        await prepareAuthorization()
 
-        service
-            .handleCallback('https://osmgo.com/?state=expected-state')
-            .subscribe({ error: (error: Error) => (callbackError = error) })
+        await expect(
+            firstValueFrom(
+                service.handleCallback(
+                    callbackUrl({
+                        code: 'authorization-code',
+                        state: 'wrong-state',
+                    })
+                )
+            )
+        ).rejects.toThrow('Invalid OAuth state.')
+        expect(http.post).not.toHaveBeenCalled()
+        expect(sessionStorage.getItem('osmOAuthTransaction:prod')).toBeNull()
+    })
 
-        expect(callbackError?.message).toContain('No authorization code')
+    it('rejects a callback without an authorization code', async () => {
+        const { state } = await prepareAuthorization()
+
+        await expect(
+            firstValueFrom(service.handleCallback(callbackUrl({ state })))
+        ).rejects.toThrow('No authorization code')
         expect(http.post).not.toHaveBeenCalled()
     })
 
@@ -177,7 +301,7 @@ describe('OsmAuthService', () => {
         service.clearToken()
 
         await vi.waitFor(() =>
-            expect(storage.remove).toHaveBeenCalledWith('osmToken')
+            expect(storage.remove).toHaveBeenCalledWith('osmToken:prod')
         )
         expect(service.token()).toBeNull()
         expect(service.getToken()).toBeNull()
@@ -188,13 +312,14 @@ describe('OsmAuthService', () => {
 
     it('closes the Capacitor browser after the callback', async () => {
         nativePlatform.mockReturnValue(true)
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
+        const loginUrl = new URL(await service.getLoginUrl())
+        const state = loginUrl.searchParams.get('state')
+        if (!state) throw new Error('Missing state fixture.')
         http.post.mockReturnValue(of({ access_token: 'access-token' }))
 
         await firstValueFrom(
             service.handleCallback(
-                'osmgo://auth?code=authorization-code&state=expected-state'
+                `osmgo://auth?code=authorization-code&state=${state}`
             )
         )
 
@@ -208,8 +333,9 @@ describe('OsmAuthService', () => {
 
     it('closes the Capacitor browser when token exchange fails', async () => {
         nativePlatform.mockReturnValue(true)
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
+        const loginUrl = new URL(await service.getLoginUrl())
+        const state = loginUrl.searchParams.get('state')
+        if (!state) throw new Error('Missing state fixture.')
         http.post.mockReturnValue(
             throwError(() => new Error('Token exchange failed'))
         )
@@ -217,7 +343,7 @@ describe('OsmAuthService', () => {
         await expect(
             firstValueFrom(
                 service.handleCallback(
-                    'osmgo://auth?code=authorization-code&state=expected-state'
+                    `osmgo://auth?code=authorization-code&state=${state}`
                 )
             )
         ).rejects.toThrow('Token exchange failed')
@@ -227,37 +353,35 @@ describe('OsmAuthService', () => {
 
     it('closes the Capacitor browser when the callback is unsubscribed', () => {
         nativePlatform.mockReturnValue(true)
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        http.post.mockReturnValue(NEVER)
+        return service.getLoginUrl().then((loginUrl) => {
+            const state = new URL(loginUrl).searchParams.get('state')
+            if (!state) throw new Error('Missing state fixture.')
+            http.post.mockReturnValue(NEVER)
+            const subscription = service
+                .handleCallback(
+                    `osmgo://auth?code=authorization-code&state=${state}`
+                )
+                .subscribe()
 
-        const subscription = service
-            .handleCallback(
-                'osmgo://auth?code=authorization-code&state=expected-state'
-            )
-            .subscribe()
-
-        expect(closeBrowser).not.toHaveBeenCalled()
-        subscription.unsubscribe()
-        expect(closeBrowser).toHaveBeenCalledTimes(1)
+            expect(closeBrowser).not.toHaveBeenCalled()
+            subscription.unsubscribe()
+            expect(closeBrowser).toHaveBeenCalledTimes(1)
+        })
     })
 
     it('does not complete the callback before the token is persisted', async () => {
+        const { state } = await prepareAuthorization()
         let finishPersistence: (() => void) | undefined
         storage.set.mockReturnValue(
             new Promise<void>((resolve) => {
                 finishPersistence = resolve
             })
         )
-        sessionStorage.setItem('osmOAuthState', 'expected-state')
-        sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
         http.post.mockReturnValue(of({ access_token: 'access-token' }))
         const completed = vi.fn()
 
         service
-            .handleCallback(
-                'https://osmgo.com/?code=authorization-code&state=expected-state'
-            )
+            .handleCallback(callbackUrl({ code: 'authorization-code', state }))
             .subscribe({ complete: completed })
 
         await Promise.resolve()

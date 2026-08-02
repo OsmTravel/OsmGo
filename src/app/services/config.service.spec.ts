@@ -134,9 +134,15 @@ describe('ConfigService', () => {
         expect(storage.remove.mock.calls.map(([key]) => key)).toEqual([
             'geojson',
             'geojsonBbox',
-            'user_info',
             'geojsonChanged',
             'osmState',
+            'user_info',
+            'changeset',
+            'osmToken',
+            'osmToken:prod',
+            'osmToken:dev',
+            'osmOAuthTransaction:prod',
+            'osmOAuthTransaction:dev',
         ])
     })
 

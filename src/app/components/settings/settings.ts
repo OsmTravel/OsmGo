@@ -1,17 +1,25 @@
 import { Component, inject } from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatSliderModule } from '@angular/material/slider'
+import {
+    ConfirmDialogComponent,
+    type ConfirmDialogData,
+} from '@components/shared/confirm-dialog/confirm-dialog'
 import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
+import { OsmAuthService } from '@services/osm-auth.service'
 import { OverlayNavigationService } from '@services/overlay-navigation.service'
+import { firstValueFrom } from 'rxjs'
+import { take } from 'rxjs/operators'
 
 @Component({
     selector: 'page-settings',
@@ -33,6 +41,8 @@ export class SettingsPage {
     readonly configService = inject(ConfigService)
     readonly mapService = inject(MapService)
     readonly dataService = inject(DataService)
+    private readonly osmAuthService = inject(OsmAuthService)
+    private readonly dialog = inject(MatDialog)
     private readonly overlayNavigation = inject(OverlayNavigationService)
 
     back(): void {
@@ -167,9 +177,31 @@ export class SettingsPage {
     }
 
     async changeIsDevServer(isDev: boolean): Promise<void> {
-        await this.configService.setIsDevServer(isDev)
-        const mainLocation = `${window.location.origin}/`
-        window.location.replace(mainLocation)
+        if (isDev === this.configService.config().isDevServer) return
+        if (this.dataService.changedFeatureCount() > 0) {
+            const data: ConfirmDialogData = {
+                title: 'Switch OpenStreetMap server?',
+                message:
+                    'Changing server deletes every pending local edit. This cannot be undone.',
+                cancelLabel: 'Cancel',
+                confirmLabel: 'Switch server',
+                destructive: true,
+            }
+            const confirmed = await firstValueFrom(
+                this.dialog
+                    .open(ConfirmDialogComponent, {
+                        data,
+                        maxWidth: 'calc(100vw - 32px)',
+                        panelClass: 'osmgo-dialog',
+                    })
+                    .afterClosed()
+                    .pipe(take(1))
+            )
+            if (!confirmed) return
+        }
+        await this.osmAuthService.clearAllAuthentication()
+        await this.configService.switchOsmEnvironment(isDev)
+        window.location.replace(document.baseURI)
         window.location.reload()
     }
 }
