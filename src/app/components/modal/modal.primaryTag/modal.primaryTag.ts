@@ -16,7 +16,7 @@ import {
 } from '@ionic/angular/standalone'
 import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
-import { TagConfig } from '@osmgo/type'
+import type { TagConfig } from '@osmgo/type'
 import { FilterByByGeometryTypePipe } from '@pipes/filter-by-geometry-type.pipe'
 import { FilterBySearchablePipe } from '@pipes/filter-by-searchable.pipe'
 import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
@@ -63,31 +63,27 @@ export class ModalPrimaryTag implements OnInit {
 
     private swipeStartX: number | null = null
 
-    selectedKey: string
-    tagsOfselectedKey
     loading = true
-    allTags: TagConfig[]
     readonly searchText = signal('')
     currentListOfTags: TagConfig[] = []
-    typeFiche = 'list'
-    customValue = ''
-    oldTagConfig: TagConfig
+    oldTagConfig: TagConfig | undefined
     geometriesPossible: string[] = []
-    geometryType: 'point' | 'vertex' | 'line' | 'area'
-    displayType = 'lastTags'
-    countryTags
+    geometryType: 'point' | 'vertex' | 'line' | 'area' = 'point'
+    displayType: 'lastTags' | 'bookmarks' = 'lastTags'
+    countryTags = ''
     readonly tagConfigInput = input.required<TagConfig>({ alias: 'tagConfig' })
     readonly geometryTypeInput = input.required<
         'point' | 'vertex' | 'line' | 'area'
     >({ alias: 'geometryType' })
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.displayType =
             this.configService.config().defaultPrimarykeyWindows == 'bookmarks'
                 ? 'bookmarks'
                 : 'lastTags'
         this.oldTagConfig = this.tagConfigInput()
         this.geometryType = this.geometryTypeInput()
+        this.countryTags = this.configService.config().countryTags
         this.currentListOfTags = this.tagsService.tags()
         this.loading = false
     }
@@ -96,29 +92,29 @@ export class ModalPrimaryTag implements OnInit {
         this.searchText.set(event.detail.value ?? '')
     }
 
-    dismiss(data = null) {
-        this.modalCtrl.dismiss(data)
+    dismiss(data: TagConfig | null = null): void {
+        void this.modalCtrl.dismiss(data)
     }
 
-    summit(data) {
+    summit(data: TagConfig): void {
         this.dismiss(data)
     }
-    cancel() {
+    cancel(): void {
         this.dismiss()
     }
 
-    selected(config) {
+    selected(config: TagConfig): void {
         this.summit(config)
     }
 
-    addBookmark(tag: TagConfig) {
+    addBookmark(tag: TagConfig): void {
         this.tagsService.addBookMark(tag)
     }
-    removeBookmark(tag: TagConfig) {
+    removeBookmark(tag: TagConfig): void {
         this.tagsService.removeBookMark(tag)
     }
 
-    addCustomValue(key, value) {
+    addCustomValue(key: string, value: string): void {
         // TODO: ckeck if aleardy exist
         const newConfig: TagConfig = {
             icon: 'maki-circle-custom',
@@ -160,7 +156,7 @@ export class ModalPrimaryTag implements OnInit {
         this.swipeStartX = null
     }
 
-    changePageLastTagsBookmarks(value) {
+    changePageLastTagsBookmarks(value: 'lastTags' | 'bookmarks'): void {
         this.displayType = value
         this.configService.setDefaultPrimarykeyWindows(value)
     }

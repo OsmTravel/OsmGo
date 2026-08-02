@@ -12,7 +12,7 @@ import {
     IonSelectOption,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
-import { Preset, Tag } from '@osmgo/type'
+import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 
 @Component({
@@ -55,7 +55,7 @@ export class SelectComponent {
 
         const newValue = event.detail.value
         if (this.isMultiKeyPreset()) {
-            const selectedKey = this.preset().keys.includes(newValue)
+            const selectedKey = (this.preset().keys ?? []).includes(newValue)
                 ? newValue
                 : ''
             this.tag().key = selectedKey
@@ -64,14 +64,10 @@ export class SelectComponent {
             this.tag().value = newValue
         }
 
-        const currentPresetOption = this.preset().options.find(
+        const currentPresetOption = this.preset().options?.find(
             (po) => po.v == newValue
         )
-        const extraTags = (
-            currentPresetOption as unknown as {
-                tags?: Record<string, string>
-            }
-        )?.tags
+        const extraTags = currentPresetOption?.tags
         if (extraTags) {
             this.addTags.emit(extraTags)
         }

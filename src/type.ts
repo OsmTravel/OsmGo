@@ -92,6 +92,7 @@ export interface Tag {
 export interface PresetOption {
     lbl: any
     v: string
+    tags?: Record<string, string>
 }
 
 export interface Preset {

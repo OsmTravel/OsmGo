@@ -10,7 +10,7 @@ import {
     IonLabel,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
-import { Preset, Tag } from '@osmgo/type'
+import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
 import { SelectComponent } from '../select/select.component'
@@ -46,8 +46,8 @@ export class EditPresets {
     get isMultiKeyPreset(): boolean {
         return (
             !this.preset()?.key &&
-            this.preset()?.keys?.length > 0 &&
-            this.preset()?.options?.length > 0
+            (this.preset().keys?.length ?? 0) > 0 &&
+            (this.preset().options?.length ?? 0) > 0
         )
     }
 

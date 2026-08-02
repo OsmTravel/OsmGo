@@ -13,7 +13,7 @@ import {
 } from '@ionic/angular/standalone'
 import type { InputInputEventDetail } from '@ionic/core'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { Preset } from '@osmgo/type'
+import type { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
 import { FilterByListPipe } from '@pipes/filterByList.pipe'
 import { FilterPresetsByListPipe } from '@pipes/filterPresetsByList.pipe'
@@ -64,15 +64,15 @@ export class ModalAddTag {
         this.searchFilter.set(event.detail.value ?? '')
     }
 
-    dismiss(data = null) {
-        this.modalCtrl.dismiss(data)
+    dismiss(data: string | null = null): void {
+        void this.modalCtrl.dismiss(data)
     }
 
-    select(key) {
+    select(key: string): void {
         this.dismiss(nameToOsmKey(key))
     }
 
-    nameToOsmKey(name) {
+    nameToOsmKey(name: string): string {
         return nameToOsmKey(name)
     }
 }

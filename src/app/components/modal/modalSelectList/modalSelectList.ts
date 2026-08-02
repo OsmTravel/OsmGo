@@ -11,10 +11,11 @@ import {
     IonTitle,
     IonToolbar,
     ModalController,
+    type RadioGroupCustomEvent,
 } from '@ionic/angular/standalone'
 import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
-import { Preset } from '@osmgo/type'
+import type { Preset, PresetOption } from '@osmgo/type'
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
 import { ConfigService } from '@services/config.service'
@@ -23,6 +24,16 @@ interface ModalSelectListData {
     key: string
     preset: Preset
     value: string
+}
+
+interface SelectablePresetOption extends PresetOption {
+    tags?: Record<string, string>
+}
+
+interface ModalSelectListResult {
+    key: string
+    value: string
+    tags?: Record<string, string>
 }
 
 @Component({
@@ -51,28 +62,29 @@ export class ModalSelectList implements OnInit {
 
     readonly data = input.required<ModalSelectListData>()
     readonly searchText = signal('')
-    initvalue: string
+    initialValue = ''
     readonly language = this.configService.config().languageTags
     readonly countryCode = this.configService.config().countryTags
 
     ngOnInit(): void {
-        this.initvalue = this.data().value
+        this.initialValue = this.data().value
     }
 
     onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
         this.searchText.set(event.detail.value ?? '')
     }
 
-    dismiss(data = null) {
-        this.modalCtrl.dismiss(data)
+    dismiss(data: ModalSelectListResult | null = null): void {
+        void this.modalCtrl.dismiss(data)
     }
 
-    selected(e) {
-        if (e && e.detail && this.initvalue !== e.detail) {
+    selected(event: RadioGroupCustomEvent<SelectablePresetOption>): void {
+        const option = event.detail.value
+        if (option && this.initialValue !== option.v) {
             this.dismiss({
                 key: this.data().key,
-                value: e.detail.value.v,
-                tags: e.detail.value.tags,
+                value: option.v,
+                tags: option.tags,
             })
         }
     }
