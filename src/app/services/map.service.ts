@@ -1339,7 +1339,7 @@ export class MapService {
 
         this.map.on('zoom', (e) => {
             this._ngZone.run(() => {
-                this.configService.currentZoom = this.map.getZoom()
+                this.configService.setCurrentZoom(this.map.getZoom())
             })
         })
 

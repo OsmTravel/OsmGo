@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable, inject } from '@angular/core'
+import { Injectable, inject, signal } from '@angular/core'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
@@ -57,6 +57,8 @@ export class ConfigService {
     private readonly platform = inject(Platform)
     private readonly http = inject(HttpClient)
     private readonly translate = inject(TranslateService)
+    private readonly currentZoomState = signal<number | undefined>(undefined)
+    readonly currentZoom = this.currentZoomState.asReadonly()
 
     user_info: User = {
         uid: '',
@@ -76,7 +78,6 @@ export class ConfigService {
     platforms = []
     deviceInfo
     baseMapSources = null
-    currentZoom: number = undefined
     selecableLayers: string[] = ['marker', 'marker_changed', 'icon-change']
 
     defautBaseMap: any = {
@@ -342,6 +343,10 @@ export class ConfigService {
     setMapMarginBuffer(buffer: number) {
         this.config.mapMarginBuffer = buffer
         this.localStorage.set('config', this.config)
+    }
+
+    setCurrentZoom(zoom: number): void {
+        this.currentZoomState.set(zoom)
     }
     getMapMarginBuffer() {
         return this.config.mapMarginBuffer

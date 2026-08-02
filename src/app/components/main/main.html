@@ -46,7 +46,7 @@
                 (click)="loadData()"
                 arrow="true"
                 event="press"
-                [disabled]="configService.currentZoom < 14"
+                [disabled]="(configService.currentZoom() ?? 0) < 14"
             >
                 @if (!mapService.isProcessing()) {
                 <ion-icon name="refresh"></ion-icon>

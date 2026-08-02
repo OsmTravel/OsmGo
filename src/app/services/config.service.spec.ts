@@ -7,6 +7,24 @@ import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from './config.service'
 
 describe('ConfigService', () => {
+    it('exposes the current zoom as read-only state', () => {
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: {} },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        expect(service.currentZoom()).toBeUndefined()
+
+        service.setCurrentZoom(16)
+
+        expect(service.currentZoom()).toBe(16)
+    })
+
     it('invalidates only the changeset id', () => {
         const storage = {
             set: vi.fn().mockName('Storage.set'),
