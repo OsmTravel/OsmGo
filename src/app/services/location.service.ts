@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core'
+import { EventEmitter, Injectable, inject } from '@angular/core'
 import { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 // import { Geolocation } from '@capacitor/geolocation'
@@ -6,6 +6,8 @@ import { FeatureCollection, Point } from 'geojson'
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
+    readonly configService = inject(ConfigService)
+
     eventNewLocation = new EventEmitter<FeatureCollection>()
     eventNewCompassHeading = new EventEmitter<CompassHeading>()
     eventLocationIsReady = new EventEmitter<GeolocationPosition>()
@@ -20,8 +22,6 @@ export class LocationService {
 
     gpsIsReady: boolean = false
     subscriptionWatchLocation: number
-
-    constructor(public configService: ConfigService) {}
 
     watchPosition(): void {
         if (this.subscriptionWatchLocation) {
@@ -112,7 +112,7 @@ export class LocationService {
             // Convert radians to degrees
             compassHeading *= 180 / Math.PI
 
-            let newCompassHeading: CompassHeading = {
+            const newCompassHeading: CompassHeading = {
                 magneticHeading: compassHeading,
                 trueHeading: compassHeading,
                 headingAccuracy: null,

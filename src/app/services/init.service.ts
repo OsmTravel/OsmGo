@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -11,15 +11,13 @@ import { OsmApiService } from './osmApi.service'
     providedIn: 'root',
 })
 export class InitService {
-    isLoaded = false
+    readonly configService = inject(ConfigService)
+    readonly tagsService = inject(TagsService)
+    readonly dataService = inject(DataService)
+    private readonly translate = inject(TranslateService)
+    private readonly osmApi = inject(OsmApiService)
 
-    constructor(
-        public configService: ConfigService,
-        public tagsService: TagsService,
-        public dataService: DataService,
-        private translate: TranslateService,
-        private osmApi: OsmApiService
-    ) {}
+    isLoaded = false
     /**
      * Load config, tags, etc...
      */

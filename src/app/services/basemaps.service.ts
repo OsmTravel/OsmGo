@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { booleanPointInPolygon, point } from '@turf/turf'
 import { Feature, MultiPolygon, Polygon } from 'geojson'
 import { Observable } from 'rxjs'
@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators'
     providedIn: 'root',
 })
 export class BasemapsService {
-    constructor(private http: HttpClient) {}
+    private readonly http = inject(HttpClient)
 
     getBasemaps$(lng: number, lat: number): Observable<Record<string, any>[]> {
         return this.http.get<any[]>('assets/imagery.json').pipe(

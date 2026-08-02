@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http'
+import { TestBed } from '@angular/core/testing'
 import { Capacitor } from '@capacitor/core'
+import { Storage } from '@ionic/storage'
+import { ConfigService } from '@services/config.service'
 import { of } from 'rxjs'
 import type { Mock } from 'vitest'
 
@@ -32,11 +35,14 @@ describe('OsmAuthService', () => {
         nativePlatform = vi
             .spyOn(Capacitor, 'isNativePlatform')
             .mockReturnValue(false)
-        service = new OsmAuthService(
-            http as HttpClient,
-            configService as any,
-            storage as any
-        )
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: ConfigService, useValue: configService },
+                { provide: Storage, useValue: storage },
+            ],
+        })
+        service = TestBed.runInInjectionContext(() => new OsmAuthService())
     })
 
     afterEach(() => {

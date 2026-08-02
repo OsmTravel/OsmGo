@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { Storage } from '@ionic/storage'
@@ -16,6 +16,10 @@ const OAUTH_VERIFIER_KEY = 'osmOAuthCodeVerifier'
     providedIn: 'root',
 })
 export class OsmAuthService {
+    private readonly http = inject(HttpClient)
+    private readonly configService = inject(ConfigService)
+    readonly localStorage = inject(Storage)
+
     oauthParam = {
         prod: {
             url: 'https://www.openstreetmap.org',
@@ -29,12 +33,6 @@ export class OsmAuthService {
 
     private tokenSubject = new BehaviorSubject<string | null>(null)
     public token$ = this.tokenSubject.asObservable()
-
-    constructor(
-        private http: HttpClient,
-        private configService: ConfigService,
-        public localStorage: Storage
-    ) {}
 
     loadToken(): void {
         this.localStorage
