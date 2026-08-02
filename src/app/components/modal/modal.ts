@@ -36,7 +36,7 @@ import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
-import { TagsService } from '@services/tags.service'
+import { type SavedField, TagsService } from '@services/tags.service'
 import {
     LineString,
     MultiLineString,
@@ -140,10 +140,10 @@ export class ModalsContentPage implements OnInit {
     }
 
     primaryKey: PrimaryTag
-    private readonly savedFieldsState = signal<
-        Record<string, Tag[]> | undefined
-    >(undefined)
-    get savedFields(): Record<string, Tag[]> | undefined {
+    private readonly savedFieldsState = signal<SavedField | undefined>(
+        undefined
+    )
+    get savedFields(): SavedField | undefined {
         return this.savedFieldsState()
     }
 

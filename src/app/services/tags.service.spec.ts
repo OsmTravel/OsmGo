@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 import { Storage } from '@ionic/storage-angular'
-import { ConfigService } from '@services/config.service'
+import type { OsmGoFeature } from '@osmgo/type'
 import { firstValueFrom, of } from 'rxjs'
 
 import { TagsService } from './tags.service'
@@ -24,7 +24,6 @@ describe('TagsService', () => {
             providers: [
                 { provide: HttpClient, useValue: http },
                 { provide: Storage, useValue: {} },
-                { provide: ConfigService, useValue: {} },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -44,7 +43,6 @@ describe('TagsService', () => {
             providers: [
                 { provide: HttpClient, useValue: {} },
                 { provide: Storage, useValue: storage },
-                { provide: ConfigService, useValue: {} },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -57,5 +55,47 @@ describe('TagsService', () => {
         expect(service.hiddenTagsIds()).toEqual(['highway/path'])
         expect(service.lastTagsUsedIds()).toEqual(['shop/bakery'])
         expect(storage.set).toHaveBeenCalledTimes(3)
+    })
+
+    it('checks every feature tag when finding the primary tag', async () => {
+        const http = {
+            get: vi.fn(() => of({ primaryKeys: ['amenity'], tags: [] })),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: Storage, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+        const feature: OsmGoFeature = {
+            type: 'Feature',
+            id: 'node/1',
+            geometry: { type: 'Point', coordinates: [0, 0] },
+            properties: {
+                hexColor: '',
+                icon: '',
+                id: 1,
+                marker: '',
+                meta: {
+                    changeset: '',
+                    timestamp: '',
+                    uid: '',
+                    user: '',
+                    version: 1,
+                },
+                primaryTag: { key: 'amenity', value: 'cafe' },
+                tags: { name: 'Corner Cafe', amenity: 'cafe' },
+                type: 'node',
+                originalData: null,
+            },
+        }
+
+        await firstValueFrom(service.getTagsConfig$())
+
+        expect(service.findPkey(feature)).toEqual({
+            key: 'amenity',
+            value: 'cafe',
+        })
     })
 })

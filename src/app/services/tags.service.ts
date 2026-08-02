@@ -10,15 +10,17 @@ import {
     TagConfig,
     TagsJson,
 } from '@osmgo/type'
-import { ConfigService } from '@services/config.service'
 import { forkJoin, from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
+
+export interface SavedField {
+    tags: Tag[]
+}
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
     private readonly http = inject(HttpClient)
     readonly localStorage = inject(Storage)
-    readonly configService = inject(ConfigService)
 
     private readonly lastTagsUsedIdsState = signal<string[]>([])
     readonly lastTagsUsedIds = this.lastTagsUsedIdsState.asReadonly()
@@ -27,15 +29,14 @@ export class TagsService {
     private readonly hiddenTagsIdsState = signal<string[]>([])
     readonly hiddenTagsIds = this.hiddenTagsIdsState.asReadonly()
 
-    savedFields: Record<string, any> = {}
+    savedFields: Record<string, SavedField> = {}
     private readonly tagsState = signal<TagConfig[]>([])
     readonly tags = this.tagsState.asReadonly()
-    userTags: TagConfig[]
+    userTags: TagConfig[] = []
     private readonly primaryKeysState = signal<string[]>([])
     readonly primaryKeys = this.primaryKeysState.asReadonly()
     private readonly presetsState = signal<Record<string, Preset>>({})
     readonly presets = this.presetsState.asReadonly()
-    basemaps
     private readonly jsonSpritesState = signal<JsonSprites>({})
     readonly jsonSprites = this.jsonSpritesState.asReadonly()
 
@@ -192,7 +193,7 @@ export class TagsService {
         )
     }
 
-    addBookMark(tag: TagConfig): TagConfig {
+    addBookMark(tag: TagConfig): void {
         if (this.bookmarksIds().includes(tag.id)) {
             return
         }
@@ -201,8 +202,6 @@ export class TagsService {
             this.addUserTags(tag)
         }
         this.setBookMarksIds([tag.id, ...this.bookmarksIds()])
-        // TODO : si tag inconnu => ajouter à userTag
-        return currentTag
     }
 
     loadBookMarksIds$(): Observable<string[]> {
@@ -242,14 +241,12 @@ export class TagsService {
     }
 
     addHiddenTag(tag: TagConfig): void {
-        // => hide a tag
         if (!tag.id) {
             return
         }
         if (!this.hiddenTagsIds().includes(tag.id)) {
             const newHiddenTags = [tag.id, ...this.hiddenTagsIds()]
             this.setHiddenTagsIds(newHiddenTags)
-            // delete bookmark...
             this.removeBookMark(tag)
         }
     }
@@ -273,7 +270,7 @@ export class TagsService {
         )
     }
 
-    addTagTolastTagsUsed(tagId: string): TagConfig {
+    addTagTolastTagsUsed(tagId: string): TagConfig | undefined {
         if (!tagId) {
             return
         }
@@ -317,9 +314,9 @@ export class TagsService {
         this.setUserTags(this.userTags)
     }
 
-    loadSavedFields$(): Observable<Record<string, any>> {
+    loadSavedFields$(): Observable<Record<string, SavedField>> {
         return from(this.localStorage.get('savedFields')).pipe(
-            map((d: Record<string, any>) => {
+            map((d: Record<string, SavedField> | null | undefined) => {
                 const res = d ? d : {}
                 this.savedFields = res
                 return res
@@ -327,16 +324,12 @@ export class TagsService {
         )
     }
 
-    addSavedField(tagId: string, tags: TagConfig[]): void {
-        if (!this.savedFields[tagId]) {
-            this.savedFields[tagId] = {}
-        }
-        this.savedFields[tagId]['tags'] = tags
-        // .tags = tags;
+    addSavedField(tagId: string, tags: Tag[]): void {
+        this.savedFields[tagId] = { tags }
         this.localStorage.set('savedFields', this.savedFields)
     }
 
-    findPkey(featureOrTags: OsmGoFeature | Tag[]): PrimaryTag {
+    findPkey(featureOrTags: OsmGoFeature | Tag[]): PrimaryTag | undefined {
         const pkeys = this.primaryKeys()
         if (
             !Array.isArray(featureOrTags) &&
@@ -347,7 +340,6 @@ export class TagsService {
                 if (pkeys.includes(k)) {
                     return { key: k, value: featureOrTags.properties.tags[k] }
                 }
-                return undefined
             }
         } else if (Array.isArray(featureOrTags)) {
             for (const t of featureOrTags) {
@@ -355,58 +347,45 @@ export class TagsService {
                     return { key: t.key, value: t.value }
                 }
             }
-            return undefined
         }
+        return undefined
     }
 
     getTagsConfig$(): Observable<TagsJson> {
-        return this.http.get(`assets/tagsAndPresets/tags.json`).pipe(
-            map((tagsConfig: TagsJson) => {
+        return this.http.get<TagsJson>(`assets/tagsAndPresets/tags.json`).pipe(
+            map((tagsConfig) => {
                 this.primaryKeysState.set(tagsConfig.primaryKeys)
                 return tagsConfig
             })
         )
     }
 
-    // loadBaseMaps$() {
-    //     return this.http.get(`assets/tagsAndPresets/basemap.json`)
-    //         .pipe(
-    //             map(baseMaps => {
-    //                 this.configService.baseMapSources = baseMaps;
-    //                 return baseMaps
-    //             })
-    //         )
-    // }
-
     loadPresets$(): Observable<Record<string, Preset>> {
-        return this.http.get(`assets/tagsAndPresets/presets.json`).pipe(
-            map((p: Record<string, Preset>) => {
-                const json = p
-                for (const k in json) {
-                    json[k]._id = k
-                }
-                this.presetsState.set(json)
-                return json
-            })
-        )
+        return this.http
+            .get<Record<string, Preset>>(`assets/tagsAndPresets/presets.json`)
+            .pipe(
+                map((p) => {
+                    const json = p
+                    for (const k in json) {
+                        json[k]._id = k
+                    }
+                    this.presetsState.set(json)
+                    return json
+                })
+            )
     }
 
     loadJsonSprites$(): Observable<JsonSprites> {
         const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
         const url =
-            devicePixelRatio == 1
+            devicePixelRatio === 1
                 ? `assets/mapStyle/sprites/sprites.json`
                 : `assets/mapStyle/sprites/sprites@2x.json`
-        return (
-            this.http
-                .get(url)
-                // .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
-                .pipe(
-                    map((jsonSprites: JsonSprites) => {
-                        this.jsonSpritesState.set(jsonSprites)
-                        return jsonSprites
-                    })
-                )
+        return this.http.get<JsonSprites>(url).pipe(
+            map((jsonSprites) => {
+                this.jsonSpritesState.set(jsonSprites)
+                return jsonSprites
+            })
         )
     }
 
@@ -419,22 +398,4 @@ export class TagsService {
             })
         )
     }
-
-    // loadtagsAndPresets$() {
-    //     return forkJoin(
-    //         this.loadJsonSprites$(),
-    //         this.loadPresets$(),
-    //         this.loadTags$(),
-    //         this.loadBaseMaps$(),
-    //         this.loadBookMarksIds$(),
-    //         this.loadLastTagsUsedIds$(),
-    //         this.loadHiddenTagsIds$()
-    //     )
-    //     .pipe(
-    //         map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
-
-    //                 return [jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]
-    //         } )
-    //     )
-    // }
 }
