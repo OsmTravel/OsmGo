@@ -60,3 +60,15 @@ declare module '@scripts/YoHours/OpeningHoursParser.js' {
         parse(value: string): DateRange[]
     }
 }
+
+declare module '@scripts/YoHours/OhDate.js' {
+    export default class OhDate {
+        constructor(wide: string, wideType: string, weekdays: number[])
+    }
+}
+
+declare module '@scripts/YoHours/OhRule.js' {
+    export default class OhRule {
+        addDate(date: unknown): void
+    }
+}

@@ -11,7 +11,7 @@ import { TagConfig } from '@osmgo/type'
 interface AlertTagConfig extends TagConfig {
     alert?: Record<string, string>
     deprecated?: boolean
-    replace?: unknown
+    replace?: Record<string, string | number>
     warning?: Record<string, string>
     warningCountryCodes?: string[]
 }
@@ -25,6 +25,9 @@ interface AlertTagConfig extends TagConfig {
 export class AlertComponent {
     readonly tagConfig = input<AlertTagConfig>()
     readonly language = input('en')
-    readonly countryCode = input(undefined)
-    readonly fixDeprecated = output<{ old: unknown; replace: unknown }>()
+    readonly countryCode = input('')
+    readonly fixDeprecated = output<{
+        old: Record<string, string | number>
+        replace: Record<string, string | number>
+    }>()
 }

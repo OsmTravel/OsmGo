@@ -16,14 +16,17 @@
 <div class="listTag">
     <ion-list>
         <ion-radio-group (ionChange)="selected($event)">
-            @for (option of data().preset.options |
-            filterByCountryCode:countryCode |
-            filterByPresetsContent:[language]:searchText(); track option) {
+            @for ( option of data().preset.options | filterByCountryCode:
+            countryCode | filterByPresetsContent: [language]: searchText();
+            track option.v ) {
             <ion-item>
                 <ion-label>
-                    <b>{{option.lbl[language] || option.lbl['en'] }}</b>
+                    <b
+                        >{{ option.lbl?.[language] || option.lbl?.['en'] ||
+                        option.v }}</b
+                    >
                     <br />
-                    {{option.v}}
+                    {{ option.v }}
                 </ion-label>
                 <ion-radio [value]="option"></ion-radio>
             </ion-item>

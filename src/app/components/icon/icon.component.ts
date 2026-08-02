@@ -1,11 +1,5 @@
-import { Component, input, signal } from '@angular/core'
-
-interface SpritePosition {
-    height: number
-    width: number
-    x: number
-    y: number
-}
+import { Component, computed, input, signal } from '@angular/core'
+import type { JsonSprites } from '@osmgo/type'
 
 @Component({
     selector: 'app-icon',
@@ -13,7 +7,14 @@ interface SpritePosition {
     styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
-    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
-    readonly icon = input(undefined)
+    readonly jsonSprites = input.required<JsonSprites>()
+    readonly icon = input<string | null>()
+    readonly sprite = computed(() => {
+        const icon = this.icon()
+        return icon ? this.jsonSprites()[icon] : undefined
+    })
+    readonly fallbackSprite = computed(
+        () => this.jsonSprites()['wiki-question']
+    )
     readonly devicePixelRatio = signal(window.devicePixelRatio > 1 ? 2 : 1)
 }

@@ -1,18 +1,12 @@
 import { Pipe } from '@angular/core'
-
-interface CountryExclusionItem {
-    excludeCountryCodes?: string[]
-}
+import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterExcludeTagByCountryCode',
     pure: false,
 })
 export class FilterExcludeTagByCountryCode {
-    transform<T extends CountryExclusionItem>(
-        items: T[],
-        countryCode: string
-    ): T[] {
+    transform(items: TagConfig[], countryCode: string): TagConfig[] {
         return items.filter(
             (item) =>
                 !item.excludeCountryCodes ||

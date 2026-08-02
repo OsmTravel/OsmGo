@@ -232,7 +232,7 @@ describe('MainPage', () => {
         expect(dataService.setGeojsonBbox).not.toHaveBeenCalled()
         expect(dataService.setGeojson).not.toHaveBeenCalled()
         expect(page.presentToast).toHaveBeenCalledTimes(1)
-        expect(vi.mocked(page.presentToast as Mock).mock.lastCall[0]).toBe(
+        expect(page.presentToast).toHaveBeenCalledWith(
             'Worker conversion failed'
         )
     })

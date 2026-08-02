@@ -105,7 +105,7 @@ describe('PushDataToOsmPage', () => {
             }
             const mapService = createProcessingMapService()
             const processing = mapService.isProcessing
-            const processingValues = []
+            const processingValues: boolean[] = []
             processing.subscribe((value) => processingValues.push(value))
             const configService = {
                 getChangeSetComment: () => '',
@@ -275,7 +275,9 @@ describe('PushDataToOsmPage', () => {
     })
 
     it('starts only one upload when the button is clicked twice', async () => {
-        let continuePreparation
+        let continuePreparation: () => void = () => {
+            throw new Error('Upload preparation did not start.')
+        }
         const preparation = new Promise<void>(
             (resolve) => (continuePreparation = resolve)
         )
@@ -341,7 +343,7 @@ describe('PushDataToOsmPage', () => {
             getGeojsonChanged: () => ({ features }),
             applyUploadResults,
         }
-        const mapService = { getIconStyle: (feature) => feature }
+        const mapService = { getIconStyle: (feature: unknown) => feature }
         const configService = {
             getChangeSetComment: () => '',
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
@@ -357,7 +359,10 @@ describe('PushDataToOsmPage', () => {
 
         await (page as any).updateLocalDataFromDiffResult(diffResults, features)
 
-        const preparedResults = vi.mocked(applyUploadResults).mock.lastCall[0]
+        const preparedResults = vi.mocked(applyUploadResults).mock.lastCall?.[0]
+        expect(preparedResults).toBeDefined()
+        if (!preparedResults)
+            throw new Error('Upload results were not applied.')
         expect(preparedResults.length).toBe(100)
         expect(preparedResults[0].oldId).toBe('node/-1')
         expect(preparedResults[0].feature.id).toBe('node/1')
@@ -428,7 +433,7 @@ describe('PushDataToOsmPage', () => {
         }
         const mapService = {
             ...createProcessingMapService(),
-            getIconStyle: (value) => value,
+            getIconStyle: (value: unknown) => value,
             redrawMarkers: vi.fn().mockName('redrawMarkers'),
             redrawChangedMarkers: vi.fn().mockName('redrawChangedMarkers'),
         }

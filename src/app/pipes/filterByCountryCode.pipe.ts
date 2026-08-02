@@ -1,20 +1,17 @@
 import { Pipe } from '@angular/core'
-
-interface CountrySpecificItem {
-    countryCodes?: string[]
-}
+import type { PresetOption } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByCountryCode',
     pure: false,
 })
 export class FilterByCountryCode {
-    transform<T extends CountrySpecificItem>(
-        items: T[] | null | undefined,
+    transform(
+        items: PresetOption[] | null | undefined,
         countryCode: string
-    ): T[] | null | undefined {
+    ): PresetOption[] {
         if (!items) {
-            return items
+            return []
         }
 
         return items.filter(

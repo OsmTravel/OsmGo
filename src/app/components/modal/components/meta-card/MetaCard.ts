@@ -30,8 +30,8 @@ interface MetaFeature {
 export class MetaCard {
     readonly feature = input.required<MetaFeature>()
     readonly lastSurvey = input<Date>()
-    readonly displayCode = input(undefined)
-    readonly languageUi = input(undefined)
+    readonly displayCode = input(false)
+    readonly languageUi = input('en')
     readonly usedByWaysCount = computed(() => {
         const usedByWays = this.feature().properties.usedByWays
         if (Array.isArray(usedByWays)) {

@@ -24,24 +24,29 @@
         <ion-card-content>
             <div class="wrapperEdit2cols">
                 <div class="contentEdit2cols">
-                    @if (
-                        !displayCode() &&
-                            ((tag() | displayPresetLabel: preset()) ||
-                                tag().value == '');
-                        as pr
-                    ) {
+                    @if (!displayCode()) {
                         <ion-item (click)="emitOpenModal(tag())">
-                            @if (tag().value != '') {
-                                <p class="displayLabelListValue">
-                                    {{ pr?.lbl[language()] || pr?.lbl['en'] }}
-                                </p>
-                            }
-                            @if (tag().value == '') {
+                            @if (tag().value === '') {
                                 <p class="undefindedListValue">
                                     {{
                                         'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'
                                             | translate
                                     }}
+                                </p>
+                            } @else if (
+                                tag() | displayPresetLabel: preset();
+                                as option
+                            ) {
+                                <p class="displayLabelListValue">
+                                    {{
+                                        option.lbl?.[language()] ||
+                                            option.lbl?.['en'] ||
+                                            option.v
+                                    }}
+                                </p>
+                            } @else {
+                                <p class="displayLabelListValue">
+                                    {{ tag().value }}
                                 </p>
                             }
                         </ion-item>
@@ -112,7 +117,7 @@
             @if (displayCode()) {
                 <b> <ion-icon name="code"></ion-icon> {{ preset()?.key }}</b>
             }
-            @if (preset()?.type == 'url' && tag().value) {
+            @if (preset()?.type === 'url' && tag().value) {
                 <a href="{{ tag().value }}" target="_blank"
                     ><ion-icon name="link"></ion-icon
                 ></a>

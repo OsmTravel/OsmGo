@@ -5,6 +5,7 @@ import {
     IonCardHeader,
     IonIcon,
 } from '@ionic/angular/standalone'
+import type { Tag } from '@osmgo/type'
 
 @Component({
     selector: 'read-other-tag',
@@ -21,5 +22,5 @@ import {
     imports: [IonCard, IonCardContent, IonCardHeader, IonIcon],
 })
 export class ReadOtherTag {
-    readonly tag = input(undefined)
+    readonly tag = input.required<Tag>()
 }

@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
+import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { Storage } from '@ionic/storage'
 import { ConfigService } from '@services/config.service'
@@ -8,10 +9,14 @@ import type { Mock } from 'vitest'
 
 import { OsmAuthService } from './osm-auth.service'
 
+vi.mock('@capacitor/browser', () => ({
+    Browser: { close: vi.fn().mockResolvedValue(undefined) },
+}))
+
 describe('OsmAuthService', () => {
-    let http: any
-    let storage
-    let configService
+    let http: { post: Mock }
+    let storage: { get: Mock; set: Mock; remove: Mock }
+    let configService: { config: Mock; resetUserInfo: Mock }
     let service: OsmAuthService
     let nativePlatform: Mock
 
@@ -26,8 +31,8 @@ describe('OsmAuthService', () => {
             remove: vi.fn().mockName('Storage.remove'),
         }
         storage.get.mockResolvedValue(null)
-        storage.set.mockResolvedValue()
-        storage.remove.mockResolvedValue()
+        storage.set.mockResolvedValue(undefined)
+        storage.remove.mockResolvedValue(undefined)
         configService = {
             config: vi.fn(() => ({ isDevServer: false })),
             resetUserInfo: vi.fn().mockName('resetUserInfo'),
@@ -65,6 +70,7 @@ describe('OsmAuthService', () => {
         expect(loginUrl.searchParams.get('code_challenge_method')).toBe('S256')
         expect(verifier?.length).toBe(43)
         expect(state?.length).toBe(43)
+        if (!verifier) throw new Error('The PKCE verifier was not stored.')
         expect(loginUrl.searchParams.get('code_challenge')).toBe(
             await createCodeChallenge(verifier)
         )
@@ -93,9 +99,12 @@ describe('OsmAuthService', () => {
             )
             .subscribe()
 
-        const [url, rawBody, options] = vi.mocked(http.post).mock.lastCall
+        const lastCall = vi.mocked(http.post).mock.lastCall
+        expect(lastCall).toBeDefined()
+        if (!lastCall) throw new Error('The token endpoint was not called.')
+        const [url, rawBody, options] = lastCall
         const body = new URLSearchParams(rawBody as string)
-        const keys = []
+        const keys: string[] = []
         body.forEach((_value, key) => keys.push(key))
 
         expect(url).toBe('https://www.openstreetmap.org/oauth2/token')
@@ -110,9 +119,9 @@ describe('OsmAuthService', () => {
         expect(body.get('code')).toBe('authorization-code')
         expect(body.get('code_verifier')).toBe('stored-verifier')
         expect(body.has('client_secret')).toBe(false)
-        expect((options as any).headers.get('Content-Type')).toBe(
-            'application/x-www-form-urlencoded'
-        )
+        expect(
+            (options as { headers: HttpHeaders }).headers.get('Content-Type')
+        ).toBe('application/x-www-form-urlencoded')
         expect(storage.set).toHaveBeenCalledWith('osmToken', 'access-token')
         expect(service.getToken()).toBe('access-token')
         expect(sessionStorage.getItem('osmOAuthState')).toBeNull()
@@ -122,15 +131,15 @@ describe('OsmAuthService', () => {
     it('rejects a callback with an invalid state', () => {
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        let callbackError
+        let callbackError: Error | undefined
 
         service
             .handleCallback(
                 'https://osmgo.com/?code=authorization-code&state=wrong-state'
             )
-            .subscribe({ error: (error) => (callbackError = error) })
+            .subscribe({ error: (error: Error) => (callbackError = error) })
 
-        expect(callbackError.message).toBe('Invalid OAuth state.')
+        expect(callbackError?.message).toBe('Invalid OAuth state.')
         expect(http.post).not.toHaveBeenCalled()
         expect(sessionStorage.getItem('osmOAuthState')).toBeNull()
         expect(sessionStorage.getItem('osmOAuthCodeVerifier')).toBeNull()
@@ -139,13 +148,13 @@ describe('OsmAuthService', () => {
     it('rejects a callback without an authorization code', () => {
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        let callbackError
+        let callbackError: Error | undefined
 
         service
             .handleCallback('https://osmgo.com/?state=expected-state')
-            .subscribe({ error: (error) => (callbackError = error) })
+            .subscribe({ error: (error: Error) => (callbackError = error) })
 
-        expect(callbackError.message).toContain('No authorization code')
+        expect(callbackError?.message).toContain('No authorization code')
         expect(http.post).not.toHaveBeenCalled()
     })
 
@@ -164,9 +173,7 @@ describe('OsmAuthService', () => {
 
     it('closes the Capacitor browser after the callback', () => {
         nativePlatform.mockReturnValue(true)
-        const closeNativeBrowser = vi
-            .spyOn(service as any, 'closeNativeBrowser')
-            .mockResolvedValue(undefined)
+        const closeBrowser = vi.mocked(Browser.close)
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
         http.post.mockReturnValue(of({ access_token: 'access-token' }))
@@ -177,11 +184,12 @@ describe('OsmAuthService', () => {
             )
             .subscribe()
 
-        const body = new URLSearchParams(
-            vi.mocked(http.post).mock.lastCall[1] as string
-        )
+        const lastCall = vi.mocked(http.post).mock.lastCall
+        expect(lastCall).toBeDefined()
+        if (!lastCall) throw new Error('The token endpoint was not called.')
+        const body = new URLSearchParams(lastCall[1] as string)
         expect(body.get('redirect_uri')).toBe('osmgo://auth')
-        expect(closeNativeBrowser).toHaveBeenCalledTimes(1)
+        expect(closeBrowser).toHaveBeenCalledTimes(1)
     })
 })
 

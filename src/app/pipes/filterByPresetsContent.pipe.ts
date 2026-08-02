@@ -1,17 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core'
-
-interface SearchablePresetOption {
-    v: string
-    lbl?: Record<string, string>
-    terms?: Record<string, string>
-}
+import type { PresetOption } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByPresetsContent',
     pure: false,
 })
 export class FilterByPresetsContentPipe implements PipeTransform {
-    replaceCharSpe(text: string) {
+    replaceCharSpe(text: string): string {
         return text
             .replace(/[û]/gi, 'u')
             .replace(/[áàâ]/gi, 'a')
@@ -22,10 +17,10 @@ export class FilterByPresetsContentPipe implements PipeTransform {
     }
 
     transform(
-        items: SearchablePresetOption[],
+        items: PresetOption[],
         args: string[],
         searchText: string
-    ): SearchablePresetOption[] {
+    ): PresetOption[] {
         const patt = new RegExp(searchText, 'i')
         const [language] = args
         return items.filter((item) => {
@@ -47,7 +42,8 @@ export class FilterByPresetsContentPipe implements PipeTransform {
             }
 
             if (item.terms) {
-                const it = item.terms[language] ?? item.terms.en ?? ''
+                const terms = item.terms[language] ?? item.terms.en ?? ''
+                const it = Array.isArray(terms) ? terms.join(' ') : terms
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {

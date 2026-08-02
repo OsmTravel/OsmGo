@@ -36,19 +36,20 @@
                                         }}
                                     </p>
                                 </ion-select-option>
-                                @for (item of preset().options; track item) {
+                                @for (item of preset().options; track item.v) {
                                     <ion-select-option [value]="item.v">
                                         <p class="displayLabelListValue">
                                             {{
-                                                item.lbl[language()] ||
-                                                    item.lbl['en']
+                                                item.lbl?.[language()] ||
+                                                    item.lbl?.['en'] ||
+                                                    item.v
                                             }}
                                         </p>
                                     </ion-select-option>
                                 }
                                 @if (
                                     (tag() | displayPresetLabel: preset()) ===
-                                        undefined && tag().value != ''
+                                        undefined && tag().value !== ''
                                 ) {
                                     <ion-select-option [value]="tag().value">
                                         {{ '<> ' }}

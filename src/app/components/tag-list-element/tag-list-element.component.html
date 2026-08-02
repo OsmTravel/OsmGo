@@ -40,11 +40,7 @@
             [style.color]="
                 oldTagConfig()?.id === tag().id ? '#3b22dd' : 'black'
             "
-            >{{
-                tag()?.lbl
-                    ? (tag()?.lbl)[languageTags()] || (tag()?.lbl)['en']
-                    : null
-            }}</b
+            >{{ tag().lbl?.[languageTags()] || tag().lbl?.['en'] }}</b
         >
 
         <br />
@@ -54,10 +50,9 @@
         <br />
         <span style="font-size: 11px; font-style: italic">
             {{
-                tag()?.description
-                    ? (tag()?.description)[languageTags()] ||
-                      (tag()?.description)['en']
-                    : ''
+                tag().description?.[languageTags()] ||
+                    tag().description?.['en'] ||
+                    ''
             }}
         </span>
     </div>

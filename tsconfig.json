@@ -12,7 +12,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "strict": false,
+    "strict": true,
     "noUncheckedSideEffectImports": false,
     "ignoreDeprecations": "6.0",
     "skipLibCheck": true,

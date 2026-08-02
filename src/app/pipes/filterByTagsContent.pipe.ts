@@ -51,7 +51,8 @@ export class FilterByTagsContentPipe implements PipeTransform {
 
             // By terms
             if (item.terms) {
-                const it = item.terms[language] ?? item.terms.en ?? ''
+                const terms = item.terms[language] ?? item.terms.en ?? ''
+                const it = Array.isArray(terms) ? terms.join(' ') : terms
                 if (patt.test(it)) {
                     return true
                 } else if (patt.test(this.replaceCharSpe(it))) {

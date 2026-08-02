@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
-import type { OsmGoFeature } from '@osmgo/type'
+import type { OsmGoFeature, OsmGoFeatureCollection } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -127,7 +127,11 @@ describe('OsmApiService', () => {
         </osm>`
 
         expect(http.put).toHaveBeenCalledTimes(1)
-        expect(vi.mocked(http.put).mock.lastCall[1]).toBe(expectedBody)
+        expect(http.put).toHaveBeenCalledWith(
+            expect.any(String),
+            expectedBody,
+            expect.any(Object)
+        )
     })
 
     describe('diff result XML', () => {
@@ -274,8 +278,10 @@ describe('OsmApiService', () => {
         async function expectRequestToTimeOut(
             request: Observable<unknown>
         ): Promise<void> {
-            let requestError
-            request.subscribe({ error: (error) => (requestError = error) })
+            let requestError: Error | undefined
+            request.subscribe({
+                error: (error: Error) => (requestError = error),
+            })
 
             await vi.advanceTimersByTimeAsync(30001)
 
@@ -342,10 +348,10 @@ describe('OsmApiService', () => {
     describe('OSM data worker', () => {
         class FakeWorker {
             static latest: FakeWorker
-            onmessage
-            onerror
-            onmessageerror
-            postedMessage
+            onmessage: (event: { data: unknown }) => void = () => {}
+            onerror: (event: { message: string }) => void = () => {}
+            onmessageerror: () => void = () => {}
+            postedMessage: unknown
             terminateCalls = 0
 
             constructor(
@@ -355,7 +361,7 @@ describe('OsmApiService', () => {
                 FakeWorker.latest = this
             }
 
-            postMessage(message): void {
+            postMessage(message: unknown): void {
                 this.postedMessage = message
             }
 
@@ -364,16 +370,23 @@ describe('OsmApiService', () => {
             }
         }
 
-        let originalWorker
+        const workerWindow = window as unknown as { Worker: typeof Worker }
+        let originalWorker: typeof Worker
         let service: OsmApiService
-        let oldGeojson
-        let geojsonChanged
+        let oldGeojson: OsmGoFeatureCollection
+        let geojsonChanged: OsmGoFeatureCollection
 
         beforeEach(() => {
             originalWorker = window.Worker
-            ;(window as any).Worker = FakeWorker
-            oldGeojson = { features: [{ id: 'node/1' }] }
-            geojsonChanged = { features: [{ id: 'node/-1' }] }
+            workerWindow.Worker = FakeWorker as unknown as typeof Worker
+            oldGeojson = {
+                type: 'FeatureCollection',
+                features: [{ id: 'node/1' }],
+            } as OsmGoFeatureCollection
+            geojsonChanged = {
+                type: 'FeatureCollection',
+                features: [{ id: 'node/-1' }],
+            } as OsmGoFeatureCollection
             const dataService = {
                 getGeojsonBbox: () => ({
                     features: [{ id: 'downloaded-area' }],
@@ -388,7 +401,7 @@ describe('OsmApiService', () => {
 
         afterEach(() => {
             vi.useRealTimers()
-            ;(window as any).Worker = originalWorker
+            workerWindow.Worker = originalWorker
         })
 
         function startConversion() {
@@ -401,7 +414,7 @@ describe('OsmApiService', () => {
         }
 
         it('resolves a successful structured response', () => {
-            let result
+            let result: unknown
             startConversion().subscribe((value) => (result = value))
 
             expect(FakeWorker.latest.url.pathname).toMatch(
@@ -426,65 +439,71 @@ describe('OsmApiService', () => {
         })
 
         it('rejects an invalid worker response', () => {
-            let resultError
+            let resultError: Error | undefined
             startConversion().subscribe({
-                error: (error) => (resultError = error),
+                error: (error: Error) => (resultError = error),
             })
 
             FakeWorker.latest.onmessage({
                 data: { ok: true, data: undefined },
             })
-            expect(resultError.message).toContain('invalid response')
+            expect(resultError?.message).toContain('invalid response')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
         })
 
         it('rejects a conversion exception reported by the worker', () => {
-            let resultError
+            let resultError: Error | undefined
             startConversion().subscribe({
-                error: (error) => (resultError = error),
+                error: (error: Error) => (resultError = error),
             })
 
             FakeWorker.latest.onmessage({
                 data: { ok: false, error: 'Conversion failed' },
             })
-            expect(resultError.message).toBe('Conversion failed')
+            expect(resultError?.message).toBe('Conversion failed')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
-            expect(oldGeojson).toEqual({ features: [{ id: 'node/1' }] })
-            expect(geojsonChanged).toEqual({ features: [{ id: 'node/-1' }] })
+            expect(oldGeojson).toEqual({
+                type: 'FeatureCollection',
+                features: [{ id: 'node/1' }],
+            })
+            expect(geojsonChanged).toEqual({
+                type: 'FeatureCollection',
+                features: [{ id: 'node/-1' }],
+            })
         })
 
         it('rejects worker errors', () => {
-            let resultError
+            let resultError: Error | undefined
             startConversion().subscribe({
-                error: (error) => (resultError = error),
+                error: (error: Error) => (resultError = error),
             })
 
             FakeWorker.latest.onerror({ message: 'Worker crashed' })
-            expect(resultError.message).toBe('Worker crashed')
+            expect(resultError?.message).toBe('Worker crashed')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
         })
 
         it('rejects unreadable worker messages', () => {
-            let resultError
+            let resultError: Error | undefined
             startConversion().subscribe({
-                error: (error) => (resultError = error),
+                error: (error: Error) => (resultError = error),
             })
 
             FakeWorker.latest.onmessageerror()
-            expect(resultError.message).toContain('unreadable message')
+            expect(resultError?.message).toContain('unreadable message')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
         })
 
         it('terminates a worker that times out', async () => {
             vi.useFakeTimers()
-            let resultError
+            let resultError: Error | undefined
             startConversion().subscribe({
-                error: (error) => (resultError = error),
+                error: (error: Error) => (resultError = error),
             })
 
             await vi.advanceTimersByTimeAsync(30001)
 
-            expect(resultError.message).toContain('timed out')
+            expect(resultError?.message).toContain('timed out')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
         })
 

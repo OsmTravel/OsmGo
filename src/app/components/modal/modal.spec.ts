@@ -7,6 +7,7 @@ import {
     ToastController,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
+import type { MapMode } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -17,6 +18,16 @@ import { ModalsContentPage } from './modal'
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
 
 describe('ModalsContentPage', () => {
+    interface PageOptions {
+        type?: MapMode
+        modalCtrl?: {
+            create: ReturnType<typeof vi.fn>
+            dismiss: ReturnType<typeof vi.fn>
+        }
+        alertCtrl?: { create: ReturnType<typeof vi.fn> }
+        toastCtrl?: { create: ReturnType<typeof vi.fn> }
+    }
+
     const genderPreset = {
         type: 'select',
         iDtype: 'radio',
@@ -30,7 +41,7 @@ describe('ModalsContentPage', () => {
     }
 
     function createPage(
-        tags,
+        tags: Record<string, string | number>,
         {
             type = 'Update',
             modalCtrl = {
@@ -39,7 +50,7 @@ describe('ModalsContentPage', () => {
             },
             alertCtrl = { create: vi.fn() },
             toastCtrl = { create: vi.fn() },
-        }: any = {}
+        }: PageOptions = {}
     ) {
         const feature = {
             type: 'Feature',

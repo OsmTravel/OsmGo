@@ -6,6 +6,7 @@ import {
     IonIcon,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
+import type { OsmGoFeature } from '@osmgo/type'
 
 @Component({
     selector: 'survey-card',
@@ -17,13 +18,13 @@ export class SurveyCard {
     readonly yes = output<void>()
     readonly no = output<void>()
 
-    readonly feature = input(undefined)
+    readonly feature = input.required<OsmGoFeature>()
 
-    handleYes() {
+    handleYes(): void {
         this.yes.emit()
     }
 
-    handleNo() {
+    handleNo(): void {
         this.no.emit()
     }
 }

@@ -1,10 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core'
+import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterBySearchable',
 })
 export class FilterBySearchablePipe implements PipeTransform {
-    transform<T extends { searchable?: boolean }>(items: T[]): T[] {
+    transform(items: TagConfig[]): TagConfig[] {
         return items.filter((item) => item.searchable !== false)
     }
 }

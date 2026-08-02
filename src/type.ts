@@ -58,7 +58,7 @@ export interface FeatureProperties {
      */
     meta: MetaData
     primaryTag: PrimaryTag
-    tags: any
+    tags: Record<string, string | number>
     type: string
     way_geometry?: Geometry
     /** Way IDs that use the node, or a legacy boolean cache value. */
@@ -102,20 +102,22 @@ export interface Tag {
     key: string
     value: string | number
     isDefaultValue?: boolean
-    preset?: any
+    preset?: Preset
     isJustAdded?: boolean
 }
 
 export interface PresetOption {
-    lbl: any
+    lbl?: Record<string, string>
     v: string
     tags?: Record<string, string>
+    countryCodes?: string[]
+    terms?: Record<string, string | string[]>
 }
 
 export interface Preset {
     key?: string
     keys?: string[]
-    lbl: any
+    lbl: Record<string, string>
     options?: PresetOption[]
     type: string
     iDtype?: string
@@ -130,15 +132,18 @@ export interface TagConfig {
     icon: string
     markerColor: string
     presets: string[]
-    lbl?: any
-    terms?: Record<string, string>
-    description?: any
+    lbl?: Record<string, string>
+    terms?: Record<string, string | string[]>
+    description?: Record<string, string>
     geometry: string[]
     iDRef?: string
-    tags: any
+    tags: Record<string, string | number>
     moreFields?: string[]
     id: string
     isUserTag?: boolean
+    deprecated?: boolean
+    searchable?: boolean
+    excludeCountryCodes?: string[]
 }
 
 export interface TapTagsJson {

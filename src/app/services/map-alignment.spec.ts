@@ -95,6 +95,11 @@ describe('map marker alignment', () => {
                         capture.width = mapCanvas.width
                         capture.height = mapCanvas.height
                         const context = capture.getContext('2d')
+                        if (!context) {
+                            throw new Error(
+                                'Unable to create a canvas context.'
+                            )
+                        }
                         context.drawImage(mapCanvas, 0, 0)
                         const image = context.getImageData(
                             0,

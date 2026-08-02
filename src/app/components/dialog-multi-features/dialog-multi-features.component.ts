@@ -8,14 +8,7 @@ import {
     ModalController,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
-import { OsmGoFeature } from '@osmgo/type'
-
-interface SpritePosition {
-    height: number
-    width: number
-    x: number
-    y: number
-}
+import type { JsonSprites, OsmGoFeature } from '@osmgo/type'
 
 type DialogFeature = OsmGoFeature & {
     properties: OsmGoFeature['properties'] & { _name?: string }
@@ -38,7 +31,7 @@ export class DialogMultiFeaturesComponent {
     readonly modalCtrl = inject(ModalController)
 
     readonly features = input.required<DialogFeature[]>()
-    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
+    readonly jsonSprites = input.required<JsonSprites>()
 
     selectFeature(feature: DialogFeature) {
         this.modalCtrl.dismiss(feature)

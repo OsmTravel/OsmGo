@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing'
+import type { Tag } from '@osmgo/type'
 import { SelectComponent } from './select.component'
 
 describe('SelectComponent', () => {
@@ -9,7 +10,7 @@ describe('SelectComponent', () => {
         options: [{ v: 'male' }, { v: 'female' }, { v: 'unisex' }],
     }
 
-    function createComponent(tag) {
+    function createComponent(tag: Tag): SelectComponent {
         const fixture = TestBed.createComponent(SelectComponent)
         fixture.componentRef.setInput('preset', genderPreset)
         fixture.componentRef.setInput('tag', tag)

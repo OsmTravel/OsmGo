@@ -1,15 +1,12 @@
 import { Pipe } from '@angular/core'
-
-interface DeprecatableItem {
-    deprecated?: boolean
-}
+import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterDeprecatedTag',
     pure: false,
 })
 export class FilterDeprecatedTagPipe {
-    transform<T extends DeprecatableItem>(items: T[] | null | undefined): T[] {
+    transform(items: TagConfig[] | null | undefined): TagConfig[] {
         if (!items) {
             return []
         }

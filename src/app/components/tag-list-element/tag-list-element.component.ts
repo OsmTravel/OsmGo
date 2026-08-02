@@ -1,16 +1,9 @@
 import { Component, input, output } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonButton, IonIcon } from '@ionic/angular/standalone'
-import type { TagConfig } from '@osmgo/type'
+import type { JsonSprites, TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
-
-interface SpritePosition {
-    height: number
-    width: number
-    x: number
-    y: number
-}
 
 @Component({
     selector: 'app-tag-list-element',
@@ -28,7 +21,7 @@ export class TagListElementComponent {
     readonly tag = input.required<TagConfig>()
     readonly countryTags = input('')
     readonly languageTags = input('en')
-    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
+    readonly jsonSprites = input.required<JsonSprites>()
     readonly geometriesFilter = input<string[]>([])
     readonly bookmarksIds = input<string[]>([])
     readonly oldTagConfig = input<TagConfig>()

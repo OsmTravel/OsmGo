@@ -25,8 +25,8 @@ export class ReadPresets {
     readonly displayCode = input(false)
     readonly tag = input.required<Tag>()
     readonly preset = input.required<Preset>()
-    readonly language = input(undefined)
-    readonly countryCode = input(undefined)
+    readonly language = input('en')
+    readonly countryCode = input('')
 
     get openingHoursValue(): string {
         return String(this.tag().value ?? '')
