@@ -19,10 +19,6 @@ button {
 .map-control--menu {
     top: max(14px, env(safe-area-inset-top));
     left: 14px;
-
-    .osmgo-map-button mat-icon {
-        transform: translateY(2px);
-    }
 }
 
 .map-control--pending {
@@ -88,18 +84,10 @@ button {
     left: 14px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr) 48px;
-    gap: 7px;
+    grid-template-columns: 48px clamp(112px, 32vw, 160px) 48px 48px;
+    justify-content: space-between;
+    gap: 0;
     padding-inline: 8px;
-}
-
-.map-action-group {
-    display: flex;
-    width: fit-content;
-    max-width: 100%;
-    min-width: 0;
-    align-items: center;
-    justify-self: center;
 }
 
 .dock-button {
@@ -120,6 +108,7 @@ button {
 }
 
 .basemap-button {
+    grid-column: 1;
     justify-self: start;
 
     &.is-active {
@@ -129,7 +118,9 @@ button {
 }
 
 .refresh-button {
-    max-width: calc(100% - 48px);
+    grid-column: 2;
+    width: clamp(112px, 32vw, 160px);
+    max-width: 100%;
     min-width: 112px;
     height: 48px;
     overflow: hidden;
@@ -186,6 +177,10 @@ button {
     }
 }
 
+.geolocation-button {
+    grid-column: 3;
+}
+
 :host ::ng-deep .refresh-button .mdc-button__label {
     display: flex;
     width: 100%;
@@ -215,6 +210,7 @@ button {
 }
 
 .map-action-dock--browse .add-button {
+    grid-column: 4;
     justify-self: end;
 }
 

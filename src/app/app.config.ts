@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter } from '@angular/router'
 import { provideServiceWorker } from '@angular/service-worker'
 import { routes } from '@app/app.routes'
+import { Capacitor } from '@capacitor/core'
 import { environment } from '@environments/environment'
 import { provideTranslateService } from '@ngx-translate/core'
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
@@ -26,7 +27,7 @@ export const appConfig: ApplicationConfig = {
         provideHttpClient(withXhr(), withInterceptorsFromDi()),
         provideAnimationsAsync(),
         provideServiceWorker('ngsw-worker.js', {
-            enabled: environment.production,
+            enabled: environment.production && !Capacitor.isNativePlatform(),
         }),
         provideTranslateService({
             fallbackLang: 'en',

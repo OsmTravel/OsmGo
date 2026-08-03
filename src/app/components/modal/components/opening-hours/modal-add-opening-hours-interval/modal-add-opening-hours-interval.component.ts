@@ -122,6 +122,7 @@ export class ModalAddOpeningHoursIntervalComponent {
     private readonly data = inject<OpeningHoursDialogData>(MAT_DIALOG_DATA, {
         optional: true,
     })
+    private readonly previousEndTimes = new Map<number, string>()
     private nextTimeRangeId = 0
     private nextGroupId = 0
 
@@ -157,6 +158,26 @@ export class ModalAddOpeningHoursIntervalComponent {
                     : group
             )
         )
+    }
+
+    toggleEndAtMidnight(groupId: number, timeId: number): void {
+        const time = this.groups()
+            .find((group) => group.id === groupId)
+            ?.times.find((candidate) => candidate.id === timeId)
+        if (!time) return
+
+        if (time.end === '24:00') {
+            this.updateTimeRange(
+                groupId,
+                timeId,
+                'end',
+                this.previousEndTimes.get(timeId) ?? '23:55'
+            )
+            return
+        }
+
+        this.previousEndTimes.set(timeId, time.end)
+        this.updateTimeRange(groupId, timeId, 'end', '24:00')
     }
 
     addNewInterval(groupId: number): void {

@@ -63,6 +63,8 @@
         "SELECTION": {
             "SELECTED_OBJECT": "Objet sélectionné",
             "RESIZE_PANEL": "Redimensionner le panneau",
+            "EXPAND_PANEL": "Déployer la fiche",
+            "REDUCE_PANEL": "Réduire la fiche",
             "ADD_BOOKMARK": "Ajouter aux favoris",
             "REMOVE_BOOKMARK": "Retirer des favoris",
             "DISCARD_TITLE": "Abandonner les modifications ?",

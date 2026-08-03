@@ -48,7 +48,10 @@ export class AppComponent implements OnDestroy {
                         return
                     }
                     void this.router.navigate(['/'], {
-                        queryParams: Object.fromEntries(callback.searchParams),
+                        queryParams: {
+                            ...Object.fromEntries(callback.searchParams),
+                            nativeOAuthCallbackUrl: callback.href,
+                        },
                     })
                 }
             )

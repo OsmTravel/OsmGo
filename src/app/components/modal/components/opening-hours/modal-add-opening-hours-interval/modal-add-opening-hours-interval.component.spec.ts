@@ -37,6 +37,21 @@ describe('ModalAddOpeningHoursIntervalComponent', () => {
         expect(component.groups()[0].times[0].start).toBe('10:30')
     })
 
+    it('offers 24:00 explicitly and restores the previous native end time', () => {
+        const component = createComponent()
+        const group = component.groups()[0]
+        const time = group.times[0]
+
+        component.updateTimeRange(group.id, time.id, 'end', '18:30')
+        component.toggleEndAtMidnight(group.id, time.id)
+
+        expect(component.groups()[0].times[0].end).toBe('24:00')
+
+        component.toggleEndAtMidnight(group.id, time.id)
+
+        expect(component.groups()[0].times[0].end).toBe('18:30')
+    })
+
     it('creates multiple independent day groups in one submission', () => {
         const component = createComponent()
         const weekGroup = component.groups()[0]

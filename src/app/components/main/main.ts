@@ -19,7 +19,7 @@ import { ActivatedRoute, Router, RouterOutlet } from '@angular/router'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import { App as CapacitorApp } from '@capacitor/app'
-import type { PluginListenerHandle } from '@capacitor/core'
+import { Capacitor, type PluginListenerHandle } from '@capacitor/core'
 import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
 import { MenuPage } from '@components/menu/menu'
 import type { ModalDismissData } from '@components/modal/modal'
@@ -98,7 +98,6 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     private pendingAuthCallbackUrl: string | null = null
     private authCallbackInProgress = false
     private initialDataLoaded = false
-    private tokenLoaded = Promise.resolve<string | null>(null)
 
     readonly menuIsOpen = signal(false)
     readonly newVersion = signal(false)
@@ -241,13 +240,14 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             .subscribe((params) => {
                 if (params['code'] || params['state'] || params['error']) {
                     if (!this.authCallbackInProgress) {
-                        this.pendingAuthCallbackUrl = window.location.href
+                        this.pendingAuthCallbackUrl =
+                            typeof params['nativeOAuthCallbackUrl'] === 'string'
+                                ? params['nativeOAuthCallbackUrl']
+                                : window.location.href
                     }
                     this.tryHandleAuthCallback()
                 }
             })
-
-        this.tokenLoaded = this.osmAuthService.loadToken()
 
         const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
         if (
@@ -331,17 +331,19 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             }
         }
 
-        this.swUpdate.versionUpdates
-            .pipe(
-                filter(
-                    (evt): evt is VersionReadyEvent =>
-                        evt.type === 'VERSION_READY'
-                ),
-                takeUntilDestroyed(this.destroyRef)
-            )
-            .subscribe(() => {
-                this.newVersion.set(true)
-            })
+        if (!Capacitor.isNativePlatform() && this.swUpdate.isEnabled) {
+            this.swUpdate.versionUpdates
+                .pipe(
+                    filter(
+                        (evt): evt is VersionReadyEvent =>
+                            evt.type === 'VERSION_READY'
+                    ),
+                    takeUntilDestroyed(this.destroyRef)
+                )
+                .subscribe(() => {
+                    this.newVersion.set(true)
+                })
+        }
     }
 
     private tryHandleAuthCallback(): void {
@@ -369,6 +371,7 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                             state: null,
                             error: null,
                             error_description: null,
+                            nativeOAuthCallbackUrl: null,
                         },
                         queryParamsHandling: 'merge',
                         replaceUrl: true,
@@ -386,27 +389,25 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     }
 
     private refreshStoredAuthentication(): void {
-        void this.tokenLoaded.then((token) => {
-            if (
-                !token ||
-                this.pendingAuthCallbackUrl ||
-                this.authCallbackInProgress
-            ) {
-                return
-            }
+        if (
+            !this.osmAuthService.getToken() ||
+            this.pendingAuthCallbackUrl ||
+            this.authCallbackInProgress
+        ) {
+            return
+        }
 
-            this.osmApi
-                .getUserDetail$()
-                .pipe(take(1), takeUntilDestroyed(this.destroyRef))
-                .subscribe({
-                    error: (error) => {
-                        console.error(
-                            'Unable to refresh the OpenStreetMap account.',
-                            error
-                        )
-                    },
-                })
-        })
+        this.osmApi
+            .getUserDetail$()
+            .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+            .subscribe({
+                error: (error) => {
+                    console.error(
+                        'Unable to refresh the OpenStreetMap account.',
+                        error
+                    )
+                },
+            })
     }
 
     openMenu(): void {

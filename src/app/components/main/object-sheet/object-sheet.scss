@@ -338,7 +338,7 @@
 
 .sheet-actions {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: 48px minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: 10px;
     padding: 12px 18px max(18px, env(safe-area-inset-bottom));
     background: var(--osmgo-surface);
@@ -348,6 +348,16 @@
         border-radius: 16px;
         font-size: 1rem;
         font-weight: 650;
+    }
+}
+
+.sheet-resize-action {
+    align-self: center;
+    color: var(--osmgo-blue);
+    border: 1px solid var(--osmgo-outline-soft);
+
+    &.is-expanded {
+        background: var(--osmgo-blue-container);
     }
 }
 
@@ -402,6 +412,14 @@
     .object-sheet,
     :host.sheet-expanded .object-sheet {
         border-radius: 28px;
+    }
+
+    .sheet-actions {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .sheet-resize-action {
+        display: none;
     }
 }
 

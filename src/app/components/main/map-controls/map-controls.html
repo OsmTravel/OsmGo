@@ -62,50 +62,48 @@
         >
     </button>
 
-    <div class="map-action-group">
-        <button
-            mat-flat-button
-            class="refresh-button"
-            type="button"
-            data-testid="load-osm-data"
-            [disabled]="
-                    mapService.isProcessing() ||
-                    (configService.currentZoom() ?? 0) < 14
-                "
-            [matTooltip]="'MAIN.BUTTONS.LOAD_DATA' | translate"
-            [attr.aria-label]="'MAIN.BUTTONS.LOAD_DATA' | translate"
-            (click)="refreshRequested.emit()"
-        >
-            <span class="refresh-button__content">
-                @if (mapService.isProcessing()) {
-                <mat-spinner diameter="22"></mat-spinner>
-                } @else {
-                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-                    >refresh</mat-icon
-                >
-                }
-                <span class="refresh-button__label">
-                    {{ (mapService.isProcessing() ? 'MAIN.BUTTONS.LOADING_DATA'
-                    : 'MAIN.BUTTONS.REFRESH_DATA' ) | translate }}
-                </span>
-            </span>
-        </button>
-
-        <button
-            mat-icon-button
-            class="dock-button"
-            type="button"
-            data-testid="center-on-gps"
-            [disabled]="!locationService.gpsIsReady()"
-            [matTooltip]="'MAIN.BUTTONS.CENTER_GPS' | translate"
-            [attr.aria-label]="'MAIN.BUTTONS.CENTER_GPS' | translate"
-            (click)="mapService.centerOnMyPosition()"
-        >
+    <button
+        mat-flat-button
+        class="refresh-button"
+        type="button"
+        data-testid="load-osm-data"
+        [disabled]="
+                mapService.isProcessing() ||
+                (configService.currentZoom() ?? 0) < 14
+            "
+        [matTooltip]="'MAIN.BUTTONS.LOAD_DATA' | translate"
+        [attr.aria-label]="'MAIN.BUTTONS.LOAD_DATA' | translate"
+        (click)="refreshRequested.emit()"
+    >
+        <span class="refresh-button__content">
+            @if (mapService.isProcessing()) {
+            <mat-spinner diameter="22"></mat-spinner>
+            } @else {
             <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-                >my_location</mat-icon
+                >refresh</mat-icon
             >
-        </button>
-    </div>
+            }
+            <span class="refresh-button__label">
+                {{ (mapService.isProcessing() ? 'MAIN.BUTTONS.LOADING_DATA' :
+                'MAIN.BUTTONS.REFRESH_DATA' ) | translate }}
+            </span>
+        </span>
+    </button>
+
+    <button
+        mat-icon-button
+        class="dock-button geolocation-button"
+        type="button"
+        data-testid="center-on-gps"
+        [disabled]="!locationService.gpsIsReady()"
+        [matTooltip]="'MAIN.BUTTONS.CENTER_GPS' | translate"
+        [attr.aria-label]="'MAIN.BUTTONS.CENTER_GPS' | translate"
+        (click)="mapService.centerOnMyPosition()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >my_location</mat-icon
+        >
+    </button>
 
     <button
         mat-fab

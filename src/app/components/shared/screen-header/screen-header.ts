@@ -17,5 +17,6 @@ import { TranslateModule } from '@ngx-translate/core'
 })
 export class ScreenHeaderComponent {
     readonly title = input.required<string>()
+    readonly respectSafeArea = input(true)
     readonly backRequested = output<void>()
 }

@@ -24,6 +24,31 @@ body {
     font-variation-settings: 'FILL' 1;
 }
 
+// Angular Material aligns icon buttons on the text baseline and offsets icons
+// inside labelled buttons towards the leading edge. Keep every icon on a true
+// geometric centre instead, regardless of the button size.
+.mat-mdc-button-base {
+    --mat-button-filled-icon-offset: 0;
+    --mat-button-outlined-icon-offset: 0;
+    --mat-button-protected-icon-offset: 0;
+    --mat-button-text-icon-offset: 0;
+    --mat-button-tonal-icon-offset: 0;
+}
+
+button.mat-mdc-icon-button.mat-mdc-button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+
+    > .mat-icon {
+        display: block;
+        margin: 0;
+        line-height: 1;
+    }
+}
+
 .positionMarkersSize {
     width: 64px;
     height: 64px;

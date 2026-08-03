@@ -424,6 +424,13 @@ export class ObjectSheetComponent {
         this.levelChange.emit(nextLevel[this.level()])
     }
 
+    toggleExpandedLevel(): void {
+        if (this.isEditing() || this.level() === 'collapsed') return
+        this.levelChange.emit(
+            this.level() === 'expanded' ? 'medium' : 'expanded'
+        )
+    }
+
     onPointerDown(event: PointerEvent): void {
         if (this.isEditing()) return
         this.pointerStartY = event.clientY

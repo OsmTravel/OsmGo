@@ -265,6 +265,31 @@ describe('ObjectSheetComponent swipes', () => {
         expect(levelChange).toHaveBeenCalledWith('expanded')
     })
 
+    it.each([
+        ['medium', 'expanded'],
+        ['expanded', 'medium'],
+    ] as const)(
+        'toggles the mobile sheet button from %s to %s',
+        (level, expected) => {
+            const fixture = TestBed.createComponent(ObjectSheetComponent)
+            fixture.componentRef.setInput('level', level)
+            fixture.componentRef.setInput(
+                'selection',
+                selectionWith(1, 'information', '#9d7178')
+            )
+            const levelChange = vi.fn()
+            fixture.componentInstance.levelChange.subscribe(levelChange)
+            fixture.detectChanges()
+
+            const resizeButton = fixture.nativeElement.querySelector(
+                '[data-testid="toggle-sheet-size"]'
+            ) as HTMLButtonElement
+            resizeButton.click()
+
+            expect(levelChange).toHaveBeenCalledWith(expected)
+        }
+    )
+
     it('ignores an upward swipe outside the header', () => {
         const component = createComponent('medium')
         const levelChange = vi.fn()

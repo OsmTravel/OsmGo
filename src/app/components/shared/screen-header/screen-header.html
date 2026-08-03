@@ -1,4 +1,7 @@
-<mat-toolbar class="screen-toolbar">
+<mat-toolbar
+    class="screen-toolbar"
+    [class.screen-toolbar--safe-area]="respectSafeArea()"
+>
     <button
         mat-icon-button
         type="button"

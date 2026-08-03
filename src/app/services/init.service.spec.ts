@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core'
 import { AppStorage } from '@services/app-storage.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
+import { OsmAuthService } from '@services/osm-auth.service'
 import { TagsService } from '@services/tags.service'
 import { UploadCoordinatorService } from '@services/upload-coordinator.service'
 import { firstValueFrom, of, throwError, timer } from 'rxjs'
@@ -75,6 +76,12 @@ describe('InitService', () => {
                 return coordinateResult
             }),
         }
+        const osmAuth = {
+            loadToken: vi.fn(async () => {
+                expect(configLoaded).toBe(true)
+                return 'dev-token'
+            }),
+        }
         const uploadCoordinator = {
             recoverJournal: vi.fn(async () => ({ kind: 'idle' })),
         }
@@ -87,6 +94,7 @@ describe('InitService', () => {
                 { provide: ConfigService, useValue: configService },
                 { provide: TagsService, useValue: tagsService },
                 { provide: DataService, useValue: dataService },
+                { provide: OsmAuthService, useValue: osmAuth },
                 { provide: OsmApiService, useValue: osmApi },
                 {
                     provide: UploadCoordinatorService,
@@ -102,6 +110,7 @@ describe('InitService', () => {
             configService,
             tagsService,
             dataService,
+            osmAuth,
             osmApi,
             uploadCoordinator,
             storage,
@@ -109,7 +118,7 @@ describe('InitService', () => {
     }
 
     it('loads the selected API environment before resolving a linked object', async () => {
-        const { service, configService, osmApi, uploadCoordinator } =
+        const { service, configService, osmAuth, osmApi, uploadCoordinator } =
             configure()
 
         const result = await firstValueFrom(
@@ -117,6 +126,8 @@ describe('InitService', () => {
         )
 
         expect(configService.loadConfig$).toHaveBeenCalledOnce()
+        expect(osmAuth.loadToken).toHaveBeenCalledOnce()
+        expect(result.token).toBe('dev-token')
         expect(osmApi.getFirstCoordFromIdObject$).toHaveBeenCalledWith(
             'node/4330907486'
         )

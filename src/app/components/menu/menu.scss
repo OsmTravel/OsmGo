@@ -30,10 +30,10 @@
 
 .menu-header {
     display: flex;
-    min-height: calc(78px + env(safe-area-inset-top));
+    min-height: calc(64px + env(safe-area-inset-top));
     align-items: center;
     gap: 10px;
-    padding: env(safe-area-inset-top) 16px 0 10px;
+    padding: env(safe-area-inset-top) 12px 0 10px;
     color: #fff;
     background: var(--osmgo-blue);
 

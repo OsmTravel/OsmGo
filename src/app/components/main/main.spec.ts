@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { ActivatedRoute, Router } from '@angular/router'
 import { SwUpdate } from '@angular/service-worker'
+import { Capacitor } from '@capacitor/core'
 import { TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -22,10 +23,13 @@ import { MainPage } from './main'
 interface MainPageDependencies {
     modalCtrl?: Record<string, unknown>
     osmApi?: Record<string, unknown>
+    osmAuthService?: Record<string, unknown>
     mapService?: Record<string, unknown>
     dataService?: Record<string, unknown>
     alertService?: Record<string, unknown>
     configService?: Record<string, unknown>
+    activatedRoute?: Record<string, unknown>
+    swUpdate?: Record<string, unknown>
 }
 
 interface MainPageMapServiceStub extends Record<string, unknown> {
@@ -38,10 +42,13 @@ interface MainPageMapServiceStub extends Record<string, unknown> {
 const createPage = ({
     modalCtrl = {},
     osmApi = {},
+    osmAuthService = {},
     mapService = {},
     dataService = {},
     alertService = {},
     configService = {},
+    activatedRoute = {},
+    swUpdate = {},
 }: MainPageDependencies = {}) => {
     const resolvedMapService: MainPageMapServiceStub = {
         featureChoiceRequested$: new Subject(),
@@ -78,10 +85,10 @@ const createPage = ({
             { provide: ConfigService, useValue: resolvedConfigService },
             { provide: Router, useValue: router },
             { provide: TranslateService, useValue: {} },
-            { provide: SwUpdate, useValue: {} },
+            { provide: SwUpdate, useValue: swUpdate },
             { provide: InitService, useValue: {} },
-            { provide: OsmAuthService, useValue: {} },
-            { provide: ActivatedRoute, useValue: {} },
+            { provide: OsmAuthService, useValue: osmAuthService },
+            { provide: ActivatedRoute, useValue: activatedRoute },
         ],
     })
     const page = TestBed.runInInjectionContext(() => new MainPage())
@@ -95,6 +102,74 @@ const createPage = ({
 }
 
 describe('MainPage', () => {
+    it.each([
+        { native: false, expected: true },
+        { native: true, expected: false },
+    ])(
+        'sets the PWA update indicator to $expected when native is $native',
+        ({ native, expected }) => {
+            const platform = vi
+                .spyOn(Capacitor, 'isNativePlatform')
+                .mockReturnValue(native)
+            const queryParams = new Subject<Record<string, string>>()
+            const versionUpdates = new Subject<{ type: string }>()
+            const { page } = createPage({
+                activatedRoute: {
+                    queryParams,
+                    snapshot: { queryParamMap: { get: () => null } },
+                },
+                swUpdate: { isEnabled: true, versionUpdates },
+            })
+
+            page.ngOnInit()
+            versionUpdates.next({ type: 'VERSION_READY' })
+
+            expect(page.newVersion()).toBe(expected)
+            platform.mockRestore()
+        }
+    )
+
+    it('forwards the original native OAuth callback URL', () => {
+        const queryParams = new Subject<Record<string, string>>()
+        const nativeCallbackUrl =
+            'osmgo://auth?code=authorization-code&state=oauth-state'
+        const handleCallback = vi.fn().mockReturnValue(of(undefined))
+        const { page, router } = createPage({
+            activatedRoute: {
+                queryParams,
+                snapshot: { queryParamMap: { get: () => null } },
+            },
+            osmAuthService: {
+                handleCallback,
+                loadToken: () => Promise.resolve(null),
+            },
+            osmApi: { getUserDetail$: () => of(undefined) },
+            swUpdate: { versionUpdates: new Subject() },
+        })
+        ;(page as unknown as { initialDataLoaded: boolean }).initialDataLoaded =
+            true
+        page.ngOnInit()
+
+        queryParams.next({
+            code: 'authorization-code',
+            state: 'oauth-state',
+            nativeOAuthCallbackUrl: nativeCallbackUrl,
+        })
+
+        expect(handleCallback).toHaveBeenCalledWith(nativeCallbackUrl)
+        expect(router.navigate).toHaveBeenCalledWith([], {
+            queryParams: {
+                code: null,
+                state: null,
+                error: null,
+                error_description: null,
+                nativeOAuthCallbackUrl: null,
+            },
+            queryParamsHandling: 'merge',
+            replaceUrl: true,
+        })
+    })
+
     it('updates menu state and renderer state together', () => {
         const { page, configService } = createPage()
 

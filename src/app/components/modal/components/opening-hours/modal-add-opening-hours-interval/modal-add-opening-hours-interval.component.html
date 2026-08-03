@@ -111,12 +111,13 @@
                                     <input
                                         #endInput
                                         matInput
-                                        required
-                                        type="text"
-                                        inputmode="numeric"
-                                        placeholder="HH:MM"
-                                        pattern="(?:(?:[01]\d|2[0-3]):[0-5]\d|24:00)"
-                                        [value]="time.end"
+                                        [required]="time.end !== '24:00'"
+                                        type="time"
+                                        step="300"
+                                        [readOnly]="time.end === '24:00'"
+                                        [value]="
+                                            time.end === '24:00' ? '' : time.end
+                                        "
                                         (input)="
                                             updateTimeRange(
                                                 group.id,
@@ -134,6 +135,28 @@
                                             )
                                         "
                                     />
+                                    <button
+                                        mat-button
+                                        matSuffix
+                                        type="button"
+                                        class="midnight-action"
+                                        [class.is-active]="time.end === '24:00'"
+                                        [attr.aria-pressed]="
+                                            time.end === '24:00'
+                                        "
+                                        [attr.aria-label]="
+                                            ('OPENINGHOURS.END_TIME'
+                                                | translate) + ' 24:00'
+                                        "
+                                        (click)="
+                                            toggleEndAtMidnight(
+                                                group.id,
+                                                time.id
+                                            )
+                                        "
+                                    >
+                                        24:00
+                                    </button>
                                 </mat-form-field>
                             </div>
                             <button

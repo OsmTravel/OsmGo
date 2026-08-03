@@ -12,9 +12,9 @@
 }
 
 .editor-toolbar {
-    min-height: calc(68px + env(safe-area-inset-top));
+    min-height: 64px;
     gap: 10px;
-    padding: env(safe-area-inset-top) 10px 0;
+    padding: 4px 10px;
     color: var(--osmgo-ink-strong);
     background: var(--osmgo-surface);
     box-shadow: 0 2px 12px rgba(25, 42, 35, 0.1);

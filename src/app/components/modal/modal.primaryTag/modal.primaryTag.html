@@ -2,6 +2,7 @@
 <main class="category-picker">
     <app-screen-header
         [title]="'MODAL_SELECTED_ITEM.SELECT_CATEGORY' | translate"
+        [respectSafeArea]="!embedded()"
         (backRequested)="cancel()"
     ></app-screen-header>
 

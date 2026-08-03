@@ -3,6 +3,7 @@ import { AppStorage } from '@services/app-storage.service'
 import type { Config } from '@services/config.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
+import { OsmAuthService } from '@services/osm-auth.service'
 import { OSM_STATE_STORAGE_KEY } from '@services/osm-state'
 import { TagsService } from '@services/tags.service'
 import { UploadCoordinatorService } from '@services/upload-coordinator.service'
@@ -53,6 +54,7 @@ export class InitService {
     readonly tagsService = inject(TagsService)
     readonly dataService = inject(DataService)
     private readonly storage = inject(AppStorage)
+    private readonly osmAuth = inject(OsmAuthService)
     private readonly osmApi = inject(OsmApiService)
     private readonly uploadCoordinator = inject(UploadCoordinatorService)
 
@@ -129,6 +131,9 @@ export class InitService {
 
             return forkJoin({
                 config: config$,
+                token: config$.pipe(
+                    switchMap(() => from(this.osmAuth.loadToken()))
+                ),
                 country: this.recover(
                     'country',
                     this.configService.getCountryConfig$(),

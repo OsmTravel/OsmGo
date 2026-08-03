@@ -84,7 +84,7 @@ describe('MapControlsComponent', () => {
         expect(refreshRequested).toHaveBeenCalledOnce()
     })
 
-    it('groups basemap, map actions and creation into three rail zones', () => {
+    it('renders the four map actions as independent rail zones', () => {
         const fixture = TestBed.createComponent(MapControlsComponent)
         fixture.detectChanges()
 
@@ -94,18 +94,18 @@ describe('MapControlsComponent', () => {
         const basemap = rail.querySelector(
             '[data-testid="toggle-basemap"]'
         ) as HTMLElement
-        const center = rail.querySelector('.map-action-group') as HTMLElement
-        const refresh = center.querySelector(
+        const refresh = rail.querySelector(
             '[data-testid="load-osm-data"]'
         ) as HTMLElement
-        const geolocation = center.querySelector(
+        const geolocation = rail.querySelector(
             '[data-testid="center-on-gps"]'
         ) as HTMLElement
         const add = rail.querySelector('[data-testid="add-poi"]') as HTMLElement
 
         expect(basemap.parentElement).toBe(rail)
-        expect(refresh.parentElement).toBe(center)
-        expect(geolocation.parentElement).toBe(center)
+        expect(refresh.parentElement).toBe(rail)
+        expect(geolocation.parentElement).toBe(rail)
+        expect(geolocation.classList).toContain('geolocation-button')
         expect(add.parentElement).toBe(rail)
     })
 

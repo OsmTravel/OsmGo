@@ -224,6 +224,32 @@
 
     <footer class="sheet-actions">
         <button
+            mat-icon-button
+            type="button"
+            class="sheet-resize-action"
+            data-testid="toggle-sheet-size"
+            [class.is-expanded]="level() === 'expanded'"
+            [attr.aria-pressed]="level() === 'expanded'"
+            [matTooltip]="
+                (level() === 'expanded'
+                    ? 'MAIN.SELECTION.REDUCE_PANEL'
+                    : 'MAIN.SELECTION.EXPAND_PANEL'
+                ) | translate
+            "
+            [attr.aria-label]="
+                (level() === 'expanded'
+                    ? 'MAIN.SELECTION.REDUCE_PANEL'
+                    : 'MAIN.SELECTION.EXPAND_PANEL'
+                ) | translate
+            "
+            (click)="toggleExpandedLevel()"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
+                {{ level() === 'expanded' ? 'collapse_content' :
+                'expand_content' }}
+            </mat-icon>
+        </button>
+        <button
             mat-stroked-button
             type="button"
             class="close-action"

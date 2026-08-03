@@ -12,7 +12,7 @@
 
 .dialog-header {
     display: flex;
-    min-height: 66px;
+    min-height: 58px;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
@@ -34,6 +34,19 @@
         margin: 0;
         font-size: 20px;
         font-weight: 700;
+    }
+}
+
+.midnight-action {
+    min-width: 54px;
+    padding-inline: 6px;
+    color: var(--osmgo-ink-muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+
+    &.is-active {
+        color: var(--osmgo-blue-dark);
+        background: var(--osmgo-blue-container);
     }
 }
 

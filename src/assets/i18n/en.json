@@ -63,6 +63,8 @@
         "SELECTION": {
             "SELECTED_OBJECT": "Selected object",
             "RESIZE_PANEL": "Resize panel",
+            "EXPAND_PANEL": "Expand object sheet",
+            "REDUCE_PANEL": "Reduce object sheet",
             "ADD_BOOKMARK": "Add bookmark",
             "REMOVE_BOOKMARK": "Remove bookmark",
             "DISCARD_TITLE": "Discard changes?",
