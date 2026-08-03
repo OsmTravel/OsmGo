@@ -640,7 +640,7 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
         })
         .toBe('wood')
 
-    await page.getByRole('button', { name: 'Close', exact: true }).click()
+    await expect(page.getByTestId('selected-object-sheet')).toHaveCount(0)
     await page.getByTestId('add-poi').click()
     await page
         .getByRole('button', { name: 'Add an object', exact: true })
@@ -665,6 +665,8 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
     const nameInput = page.getByPlaceholder('Name')
     await nameInput.fill('Edited bench')
     await page.getByTestId('save-poi').click()
+
+    await expect(page.getByTestId('selected-object-sheet')).toHaveCount(0)
 
     await expect
         .poll(async () => {

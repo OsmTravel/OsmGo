@@ -294,6 +294,58 @@ describe('MainPage', () => {
         expect(configService.freezeMapRenderer).toBe(false)
     })
 
+    it.each(['Create', 'Update'] as const)(
+        'closes the object sheet after a successful %s',
+        (type) => {
+            const showModal$ = new Subject<any>()
+            const { page, router } = createPage({
+                mapService: { showModal$ },
+            })
+            showModal$.next({
+                type,
+                geojson: { id: 'node/1' },
+                origineData: 'data',
+            })
+
+            page.handleSheetSession({
+                geojson: { id: 'node/1' },
+                origineData: 'data_changed',
+            } as any)
+
+            expect(page.selectedFeature()).toBeNull()
+            expect(page.sheetLevel()).toBe('medium')
+            expect(router.navigate).toHaveBeenCalledWith([], {
+                replaceUrl: true,
+                relativeTo: expect.anything(),
+                queryParams: { id: null },
+                queryParamsHandling: 'merge',
+            })
+        }
+    )
+
+    it('keeps a read sheet open after an action performed from that sheet', () => {
+        const showModal$ = new Subject<any>()
+        const updatedFeature = { id: 'node/1', updated: true }
+        const { page } = createPage({ mapService: { showModal$ } })
+        showModal$.next({
+            type: 'Read',
+            geojson: { id: 'node/1' },
+            origineData: 'data',
+        })
+
+        page.handleSheetSession({
+            geojson: updatedFeature,
+            origineData: 'data_changed',
+        } as any)
+
+        expect(page.selectedFeature()).toEqual({
+            type: 'Read',
+            geojson: updatedFeature,
+            origineData: 'data_changed',
+        })
+        expect(page.sheetLevel()).toBe('medium')
+    })
+
     it('ignores map background clicks while editing', () => {
         const showModal$ = new Subject<any>()
         const mapBackgroundClick$ = new Subject<void>()

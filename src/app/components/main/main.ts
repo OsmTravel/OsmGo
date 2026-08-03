@@ -514,13 +514,17 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         if (data.deleted) {
             this.closeSelection()
         } else if (data.geojson) {
-            this.readBeforeEdit.set(null)
-            this.selectedFeature.set({
-                type: 'Read',
-                geojson: data.geojson,
-                origineData: data.origineData ?? 'data_changed',
-            })
-            this.sheetLevel.set('medium')
+            if (selection.type === 'Create' || selection.type === 'Update') {
+                this.closeSelection()
+            } else {
+                this.readBeforeEdit.set(null)
+                this.selectedFeature.set({
+                    type: 'Read',
+                    geojson: data.geojson,
+                    origineData: data.origineData ?? 'data_changed',
+                })
+                this.sheetLevel.set('medium')
+            }
         } else if (data.type === 'Cancel') {
             const previousRead = this.readBeforeEdit()
             this.selectedFeature.set(
