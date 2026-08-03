@@ -31,6 +31,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import type {
     EventShowModal,
     FeatureIdSource,
+    OsmGoFeature,
     OsmGoFeatureCollection,
 } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
@@ -477,15 +478,15 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         })
     }
 
-    openSelectedDetails(): void {
-        if (this.selectedFeature()) this.sheetLevel.set('expanded')
-    }
-
-    editSelectedFeature(): void {
+    editSelectedFeature(replacementFeature?: OsmGoFeature): void {
         const selection = this.selectedFeature()
         if (selection) {
             this.readBeforeEdit.set(selection)
-            this.selectedFeature.set({ ...selection, type: 'Update' })
+            this.selectedFeature.set({
+                ...selection,
+                type: 'Update',
+                geojson: replacementFeature ?? selection.geojson,
+            })
             this.sheetLevel.set('expanded')
         }
     }

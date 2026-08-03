@@ -13,8 +13,13 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatDialog } from '@angular/material/dialog'
 import { MatIconModule } from '@angular/material/icon'
 import { MatMenuModule } from '@angular/material/menu'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+import { cloneDeep } from '@app/utils/clone'
 import { IconComponent } from '@components/icon/icon.component'
+import { AlertComponent } from '@components/modal/components/alert/alert.component'
+import { OpeningHoursComponent } from '@components/modal/components/opening-hours/opening-hours.component'
+import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
     type ModalDismissData,
     ObjectEditorContentComponent,
@@ -32,21 +37,34 @@ import type {
     TagConfig,
 } from '@osmgo/type'
 import { osmTagKeyToPresetId } from '@osmgo/utils'
-import { formatLocalizedDate } from '@pipes/localized-date.pipe'
+import {
+    formatLocalizedDate,
+    parseLocalizedDate,
+} from '@pipes/localized-date.pipe'
 import { RelativeTimePipe } from '@pipes/relative-time.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
+import { finalize } from 'rxjs/operators'
 
 export type ObjectSheetLevel = 'collapsed' | 'medium' | 'expanded'
 export type ObjectSheetMode = 'read' | 'edit' | 'create' | 'category' | 'saving'
 
 interface ObjectSummaryRow {
+    href?: string
     icon: string
+    isOpeningHours: boolean
     key: string
     label: string
     value: string
+}
+
+interface DeprecatedTags {
+    old: Record<string, string | number>
+    replace: Record<string, string | number>
 }
 
 const SUMMARY_ICONS: Record<string, string> = {
@@ -56,6 +74,7 @@ const SUMMARY_ICONS: Record<string, string> = {
     material: 'layers',
     opening_hours: 'schedule',
     start_date: 'calendar_month',
+    'survey:date': 'event_available',
     website: 'language',
     wheelchair: 'accessible',
 }
@@ -74,6 +93,7 @@ const SUMMARY_ORDER = ['material', 'start_date', 'artist_name', 'description']
     styleUrls: ['./object-sheet.scss'],
     imports: [
         CdkScrollable,
+        AlertComponent,
         IconComponent,
         MatButtonModule,
         ModalPrimaryTag,
@@ -81,7 +101,9 @@ const SUMMARY_ORDER = ['material', 'start_date', 'artist_name', 'description']
         MatIconModule,
         MatMenuModule,
         MatTooltipModule,
+        OpeningHoursComponent,
         RelativeTimePipe,
+        SurveyCard,
         TranslateModule,
     ],
     host: {
@@ -96,19 +118,21 @@ export class ObjectSheetComponent {
     readonly tagsService = inject(TagsService)
     readonly translate = inject(TranslateService)
     readonly mapService = inject(MapService)
+    private readonly dataService = inject(DataService)
+    private readonly osmApi = inject(OsmApiService)
     private readonly dialog = inject(MatDialog)
+    private readonly snackBar = inject(MatSnackBar)
 
     readonly selection = input.required<EventShowModal>()
     readonly level = input<ObjectSheetLevel>('medium')
     readonly closeRequested = output<void>()
-    readonly detailsRequested = output<void>()
-    readonly editRequested = output<void>()
+    readonly editRequested = output<OsmGoFeature | undefined>()
     readonly levelChange = output<ObjectSheetLevel>()
     readonly sessionCompleted = output<ModalDismissData>()
 
     readonly dragOffset = signal(0)
     readonly categoryOpen = signal(false)
-    readonly advancedTagsRequested = signal(false)
+    readonly displayCode = signal(false)
     readonly userLocale = this.resolveUserLocale()
     private pointerStartY: number | null = null
     private activePointerId: number | null = null
@@ -129,9 +153,6 @@ export class ObjectSheetComponent {
         if (this.selection().type === 'Update') return 'edit'
         return 'read'
     })
-    readonly showEmbeddedContent = computed(
-        () => this.isEditing() || this.level() === 'expanded'
-    )
     readonly categoryTagConfig = computed(() => {
         const currentTagConfig = this.editor()?.currentTagConfig()
         return (
@@ -198,12 +219,12 @@ export class ObjectSheetComponent {
         const feature = this.feature()
         const tags = feature.properties.tags
         const primaryKey = feature.properties.primaryTag.key
+        const displayCode = this.displayCode()
 
         return Object.entries(tags)
             .filter(
                 ([key, value]) =>
-                    key !== 'name' &&
-                    key !== primaryKey &&
+                    (displayCode || (key !== 'name' && key !== primaryKey)) &&
                     value !== '' &&
                     value !== undefined
             )
@@ -218,17 +239,67 @@ export class ObjectSheetComponent {
             .map(([key, value]) => {
                 const preset =
                     this.tagsService.presets()[osmTagKeyToPresetId(key)]
+                const rawValue = String(value)
                 return {
                     key,
-                    icon: SUMMARY_ICONS[key] ?? 'sell',
-                    label: this.getPresetLabel(key, preset),
-                    value: this.getPresetValue(String(value), preset),
+                    href:
+                        !displayCode &&
+                        preset?.type === 'url' &&
+                        /^https?:\/\//i.test(rawValue)
+                            ? rawValue
+                            : undefined,
+                    icon: displayCode ? 'code' : (SUMMARY_ICONS[key] ?? 'sell'),
+                    isOpeningHours: key === 'opening_hours' && !displayCode,
+                    label: displayCode ? key : this.getPresetLabel(key, preset),
+                    value: displayCode
+                        ? rawValue
+                        : this.getPresetValue(rawValue, preset),
                 }
             })
-            .slice(0, 5)
+    })
+    readonly lastSurvey = computed<Date | undefined>(() => {
+        const surveyDates = ['survey:date', 'check_date']
+            .map((key) => this.feature().properties.tags[key])
+            .filter((value): value is string | number => value !== undefined)
+            .map((value) => parseLocalizedDate(value))
+            .filter((value): value is Date => value !== null)
+        return surveyDates.length > 0
+            ? surveyDates.reduce((latest, current) =>
+                  current > latest ? current : latest
+              )
+            : undefined
+    })
+    readonly shouldShowSurveyCard = computed(() => {
+        const display = this.configService.getDisplaySurveyCard()
+        if (
+            display === 'never' ||
+            String(this.feature().properties.meta.timestamp) === '0'
+        ) {
+            return false
+        }
+        const lastSurvey = this.lastSurvey()
+        if (!lastSurvey) return true
+        const today = new Date()
+        if (this.generateISODate(lastSurvey) === this.generateISODate(today)) {
+            return false
+        }
+        if (display === 'always') return true
+        const oneYear = 31_536_000_000
+        return (
+            lastSurvey.getTime() <
+            today.getTime() - oneYear * this.configService.getSurveyCardYear()
+        )
+    })
+    readonly usedByWaysCount = computed(() => {
+        const usedByWays = this.feature().properties.usedByWays
+        return Array.isArray(usedByWays)
+            ? usedByWays.length
+            : usedByWays
+              ? 1
+              : 0
     })
     readonly metadataTimestamp = computed(() =>
-        this.feature().properties.meta.timestamp === '0'
+        String(this.feature().properties.meta.timestamp) === '0'
             ? 0
             : this.feature().properties.meta.timestamp
     )
@@ -251,7 +322,7 @@ export class ObjectSheetComponent {
                 `${selection.geojson.properties.type}/${selection.geojson.properties.id}`
             if (key === this.initializedObjectKey) return
             this.initializedObjectKey = key
-            this.advancedTagsRequested.set(false)
+            this.displayCode.set(false)
             this.categoryOpen.set(
                 selection.type === 'Create' &&
                     Boolean(selection.openPrimaryTagModalOnStart)
@@ -268,14 +339,81 @@ export class ObjectSheetComponent {
         }
     }
 
-    showDetails(): void {
-        this.advancedTagsRequested.set(false)
-        this.detailsRequested.emit()
+    toggleCode(): void {
+        this.displayCode.update((displayCode) => !displayCode)
+        this.levelChange.emit('expanded')
     }
 
-    showAdvancedTags(): void {
-        this.advancedTagsRequested.set(true)
-        this.levelChange.emit('expanded')
+    fixDeprecated(deprecated: DeprecatedTags): void {
+        const feature = cloneDeep(this.feature())
+        for (const deprecatedKey of Object.keys(deprecated.old)) {
+            delete feature.properties.tags[deprecatedKey]
+        }
+        feature.properties.tags = {
+            ...feature.properties.tags,
+            ...deprecated.replace,
+        }
+        this.editRequested.emit(feature)
+    }
+
+    handleSurveyYes(): void {
+        const feature = cloneDeep(this.feature())
+        const checkedKey = this.configService.config().checkedKey
+        delete feature.properties.tags[
+            checkedKey === 'survey:date' ? 'check_date' : 'survey:date'
+        ]
+        feature.properties.tags[checkedKey] = this.generateISODate(new Date())
+        this.persistFeature(feature)
+    }
+
+    handleSurveyNo(): void {
+        if (this.feature().properties.type !== 'node') return
+        const data: ConfirmDialogData = {
+            title: this.translate.instant(
+                'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER'
+            ),
+            message: this.translate.instant(
+                'MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE'
+            ),
+            cancelLabel: this.translate.instant('SHARED.CANCEL'),
+            confirmLabel: this.translate.instant('SHARED.CONFIRM'),
+            destructive: true,
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
+            })
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) this.deleteSelectedObject()
+            })
+    }
+
+    async cancelChange(): Promise<void> {
+        const originalFeature = cloneDeep(
+            this.feature().properties.originalData ?? undefined
+        )
+        try {
+            await this.dataService.cancelPendingChange(
+                String(this.feature().id)
+            )
+        } catch (error) {
+            this.presentToast(
+                error instanceof Error ? error.message : String(error)
+            )
+            return
+        }
+        if (originalFeature) {
+            this.sessionCompleted.emit({
+                redraw: true,
+                geojson: this.mapService.getIconStyle(originalFeature),
+                origineData: 'data',
+            })
+        } else {
+            this.sessionCompleted.emit({ redraw: true, deleted: true })
+        }
     }
 
     cycleLevel(): void {
@@ -435,7 +573,7 @@ export class ObjectSheetComponent {
             return
         }
         if (result.type === 'Edit') {
-            this.editRequested.emit()
+            this.editRequested.emit(undefined)
             return
         }
         this.sessionCompleted.emit(result)
@@ -448,6 +586,66 @@ export class ObjectSheetComponent {
     handleCategoryCompleted(tagConfig: TagConfig | null): void {
         if (tagConfig) this.editor()?.applyPrimaryTagSelection(tagConfig)
         this.categoryOpen.set(false)
+    }
+
+    private persistFeature(feature: OsmGoFeature): void {
+        this.mapService.setIsProcessing(true)
+        this.osmApi
+            .updateOsmElement(feature, this.selection().origineData)
+            .pipe(
+                finalize(() => {
+                    this.mapService.setIsProcessing(false)
+                })
+            )
+            .subscribe({
+                next: (updatedFeature) => {
+                    this.sessionCompleted.emit({
+                        redraw: true,
+                        geojson: updatedFeature,
+                        origineData: 'data_changed',
+                    })
+                },
+                error: (error: unknown) => {
+                    console.error(error)
+                    this.presentToast(this.translate.instant('SHARED.ERROR'))
+                },
+            })
+    }
+
+    private deleteSelectedObject(): void {
+        this.mapService.setIsProcessing(true)
+        this.osmApi
+            .deleteOsmElement(this.feature())
+            .pipe(
+                finalize(() => {
+                    this.mapService.setIsProcessing(false)
+                })
+            )
+            .subscribe({
+                next: () => {
+                    this.sessionCompleted.emit({
+                        redraw: true,
+                        deleted: true,
+                    })
+                },
+                error: (error: unknown) => {
+                    console.error(error)
+                    this.presentToast(this.translate.instant('SHARED.ERROR'))
+                },
+            })
+    }
+
+    private generateISODate(date: Date): string {
+        const year = date.getFullYear()
+        const month = String(date.getMonth() + 1).padStart(2, '0')
+        const day = String(date.getDate()).padStart(2, '0')
+        return `${year}-${month}-${day}`
+    }
+
+    private presentToast(message: string): void {
+        this.snackBar.open(message, this.translate.instant('SHARED.CLOSE'), {
+            duration: 4000,
+        })
     }
 
     private completeCancellation(): void {

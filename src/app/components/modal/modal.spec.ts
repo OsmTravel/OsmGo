@@ -186,16 +186,6 @@ describe('ObjectEditorContentComponent', () => {
         })
     })
 
-    it('asks the unified sheet to enter update mode from read mode', () => {
-        const { page } = createPage({ amenity: 'toilets' }, 'Read')
-        const dismissed = vi.fn()
-        page.dismissed.subscribe(dismissed)
-
-        page.updateMode()
-
-        expect(dismissed).toHaveBeenCalledWith({ type: 'Edit' })
-    })
-
     it('updates survey tags with a new signal value', () => {
         const { page } = createPage({ amenity: 'toilets' })
         const previousTags = page.tags

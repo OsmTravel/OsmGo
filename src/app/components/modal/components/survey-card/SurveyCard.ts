@@ -15,6 +15,7 @@ export class SurveyCard {
     readonly no = output<void>()
 
     readonly feature = input.required<OsmGoFeature>()
+    readonly disabled = input(false)
 
     handleYes(): void {
         this.yes.emit()

@@ -21,6 +21,20 @@ describe('ObjectSheetComponent swipes', () => {
         open: vi.fn(() => ({ afterClosed: () => of(false) })),
     }
     let bookmarksIds: ReturnType<typeof signal<string[]>>
+    let surveyDisplay: 'always' | 'never' | 'when_older'
+    let mapProcessing: ReturnType<typeof signal<boolean>>
+    let mapService: {
+        isProcessing: typeof mapProcessing
+        setIsProcessing: ReturnType<typeof vi.fn>
+        getIconStyle: ReturnType<typeof vi.fn>
+    }
+    let osmApi: {
+        updateOsmElement: ReturnType<typeof vi.fn>
+        deleteOsmElement: ReturnType<typeof vi.fn>
+    }
+    let dataService: {
+        cancelPendingChange: ReturnType<typeof vi.fn>
+    }
     let tagsService: {
         tags: ReturnType<typeof vi.fn>
         presets: ReturnType<typeof vi.fn>
@@ -84,6 +98,22 @@ describe('ObjectSheetComponent swipes', () => {
 
     beforeEach(() => {
         bookmarksIds = signal<string[]>([])
+        surveyDisplay = 'never'
+        mapProcessing = signal(false)
+        mapService = {
+            isProcessing: mapProcessing,
+            setIsProcessing: vi.fn((processing: boolean) =>
+                mapProcessing.set(processing)
+            ),
+            getIconStyle: vi.fn((feature) => feature),
+        }
+        osmApi = {
+            updateOsmElement: vi.fn((feature) => of(feature)),
+            deleteOsmElement: vi.fn(() => of(undefined)),
+        }
+        dataService = {
+            cancelPendingChange: vi.fn(() => Promise.resolve()),
+        }
         tagsService = {
             tags: vi.fn(() => []),
             presets: vi.fn(() => ({})),
@@ -114,10 +144,7 @@ describe('ObjectSheetComponent swipes', () => {
                 { provide: MatDialog, useValue: dialog },
                 {
                     provide: MapService,
-                    useValue: {
-                        isProcessing: signal(false),
-                        setIsProcessing: vi.fn(),
-                    },
+                    useValue: mapService,
                 },
                 {
                     provide: ConfigService,
@@ -128,14 +155,14 @@ describe('ObjectSheetComponent swipes', () => {
                             languageTags: 'fr',
                             languageUi: 'fr',
                         }),
-                        getDisplaySurveyCard: () => 'never',
+                        getDisplaySurveyCard: () => surveyDisplay,
                         getSurveyCardYear: () => 1,
                         getUiLanguage: () => 'fr',
                     },
                 },
                 { provide: TagsService, useValue: tagsService },
-                { provide: OsmApiService, useValue: {} },
-                { provide: DataService, useValue: {} },
+                { provide: OsmApiService, useValue: osmApi },
+                { provide: DataService, useValue: dataService },
                 { provide: MatSnackBar, useValue: { open: vi.fn() } },
             ],
         })
@@ -304,7 +331,7 @@ describe('ObjectSheetComponent swipes', () => {
         expect(iconComponent.icon()).toBe('second-icon')
     })
 
-    it('resynchronizes the embedded read editor when an expanded selection changes', () => {
+    it('keeps the unified reading sheet when an expanded selection changes', () => {
         const fixture = TestBed.createComponent(ObjectSheetComponent)
         fixture.componentRef.setInput('level', 'expanded')
         fixture.componentRef.setInput(
@@ -312,28 +339,28 @@ describe('ObjectSheetComponent swipes', () => {
             selectionWith(1, 'first-icon', '#123456')
         )
         fixture.detectChanges()
-        const firstEditor = fixture.debugElement.query(
-            By.directive(ObjectEditorContentComponent)
-        ).componentInstance as ObjectEditorContentComponent
+
+        expect(
+            fixture.debugElement.query(
+                By.directive(ObjectEditorContentComponent)
+            )
+        ).toBeNull()
+        expect(fixture.nativeElement.querySelector('h1').textContent).toContain(
+            'Object 1'
+        )
 
         fixture.componentRef.setInput(
             'selection',
             selectionWith(2, 'second-icon', '#d97706')
         )
         fixture.detectChanges()
-        const secondEditor = fixture.debugElement.query(
-            By.directive(ObjectEditorContentComponent)
-        ).componentInstance as ObjectEditorContentComponent
 
-        expect(secondEditor).toBe(firstEditor)
-        expect(secondEditor.feature.id).toBe('node/2')
-        expect(secondEditor.originalTags).toContainEqual({
-            key: 'amenity',
-            value: 'bench',
-        })
+        expect(fixture.nativeElement.querySelector('h1').textContent).toContain(
+            'Object 2'
+        )
     })
 
-    it('resets category and advanced-tag state for each selected object', () => {
+    it('resets category and code-display state for each selected object', () => {
         const fixture = TestBed.createComponent(ObjectSheetComponent)
         fixture.componentRef.setInput('level', 'expanded')
         fixture.componentRef.setInput(
@@ -342,7 +369,7 @@ describe('ObjectSheetComponent swipes', () => {
         )
         fixture.detectChanges()
         const component = fixture.componentInstance
-        component.showAdvancedTags()
+        component.toggleCode()
         component.openCategory()
 
         fixture.componentRef.setInput(
@@ -351,9 +378,124 @@ describe('ObjectSheetComponent swipes', () => {
         )
         fixture.detectChanges()
 
-        expect(component.advancedTagsRequested()).toBe(false)
+        expect(component.displayCode()).toBe(false)
         expect(component.categoryOpen()).toBe(false)
-        expect(component.editor()?.displayCode).toBe(false)
+    })
+
+    it('shows every readable tag and switches to raw OSM codes in the same sheet', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        selection.geojson.properties.tags = {
+            amenity: 'bench',
+            name: 'Central bench',
+            material: 'wood',
+            operator: 'City',
+        }
+        fixture.componentRef.setInput('selection', selection)
+        fixture.componentRef.setInput('level', 'expanded')
+        fixture.detectChanges()
+        const component = fixture.componentInstance
+        const levelChange = vi.fn()
+        component.levelChange.subscribe(levelChange)
+
+        expect(component.rows().map((row) => row.key)).toEqual([
+            'material',
+            'operator',
+        ])
+        expect(
+            fixture.debugElement.query(
+                By.directive(ObjectEditorContentComponent)
+            )
+        ).toBeNull()
+
+        component.toggleCode()
+        fixture.detectChanges()
+
+        expect(new Set(component.rows().map((row) => row.key))).toEqual(
+            new Set(['amenity', 'name', 'material', 'operator'])
+        )
+        expect(levelChange).toHaveBeenCalledWith('expanded')
+        expect(
+            fixture.nativeElement.querySelector('.object-facts--code')
+        ).not.toBeNull()
+    })
+
+    it('records a direct survey action from the unified reading sheet', () => {
+        surveyDisplay = 'always'
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        fixture.componentRef.setInput('selection', selection)
+        fixture.detectChanges()
+        const component = fixture.componentInstance
+        const completed = vi.fn()
+        component.sessionCompleted.subscribe(completed)
+
+        expect(component.shouldShowSurveyCard()).toBe(true)
+
+        component.handleSurveyYes()
+
+        expect(osmApi.updateOsmElement).toHaveBeenCalledWith(
+            expect.objectContaining({
+                properties: expect.objectContaining({
+                    tags: expect.objectContaining({
+                        'survey:date':
+                            expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
+                    }),
+                }),
+            }),
+            'data'
+        )
+        expect(completed).toHaveBeenCalledWith(
+            expect.objectContaining({ redraw: true })
+        )
+        expect(mapProcessing()).toBe(false)
+    })
+
+    it('keeps the direct non-existence action behind confirmation', () => {
+        dialog.open.mockReturnValueOnce({ afterClosed: () => of(true) })
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'information', '#9d7178')
+        )
+        fixture.detectChanges()
+        const completed = vi.fn()
+        fixture.componentInstance.sessionCompleted.subscribe(completed)
+
+        fixture.componentInstance.handleSurveyNo()
+
+        expect(dialog.open).toHaveBeenCalledWith(
+            expect.anything(),
+            expect.objectContaining({ panelClass: 'osmgo-dialog' })
+        )
+        expect(osmApi.deleteOsmElement).toHaveBeenCalledOnce()
+        expect(completed).toHaveBeenCalledWith({
+            redraw: true,
+            deleted: true,
+        })
+    })
+
+    it('starts editing a deprecated replacement without mutating the read feature', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        fixture.componentRef.setInput('selection', selection)
+        fixture.detectChanges()
+        const editRequested = vi.fn()
+        fixture.componentInstance.editRequested.subscribe(editRequested)
+
+        fixture.componentInstance.fixDeprecated({
+            old: { amenity: 'bench' },
+            replace: { leisure: 'picnic_table' },
+        })
+
+        expect(editRequested).toHaveBeenCalledWith(
+            expect.objectContaining({
+                properties: expect.objectContaining({
+                    tags: { leisure: 'picnic_table' },
+                }),
+            })
+        )
+        expect(selection.geojson.properties.tags).toEqual({ amenity: 'bench' })
     })
 
     it('derives bookmarks from TagsService and persists both transitions', () => {

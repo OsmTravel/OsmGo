@@ -366,6 +366,58 @@ test('loads interface translations', async ({ page }) => {
     )
 })
 
+test('keeps one unified feature sheet for details and raw OSM codes', async ({
+    page,
+}) => {
+    await page.route('**/api/0.6/node/1.json', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({
+                elements: [
+                    {
+                        type: 'node',
+                        id: 1,
+                        lon: 2.2945,
+                        lat: 48.8584,
+                    },
+                ],
+            }),
+        })
+    )
+    await page.route('**/api/0.6/map?bbox=*', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: osmMapFixture,
+        })
+    )
+    await openApp(page, `${appUrl}&id=node/1&loadData=true`)
+
+    const sheet = page.getByTestId('selected-object-sheet')
+    await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
+    await expect(sheet.locator('.object-editor')).toHaveCount(0)
+    await expect(
+        sheet.getByText('Does this object still exist?', { exact: true })
+    ).toBeVisible()
+    await expect(
+        sheet.getByRole('button', { name: 'Yes', exact: true })
+    ).toBeVisible()
+
+    await sheet.getByRole('button', { name: 'More actions' }).click()
+    await expect(page.getByText('View details', { exact: true })).toHaveCount(0)
+    await page.getByRole('menuitem', { name: 'Show or hide tag codes' }).click()
+
+    await expect(sheet).toHaveAttribute('data-sheet-mode', 'read')
+    await expect(sheet.locator('.object-facts--code')).toBeVisible()
+    await expect(
+        sheet.locator('dt').filter({ hasText: 'amenity' })
+    ).toBeVisible()
+    await expect(sheet.locator('dt').filter({ hasText: 'name' })).toBeVisible()
+    await expect(sheet.locator('.object-editor')).toHaveCount(0)
+    await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
+})
+
 test.describe('wide desktop category picker', () => {
     test.use({ viewport: { width: 1280, height: 720 } })
 

@@ -28,12 +28,8 @@ import {
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
 import { EditPresets } from '@components/modal/components/edit/Presets.component'
-import { MetaCard } from '@components/modal/components/meta-card/MetaCard'
 import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
-import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
-import { ReadPresets } from '@components/modal/components/read/Presets.component'
 import type { TagSelectionChange } from '@components/modal/components/select/select.component'
-import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
     ConfirmDialogComponent,
     type ConfirmDialogData,
@@ -51,7 +47,6 @@ import {
 import { osmTagKeyToPresetId } from '@osmgo/utils'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
-import { parseLocalizedDate } from '@pipes/localized-date.pipe'
 import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
@@ -87,6 +82,8 @@ interface DeprecatedTags {
     old: Record<string, unknown>
     replace: Record<string, string | number>
 }
+
+type EditorMode = Extract<MapMode, 'Create' | 'Update'>
 @Component({
     selector: 'app-object-editor-content',
     templateUrl: './modal.html',
@@ -105,12 +102,8 @@ interface DeprecatedTags {
         MatProgressSpinnerModule,
         MatToolbarModule,
         MatTooltipModule,
-        MetaCard,
         OrderByPresetPipe,
         PrimaryKey,
-        ReadOtherTag,
-        ReadPresets,
-        SurveyCard,
         TranslateModule,
     ],
 })
@@ -140,10 +133,8 @@ export class ObjectEditorContentComponent {
     }
 
     origineData: FeatureIdSource = 'data'
-    private readonly typeFicheState = signal<'Loading' | 'Edit' | 'Read'>(
-        'Loading'
-    )
-    get typeFiche(): 'Loading' | 'Edit' | 'Read' {
+    private readonly typeFicheState = signal<'Loading' | 'Edit'>('Loading')
+    get typeFiche(): 'Loading' | 'Edit' {
         return this.typeFicheState()
     }
 
@@ -152,8 +143,8 @@ export class ObjectEditorContentComponent {
         return this.displayCodeState()
     }
 
-    private readonly modeState = signal<MapMode>('Read')
-    get mode(): MapMode {
+    private readonly modeState = signal<EditorMode>('Update')
+    get mode(): EditorMode {
         return this.modeState()
     }
 
@@ -190,12 +181,8 @@ export class ObjectEditorContentComponent {
     newPosition = false
     presetsIds: string[] = []
 
-    private readonly lastSurveyState = signal<Date | undefined>(undefined)
-    get lastSurvey(): Date | undefined {
-        return this.lastSurveyState()
-    }
     readonly dataInput = input.required<OsmGoFeature>({ alias: 'data' })
-    readonly modeInput = input.required<MapMode>({ alias: 'type' })
+    readonly modeInput = input.required<EditorMode>({ alias: 'type' })
     readonly newPositionInput = input(false, {
         alias: 'newPosition',
     })
@@ -205,15 +192,13 @@ export class ObjectEditorContentComponent {
     readonly openPrimaryTagModalOnStartInput = input(false, {
         alias: 'openPrimaryTagModalOnStart',
     })
-    readonly displayCodeOnStart = input(false)
     readonly dismissed = output<ModalDismissData | undefined>()
     readonly categoryRequested = output<void>()
     private initializedData?: OsmGoFeature
-    private initializedMode?: MapMode
+    private initializedMode?: EditorMode
     private initializedNewPosition?: boolean
     private initializedOrigin?: FeatureIdSource
     private initializedOpenCategory?: boolean
-    private initializedDisplayCode?: boolean
 
     constructor() {
         effect(() => {
@@ -222,7 +207,6 @@ export class ObjectEditorContentComponent {
             const newPosition = this.newPositionInput()
             const origin = this.origineDataInput()
             const openCategory = this.openPrimaryTagModalOnStartInput()
-            const displayCode = this.displayCodeOnStart()
 
             untracked(() => {
                 this.synchronizeInputs({
@@ -231,7 +215,6 @@ export class ObjectEditorContentComponent {
                     newPosition,
                     origin,
                     openCategory,
-                    displayCode,
                 })
             })
         })
@@ -239,19 +222,17 @@ export class ObjectEditorContentComponent {
 
     private synchronizeInputs(inputs: {
         data: OsmGoFeature
-        mode: MapMode
+        mode: EditorMode
         newPosition: boolean
         origin: FeatureIdSource
         openCategory: boolean
-        displayCode: boolean
     }): void {
         const unchanged =
             this.initializedData === inputs.data &&
             this.initializedMode === inputs.mode &&
             this.initializedNewPosition === inputs.newPosition &&
             this.initializedOrigin === inputs.origin &&
-            this.initializedOpenCategory === inputs.openCategory &&
-            this.initializedDisplayCode === inputs.displayCode
+            this.initializedOpenCategory === inputs.openCategory
         if (unchanged) return
 
         const currentFeature = this.featureState()
@@ -273,7 +254,6 @@ export class ObjectEditorContentComponent {
         this.initializedNewPosition = inputs.newPosition
         this.initializedOrigin = inputs.origin
         this.initializedOpenCategory = inputs.openCategory
-        this.initializedDisplayCode = inputs.displayCode
         this.initializeFromInputs(inputs)
         this.initComponent()
         if (this.mode === 'Create' && this.openPrimaryTagModalOnStart) {
@@ -283,13 +263,12 @@ export class ObjectEditorContentComponent {
 
     private initializeFromInputs(inputs: {
         data: OsmGoFeature
-        mode: MapMode
+        mode: EditorMode
         newPosition: boolean
         origin: FeatureIdSource
         openCategory: boolean
-        displayCode: boolean
     }): void {
-        this.displayCodeState.set(inputs.displayCode)
+        this.displayCodeState.set(false)
         this.newPosition = inputs.newPosition
         this.featureState.set(cloneDeep(inputs.data))
 
@@ -329,7 +308,6 @@ export class ObjectEditorContentComponent {
             this.feature.properties.tags
         )
 
-        const surveyDates: Date[] = []
         const tags: Tag[] = []
 
         for (const tag in this.feature.properties.tags) {
@@ -340,25 +318,7 @@ export class ObjectEditorContentComponent {
             }
             if (preset) data.preset = preset
             tags.push(data)
-
-            if (['survey:date', 'check_date'].includes(tag)) {
-                const surveyValue = parseLocalizedDate(
-                    this.feature.properties.tags[tag]
-                )
-                if (surveyValue) {
-                    surveyValue.setHours(0, 0, 0, 0)
-                    surveyDates.push(surveyValue)
-                }
-            }
         }
-
-        this.lastSurveyState.set(
-            surveyDates.length > 0
-                ? surveyDates.reduce((pr, cu) => {
-                      return cu > pr ? cu : pr
-                  })
-                : undefined
-        )
 
         this.tagsState.set(tags)
         this.originalTags = cloneDeep(tags)
@@ -409,9 +369,7 @@ export class ObjectEditorContentComponent {
         }
 
         feature.properties.primaryTag = _primaryKey
-        this.typeFicheState.set(
-            this.mode === 'Update' || this.mode === 'Create' ? 'Edit' : 'Read'
-        )
+        this.typeFicheState.set('Edit')
 
         _tags = _tags.filter((tag) => tag.value !== '' && !tag.isDefaultValue)
         if (!_tags.find((tag) => tag.key === 'name')) {
@@ -498,10 +456,6 @@ export class ObjectEditorContentComponent {
             }
         }
         return changes + (this.newPosition ? 1 : 0)
-    }
-
-    updateMode(): void {
-        this.dismissed.emit({ type: 'Edit' })
     }
 
     toogleCode(): void {
@@ -874,39 +828,6 @@ export class ObjectEditorContentComponent {
         const DD =
             date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate()
         return YYYY + '-' + MM + '-' + DD
-    }
-
-    shouldShowSurveyCard(): boolean {
-        const display = this.configService.getDisplaySurveyCard()
-        const today = new Date()
-        if (display === 'never') return false
-        if (this.feature.properties.meta.timestamp === '0') return false
-        if (!this.lastSurvey) return true
-        if (
-            this.generateISODate(this.lastSurvey) ===
-            this.generateISODate(today)
-        )
-            return false
-        if (display === 'always') return true
-
-        const OneYear = 31536000000
-        const maxYearAgo = this.configService.getSurveyCardYear()
-
-        return (
-            this.lastSurvey.getTime() < today.getTime() - OneYear * maxYearAgo
-        )
-    }
-
-    handleSurveyYes(): void {
-        this.addSurveyDate()
-        this.updateOsmElement()
-    }
-
-    async handleSurveyNo(): Promise<void> {
-        // TODO: Ask whether the feature is closed, disused or no longer exists.
-        if (this.feature.properties.type === 'node') {
-            await this.presentConfirm()
-        }
     }
 
     addSurveyDate(): void {

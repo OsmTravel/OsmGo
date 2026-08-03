@@ -1,6 +1,6 @@
 <section
     class="object-sheet"
-    [class.object-sheet--embedded]="showEmbeddedContent()"
+    [class.object-sheet--embedded]="isEditing()"
     [attr.data-sheet-mode]="mode()"
     data-testid="selected-object-sheet"
     [attr.aria-label]="'MAIN.SELECTION.SELECTED_OBJECT' | translate"
@@ -9,7 +9,7 @@
     (touchend)="onSheetTouchEnd($event)"
     (touchcancel)="onSheetTouchCancel()"
 >
-    @if (showEmbeddedContent()) {
+    @if (isEditing()) {
     <div class="embedded-editor" [class.is-hidden]="categoryOpen()">
         @switch (selection().type) { @case ('Create') {
         <app-object-editor-content
@@ -30,15 +30,6 @@
             [origineData]="selection().origineData"
             (dismissed)="handleEditorDismissed($event)"
             (categoryRequested)="openCategory()"
-        ></app-object-editor-content>
-        } @default {
-        <app-object-editor-content
-            #editor
-            type="Read"
-            [data]="selection().geojson"
-            [origineData]="selection().origineData"
-            [displayCodeOnStart]="advancedTagsRequested()"
-            (dismissed)="handleEditorDismissed($event)"
         ></app-object-editor-content>
         } }
     </div>
@@ -150,8 +141,50 @@
     </section>
 
     <div class="sheet-content" cdkScrollable>
-        @if (rows().length > 0) {
-        <dl class="object-facts">
+        <app-alert
+            [tagConfig]="selectedTagConfig()"
+            [language]="configService.config().languageTags"
+            [countryCode]="configService.config().countryTags"
+            (fixDeprecated)="fixDeprecated($event)"
+        ></app-alert>
+
+        @if (usedByWaysCount(); as count) {
+        <section class="sheet-notice sheet-notice--warning" role="status">
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >warning</mat-icon
+            >
+            <p>
+                {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' |
+                translate).replace('{x}', count) }}
+            </p>
+        </section>
+        } @if (feature().properties.changeType) {
+        <section class="sheet-notice sheet-notice--pending" role="status">
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >pending_actions</mat-icon
+            >
+            <p>{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate }}</p>
+            <button
+                mat-button
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="cancelChange()"
+            >
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >undo</mat-icon
+                >
+                {{ 'SHARED.CLEAR' | translate }}
+            </button>
+        </section>
+        } @if (shouldShowSurveyCard()) {
+        <survey-card
+            [feature]="feature()"
+            [disabled]="mapService.isProcessing()"
+            (yes)="handleSurveyYes()"
+            (no)="handleSurveyNo()"
+        ></survey-card>
+        } @if (rows().length > 0) {
+        <dl class="object-facts" [class.object-facts--code]="displayCode()">
             @for (row of rows(); track row.key) {
             <div class="fact-row">
                 <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
@@ -159,7 +192,26 @@
                 >
                 <div>
                     <dt>{{ row.label }}</dt>
-                    <dd>{{ row.value }}</dd>
+                    <dd>
+                        @if (row.isOpeningHours) {
+                        <app-opening-hours
+                            [openingHours]="row.value"
+                        ></app-opening-hours>
+                        } @else if (row.href) {
+                        <a
+                            [href]="row.href"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {{ row.value }}
+                            <mat-icon
+                                fontSet="material-symbols-rounded"
+                                aria-hidden="true"
+                                >open_in_new</mat-icon
+                            >
+                        </a>
+                        } @else { {{ row.value }} }
+                    </dd>
                 </div>
             </div>
             }
@@ -184,7 +236,8 @@
             type="button"
             class="primary-action"
             data-testid="edit-selected-poi"
-            (click)="editRequested.emit()"
+            [disabled]="mapService.isProcessing()"
+            (click)="editRequested.emit(undefined)"
         >
             <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
                 >edit</mat-icon
@@ -196,16 +249,15 @@
 </section>
 
 <mat-menu #objectMenu="matMenu" xPosition="before">
-    <button mat-menu-item type="button" (click)="showDetails()">
+    <button
+        mat-menu-item
+        type="button"
+        [class.is-active]="displayCode()"
+        (click)="toggleCode()"
+    >
         <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-            >visibility</mat-icon
+            >code</mat-icon
         >
-        <span>{{ 'MAIN.SELECTION.VIEW_DETAILS' | translate }}</span>
-    </button>
-    <button mat-menu-item type="button" (click)="showAdvancedTags()">
-        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-            >sell</mat-icon
-        >
-        <span>{{ 'MAIN.SELECTION.OSM_TAGS' | translate }}</span>
+        <span>{{ 'A11Y.CODE' | translate }}</span>
     </button>
 </mat-menu>

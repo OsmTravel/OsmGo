@@ -108,10 +108,6 @@
     }
 }
 
-.footer-actions--read {
-    justify-content: space-between;
-}
-
 .footer-actions--edit {
     display: grid;
     grid-template-columns: auto auto minmax(0, 1fr);

@@ -8,6 +8,7 @@
             mat-flat-button
             class="yes-button"
             type="button"
+            [disabled]="disabled()"
             (click)="handleYes()"
         >
             <mat-icon fontSet="material-symbols-rounded">check</mat-icon>
@@ -18,7 +19,7 @@
             class="no-button"
             type="button"
             (click)="handleNo()"
-            [disabled]="feature().properties.type !== 'node'"
+            [disabled]="disabled() || feature().properties.type !== 'node'"
         >
             <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
             {{ 'SHARED.NO' | translate }}

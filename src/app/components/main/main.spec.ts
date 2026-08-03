@@ -312,6 +312,29 @@ describe('MainPage', () => {
         expect(router.navigate).not.toHaveBeenCalled()
     })
 
+    it('opens a corrected read feature in the existing unified editor', () => {
+        const showModal$ = new Subject<any>()
+        const originalFeature = { id: 'node/1', properties: { tags: {} } }
+        const correctedFeature = {
+            id: 'node/1',
+            properties: { tags: { leisure: 'picnic_table' } },
+        }
+        const { page } = createPage({ mapService: { showModal$ } })
+        showModal$.next({
+            type: 'Read',
+            geojson: originalFeature,
+            origineData: 'data',
+        })
+
+        page.editSelectedFeature(correctedFeature as any)
+
+        expect(page.selectedFeature()).toMatchObject({
+            type: 'Update',
+            geojson: correctedFeature,
+        })
+        expect(page.sheetLevel()).toBe('expanded')
+    })
+
     it('keeps existing data and clears processing after a download failure', () => {
         const mapService = {
             redrawBbox: vi.fn().mockName('redrawBbox'),

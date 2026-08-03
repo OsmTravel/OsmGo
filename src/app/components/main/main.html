@@ -40,8 +40,7 @@
         [level]="sheetLevel()"
         (levelChange)="sheetLevel.set($event)"
         (closeRequested)="closeSelection()"
-        (detailsRequested)="openSelectedDetails()"
-        (editRequested)="editSelectedFeature()"
+        (editRequested)="editSelectedFeature($event)"
         (sessionCompleted)="handleSheetSession($event)"
     ></app-object-sheet>
     }
