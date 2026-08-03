@@ -142,10 +142,9 @@ button {
     letter-spacing: 0.005em;
 
     .refresh-button__content {
-        position: absolute;
-        z-index: 1;
-        inset: 0 14px 0 12px;
         display: flex;
+        width: 100%;
+        max-width: 100%;
         min-width: 0;
         align-items: center;
         justify-content: center;
@@ -185,6 +184,14 @@ button {
         color: var(--osmgo-ink-muted);
         background: var(--osmgo-surface-muted);
     }
+}
+
+:host ::ng-deep .refresh-button .mdc-button__label {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+    overflow: hidden;
 }
 
 .add-button,

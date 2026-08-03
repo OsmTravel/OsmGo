@@ -529,6 +529,13 @@ test('downloads a small OSM area from a fixture', async ({ page }) => {
     await openApp(page)
 
     const refreshButton = page.getByTestId('load-osm-data')
+    const refreshLabel = refreshButton.locator('.refresh-button__label')
+    await expect(refreshLabel).toHaveText('Refresh')
+    await expect(refreshLabel).toBeVisible()
+    await expect(refreshButton.locator('mat-icon')).toBeVisible()
+    await expect(
+        refreshButton.locator('.refresh-button__content')
+    ).toBeVisible()
     await refreshButton.click()
     await expect(refreshButton.locator('mat-spinner')).toBeVisible()
     await refreshButton.locator('.refresh-button__label').evaluate((label) => {
@@ -550,8 +557,10 @@ test('downloads a small OSM area from a fixture', async ({ page }) => {
         const labelRect = label.getBoundingClientRect()
         return {
             contentFitsButton:
-                contentRect.width <= buttonRect.width &&
-                contentRect.height <= buttonRect.height,
+                contentRect.left >= buttonRect.left &&
+                contentRect.right <= buttonRect.right &&
+                contentRect.top >= buttonRect.top &&
+                contentRect.bottom <= buttonRect.bottom,
             centerDifference: Math.abs(
                 spinnerRect.top +
                     spinnerRect.height / 2 -
