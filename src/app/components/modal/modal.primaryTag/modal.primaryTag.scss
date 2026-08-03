@@ -1,6 +1,7 @@
 :host {
     display: block;
     height: 100%;
+    container-type: inline-size;
 }
 .category-picker {
     display: grid;
@@ -70,10 +71,10 @@
     align-content: center;
     gap: 14px;
 }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
     .category-search,
     .category-content,
     .category-footer {
-        padding-inline: max(20px, calc((100vw - 860px) / 2));
+        padding-inline: max(20px, calc((100cqw - 860px) / 2));
     }
 }

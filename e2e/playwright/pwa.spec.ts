@@ -366,6 +366,37 @@ test('loads interface translations', async ({ page }) => {
     )
 })
 
+test.describe('wide desktop category picker', () => {
+    test.use({ viewport: { width: 1280, height: 720 } })
+
+    test('keeps every control inside the object sheet', async ({ page }) => {
+        await openApp(page)
+        await page.getByTestId('add-poi').click()
+        await page
+            .getByRole('button', { name: 'Add an object', exact: true })
+            .click()
+
+        const sheet = page.getByTestId('selected-object-sheet')
+        const controls = [
+            page.getByPlaceholder('Search'),
+            page.getByRole('radiogroup', { name: 'Category source' }),
+            sheet.getByRole('button', { name: 'Cancel', exact: true }),
+        ]
+        const sheetBox = await sheet.boundingBox()
+        expect(sheetBox).not.toBeNull()
+
+        for (const control of controls) {
+            await expect(control).toBeVisible()
+            const controlBox = await control.boundingBox()
+            expect(controlBox).not.toBeNull()
+            expect(controlBox?.x).toBeGreaterThanOrEqual(sheetBox?.x ?? 0)
+            expect(
+                (controlBox?.x ?? 0) + (controlBox?.width ?? 0)
+            ).toBeLessThanOrEqual((sheetBox?.x ?? 0) + (sheetBox?.width ?? 0))
+        }
+    })
+})
+
 test.describe('touch menu', () => {
     test.use({
         hasTouch: true,
