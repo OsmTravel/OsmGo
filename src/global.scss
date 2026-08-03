@@ -19,6 +19,11 @@ body {
 .maplibre-ctrl-logo {
     display: none !important;
 }
+
+.favorite-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
 .positionMarkersSize {
     width: 64px;
     height: 64px;
