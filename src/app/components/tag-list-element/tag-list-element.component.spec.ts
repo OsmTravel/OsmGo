@@ -43,4 +43,22 @@ describe('TagListElementComponent', () => {
         expect(fixture.nativeElement.querySelector('.sprite')).not.toBeNull()
         expect(fixture.nativeElement.querySelector('.svgIcon')).not.toBeNull()
     })
+
+    it('uses a blue filled heart only for bookmarked tags', () => {
+        const favoriteButton = fixture.nativeElement.querySelector(
+            '.tag-actions button'
+        ) as HTMLButtonElement
+        const favoriteIcon = favoriteButton.querySelector(
+            'mat-icon'
+        ) as HTMLElement
+
+        expect(favoriteButton.classList.contains('is-bookmarked')).toBe(false)
+        expect(favoriteIcon.textContent?.trim()).toBe('favorite_border')
+
+        fixture.componentRef.setInput('bookmarksIds', [tagsConfig.tags[0].id])
+        fixture.detectChanges()
+
+        expect(favoriteButton.classList.contains('is-bookmarked')).toBe(true)
+        expect(favoriteIcon.textContent?.trim()).toBe('favorite')
+    })
 })

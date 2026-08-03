@@ -172,7 +172,11 @@
         color: var(--osmgo-ink-strong);
     }
 
-    button.is-active {
+    button.favorite-action {
+        color: var(--osmgo-ink-muted);
+    }
+
+    button.favorite-action.is-active {
         color: var(--osmgo-blue);
     }
 }

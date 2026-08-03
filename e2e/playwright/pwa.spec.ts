@@ -405,6 +405,21 @@ test.describe('wide desktop category picker', () => {
             /vectorIcon--loaded/
         )
         await expect(bakeryRow.locator('.svgIcon')).toHaveCSS('width', '34px')
+
+        const addFavorite = bakeryRow.getByRole('button', {
+            name: 'Add bookmark',
+            exact: true,
+        })
+        await expect(addFavorite.locator('mat-icon')).toHaveText(
+            'favorite_border'
+        )
+        await addFavorite.click()
+        const removeFavorite = bakeryRow.getByRole('button', {
+            name: 'Remove bookmark',
+            exact: true,
+        })
+        await expect(removeFavorite.locator('mat-icon')).toHaveText('favorite')
+        await expect(removeFavorite).toHaveCSS('color', 'rgb(23, 103, 196)')
     })
 })
 

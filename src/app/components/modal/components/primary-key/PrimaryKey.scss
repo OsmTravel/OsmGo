@@ -62,6 +62,9 @@
 .change-icon {
     color: var(--osmgo-blue);
 }
-button.is-bookmarked {
-    color: var(--osmgo-amber-ink);
+button.favorite-action {
+    color: var(--osmgo-ink-muted);
+}
+button.favorite-action.is-bookmarked {
+    color: var(--osmgo-blue);
 }

@@ -42,13 +42,14 @@
     @if (isEditMode()) {
     <button
         mat-icon-button
+        class="favorite-action"
         type="button"
         [class.is-bookmarked]="isBookmarked()"
         [attr.aria-label]="(isBookmarked() ? 'A11Y.REMOVE_BOOKMARK' : 'A11Y.ADD_BOOKMARK') | translate"
         (click)="emitToggleBookmark()"
     >
         <mat-icon fontSet="material-symbols-rounded"
-            >{{ isBookmarked() ? 'bookmark' : 'bookmark_border' }}</mat-icon
+            >{{ isBookmarked() ? 'favorite' : 'favorite_border' }}</mat-icon
         >
     </button>
     }

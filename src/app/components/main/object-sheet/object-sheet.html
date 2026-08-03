@@ -67,6 +67,7 @@
     <div class="object-header-actions">
         <button
             mat-icon-button
+            class="favorite-action"
             type="button"
             [class.is-active]="bookmarked()"
             [matTooltip]="
@@ -84,7 +85,7 @@
             (click)="toggleBookmark()"
         >
             <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
-                {{ bookmarked() ? 'bookmark' : 'bookmark_border' }}
+                {{ bookmarked() ? 'favorite' : 'favorite_border' }}
             </mat-icon>
         </button>
 
