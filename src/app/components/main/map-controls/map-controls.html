@@ -76,16 +76,18 @@
             [attr.aria-label]="'MAIN.BUTTONS.LOAD_DATA' | translate"
             (click)="refreshRequested.emit()"
         >
-            @if (mapService.isProcessing()) {
-            <mat-spinner diameter="22"></mat-spinner>
-            } @else {
-            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-                >refresh</mat-icon
-            >
-            }
-            <span>
-                {{ (mapService.isProcessing() ? 'MAIN.BUTTONS.LOADING_DATA' :
-                'MAIN.BUTTONS.REFRESH_DATA' ) | translate }}
+            <span class="refresh-button__content">
+                @if (mapService.isProcessing()) {
+                <mat-spinner diameter="22"></mat-spinner>
+                } @else {
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >refresh</mat-icon
+                >
+                }
+                <span class="refresh-button__label">
+                    {{ (mapService.isProcessing() ? 'MAIN.BUTTONS.LOADING_DATA'
+                    : 'MAIN.BUTTONS.REFRESH_DATA' ) | translate }}
+                </span>
             </span>
         </button>
 

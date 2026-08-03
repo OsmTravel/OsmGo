@@ -91,6 +91,8 @@ button {
 
 .map-action-group {
     display: flex;
+    width: fit-content;
+    max-width: 100%;
     min-width: 0;
     align-items: center;
     justify-self: center;
@@ -123,8 +125,10 @@ button {
 }
 
 .refresh-button {
+    max-width: calc(100% - 48px);
     min-width: 112px;
     height: 48px;
+    overflow: hidden;
     padding: 0 14px 0 12px;
     color: white;
     border-radius: 20px;
@@ -133,9 +137,30 @@ button {
     font-weight: 680;
     letter-spacing: 0.005em;
 
+    .refresh-button__content {
+        position: absolute;
+        z-index: 1;
+        inset: 0 14px 0 12px;
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .refresh-button__label {
+        min-width: 0;
+        flex: 1 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     mat-icon {
         width: 25px;
         height: 25px;
+        flex: 0 0 25px;
         margin-right: 7px;
         font-size: 25px;
         font-variation-settings:
@@ -146,6 +171,8 @@ button {
     }
 
     mat-spinner {
+        display: inline-block;
+        flex: 0 0 22px;
         margin-right: 9px;
         --mdc-circular-progress-active-indicator-color: white;
     }

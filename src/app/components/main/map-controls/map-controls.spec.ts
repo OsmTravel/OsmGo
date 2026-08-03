@@ -120,6 +120,12 @@ describe('MapControlsComponent', () => {
 
         expect(refreshButton.textContent).toContain('Chargement')
         expect(refreshButton.querySelector('mat-spinner')).not.toBeNull()
+        expect(
+            refreshButton.querySelector('.refresh-button__content')
+        ).not.toBeNull()
+        expect(
+            refreshButton.querySelector('.refresh-button__label')?.textContent
+        ).toContain('Chargement')
         expect(refreshButton.disabled).toBe(true)
     })
 })

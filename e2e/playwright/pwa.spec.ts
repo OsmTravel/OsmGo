@@ -517,16 +517,54 @@ test.describe('touch menu', () => {
 })
 
 test('downloads a small OSM area from a fixture', async ({ page }) => {
-    await page.route('**/api/0.6/map?bbox=*', (route) =>
-        route.fulfill({
+    await page.setViewportSize({ width: 320, height: 600 })
+    await page.route('**/api/0.6/map?bbox=*', async (route) => {
+        await new Promise((resolve) => setTimeout(resolve, 800))
+        await route.fulfill({
             status: 200,
             contentType: 'application/json',
             body: osmMapFixture,
         })
-    )
+    })
     await openApp(page)
 
-    await page.getByTestId('load-osm-data').click()
+    const refreshButton = page.getByTestId('load-osm-data')
+    await refreshButton.click()
+    await expect(refreshButton.locator('mat-spinner')).toBeVisible()
+    await refreshButton.locator('.refresh-button__label').evaluate((label) => {
+        label.textContent =
+            'Chargement des données cartographiques actuellement visibles'
+    })
+    const loadingLayout = await refreshButton.evaluate((button) => {
+        const content = button.querySelector<HTMLElement>(
+            '.refresh-button__content'
+        )
+        const spinner = button.querySelector<HTMLElement>('mat-spinner')
+        const label = button.querySelector<HTMLElement>(
+            '.refresh-button__label'
+        )
+        if (!content || !spinner || !label) return null
+        const buttonRect = button.getBoundingClientRect()
+        const contentRect = content.getBoundingClientRect()
+        const spinnerRect = spinner.getBoundingClientRect()
+        const labelRect = label.getBoundingClientRect()
+        return {
+            contentFitsButton:
+                contentRect.width <= buttonRect.width &&
+                contentRect.height <= buttonRect.height,
+            centerDifference: Math.abs(
+                spinnerRect.top +
+                    spinnerRect.height / 2 -
+                    (labelRect.top + labelRect.height / 2)
+            ),
+            labelWhiteSpace: getComputedStyle(label).whiteSpace,
+        }
+    })
+    expect(loadingLayout).not.toBeNull()
+    expect(loadingLayout?.contentFitsButton).toBe(true)
+    expect(loadingLayout?.centerDifference).toBeLessThan(2)
+    expect(loadingLayout?.labelWhiteSpace).toBe('nowrap')
+
     await expect
         .poll(async () => {
             const osmState = await readStoredValue<StoredOsmState>(
