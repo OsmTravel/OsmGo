@@ -1,5 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { By } from '@angular/platform-browser'
+import { IconComponent } from '@components/icon/icon.component'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagListElementComponent } from './tag-list-element.component'
 
@@ -30,5 +32,15 @@ describe('TagListElementComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy()
+    })
+
+    it('renders the sprite first and hydrates the SVG when available', () => {
+        const iconComponent = fixture.debugElement.query(
+            By.directive(IconComponent)
+        ).componentInstance as IconComponent
+
+        expect(iconComponent.renderMode()).toBe('svg')
+        expect(fixture.nativeElement.querySelector('.sprite')).not.toBeNull()
+        expect(fixture.nativeElement.querySelector('.svgIcon')).not.toBeNull()
     })
 })

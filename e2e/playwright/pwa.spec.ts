@@ -377,8 +377,9 @@ test.describe('wide desktop category picker', () => {
             .click()
 
         const sheet = page.getByTestId('selected-object-sheet')
+        const search = page.getByPlaceholder('Search')
         const controls = [
-            page.getByPlaceholder('Search'),
+            search,
             page.getByRole('radiogroup', { name: 'Category source' }),
             sheet.getByRole('button', { name: 'Cancel', exact: true }),
         ]
@@ -394,6 +395,16 @@ test.describe('wide desktop category picker', () => {
                 (controlBox?.x ?? 0) + (controlBox?.width ?? 0)
             ).toBeLessThanOrEqual((sheetBox?.x ?? 0) + (sheetBox?.width ?? 0))
         }
+
+        await search.fill('bakery')
+        const bakeryRow = page
+            .locator('.tag-row')
+            .filter({ hasText: 'shop=bakery' })
+        await expect(bakeryRow).toHaveCount(1)
+        await expect(bakeryRow.locator('.vectorIcon')).toHaveClass(
+            /vectorIcon--loaded/
+        )
+        await expect(bakeryRow.locator('.svgIcon')).toHaveCSS('width', '34px')
     })
 })
 
