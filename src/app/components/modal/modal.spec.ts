@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing'
 import { MatDialog } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateModule } from '@ngx-translate/core'
-import type { MapMode } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
@@ -48,17 +47,29 @@ describe('ObjectEditorContentComponent', () => {
 
     function createPage(
         tags: Record<string, string | number>,
-        type: MapMode = 'Update'
+        type: 'Create' | 'Update' = 'Update'
     ) {
         const feature = featureWith(1, tags)
+        const savedFields: Record<string, { tags: any[] }> = {}
         const tagsService = {
             presets: () => ({ gender: genderPreset }),
             tags: () => [tagConfig],
             jsonSprites: () => ({}),
             bookmarksIds: () => [],
             primaryKeys: () => [],
-            savedFields: {},
+            savedFields,
             findPkey: () => ({ key: 'amenity', value: 'toilets' }),
+            addTagTolastTagsUsed: vi.fn(),
+            addSavedField: vi.fn((tagId: string, fields: any[]) => {
+                savedFields[tagId] = { tags: fields }
+            }),
+        }
+        const osmApi = {
+            createOsmNode: vi.fn((createdFeature) => of(createdFeature)),
+        }
+        const mapService = {
+            isProcessing: () => false,
+            setIsProcessing: vi.fn(),
         }
         const nestedDialogRef = {
             componentRef: { setInput: vi.fn() },
@@ -71,11 +82,11 @@ describe('ObjectEditorContentComponent', () => {
         TestBed.configureTestingModule({
             imports: [ObjectEditorContentComponent, TranslateModule.forRoot()],
             providers: [
-                { provide: OsmApiService, useValue: {} },
+                { provide: OsmApiService, useValue: osmApi },
                 { provide: TagsService, useValue: tagsService },
                 {
                     provide: MapService,
-                    useValue: { isProcessing: () => false },
+                    useValue: mapService,
                 },
                 { provide: DataService, useValue: {} },
                 {
@@ -90,6 +101,7 @@ describe('ObjectEditorContentComponent', () => {
                         getDisplaySurveyCard: () => 'never',
                         getSurveyCardYear: () => 1,
                         getUiLanguage: () => 'en',
+                        getAddSurveyDate: () => false,
                     },
                 },
                 { provide: MatDialog, useValue: dialog },
@@ -102,7 +114,16 @@ describe('ObjectEditorContentComponent', () => {
         fixture.componentRef.setInput('origineData', 'data')
         fixture.detectChanges()
         const page = fixture.componentInstance
-        return { page, fixture, dialog, snackBar, nestedDialogRef }
+        return {
+            page,
+            fixture,
+            dialog,
+            mapService,
+            osmApi,
+            snackBar,
+            tagsService,
+            nestedDialogRef,
+        }
     }
 
     it('creates an empty editable field without an undefined key', () => {
@@ -199,6 +220,83 @@ describe('ObjectEditorContentComponent', () => {
         })
     })
 
+    it('remembers only reusable attributes for the current category', () => {
+        const { page, tagsService } = createPage(
+            {
+                amenity: 'toilets',
+                name: 'Unique name',
+                male: 'yes',
+                material: 'wood',
+                level: 0,
+                'survey:date': '2026-08-03',
+            },
+            'Create'
+        )
+
+        page.rememberFields(tagConfig as any, page.tags)
+
+        expect(tagsService.addSavedField).toHaveBeenCalledWith(
+            'amenity/toilets',
+            expect.arrayContaining([
+                { key: 'male', value: 'yes' },
+                { key: 'material', value: 'wood' },
+                { key: 'level', value: '0' },
+            ])
+        )
+        const remembered = tagsService.addSavedField.mock.calls[0][1]
+        const rememberedKeys = remembered.map((tag) => tag.key)
+        expect(rememberedKeys).not.toContain('amenity')
+        expect(rememberedKeys).not.toContain('name')
+        expect(rememberedKeys).not.toContain('survey:date')
+        expect(page.hasSavedFields).toBe(true)
+    })
+
+    it('restores the previous attributes without replacing unique fields', () => {
+        const { page, tagsService } = createPage(
+            { amenity: 'toilets', name: 'New object' },
+            'Create'
+        )
+        tagsService.savedFields['amenity/toilets'] = {
+            tags: [
+                { key: 'amenity', value: 'toilets' },
+                { key: 'name', value: 'Old object' },
+                { key: 'survey:date', value: '2025-01-01' },
+                { key: 'material', value: 'wood' },
+            ],
+        }
+        page.initComponent(tagConfig as any)
+
+        page.restoreFields(page.tagId, page.tags)
+
+        expect(page.tags).toContainEqual({ key: 'material', value: 'wood' })
+        expect(page.findElement(page.tags, { key: 'name' }).value).toBe(
+            'New object'
+        )
+        expect(page.tags.some((tag) => tag.key === 'survey:date')).toBe(false)
+    })
+
+    it('automatically remembers attributes after a successful creation', () => {
+        const { page, osmApi, tagsService } = createPage(
+            {
+                amenity: 'toilets',
+                material: 'brick',
+                wheelchair: 'yes',
+            },
+            'Create'
+        )
+
+        page.createOsmElement(tagConfig as any)
+
+        expect(osmApi.createOsmNode).toHaveBeenCalledOnce()
+        expect(tagsService.addSavedField).toHaveBeenCalledWith(
+            'amenity/toilets',
+            expect.arrayContaining([
+                { key: 'material', value: 'brick' },
+                { key: 'wheelchair', value: 'yes' },
+            ])
+        )
+    })
+
     it('emits its result to the unified object sheet', () => {
         const { page } = createPage({ amenity: 'toilets' })
         const result = { redraw: true }
@@ -233,10 +331,10 @@ describe('ObjectEditorContentComponent', () => {
         )
     })
 
-    it('resynchronizes cloned and original tags when the read selection changes', () => {
+    it('resynchronizes cloned and original tags when the editor input changes', () => {
         const { page, fixture } = createPage(
             { amenity: 'toilets', name: 'Object A' },
-            'Read'
+            'Update'
         )
 
         fixture.componentRef.setInput(

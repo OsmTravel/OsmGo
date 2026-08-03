@@ -169,6 +169,19 @@ export class ObjectEditorContentComponent {
         return this.savedFieldsState()
     }
 
+    get hasSavedFields(): boolean {
+        return Boolean(this.savedFields?.tags.length)
+    }
+
+    get fieldMemoryCategory(): string {
+        const language = this.configService.config().languageTags
+        return (
+            this.tagConfig.lbl?.[language] ||
+            this.tagConfig.lbl?.['en'] ||
+            String(this.primaryKey.value)
+        )
+    }
+
     private readonly tagIdState = signal('')
     get tagId(): string {
         return this.tagIdState()
@@ -537,6 +550,7 @@ export class ObjectEditorContentComponent {
             )
             .subscribe({
                 next: (feature) => {
+                    this.rememberFields(tagConfig, this.tags)
                     this.dismiss({
                         redraw: true,
                         geojson: feature,
@@ -867,17 +881,10 @@ export class ObjectEditorContentComponent {
         this.tagsState.set(tags)
     }
 
-    saveFields(tagId: string, tags: Tag[]): void {
-        const savedTags = tags
-            .map((t) => {
-                return { key: t.key, value: t.value }
-            })
-            .filter((t) => t.key !== 'name')
-            .filter((t) => t.key !== 'survey:date')
-            .filter((t) => t.key !== 'check_date')
-        this.tagsService.addSavedField(tagId, savedTags)
+    rememberFields(tagConfig: TagConfig, tags: Tag[]): void {
+        const savedTags = this.reusableFields(tagConfig, tags)
+        this.tagsService.addSavedField(tagConfig.id, savedTags)
         this.savedFieldsState.set({
-            ...this.savedFields,
             tags: [...savedTags],
         })
     }
@@ -886,7 +893,10 @@ export class ObjectEditorContentComponent {
         const fields = this.tagsService.savedFields[tagId]
         const newTags = tags.map((tag) => ({ ...tag }))
         if (fields) {
-            for (const stags of fields.tags) {
+            for (const stags of this.reusableFields(
+                this.tagConfig,
+                fields.tags
+            )) {
                 const t = newTags.find((o) => o.key === stags.key)
                 if (t) {
                     t.value = stags.value
@@ -897,6 +907,24 @@ export class ObjectEditorContentComponent {
         }
         this.tagsState.set([...newTags])
         this.initComponent(this.tagConfig)
+    }
+
+    private reusableFields(tagConfig: TagConfig, tags: Tag[]): Tag[] {
+        const excludedKeys = new Set([
+            ...Object.keys(tagConfig.tags),
+            'name',
+            'survey:date',
+            'check_date',
+        ])
+        return tags
+            .filter(
+                (tag) =>
+                    Boolean(tag.key) &&
+                    !excludedKeys.has(tag.key) &&
+                    String(tag.value).trim() !== '' &&
+                    !tag.isDefaultValue
+            )
+            .map((tag) => ({ key: tag.key, value: tag.value }))
     }
 
     fixDeprecated(deprecated: DeprecatedTags): void {

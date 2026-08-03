@@ -58,11 +58,23 @@
 
 .field-memory-actions {
     display: flex;
+    min-height: 44px;
     gap: 8px;
     overflow-x: auto;
 
+    &:empty {
+        display: none;
+    }
+
     button {
         flex: 0 0 auto;
+    }
+
+    .restore-fields-action {
+        min-height: 44px;
+        flex: 1 1 auto;
+        justify-content: flex-start;
+        white-space: normal;
     }
 }
 

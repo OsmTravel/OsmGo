@@ -604,7 +604,11 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
         })
     )
     const tags = encodeURIComponent(
-        JSON.stringify({ amenity: 'bench', name: 'Created bench' })
+        JSON.stringify({
+            amenity: 'bench',
+            material: 'wood',
+            name: 'Created bench',
+        })
     )
     await openApp(page, `/?center=2.2945,48.8584&zoom=18&add=${tags}`)
 
@@ -621,6 +625,39 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
             return Object.keys(osmState?.pendingById ?? {}).length
         })
         .toBe(1)
+
+    await expect
+        .poll(async () => {
+            const savedFields = await readStoredValue<
+                Record<
+                    string,
+                    { tags: Array<{ key: string; value: string | number }> }
+                >
+            >(page, 'savedFields')
+            return savedFields?.['amenity/bench']?.tags.find(
+                (tag) => tag.key === 'material'
+            )?.value
+        })
+        .toBe('wood')
+
+    await page.getByRole('button', { name: 'Close', exact: true }).click()
+    await page.getByTestId('add-poi').click()
+    await page
+        .getByRole('button', { name: 'Add an object', exact: true })
+        .click()
+    const lastBench = page
+        .locator('.tag-row')
+        .filter({ hasText: 'amenity=bench' })
+    await expect(lastBench).toHaveCount(1)
+    await lastBench.locator('.tag-row__main').click()
+    const restoreLastAttributes = page.getByRole('button', {
+        name: 'Reuse last attributes · Bench',
+        exact: true,
+    })
+    await expect(restoreLastAttributes).toBeVisible()
+    await restoreLastAttributes.click()
+    await page.getByRole('button', { name: 'Show or hide tag codes' }).click()
+    await expect(page.getByPlaceholder('material')).toHaveValue('wood')
 
     await page.goto('/?id=node/-1')
     await expect(page.getByTestId('edit-selected-poi')).toBeVisible()

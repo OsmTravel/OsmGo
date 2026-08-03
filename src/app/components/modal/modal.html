@@ -33,33 +33,6 @@
     </mat-toolbar>
 
     <div class="editor-content editor-content--edit">
-        <div class="field-memory-actions">
-            <button
-                mat-stroked-button
-                type="button"
-                [attr.aria-label]="'A11Y.COPY_FIELDS' | translate"
-                (click)="saveFields(tagId, tags)"
-            >
-                <mat-icon fontSet="material-symbols-rounded"
-                    >content_copy</mat-icon
-                >
-                {{ 'A11Y.COPY_FIELDS' | translate }}
-            </button>
-            @if (savedFields) {
-            <button
-                mat-stroked-button
-                type="button"
-                [attr.aria-label]="'A11Y.PASTE_FIELDS' | translate"
-                (click)="restoreFields(tagId, tags)"
-            >
-                <mat-icon fontSet="material-symbols-rounded"
-                    >content_paste</mat-icon
-                >
-                {{ 'A11Y.PASTE_FIELDS' | translate }}
-            </button>
-            }
-        </div>
-
         <app-alert
             [tagConfig]="tagConfig"
             [language]="configService.config().languageTags"
@@ -76,6 +49,37 @@
             (openPrimaryTagModal)="openPrimaryTagModal()"
             (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
         ></primary-key>
+
+        <div class="field-memory-actions">
+            @if (mode === 'Update') {
+            <button
+                mat-stroked-button
+                type="button"
+                [attr.aria-label]="'A11Y.COPY_FIELDS' | translate"
+                (click)="rememberFields(tagConfig, tags)"
+            >
+                <mat-icon fontSet="material-symbols-rounded"
+                    >content_copy</mat-icon
+                >
+                {{ 'A11Y.COPY_FIELDS' | translate }}
+            </button>
+            } @if (mode === 'Create' && hasSavedFields) {
+            <button
+                mat-stroked-button
+                class="restore-fields-action"
+                type="button"
+                [attr.aria-label]="
+                    'A11Y.PASTE_FIELDS'
+                        | translate: { category: fieldMemoryCategory }
+                "
+                (click)="restoreFields(tagId, tags)"
+            >
+                <mat-icon fontSet="material-symbols-rounded">restore</mat-icon>
+                {{ 'A11Y.PASTE_FIELDS' | translate: { category:
+                fieldMemoryCategory } }}
+            </button>
+            }
+        </div>
 
         <section
             class="object-fields object-fields--edit"
