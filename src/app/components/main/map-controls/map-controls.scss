@@ -19,6 +19,10 @@ button {
 .map-control--menu {
     top: max(14px, env(safe-area-inset-top));
     left: 14px;
+
+    .osmgo-map-button mat-icon {
+        transform: translateY(2px);
+    }
 }
 
 .map-control--pending {
