@@ -51,11 +51,7 @@
                 (click)="addOrRemoveBookmark(tag())"
             >
                 <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
-                    {{
-                        (tag() | isBookmarked: bookmarksIds())
-                            ? 'favorite'
-                            : 'favorite_border'
-                    }}
+                    favorite
                 </mat-icon>
             </button>
         }

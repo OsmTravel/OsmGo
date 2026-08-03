@@ -48,9 +48,7 @@
         [attr.aria-label]="(isBookmarked() ? 'A11Y.REMOVE_BOOKMARK' : 'A11Y.ADD_BOOKMARK') | translate"
         (click)="emitToggleBookmark()"
     >
-        <mat-icon fontSet="material-symbols-rounded"
-            >{{ isBookmarked() ? 'favorite' : 'favorite_border' }}</mat-icon
-        >
+        <mat-icon fontSet="material-symbols-rounded">favorite</mat-icon>
     </button>
     }
 </article>

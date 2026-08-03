@@ -53,7 +53,7 @@ describe('TagListElementComponent', () => {
         ) as HTMLElement
 
         expect(favoriteButton.classList.contains('is-bookmarked')).toBe(false)
-        expect(favoriteIcon.textContent?.trim()).toBe('favorite_border')
+        expect(favoriteIcon.textContent?.trim()).toBe('favorite')
 
         fixture.componentRef.setInput('bookmarksIds', [tagsConfig.tags[0].id])
         fixture.detectChanges()

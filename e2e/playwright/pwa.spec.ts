@@ -410,9 +410,7 @@ test.describe('wide desktop category picker', () => {
             name: 'Add bookmark',
             exact: true,
         })
-        await expect(addFavorite.locator('mat-icon')).toHaveText(
-            'favorite_border'
-        )
+        await expect(addFavorite.locator('mat-icon')).toHaveText('favorite')
         await addFavorite.click()
         const removeFavorite = bakeryRow.getByRole('button', {
             name: 'Remove bookmark',
