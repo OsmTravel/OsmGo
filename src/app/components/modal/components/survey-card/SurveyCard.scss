@@ -2,26 +2,52 @@
     display: block;
 }
 .survey-card {
-    padding: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 8px 10px;
     border: 1px solid #f1d28a;
-    border-radius: 18px;
+    border-radius: 16px;
     background: var(--osmgo-amber-container);
 }
 .survey-card__question {
     display: flex;
+    min-width: 0;
     align-items: center;
-    gap: 9px;
+    gap: 6px;
     color: var(--osmgo-amber-ink);
+}
+.survey-card__question mat-icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    font-size: 20px;
 }
 .survey-card__question p {
     margin: 0;
+    font-size: 13px;
     font-weight: 650;
+    line-height: 1.2;
 }
 .actions {
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
-    margin-top: 12px;
+    gap: 4px;
+}
+.actions button {
+    min-width: 0;
+    min-height: 36px;
+    padding-inline: 10px;
+    border-radius: 999px;
+    font-size: 13px;
+}
+.actions mat-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    font-size: 18px;
 }
 .yes-button {
     color: #fff;
@@ -29,4 +55,15 @@
 }
 .no-button {
     color: var(--osmgo-error);
+}
+
+@media (max-width: 360px) {
+    .survey-card {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        padding-left: 26px;
+        justify-content: flex-start;
+    }
 }

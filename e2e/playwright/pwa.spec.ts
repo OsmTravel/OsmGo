@@ -397,12 +397,28 @@ test('keeps one unified feature sheet for details and raw OSM codes', async ({
     const sheet = page.getByTestId('selected-object-sheet')
     await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
     await expect(sheet.locator('.object-editor')).toHaveCount(0)
+    const surveyCard = sheet.locator('survey-card .survey-card')
+    const surveyQuestion = surveyCard.locator('.survey-card__question')
+    const surveyActions = surveyCard.locator('.actions')
     await expect(
-        sheet.getByText('Does this object still exist?', { exact: true })
+        surveyQuestion.getByText('Does this object still exist?', {
+            exact: true,
+        })
     ).toBeVisible()
     await expect(
         sheet.getByRole('button', { name: 'Yes', exact: true })
     ).toBeVisible()
+    const surveyBox = await surveyCard.boundingBox()
+    const questionBox = await surveyQuestion.boundingBox()
+    const actionsBox = await surveyActions.boundingBox()
+    expect(surveyBox?.height).toBeLessThanOrEqual(64)
+    expect(
+        Math.abs(
+            (questionBox?.y ?? 0) +
+                (questionBox?.height ?? 0) / 2 -
+                ((actionsBox?.y ?? 0) + (actionsBox?.height ?? 0) / 2)
+        )
+    ).toBeLessThanOrEqual(2)
 
     await sheet.getByRole('button', { name: 'More actions' }).click()
     await expect(page.getByText('View details', { exact: true })).toHaveCount(0)
