@@ -65,8 +65,6 @@
             "RESIZE_PANEL": "Redimensionner le panneau",
             "ADD_BOOKMARK": "Ajouter aux favoris",
             "REMOVE_BOOKMARK": "Retirer des favoris",
-            "MORE_ACTIONS": "Plus d'actions",
-            "OSM_TAGS": "Tags OSM",
             "DISCARD_TITLE": "Abandonner les modifications ?",
             "DISCARD_MESSAGE": "Les modifications non enregistrées seront perdues.",
             "DISCARD": "Abandonner",

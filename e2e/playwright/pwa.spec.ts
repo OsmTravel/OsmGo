@@ -420,11 +420,15 @@ test('keeps one unified feature sheet for details and raw OSM codes', async ({
         )
     ).toBeLessThanOrEqual(2)
 
-    await sheet.getByRole('button', { name: 'More actions' }).click()
-    await expect(page.getByText('View details', { exact: true })).toHaveCount(0)
-    await page.getByRole('menuitem', { name: 'Show or hide tag codes' }).click()
+    const codeSwitch = sheet.getByRole('button', {
+        name: 'Show or hide tag codes',
+    })
+    await expect(codeSwitch).toBeVisible()
+    await expect(codeSwitch).toHaveAttribute('aria-pressed', 'false')
+    await codeSwitch.click()
 
     await expect(sheet).toHaveAttribute('data-sheet-mode', 'read')
+    await expect(codeSwitch).toHaveAttribute('aria-pressed', 'true')
     await expect(sheet.locator('.object-facts--code')).toBeVisible()
     await expect(
         sheet.locator('dt').filter({ hasText: 'amenity' })

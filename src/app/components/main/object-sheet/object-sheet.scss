@@ -179,6 +179,11 @@
     button.favorite-action.is-active {
         color: var(--osmgo-blue);
     }
+
+    button.code-action.is-active {
+        color: var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
 }
 
 .sheet-content {

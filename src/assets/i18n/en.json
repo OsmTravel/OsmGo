@@ -65,8 +65,6 @@
             "RESIZE_PANEL": "Resize panel",
             "ADD_BOOKMARK": "Add bookmark",
             "REMOVE_BOOKMARK": "Remove bookmark",
-            "MORE_ACTIONS": "More actions",
-            "OSM_TAGS": "OSM tags",
             "DISCARD_TITLE": "Discard changes?",
             "DISCARD_MESSAGE": "Unsaved changes will be lost.",
             "DISCARD": "Discard",

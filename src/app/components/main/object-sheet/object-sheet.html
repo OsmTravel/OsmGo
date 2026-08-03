@@ -86,13 +86,16 @@
 
         <button
             mat-icon-button
+            class="code-action"
             type="button"
-            [matMenuTriggerFor]="objectMenu"
-            [matTooltip]="'MAIN.SELECTION.MORE_ACTIONS' | translate"
-            [attr.aria-label]="'MAIN.SELECTION.MORE_ACTIONS' | translate"
+            [class.is-active]="displayCode()"
+            [attr.aria-pressed]="displayCode()"
+            [matTooltip]="'A11Y.CODE' | translate"
+            [attr.aria-label]="'A11Y.CODE' | translate"
+            (click)="toggleCode()"
         >
             <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-                >more_vert</mat-icon
+                >code</mat-icon
             >
         </button>
     </div>
@@ -247,17 +250,3 @@
     </footer>
     }
 </section>
-
-<mat-menu #objectMenu="matMenu" xPosition="before">
-    <button
-        mat-menu-item
-        type="button"
-        [class.is-active]="displayCode()"
-        (click)="toggleCode()"
-    >
-        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
-            >code</mat-icon
-        >
-        <span>{{ 'A11Y.CODE' | translate }}</span>
-    </button>
-</mat-menu>

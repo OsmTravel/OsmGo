@@ -12,7 +12,6 @@ import {
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialog } from '@angular/material/dialog'
 import { MatIconModule } from '@angular/material/icon'
-import { MatMenuModule } from '@angular/material/menu'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { cloneDeep } from '@app/utils/clone'
@@ -99,7 +98,6 @@ const SUMMARY_ORDER = ['material', 'start_date', 'artist_name', 'description']
         ModalPrimaryTag,
         ObjectEditorContentComponent,
         MatIconModule,
-        MatMenuModule,
         MatTooltipModule,
         OpeningHoursComponent,
         RelativeTimePipe,
