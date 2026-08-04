@@ -1,9 +1,141 @@
+import { signal } from '@angular/core'
 import type { OsmGoFeatureCollection } from '@osmgo/type'
+import type { Config } from '@services/config.service'
 import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
-import { Subscription } from 'rxjs'
-import { MapService } from './map.service'
+import { of, Subscription, throwError } from 'rxjs'
+import { type MapInitializationError, MapService } from './map.service'
 import { MapLayerController } from './map-layer.controller'
 import { MapLifecycleController } from './map-lifecycle.controller'
+
+describe('MapService initialization', () => {
+    const config = {
+        centerWhenGpsIsReady: false,
+        lastView: { lng: 2, lat: 48, zoom: 18, bearing: 0 },
+    } as Config
+
+    beforeEach(() => {
+        vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    })
+
+    afterEach(() => {
+        vi.restoreAllMocks()
+    })
+
+    function createService() {
+        const service = Object.create(MapService.prototype) as MapService
+        const errorState = signal<MapInitializationError | null>(null)
+        Object.defineProperties(service, {
+            lifecycle: { value: new MapLifecycleController() },
+            mapCreated: { value: false, writable: true },
+            styleReady: { value: false, writable: true },
+            loadingDataState: { value: { set: vi.fn() } },
+            mapInitializationErrorState: { value: errorState },
+            mapInitializationError: { value: errorState.asReadonly() },
+            _ngZone: { value: { run: (callback: () => void) => callback() } },
+        })
+        return service
+    }
+
+    it('turns a style request failure into a retryable state', () => {
+        const service = createService()
+        vi.spyOn(service, 'getMapStyle')
+            .mockReturnValueOnce(throwError(() => new Error('offline')))
+            .mockReturnValueOnce(of({ version: 8, sources: {}, layers: [] }))
+        Object.defineProperties(service, {
+            document: {
+                value: {
+                    createElement: () => ({ getContext: () => null }),
+                },
+            },
+        })
+
+        expect(() => service.initMap(config)).not.toThrow()
+        expect(service.mapInitializationError()?.messageKey).toBe(
+            'MAIN.MAP_INITIALIZATION.STYLE_FAILED'
+        )
+
+        service.retryMapInitialization()
+
+        expect(service.getMapStyle).toHaveBeenCalledTimes(2)
+        expect(service.mapInitializationError()?.messageKey).toBe(
+            'MAIN.MAP_INITIALIZATION.WEBGL_REQUIRED'
+        )
+    })
+
+    it('catches constructor failures without leaking a global error', () => {
+        const service = createService()
+        vi.spyOn(service, 'getMapStyle').mockReturnValue(
+            of({ version: 8, sources: {}, layers: [] })
+        )
+        Object.defineProperties(service, {
+            document: {
+                value: {
+                    createElement: () => ({ getContext: () => ({}) }),
+                },
+            },
+            zone: {
+                value: {
+                    runOutsideAngular: (callback: () => void) => callback(),
+                },
+            },
+        })
+        vi.spyOn(
+            service as unknown as {
+                createMapInstance: () => MapLibreMap
+            },
+            'createMapInstance'
+        ).mockImplementation(() => {
+            throw new Error('GPU initialization failed')
+        })
+
+        expect(() => service.initMap(config)).not.toThrow()
+        expect(service.mapInitializationError()?.messageKey).toBe(
+            'MAIN.MAP_INITIALIZATION.CREATION_FAILED'
+        )
+    })
+
+    it('removes a partially configured map after a setup failure', () => {
+        const service = createService()
+        const remove = vi.fn()
+        const activeMap = {
+            getZoom: () => 18,
+            addControl: () => {
+                throw new Error('Control setup failed')
+            },
+            remove,
+        } as unknown as MapLibreMap
+        vi.spyOn(service, 'getMapStyle').mockReturnValue(
+            of({ version: 8, sources: {}, layers: [] })
+        )
+        Object.defineProperties(service, {
+            document: {
+                value: {
+                    createElement: () => ({ getContext: () => ({}) }),
+                },
+            },
+            zone: {
+                value: {
+                    runOutsideAngular: (callback: () => void) => callback(),
+                },
+            },
+            configService: { value: { setCurrentZoom: vi.fn() } },
+        })
+        vi.spyOn(
+            service as unknown as {
+                createMapInstance: () => MapLibreMap
+            },
+            'createMapInstance'
+        ).mockReturnValue(activeMap)
+
+        service.initMap(config)
+
+        expect(remove).toHaveBeenCalledOnce()
+        expect(service.map).toBeUndefined()
+        expect(service.mapInitializationError()?.messageKey).toBe(
+            'MAIN.MAP_INITIALIZATION.CREATION_FAILED'
+        )
+    })
+})
 
 describe('MapService lifecycle', () => {
     const setPrivate = (service: MapService, key: string, value: unknown) => {

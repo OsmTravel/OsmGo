@@ -73,6 +73,20 @@
         }
     </div>
 </section>
+} @if (mapService.mapInitializationError(); as mapError) {
+<section class="startup-state startup-state--error" role="alert">
+    <h1>{{ 'MAIN.MAP_INITIALIZATION.TITLE' | translate }}</h1>
+    <p>{{ mapError.messageKey | translate }}</p>
+    <div class="startup-state__actions">
+        <button
+            type="button"
+            class="secondary-button"
+            (click)="retryMapInitialization()"
+        >
+            {{ 'MAIN.MAP_INITIALIZATION.RETRY' | translate }}
+        </button>
+    </div>
+</section>
 }
 
 <menu-component

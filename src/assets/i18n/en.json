@@ -57,6 +57,13 @@
             "RETRY": "Try again",
             "RESET_LOCAL_DATA": "Reset local map data"
         },
+        "MAP_INITIALIZATION": {
+            "TITLE": "The map could not start",
+            "STYLE_FAILED": "The map style could not be loaded. Check your connection, then try again.",
+            "WEBGL_REQUIRED": "WebGL 2 is required to display the map on this device.",
+            "CREATION_FAILED": "The map could not be created. Try again, or restart the application if the problem persists.",
+            "RETRY": "Try again"
+        },
         "OVERLAY": {
             "LABEL": "OsmGo secondary page"
         },

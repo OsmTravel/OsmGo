@@ -55,6 +55,7 @@ const createPage = ({
         mapBackgroundClick$: new Subject(),
         markerMoveMoving: signal(false),
         markerMoving: signal(false),
+        mapInitializationError: signal(null),
         showModal$: new Subject(),
         setCenterInUrl: vi.fn(),
         ...mapService,
@@ -102,6 +103,17 @@ const createPage = ({
 }
 
 describe('MainPage', () => {
+    it('delegates a map initialization retry to MapService', () => {
+        const retryMapInitialization = vi.fn()
+        const { page } = createPage({
+            mapService: { retryMapInitialization },
+        })
+
+        page.retryMapInitialization()
+
+        expect(retryMapInitialization).toHaveBeenCalledOnce()
+    })
+
     it.each([
         { native: false, expected: true },
         { native: true, expected: false },

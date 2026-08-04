@@ -712,6 +712,10 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         window.location.reload()
     }
 
+    retryMapInitialization(): void {
+        this.mapService.retryMapInitialization()
+    }
+
     async resetStartupData(): Promise<void> {
         await this.initService.resetFatalResource()
         this.reloadApplication()

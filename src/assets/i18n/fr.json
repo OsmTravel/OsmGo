@@ -57,6 +57,13 @@
             "RETRY": "Réessayer",
             "RESET_LOCAL_DATA": "Réinitialiser les données locales"
         },
+        "MAP_INITIALIZATION": {
+            "TITLE": "La carte n’a pas pu démarrer",
+            "STYLE_FAILED": "Le style de carte n’a pas pu être chargé. Vérifiez votre connexion, puis réessayez.",
+            "WEBGL_REQUIRED": "WebGL 2 est nécessaire pour afficher la carte sur cet appareil.",
+            "CREATION_FAILED": "La carte n’a pas pu être créée. Réessayez ou redémarrez l’application si le problème persiste.",
+            "RETRY": "Réessayer"
+        },
         "OVERLAY": {
             "LABEL": "Page secondaire OsmGo"
         },

@@ -46,7 +46,9 @@ import {
     type LngLatLike,
     Map,
     type MapGeoJSONFeature,
+    type ErrorEvent as MapLibreErrorEvent,
     type MapMouseEvent,
+    type MapOptions,
     Marker,
     NavigationControl,
     type RasterSourceSpecification,
@@ -68,6 +70,13 @@ type HeadingWithTrueHeading = CompassHeading & { trueHeading: number }
 type LoadedMapImage = Awaited<ReturnType<Map['loadImage']>>['data']
 type IconParameters = { shape: string; color: string; id: string }
 
+export interface MapInitializationError {
+    messageKey:
+        | 'MAIN.MAP_INITIALIZATION.STYLE_FAILED'
+        | 'MAIN.MAP_INITIALIZATION.WEBGL_REQUIRED'
+        | 'MAIN.MAP_INITIALIZATION.CREATION_FAILED'
+}
+
 @Service()
 export class MapService {
     private readonly _ngZone = inject(NgZone)
@@ -88,6 +97,10 @@ export class MapService {
     readonly loadingData = this.loadingDataState.asReadonly()
     private readonly processingState = signal(false)
     readonly isProcessing = this.processingState.asReadonly()
+    private readonly mapInitializationErrorState =
+        signal<MapInitializationError | null>(null)
+    readonly mapInitializationError =
+        this.mapInitializationErrorState.asReadonly()
     private mapCreated = false
     private styleReady = false
     private readonly lifecycle = new MapLifecycleController()
@@ -95,6 +108,7 @@ export class MapService {
     private officialRenderRevision = 0
     private pendingRenderRevision = 0
     private activeRenderCount = 0
+    private lastMapConfig?: Config
 
     spritesCache: HTMLImageElement | undefined
     constructor() {
@@ -641,149 +655,236 @@ export class MapService {
         if (this.mapCreated || this.lifecycle.initializationInProgress) {
             return
         }
-        const initialization = this.getMapStyle().subscribe((mapStyle) => {
-            if (this.mapCreated) return
-            const canvas = this.document.createElement('canvas')
-            if (!canvas.getContext('webgl2')) {
-                this.alertService.showAlert(
-                    'WebGL 2 is required to display the map on this device.'
-                )
-                return
-            }
-
-            this.positionIsFollow = config.centerWhenGpsIsReady
-            this.headingIsLocked = config.centerWhenGpsIsReady
-            this.zone.runOutsideAngular(() => {
-                const activeMap = new Map({
-                    container: 'map',
-                    style: mapStyle as StyleSpecification,
-                    center: [config.lastView.lng, config.lastView.lat],
-                    zoom: config.lastView.zoom,
-                    bearing: config.lastView.bearing,
-                    pitch: 0,
-                    maxZoom: 22,
-                    doubleClickZoom: false,
-                    attributionControl: false,
-                    dragRotate: true,
-                    trackResize: false,
-                    pitchWithRotate: false,
-                    collectResourceTiming: false,
-                })
-                this.map = activeMap
-                this.mapCreated = true
-                this.styleReady = false
-                this.layersAreLoaded = false
-                this.configService.setCurrentZoom(activeMap.getZoom())
-
-                activeMap.addControl(new NavigationControl())
-                this.attributionControl = new AttributionControl({
-                    customAttribution: '',
-                })
-                activeMap.addControl(this.attributionControl)
-                activeMap.addControl(
-                    new ScaleControl({ maxWidth: 160, unit: 'metric' })
-                )
-
-                const onLoad = (): void => {
-                    if (!this.mapCreated || this.map !== activeMap) return
-                    this.styleReady = true
-                    this.mapIsLoaded()
+        this.lastMapConfig = config
+        this.mapInitializationErrorState.set(null)
+        const initialization = this.getMapStyle().subscribe({
+            next: (mapStyle) => {
+                if (this.mapCreated) return
+                const canvas = this.document.createElement('canvas')
+                if (!canvas.getContext('webgl2')) {
+                    this.failMapInitialization(
+                        'MAIN.MAP_INITIALIZATION.WEBGL_REQUIRED'
+                    )
+                    return
                 }
-                const onMove = (): void => {
-                    if (!this.mapCreated || this.map !== activeMap) return
-                    this.mapMoveSubject.next()
-                    const center = activeMap.getCenter()
-                    if (this.markerMoving()) {
-                        this.markerPositionate?.setLngLat(center)
-                    }
-                    if (this.markerMoveMoving()) {
-                        this.markerMove?.setLngLat(center)
-                    }
-                }
-                const onMoveEnd = (): void => {
-                    if (this.mapCreated && this.map === activeMap) {
-                        this.setCenterInUrl()
-                    }
-                }
-                const onZoom = (): void => {
-                    if (!this.mapCreated || this.map !== activeMap) return
-                    this.configService.setCurrentZoom(activeMap.getZoom())
-                    const location = this.locationService.location()
-                    if (this.layersAreLoaded && location?.coords.accuracy) {
-                        this.changeLocationRadius(
-                            location.coords.accuracy,
-                            false
+
+                this.positionIsFollow = config.centerWhenGpsIsReady
+                this.headingIsLocked = config.centerWhenGpsIsReady
+                this.zone.runOutsideAngular(() => {
+                    let activeMap: Map | undefined
+                    try {
+                        activeMap = this.createMapInstance({
+                            container: 'map',
+                            style: mapStyle as StyleSpecification,
+                            center: [config.lastView.lng, config.lastView.lat],
+                            zoom: config.lastView.zoom,
+                            bearing: config.lastView.bearing,
+                            pitch: 0,
+                            maxZoom: 22,
+                            doubleClickZoom: false,
+                            attributionControl: false,
+                            dragRotate: true,
+                            trackResize: false,
+                            pitchWithRotate: false,
+                            collectResourceTiming: false,
+                        })
+                        const configuredMap = activeMap
+                        this.map = activeMap
+                        this.mapCreated = true
+                        this.styleReady = false
+                        this.layersAreLoaded = false
+                        this.configService.setCurrentZoom(activeMap.getZoom())
+
+                        activeMap.addControl(new NavigationControl())
+                        this.attributionControl = new AttributionControl({
+                            customAttribution: '',
+                        })
+                        activeMap.addControl(this.attributionControl)
+                        activeMap.addControl(
+                            new ScaleControl({ maxWidth: 160, unit: 'metric' })
+                        )
+
+                        const onLoad = (): void => {
+                            if (!this.mapCreated || this.map !== activeMap)
+                                return
+                            this.styleReady = true
+                            this.mapIsLoaded()
+                        }
+                        const onError = (event: MapLibreErrorEvent): void => {
+                            if (
+                                !this.mapCreated ||
+                                this.map !== activeMap ||
+                                this.styleReady
+                            ) {
+                                return
+                            }
+                            this.failMapInitialization(
+                                'MAIN.MAP_INITIALIZATION.CREATION_FAILED',
+                                event.error,
+                                activeMap
+                            )
+                        }
+                        const onMove = (): void => {
+                            if (!this.mapCreated || this.map !== activeMap)
+                                return
+                            this.mapMoveSubject.next()
+                            const center = activeMap.getCenter()
+                            if (this.markerMoving()) {
+                                this.markerPositionate?.setLngLat(center)
+                            }
+                            if (this.markerMoveMoving()) {
+                                this.markerMove?.setLngLat(center)
+                            }
+                        }
+                        const onMoveEnd = (): void => {
+                            if (this.mapCreated && this.map === activeMap) {
+                                this.setCenterInUrl()
+                            }
+                        }
+                        const onZoom = (): void => {
+                            if (!this.mapCreated || this.map !== activeMap)
+                                return
+                            this.configService.setCurrentZoom(
+                                activeMap.getZoom()
+                            )
+                            const location = this.locationService.location()
+                            if (
+                                this.layersAreLoaded &&
+                                location?.coords.accuracy
+                            ) {
+                                this.changeLocationRadius(
+                                    location.coords.accuracy,
+                                    false
+                                )
+                            }
+                        }
+                        activeMap.on('load', onLoad)
+                        activeMap.on('error', onError)
+                        activeMap.on('move', onMove)
+                        activeMap.on('moveend', onMoveEnd)
+                        activeMap.on('zoom', onZoom)
+                        this.lifecycle.trackCleanup(
+                            () => configuredMap.off('load', onLoad),
+                            () => configuredMap.off('error', onError),
+                            () => configuredMap.off('move', onMove),
+                            () => configuredMap.off('moveend', onMoveEnd),
+                            () => configuredMap.off('zoom', onZoom)
+                        )
+
+                        this.lifecycle.trackSession(
+                            this.bboxChanged$.subscribe((geojsonPolygon) => {
+                                if (
+                                    !this.layersAreLoaded ||
+                                    this.map !== activeMap
+                                ) {
+                                    return
+                                }
+                                const source = activeMap.getSource('bbox') as
+                                    | GeoJSONSource
+                                    | undefined
+                                source?.setData(geojsonPolygon)
+                            })
+                        )
+                        this.lifecycle.trackSession(
+                            this.moveElement$.subscribe((data) => {
+                                if (
+                                    this.map !== activeMap ||
+                                    !data.mode ||
+                                    !data.geojson ||
+                                    data.geojson.geometry.type !== 'Point'
+                                ) {
+                                    return
+                                }
+                                this.endMarkerMovement()
+                                this.mode = data.mode
+                                const pointFeature =
+                                    data.geojson as OsmGoFeature<Point>
+                                const coordinates = pointFeature.geometry
+                                    .coordinates as LngLatLike
+                                activeMap.setCenter(coordinates)
+                                this.markerMove = this.createDomMoveMarker(
+                                    coordinates,
+                                    pointFeature
+                                )
+                                this.markerMoveMovingState.set(true)
+                                this.markerMove.addTo(activeMap)
+                            })
+                        )
+
+                        const initialFeatures = [
+                            ...this.dataService.geojson.features,
+                            ...this.dataService.geojsonChanged.features,
+                        ]
+                        const missingMarkers = [
+                            ...new Set(
+                                initialFeatures
+                                    .map((feature) => feature.properties.marker)
+                                    .filter(
+                                        (marker) =>
+                                            !configuredMap.hasImage(marker)
+                                    )
+                            ),
+                        ]
+                        this.addMissingIconsToMap(
+                            missingMarkers,
+                            activeMap
+                        ).catch((error) => {
+                            if (this.mapCreated && this.map === activeMap) {
+                                console.error(error)
+                            }
+                        })
+                    } catch (error) {
+                        this.failMapInitialization(
+                            'MAIN.MAP_INITIALIZATION.CREATION_FAILED',
+                            error,
+                            activeMap
                         )
                     }
-                }
-                activeMap.on('load', onLoad)
-                activeMap.on('move', onMove)
-                activeMap.on('moveend', onMoveEnd)
-                activeMap.on('zoom', onZoom)
-                this.lifecycle.trackCleanup(
-                    () => activeMap.off('load', onLoad),
-                    () => activeMap.off('move', onMove),
-                    () => activeMap.off('moveend', onMoveEnd),
-                    () => activeMap.off('zoom', onZoom)
+                })
+            },
+            error: (error: unknown) => {
+                this.failMapInitialization(
+                    'MAIN.MAP_INITIALIZATION.STYLE_FAILED',
+                    error
                 )
-
-                this.lifecycle.trackSession(
-                    this.bboxChanged$.subscribe((geojsonPolygon) => {
-                        if (!this.layersAreLoaded || this.map !== activeMap) {
-                            return
-                        }
-                        const source = activeMap.getSource('bbox') as
-                            | GeoJSONSource
-                            | undefined
-                        source?.setData(geojsonPolygon)
-                    })
-                )
-                this.lifecycle.trackSession(
-                    this.moveElement$.subscribe((data) => {
-                        if (
-                            this.map !== activeMap ||
-                            !data.mode ||
-                            !data.geojson ||
-                            data.geojson.geometry.type !== 'Point'
-                        ) {
-                            return
-                        }
-                        this.endMarkerMovement()
-                        this.mode = data.mode
-                        const pointFeature = data.geojson as OsmGoFeature<Point>
-                        const coordinates = pointFeature.geometry
-                            .coordinates as LngLatLike
-                        activeMap.setCenter(coordinates)
-                        this.markerMove = this.createDomMoveMarker(
-                            coordinates,
-                            pointFeature
-                        )
-                        this.markerMoveMovingState.set(true)
-                        this.markerMove.addTo(activeMap)
-                    })
-                )
-
-                const initialFeatures = [
-                    ...this.dataService.geojson.features,
-                    ...this.dataService.geojsonChanged.features,
-                ]
-                const missingMarkers = [
-                    ...new Set(
-                        initialFeatures
-                            .map((feature) => feature.properties.marker)
-                            .filter((marker) => !activeMap.hasImage(marker))
-                    ),
-                ]
-                this.addMissingIconsToMap(missingMarkers, activeMap).catch(
-                    (error) => {
-                        if (this.mapCreated && this.map === activeMap) {
-                            console.error(error)
-                        }
-                    }
-                )
-            })
+            },
         })
         this.lifecycle.trackInitialization(initialization)
+    }
+
+    retryMapInitialization(): void {
+        if (!this.lastMapConfig) return
+        this.initMap(this.lastMapConfig)
+    }
+
+    private createMapInstance(options: MapOptions): Map {
+        return new Map(options)
+    }
+
+    private failMapInitialization(
+        messageKey: MapInitializationError['messageKey'],
+        cause?: unknown,
+        activeMap?: Map
+    ): void {
+        if (
+            activeMap &&
+            this.map !== activeMap &&
+            this.mapInitializationErrorState()
+        ) {
+            return
+        }
+        if (cause) console.error('Map initialization failed.', cause)
+        this.mapCreated = false
+        this.styleReady = false
+        this.layersAreLoaded = false
+        this.loadingDataState.set(false)
+        this.lifecycle.destroy(activeMap)
+        if (activeMap && this.map === activeMap) {
+            delete (this as { map?: Map }).map
+        }
+        this._ngZone.run(() => {
+            this.mapInitializationErrorState.set({ messageKey })
+        })
     }
 
     destroyMap(): void {
