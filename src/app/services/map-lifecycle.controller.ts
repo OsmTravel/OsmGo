@@ -25,13 +25,23 @@ export class MapLifecycleController {
     }
 
     destroy(map?: Pick<Map, 'remove'>): void {
-        this.initialization?.unsubscribe()
+        this.runCleanup('map initialization', () =>
+            this.initialization?.unsubscribe()
+        )
         this.initialization = undefined
-        this.session.unsubscribe()
+        this.runCleanup('map session', () => this.session.unsubscribe())
         this.session = new Subscription()
         for (const cleanup of this.cleanups.splice(0).reverse()) {
-            cleanup()
+            this.runCleanup('map listener', cleanup)
         }
-        map?.remove()
+        this.runCleanup('MapLibre instance', () => map?.remove())
+    }
+
+    private runCleanup(label: string, cleanup: () => void): void {
+        try {
+            cleanup()
+        } catch (error) {
+            console.error(`Could not clean up ${label}.`, error)
+        }
     }
 }

@@ -39,4 +39,25 @@ describe('MapLifecycleController', () => {
         expect(firstTeardown).toHaveBeenCalledOnce()
         expect(secondTeardown).toHaveBeenCalledOnce()
     })
+
+    it('continues cleanup and removes the map after one cleanup fails', () => {
+        const controller = new MapLifecycleController()
+        const firstCleanup = vi.fn()
+        const failingCleanup = vi.fn(() => {
+            throw new Error('listener cleanup failed')
+        })
+        const remove = vi.fn()
+        const consoleError = vi
+            .spyOn(console, 'error')
+            .mockImplementation(() => undefined)
+        controller.trackCleanup(firstCleanup, failingCleanup)
+
+        controller.destroy({ remove } as unknown as Map)
+
+        expect(failingCleanup).toHaveBeenCalledOnce()
+        expect(firstCleanup).toHaveBeenCalledOnce()
+        expect(remove).toHaveBeenCalledOnce()
+        expect(consoleError).toHaveBeenCalledOnce()
+        consoleError.mockRestore()
+    })
 })
