@@ -9,6 +9,7 @@ import type {
     PersistedUploadJournal,
     PersistedUploadSummary,
 } from '@services/osm-state'
+import { validateOsmUploadFeature } from '@services/osm-upload-validation'
 import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
 import { firstValueFrom, type Observable } from 'rxjs'
 import { take } from 'rxjs/operators'
@@ -177,6 +178,56 @@ export class UploadCoordinator {
             return Promise.resolve(failed)
         }
 
+        if (journal.phase === 'acknowledged' && journal.journalVersion === 1) {
+            const failed = this.createFailure(
+                'upload',
+                new Error(
+                    'This legacy upload journal has no immutable snapshot. Inspect OpenStreetMap before resolving it.'
+                ),
+                journal.changesetId
+            )
+            this.transition(failed)
+            return Promise.resolve(failed)
+        }
+
+        const attempt = this.startRecovery(journal)
+        return attempt
+    }
+
+    resumeReconciliation(): Promise<UploadState> {
+        if (this.activeAttempt) return this.activeAttempt
+        const journal = this.dependencies.getUploadJournal()
+        if (!journal || journal.phase === 'prepared') {
+            return Promise.resolve(this.stateSignal())
+        }
+        if (journal.phase === 'acknowledged' && journal.journalVersion === 1) {
+            return Promise.resolve(this.stateSignal())
+        }
+        if (this.stateSignal().kind === 'failed') {
+            this.transition({ kind: 'idle' })
+        }
+        if (this.stateSignal().kind !== 'idle') {
+            return Promise.resolve(this.stateSignal())
+        }
+        return this.startRecovery(journal)
+    }
+
+    async discardPreparedAttemptAsNotApplied(): Promise<UploadState> {
+        if (this.activeAttempt) return this.activeAttempt
+        const journal = this.dependencies.getUploadJournal()
+        if (!journal || journal.phase !== 'prepared') {
+            return this.stateSignal()
+        }
+        await this.dependencies.discardPreparedUploadAttempt(journal.attemptId)
+        if (this.stateSignal().kind === 'failed') {
+            this.transition({ kind: 'idle' })
+        }
+        return this.stateSignal()
+    }
+
+    private startRecovery(
+        journal: Exclude<PersistedUploadJournal, { phase: 'prepared' }>
+    ): Promise<UploadState> {
         const attempt = this.runRecovery(journal)
         this.activeAttempt = attempt.finally(() => {
             this.activeAttempt = undefined
@@ -219,11 +270,17 @@ export class UploadCoordinator {
 
             stage = 'journal'
             await this.dependencies.beginUploadAttempt({
-                journalVersion: 1,
+                journalVersion: 2,
                 attemptId,
+                payload: diff,
                 payloadHash: await this.dependencies.hashPayload(diff),
                 changesetId,
                 submittedIds: [...submissions.keys()],
+                submissions: Array.from(submissions, ([oldId, submission]) => ({
+                    oldId,
+                    operation: submission.operation,
+                    feature: cloneDeep(submission.feature),
+                })),
                 summary,
                 startedAt: this.dependencies.now().toISOString(),
                 phase: 'prepared',
@@ -297,20 +354,33 @@ export class UploadCoordinator {
                 attemptId: journal.attemptId,
             })
             if (journal.phase === 'acknowledged') {
-                const submittedIds = new Set(journal.submittedIds)
-                const features = cloneDeep(
-                    this.dependencies
-                        .getPendingFeatures()
-                        .filter((feature) =>
-                            submittedIds.has(String(feature.id))
-                        )
-                )
-                if (features.length !== submittedIds.size) {
+                if (journal.journalVersion !== 2) {
                     throw new Error(
-                        'The acknowledged upload no longer matches the local queue.'
+                        'The upload journal does not contain an immutable snapshot.'
                     )
                 }
+                const actualHash = await this.dependencies.hashPayload(
+                    journal.payload
+                )
+                if (actualHash !== journal.payloadHash) {
+                    throw new Error(
+                        'The persisted upload payload failed its integrity check.'
+                    )
+                }
+                const features = journal.submissions.map((submission) =>
+                    cloneDeep(submission.feature)
+                )
                 const submissions = this.validateQueue(features)
+                for (const persisted of journal.submissions) {
+                    if (
+                        submissions.get(persisted.oldId)?.operation !==
+                        persisted.operation
+                    ) {
+                        throw new Error(
+                            'The persisted upload submissions are inconsistent.'
+                        )
+                    }
+                }
                 const receipt = this.prepareReceipt(
                     journal.rawReceipt,
                     submissions,
@@ -336,6 +406,13 @@ export class UploadCoordinator {
                 cause,
                 journal.changesetId
             )
+            if (
+                this.getOsmErrorMessage(cause).includes('integrity check') ||
+                this.getOsmErrorMessage(cause).includes('immutable snapshot')
+            ) {
+                failed.error.recoveryAction = 'inspectServer'
+                failed.error.canRetry = false
+            }
             this.transition(failed)
             return failed
         } finally {
@@ -351,21 +428,13 @@ export class UploadCoordinator {
         }
         const submittedById = new Map<string, SubmittedUpload>()
         for (const feature of features) {
-            const type = feature.properties.type
-            const id = feature.properties.id
-            const osmgoId = `${type}/${id}`
-            if (
-                !['node', 'way', 'relation'].includes(type) ||
-                !Number.isInteger(id) ||
-                id === 0 ||
-                feature.id !== osmgoId ||
-                submittedById.has(osmgoId)
-            ) {
+            const validated = validateOsmUploadFeature(feature)
+            if (submittedById.has(validated.id)) {
                 throw new Error('The local OSM upload queue is invalid.')
             }
-            submittedById.set(osmgoId, {
+            submittedById.set(validated.id, {
                 feature,
-                operation: this.getSubmittedOperation(feature),
+                operation: validated.operation,
             })
         }
         return submittedById
@@ -454,26 +523,6 @@ export class UploadCoordinator {
         return preparedResults
     }
 
-    private getSubmittedOperation(feature: UploadFeature): OsmGoChangeType {
-        const changeType = feature.properties.changeType
-        if (
-            changeType !== 'Create' &&
-            changeType !== 'Update' &&
-            changeType !== 'Delete'
-        ) {
-            throw new Error('The local OSM upload queue is invalid.')
-        }
-        const usedByWays = feature.properties.usedByWays
-        if (
-            changeType === 'Delete' &&
-            (usedByWays === true ||
-                (Array.isArray(usedByWays) && usedByWays.length > 0))
-        ) {
-            return 'Update'
-        }
-        return changeType
-    }
-
     private validateUploadReceipt(
         diff: OsmDiffResult,
         submission: SubmittedUpload
@@ -554,7 +603,7 @@ export class UploadCoordinator {
         const details = this.getOsmRequestError(cause)
         const status = typeof details.status === 'number' ? details.status : 0
         let message = this.getOsmErrorMessage(cause)
-        let recoveryAction = this.getRecoveryAction(stage, status)
+        let recoveryAction = this.getRecoveryAction(stage, status, cause)
         if (this.isClosedChangesetError(details, changesetId)) {
             this.dependencies.invalidateChangeset()
             message = `${message} Please retry to create a new changeset.`
@@ -584,12 +633,17 @@ export class UploadCoordinator {
 
     private getRecoveryAction(
         stage: UploadFailureStage,
-        status: number
+        status: number,
+        cause: unknown
     ): UploadRecoveryAction {
         if (status === 401) return 'reauthenticate'
         if (stage === 'validation') return 'editQueue'
         if (stage === 'connection') return 'reconnect'
-        if (stage === 'upload') return 'inspectServer'
+        if (stage === 'upload') {
+            return this.isDefinitiveUploadRejection(cause)
+                ? 'editQueue'
+                : 'inspectServer'
+        }
         if (stage === 'reconciliation') return 'resumeReconciliation'
         return 'retry'
     }
@@ -670,8 +724,20 @@ export class UploadCoordinator {
     }
 
     private isDefinitiveUploadRejection(error: unknown): boolean {
-        const status = this.getOsmRequestError(error).status
-        return typeof status === 'number' && status >= 400 && status < 500
+        const details = this.getOsmRequestError(error)
+        if (details.status === 401 || details.status === 403) return true
+        if (typeof details.error !== 'string') return false
+        const message = details.error.trim()
+        if (details.status === 409) {
+            return (
+                /^The changeset \d+ was closed at .+\.?$/.test(message) ||
+                /Version mismatch: .+ of (Node|Way|Relation) \d+$/.test(message)
+            )
+        }
+        return (
+            details.status === 410 &&
+            /(node|way|relation) with the id \d+/i.test(message)
+        )
     }
 
     private transition(next: UploadState): void {
@@ -758,6 +824,14 @@ export class UploadCoordinatorService {
 
     recoverJournal(): Promise<UploadState> {
         return this.coordinator.recoverJournal()
+    }
+
+    resumeReconciliation(): Promise<UploadState> {
+        return this.coordinator.resumeReconciliation()
+    }
+
+    discardPreparedAttemptAsNotApplied(): Promise<UploadState> {
+        return this.coordinator.discardPreparedAttemptAsNotApplied()
     }
 
     resetTerminalState(): void {

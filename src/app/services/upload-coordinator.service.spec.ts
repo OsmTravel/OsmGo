@@ -55,11 +55,19 @@ const receiptFor = (feature: UploadFeature): Record<string, unknown> => {
 }
 
 const journalBase = (feature: UploadFeature) => ({
-    journalVersion: 1 as const,
+    journalVersion: 2 as const,
     attemptId: 'attempt-1',
+    payload: '<osmChange/>',
     payloadHash: 'payload-hash',
     changesetId: '123',
     submittedIds: [String(feature.id)],
+    submissions: [
+        {
+            oldId: String(feature.id),
+            operation: feature.properties.changeType!,
+            feature: structuredClone(feature),
+        },
+    ],
     summary: { Total: 1, Create: 1, Update: 0, Delete: 0 },
     startedAt: '2026-08-02T09:59:00.000Z',
 })
@@ -176,11 +184,19 @@ describe('UploadCoordinator', () => {
         expect(harness.processing).toEqual([true, false])
         expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
         expect(harness.dependencies.beginUploadAttempt).toHaveBeenCalledWith({
-            journalVersion: 1,
+            journalVersion: 2,
             attemptId: 'attempt-1',
+            payload: '<osmChange/>',
             payloadHash: 'payload-hash',
             changesetId: '123',
             submittedIds: ['node/-1'],
+            submissions: [
+                {
+                    oldId: 'node/-1',
+                    operation: 'Create',
+                    feature: harness.features[0],
+                },
+            ],
             summary: { Total: 1, Create: 1, Update: 0, Delete: 0 },
             startedAt: '2026-08-02T10:00:00.000Z',
             phase: 'prepared',
@@ -280,6 +296,43 @@ describe('UploadCoordinator', () => {
         expect(harness.dependencies.getUserDetail$).not.toHaveBeenCalled()
         expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
         expect(harness.processing).toEqual([true, false])
+    })
+
+    it.each([
+        {
+            name: 'positive creation ID',
+            feature: queuedFeature('Create', 1),
+        },
+        {
+            name: 'negative update ID',
+            feature: queuedFeature('Update', -1),
+        },
+        {
+            name: 'invalid update version',
+            feature: queuedFeature('Update', 1, 'node', 0),
+        },
+        {
+            name: 'out-of-range coordinates',
+            feature: {
+                ...queuedFeature('Create', -1),
+                geometry: { type: 'Point' as const, coordinates: [181, 2] },
+            },
+        },
+        {
+            name: 'unsupported way creation',
+            feature: queuedFeature('Create', -1, 'way'),
+        },
+    ])('rejects $name before creating a changeset', async ({ feature }) => {
+        const harness = createHarness({ features: [feature] })
+
+        const state = await harness.coordinator.start('Survey')
+
+        expect(state).toMatchObject({
+            kind: 'failed',
+            stage: 'validation',
+        })
+        expect(harness.dependencies.getUserDetail$).not.toHaveBeenCalled()
+        expect(harness.dependencies.getValidChangeset).not.toHaveBeenCalled()
     })
 
     it('reports an offline connection as retryable without creating a changeset', async () => {
@@ -385,6 +438,31 @@ describe('UploadCoordinator', () => {
         expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
     })
 
+    it.each([408, 429])(
+        'keeps the journal for an ambiguous HTTP %s response',
+        async (status) => {
+            const harness = createHarness({
+                upload$: throwError(() => ({
+                    status,
+                    error: 'Gateway response',
+                })),
+            })
+
+            const state = await harness.coordinator.start('Survey')
+
+            expect(state).toMatchObject({
+                kind: 'failed',
+                error: {
+                    recoveryAction: 'inspectServer',
+                    canRetry: false,
+                },
+            })
+            expect(
+                harness.dependencies.discardPreparedUploadAttempt
+            ).not.toHaveBeenCalled()
+        }
+    )
+
     it('identifies the queued feature involved in a version conflict', async () => {
         const feature = queuedFeature('Update', 12)
         const harness = createHarness({
@@ -400,7 +478,12 @@ describe('UploadCoordinator', () => {
         expect(state).toMatchObject({
             kind: 'failed',
             stage: 'upload',
-            error: { status: 409, feature: { id: 'node/12' } },
+            error: {
+                status: 409,
+                feature: { id: 'node/12' },
+                recoveryAction: 'editQueue',
+                canRetry: true,
+            },
         })
         expect(
             harness.dependencies.discardPreparedUploadAttempt
@@ -539,6 +622,89 @@ describe('UploadCoordinator', () => {
             harness.dependencies.clearAppliedUploadAttempt
         ).toHaveBeenCalledWith('attempt-1')
         expect(harness.processing).toEqual([true, false])
+    })
+
+    it('reconciles from the immutable snapshot instead of the current queue', async () => {
+        const submitted = queuedFeature('Create', -1)
+        submitted.properties.tags.name = 'Submitted name'
+        const current = structuredClone(submitted)
+        current.properties.tags.name = 'Later local name'
+        const harness = createHarness({
+            features: [current],
+            journal: acknowledgedJournal(submitted),
+        })
+
+        const state = await harness.coordinator.recoverJournal()
+
+        expect(state.kind).toBe('succeeded')
+        const applied =
+            harness.dependencies.applyAcknowledgedReceipt.mock.lastCall?.[1]
+        expect(applied?.[0].feature?.properties.tags.name).toBe(
+            'Submitted name'
+        )
+    })
+
+    it('resumes reconciliation in the same session after a local failure', async () => {
+        const feature = queuedFeature('Create', -1)
+        let attempts = 0
+        const harness = createHarness({
+            features: [feature],
+            journal: acknowledgedJournal(feature),
+            applyReceipt: async () => {
+                attempts++
+                if (attempts === 1) throw new Error('IndexedDB unavailable')
+            },
+        })
+
+        const failed = await harness.coordinator.recoverJournal()
+        const recovered = await harness.coordinator.resumeReconciliation()
+
+        expect(failed).toMatchObject({
+            kind: 'failed',
+            error: { recoveryAction: 'resumeReconciliation' },
+        })
+        expect(recovered.kind).toBe('succeeded')
+        expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).toHaveBeenCalledTimes(2)
+    })
+
+    it('refuses recovery when the persisted payload hash is inconsistent', async () => {
+        const feature = queuedFeature('Create', -1)
+        const journal = acknowledgedJournal(feature)
+        journal.payloadHash = 'different-hash'
+        const harness = createHarness({ features: [feature], journal })
+
+        const state = await harness.coordinator.recoverJournal()
+
+        expect(state).toMatchObject({
+            kind: 'failed',
+            error: {
+                recoveryAction: 'inspectServer',
+                canRetry: false,
+            },
+        })
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).not.toHaveBeenCalled()
+    })
+
+    it('discards a prepared attempt only through the explicit recovery command', async () => {
+        const feature = queuedFeature('Create', -1)
+        const harness = createHarness({
+            features: [feature],
+            journal: { ...journalBase(feature), phase: 'prepared' },
+        })
+        await harness.coordinator.recoverJournal()
+
+        const state =
+            await harness.coordinator.discardPreparedAttemptAsNotApplied()
+
+        expect(state).toEqual({ kind: 'idle' })
+        expect(
+            harness.dependencies.discardPreparedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
     })
 
     it('only clears an already-applied journal after restart', async () => {

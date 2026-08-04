@@ -11,7 +11,6 @@ export interface PersistedUploadSummary {
 }
 
 interface PersistedUploadJournalBase {
-    journalVersion: 1
     attemptId: string
     payloadHash: string
     changesetId: string
@@ -20,7 +19,23 @@ interface PersistedUploadJournalBase {
     startedAt: string
 }
 
-export type PersistedUploadJournal = PersistedUploadJournalBase &
+interface PersistedUploadJournalV1Base extends PersistedUploadJournalBase {
+    journalVersion: 1
+}
+
+export interface PersistedUploadSubmission {
+    oldId: string
+    operation: 'Create' | 'Update' | 'Delete'
+    feature: OsmGoFeature
+}
+
+interface PersistedUploadJournalV2Base extends PersistedUploadJournalBase {
+    journalVersion: 2
+    payload: string
+    submissions: PersistedUploadSubmission[]
+}
+
+type PersistedUploadJournalPhase<Base> = Base &
     (
         | { phase: 'prepared' }
         | {
@@ -35,6 +50,10 @@ export type PersistedUploadJournal = PersistedUploadJournalBase &
               appliedAt: string
           }
     )
+
+export type PersistedUploadJournal =
+    | PersistedUploadJournalPhase<PersistedUploadJournalV1Base>
+    | PersistedUploadJournalPhase<PersistedUploadJournalV2Base>
 
 export interface PersistedOsmStateV2 {
     schemaVersion: 2
@@ -125,7 +144,10 @@ const requireUploadSummary = (value: unknown): PersistedUploadSummary => {
 }
 
 const requireUploadJournal = (value: unknown): PersistedUploadJournal => {
-    if (!isRecord(value) || value['journalVersion'] !== 1) {
+    if (
+        !isRecord(value) ||
+        (value['journalVersion'] !== 1 && value['journalVersion'] !== 2)
+    ) {
         throw new Error('The persisted upload journal is invalid.')
     }
     const submittedIds = value['submittedIds']
@@ -137,8 +159,7 @@ const requireUploadJournal = (value: unknown): PersistedUploadJournal => {
     ) {
         throw new Error('The persisted upload journal IDs are invalid.')
     }
-    const base: PersistedUploadJournalBase = {
-        journalVersion: 1,
+    const commonBase: PersistedUploadJournalBase = {
         attemptId: requireNonEmptyString(
             value['attemptId'],
             'upload attempt ID'
@@ -158,6 +179,10 @@ const requireUploadJournal = (value: unknown): PersistedUploadJournal => {
             'upload start timestamp'
         ),
     }
+    const base: PersistedUploadJournalV1Base | PersistedUploadJournalV2Base =
+        value['journalVersion'] === 1
+            ? { ...commonBase, journalVersion: 1 }
+            : requireUploadJournalV2Base(value, commonBase)
     if (value['phase'] === 'prepared') {
         return { ...base, phase: 'prepared' }
     }
@@ -186,6 +211,67 @@ const requireUploadJournal = (value: unknown): PersistedUploadJournal => {
         }
     }
     throw new Error('The persisted upload journal phase is invalid.')
+}
+
+const requireUploadJournalV2Base = (
+    value: Record<string, unknown>,
+    commonBase: PersistedUploadJournalBase
+): PersistedUploadJournalV2Base => {
+    const payload = requireNonEmptyString(value['payload'], 'upload payload')
+    const sourceSubmissions = value['submissions']
+    if (!Array.isArray(sourceSubmissions) || sourceSubmissions.length === 0) {
+        throw new Error('The persisted upload journal submissions are invalid.')
+    }
+
+    const submissions: PersistedUploadSubmission[] = sourceSubmissions.map(
+        (sourceSubmission) => {
+            if (!isRecord(sourceSubmission)) {
+                throw new Error(
+                    'The persisted upload journal submissions are invalid.'
+                )
+            }
+            const oldId = requireNonEmptyString(
+                sourceSubmission['oldId'],
+                'upload submission ID'
+            )
+            const operation = sourceSubmission['operation']
+            const feature = sourceSubmission['feature']
+            if (
+                !['Create', 'Update', 'Delete'].includes(String(operation)) ||
+                !isRecord(feature) ||
+                feature['type'] !== 'Feature' ||
+                String(feature['id']) !== oldId
+            ) {
+                throw new Error(
+                    'The persisted upload journal submissions are invalid.'
+                )
+            }
+            return {
+                oldId,
+                operation: operation as PersistedUploadSubmission['operation'],
+                feature: structuredClone(feature) as unknown as OsmGoFeature,
+            }
+        }
+    )
+    if (
+        new Set(submissions.map(({ oldId }) => oldId)).size !==
+            submissions.length ||
+        submissions.length !== commonBase.submittedIds.length ||
+        submissions.some(
+            ({ oldId }, index) => oldId !== commonBase.submittedIds[index]
+        )
+    ) {
+        throw new Error('The persisted upload journal submissions are invalid.')
+    }
+    if (commonBase.summary.Total !== submissions.length) {
+        throw new Error('The persisted upload journal summary is invalid.')
+    }
+    return {
+        ...commonBase,
+        journalVersion: 2,
+        payload,
+        submissions,
+    }
 }
 
 const requireFeatureCollection = (

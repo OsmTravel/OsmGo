@@ -5,7 +5,11 @@ import type {
     OsmGoFeatureCollection,
 } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
-import { DataService, type OsmDownload } from '@services/data.service'
+import {
+    DataService,
+    type OsmDownload,
+    UploadQueueLockedError,
+} from '@services/data.service'
 import {
     OsmStatePersistenceError,
     type PersistedOsmStateV2,
@@ -100,7 +104,7 @@ describe('DataService', () => {
     })
 
     describe('state loading and migration', () => {
-        it('migrates legacy keys without deleting rollback data', async () => {
+        it('migrates legacy keys and removes stale rollback data', async () => {
             const official = osmFeature(10)
             const legacyCreate = osmFeature(0, 'Create')
             const empty = emptyCollection()
@@ -127,7 +131,10 @@ describe('DataService', () => {
             expect(Object.keys(state.pendingById)).toEqual(['node/-1'])
             expect(service.getGeojsonChanged().features[0].id).toBe('node/-1')
             expect(storageSpy.set).toHaveBeenCalledWith('osmState', state)
-            expect(storageSpy.remove).not.toHaveBeenCalled()
+            expect(storageSpy.remove).toHaveBeenCalledTimes(3)
+            expect(storageSpy.remove).toHaveBeenCalledWith('geojson')
+            expect(storageSpy.remove).toHaveBeenCalledWith('geojsonChanged')
+            expect(storageSpy.remove).toHaveBeenCalledWith('geojsonBbox')
         })
 
         it('loads V2 directly and resumes its temporary ID allocator', async () => {
@@ -410,6 +417,47 @@ describe('DataService', () => {
     })
 
     describe('upload receipt', () => {
+        it('locks submitted IDs while allowing unrelated queue edits', async () => {
+            const submitted = osmFeature(-1, 'Create')
+            const unrelated = osmFeature(-2, 'Create')
+            await service.replacePendingFeatures(
+                collection([submitted, unrelated])
+            )
+            await service.beginUploadAttempt({
+                journalVersion: 1,
+                attemptId: 'attempt-1',
+                payloadHash: 'legacy-payload-hash',
+                changesetId: '123',
+                submittedIds: ['node/-1'],
+                summary: {
+                    Total: 1,
+                    Create: 1,
+                    Update: 0,
+                    Delete: 0,
+                },
+                startedAt: '2026-08-02T10:00:00.000Z',
+                phase: 'prepared',
+            })
+
+            await expect(
+                service.updatePendingFeature('node/-1', submitted)
+            ).rejects.toBeInstanceOf(UploadQueueLockedError)
+            await expect(
+                service.cancelPendingChange('node/-1')
+            ).rejects.toBeInstanceOf(UploadQueueLockedError)
+            await expect(
+                service.cancelAllPendingChanges()
+            ).rejects.toBeInstanceOf(UploadQueueLockedError)
+
+            const updatedUnrelated = structuredClone(unrelated)
+            updatedUnrelated.properties.tags.name = 'Allowed edit'
+            await expect(
+                service.updatePendingFeature('node/-2', updatedUnrelated)
+            ).resolves.toMatchObject({
+                properties: { tags: { name: 'Allowed edit' } },
+            })
+        })
+
         it('persists every journal phase around one atomic reconciliation', async () => {
             const pending = osmFeature(-1, 'Create')
             await service.replacePendingFeatures(collection([pending]))
@@ -563,6 +611,20 @@ describe('DataService', () => {
     })
 
     describe('immutable reads', () => {
+        it('keeps official and pending IDs disjoint after a download', async () => {
+            const pending = osmFeature(10, 'Update')
+            await service.replacePendingFeatures(collection([pending]))
+
+            await service.applyDownload(
+                download([osmFeature(10), osmFeature(11)])
+            )
+
+            expect(service.getGeojson().features.map(({ id }) => id)).toEqual([
+                'node/11',
+            ])
+            expect(service.getGeojsonChanged().features).toEqual([pending])
+        })
+
         it('looks up records directly and returns detached snapshots', async () => {
             const official = osmFeature(1)
             const pending = osmFeature(-1, 'Create')

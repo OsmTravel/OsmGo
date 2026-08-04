@@ -29,6 +29,16 @@ export interface UploadReceiptEntry {
     feature?: OsmGoFeature
 }
 
+export class UploadQueueLockedError extends Error {
+    readonly name = 'UploadQueueLockedError'
+
+    constructor(readonly lockedIds: string[]) {
+        super(
+            `The upload attempt must be resolved before changing: ${lockedIds.join(', ')}.`
+        )
+    }
+}
+
 @Service()
 export class DataService {
     readonly localStorage = inject(AppStorage)
@@ -143,6 +153,11 @@ export class DataService {
             geojsonBbox,
         })
         await this.localStorage.set(OSM_STATE_STORAGE_KEY, state)
+        await Promise.all([
+            this.localStorage.remove('geojson'),
+            this.localStorage.remove('geojsonChanged'),
+            this.localStorage.remove('geojsonBbox'),
+        ])
         return state
     }
 
@@ -184,7 +199,11 @@ export class DataService {
         )
         const bbox = cloneDeep(download.geojsonBbox)
         return this.enqueueOsmStateMutation('apply download', (state) => {
-            state.officialById = officialById
+            state.officialById = Object.fromEntries(
+                Object.entries(officialById).filter(
+                    ([id]) => !state.pendingById[id]
+                )
+            )
             state.bbox = bbox
         })
     }
@@ -229,6 +248,10 @@ export class DataService {
             'pending feature'
         )
         await this.enqueueOsmStateMutation('replace pending data', (state) => {
+            this.assertUploadQueueUnlocked(
+                state,
+                Object.keys(state.pendingById)
+            )
             state.pendingById = nextGeojsonChanged
             state.nextTemporaryId = this.getNextTemporaryId(nextGeojsonChanged)
         })
@@ -244,8 +267,8 @@ export class DataService {
                     throw new Error('The temporary ID allocator is invalid.')
                 }
                 const type = feature.properties.type
-                if (!['node', 'way', 'relation'].includes(type)) {
-                    throw new Error('A valid OSM feature type is required.')
+                if (type !== 'node' || feature.geometry.type !== 'Point') {
+                    throw new Error('Only OSM nodes can be created locally.')
                 }
 
                 feature.id = `${type}/${temporaryId}`
@@ -267,6 +290,7 @@ export class DataService {
         return this.enqueueOsmStateMutation(
             'move official feature to pending',
             (state) => {
+                this.assertUploadQueueUnlocked(state, [id])
                 const original = state.officialById[id]
                 if (!original) {
                     throw new Error('The original feature data is missing.')
@@ -289,6 +313,7 @@ export class DataService {
         return this.enqueueOsmStateMutation(
             'update pending feature',
             (state) => {
+                this.assertUploadQueueUnlocked(state, [id])
                 const current = state.pendingById[id]
                 if (!current) {
                     throw new Error('The pending feature data is missing.')
@@ -309,6 +334,7 @@ export class DataService {
         return this.enqueueOsmStateMutation(
             'mark pending feature deleted',
             (state) => {
+                this.assertUploadQueueUnlocked(state, [id])
                 const pending = state.pendingById[id]
                 if (pending?.properties.changeType === 'Create') {
                     delete state.pendingById[id]
@@ -342,6 +368,7 @@ export class DataService {
         return this.enqueueOsmStateMutation(
             'cancel pending change',
             (state) => {
+                this.assertUploadQueueUnlocked(state, [id])
                 const pending = state.pendingById[id]
                 if (!pending) {
                     throw new Error('The pending feature data is missing.')
@@ -359,6 +386,10 @@ export class DataService {
         return this.enqueueOsmStateMutation(
             'cancel all pending changes',
             (state) => {
+                this.assertUploadQueueUnlocked(
+                    state,
+                    Object.keys(state.pendingById)
+                )
                 for (const [id, pending] of Object.entries(state.pendingById)) {
                     if (pending.properties.changeType !== 'Create') {
                         state.officialById[id] =
@@ -543,6 +574,17 @@ export class DataService {
                 state.officialById[this.requireFeatureId(result.feature)] =
                     cloneDeep(result.feature)
             }
+        }
+    }
+
+    private assertUploadQueueUnlocked(
+        state: PersistedOsmStateV2,
+        candidateIds: string[]
+    ): void {
+        const submittedIds = new Set(state.uploadJournal?.submittedIds ?? [])
+        const lockedIds = candidateIds.filter((id) => submittedIds.has(id))
+        if (lockedIds.length > 0) {
+            throw new UploadQueueLockedError(lockedIds)
         }
     }
 
