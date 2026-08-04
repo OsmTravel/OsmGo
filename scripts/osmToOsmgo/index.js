@@ -195,7 +195,10 @@ export function getConfigTag(feature, presets) {
         const presetID = variant.id
         if (featureID) {
             // Save presets and moreFields from parent IDs
-            if (featureID.includes(presetID)) {
+            if (
+                featureID === presetID ||
+                featureID.startsWith(`${presetID}/`)
+            ) {
                 if (variant.presets)
                     match.presets = [...match.presets, ...variant.presets]
                 if (variant.moreFields)
@@ -238,8 +241,8 @@ export function getConfigTag(feature, presets) {
     if (match.exact) {
         const result = JSON.parse(JSON.stringify(match.exact)) // DeepCopy
         // Add presets and moreFields from parent IDs
-        result.presets = match.presets
-        result.moreFields = match.moreFields
+        result.presets = [...new Set(match.presets)]
+        result.moreFields = [...new Set(match.moreFields)]
         return result
     } else {
         // oops...
@@ -321,6 +324,9 @@ export function getConfigTag(feature, tagsConfig) {
 export function addAttributesToFeature(feature) {
     // /!\ mutable !
     // add properties values
+    delete feature.properties['_name']
+    delete feature.properties.fixme
+    delete feature.properties.time
     if (feature.properties.tags.name) {
         feature.properties['_name'] = feature.properties.tags.name
     } else if (feature.properties.tags.ref) {
@@ -341,6 +347,7 @@ export function setIconStyle(feature, tagsConfig) {
     // /!\ mutable
 
     const configMarker = getConfigTag(feature, tagsConfig)
+    delete feature.properties.unknowTags
 
     let markerShape
     if (feature.properties.type === 'node') {
@@ -470,6 +477,7 @@ export const convert = (osmData, options) => {
     ]
 
     const getWayGeometry = (ndRefs, _features) => {
+        if (!Array.isArray(ndRefs) || ndRefs.length < 2) return null
         const firstNodeId = ndRefs[0]
         const lastNodeId = ndRefs[ndRefs.length - 1]
         const typeGeom = firstNodeId == lastNodeId ? 'Polygon' : 'LineString'
@@ -480,13 +488,17 @@ export const convert = (osmData, options) => {
             if (_features[ndId]) {
                 coordinates.push(_features[ndId].geometry.coordinates)
             } else {
-                // 'TAINDED!'
+                return null
             }
         }
         if (typeGeom == 'LineString') {
-            return { type: 'LineString', coordinates: coordinates }
+            return coordinates.length >= 2
+                ? { type: 'LineString', coordinates: coordinates }
+                : null
         } else if (typeGeom == 'Polygon') {
-            return { type: 'Polygon', coordinates: [coordinates] }
+            return coordinates.length >= 4
+                ? { type: 'Polygon', coordinates: [coordinates] }
+                : null
         }
     }
 
@@ -577,6 +589,7 @@ export const convert = (osmData, options) => {
             const chainedRings = chainLinestringToPolygonRigs(
                 outersLineString.map((l) => l.ring)
             )
+            if (!chainedRings) return null
             for (const r of chainedRings) {
                 outersPolygons.push({
                     type: 'way',
@@ -592,6 +605,7 @@ export const convert = (osmData, options) => {
             const chainedRings = chainLinestringToPolygonRigs(
                 innersLineString.map((l) => l.ring)
             )
+            if (!chainedRings) return null
             for (const r of chainedRings) {
                 innersPolygons.push({
                     type: 'way',
@@ -608,6 +622,9 @@ export const convert = (osmData, options) => {
             const ring = [outersPolygons[0].ring]
 
             for (const innerPoly of innersPolygons) {
+                if (!inside(innerPoly.ring[0], outersPolygons[0].ring)) {
+                    return null
+                }
                 ring.push(innerPoly.ring)
             }
             return { type: 'Polygon', coordinates: ring }
@@ -616,83 +633,85 @@ export const convert = (osmData, options) => {
             const rings = outersPolygons.map((p) => [p.ring])
 
             for (const innerPoly of innersPolygons) {
+                let assigned = false
                 for (let i = 0; i < rings.length; i++) {
                     const outRing = rings[i][0]
                     const innerPolyFirstCoords = innerPoly.ring[0]
                     if (inside(innerPolyFirstCoords, outRing)) {
                         // test if the first coords of inner is in polygon
                         rings[i].push(innerPoly.ring)
+                        assigned = true
                     }
                 }
+                if (!assigned) return null
             }
             return { type: 'MultiPolygon', coordinates: rings }
         }
     }
 
     const chainLinestringToPolygonRigs = (rings) => {
+        if (!Array.isArray(rings) || rings.length === 0) return null
+        const pending = rings.map((ring) =>
+            ring.map((coordinate) => [...coordinate])
+        )
         const resultRings = []
-        let currentRing = rings[0].slice()
-        rings.splice(0, 1)
-        let crStart = currentRing[0].toString()
-        let crEnd = currentRing[currentRing.length - 1].toString()
-        let i = 0
-        while (rings.length != 0 && i < rings.length) {
-            if (rings[i][0].toString() == crEnd) {
-                // delete the first coord of rig ant merge to result
-                rings[i].splice(0, 1)
-                currentRing = [...currentRing, ...rings[i]]
-                rings.splice(i, 1)
+        const sameCoordinate = (first, second) =>
+            first?.[0] === second?.[0] && first?.[1] === second?.[1]
 
-                crStart = currentRing[0].toString()
-                crEnd = currentRing[currentRing.length - 1].toString()
-
-                i = 0
-            } else if (rings[i][rings[i].length - 1].toString() == crStart) {
-                // 'End ->Start'
-                // delete the last coord of rig ant merge to result
-                rings[i].splice(rings[i].length - 1, 1)
-                currentRing = [...rings[i], ...currentRing]
-                rings.splice(i, 1)
-
-                crStart = currentRing[0].toString()
-                crEnd = currentRing[currentRing.length - 1].toString()
-
-                i = 0
-            } else if (rings[i][0].toString() == crStart) {
-                // console.log('Start ->Start', i)
-                rings[i].splice(0, 1)
-                currentRing = [...rings[i].reverse(), ...currentRing]
-                rings.splice(i, 1)
-
-                crStart = currentRing[0].toString()
-                crEnd = currentRing[currentRing.length - 1].toString()
-                i = 0
-            } else if (rings[i][rings[i].length - 1].toString() == crEnd) {
-                // console.log('End -> End', i)
-                rings[i].splice(rings[i].length - 1, 1)
-                currentRing = [...currentRing, ...rings[i].reverse()]
-                rings.splice(i, 1)
-
-                crStart = currentRing[0].toString()
-                crEnd = currentRing[currentRing.length - 1].toString()
-                i = 0
-            } else {
-                i++
-            }
-
-            if (crStart == crEnd) {
-                // we have a polygon ring !
-                resultRings.push(currentRing)
-                if (rings.length > 0) {
-                    currentRing = rings[0].slice()
-                    rings.splice(0, 1)
-                    crStart = currentRing[0].toString()
-                    crEnd = currentRing[currentRing.length - 1].toString()
-                    i = 0
+        while (pending.length > 0) {
+            const currentRing = pending.shift()
+            if (!currentRing || currentRing.length < 2) return null
+            while (
+                !sameCoordinate(
+                    currentRing[0],
+                    currentRing[currentRing.length - 1]
+                )
+            ) {
+                const start = currentRing[0]
+                const end = currentRing[currentRing.length - 1]
+                const matchingIndex = pending.findIndex((candidate) => {
+                    const candidateStart = candidate[0]
+                    const candidateEnd = candidate[candidate.length - 1]
+                    return (
+                        sameCoordinate(candidateStart, end) ||
+                        sameCoordinate(candidateEnd, end) ||
+                        sameCoordinate(candidateEnd, start) ||
+                        sameCoordinate(candidateStart, start)
+                    )
+                })
+                if (matchingIndex < 0) return null
+                let candidate = pending.splice(matchingIndex, 1)[0]
+                const candidateStart = candidate[0]
+                const candidateEnd = candidate[candidate.length - 1]
+                if (sameCoordinate(candidateStart, end)) {
+                    currentRing.push(...candidate.slice(1))
+                } else if (sameCoordinate(candidateEnd, end)) {
+                    candidate = candidate.reverse()
+                    currentRing.push(...candidate.slice(1))
+                } else if (sameCoordinate(candidateEnd, start)) {
+                    currentRing.unshift(...candidate.slice(0, -1))
+                } else {
+                    candidate = candidate.reverse()
+                    currentRing.unshift(...candidate.slice(0, -1))
                 }
             }
+            if (currentRing.length < 4) return null
+            resultRings.push(currentRing)
         }
         return resultRings
+    }
+
+    const polygonGeometryToLines = (geometry) => {
+        if (geometry.type === 'Polygon') {
+            return {
+                type: 'LineString',
+                coordinates: geometry.coordinates[0],
+            }
+        }
+        return {
+            type: 'MultiLineString',
+            coordinates: geometry.coordinates.flatMap((polygon) => polygon),
+        }
     }
 
     const extractOsmGoData = (_features, tagConfig, primaryKeys) => {
@@ -722,11 +741,7 @@ export const convert = (osmData, options) => {
                         f.geometry.type == 'MultiPolygon'
                     ) {
                         if (!wayIsRealyPolygon(f.properties.tags)) {
-                            f.geometry.coordinates = f.geometry.coordinates[0]
-                            f.geometry.type =
-                                f.geometry.type == 'Polygon'
-                                    ? 'LineString'
-                                    : 'MultiLineString'
+                            f.geometry = polygonGeometryToLines(f.geometry)
                         }
                     }
                     wayToPoint(f)
@@ -754,11 +769,7 @@ export const convert = (osmData, options) => {
                         f.geometry.type == 'MultiPolygon'
                     ) {
                         if (!wayIsRealyPolygon(f.properties.tags)) {
-                            f.geometry.coordinates = f.geometry.coordinates[0]
-                            f.geometry.type =
-                                f.geometry.type == 'Polygon'
-                                    ? 'LineString'
-                                    : 'MultiLineString'
+                            f.geometry = polygonGeometryToLines(f.geometry)
                         }
                     }
                     wayToPoint(f)
@@ -849,7 +860,12 @@ export const convert = (osmData, options) => {
                     }
                 }
                 w['ndRefs'] = ndRefs
-                w['geometry'] = getWayGeometry(ndRefs, _features)
+                const geometry = getWayGeometry(ndRefs, _features)
+                if (geometry) {
+                    w['geometry'] = geometry
+                } else {
+                    w['tainted'] = true
+                }
             }
             _features[osmElementId('way', el.id)] = w
         } else if (el.type === 'relation') {
@@ -919,6 +935,51 @@ export const convert = (osmData, options) => {
                 _features[idMPolygon]['geometry'] = geom
                 unresolvedMultiPolygons.delete(idMPolygon)
                 geometryResolved = true
+            }
+        }
+    }
+
+    for (const el of relationElements) {
+        const relation = _features[osmElementId('relation', el.id)]
+        if (relation.geometry || relation.tainted) continue
+        const tags = relation.properties.tags
+        const isMultiLineString = tags.type === 'multilinestring'
+        const isStopArea =
+            tags.type === 'public_transport' &&
+            tags.public_transport === 'stop_area'
+        if (!isMultiLineString && !isStopArea) continue
+
+        const memberGeometries = relation.members
+            .map(
+                (member) =>
+                    _features[osmElementId(member.type, member.ref)]?.geometry
+            )
+            .filter(Boolean)
+            .map((geometry) => structuredClone(geometry))
+        if (memberGeometries.length !== relation.members.length) {
+            relation.tainted = true
+            continue
+        }
+        if (isMultiLineString) {
+            const coordinates = memberGeometries.flatMap((geometry) => {
+                if (geometry.type === 'LineString')
+                    return [geometry.coordinates]
+                if (geometry.type === 'MultiLineString') {
+                    return geometry.coordinates
+                }
+                if (geometry.type === 'Polygon') return geometry.coordinates
+                if (geometry.type === 'MultiPolygon') {
+                    return geometry.coordinates.flatMap((polygon) => polygon)
+                }
+                return []
+            })
+            if (coordinates.length > 0) {
+                relation.geometry = { type: 'MultiLineString', coordinates }
+            }
+        } else if (memberGeometries.length > 0) {
+            relation.geometry = {
+                type: 'GeometryCollection',
+                geometries: memberGeometries,
             }
         }
     }

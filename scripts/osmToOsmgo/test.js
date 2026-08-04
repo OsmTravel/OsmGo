@@ -2,7 +2,14 @@ import assert from 'node:assert/strict'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { convert, mergeOldNewGeojsonData, wayToPoint } from './index.js'
+import {
+    addAttributesToFeature,
+    convert,
+    getConfigTag,
+    mergeOldNewGeojsonData,
+    setIconStyle,
+    wayToPoint,
+} from './index.js'
 
 const converterDirectory = path.dirname(fileURLToPath(import.meta.url))
 const tagConfigPath = path.join(
@@ -27,7 +34,7 @@ const result = convert(f1, {
     tagConfig: tagConfig.tags,
     primaryKeys: tagConfig.primaryKeys,
 })
-assert.equal(result.geojson.features.length, 1833)
+assert.equal(result.geojson.features.length, 1835)
 assert.equal(result.geojsonBbox, null)
 
 const resultMp = convert(osmMultipolygon, {
@@ -291,3 +298,132 @@ assert.deepEqual(nestedChild.properties.relations, [
         role: 'outer',
     },
 ])
+
+const hierarchyFeature = {
+    properties: {
+        configId: 'shop/car_parts',
+        primaryTag: { key: 'shop', value: 'car_parts' },
+        tags: { shop: 'car_parts' },
+    },
+}
+const hierarchyConfig = getConfigTag(hierarchyFeature, [
+    { id: 'shop/car', tags: {}, presets: ['wrong-parent'] },
+    { id: 'shop', tags: {}, presets: ['shared', 'shared'] },
+    {
+        id: 'shop/car_parts',
+        tags: { shop: 'car_parts' },
+        presets: ['specific', 'shared'],
+        moreFields: ['name', 'name'],
+    },
+])
+assert.deepEqual(hierarchyConfig.presets, ['shared', 'specific'])
+assert.deepEqual(hierarchyConfig.moreFields, ['name'])
+
+const derivedFeature = {
+    type: 'Feature',
+    id: 'node/1',
+    geometry: { type: 'Point', coordinates: [0, 0] },
+    properties: {
+        type: 'node',
+        tags: { amenity: 'bench' },
+        meta: {},
+        primaryTag: { key: 'amenity', value: 'bench' },
+        _name: 'stale',
+        fixme: true,
+        unknowTags: true,
+    },
+}
+addAttributesToFeature(derivedFeature)
+assert.equal(derivedFeature.properties._name, undefined)
+assert.equal(derivedFeature.properties.fixme, undefined)
+setIconStyle(derivedFeature, [
+    {
+        id: 'amenity/bench',
+        tags: { amenity: 'bench' },
+        icon: 'bench',
+        markerColor: '#123456',
+    },
+])
+assert.equal(derivedFeature.properties.unknowTags, undefined)
+
+const twoOuterWays = [
+    ...squareElements,
+    { type: 'node', id: 5, lat: 0.02, lon: 0.02 },
+    { type: 'node', id: 6, lat: 0.02, lon: 0.03 },
+    { type: 'node', id: 7, lat: 0.03, lon: 0.03 },
+    { type: 'node', id: 8, lat: 0.03, lon: 0.02 },
+    { type: 'way', id: 11, nodes: [5, 6, 7, 8, 5] },
+]
+const multiLineRelation = convert(
+    relationFixture([
+        ...twoOuterWays,
+        {
+            type: 'relation',
+            id: 300,
+            tags: {
+                type: 'multipolygon',
+                area: 'no',
+                man_made: 'cutline',
+            },
+            members: [
+                { type: 'way', ref: 10, role: 'outer' },
+                { type: 'way', ref: 11, role: 'outer' },
+            ],
+        },
+    ]),
+    {}
+).geojson.features.find((feature) => feature.id === 'relation/300')
+assert.ok(multiLineRelation)
+assert.equal(multiLineRelation.properties.way_geometry.type, 'MultiLineString')
+assert.equal(multiLineRelation.properties.way_geometry.coordinates.length, 2)
+
+const supportedRelations = convert(
+    relationFixture([
+        ...squareElements,
+        {
+            type: 'relation',
+            id: 400,
+            tags: { type: 'multilinestring', man_made: 'cutline' },
+            members: [{ type: 'way', ref: 10, role: '' }],
+        },
+        {
+            type: 'relation',
+            id: 401,
+            tags: {
+                type: 'public_transport',
+                public_transport: 'stop_area',
+            },
+            members: [{ type: 'node', ref: 1, role: 'stop' }],
+        },
+    ]),
+    {}
+)
+assert.equal(
+    supportedRelations.geojson.features.find(
+        (feature) => feature.id === 'relation/400'
+    )?.properties.way_geometry.type,
+    'MultiLineString'
+)
+assert.equal(
+    supportedRelations.geojson.features.find(
+        (feature) => feature.id === 'relation/401'
+    )?.properties.way_geometry.type,
+    'GeometryCollection'
+)
+
+const incompleteWay = convert(
+    relationFixture([
+        { type: 'node', id: 1, lat: 0, lon: 0 },
+        {
+            type: 'way',
+            id: 500,
+            nodes: [1, 999],
+            tags: { highway: 'service' },
+        },
+    ]),
+    {}
+)
+assert.equal(
+    incompleteWay.geojson.features.some((feature) => feature.id === 'way/500'),
+    false
+)
