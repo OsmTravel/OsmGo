@@ -246,6 +246,28 @@ describe('TagsService', () => {
         })
     })
 
+    it('quarantines malformed user tags and keeps startup recoverable', async () => {
+        const corrupted = { id: 'not-an-array' }
+        const storage = {
+            get: vi.fn(() => Promise.resolve(corrupted)),
+            set: vi.fn(() => Promise.resolve()),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: {} },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        await expect(firstValueFrom(service.loadUserTags$())).resolves.toEqual(
+            []
+        )
+        expect(service.userTagsRecoveryWarning()).toBe(true)
+        expect(storage.set).toHaveBeenCalledWith('userTagsCorrupted', corrupted)
+        expect(storage.set).toHaveBeenCalledWith('userTags', [])
+    })
+
     it('keeps built-in tag definitions authoritative when user IDs collide', async () => {
         const builtIn = {
             id: 'amenity/cafe',

@@ -46,6 +46,9 @@ export class TagsService {
     >({})
     readonly catalogMetrics = this.catalogMetricsState.asReadonly()
     userTags: TagConfig[] = []
+    private readonly userTagsRecoveryWarningState = signal(false)
+    readonly userTagsRecoveryWarning =
+        this.userTagsRecoveryWarningState.asReadonly()
     private readonly primaryKeysState = signal<string[]>([])
     readonly primaryKeys = this.primaryKeysState.asReadonly()
     private readonly presetsState = signal<Record<string, Preset>>({})
@@ -336,13 +339,36 @@ export class TagsService {
     }
 
     loadUserTags$(): Observable<TagConfig[]> {
-        return from(this.localStorage.get('userTags')).pipe(
-            map((userTags: TagConfig[]) => {
-                userTags = userTags ? userTags : []
-                this.userTags = userTags
-                return userTags
-            })
+        return from(this.loadValidatedUserTags())
+    }
+
+    private async loadValidatedUserTags(): Promise<TagConfig[]> {
+        const persisted = await this.localStorage.get<unknown>('userTags')
+        const source = Array.isArray(persisted) ? persisted : []
+        const userTags = source.filter(
+            (tag): tag is TagConfig =>
+                !!tag &&
+                typeof tag === 'object' &&
+                typeof (tag as { id?: unknown }).id === 'string' &&
+                (tag as { id: string }).id.trim() !== '' &&
+                !!(tag as { tags?: unknown }).tags &&
+                typeof (tag as { tags: unknown }).tags === 'object' &&
+                !Array.isArray((tag as { tags: unknown }).tags)
         )
+        const corrupted =
+            (persisted !== null &&
+                persisted !== undefined &&
+                !Array.isArray(persisted)) ||
+            userTags.length !== source.length
+        this.userTagsRecoveryWarningState.set(corrupted)
+        if (corrupted) {
+            await Promise.allSettled([
+                this.localStorage.set('userTagsCorrupted', persisted),
+                this.localStorage.set('userTags', userTags),
+            ])
+        }
+        this.userTags = userTags
+        return userTags
     }
 
     setUserTags(userTags: TagConfig[]): void {
