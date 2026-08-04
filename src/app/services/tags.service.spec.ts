@@ -427,4 +427,37 @@ describe('TagsService', () => {
             indexMs: expect.any(Number),
         })
     })
+
+    it('warns in development when catalog parsing exceeds its budget', async () => {
+        const tagsConfig = {
+            primaryKeys: ['amenity'],
+            tags: [createValidTag()],
+        }
+        const http = {
+            get: vi.fn(() => of(JSON.stringify(tagsConfig))),
+        }
+        const storage = { set: vi.fn(() => Promise.resolve()) }
+        vi.spyOn(performance, 'now')
+            .mockReturnValueOnce(0)
+            .mockReturnValueOnce(10)
+            .mockReturnValueOnce(10)
+            .mockReturnValueOnce(300)
+        const consoleWarn = vi
+            .spyOn(console, 'warn')
+            .mockImplementation(() => undefined)
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        await firstValueFrom(service.getTagsConfig$())
+
+        expect(consoleWarn).toHaveBeenCalledWith(
+            'Catalog tags parseMs exceeded its development budget.',
+            { durationMs: 290, budgetMs: 250, characters: expect.any(Number) }
+        )
+    })
 })

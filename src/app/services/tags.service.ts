@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { inject, Service, signal } from '@angular/core'
+import { inject, isDevMode, Service, signal } from '@angular/core'
 import { requireValidOsmTag } from '@app/utils/osm-tags'
 import type {
     JsonSprites,
@@ -38,6 +38,21 @@ export interface CatalogLoadMetric {
     downloadMs: number
     parseMs: number
     indexMs?: number
+}
+
+type CatalogResource = 'tags' | 'presets' | 'brands' | 'sprites'
+type CatalogTimedPhase = 'parseMs' | 'indexMs'
+
+// These development-only budgets surface meaningful regressions without
+// turning device-dependent timings into production startup failures.
+const catalogPerformanceBudgets: Record<
+    CatalogResource,
+    Partial<Record<CatalogTimedPhase, number>>
+> = {
+    tags: { parseMs: 250, indexMs: 50 },
+    presets: { parseMs: 150 },
+    brands: { parseMs: 250 },
+    sprites: { parseMs: 50 },
 }
 
 export class CustomTagError extends Error {
@@ -591,15 +606,13 @@ export class TagsService {
         const indexMs = performance.now() - startedAt
         this.tagsState.set(tags)
         this.tagsByIdState.set(tagsById)
-        this.catalogMetricsState.update((metrics) => ({
-            ...metrics,
-            tags: {
-                characters: metrics.tags?.characters ?? 0,
-                downloadMs: metrics.tags?.downloadMs ?? 0,
-                parseMs: metrics.tags?.parseMs ?? 0,
-                indexMs,
-            },
-        }))
+        const currentMetric = this.catalogMetricsState().tags
+        this.recordCatalogMetric('tags', {
+            characters: currentMetric?.characters ?? 0,
+            downloadMs: currentMetric?.downloadMs ?? 0,
+            parseMs: currentMetric?.parseMs ?? 0,
+            indexMs,
+        })
     }
 
     private loadJsonAsset$<T>(
@@ -621,20 +634,18 @@ export class TagsService {
                             : response
                     const validated = validate(parsed)
                     const parsedAt = performance.now()
-                    this.catalogMetricsState.update((metrics) => ({
-                        ...metrics,
-                        [resource]: {
-                            characters:
-                                typeof response === 'string'
-                                    ? response.length
-                                    : JSON.stringify(response).length,
-                            downloadMs: receivedAt - requestedAt,
-                            parseMs: parsedAt - parseStartedAt,
-                            ...(metrics[resource]?.indexMs === undefined
-                                ? {}
-                                : { indexMs: metrics[resource].indexMs }),
-                        },
-                    }))
+                    const currentMetric = this.catalogMetricsState()[resource]
+                    this.recordCatalogMetric(resource, {
+                        characters:
+                            typeof response === 'string'
+                                ? response.length
+                                : JSON.stringify(response).length,
+                        downloadMs: receivedAt - requestedAt,
+                        parseMs: parsedAt - parseStartedAt,
+                        ...(currentMetric?.indexMs === undefined
+                            ? {}
+                            : { indexMs: currentMetric.indexMs }),
+                    })
                     return validated
                 }),
                 switchMap((value) =>
@@ -647,8 +658,35 @@ export class TagsService {
         })
     }
 
+    private recordCatalogMetric(
+        resource: CatalogResource,
+        metric: CatalogLoadMetric
+    ): void {
+        this.catalogMetricsState.update((metrics) => ({
+            ...metrics,
+            [resource]: metric,
+        }))
+        if (!isDevMode()) return
+
+        const budgets = catalogPerformanceBudgets[resource]
+        for (const phase of ['parseMs', 'indexMs'] as const) {
+            const durationMs = metric[phase]
+            const budgetMs = budgets[phase]
+            if (
+                durationMs !== undefined &&
+                budgetMs !== undefined &&
+                durationMs > budgetMs
+            ) {
+                console.warn(
+                    `Catalog ${resource} ${phase} exceeded its development budget.`,
+                    { durationMs, budgetMs, characters: metric.characters }
+                )
+            }
+        }
+    }
+
     private storeCatalogFallback$<T>(
-        resource: 'tags' | 'presets' | 'brands' | 'sprites',
+        resource: CatalogResource,
         value: T
     ): Observable<T> {
         const cache: CatalogCache<T> = {
@@ -667,7 +705,7 @@ export class TagsService {
     }
 
     private loadCatalogFallback$<T>(
-        resource: 'tags' | 'presets' | 'brands' | 'sprites',
+        resource: CatalogResource,
         validate: (value: unknown) => T,
         sourceError: unknown
     ): Observable<T> {
@@ -693,9 +731,7 @@ export class TagsService {
         )
     }
 
-    private catalogCacheKey(
-        resource: 'tags' | 'presets' | 'brands' | 'sprites'
-    ): string {
+    private catalogCacheKey(resource: CatalogResource): string {
         return `catalogCache:v${CATALOG_CACHE_SCHEMA_VERSION}:${resource}`
     }
 }
