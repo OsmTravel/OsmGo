@@ -7,13 +7,18 @@ import {
 } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
 import {
+    requireGeometryFeatureCollection,
+    requireOsmGoFeature,
+    requireOsmGoFeatureCollection,
+} from '@services/osm-data-validation'
+import {
     migrateLegacyOsmState,
-    migratePersistedOsmState,
     OSM_STATE_SCHEMA_VERSION,
     OSM_STATE_STORAGE_KEY,
     OsmStatePersistenceError,
     type PersistedOsmStateV2,
     type PersistedUploadJournal,
+    recoverPersistedOsmState,
 } from '@services/osm-state'
 import { featureCollection } from '@turf/helpers'
 import { from, Observable } from 'rxjs'
@@ -130,12 +135,24 @@ export class DataService {
     private async loadPersistedOsmState(): Promise<PersistedOsmStateV2> {
         const persisted = await this.localStorage.get(OSM_STATE_STORAGE_KEY)
         if (persisted !== null && persisted !== undefined) {
-            const state = migratePersistedOsmState(persisted)
+            const { state, quarantined } = recoverPersistedOsmState(persisted)
+            if (quarantined.length > 0) {
+                await this.localStorage.set('osmStateQuarantinedFeatures', {
+                    quarantinedAt: new Date().toISOString(),
+                    sourceRevision:
+                        typeof persisted === 'object' && persisted !== null
+                            ? ((persisted as { revision?: unknown }).revision ??
+                              null)
+                            : null,
+                    features: quarantined,
+                })
+            }
             if (
-                typeof persisted === 'object' &&
-                persisted !== null &&
-                (persisted as { schemaVersion?: unknown }).schemaVersion !==
-                    OSM_STATE_SCHEMA_VERSION
+                quarantined.length > 0 ||
+                (typeof persisted === 'object' &&
+                    persisted !== null &&
+                    (persisted as { schemaVersion?: unknown }).schemaVersion !==
+                        OSM_STATE_SCHEMA_VERSION)
             ) {
                 await this.localStorage.set(OSM_STATE_STORAGE_KEY, state)
             }
@@ -192,12 +209,20 @@ export class DataService {
     }
 
     applyDownload(download: OsmDownload): Promise<void> {
-        const officialById = this.collectionToRecord(
+        const validatedGeojson = requireOsmGoFeatureCollection(
             download.geojson,
+            'downloaded OSM data',
+            'official'
+        )
+        const officialById = this.collectionToRecord(
+            validatedGeojson,
             'downloaded feature',
             true
         )
-        const bbox = cloneDeep(download.geojsonBbox)
+        const bbox = requireGeometryFeatureCollection(
+            download.geojsonBbox,
+            'downloaded bbox data'
+        )
         return this.enqueueOsmStateMutation('apply download', (state) => {
             state.officialById = Object.fromEntries(
                 Object.entries(officialById).filter(
@@ -243,8 +268,13 @@ export class DataService {
     }
 
     async replacePendingFeatures(data: OsmGoFeatureCollection): Promise<void> {
-        const nextGeojsonChanged = this.collectionToRecord(
+        const validatedData = requireOsmGoFeatureCollection(
             data,
+            'replacement pending data',
+            'pending'
+        )
+        const nextGeojsonChanged = this.collectionToRecord(
+            validatedData,
             'pending feature'
         )
         await this.enqueueOsmStateMutation('replace pending data', (state) => {
@@ -275,9 +305,15 @@ export class DataService {
                 feature.properties.id = temporaryId
                 feature.properties.changeType = 'Create'
                 feature.properties.originalData = null
-                state.pendingById[this.requireFeatureId(feature)] = feature
+                feature.properties.meta.version = 0
+                const validated = requireOsmGoFeature(
+                    feature,
+                    'created pending feature',
+                    'pending'
+                )
+                state.pendingById[this.requireFeatureId(validated)] = validated
                 state.nextTemporaryId = temporaryId - 1
-                return cloneDeep(feature)
+                return cloneDeep(validated)
             }
         )
     }
@@ -299,8 +335,13 @@ export class DataService {
                 changedFeature.properties.changeType = 'Update'
                 changedFeature.properties.originalData = cloneDeep(original)
                 delete state.officialById[id]
-                state.pendingById[id] = changedFeature
-                return cloneDeep(changedFeature)
+                const validated = requireOsmGoFeature(
+                    changedFeature,
+                    'updated pending feature',
+                    'pending'
+                )
+                state.pendingById[id] = validated
+                return cloneDeep(validated)
             }
         )
     }
@@ -324,8 +365,13 @@ export class DataService {
                 changedFeature.properties.originalData = cloneDeep(
                     current.properties.originalData
                 )
-                state.pendingById[id] = changedFeature
-                return cloneDeep(changedFeature)
+                const validated = requireOsmGoFeature(
+                    changedFeature,
+                    'updated pending feature',
+                    'pending'
+                )
+                state.pendingById[id] = validated
+                return cloneDeep(validated)
             }
         )
     }
@@ -358,8 +404,13 @@ export class DataService {
                 deletedFeature.properties.changeType = 'Delete'
                 deletedFeature.properties.originalData = cloneDeep(original)
                 delete state.officialById[id]
-                state.pendingById[id] = deletedFeature
-                return cloneDeep(deletedFeature)
+                const validated = requireOsmGoFeature(
+                    deletedFeature,
+                    'deleted pending feature',
+                    'pending'
+                )
+                state.pendingById[id] = validated
+                return cloneDeep(validated)
             }
         )
     }
@@ -406,7 +457,11 @@ export class DataService {
         const receipt = cloneDeep(results)
         for (const result of receipt) {
             if (result.feature) {
-                this.requireCanonicalFeatureId(result.feature)
+                result.feature = requireOsmGoFeature(
+                    result.feature,
+                    'uploaded official feature',
+                    'official'
+                )
             }
         }
         await this.enqueueOsmStateMutation('apply upload receipt', (state) => {
@@ -464,7 +519,11 @@ export class DataService {
         const receipt = cloneDeep(results)
         for (const result of receipt) {
             if (result.feature) {
-                this.requireCanonicalFeatureId(result.feature)
+                result.feature = requireOsmGoFeature(
+                    result.feature,
+                    'uploaded official feature',
+                    'official'
+                )
             }
         }
         return this.enqueueOsmStateMutation(

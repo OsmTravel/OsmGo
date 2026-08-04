@@ -590,7 +590,7 @@ describe('MainPage', () => {
         expect(dataService.applyDownload).not.toHaveBeenCalled()
         expect(mapService.setIsProcessing).toHaveBeenLastCalledWith(false)
         expect(page.presentToast).toHaveBeenCalledWith(
-            'The map worker returned invalid data.'
+            'map worker result bbox: is not a feature collection'
         )
     })
 

@@ -690,9 +690,69 @@ describe('OsmApiService', () => {
             })
 
             FakeWorker.latest.onmessage({
-                data: { ok: true, data: { geojson: { features: [] } } },
+                data: {
+                    ok: true,
+                    data: {
+                        geojson: { type: 'FeatureCollection', features: [] },
+                        geojsonBbox: {
+                            type: 'FeatureCollection',
+                            features: [],
+                        },
+                    },
+                },
             })
-            expect(result).toEqual({ geojson: { features: [] } })
+            expect(result).toEqual({
+                geojson: { type: 'FeatureCollection', features: [] },
+                geojsonBbox: { type: 'FeatureCollection', features: [] },
+            })
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        })
+
+        it('rejects structurally invalid converted features', () => {
+            let resultError: Error | undefined
+            startConversion().subscribe({
+                error: (error: Error) => (resultError = error),
+            })
+
+            FakeWorker.latest.onmessage({
+                data: {
+                    ok: true,
+                    data: {
+                        geojson: {
+                            type: 'FeatureCollection',
+                            features: [
+                                {
+                                    type: 'Feature',
+                                    id: 'node/1',
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: [Number.NaN, 48],
+                                    },
+                                    properties: {
+                                        id: 1,
+                                        type: 'node',
+                                        tags: { amenity: 'bench' },
+                                        meta: { version: 1 },
+                                        marker: 'circle-#000000-bench',
+                                        icon: 'bench',
+                                        hexColor: '#000000',
+                                        primaryTag: {
+                                            key: 'amenity',
+                                            value: 'bench',
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                        geojsonBbox: {
+                            type: 'FeatureCollection',
+                            features: [],
+                        },
+                    },
+                },
+            })
+
+            expect(resultError?.message).toContain('invalid coordinate')
             expect(FakeWorker.latest.terminateCalls).toBe(1)
         })
 

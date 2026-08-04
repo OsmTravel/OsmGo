@@ -28,6 +28,8 @@ const feature = (
         primaryTag: { key: 'amenity', value: 'bench' },
         tags: { amenity: 'bench' },
         type: 'node',
+        originalData:
+            changeType && changeType !== 'Create' ? feature(id) : undefined,
     },
 })
 

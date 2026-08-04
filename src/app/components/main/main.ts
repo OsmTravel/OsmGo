@@ -40,6 +40,7 @@ import { DataService } from '@services/data.service'
 import { InitService } from '@services/init.service'
 import { LocationService } from '@services/location.service'
 import { MapService } from '@services/map.service'
+import { requireMapDataResult } from '@services/osm-data-validation'
 import { OsmApiService } from '@services/osmApi.service'
 import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
@@ -52,11 +53,6 @@ import {
     ObjectSheetComponent,
     type ObjectSheetLevel,
 } from './object-sheet/object-sheet'
-
-interface MapDataResult {
-    geojson: OsmGoFeatureCollection
-    geojsonBbox: OsmGoFeatureCollection
-}
 
 type OverlaySize = 'compact' | 'standard' | 'wide'
 
@@ -578,18 +574,21 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             .getDataFromBbox(bbox, this.configService.getLimitFeatures())
             .pipe(
                 switchMap((newDataJson) => {
-                    if (!this.isMapDataResult(newDataJson)) {
-                        throw new Error('The map worker returned invalid data.')
-                    }
+                    const validatedData = requireMapDataResult(
+                        newDataJson,
+                        'map worker result'
+                    )
                     return from(
                         this.dataService.applyDownload({
-                            geojson: newDataJson.geojson,
-                            geojsonBbox: newDataJson.geojsonBbox,
+                            geojson: validatedData.geojson,
+                            geojsonBbox: validatedData.geojsonBbox,
                         })
                     ).pipe(
                         map(() => {
-                            this.mapService.redrawBbox(newDataJson.geojsonBbox)
-                            this.mapService.redrawMarkers(newDataJson.geojson)
+                            this.mapService.redrawBbox(
+                                validatedData.geojsonBbox
+                            )
+                            this.mapService.redrawMarkers(validatedData.geojson)
                         })
                     )
                 }),
@@ -756,29 +755,5 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
 
     private getErrorMessage(error: unknown): string {
         return error instanceof Error ? error.message : String(error)
-    }
-
-    private isMapDataResult(value: unknown): value is MapDataResult {
-        if (typeof value !== 'object' || value === null) {
-            return false
-        }
-        const candidate = value as Partial<MapDataResult>
-        return (
-            this.isFeatureCollection(candidate.geojson) &&
-            this.isFeatureCollection(candidate.geojsonBbox)
-        )
-    }
-
-    private isFeatureCollection(
-        value: unknown
-    ): value is OsmGoFeatureCollection {
-        if (typeof value !== 'object' || value === null) {
-            return false
-        }
-        const candidate = value as Partial<OsmGoFeatureCollection>
-        return (
-            candidate.type === 'FeatureCollection' &&
-            Array.isArray(candidate.features)
-        )
     }
 }

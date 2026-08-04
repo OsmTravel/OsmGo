@@ -35,7 +35,7 @@ function osmFeature(
 ): OsmGoFeature {
     return {
         ...point(
-            [id, id],
+            [2, 48],
             {
                 changeType,
                 hexColor: '#000000',
@@ -157,6 +157,84 @@ describe('DataService', () => {
             expect(created.id).toBe('node/-4')
             expect(service.getGeojson().features).toEqual([official])
         })
+
+        it('quarantines invalid persisted features individually', async () => {
+            const official = osmFeature(10)
+            const corrupted = osmFeature(11)
+            corrupted.geometry = {
+                type: 'Point',
+                coordinates: [Number.POSITIVE_INFINITY, 48],
+            }
+            const persisted: PersistedOsmStateV2 = {
+                schemaVersion: 2,
+                revision: 7,
+                officialById: {
+                    'node/10': official,
+                    'node/11': corrupted,
+                },
+                pendingById: {},
+                bbox: emptyCollection(),
+                nextTemporaryId: -1,
+            }
+            storageSpy.get.mockResolvedValue(persisted)
+
+            const state = await firstValueFrom(service.loadOsmState$())
+
+            expect(state.revision).toBe(8)
+            expect(Object.keys(state.officialById)).toEqual(['node/10'])
+            expect(storageSpy.set).toHaveBeenCalledWith(
+                'osmStateQuarantinedFeatures',
+                expect.objectContaining({
+                    sourceRevision: 7,
+                    features: [
+                        expect.objectContaining({
+                            store: 'official',
+                            id: 'node/11',
+                        }),
+                    ],
+                })
+            )
+            expect(storageSpy.set).toHaveBeenCalledWith('osmState', state)
+        })
+
+        it('does not quarantine a corrupted feature locked by an upload journal', async () => {
+            const pending = osmFeature(-1, 'Create')
+            ;(pending.properties as unknown as Record<string, unknown>)[
+                'tags'
+            ] = null
+            const persisted: PersistedOsmStateV2 = {
+                schemaVersion: 2,
+                revision: 7,
+                officialById: {},
+                pendingById: { 'node/-1': pending },
+                bbox: emptyCollection(),
+                nextTemporaryId: -2,
+                uploadJournal: {
+                    journalVersion: 1,
+                    attemptId: 'attempt-1',
+                    payloadHash: 'payload-hash',
+                    changesetId: '123',
+                    submittedIds: ['node/-1'],
+                    summary: {
+                        Total: 1,
+                        Create: 1,
+                        Update: 0,
+                        Delete: 0,
+                    },
+                    startedAt: '2026-08-04T08:00:00.000Z',
+                    phase: 'prepared',
+                },
+            }
+            storageSpy.get.mockResolvedValue(persisted)
+
+            await expect(
+                firstValueFrom(service.loadOsmState$())
+            ).rejects.toThrow('invalid tags')
+            expect(storageSpy.set).not.toHaveBeenCalledWith(
+                'osmStateQuarantinedFeatures',
+                expect.anything()
+            )
+        })
     })
 
     describe('serialized persistence', () => {
@@ -253,7 +331,7 @@ describe('DataService', () => {
 
             expect(() =>
                 service.applyDownload(download([duplicate, duplicate]))
-            ).toThrow('duplicate IDs')
+            ).toThrow('duplicate feature IDs')
             expect(storageSpy.set).not.toHaveBeenCalled()
         })
 
@@ -263,7 +341,7 @@ describe('DataService', () => {
 
             expect(() =>
                 service.applyDownload(download([inconsistent]))
-            ).toThrow('inconsistent canonical ID')
+            ).toThrow('inconsistent OSM identity')
             expect(storageSpy.set).not.toHaveBeenCalled()
         })
 
@@ -612,7 +690,7 @@ describe('DataService', () => {
 
     describe('immutable reads', () => {
         it('keeps official and pending IDs disjoint after a download', async () => {
-            const pending = osmFeature(10, 'Update')
+            const pending = osmFeature(10, 'Update', osmFeature(10))
             await service.replacePendingFeatures(collection([pending]))
 
             await service.applyDownload(

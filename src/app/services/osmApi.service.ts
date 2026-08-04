@@ -16,6 +16,7 @@ import {
 import { ConfigService, type User } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
+import { requireMapDataResult } from '@services/osm-data-validation'
 import { TagsService } from '@services/tags.service'
 import { XMLParser, XMLValidator } from 'fast-xml-parser'
 import type { BBox } from 'geojson'
@@ -525,10 +526,20 @@ export class OsmApiService {
         const oldBboxFeature = cloneDeep(oldBbox.features[0])
 
         return new Observable<ConvertResult>((subscriber) => {
-            const worker = new Worker(
-                new URL('../workers/osm-converter.worker', import.meta.url),
-                { type: 'module' }
-            )
+            let worker: Worker
+            try {
+                worker = new Worker(
+                    new URL('../workers/osm-converter.worker', import.meta.url),
+                    { type: 'module' }
+                )
+            } catch (error) {
+                subscriber.error(
+                    new Error('The OSM data worker could not start.', {
+                        cause: error,
+                    })
+                )
+                return
+            }
             let isFinished = false
             const finish = (callback: () => void): void => {
                 if (isFinished) return
@@ -556,7 +567,20 @@ export class OsmApiService {
                         )
                         return
                     }
-                    const convertedData = data
+                    let convertedData: ConvertResult
+                    try {
+                        convertedData = requireMapDataResult<ConvertResult>(
+                            data,
+                            'OSM data worker response'
+                        )
+                    } catch (error) {
+                        fail(
+                            error instanceof Error
+                                ? error.message
+                                : 'The OSM data worker returned invalid data.'
+                        )
+                        return
+                    }
                     finish(() => {
                         subscriber.next(convertedData)
                         subscriber.complete()

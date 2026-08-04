@@ -1,4 +1,8 @@
 import type { OsmGoFeature, OsmGoFeatureCollection } from '@osmgo/type'
+import {
+    requireGeometryFeatureCollection,
+    requireOsmGoFeature,
+} from '@services/osm-data-validation'
 
 export const OSM_STATE_STORAGE_KEY = 'osmState'
 export const OSM_STATE_SCHEMA_VERSION = 2
@@ -318,18 +322,22 @@ const collectionToRecord = (
 
 const requireFeatureRecord = (
     value: unknown,
-    label: string
+    label: string,
+    state: 'official' | 'pending'
 ): Record<string, OsmGoFeature> => {
     if (!isRecord(value)) {
         throw new Error(`The persisted ${label} is not an ID record.`)
     }
     const featuresById: Record<string, OsmGoFeature> = {}
     for (const [id, sourceFeature] of Object.entries(value)) {
-        const feature = structuredClone(sourceFeature) as OsmGoFeature
-        if (requireFeatureId(feature, label) !== id) {
+        const feature = requireOsmGoFeature(
+            sourceFeature,
+            `${label} ${id}`,
+            state
+        )
+        if (String(feature.id) !== id) {
             throw new Error(`The persisted ${label} has an inconsistent ID.`)
         }
-        feature.id = id
         featuresById[id] = feature
     }
     return featuresById
@@ -394,12 +402,22 @@ export const migrateLegacyOsmState = (
     const normalizedPending = normalizeLegacyPendingIds(
         collectionToRecord(pending, 'pending data')
     )
+    const officialById = requireFeatureRecord(
+        collectionToRecord(official, 'official data'),
+        'official data',
+        'official'
+    )
+    const pendingById = requireFeatureRecord(
+        normalizedPending.pendingById,
+        'pending data',
+        'pending'
+    )
     return {
         schemaVersion: OSM_STATE_SCHEMA_VERSION,
         revision: 0,
-        officialById: collectionToRecord(official, 'official data'),
-        pendingById: normalizedPending.pendingById,
-        bbox,
+        officialById,
+        pendingById,
+        bbox: requireGeometryFeatureCollection(bbox, 'persisted bbox data'),
         nextTemporaryId: normalizedPending.nextTemporaryId,
     }
 }
@@ -443,14 +461,109 @@ export const migratePersistedOsmState = (
         revision: Number(revision),
         officialById: requireFeatureRecord(
             value['officialById'],
-            'official data'
+            'official data',
+            'official'
         ),
-        pendingById: requireFeatureRecord(value['pendingById'], 'pending data'),
-        bbox: requireFeatureCollection(value['bbox'], 'bbox data'),
+        pendingById: requireFeatureRecord(
+            value['pendingById'],
+            'pending data',
+            'pending'
+        ),
+        bbox: requireGeometryFeatureCollection(
+            value['bbox'],
+            'persisted bbox data'
+        ),
         nextTemporaryId: Number(nextTemporaryId),
     }
     if (value['uploadJournal'] !== undefined) {
         state.uploadJournal = requireUploadJournal(value['uploadJournal'])
     }
+    const overlappingId = Object.keys(state.pendingById).find(
+        (id) => state.officialById[id]
+    )
+    if (overlappingId) {
+        throw new Error(
+            `The persisted official and pending data overlap at ${overlappingId}.`
+        )
+    }
     return state
+}
+
+export interface QuarantinedOsmFeature {
+    store: 'official' | 'pending'
+    id: string
+    value: unknown
+    reason: string
+}
+
+export interface RecoveredPersistedOsmState {
+    state: PersistedOsmStateV2
+    quarantined: QuarantinedOsmFeature[]
+}
+
+export const recoverPersistedOsmState = (
+    value: unknown
+): RecoveredPersistedOsmState => {
+    if (!isRecord(value) || value['schemaVersion'] !== 2) {
+        return { state: migratePersistedOsmState(value), quarantined: [] }
+    }
+    const shallowState = structuredClone(value) as Record<string, unknown>
+    const journal =
+        shallowState['uploadJournal'] === undefined
+            ? undefined
+            : requireUploadJournal(shallowState['uploadJournal'])
+    const lockedIds = new Set(journal?.submittedIds ?? [])
+    const quarantined: QuarantinedOsmFeature[] = []
+    const recoverRecord = (
+        source: unknown,
+        store: 'official' | 'pending'
+    ): Record<string, OsmGoFeature> => {
+        if (!isRecord(source)) {
+            throw new Error(`The persisted ${store} data is not an ID record.`)
+        }
+        const recovered: Record<string, OsmGoFeature> = {}
+        for (const [id, feature] of Object.entries(source)) {
+            try {
+                const validated = requireOsmGoFeature(
+                    feature,
+                    `persisted ${store} data ${id}`,
+                    store
+                )
+                if (String(validated.id) !== id) {
+                    throw new Error('The record key does not match its ID.')
+                }
+                recovered[id] = validated
+            } catch (error) {
+                if (store === 'pending' && lockedIds.has(id)) throw error
+                quarantined.push({
+                    store,
+                    id,
+                    value: structuredClone(feature),
+                    reason:
+                        error instanceof Error ? error.message : String(error),
+                })
+            }
+        }
+        return recovered
+    }
+    const officialById = recoverRecord(shallowState['officialById'], 'official')
+    const pendingById = recoverRecord(shallowState['pendingById'], 'pending')
+    for (const id of Object.keys(pendingById)) {
+        if (!officialById[id]) continue
+        quarantined.push({
+            store: 'official',
+            id,
+            value: structuredClone(officialById[id]),
+            reason: 'Official data duplicated a pending feature.',
+        })
+        delete officialById[id]
+    }
+    const repaired = {
+        ...shallowState,
+        officialById,
+        pendingById,
+    }
+    const state = migratePersistedOsmState(repaired)
+    if (quarantined.length > 0) state.revision++
+    return { state, quarantined }
 }
