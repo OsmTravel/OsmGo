@@ -1,4 +1,4 @@
-import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
+import type { TapPresetsJson, TapTagsJson } from '@osmgo/type'
 import fs from 'fs'
 import { tapPresetsPath, tapTagsPath } from './_paths'
 

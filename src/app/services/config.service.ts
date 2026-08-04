@@ -15,7 +15,7 @@ import { AppStorage } from '@services/app-storage.service'
 import type { Basemap } from '@services/basemaps.service'
 import { OSM_STATE_STORAGE_KEY } from '@services/osm-state'
 import { TagsService } from '@services/tags.service'
-import { from, Observable } from 'rxjs'
+import { from, type Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
 export interface User {

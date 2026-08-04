@@ -6,7 +6,7 @@
  * 3. Write the possible values in the same file 'tagsAndPresets/presets.json'
  */
 
-import { PresetOption } from '@osmgo/type'
+import type { PresetOption } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { fetchJson } from './_fetch'

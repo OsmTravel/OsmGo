@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core'
-import { TagConfig } from '@osmgo/type'
+import { Pipe, type PipeTransform } from '@angular/core'
+import type { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByByGeometryType',

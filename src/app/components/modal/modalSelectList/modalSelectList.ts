@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core'
+import { Component, inject, input, type OnInit, signal } from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogRef } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'

@@ -1,5 +1,5 @@
 import { Pipe } from '@angular/core'
-import { Preset } from '@osmgo/type'
+import type { Preset } from '@osmgo/type'
 
 @Pipe({
     name: 'filterPresetsByList',

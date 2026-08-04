@@ -1,10 +1,10 @@
 import { inject, Service, signal } from '@angular/core'
-import { CompassHeading } from '@osmgo/type'
+import type { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import destination from '@turf/destination'
 import { point as turfPoint } from '@turf/helpers'
 // import { Geolocation } from '@capacitor/geolocation'
-import { FeatureCollection, Point } from 'geojson'
+import type { FeatureCollection, Point } from 'geojson'
 import { Subject } from 'rxjs'
 
 const EMPTY_COMPASS_HEADING: CompassHeading = {

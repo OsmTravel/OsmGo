@@ -4,7 +4,7 @@ import {
     Component,
     computed,
     DestroyRef,
-    ElementRef,
+    type ElementRef,
     HostListener,
     inject,
     type OnDestroy,
@@ -16,7 +16,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 import { MatDialog } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router'
-import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
+import { SwUpdate, type VersionReadyEvent } from '@angular/service-worker'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import { App as CapacitorApp } from '@capacitor/app'
 import { Capacitor, type PluginListenerHandle } from '@capacitor/core'

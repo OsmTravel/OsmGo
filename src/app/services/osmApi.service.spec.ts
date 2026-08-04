@@ -7,7 +7,7 @@ import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmAuthService } from '@services/osm-auth.service'
 import { TagsService } from '@services/tags.service'
-import { firstValueFrom, NEVER, Observable, of, throwError } from 'rxjs'
+import { firstValueFrom, NEVER, type Observable, of, throwError } from 'rxjs'
 
 import { OsmApiService } from './osmApi.service'
 

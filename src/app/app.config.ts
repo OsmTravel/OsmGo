@@ -3,7 +3,10 @@ import {
     withInterceptorsFromDi,
     withXhr,
 } from '@angular/common/http'
-import { ApplicationConfig, provideCheckNoChangesConfig } from '@angular/core'
+import {
+    type ApplicationConfig,
+    provideCheckNoChangesConfig,
+} from '@angular/core'
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
 import { provideRouter } from '@angular/router'
 import { provideServiceWorker } from '@angular/service-worker'

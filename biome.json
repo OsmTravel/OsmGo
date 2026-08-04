@@ -54,7 +54,7 @@
         "noVoidTypeReturn": "error"
       },
       "style": {
-        "useImportType": "off"
+        "useImportType": "error"
       },
       "suspicious": {
         "noDoubleEquals": "off",

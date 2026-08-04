@@ -1,5 +1,12 @@
 import { LowerCasePipe } from '@angular/common'
-import { Component, inject, input, OnInit, output, signal } from '@angular/core'
+import {
+    Component,
+    inject,
+    input,
+    type OnInit,
+    output,
+    signal,
+} from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { MatDialogRef } from '@angular/material/dialog'

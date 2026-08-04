@@ -1,6 +1,6 @@
 import { computed, inject, Service, signal } from '@angular/core'
 import { cloneDeep } from '@app/utils/clone'
-import {
+import type {
     FeatureIdSource,
     OsmGoFeature,
     OsmGoFeatureCollection,
@@ -21,7 +21,7 @@ import {
     recoverPersistedOsmState,
 } from '@services/osm-state'
 import { featureCollection } from '@turf/helpers'
-import { from, Observable } from 'rxjs'
+import { from, type Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
 export interface OsmDownload {

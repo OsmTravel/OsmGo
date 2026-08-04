@@ -4,7 +4,7 @@ import {
     inject,
     input,
     model,
-    OnInit,
+    type OnInit,
     output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'

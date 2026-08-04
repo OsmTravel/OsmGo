@@ -3,7 +3,7 @@ import { InjectionToken, inject, Service, signal } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { AppStorage } from '@services/app-storage.service'
-import { defer, from, map, Observable, of } from 'rxjs'
+import { defer, from, map, type Observable, of } from 'rxjs'
 import { finalize, switchMap, timeout } from 'rxjs/operators'
 
 import { ConfigService } from './config.service'

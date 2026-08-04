@@ -36,9 +36,9 @@ import {
     type ConfirmDialogData,
 } from '@components/shared/confirm-dialog/confirm-dialog'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import {
-    type FeatureIdSource,
-    type MapMode,
+import type {
+    FeatureIdSource,
+    MapMode,
     OsmGoFeature,
     Preset,
     PrimaryTag,

@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
 import { TranslateModule } from '@ngx-translate/core'
-import { Tag } from '@osmgo/type'
+import type { Tag } from '@osmgo/type'
 
 @Component({
     selector: 'edit-other-tag',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
 import { requireValidOsmTag } from '@app/utils/osm-tags'
-import {
+import type {
     JsonSprites,
     OsmGoFeature,
     Preset,
@@ -19,7 +19,7 @@ import {
     requireSpriteCatalog,
     requireTagsCatalog,
 } from '@services/catalog-validation'
-import { defer, forkJoin, from, Observable, of, throwError } from 'rxjs'
+import { defer, forkJoin, from, type Observable, of, throwError } from 'rxjs'
 import {
     catchError,
     finalize,

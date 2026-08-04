@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core'
+import { Pipe, type PipeTransform } from '@angular/core'
 import type { PresetOption } from '@osmgo/type'
 import { includesNormalizedSearch, normalizeSearchText } from '@osmgo/utils'
 

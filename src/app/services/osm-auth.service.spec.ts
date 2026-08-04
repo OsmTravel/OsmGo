@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, type HttpHeaders } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 import { Capacitor } from '@capacitor/core'
 import { AppStorage } from '@services/app-storage.service'

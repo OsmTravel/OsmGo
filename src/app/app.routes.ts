@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router'
+import type { Routes } from '@angular/router'
 import { MainPage } from '@components/main/main'
 
 export const routes: Routes = [
