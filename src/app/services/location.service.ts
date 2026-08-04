@@ -43,24 +43,27 @@ export class LocationService {
     readonly gpsIsReady = this.gpsReadyState.asReadonly()
 
     private watchId?: number
+    private geolocationSession = 0
     private orientationEventName?:
         | 'deviceorientationabsolute'
         | 'deviceorientation'
 
     watchPosition(): void {
+        const session = this.geolocationSession
         if (this.watchId !== undefined) {
             navigator.geolocation.clearWatch(this.watchId)
         }
         this.watchId = navigator.geolocation.watchPosition(
             (position: GeolocationPosition) => {
-                if (position?.coords) {
+                if (session === this.geolocationSession && position?.coords) {
                     this.setLocation(position)
                     this.gpsReadyState.set(true)
                 }
             },
             (err) => {
+                if (session !== this.geolocationSession) return
                 console.error(err)
-                this.gpsReadyState.set(false)
+                this.clearLocation()
             },
             { enableHighAccuracy: true, timeout: GEOLOCATION_TIMEOUT_MS }
         )
@@ -81,20 +84,23 @@ export class LocationService {
     }
 
     enableGeolocation(): void {
+        const session = ++this.geolocationSession
         this.heading()
         void this.getCurrentPosition()
             .then((position: GeolocationPosition) => {
+                if (session !== this.geolocationSession) return
                 this.setLocation(position)
                 this.gpsReadyState.set(true)
                 this.locationReadySubject.next(position)
                 this.watchPosition()
             })
             .catch(() => {
-                this.gpsReadyState.set(false)
+                if (session === this.geolocationSession) this.clearLocation()
             })
     }
 
     disableGeolocation(): void {
+        this.geolocationSession++
         if (this.watchId !== undefined) {
             navigator.geolocation.clearWatch(this.watchId)
             this.watchId = undefined
@@ -107,7 +113,7 @@ export class LocationService {
             )
             this.orientationEventName = undefined
         }
-        this.gpsReadyState.set(false)
+        this.clearLocation()
     }
 
     heading(): void {
@@ -182,6 +188,15 @@ export class LocationService {
     private setLocation(position: GeolocationPosition): void {
         this.locationState.set(position)
         this.publishCurrentLocation()
+    }
+
+    private clearLocation(): void {
+        this.locationState.set(undefined)
+        this.gpsReadyState.set(false)
+        this.newLocationSubject.next({
+            type: 'FeatureCollection',
+            features: [],
+        })
     }
 
     getCoordsPosition(): [number, number] {

@@ -42,8 +42,15 @@ describe('LocationService', () => {
         ])
     })
 
-    it('contains a denied current position without reporting GPS ready', async () => {
+    it('clears a previous position when a new request is denied', async () => {
         const service = createService()
+        const locations: FeatureCollection<Point>[] = []
+        service.newLocation$.subscribe((location) => locations.push(location))
+        ;(
+            service as unknown as {
+                setLocation: (value: GeolocationPosition) => void
+            }
+        ).setLocation(position)
         vi.spyOn(service, 'getCurrentPosition').mockRejectedValue(
             new Error('Permission denied')
         )
@@ -51,8 +58,32 @@ describe('LocationService', () => {
 
         service.enableGeolocation()
 
-        await vi.waitFor(() => expect(service.gpsIsReady()).toBe(false))
+        await vi.waitFor(() => expect(locations.at(-1)?.features).toEqual([]))
         expect(service.location()).toBeUndefined()
+        expect(service.gpsIsReady()).toBe(false)
+    })
+
+    it('ignores a position request that resolves after geolocation is disabled', async () => {
+        const service = createService()
+        let resolvePosition!: (value: GeolocationPosition) => void
+        vi.spyOn(service, 'getCurrentPosition').mockReturnValue(
+            new Promise((resolve) => {
+                resolvePosition = resolve
+            })
+        )
+        const watchPosition = vi
+            .spyOn(service, 'watchPosition')
+            .mockReturnValue(undefined)
+        vi.spyOn(service, 'heading').mockReturnValue(undefined)
+
+        service.enableGeolocation()
+        service.disableGeolocation()
+        resolvePosition(position)
+
+        await Promise.resolve()
+        expect(service.location()).toBeUndefined()
+        expect(service.gpsIsReady()).toBe(false)
+        expect(watchPosition).not.toHaveBeenCalled()
     })
 
     it('accepts zero-valued orientation angles and normalizes heading', () => {

@@ -1530,17 +1530,14 @@ export class MapService {
             this.locationService.newLocation$.subscribe(
                 (geojsonPos: FeatureCollection) => {
                     if (!this.mapCreated || this.map !== activeMap) return
-                    if (
-                        geojsonPos.features &&
-                        geojsonPos.features[0].properties
-                    ) {
+                    const locationSource = activeMap.getSource(
+                        'location_circle'
+                    ) as GeoJSONSource
+                    locationSource.setData(geojsonPos)
+                    if (geojsonPos.features[0]?.properties) {
                         const coordinates = (
                             geojsonPos.features[0].geometry as Point
                         ).coordinates as LngLatLike
-                        const locationSource = activeMap.getSource(
-                            'location_circle'
-                        ) as GeoJSONSource
-                        locationSource.setData(geojsonPos)
 
                         if (geojsonPos.features[0].properties?.accuracy) {
                             this.changeLocationRadius(
