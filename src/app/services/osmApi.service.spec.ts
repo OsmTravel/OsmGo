@@ -508,6 +508,7 @@ describe('OsmApiService', () => {
         let service: OsmApiService
 
         beforeEach(() => {
+            vi.useFakeTimers()
             http = {
                 get: vi.fn().mockName('HttpClient.get'),
                 put: vi.fn().mockName('HttpClient.put'),
@@ -540,7 +541,6 @@ describe('OsmApiService', () => {
             expect(requestError?.name).toBe('TimeoutError')
         }
 
-        beforeEach(() => vi.useFakeTimers())
         afterEach(() => vi.useRealTimers())
 
         it('times out user verification', async () => {

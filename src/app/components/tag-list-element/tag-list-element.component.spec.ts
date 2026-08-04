@@ -16,9 +16,6 @@ describe('TagListElementComponent', () => {
             imports: [TranslateModule.forRoot(), TagListElementComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
-    })
-
-    beforeEach(() => {
         fixture = TestBed.createComponent(TagListElementComponent)
         component = fixture.componentInstance
         fixture.componentRef.setInput('tag', tagsConfig.tags[0])

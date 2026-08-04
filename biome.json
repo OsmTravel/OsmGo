@@ -58,7 +58,7 @@
       },
       "suspicious": {
         "noDoubleEquals": "off",
-        "noDuplicateTestHooks": "off",
+        "noDuplicateTestHooks": "error",
         "noExportsInTest": "error",
         "noImplicitAnyLet": "error",
         "noShadowRestrictedNames": "off",

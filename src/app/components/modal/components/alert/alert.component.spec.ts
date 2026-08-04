@@ -10,9 +10,6 @@ describe('AlertComponent', () => {
         await TestBed.configureTestingModule({
             imports: [AlertComponent, TranslateModule.forRoot()],
         }).compileComponents()
-    })
-
-    beforeEach(() => {
         fixture = TestBed.createComponent(AlertComponent)
         component = fixture.componentInstance
         fixture.detectChanges()

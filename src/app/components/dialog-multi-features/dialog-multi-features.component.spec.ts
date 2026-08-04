@@ -12,9 +12,6 @@ describe('DialogMultiFeaturesComponent', () => {
             imports: [DialogMultiFeaturesComponent, TranslateModule.forRoot()],
             providers: [{ provide: MatDialogRef, useValue: {} }],
         }).compileComponents()
-    })
-
-    beforeEach(() => {
         fixture = TestBed.createComponent(DialogMultiFeaturesComponent)
         component = fixture.componentInstance
         fixture.componentRef.setInput('features', [])
