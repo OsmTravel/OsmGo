@@ -18,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { cloneDeep } from '@app/utils/clone'
+import { isNodeUsedByWay } from '@app/utils/osm-feature'
 import {
     normalizedOsmTagMap,
     normalizeEditorTags,
@@ -108,6 +109,7 @@ type EditorMode = Extract<MapMode, 'Create' | 'Update'>
     ],
 })
 export class ObjectEditorContentComponent {
+    readonly isNodeUsedByWay = isNodeUsedByWay
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
@@ -291,10 +293,7 @@ export class ObjectEditorContentComponent {
             : this.feature.geometry
 
         const typeGeomFeature = originalFeatureGeometry.type
-        const usedByWays = this.feature.properties.usedByWays
-        const usedByWay =
-            usedByWays === true ||
-            (Array.isArray(usedByWays) && usedByWays.length > 0)
+        const usedByWay = isNodeUsedByWay(this.feature)
         if (typeGeomFeature === 'Point' && !usedByWay) {
             this.geometryType = 'point'
         } else if (typeGeomFeature === 'Point' && usedByWay) {

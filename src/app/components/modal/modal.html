@@ -152,7 +152,7 @@
                     type="button"
                     [matTooltip]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
                     [attr.aria-label]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
-                    [disabled]="feature.properties.usedByWays || mapService.isProcessing()"
+                    [disabled]="isNodeUsedByWay(feature) || mapService.isProcessing()"
                     (click)="moveOsmElement()"
                 >
                     <mat-icon fontSet="material-symbols-rounded"

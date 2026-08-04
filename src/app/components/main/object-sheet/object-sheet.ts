@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { cloneDeep } from '@app/utils/clone'
+import { isNodeUsedByWay } from '@app/utils/osm-feature'
 import { IconComponent } from '@components/icon/icon.component'
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { OpeningHoursComponent } from '@components/modal/components/opening-hours/opening-hours.component'
@@ -164,7 +165,7 @@ export class ObjectSheetComponent {
         const feature = this.feature()
         const geometry = feature.properties.way_geometry ?? feature.geometry
         if (geometry.type === 'Point') {
-            return feature.properties.usedByWays ? 'vertex' : 'point'
+            return isNodeUsedByWay(feature) ? 'vertex' : 'point'
         }
         if (
             geometry.type === 'LineString' ||
@@ -315,9 +316,10 @@ export class ObjectSheetComponent {
     constructor() {
         effect(() => {
             const selection = this.selection()
-            const key =
+            const objectId =
                 selection.geojson.id ??
                 `${selection.geojson.properties.type}/${selection.geojson.properties.id}`
+            const key = `${objectId}:${selection.type}`
             if (key === this.initializedObjectKey) return
             this.initializedObjectKey = key
             this.displayCode.set(false)
