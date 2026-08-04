@@ -250,13 +250,12 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             })
 
         const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
-        if (
-            urlId &&
-            urlId.split('/').length >= 2 &&
-            ['node', 'way', 'relation'].includes(urlId.split('/')[0])
-        ) {
-            this.idOsmObjectOnStart = urlId
-            this.loadOsmDataOnStart = true
+        if (urlId && /^(node|way|relation)\/[1-9]\d*$/.test(urlId)) {
+            const numericId = Number(urlId.split('/')[1])
+            if (Number.isSafeInteger(numericId)) {
+                this.idOsmObjectOnStart = urlId
+                this.loadOsmDataOnStart = true
+            }
         }
 
         const queryZoom = this.route.snapshot.queryParamMap.get('zoom')
@@ -287,11 +286,10 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         }
 
         const urlAddFeature = this.route.snapshot.queryParamMap.get('add')
-        if (urlAddFeature && !this.idOsmObjectOnStart) {
-            if (!this.centerOnStart) {
-                console.error('The add query parameter requires a map center.')
-                return
-            }
+        if (urlAddFeature && !this.idOsmObjectOnStart && !this.centerOnStart) {
+            console.error('The add query parameter requires a map center.')
+        }
+        if (urlAddFeature && !this.idOsmObjectOnStart && this.centerOnStart) {
             if (!this.zoomOnStart) {
                 this.zoomOnStart = 18
             }
@@ -536,14 +534,10 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         }
 
         if (data.redraw) {
-            timer(50)
-                .pipe(takeUntilDestroyed(this.destroyRef))
-                .subscribe(() => {
-                    this.mapService.redrawMarkers(this.dataService.getGeojson())
-                    this.mapService.redrawChangedMarkers(
-                        this.dataService.getGeojsonChanged()
-                    )
-                })
+            this.mapService.redrawMarkers(this.dataService.getGeojson())
+            this.mapService.redrawChangedMarkers(
+                this.dataService.getGeojsonChanged()
+            )
         }
         this.mapService.setCenterInUrl()
     }
@@ -596,17 +590,16 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                         map(() => {
                             this.mapService.redrawBbox(newDataJson.geojsonBbox)
                             this.mapService.redrawMarkers(newDataJson.geojson)
-                            this.mapService.setIsProcessing(false)
                         })
                     )
                 }),
 
                 catchError((error: unknown) => {
-                    this.mapService.setIsProcessing(false)
                     console.error(error)
                     void this.presentToast(this.getErrorMessage(error))
                     return EMPTY
-                })
+                }),
+                finalize(() => this.mapService.setIsProcessing(false))
             )
     }
 
