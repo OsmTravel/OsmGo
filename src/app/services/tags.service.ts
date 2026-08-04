@@ -10,8 +10,23 @@ import {
     TagsJson,
 } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
-import { defer, forkJoin, from, Observable, of } from 'rxjs'
-import { finalize, map, shareReplay, tap } from 'rxjs/operators'
+import {
+    CATALOG_CACHE_SCHEMA_VERSION,
+    type CatalogCache,
+    requireCatalogCache,
+    requirePresetCatalog,
+    requireSpriteCatalog,
+    requireTagsCatalog,
+} from '@services/catalog-validation'
+import { defer, forkJoin, from, Observable, of, throwError } from 'rxjs'
+import {
+    catchError,
+    finalize,
+    map,
+    shareReplay,
+    switchMap,
+    tap,
+} from 'rxjs/operators'
 
 export interface SavedField {
     tags: Tag[]
@@ -42,7 +57,9 @@ export class TagsService {
     private readonly tagsByIdState = signal<Record<string, TagConfig>>({})
     readonly tagsById = this.tagsByIdState.asReadonly()
     private readonly catalogMetricsState = signal<
-        Partial<Record<'tags' | 'presets' | 'brands', CatalogLoadMetric>>
+        Partial<
+            Record<'tags' | 'presets' | 'brands' | 'sprites', CatalogLoadMetric>
+        >
     >({})
     readonly catalogMetrics = this.catalogMetricsState.asReadonly()
     userTags: TagConfig[] = []
@@ -435,7 +452,8 @@ export class TagsService {
     getTagsConfig$(): Observable<TagsJson> {
         return this.loadJsonAsset$<TagsJson>(
             `assets/tagsAndPresets/tags.json`,
-            'tags'
+            'tags',
+            requireTagsCatalog
         ).pipe(
             map((tagsConfig) => {
                 this.primaryKeysState.set(tagsConfig.primaryKeys)
@@ -447,7 +465,8 @@ export class TagsService {
     loadPresets$(): Observable<Record<string, Preset>> {
         return this.loadJsonAsset$<Record<string, Preset>>(
             `assets/tagsAndPresets/presets.json`,
-            'presets'
+            'presets',
+            (value) => requirePresetCatalog(value, 'presets')
         ).pipe(
             map((p) => {
                 const json = p
@@ -466,7 +485,8 @@ export class TagsService {
 
         this.brandPresetsRequest$ = this.loadJsonAsset$<Record<string, Preset>>(
             `assets/tagsAndPresets/brandPresets.json`,
-            'brands'
+            'brands',
+            (value) => requirePresetCatalog(value, 'brands')
         ).pipe(
             tap((brandPresets) => {
                 for (const [id, preset] of Object.entries(brandPresets)) {
@@ -493,7 +513,7 @@ export class TagsService {
             devicePixelRatio === 1
                 ? `assets/mapStyle/sprites/sprites.json`
                 : `assets/mapStyle/sprites/sprites@2x.json`
-        return this.http.get<JsonSprites>(url).pipe(
+        return this.loadJsonAsset$(url, 'sprites', requireSpriteCatalog).pipe(
             map((jsonSprites) => {
                 this.jsonSpritesState.set(jsonSprites)
                 return jsonSprites
@@ -536,7 +556,8 @@ export class TagsService {
 
     private loadJsonAsset$<T>(
         url: string,
-        resource: 'tags' | 'presets' | 'brands'
+        resource: 'tags' | 'presets' | 'brands' | 'sprites',
+        validate: (value: unknown) => T
     ): Observable<T> {
         return defer(() => {
             const requestedAt = performance.now()
@@ -546,10 +567,11 @@ export class TagsService {
                     const parseStartedAt = performance.now()
                     // Production receives text so JSON parsing can be timed.
                     // Object responses keep lightweight test doubles possible.
-                    const parsed =
+                    const parsed: unknown =
                         typeof response === 'string'
-                            ? (JSON.parse(response) as T)
-                            : (response as T)
+                            ? JSON.parse(response)
+                            : response
+                    const validated = validate(parsed)
                     const parsedAt = performance.now()
                     this.catalogMetricsState.update((metrics) => ({
                         ...metrics,
@@ -565,9 +587,67 @@ export class TagsService {
                                 : { indexMs: metrics[resource].indexMs }),
                         },
                     }))
-                    return parsed
-                })
+                    return validated
+                }),
+                switchMap((value) =>
+                    this.storeCatalogFallback$(resource, value)
+                ),
+                catchError((sourceError: unknown) =>
+                    this.loadCatalogFallback$(resource, validate, sourceError)
+                )
             )
         })
+    }
+
+    private storeCatalogFallback$<T>(
+        resource: 'tags' | 'presets' | 'brands' | 'sprites',
+        value: T
+    ): Observable<T> {
+        const cache: CatalogCache<T> = {
+            schemaVersion: CATALOG_CACHE_SCHEMA_VERSION,
+            value,
+        }
+        return defer(() =>
+            from(this.localStorage.set(this.catalogCacheKey(resource), cache))
+        ).pipe(
+            map(() => value),
+            catchError((error: unknown) => {
+                console.warn(`Could not cache the ${resource} catalog.`, error)
+                return of(value)
+            })
+        )
+    }
+
+    private loadCatalogFallback$<T>(
+        resource: 'tags' | 'presets' | 'brands' | 'sprites',
+        validate: (value: unknown) => T,
+        sourceError: unknown
+    ): Observable<T> {
+        return defer(() =>
+            from(this.localStorage.get<unknown>(this.catalogCacheKey(resource)))
+        ).pipe(
+            map((cached) => requireCatalogCache(cached, validate).value),
+            tap(() =>
+                console.warn(
+                    `Using the last valid ${resource} catalog.`,
+                    sourceError
+                )
+            ),
+            catchError((cacheError: unknown) =>
+                throwError(
+                    () =>
+                        new Error(
+                            `Could not load a valid ${resource} catalog.`,
+                            { cause: sourceError ?? cacheError }
+                        )
+                )
+            )
+        )
+    }
+
+    private catalogCacheKey(
+        resource: 'tags' | 'presets' | 'brands' | 'sprites'
+    ): string {
+        return `catalogCache:v${CATALOG_CACHE_SCHEMA_VERSION}:${resource}`
     }
 }

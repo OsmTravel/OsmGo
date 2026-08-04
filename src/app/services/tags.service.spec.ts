@@ -6,24 +6,40 @@ import { firstValueFrom, forkJoin, of } from 'rxjs'
 
 import { TagsService } from './tags.service'
 
+const createValidTag = () => ({
+    id: 'amenity/cafe',
+    icon: 'maki-cafe',
+    markerColor: '#123456',
+    presets: [],
+    geometry: ['point'],
+    tags: { amenity: 'cafe' },
+})
+
+const createValidPreset = () => ({
+    key: 'amenity',
+    lbl: { en: 'Amenity' },
+    type: 'text',
+})
+
 describe('TagsService', () => {
     it('exposes loaded tag catalog data as read-only signals', async () => {
         const tagsConfig = {
             primaryKeys: ['amenity'],
-            tags: [],
+            tags: [createValidTag()],
         }
         const presets = {
-            cafe: { key: 'amenity', tags: { amenity: 'cafe' } },
+            cafe: createValidPreset(),
         }
         const http = {
             get: vi.fn((url: string) =>
                 of(url.endsWith('tags.json') ? tagsConfig : presets)
             ),
         }
+        const storage = { set: vi.fn(() => Promise.resolve()) }
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: http },
-                { provide: AppStorage, useValue: {} },
+                { provide: AppStorage, useValue: storage },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -33,6 +49,14 @@ describe('TagsService', () => {
 
         expect(service.primaryKeys()).toEqual(['amenity'])
         expect(service.presets()).toBe(presets)
+        expect(storage.set).toHaveBeenCalledWith('catalogCache:v1:tags', {
+            schemaVersion: 1,
+            value: tagsConfig,
+        })
+        expect(storage.set).toHaveBeenCalledWith('catalogCache:v1:presets', {
+            schemaVersion: 1,
+            value: presets,
+        })
     })
 
     it('loads and caches the separate brand catalog only on demand', async () => {
@@ -59,7 +83,10 @@ describe('TagsService', () => {
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: http },
-                { provide: AppStorage, useValue: {} },
+                {
+                    provide: AppStorage,
+                    useValue: { set: vi.fn(() => Promise.resolve()) },
+                },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -111,12 +138,17 @@ describe('TagsService', () => {
 
     it('checks every feature tag when finding the primary tag', async () => {
         const http = {
-            get: vi.fn(() => of({ primaryKeys: ['amenity'], tags: [] })),
+            get: vi.fn(() =>
+                of({ primaryKeys: ['amenity'], tags: [createValidTag()] })
+            ),
         }
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: http },
-                { provide: AppStorage, useValue: {} },
+                {
+                    provide: AppStorage,
+                    useValue: { set: vi.fn(() => Promise.resolve()) },
+                },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -149,6 +181,43 @@ describe('TagsService', () => {
             key: 'amenity',
             value: 'cafe',
         })
+    })
+
+    it('uses a versioned valid cache when the current catalog is malformed', async () => {
+        const warning = vi
+            .spyOn(console, 'warn')
+            .mockImplementation(() => undefined)
+        const cachedTags = {
+            primaryKeys: ['amenity'],
+            tags: [createValidTag()],
+        }
+        const storage = {
+            get: vi.fn(() =>
+                Promise.resolve({ schemaVersion: 1, value: cachedTags })
+            ),
+            set: vi.fn(() => Promise.resolve()),
+        }
+        const http = {
+            get: vi.fn(() => of({ primaryKeys: ['amenity'], tags: [{}] })),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        const tags = await firstValueFrom(service.getTagsConfig$())
+
+        expect(tags).toEqual(cachedTags)
+        expect(storage.get).toHaveBeenCalledWith('catalogCache:v1:tags')
+        expect(service.primaryKeys()).toEqual(['amenity'])
+        expect(warning).toHaveBeenCalledWith(
+            'Using the last valid tags catalog.',
+            expect.any(Error)
+        )
+        warning.mockRestore()
     })
 
     it('removes a tag from hidden preferences when bookmarking it', () => {
@@ -270,8 +339,7 @@ describe('TagsService', () => {
 
     it('keeps built-in tag definitions authoritative when user IDs collide', async () => {
         const builtIn = {
-            id: 'amenity/cafe',
-            tags: { amenity: 'cafe' },
+            ...createValidTag(),
             icon: 'built-in',
         }
         const userDuplicate = {
@@ -289,6 +357,7 @@ describe('TagsService', () => {
         }
         const storage = {
             get: vi.fn(() => Promise.resolve([userDuplicate, userOnly])),
+            set: vi.fn(() => Promise.resolve()),
         }
         TestBed.configureTestingModule({
             providers: [
