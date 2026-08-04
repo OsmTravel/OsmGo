@@ -82,10 +82,58 @@
             <button
                 mat-stroked-button
                 type="button"
+                [disabled]="isFeatureLocked(uploadError.feature)"
                 (click)="cancelErrorFeature(uploadError.feature)"
             >
                 {{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate }}
             </button>
+            } @if (activeJournal(); as journal) {
+            <div class="recovery-actions">
+                @if (uploadError.recoveryAction === 'resumeReconciliation') {
+                <button
+                    mat-flat-button
+                    type="button"
+                    (click)="resumeReconciliation()"
+                >
+                    <mat-icon fontSet="material-symbols-rounded">sync</mat-icon>
+                    {{ 'SEND_DATA.RESUME_RECONCILIATION' | translate }}
+                </button>
+                } @if (changesetInspectionUrl(); as inspectionUrl) {
+                <a
+                    mat-stroked-button
+                    [href]="inspectionUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >open_in_new</mat-icon
+                    >
+                    {{ 'SEND_DATA.INSPECT_CHANGESET' | translate }}
+                </a>
+                }
+                <button
+                    mat-stroked-button
+                    type="button"
+                    (click)="exportRecoveryBundle()"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >download</mat-icon
+                    >
+                    {{ 'SEND_DATA.EXPORT_RECOVERY' | translate }}
+                </button>
+                @if (journal.phase === 'prepared') {
+                <button
+                    mat-stroked-button
+                    type="button"
+                    (click)="discardPreparedAttempt()"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >delete_forever</mat-icon
+                    >
+                    {{ 'SEND_DATA.MARK_NOT_APPLIED' | translate }}
+                </button>
+                }
+            </div>
             }
         </section>
         }
@@ -122,6 +170,7 @@
                 <article
                     class="change-card"
                     [attr.data-change-type]="item.properties.changeType"
+                    [attr.data-upload-locked]="isFeatureLocked(item)"
                 >
                     <div
                         class="change-type"
@@ -176,6 +225,13 @@
                             >
                             {{ 'SEND_DATA.ERROR' | translate }}
                         </button>
+                        } @if (isFeatureLocked(item)) {
+                        <span class="upload-lock">
+                            <mat-icon fontSet="material-symbols-rounded"
+                                >lock</mat-icon
+                            >
+                            {{ 'SEND_DATA.UPLOAD_LOCKED' | translate }}
+                        </span>
                         }
                     </div>
 
@@ -195,7 +251,7 @@
                     <mat-icon fontSet="material-symbols-rounded"
                         >check_circle</mat-icon
                     >
-                    <p>Aucune modification en attente.</p>
+                    <p>{{ 'SEND_DATA.NO_PENDING_CHANGES' | translate }}</p>
                 </div>
                 }
             </div>
@@ -207,7 +263,7 @@
             mat-button
             class="delete-all"
             type="button"
-            [disabled]="uploadInFlight()"
+            [disabled]="uploadInFlight() || !!activeJournal()"
             (click)="presentConfirm()"
         >
             <mat-icon fontSet="material-symbols-rounded">delete_sweep</mat-icon>
@@ -217,7 +273,7 @@
             mat-flat-button
             data-testid="upload-changes"
             type="button"
-            [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || uploadInFlight()"
+            [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || uploadInFlight() || !!activeJournal()"
             (click)="pushDataToOsm(commentChangeset())"
         >
             <mat-icon fontSet="material-symbols-rounded">cloud_upload</mat-icon>

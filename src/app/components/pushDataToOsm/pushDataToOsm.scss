@@ -128,6 +128,13 @@
     overflow-wrap: anywhere;
 }
 
+.recovery-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
 .error-tags {
     display: grid;
     overflow: hidden;
@@ -176,6 +183,10 @@
         color: #276f3b;
         background: #d8f5dd;
     }
+
+    &[data-upload-locked='true'] {
+        border-color: var(--osmgo-amber-ink);
+    }
 }
 
 .change-type,
@@ -214,6 +225,20 @@
         color: var(--osmgo-ink-muted);
         font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
         font-size: 12px;
+    }
+}
+
+.upload-lock {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--osmgo-amber-ink);
+    font-size: 12px;
+
+    mat-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
     }
 }
 

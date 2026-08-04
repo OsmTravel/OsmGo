@@ -1,4 +1,4 @@
-import { KeyValuePipe } from '@angular/common'
+import { DOCUMENT, KeyValuePipe } from '@angular/common'
 import {
     type AfterViewInit,
     Component,
@@ -72,6 +72,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     private readonly overlayNavigation = inject(OverlayNavigationService)
     private readonly snackBar = inject(MatSnackBar)
     private readonly successDelayMs = inject(UPLOAD_SUCCESS_DELAY_MS)
+    private readonly document = inject(DOCUMENT)
 
     readonly summary = signal<UploadSummary>({
         Total: 0,
@@ -101,6 +102,18 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         if (localError) return localError
         const state = this.uploadCoordinator.state()
         return state.kind === 'failed' ? state.error : undefined
+    })
+    readonly activeJournal = computed(() => {
+        this.uploadCoordinator.state()
+        return this.dataService.getUploadJournal()
+    })
+    readonly changesetInspectionUrl = computed(() => {
+        const changesetId = this.activeJournal()?.changesetId
+        if (!changesetId) return undefined
+        const host = this.configService.config().isDevServer
+            ? 'https://master.apis.dev.openstreetmap.org'
+            : 'https://www.openstreetmap.org'
+        return `${host}/changeset/${encodeURIComponent(changesetId)}`
     })
     private destroyed = false
     private closeStarted = false
@@ -206,6 +219,74 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         this.refreshMapAndQueue()
         this.localError.set(undefined)
         this.uploadCoordinator.resetTerminalState()
+    }
+
+    isFeatureLocked(feature: OsmGoFeature): boolean {
+        return (
+            this.activeJournal()?.submittedIds.includes(String(feature.id)) ??
+            false
+        )
+    }
+
+    async resumeReconciliation(): Promise<void> {
+        this.localError.set(undefined)
+        this.uploadStatusVisible.set(true)
+        const state = await this.uploadCoordinator.resumeReconciliation()
+        this.uploadStatusVisible.set(false)
+        this.refreshMapAndQueue()
+        this.summary.set(this.getSummary())
+        if (state.kind === 'succeeded') {
+            this.snackBar.open(
+                this.translate.instant('SEND_DATA.RECONCILIATION_COMPLETE'),
+                this.translate.instant('SHARED.CLOSE'),
+                { duration: 5000 }
+            )
+        }
+    }
+
+    discardPreparedAttempt(): void {
+        const data: ConfirmDialogData = {
+            title: this.translate.instant(
+                'SEND_DATA.DISCARD_ATTEMPT_CONFIRM_HEADER'
+            ),
+            message: this.translate.instant(
+                'SEND_DATA.DISCARD_ATTEMPT_CONFIRM_MESSAGE'
+            ),
+            cancelLabel: this.translate.instant('SHARED.CANCEL'),
+            confirmLabel: this.translate.instant('SHARED.CONFIRM'),
+            destructive: true,
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
+            })
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) void this.confirmDiscardPreparedAttempt()
+            })
+    }
+
+    exportRecoveryBundle(): void {
+        const journal = this.activeJournal()
+        if (!journal) return
+        const bundle = {
+            exportedAt: new Date().toISOString(),
+            journal,
+            currentPendingFeatures:
+                this.dataService.getGeojsonChanged().features,
+        }
+        const url = URL.createObjectURL(
+            new Blob([JSON.stringify(bundle, null, 2)], {
+                type: 'application/json',
+            })
+        )
+        const link = this.document.createElement('a')
+        link.href = url
+        link.download = `osmgo-upload-recovery-${journal.attemptId}.json`
+        link.click()
+        URL.revokeObjectURL(url)
     }
 
     async cancelAllFeatures(): Promise<void> {
@@ -336,6 +417,18 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         this.mapService.redrawChangedMarkers(
             this.dataService.getGeojsonChanged()
         )
+    }
+
+    private async confirmDiscardPreparedAttempt(): Promise<void> {
+        try {
+            await this.uploadCoordinator.discardPreparedAttemptAsNotApplied()
+        } catch (error) {
+            this.setLocalError(error)
+            return
+        }
+        this.localError.set(undefined)
+        this.refreshMapAndQueue()
+        this.summary.set(this.getSummary())
     }
 
     private async closeOverlayOnce(): Promise<void> {

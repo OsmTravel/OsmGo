@@ -149,7 +149,16 @@
         "PASSWORD_OSM": "Mot de passe OSM",
         "CANCEL_THIS_CHANGE": "Annuler cette modification",
         "UPLOADING_DATA_TO_OSM": "Envoi des modifications vers OpenStreetMap…",
-        "DONT_CLOSE": "Veuillez ne pas fermer cette page"
+        "DONT_CLOSE": "Veuillez ne pas fermer cette page",
+        "RESUME_RECONCILIATION": "Reprendre la réconciliation",
+        "RECONCILIATION_COMPLETE": "L’envoi vers OpenStreetMap a été réconcilié.",
+        "INSPECT_CHANGESET": "Inspecter le changeset",
+        "EXPORT_RECOVERY": "Exporter les données de récupération",
+        "MARK_NOT_APPLIED": "Marquer comme non appliquée",
+        "DISCARD_ATTEMPT_CONFIRM_HEADER": "Cette tentative a-t-elle été rejetée ?",
+        "DISCARD_ATTEMPT_CONFIRM_MESSAGE": "Continuez uniquement après avoir vérifié qu’OpenStreetMap n’a pas appliqué cette tentative. Les modifications envoyées redeviendront modifiables et envoyables.",
+        "UPLOAD_LOCKED": "Verrouillée par un envoi non résolu",
+        "NO_PENDING_CHANGES": "Aucune modification en attente."
     },
     "SETTINGS": {
         "SETTINGS": "Paramètres",
