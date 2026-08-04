@@ -41,7 +41,7 @@ const supportedGeometries = new Set([
 const isTagConfig = (value: unknown): value is TagConfig =>
     isRecord(value) &&
     isNonEmptyString(value.id) &&
-    isNonEmptyString(value.icon) &&
+    typeof value.icon === 'string' &&
     /^#[0-9a-f]{6}$/i.test(String(value.markerColor)) &&
     isStringArray(value.geometry) &&
     value.geometry.length > 0 &&

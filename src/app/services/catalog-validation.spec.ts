@@ -44,6 +44,15 @@ describe('catalog validation', () => {
         expect(requireSpriteCatalog(sprites)).toBe(sprites)
     })
 
+    it('accepts tags without a dedicated icon', () => {
+        const catalog = {
+            ...validTagCatalog,
+            tags: [{ ...validTagCatalog.tags[0], icon: '' }],
+        }
+
+        expect(requireTagsCatalog(catalog)).toBe(catalog)
+    })
+
     it.each([
         { ...validTagCatalog, primaryKeys: ['amenity', 'amenity'] },
         { ...validTagCatalog, tags: [{ ...validTagCatalog.tags[0], id: '' }] },
