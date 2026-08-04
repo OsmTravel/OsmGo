@@ -16,7 +16,7 @@
  */
 
 //IMPORTS
-let OpeningHoursParser = require('./OpeningHoursParser')
+const OpeningHoursParser = require('./OpeningHoursParser')
 
 /**
  * Check compatibility of opening_hours string with YoHours
@@ -35,10 +35,10 @@ class YoHoursChecker {
      * @return True if YoHours can read it and display it
      */
     canRead(oh) {
-        var result = false
+        let result = false
 
         try {
-            var parsed = this._parser.parse(oh)
+            const parsed = this._parser.parse(oh)
             if (parsed != null) {
                 result = true
             }

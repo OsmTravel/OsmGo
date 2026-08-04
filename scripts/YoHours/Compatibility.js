@@ -26,7 +26,7 @@ Array.prototype.equals = function (array) {
     // compare lengths - can save a lot of time
     if (this.length != array.length) return false
 
-    for (var i = 0, l = this.length; i < l; i++) {
+    for (let i = 0, l = this.length; i < l; i++) {
         // Check if we have nested arrays
         if (this[i] instanceof Array && array[i] instanceof Array) {
             // recurse into the nested arrays

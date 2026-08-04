@@ -49,7 +49,7 @@
     "rules": {
       "preset": "recommended",
       "correctness": {
-        "noInnerDeclarations": "off",
+        "noInnerDeclarations": "error",
         "noSelfAssign": "error",
         "noVoidTypeReturn": "error"
       },
