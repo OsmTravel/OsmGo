@@ -46,4 +46,9 @@ export class MapControlsComponent {
             !this.mapService.isDisplaySatelliteBaseMap()
         )
     }
+
+    centerOnMyPosition(): void {
+        this.locationService.requestHeadingPermission()
+        this.mapService.centerOnMyPosition()
+    }
 }

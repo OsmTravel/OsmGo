@@ -30,7 +30,10 @@ describe('MapControlsComponent', () => {
                 },
                 {
                     provide: LocationService,
-                    useValue: { gpsIsReady: () => false },
+                    useValue: {
+                        gpsIsReady: () => false,
+                        requestHeadingPermission: vi.fn(),
+                    },
                 },
                 {
                     provide: MapService,
@@ -127,5 +130,22 @@ describe('MapControlsComponent', () => {
             refreshButton.querySelector('.refresh-button__label')?.textContent
         ).toContain('Chargement')
         expect(refreshButton.disabled).toBe(true)
+    })
+
+    it('requests heading permission from the geolocation button handler', () => {
+        const fixture = TestBed.createComponent(MapControlsComponent)
+        const locationService = TestBed.inject(LocationService)
+        const mapService = TestBed.inject(MapService)
+
+        fixture.componentInstance.centerOnMyPosition()
+
+        expect(locationService.requestHeadingPermission).toHaveBeenCalledOnce()
+        expect(mapService.centerOnMyPosition).toHaveBeenCalledOnce()
+        expect(
+            vi.mocked(locationService.requestHeadingPermission).mock
+                .invocationCallOrder[0]
+        ).toBeLessThan(
+            vi.mocked(mapService.centerOnMyPosition).mock.invocationCallOrder[0]
+        )
     })
 })

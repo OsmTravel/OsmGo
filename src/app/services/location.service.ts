@@ -22,6 +22,13 @@ type DeviceOrientationPermission = typeof DeviceOrientationEvent & {
     requestPermission?: () => Promise<'granted' | 'denied'>
 }
 
+export type OrientationPermissionState =
+    | 'unknown'
+    | 'prompt'
+    | 'granted'
+    | 'denied'
+    | 'unavailable'
+
 @Service()
 export class LocationService {
     readonly configService = inject(ConfigService)
@@ -45,6 +52,10 @@ export class LocationService {
     readonly compassHeading = this.compassHeadingState.asReadonly()
     private readonly gpsReadyState = signal(false)
     readonly gpsIsReady = this.gpsReadyState.asReadonly()
+    private readonly orientationPermissionState =
+        signal<OrientationPermissionState>('unknown')
+    readonly orientationPermission =
+        this.orientationPermissionState.asReadonly()
 
     private watchId?: number
     private geolocationSession = 0
@@ -120,35 +131,38 @@ export class LocationService {
     }
 
     heading(): void {
-        if (this.orientationEventName) {
-            window.removeEventListener(
-                this.orientationEventName,
-                this.onDeviceOrientation,
-                true
-            )
-        }
-
-        if (typeof window['ondeviceorientationabsolute'] == 'object') {
-            this.orientationEventName = 'deviceorientationabsolute'
-        } else if (typeof window['ondeviceorientation'] == 'object') {
-            this.orientationEventName = 'deviceorientation'
-        } else {
+        const orientationApi = this.prepareOrientationTracking()
+        if (!orientationApi) return
+        if (orientationApi?.requestPermission) {
+            this.orientationPermissionState.set('prompt')
             return
         }
+        this.orientationPermissionState.set('granted')
+        this.listenForHeading()
+    }
 
-        const orientationApi = window.DeviceOrientationEvent as
-            | DeviceOrientationPermission
-            | undefined
-        if (orientationApi?.requestPermission) {
+    requestHeadingPermission(): void {
+        const orientationApi = this.prepareOrientationTracking()
+        if (!orientationApi) return
+        if (
+            !orientationApi.requestPermission ||
+            this.orientationPermission() === 'granted'
+        ) {
+            this.orientationPermissionState.set('granted')
+            this.listenForHeading()
+            return
+        }
+        try {
             void orientationApi
                 .requestPermission()
                 .then((permission) => {
+                    this.orientationPermissionState.set(permission)
                     if (permission === 'granted') this.listenForHeading()
                 })
-                .catch(() => undefined)
-            return
+                .catch(() => this.orientationPermissionState.set('denied'))
+        } catch {
+            this.orientationPermissionState.set('denied')
         }
-        this.listenForHeading()
     }
 
     private readonly onDeviceOrientation = (event: DeviceOrientationEvent) => {
@@ -268,6 +282,37 @@ export class LocationService {
             this.onDeviceOrientation,
             true
         )
+    }
+
+    private prepareOrientationTracking():
+        | DeviceOrientationPermission
+        | undefined {
+        if (this.orientationEventName) {
+            window.removeEventListener(
+                this.orientationEventName,
+                this.onDeviceOrientation,
+                true
+            )
+        }
+
+        if (typeof window['ondeviceorientationabsolute'] === 'object') {
+            this.orientationEventName = 'deviceorientationabsolute'
+        } else if (typeof window['ondeviceorientation'] === 'object') {
+            this.orientationEventName = 'deviceorientation'
+        } else {
+            this.orientationEventName = undefined
+            this.orientationPermissionState.set('unavailable')
+            return undefined
+        }
+
+        const orientationApi = window.DeviceOrientationEvent as
+            | DeviceOrientationPermission
+            | undefined
+        if (!orientationApi) {
+            this.orientationPermissionState.set('unavailable')
+            return undefined
+        }
+        return orientationApi
     }
 
     getGeoJSONCirclePosition(

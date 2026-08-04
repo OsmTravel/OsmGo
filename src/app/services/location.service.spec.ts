@@ -104,6 +104,64 @@ describe('LocationService', () => {
         expect(headings).toEqual([0])
     })
 
+    it('waits for an explicit request before asking for orientation permission', async () => {
+        const service = createService()
+        const requestPermission = vi.fn(() =>
+            Promise.resolve('denied' as const)
+        )
+        const orientationDescriptor = Object.getOwnPropertyDescriptor(
+            window,
+            'DeviceOrientationEvent'
+        )
+        const absoluteDescriptor = Object.getOwnPropertyDescriptor(
+            window,
+            'ondeviceorientationabsolute'
+        )
+        Object.defineProperty(window, 'DeviceOrientationEvent', {
+            configurable: true,
+            value: { requestPermission },
+        })
+        Object.defineProperty(window, 'ondeviceorientationabsolute', {
+            configurable: true,
+            value: null,
+        })
+
+        try {
+            service.heading()
+
+            expect(service.orientationPermission()).toBe('prompt')
+            expect(requestPermission).not.toHaveBeenCalled()
+
+            service.requestHeadingPermission()
+
+            expect(requestPermission).toHaveBeenCalledOnce()
+            await vi.waitFor(() =>
+                expect(service.orientationPermission()).toBe('denied')
+            )
+        } finally {
+            if (orientationDescriptor) {
+                Object.defineProperty(
+                    window,
+                    'DeviceOrientationEvent',
+                    orientationDescriptor
+                )
+            } else {
+                delete (window as { DeviceOrientationEvent?: unknown })
+                    .DeviceOrientationEvent
+            }
+            if (absoluteDescriptor) {
+                Object.defineProperty(
+                    window,
+                    'ondeviceorientationabsolute',
+                    absoluteDescriptor
+                )
+            } else {
+                delete (window as { ondeviceorientationabsolute?: unknown })
+                    .ondeviceorientationabsolute
+            }
+        }
+    })
+
     it.each([
         { latitude: Number.NaN },
         { latitude: 91 },

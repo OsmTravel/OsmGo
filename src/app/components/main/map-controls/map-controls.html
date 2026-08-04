@@ -98,7 +98,7 @@
         [disabled]="!locationService.gpsIsReady()"
         [matTooltip]="'MAIN.BUTTONS.CENTER_GPS' | translate"
         [attr.aria-label]="'MAIN.BUTTONS.CENTER_GPS' | translate"
-        (click)="mapService.centerOnMyPosition()"
+        (click)="centerOnMyPosition()"
     >
         <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
             >my_location</mat-icon
