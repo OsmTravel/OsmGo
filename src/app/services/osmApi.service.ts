@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { inject, Service } from '@angular/core'
 import { cloneDeep } from '@app/utils/clone'
+import { isNodeUsedByWay } from '@app/utils/osm-feature'
 import { normalizeOsmTags } from '@app/utils/osm-tags'
 import type {
     FeatureIdSource,
@@ -209,11 +210,7 @@ export class OsmApiService {
                 const xml = this.geojson2OsmUpdate(feature, idChangeset)
                 modifyChanges.push(xml)
             } else if (feature.properties.changeType === 'Delete') {
-                const usedByWays = feature.properties.usedByWays
-                if (
-                    usedByWays === true ||
-                    (Array.isArray(usedByWays) && usedByWays.length > 0)
-                ) {
+                if (isNodeUsedByWay(feature)) {
                     const featureWithoutTags = {
                         ...feature,
                         properties: { ...feature.properties, tags: {} },
@@ -603,6 +600,13 @@ export class OsmApiService {
     }
 
     getOsmObjectById$(objectId: string): Observable<OsmApiObject> {
+        if (!/^(node|way|relation)\/[1-9]\d*$/.test(objectId)) {
+            return throwError(() => new Error('Invalid OSM object ID.'))
+        }
+        const numericId = Number(objectId.split('/')[1])
+        if (!Number.isSafeInteger(numericId)) {
+            return throwError(() => new Error('Invalid OSM object ID.'))
+        }
         const headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
@@ -614,6 +618,7 @@ export class OsmApiService {
                 responseType: 'json',
             })
             .pipe(
+                timeout(OSM_REQUEST_TIMEOUT_MS),
                 map((response) => {
                     const object = response.elements?.[0]
                     if (!object) {
@@ -710,6 +715,22 @@ export class OsmApiService {
         bbox: BBox,
         limitFeatures = 10_000
     ): Observable<ConvertResult> {
+        if (
+            bbox.length !== 4 ||
+            bbox.some((coordinate) => !Number.isFinite(coordinate)) ||
+            bbox[0] < -180 ||
+            bbox[0] > 180 ||
+            bbox[2] < -180 ||
+            bbox[2] > 180 ||
+            bbox[1] < -90 ||
+            bbox[1] > 90 ||
+            bbox[3] < -90 ||
+            bbox[3] > 90 ||
+            bbox[0] >= bbox[2] ||
+            bbox[1] >= bbox[3]
+        ) {
+            return throwError(() => new Error('Invalid OSM bounding box.'))
+        }
         const headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
@@ -719,6 +740,7 @@ export class OsmApiService {
         return this.http
             .get(url, { headers: headers, responseType: 'text' })
             .pipe(
+                timeout(OSM_REQUEST_TIMEOUT_MS),
                 switchMap((osmData) =>
                     this.formatOsmJsonData$(
                         osmData,
