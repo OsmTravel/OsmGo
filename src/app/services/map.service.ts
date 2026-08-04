@@ -233,11 +233,32 @@ export class MapService {
                 (target === 'official'
                     ? this.officialRenderRevision
                     : this.pendingRenderRevision)
+        const fallbackMarker = 'circle-#000000-maki-circle'
+        const renderGeojson: OsmGoFeatureCollection = {
+            ...geojson,
+            features: geojson.features.map((feature) =>
+                typeof feature.properties.marker === 'string' &&
+                feature.properties.marker.length > 0
+                    ? feature
+                    : {
+                          ...feature,
+                          properties: {
+                              ...feature.properties,
+                              marker: fallbackMarker,
+                          },
+                      }
+            ),
+        }
         const missingMarkers = [
             ...new Set(
-                geojson.features
+                renderGeojson.features
                     .map((feature) => feature.properties.marker)
-                    .filter((marker) => !activeMap.hasImage(marker))
+                    .filter(
+                        (marker): marker is string =>
+                            typeof marker === 'string' &&
+                            marker.length > 0 &&
+                            !activeMap.hasImage(marker)
+                    )
             ),
         ]
         this.activeRenderCount++
@@ -250,8 +271,8 @@ export class MapService {
             const source = activeMap.getSource(dataSourceId) as
                 | GeoJSONSource
                 | undefined
-            source?.setData(geojson)
-            this.drawWaysPoly(geojson, waysSourceId, activeMap)
+            source?.setData(renderGeojson)
+            this.drawWaysPoly(renderGeojson, waysSourceId, activeMap)
         } catch (error) {
             if (isCurrent()) console.error(error)
         } finally {
@@ -1406,10 +1427,10 @@ export class MapService {
         for (const iconId of iconsIds) {
             let iconParam: IconParameters
             const matchMarkerAndIcon = iconId.match(
-                /^(circle|square|penta)-(#\w{6})-([\w-]+)$/
+                /^(circle|square|penta)-(#[0-9a-fA-F]{6})-([\w-]+)$/
             )
             const matchMarkerOnly = iconId.match(
-                /^(circle|square|penta)-(#\w{6})-$/
+                /^(circle|square|penta)-(#[0-9a-fA-F]{6})-$/
             )
             const matchShapeOnly = iconId.match(/^(circle|square|penta)-$/)
 
