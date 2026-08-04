@@ -48,6 +48,7 @@
         "EXIT_CONFIRM_MESSAGE": "Voulez-vous vraiment quitter Osm Go! ?",
         "START_SNACK_ITEMS_IN_MEMORY": "objets en mémoire",
         "WHAT_ITEM": "Lequel ?",
+        "SELECT_ITEM_AT_LOCATION": "Sélectionnez l’objet voulu à cet emplacement.",
         "LOAD_BBOX": "Charger les données de l'emprise ?",
         "CREATING_MISSING_ICONS": "Création des icônes manquantes…",
         "STARTUP": {
@@ -137,6 +138,7 @@
     },
     "SEND_DATA": {
         "SEND_DATA": "Envoyer les données",
+        "DEVELOPMENT_SERVER": "Serveur de développement OSM",
         "YOU_MUST_BE_LOGGED_IN": "Veuillez vous connecter pour envoyer vos modifications vers OSM.",
         "ADDED_ITEMS": "Création",
         "UPDATED_ITEMS": "Modification",
@@ -312,7 +314,8 @@
         "HIDDEN_TAGS_DESCRIPTION": "Cette fenêtre vous permet de rendre visible les éléments cachés",
         "BOOKMARKED_TAGS": "Gérer vos favoris",
         "BOOKMARKED_TAGS_DESCRIPTION": "Cette fenêtre vous permet de gérer vos tags favoris",
-        "RESET_HIDDEN_TAGS": "Réinitialiser"
+        "RESET_HIDDEN_TAGS": "Réinitialiser",
+        "REMOVE_ALL_HIDDEN_TAGS": "Tout retirer"
     },
     "DAYS": {
         "MONDAY": "Lundi",

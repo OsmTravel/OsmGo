@@ -48,6 +48,7 @@
         "EXIT_CONFIRM_MESSAGE": "Leave Osm Go!?",
         "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
         "WHAT_ITEM": "Which?",
+        "SELECT_ITEM_AT_LOCATION": "Select the object at this location.",
         "LOAD_BBOX": "Load data?",
         "CREATING_MISSING_ICONS": "Creating missing icons…",
         "STARTUP": {
@@ -137,6 +138,7 @@
     },
     "SEND_DATA": {
         "SEND_DATA": "Upload data",
+        "DEVELOPMENT_SERVER": "OSM development server",
         "YOU_MUST_BE_LOGGED_IN": "Please log in to upload your changes to OSM.",
         "ADDED_ITEMS": "Created",
         "UPDATED_ITEMS": "Updated",

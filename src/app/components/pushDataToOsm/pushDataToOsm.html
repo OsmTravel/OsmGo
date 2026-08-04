@@ -22,7 +22,7 @@
         @if (configService.config().isDevServer) {
         <div class="environment-banner">
             <mat-icon fontSet="material-symbols-rounded">science</mat-icon>
-            OSM DEV SERVER
+            {{ 'SEND_DATA.DEVELOPMENT_SERVER' | translate }}
         </div>
         } @if (connectionError()) {
         <section class="message-card message-card--error" role="alert">

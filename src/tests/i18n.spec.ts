@@ -43,6 +43,17 @@ describe('interface translations', () => {
     const english = readTranslations('en')
     const englishKeys = new Set(listTranslationKeys(english))
 
+    it('keeps French interface keys aligned with English', () => {
+        const frenchKeys = new Set(listTranslationKeys(readTranslations('fr')))
+
+        expect([...englishKeys].filter((key) => !frenchKeys.has(key))).toEqual(
+            []
+        )
+        expect([...frenchKeys].filter((key) => !englishKeys.has(key))).toEqual(
+            []
+        )
+    })
+
     it('provides an English fallback for every translated key', () => {
         const translationFiles = readdirSync(translationsDirectory).filter(
             (fileName) => fileName.endsWith('.json') && fileName !== 'i18n.json'
