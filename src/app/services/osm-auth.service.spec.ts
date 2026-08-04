@@ -210,7 +210,9 @@ describe('OsmAuthService', () => {
         const [url, rawBody, options] = lastCall
         const body = new URLSearchParams(rawBody as string)
         const keys: string[] = []
-        body.forEach((_value, key) => keys.push(key))
+        body.forEach((_value, key) => {
+            keys.push(key)
+        })
 
         expect(url).toBe('https://www.openstreetmap.org/oauth2/token')
         expect(keys).toEqual([

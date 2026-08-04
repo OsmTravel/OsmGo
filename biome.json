@@ -63,7 +63,7 @@
         "noImplicitAnyLet": "error",
         "noShadowRestrictedNames": "off",
         "noUnsafeNegation": "error",
-        "useIterableCallbackReturn": "off"
+        "useIterableCallbackReturn": "error"
       }
     }
   },

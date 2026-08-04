@@ -82,9 +82,9 @@ export const requireGeoJsonGeometry = (
             ) {
                 fail(label, 'contains no line')
             }
-            ;(geometry['coordinates'] as unknown[]).forEach((line) =>
+            ;(geometry['coordinates'] as unknown[]).forEach((line) => {
                 requirePositions(line, 2, label)
-            )
+            })
             break
         case 'Polygon':
             if (
@@ -93,9 +93,9 @@ export const requireGeoJsonGeometry = (
             ) {
                 fail(label, 'contains no polygon ring')
             }
-            ;(geometry['coordinates'] as unknown[]).forEach((ring) =>
+            ;(geometry['coordinates'] as unknown[]).forEach((ring) => {
                 requireRing(ring, label)
-            )
+            })
             break
         case 'MultiPolygon':
             if (
@@ -108,9 +108,9 @@ export const requireGeoJsonGeometry = (
                 if (!Array.isArray(polygon) || polygon.length === 0) {
                     fail(label, 'contains an empty polygon')
                 }
-                ;(polygon as unknown[]).forEach((ring) =>
+                ;(polygon as unknown[]).forEach((ring) => {
                     requireRing(ring, label)
-                )
+                })
             })
             break
         case 'GeometryCollection':
@@ -120,9 +120,9 @@ export const requireGeoJsonGeometry = (
             ) {
                 fail(label, 'contains no geometry')
             }
-            ;(geometry['geometries'] as unknown[]).forEach((childGeometry) =>
+            ;(geometry['geometries'] as unknown[]).forEach((childGeometry) => {
                 requireGeoJsonGeometry(childGeometry, label)
-            )
+            })
             break
         default:
             fail(label, `uses unsupported geometry ${geometry['type']}`)
