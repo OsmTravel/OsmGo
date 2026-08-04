@@ -51,7 +51,7 @@
       "correctness": {
         "noInnerDeclarations": "off",
         "noSelfAssign": "error",
-        "noVoidTypeReturn": "off"
+        "noVoidTypeReturn": "error"
       },
       "style": {
         "useImportType": "off"

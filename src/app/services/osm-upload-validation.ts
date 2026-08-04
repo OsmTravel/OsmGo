@@ -42,7 +42,10 @@ const validateTags = (tags: unknown): void => {
 
 const validatePointGeometry = (feature: OsmGoFeature): void => {
     const geometry = feature.geometry
-    if (geometry?.type !== 'Point') return invalidQueue()
+    if (geometry?.type !== 'Point') {
+        invalidQueue()
+        return
+    }
     const [longitude, latitude] = geometry.coordinates
     if (
         !Number.isFinite(longitude) ||
