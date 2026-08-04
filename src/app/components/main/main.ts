@@ -246,7 +246,7 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             })
 
         const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
-        if (urlId && /^(node|way|relation)\/[1-9]\d*$/.test(urlId)) {
+        if (urlId && /^(node|way|relation)\/-?[1-9]\d*$/.test(urlId)) {
             const numericId = Number(urlId.split('/')[1])
             if (Number.isSafeInteger(numericId)) {
                 this.idOsmObjectOnStart = urlId

@@ -141,6 +141,27 @@ describe('MainPage', () => {
         }
     )
 
+    it('restores pending local objects from negative URL IDs', () => {
+        const queryParams = new Subject<Record<string, string>>()
+        const routeParams: Record<string, string> = { id: 'node/-1' }
+        const { page } = createPage({
+            activatedRoute: {
+                queryParams,
+                snapshot: {
+                    queryParamMap: {
+                        get: (key: string) => routeParams[key] ?? null,
+                    },
+                },
+            },
+            swUpdate: { isEnabled: false, versionUpdates: new Subject() },
+        })
+
+        page.ngOnInit()
+
+        expect(page.idOsmObjectOnStart).toBe('node/-1')
+        expect(page.loadOsmDataOnStart).toBe(true)
+    })
+
     it('forwards the original native OAuth callback URL', () => {
         const queryParams = new Subject<Record<string, string>>()
         const nativeCallbackUrl =
