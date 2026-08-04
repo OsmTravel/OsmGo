@@ -3,6 +3,7 @@ import {
     normalizeOsmTagKey,
     normalizeOsmTags,
     osmTagMapsEqual,
+    requireValidOsmTag,
 } from './osm-tags'
 
 describe('OSM tag normalization', () => {
@@ -30,5 +31,15 @@ describe('OSM tag normalization', () => {
         ])
 
         expect(osmTagMapsEqual(first, second)).toBe(true)
+    })
+
+    it('normalizes Unicode and validates strict custom-tag boundaries', () => {
+        expect(requireValidOsmTag(' cuisine ', ' Cafe\u0301 ')).toEqual({
+            key: 'cuisine',
+            value: 'Café',
+        })
+        expect(() => requireValidOsmTag('', 'value')).toThrow()
+        expect(() => requireValidOsmTag('name', 'bad\u0000value')).toThrow()
+        expect(() => requireValidOsmTag('x'.repeat(256), 'value')).toThrow()
     })
 })

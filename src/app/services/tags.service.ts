@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
+import { requireValidOsmTag } from '@app/utils/osm-tags'
 import {
     JsonSprites,
     OsmGoFeature,
@@ -37,6 +38,15 @@ export interface CatalogLoadMetric {
     downloadMs: number
     parseMs: number
     indexMs?: number
+}
+
+export class CustomTagError extends Error {
+    constructor(
+        readonly code: 'invalid' | 'collision',
+        options?: ErrorOptions
+    ) {
+        super(`Could not create custom tag: ${code}.`, options)
+    }
 }
 
 @Service()
@@ -410,6 +420,44 @@ export class TagsService {
             this.setTags([...this.tags(), normalizedTag])
         }
         this.setUserTags(this.userTags)
+    }
+
+    addCustomTag(keyInput: unknown, valueInput: unknown): TagConfig {
+        let key: string
+        let value: string
+        try {
+            ;({ key, value } = requireValidOsmTag(keyInput, valueInput))
+        } catch (cause) {
+            throw new CustomTagError('invalid', { cause })
+        }
+
+        const semanticMatches = this.tags().filter((tag) => {
+            const entries = Object.entries(tag.tags)
+            return (
+                entries.length === 1 &&
+                entries[0][0] === key &&
+                String(entries[0][1]).normalize('NFC') === value
+            )
+        })
+        if (semanticMatches.length === 1) return semanticMatches[0]
+        if (semanticMatches.length > 1) {
+            throw new CustomTagError('collision')
+        }
+
+        const id = `${encodeURIComponent(key)}/${encodeURIComponent(value)}`
+        if (this.tagsById()[id]) throw new CustomTagError('collision')
+        const customTag: TagConfig = {
+            icon: 'maki-circle-custom',
+            markerColor: '#000000',
+            geometry: ['point', 'vertex', 'line', 'area'],
+            lbl: { en: `${key} = ${value}` },
+            presets: [],
+            id,
+            tags: { [key]: value },
+            isUserTag: true,
+        }
+        this.addUserTags(customTag)
+        return this.tagsById()[id] ?? customTag
     }
 
     loadSavedFields$(): Observable<Record<string, SavedField>> {

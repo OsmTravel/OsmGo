@@ -230,6 +230,8 @@
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Add a custom value",
+        "CUSTOM_TAG_INVALID": "The custom tag key and value must contain 1 to 255 valid characters.",
+        "CUSTOM_TAG_COLLISION": "This custom tag conflicts with an existing category.",
         "PRIMARY_TAG_LIST": "List",
         "PRIMARY_TAG_CUSTOM": "Custom",
         "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least three characters in the search bar",

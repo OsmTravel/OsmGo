@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing'
 import { MatDialogRef } from '@angular/material/dialog'
 import { ConfigService } from '@services/config.service'
-import { TagsService } from '@services/tags.service'
+import { CustomTagError, TagsService } from '@services/tags.service'
 import { ModalPrimaryTag } from './modal.primaryTag'
 
 describe('ModalPrimaryTag', () => {
+    const addCustomTag = vi.fn()
     const pointerAt = (clientX: number): PointerEvent =>
         ({ clientX }) as PointerEvent
 
@@ -12,10 +13,11 @@ describe('ModalPrimaryTag', () => {
         TestBed.runInInjectionContext(() => new ModalPrimaryTag())
 
     beforeEach(() => {
+        addCustomTag.mockReset()
         TestBed.configureTestingModule({
             providers: [
                 { provide: MatDialogRef, useValue: {} },
-                { provide: TagsService, useValue: {} },
+                { provide: TagsService, useValue: { addCustomTag } },
                 { provide: ConfigService, useValue: {} },
             ],
         })
@@ -59,5 +61,33 @@ describe('ModalPrimaryTag', () => {
         modal.endSwipe(pointerAt(40))
 
         expect(modal.displayType).toBe('lastTags')
+    })
+
+    it('submits the validated custom tag returned by TagsService', () => {
+        const modal = createModal()
+        const tag = { id: 'cuisine/pizza' }
+        addCustomTag.mockReturnValue(tag)
+        vi.spyOn(modal, 'summit').mockReturnValue(undefined)
+
+        modal.addCustomValue('cuisine', 'pizza')
+
+        expect(addCustomTag).toHaveBeenCalledWith('cuisine', 'pizza')
+        expect(modal.summit).toHaveBeenCalledWith(tag)
+        expect(modal.customValueError()).toBeNull()
+    })
+
+    it('exposes a catalog collision without closing the selector', () => {
+        const modal = createModal()
+        addCustomTag.mockImplementation(() => {
+            throw new CustomTagError('collision')
+        })
+        vi.spyOn(modal, 'summit').mockReturnValue(undefined)
+
+        modal.addCustomValue('amenity', 'cafe')
+
+        expect(modal.summit).not.toHaveBeenCalled()
+        expect(modal.customValueError()).toBe(
+            'MODAL_SELECTED_ITEM.CUSTOM_TAG_COLLISION'
+        )
     })
 })

@@ -20,7 +20,7 @@ import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
 import { LimitDisplayTagsPipe } from '@pipes/limit-display-tags.pipe'
 import { SortArrayPipe } from '@pipes/sort-array.pipe'
 import { ConfigService } from '@services/config.service'
-import { TagsService } from '@services/tags.service'
+import { CustomTagError, TagsService } from '@services/tags.service'
 
 @Component({
     selector: 'modal-primary-tag',
@@ -58,6 +58,7 @@ export class ModalPrimaryTag implements OnInit {
 
     loading = true
     readonly searchText = signal('')
+    readonly customValueError = signal<string | null>(null)
     currentListOfTags: TagConfig[] = []
     oldTagConfig: TagConfig | undefined
     geometriesPossible: string[] = []
@@ -114,23 +115,18 @@ export class ModalPrimaryTag implements OnInit {
     }
 
     addCustomValue(key: string, value: string): void {
-        // TODO: ckeck if aleardy exist
-        const newConfig: TagConfig = {
-            icon: 'maki-circle-custom',
-            markerColor: '#000000',
-            geometry: ['point', 'vertex', 'line', 'area'],
-            lbl: { en: `${key} = ${value}` },
-            presets: [],
-            id: `${key}/${value}`,
-            key: value,
-            tags: {},
-            isUserTag: true,
+        this.customValueError.set(null)
+        try {
+            this.summit(this.tagsService.addCustomTag(key, value))
+        } catch (error) {
+            const code =
+                error instanceof CustomTagError ? error.code : 'invalid'
+            this.customValueError.set(
+                code === 'collision'
+                    ? 'MODAL_SELECTED_ITEM.CUSTOM_TAG_COLLISION'
+                    : 'MODAL_SELECTED_ITEM.CUSTOM_TAG_INVALID'
+            )
         }
-        newConfig.tags[key] = value
-
-        this.tagsService.addUserTags(newConfig)
-
-        this.summit(newConfig)
     }
 
     startSwipe(event: PointerEvent): void {

@@ -230,6 +230,8 @@
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
+        "CUSTOM_TAG_INVALID": "La clé et la valeur personnalisées doivent contenir entre 1 et 255 caractères valides.",
+        "CUSTOM_TAG_COLLISION": "Ce tag personnalisé entre en conflit avec une catégorie existante.",
         "PRIMARY_TAG_LIST": "Liste",
         "PRIMARY_TAG_CUSTOM": "Personnalisé",
         "SEARCH_TAG_AT_LEAST_3_LETTERS": "Veuillez entrer au moins 3 lettres dans la barre de recherche",

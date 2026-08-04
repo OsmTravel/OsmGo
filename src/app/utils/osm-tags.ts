@@ -1,8 +1,25 @@
 import type { Tag } from '@osmgo/type'
 
+export const MAX_OSM_TAG_LENGTH = 255
+
+const containsInvalidControlCharacter = (value: string): boolean =>
+    Array.from(value).some((character) => {
+        const codePoint = character.codePointAt(0) ?? 0
+        return (
+            codePoint <= 8 ||
+            codePoint === 11 ||
+            codePoint === 12 ||
+            (codePoint >= 14 && codePoint <= 31) ||
+            (codePoint >= 127 && codePoint <= 159)
+        )
+    })
+
+const normalizeTagText = (value: string): string =>
+    value.normalize('NFC').trim()
+
 export const normalizeOsmTagKey = (key: unknown): string | undefined => {
     if (typeof key !== 'string') return undefined
-    const normalized = key.trim()
+    const normalized = normalizeTagText(key)
     return normalized !== '' && normalized !== 'undefined'
         ? normalized
         : undefined
@@ -10,7 +27,7 @@ export const normalizeOsmTagKey = (key: unknown): string | undefined => {
 
 export const normalizeOsmTagValue = (value: unknown): string | undefined => {
     if (value === null || value === undefined) return undefined
-    const normalized = String(value).trim()
+    const normalized = normalizeTagText(String(value))
     return normalized === '' ? undefined : normalized
 }
 
@@ -45,6 +62,25 @@ export const normalizeEditorTags = (tags: Tag[]): Tag[] =>
             value: value ?? '',
         }
     })
+
+export const requireValidOsmTag = (
+    keyInput: unknown,
+    valueInput: unknown
+): { key: string; value: string } => {
+    const key = normalizeOsmTagKey(keyInput)
+    const value = normalizeOsmTagValue(valueInput)
+    if (
+        !key ||
+        value === undefined ||
+        Array.from(key).length > MAX_OSM_TAG_LENGTH ||
+        Array.from(value).length > MAX_OSM_TAG_LENGTH ||
+        containsInvalidControlCharacter(key) ||
+        containsInvalidControlCharacter(value)
+    ) {
+        throw new Error('Invalid OSM tag key or value.')
+    }
+    return { key, value }
+}
 
 export const osmTagMapsEqual = (
     left: Map<string, string>,

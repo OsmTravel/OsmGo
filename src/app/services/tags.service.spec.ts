@@ -315,6 +315,51 @@ describe('TagsService', () => {
         })
     })
 
+    it('creates a normalized custom tag with an unambiguous canonical ID', () => {
+        const storage = { set: vi.fn() }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: {} },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        const customTag = service.addCustomTag(
+            ' cuisine ',
+            ' Cafe\u0301/restaurant '
+        )
+
+        expect(customTag).toMatchObject({
+            id: 'cuisine/Caf%C3%A9%2Frestaurant',
+            tags: { cuisine: 'Café/restaurant' },
+            isUserTag: true,
+        })
+        expect(customTag.key).toBeUndefined()
+        expect(service.tagsById()[customTag.id]).toBe(customTag)
+        expect(storage.set).toHaveBeenCalledWith('userTags', [customTag])
+    })
+
+    it('reuses one exact catalog match instead of creating a duplicate', () => {
+        const storage = { set: vi.fn() }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: {} },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+        const existing = createValidTag()
+        service.addUserTags(existing)
+        storage.set.mockClear()
+
+        const selected = service.addCustomTag('amenity', 'cafe')
+
+        expect(selected.id).toBe(existing.id)
+        expect(service.userTags).toHaveLength(1)
+        expect(storage.set).not.toHaveBeenCalled()
+    })
+
     it('quarantines malformed user tags and keeps startup recoverable', async () => {
         const corrupted = { id: 'not-an-array' }
         const storage = {
