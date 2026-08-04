@@ -165,7 +165,41 @@
         "DISCARD_ATTEMPT_CONFIRM_HEADER": "Cette tentative a-t-elle été rejetée ?",
         "DISCARD_ATTEMPT_CONFIRM_MESSAGE": "Continuez uniquement après avoir vérifié qu’OpenStreetMap n’a pas appliqué cette tentative. Les modifications envoyées redeviendront modifiables et envoyables.",
         "UPLOAD_LOCKED": "Verrouillée par un envoi non résolu",
-        "NO_PENDING_CHANGES": "Aucune modification en attente."
+        "NO_PENDING_CHANGES": "Aucune modification en attente.",
+        "ERRORS": {
+            "EMPTY_QUEUE": "Aucune modification locale n’est à envoyer.",
+            "INVALID_QUEUE": "La file d’envoi locale contient des données invalides ou conflictuelles.",
+            "CONNECTION": "OpenStreetMap est inaccessible. Vérifiez votre connexion, puis réessayez.",
+            "AUTHENTICATION": "L’authentification OpenStreetMap a échoué. Reconnectez-vous avant de réessayer.",
+            "CHANGESET_CLOSED": "Le changeset est fermé. Réessayez pour en créer un nouveau.",
+            "CHANGESET": "Le changeset n’a pas pu être préparé.",
+            "JOURNAL": "Le journal de récupération de l’envoi n’a pas pu être enregistré.",
+            "UPLOAD_REJECTED": "OpenStreetMap a rejeté cet envoi. Corrigez les modifications concernées avant de réessayer.",
+            "UPLOAD_UNCERTAIN": "Le résultat de l’envoi est incertain. Inspectez OpenStreetMap avant de continuer.",
+            "RECONCILIATION": "La réponse OpenStreetMap n’a pas pu être réconciliée avec la file locale.",
+            "RECOVERY_REQUIRED": "Un envoi précédent a peut-être atteint OpenStreetMap. Inspectez-le avant de continuer.",
+            "LEGACY_JOURNAL": "Cet ancien journal de récupération ne peut pas être réconcilié automatiquement.",
+            "INTEGRITY": "L’instantané d’envoi enregistré a échoué au contrôle d’intégrité.",
+            "LOCAL_CHANGE": "Les modifications locales n’ont pas pu être mises à jour.",
+            "UNKNOWN": "OpenStreetMap n’a pas pu traiter la requête."
+        },
+        "RECOVERY": {
+            "ACTION": "Action recommandée",
+            "QUEUE": "File locale",
+            "QUEUE_PRESERVED": "Préservée · {{count}} modifications en attente",
+            "CHANGESET": "Changeset",
+            "STATUS": "Statut HTTP",
+            "NONE": "Non créé",
+            "ACTIONS": {
+                "EDIT_QUEUE": "Corriger les modifications locales",
+                "RECONNECT": "Vérifier la connexion et réessayer",
+                "REAUTHENTICATE": "Se reconnecter",
+                "CREATE_CHANGESET": "Créer un nouveau changeset",
+                "INSPECT_SERVER": "Inspecter OpenStreetMap avant de continuer",
+                "RESUME_RECONCILIATION": "Reprendre la réconciliation locale",
+                "RETRY": "Réessayer l’opération"
+            }
+        }
     },
     "SETTINGS": {
         "SETTINGS": "Paramètres",

@@ -135,6 +135,31 @@
     margin-top: 12px;
 }
 
+.recovery-context {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.recovery-context div {
+    min-width: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.recovery-context dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    opacity: 0.72;
+}
+
+.recovery-context dd {
+    margin: 2px 0 0;
+    overflow-wrap: anywhere;
+}
+
 .error-tags {
     display: grid;
     overflow: hidden;

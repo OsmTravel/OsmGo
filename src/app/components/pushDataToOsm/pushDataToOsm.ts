@@ -32,7 +32,9 @@ import { TagsService } from '@services/tags.service'
 import {
     UploadCoordinatorService,
     type UploadFailure,
+    type UploadFailureCode,
     type UploadFeature,
+    type UploadRecoveryAction,
     type UploadSummary,
 } from '@services/upload-coordinator.service'
 import type { Geometry, Position } from 'geojson'
@@ -94,7 +96,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     readonly connectionError = computed(() => {
         const state = this.uploadCoordinator.state()
         return state.kind === 'failed' && state.stage === 'connection'
-            ? state.error.message
+            ? this.failureMessageKey(state.error.code)
             : undefined
     })
     readonly error = computed(() => {
@@ -108,13 +110,19 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         return this.dataService.getUploadJournal()
     })
     readonly changesetInspectionUrl = computed(() => {
-        const changesetId = this.activeJournal()?.changesetId
+        const changesetId =
+            this.error()?.changesetId ?? this.activeJournal()?.changesetId
         if (!changesetId) return undefined
         const host = this.configService.config().isDevServer
             ? 'https://master.apis.dev.openstreetmap.org'
             : 'https://www.openstreetmap.org'
         return `${host}/changeset/${encodeURIComponent(changesetId)}`
     })
+    readonly recoveryQueueCount = computed(
+        () =>
+            this.activeJournal()?.submittedIds.length ??
+            this.featuresChanges().length
+    )
     private destroyed = false
     private closeStarted = false
 
@@ -157,6 +165,41 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         })
     }
 
+    failureMessageKey(code: UploadFailureCode): string {
+        const keys: Record<UploadFailureCode, string> = {
+            emptyQueue: 'SEND_DATA.ERRORS.EMPTY_QUEUE',
+            invalidQueue: 'SEND_DATA.ERRORS.INVALID_QUEUE',
+            connection: 'SEND_DATA.ERRORS.CONNECTION',
+            authentication: 'SEND_DATA.ERRORS.AUTHENTICATION',
+            changesetClosed: 'SEND_DATA.ERRORS.CHANGESET_CLOSED',
+            changeset: 'SEND_DATA.ERRORS.CHANGESET',
+            journal: 'SEND_DATA.ERRORS.JOURNAL',
+            uploadRejected: 'SEND_DATA.ERRORS.UPLOAD_REJECTED',
+            uploadUncertain: 'SEND_DATA.ERRORS.UPLOAD_UNCERTAIN',
+            reconciliation: 'SEND_DATA.ERRORS.RECONCILIATION',
+            recoveryRequired: 'SEND_DATA.ERRORS.RECOVERY_REQUIRED',
+            legacyJournal: 'SEND_DATA.ERRORS.LEGACY_JOURNAL',
+            integrity: 'SEND_DATA.ERRORS.INTEGRITY',
+            localChange: 'SEND_DATA.ERRORS.LOCAL_CHANGE',
+            unknown: 'SEND_DATA.ERRORS.UNKNOWN',
+        }
+        return keys[code]
+    }
+
+    recoveryActionKey(action: UploadRecoveryAction): string {
+        const keys: Record<UploadRecoveryAction, string> = {
+            editQueue: 'SEND_DATA.RECOVERY.ACTIONS.EDIT_QUEUE',
+            reconnect: 'SEND_DATA.RECOVERY.ACTIONS.RECONNECT',
+            reauthenticate: 'SEND_DATA.RECOVERY.ACTIONS.REAUTHENTICATE',
+            createChangeset: 'SEND_DATA.RECOVERY.ACTIONS.CREATE_CHANGESET',
+            inspectServer: 'SEND_DATA.RECOVERY.ACTIONS.INSPECT_SERVER',
+            resumeReconciliation:
+                'SEND_DATA.RECOVERY.ACTIONS.RESUME_RECONCILIATION',
+            retry: 'SEND_DATA.RECOVERY.ACTIONS.RETRY',
+        }
+        return keys[action]
+    }
+
     getSummary(): UploadSummary {
         const summary: UploadSummary = {
             Total: 0,
@@ -194,7 +237,12 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             const failedFeature = state.error.feature
             if (failedFeature) {
                 this.featuresChanges.set([
-                    { ...failedFeature, error: state.error.message },
+                    {
+                        ...failedFeature,
+                        error: this.translate.instant(
+                            this.failureMessageKey(state.error.code)
+                        ),
+                    },
                     ...this.featuresChanges().filter(
                         (feature) => feature.id !== failedFeature.id
                     ),
@@ -401,7 +449,8 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
                     : 'The local changes could not be updated.'
         this.localError.set({
             status: typeof details.status === 'number' ? details.status : 0,
-            message,
+            code: 'localChange',
+            technicalMessage: message,
             feature,
             queuePreserved: true,
             canClose: true,

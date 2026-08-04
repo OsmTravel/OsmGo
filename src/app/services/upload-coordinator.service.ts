@@ -35,14 +35,43 @@ export type UploadRecoveryAction =
     | 'resumeReconciliation'
     | 'retry'
 
+export type UploadFailureCode =
+    | 'emptyQueue'
+    | 'invalidQueue'
+    | 'connection'
+    | 'authentication'
+    | 'changesetClosed'
+    | 'changeset'
+    | 'journal'
+    | 'uploadRejected'
+    | 'uploadUncertain'
+    | 'reconciliation'
+    | 'recoveryRequired'
+    | 'legacyJournal'
+    | 'integrity'
+    | 'localChange'
+    | 'unknown'
+
 export interface UploadFailure {
     status: number
-    message: string
+    code: UploadFailureCode
+    /** Technical diagnostic; never display this value directly. */
+    technicalMessage: string
+    changesetId?: string
     feature: UploadFeature | null
     queuePreserved: true
     canClose: true
     canRetry: boolean
     recoveryAction: UploadRecoveryAction
+}
+
+class CodedUploadError extends Error {
+    constructor(
+        readonly code: UploadFailureCode,
+        message: string
+    ) {
+        super(message)
+    }
 }
 
 export type UploadState =
@@ -169,7 +198,8 @@ export class UploadCoordinator {
         if (journal.phase === 'prepared') {
             const failed = this.createFailure(
                 'upload',
-                new Error(
+                new CodedUploadError(
+                    'recoveryRequired',
                     'A previous upload may have reached OpenStreetMap. Inspect the server before continuing.'
                 ),
                 journal.changesetId
@@ -181,7 +211,8 @@ export class UploadCoordinator {
         if (journal.phase === 'acknowledged' && journal.journalVersion === 1) {
             const failed = this.createFailure(
                 'upload',
-                new Error(
+                new CodedUploadError(
+                    'legacyJournal',
                     'This legacy upload journal has no immutable snapshot. Inspect OpenStreetMap before resolving it.'
                 ),
                 journal.changesetId
@@ -355,7 +386,8 @@ export class UploadCoordinator {
             })
             if (journal.phase === 'acknowledged') {
                 if (journal.journalVersion !== 2) {
-                    throw new Error(
+                    throw new CodedUploadError(
+                        'legacyJournal',
                         'The upload journal does not contain an immutable snapshot.'
                     )
                 }
@@ -363,7 +395,8 @@ export class UploadCoordinator {
                     journal.payload
                 )
                 if (actualHash !== journal.payloadHash) {
-                    throw new Error(
+                    throw new CodedUploadError(
+                        'integrity',
                         'The persisted upload payload failed its integrity check.'
                     )
                 }
@@ -376,7 +409,8 @@ export class UploadCoordinator {
                         submissions.get(persisted.oldId)?.operation !==
                         persisted.operation
                     ) {
-                        throw new Error(
+                        throw new CodedUploadError(
+                            'integrity',
                             'The persisted upload submissions are inconsistent.'
                         )
                     }
@@ -602,11 +636,12 @@ export class UploadCoordinator {
     ): Extract<UploadState, { kind: 'failed' }> {
         const details = this.getOsmRequestError(cause)
         const status = typeof details.status === 'number' ? details.status : 0
-        let message = this.getOsmErrorMessage(cause)
+        const message = this.getOsmErrorMessage(cause)
+        let code = this.getFailureCode(stage, status, cause)
         let recoveryAction = this.getRecoveryAction(stage, status, cause)
         if (this.isClosedChangesetError(details, changesetId)) {
             this.dependencies.invalidateChangeset()
-            message = `${message} Please retry to create a new changeset.`
+            code = 'changesetClosed'
             recoveryAction = 'createChangeset'
         }
         const feature =
@@ -621,7 +656,9 @@ export class UploadCoordinator {
             stage,
             error: {
                 status,
-                message,
+                code,
+                technicalMessage: message,
+                ...(changesetId ? { changesetId } : {}),
                 feature,
                 queuePreserved: true,
                 canClose: true,
@@ -629,6 +666,30 @@ export class UploadCoordinator {
                 recoveryAction,
             },
         }
+    }
+
+    private getFailureCode(
+        stage: UploadFailureStage,
+        status: number,
+        cause: unknown
+    ): UploadFailureCode {
+        if (cause instanceof CodedUploadError) return cause.code
+        if (status === 401 || status === 403) return 'authentication'
+        if (stage === 'validation') {
+            return this.getOsmErrorMessage(cause).includes('no local changes')
+                ? 'emptyQueue'
+                : 'invalidQueue'
+        }
+        if (stage === 'connection') return 'connection'
+        if (stage === 'changeset') return 'changeset'
+        if (stage === 'journal') return 'journal'
+        if (stage === 'upload') {
+            return this.isDefinitiveUploadRejection(cause)
+                ? 'uploadRejected'
+                : 'uploadUncertain'
+        }
+        if (stage === 'reconciliation') return 'reconciliation'
+        return 'unknown'
     }
 
     private getRecoveryAction(

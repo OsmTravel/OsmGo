@@ -287,6 +287,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'validation',
             error: {
+                code: 'invalidQueue',
                 queuePreserved: true,
                 canClose: true,
                 canRetry: true,
@@ -346,6 +347,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'connection',
             error: {
+                code: 'connection',
                 recoveryAction: 'reconnect',
                 canRetry: true,
                 queuePreserved: true,
@@ -369,7 +371,8 @@ describe('UploadCoordinator', () => {
             stage: 'connection',
             error: {
                 status: 401,
-                message: 'Authentication failed',
+                code: 'authentication',
+                technicalMessage: 'Authentication failed',
                 recoveryAction: 'reauthenticate',
             },
         })
@@ -407,6 +410,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'upload',
             error: {
+                code: 'changesetClosed',
                 recoveryAction: 'createChangeset',
                 canRetry: true,
             },
@@ -429,6 +433,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'upload',
             error: {
+                code: 'uploadUncertain',
                 recoveryAction: 'inspectServer',
                 canRetry: false,
                 queuePreserved: true,
@@ -479,6 +484,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'upload',
             error: {
+                code: 'uploadRejected',
                 status: 409,
                 feature: { id: 'node/12' },
                 recoveryAction: 'editQueue',
@@ -561,7 +567,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'reconciliation',
             error: {
-                message: 'IndexedDB write failed',
+                technicalMessage: 'IndexedDB write failed',
                 recoveryAction: 'resumeReconciliation',
                 canRetry: false,
             },
@@ -590,6 +596,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'upload',
             error: {
+                code: 'recoveryRequired',
                 recoveryAction: 'inspectServer',
                 canRetry: false,
                 queuePreserved: true,
@@ -812,7 +819,7 @@ describe('UploadCoordinator', () => {
             kind: 'failed',
             stage: 'upload',
             error: {
-                message: 'IndexedDB write failed',
+                technicalMessage: 'IndexedDB write failed',
                 recoveryAction: 'inspectServer',
                 canRetry: false,
             },

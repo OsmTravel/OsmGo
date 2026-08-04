@@ -3,7 +3,6 @@ import { TestBed } from '@angular/core/testing'
 import { MatDialog } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateService } from '@ngx-translate/core'
-import type { OsmGoFeature } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
@@ -53,7 +52,8 @@ const uploadFailure = (
     stage,
     error: {
         status: 409,
-        message,
+        code: stage === 'connection' ? 'connection' : 'uploadUncertain',
+        technicalMessage: message,
         feature,
         queuePreserved: true,
         canClose: true,
@@ -94,6 +94,7 @@ const createPage = (options: PageHarnessOptions = {}) => {
             features,
         })),
         getGeojson: vi.fn(() => ({ type: 'FeatureCollection', features: [] })),
+        getUploadJournal: vi.fn(() => undefined),
         cancelPendingChange: vi.fn(async (id: string) => {
             features = features.filter((feature) => feature.id !== id)
         }),
@@ -140,7 +141,10 @@ const createPage = (options: PageHarnessOptions = {}) => {
             { provide: OverlayNavigationService, useValue: { close } },
             { provide: MatDialog, useValue: {} },
             { provide: MatSnackBar, useValue: {} },
-            { provide: TranslateService, useValue: {} },
+            {
+                provide: TranslateService,
+                useValue: { instant: (key: string) => key },
+            },
             { provide: UPLOAD_SUCCESS_DELAY_MS, useValue: 0 },
         ],
     })
@@ -246,7 +250,7 @@ describe('PushDataToOsmPage', () => {
         expect(page.error()).toEqual(failed.error)
         expect(page.featuresChanges()[0]).toMatchObject({
             id: 'node/12',
-            error: 'Version conflict',
+            error: 'SEND_DATA.ERRORS.UPLOAD_UNCERTAIN',
         })
         expect(page.uploadStatusVisible()).toBe(false)
     })
@@ -255,8 +259,34 @@ describe('PushDataToOsmPage', () => {
         const failed = uploadFailure('Network unavailable', null, 'connection')
         const { page } = createPage({ state: failed })
 
-        expect(page.connectionError()).toBe('Network unavailable')
+        expect(page.connectionError()).toBe('SEND_DATA.ERRORS.CONNECTION')
         expect(page.error()).toEqual(failed.error)
+    })
+
+    it('exposes localized recovery action, queue, and changeset context', () => {
+        const failed = uploadFailure('raw server diagnostic')
+        failed.error.changesetId = '456'
+        const { page } = createPage({
+            features: [queuedFeature(), queuedFeature('Update', 2)],
+            state: failed,
+            dataService: {
+                getUploadJournal: () => ({
+                    changesetId: '456',
+                    submittedIds: ['node/-1', 'node/2'],
+                }),
+            },
+        })
+
+        expect(page.failureMessageKey(failed.error.code)).toBe(
+            'SEND_DATA.ERRORS.UPLOAD_UNCERTAIN'
+        )
+        expect(page.recoveryActionKey(failed.error.recoveryAction)).toBe(
+            'SEND_DATA.RECOVERY.ACTIONS.INSPECT_SERVER'
+        )
+        expect(page.recoveryQueueCount()).toBe(2)
+        expect(page.changesetInspectionUrl()).toBe(
+            'https://www.openstreetmap.org/changeset/456'
+        )
     })
 
     it('cancels one failed change atomically and refreshes both layers', async () => {

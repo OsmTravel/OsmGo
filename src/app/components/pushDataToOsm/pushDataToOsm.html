@@ -27,7 +27,7 @@
         } @if (connectionError()) {
         <section class="message-card message-card--error" role="alert">
             <mat-icon fontSet="material-symbols-rounded">cloud_off</mat-icon>
-            <p>{{ connectionError() }}</p>
+            <p>{{ connectionError() | translate }}</p>
         </section>
         } @if (!configService.userInfo().connected) {
         <section class="message-card message-card--error" role="alert">
@@ -65,8 +65,37 @@
                 <h2>OpenStreetMap</h2>
             </header>
             <p class="error-message">
-                {{ uploadError.status }} {{ uploadError.message }}
+                {{ failureMessageKey(uploadError.code) | translate }}
             </p>
+            <dl class="recovery-context">
+                <div>
+                    <dt>{{ 'SEND_DATA.RECOVERY.ACTION' | translate }}</dt>
+                    <dd>
+                        {{ recoveryActionKey(uploadError.recoveryAction) |
+                        translate }}
+                    </dd>
+                </div>
+                <div>
+                    <dt>{{ 'SEND_DATA.RECOVERY.QUEUE' | translate }}</dt>
+                    <dd>
+                        {{ 'SEND_DATA.RECOVERY.QUEUE_PRESERVED' | translate: {
+                        count: recoveryQueueCount() } }}
+                    </dd>
+                </div>
+                <div>
+                    <dt>{{ 'SEND_DATA.RECOVERY.CHANGESET' | translate }}</dt>
+                    <dd>
+                        {{ uploadError.changesetId || ('SEND_DATA.RECOVERY.NONE'
+                        | translate) }}
+                    </dd>
+                </div>
+                @if (uploadError.status) {
+                <div>
+                    <dt>{{ 'SEND_DATA.RECOVERY.STATUS' | translate }}</dt>
+                    <dd>{{ uploadError.status }}</dd>
+                </div>
+                }
+            </dl>
             @if (uploadError.feature?.properties?.tags) {
             <dl class="error-tags">
                 @for ( item of
