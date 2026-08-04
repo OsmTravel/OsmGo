@@ -362,6 +362,93 @@ describe('MapService heading normalization', () => {
     })
 })
 
+describe('MapService URL synchronization', () => {
+    function createService(
+        params: Record<string, string | null>,
+        navigate: ReturnType<typeof vi.fn>
+    ): MapService {
+        const service = Object.create(MapService.prototype) as MapService
+        service.map = {
+            getCenter: () => ({ lng: 2.123456789, lat: 48.987654321 }),
+            getZoom: () => 18.126,
+        } as unknown as MapLibreMap
+        Object.defineProperties(service, {
+            activatedRoute: {
+                value: {
+                    snapshot: {
+                        queryParamMap: {
+                            get: (key: string) => params[key] ?? null,
+                        },
+                    },
+                },
+            },
+            router: { value: { navigate } },
+            _ngZone: {
+                value: {
+                    run: (callback: () => Promise<boolean>) => callback(),
+                },
+            },
+            pendingMapUrlSignature: { value: undefined, writable: true },
+        })
+        return service
+    }
+
+    it('skips navigation when the rounded map URL is already current', () => {
+        const navigate = vi.fn(() => Promise.resolve(true))
+        const service = createService(
+            {
+                center: '2.1234568,48.9876543',
+                zoom: '18.13',
+                id: null,
+                add: null,
+            },
+            navigate
+        )
+
+        service.setCenterInUrl()
+
+        expect(navigate).not.toHaveBeenCalled()
+    })
+
+    it('coalesces pending updates and observes navigation failures', async () => {
+        let rejectNavigation!: (reason: unknown) => void
+        const navigate = vi.fn(
+            () =>
+                new Promise<boolean>((_resolve, reject) => {
+                    rejectNavigation = reject
+                })
+        )
+        const service = createService({}, navigate)
+        const consoleError = vi
+            .spyOn(console, 'error')
+            .mockImplementation(() => undefined)
+
+        service.setCenterInUrl()
+        service.setCenterInUrl()
+
+        expect(navigate).toHaveBeenCalledOnce()
+        expect(navigate).toHaveBeenCalledWith([], {
+            replaceUrl: true,
+            relativeTo: expect.anything(),
+            queryParams: {
+                center: '2.1234568,48.9876543',
+                zoom: '18.13',
+                id: null,
+                add: null,
+            },
+            queryParamsHandling: 'merge',
+        })
+
+        rejectNavigation(new Error('navigation rejected'))
+        await vi.waitFor(() => expect(consoleError).toHaveBeenCalledOnce())
+
+        navigate.mockResolvedValueOnce(true)
+        service.setCenterInUrl()
+        expect(navigate).toHaveBeenCalledTimes(2)
+        consoleError.mockRestore()
+    })
+})
+
 describe('MapService redraw ordering', () => {
     const setPrivate = (service: MapService, key: string, value: unknown) => {
         Object.defineProperty(service, key, {

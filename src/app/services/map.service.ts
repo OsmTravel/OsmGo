@@ -158,6 +158,10 @@ export class MapService {
             }
             this.configService.setLastView(currentView)
         })
+
+        this.mapMoveEndSubject.pipe(debounceTime(150)).subscribe(() => {
+            if (this.mapCreated) this.setCenterInUrl()
+        })
     }
 
     map!: Map
@@ -200,6 +204,8 @@ export class MapService {
 
     private readonly mapMoveSubject = new Subject<void>()
     readonly mapMove$ = this.mapMoveSubject.asObservable()
+    private readonly mapMoveEndSubject = new Subject<void>()
+    private pendingMapUrlSignature?: string
     private readonly markerMovingState = signal(false)
     readonly markerMoving = this.markerMovingState.asReadonly()
     markerPositionate?: OsmGoMarker<string>
@@ -738,7 +744,7 @@ export class MapService {
                         }
                         const onMoveEnd = (): void => {
                             if (this.mapCreated && this.map === activeMap) {
-                                this.setCenterInUrl()
+                                this.mapMoveEndSubject.next()
                             }
                         }
                         const onZoom = (): void => {
@@ -906,21 +912,50 @@ export class MapService {
         const lng = Math.round(center.lng * 10000000) / 10000000
         const lat = Math.round(center.lat * 10000000) / 10000000
         const zoom = Math.round(this.map.getZoom() * 100) / 100
+        const centerParam = `${lng},${lat}`
+        const zoomParam = `${zoom}`
+        const currentParams = this.activatedRoute.snapshot.queryParamMap
+        const urlAlreadyMatches =
+            currentParams.get('center') === centerParam &&
+            currentParams.get('zoom') === zoomParam &&
+            currentParams.get('id') === null &&
+            currentParams.get('add') === null
+        const signature = `${centerParam}|${zoomParam}`
+        if (urlAlreadyMatches || this.pendingMapUrlSignature === signature) {
+            return
+        }
         const queryParams: Params = {
-            center: `${lng},${lat}`,
-            zoom: `${zoom}`,
+            center: centerParam,
+            zoom: zoomParam,
             id: null,
             add: null,
         }
 
-        this._ngZone.run(() => {
-            this.router.navigate([], {
-                replaceUrl: true,
-                relativeTo: this.activatedRoute,
-                queryParams,
-                queryParamsHandling: 'merge',
+        this.pendingMapUrlSignature = signature
+        let navigation: Promise<boolean>
+        try {
+            navigation = this._ngZone.run(() =>
+                this.router.navigate([], {
+                    replaceUrl: true,
+                    relativeTo: this.activatedRoute,
+                    queryParams,
+                    queryParamsHandling: 'merge',
+                })
+            )
+        } catch (error) {
+            this.pendingMapUrlSignature = undefined
+            console.error('Could not synchronize the map URL.', error)
+            return
+        }
+        void navigation
+            .catch((error: unknown) => {
+                console.error('Could not synchronize the map URL.', error)
             })
-        })
+            .finally(() => {
+                if (this.pendingMapUrlSignature === signature) {
+                    this.pendingMapUrlSignature = undefined
+                }
+            })
     }
 
     getIconRotate(heading: number, mapBearing: number): number {
