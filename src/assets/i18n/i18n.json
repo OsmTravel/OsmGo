@@ -1,4 +1,23 @@
 {
+  "uiLanguages": [
+    "ar",
+    "ca",
+    "cs",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "nl",
+    "pl",
+    "pt",
+    "ru",
+    "zh-CN",
+    "zh-TW"
+  ],
   "language": [
     {
       "code": "en",

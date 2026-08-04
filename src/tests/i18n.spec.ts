@@ -43,6 +43,28 @@ describe('interface translations', () => {
     const english = readTranslations('en')
     const englishKeys = new Set(listTranslationKeys(english))
 
+    it('only exposes populated catalogs as interface languages', () => {
+        const i18nConfig = JSON.parse(
+            readFileSync(path.join(translationsDirectory, 'i18n.json'), 'utf8')
+        ) as { uiLanguages: string[] }
+        const populatedLanguages = readdirSync(translationsDirectory)
+            .filter(
+                (fileName) =>
+                    fileName.endsWith('.json') && fileName !== 'i18n.json'
+            )
+            .filter(
+                (fileName) =>
+                    Object.keys(readTranslations(fileName.replace('.json', '')))
+                        .length > 0
+            )
+            .map((fileName) => fileName.replace('.json', ''))
+            .sort()
+
+        expect([...new Set(i18nConfig.uiLanguages)].sort()).toEqual(
+            populatedLanguages
+        )
+    })
+
     it('keeps French interface keys aligned with English', () => {
         const frenchKeys = new Set(listTranslationKeys(readTranslations('fr')))
 

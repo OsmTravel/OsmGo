@@ -299,7 +299,7 @@
                         [value]="configService.config().languageUi"
                         (selectionChange)="languageUiChange($event.value)"
                     >
-                        @for (lang of configService.i18nConfig.language; track
+                        @for (lang of configService.interfaceLanguages; track
                         lang.code) {
                         <mat-option [value]="lang.code"
                             >{{ lang.nativeName }}</mat-option

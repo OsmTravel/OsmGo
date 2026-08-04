@@ -29,6 +29,28 @@ describe('ConfigService', () => {
         expect(service.config()).toBe(config)
     })
 
+    it('migrates unavailable interface languages to English', async () => {
+        const storage = {
+            get: vi.fn().mockResolvedValue({ languageUi: 'da' }),
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        const config = await firstValueFrom(
+            service.loadConfig$({ uiLanguages: ['en', 'fr'], language: [] })
+        )
+
+        expect(config.languageUi).toBe('en')
+        expect(storage.set).toHaveBeenCalledWith('config', config)
+    })
+
     it('migrates the stale maximum zoom of a stored Bing basemap', async () => {
         const storedBasemap = {
             id: 'Bing',

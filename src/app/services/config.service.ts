@@ -41,6 +41,7 @@ export interface AppVersion {
 }
 
 interface I18nConfig {
+    uiLanguages: string[]
     language: Iso6391Language[]
 }
 
@@ -103,7 +104,13 @@ export class ConfigService {
         created_at: 0,
         comment: '',
     }
-    i18nConfig: I18nConfig = { language: [] }
+    i18nConfig: I18nConfig = { uiLanguages: [], language: [] }
+    get interfaceLanguages(): Iso6391Language[] {
+        const availableCodes = new Set(this.i18nConfig.uiLanguages)
+        return this.i18nConfig.language.filter((language) =>
+            availableCodes.has(language.code)
+        )
+    }
     countryConfig: CountryCode[] = []
 
     freezeMapRenderer = false
@@ -276,23 +283,35 @@ export class ConfigService {
         )
     }
 
-    loadConfig$(_i18nConfig: I18nConfig | undefined): Observable<Config> {
+    loadConfig$(i18nConfig: I18nConfig | undefined): Observable<Config> {
         return from(this.localStorage.get('config')).pipe(
             map((d) => {
                 const basemap = this.normalizeBasemap(
                     d?.basemap || this.config().basemap
                 )
+                const requestedUiLanguage =
+                    d?.languageUi || this.config().languageUi || 'en'
+                const languageUi = (i18nConfig?.uiLanguages ?? ['en']).includes(
+                    requestedUiLanguage
+                )
+                    ? requestedUiLanguage
+                    : 'en'
                 const config = {
                     ...this.config(),
                     ...d,
                     basemap,
+                    languageUi,
                     languageTags:
                         d?.languageTags || this.config().languageTags || 'en',
                     countryTags:
                         d?.countryTags || this.config().countryTags || 'GB',
                 }
                 this.configState.set(config)
-                if (!d || basemap !== d.basemap) {
+                if (
+                    !d ||
+                    basemap !== d.basemap ||
+                    languageUi !== d.languageUi
+                ) {
                     this.localStorage.set('config', config)
                 }
 
