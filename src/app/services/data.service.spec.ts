@@ -743,11 +743,19 @@ describe('DataService', () => {
 
     describe('cache helpers', () => {
         it('writes and reads icon cache entries', async () => {
-            service.addIconCache('foobar', 'foo:bar')
+            await service.addIconCache('foobar', 'foo:bar')
             storageSpy.get.mockResolvedValue('foo:bar')
 
             expect(await service.getIconCache('foobar')).toBe('foo:bar')
             expect(storageSpy.set).toHaveBeenCalledWith('foobar', 'foo:bar')
+        })
+
+        it('reports icon cache persistence failures', async () => {
+            storageSpy.set.mockRejectedValueOnce(new Error('disk full'))
+
+            await expect(
+                service.addIconCache('foobar', 'foo:bar')
+            ).rejects.toThrow('disk full')
         })
 
         it('filters and clears icon cache keys', async () => {

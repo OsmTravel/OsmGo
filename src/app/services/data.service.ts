@@ -109,8 +109,8 @@ export class DataService {
         ) as OsmGoFeatureCollection
     }
 
-    addIconCache(idIcon: string, uri: string): void {
-        this.localStorage.set(idIcon, uri)
+    async addIconCache(idIcon: string, uri: string): Promise<void> {
+        await this.localStorage.set(idIcon, uri)
     }
 
     getIconCache(idIcon: string): Promise<unknown> {
