@@ -60,7 +60,7 @@
         "noDoubleEquals": "off",
         "noDuplicateTestHooks": "off",
         "noExportsInTest": "error",
-        "noImplicitAnyLet": "off",
+        "noImplicitAnyLet": "error",
         "noShadowRestrictedNames": "off",
         "noUnsafeNegation": "error",
         "useIterableCallbackReturn": "off"

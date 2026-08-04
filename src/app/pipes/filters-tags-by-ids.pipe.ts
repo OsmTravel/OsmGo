@@ -10,7 +10,7 @@ export class FiltersTagsByIdsPipe implements PipeTransform {
             return tags
         }
 
-        let orderedTags
+        let orderedTags: TagConfig[]
         if (!reverse) {
             orderedTags = new Array<TagConfig>(ids.length)
         } else {
