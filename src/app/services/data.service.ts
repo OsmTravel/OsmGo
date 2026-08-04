@@ -283,6 +283,9 @@ export class DataService {
                 Object.keys(state.pendingById)
             )
             state.pendingById = nextGeojsonChanged
+            for (const id of Object.keys(nextGeojsonChanged)) {
+                delete state.officialById[id]
+            }
             state.nextTemporaryId = this.getNextTemporaryId(nextGeojsonChanged)
         })
     }
@@ -465,7 +468,11 @@ export class DataService {
             }
         }
         await this.enqueueOsmStateMutation('apply upload receipt', (state) => {
-            this.applyReceiptToState(state, receipt)
+            this.applyReceiptToState(
+                state,
+                receipt,
+                Object.keys(state.pendingById)
+            )
         })
     }
 
@@ -538,7 +545,7 @@ export class DataService {
                         'The acknowledged upload journal is invalid.'
                     )
                 }
-                this.applyReceiptToState(state, receipt)
+                this.applyReceiptToState(state, receipt, journal.submittedIds)
                 state.uploadJournal = {
                     ...journal,
                     phase: 'applied',
@@ -616,12 +623,18 @@ export class DataService {
 
     private applyReceiptToState(
         state: PersistedOsmStateV2,
-        receipt: UploadReceiptEntry[]
+        receipt: UploadReceiptEntry[],
+        expectedIds: string[]
     ): void {
         const oldIds = receipt.map((result) => result.oldId)
+        const expectedIdSet = new Set(expectedIds)
         if (
             new Set(oldIds).size !== oldIds.length ||
-            oldIds.some((id) => !state.pendingById[id])
+            expectedIdSet.size !== expectedIds.length ||
+            oldIds.length !== expectedIds.length ||
+            oldIds.some(
+                (id) => !state.pendingById[id] || !expectedIdSet.has(id)
+            )
         ) {
             throw new Error('The OSM upload result does not match local data.')
         }

@@ -588,17 +588,18 @@ describe('DataService', () => {
         })
 
         it('keeps an acknowledged journal when local reconciliation fails', async () => {
-            const pending = osmFeature(-1, 'Create')
-            await service.replacePendingFeatures(collection([pending]))
+            const first = osmFeature(-1, 'Create')
+            const second = osmFeature(-2, 'Create')
+            await service.replacePendingFeatures(collection([first, second]))
             await service.beginUploadAttempt({
                 journalVersion: 1,
                 attemptId: 'attempt-1',
                 payloadHash: 'payload-hash',
                 changesetId: '123',
-                submittedIds: ['node/-1'],
+                submittedIds: ['node/-1', 'node/-2'],
                 summary: {
-                    Total: 1,
-                    Create: 1,
+                    Total: 2,
+                    Create: 2,
                     Update: 0,
                     Delete: 0,
                 },
@@ -607,20 +608,23 @@ describe('DataService', () => {
             })
             await service.acknowledgeUploadAttempt(
                 'attempt-1',
-                [{ osmgoOldId: 'node/-1' }],
+                [{ osmgoOldId: 'node/-1' }, { osmgoOldId: 'node/-2' }],
                 '2026-08-02T10:00:01.000Z'
             )
 
             await expect(
                 service.applyAcknowledgedUploadReceipt(
                     'attempt-1',
-                    [{ oldId: 'node/-999', feature: osmFeature(101) }],
+                    [{ oldId: 'node/-1', feature: osmFeature(101) }],
                     '2026-08-02T10:00:02.000Z'
                 )
             ).rejects.toThrow('does not match local data')
 
             expect(service.getUploadJournal()?.phase).toBe('acknowledged')
-            expect(service.getGeojsonChanged().features).toEqual([pending])
+            expect(service.getGeojsonChanged().features).toEqual([
+                first,
+                second,
+            ])
         })
 
         it('reconciles one hundred creations in one write', async () => {
@@ -642,17 +646,22 @@ describe('DataService', () => {
             expect(service.getGeojson().features).toHaveLength(100)
         })
 
-        it('keeps entries that are not part of the receipt', async () => {
+        it('rejects receipts that omit pending entries', async () => {
             const first = osmFeature(-1, 'Create')
             const second = osmFeature(-2, 'Create')
             await service.replacePendingFeatures(collection([first, second]))
 
-            await service.applyUploadReceipt([
-                { oldId: 'node/-1', feature: osmFeature(101) },
-            ])
+            await expect(
+                service.applyUploadReceipt([
+                    { oldId: 'node/-1', feature: osmFeature(101) },
+                ])
+            ).rejects.toThrow('does not match local data')
 
-            expect(service.getGeojsonChanged().features).toEqual([second])
-            expect(service.getGeojson().features).toEqual([osmFeature(101)])
+            expect(service.getGeojsonChanged().features).toEqual([
+                first,
+                second,
+            ])
+            expect(service.getGeojson().features).toEqual([])
         })
 
         it('rejects duplicate or unknown receipt IDs without changing state', async () => {
@@ -689,6 +698,17 @@ describe('DataService', () => {
     })
 
     describe('immutable reads', () => {
+        it('keeps official and pending IDs disjoint after queue replacement', async () => {
+            const official = osmFeature(10)
+            const pending = osmFeature(10, 'Update', official)
+            await service.applyDownload(download([official]))
+
+            await service.replacePendingFeatures(collection([pending]))
+
+            expect(service.getGeojson().features).toEqual([])
+            expect(service.getGeojsonChanged().features).toEqual([pending])
+        })
+
         it('keeps official and pending IDs disjoint after a download', async () => {
             const pending = osmFeature(10, 'Update', osmFeature(10))
             await service.replacePendingFeatures(collection([pending]))
