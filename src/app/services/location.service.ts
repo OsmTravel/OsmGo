@@ -1,6 +1,8 @@
 import { inject, Service, signal } from '@angular/core'
 import { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
+import destination from '@turf/destination'
+import { point as turfPoint } from '@turf/helpers'
 // import { Geolocation } from '@capacitor/geolocation'
 import { FeatureCollection, Point } from 'geojson'
 import { Subject } from 'rxjs'
@@ -13,6 +15,8 @@ const EMPTY_COMPASS_HEADING: CompassHeading = {
 }
 
 const GEOLOCATION_TIMEOUT_MS = 15_000
+const DEFAULT_ACCURACY_CIRCLE_POINTS = 64
+const MAX_ACCURACY_CIRCLE_POINTS = 4096
 
 type DeviceOrientationPermission = typeof DeviceOrientationEvent & {
     requestPermission?: () => Promise<'granted' | 'denied'>
@@ -56,8 +60,7 @@ export class LocationService {
         this.watchId = navigator.geolocation.watchPosition(
             (position: GeolocationPosition) => {
                 if (session === this.geolocationSession && position?.coords) {
-                    this.setLocation(position)
-                    this.gpsReadyState.set(true)
+                    this.gpsReadyState.set(this.setLocation(position))
                 }
             },
             (err) => {
@@ -89,9 +92,9 @@ export class LocationService {
         void this.getCurrentPosition()
             .then((position: GeolocationPosition) => {
                 if (session !== this.geolocationSession) return
-                this.setLocation(position)
-                this.gpsReadyState.set(true)
-                this.locationReadySubject.next(position)
+                const validPosition = this.setLocation(position)
+                this.gpsReadyState.set(validPosition)
+                if (validPosition) this.locationReadySubject.next(position)
                 this.watchPosition()
             })
             .catch(() => {
@@ -185,9 +188,28 @@ export class LocationService {
         this.compassHeadingSubject.next(newCompassHeading)
     }
 
-    private setLocation(position: GeolocationPosition): void {
+    private setLocation(position: GeolocationPosition): boolean {
+        if (!this.isValidPosition(position)) {
+            this.clearLocation()
+            return false
+        }
         this.locationState.set(position)
         this.publishCurrentLocation()
+        return true
+    }
+
+    private isValidPosition(position: GeolocationPosition): boolean {
+        const { latitude, longitude, accuracy } = position.coords
+        return (
+            Number.isFinite(latitude) &&
+            latitude >= -90 &&
+            latitude <= 90 &&
+            Number.isFinite(longitude) &&
+            longitude >= -180 &&
+            longitude <= 180 &&
+            Number.isFinite(accuracy) &&
+            accuracy >= 0
+        )
     }
 
     private clearLocation(): void {
@@ -248,37 +270,47 @@ export class LocationService {
         )
     }
 
-    getGeoJSONCirclePosition(points: number = 64): FeatureCollection {
-        if (!points) {
-            points = 64
+    getGeoJSONCirclePosition(
+        points: number = DEFAULT_ACCURACY_CIRCLE_POINTS
+    ): FeatureCollection {
+        if (
+            !Number.isInteger(points) ||
+            points < 3 ||
+            points > MAX_ACCURACY_CIRCLE_POINTS
+        ) {
+            throw new RangeError(
+                `Accuracy circle points must be an integer between 3 and ${MAX_ACCURACY_CIRCLE_POINTS}.`
+            )
         }
         const location = this.location()
         if (!location) throw new Error('no location')
         const radiusInKm = location.coords.accuracy / 1000
-        const coords: { latitude: number; longitude: number } = {
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-        }
-        const km = radiusInKm
-        const ret: number[][] = []
-        const distanceX =
-            km / (111.32 * Math.cos((coords.latitude * Math.PI) / 180))
-        const distanceY = km / 110.574
-
-        let theta: number, x: number, y: number
+        const center = turfPoint([
+            location.coords.longitude,
+            location.coords.latitude,
+        ])
+        const coordinates: number[][] = []
         for (let i = 0; i < points; i++) {
-            theta = (i / points) * (2 * Math.PI)
-            x = distanceX * Math.cos(theta)
-            y = distanceY * Math.sin(theta)
-            ret.push([coords.longitude + x, coords.latitude + y])
+            const [longitude, latitude] = destination(
+                center,
+                radiusInKm,
+                (i / points) * 360,
+                {
+                    units: 'kilometers',
+                }
+            ).geometry.coordinates
+            coordinates.push([
+                ((((longitude + 180) % 360) + 360) % 360) - 180,
+                latitude,
+            ])
         }
-        ret.push(ret[0])
+        coordinates.push([...coordinates[0]])
         return {
             type: 'FeatureCollection',
             features: [
                 {
                     type: 'Feature',
-                    geometry: { type: 'Polygon', coordinates: [ret] },
+                    geometry: { type: 'Polygon', coordinates: [coordinates] },
                     properties: {},
                 },
             ],

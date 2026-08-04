@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing'
 import { ConfigService } from '@services/config.service'
-import type { FeatureCollection, Point } from 'geojson'
+import type { FeatureCollection, Point, Polygon } from 'geojson'
 import { LocationService } from './location.service'
 
 describe('LocationService', () => {
@@ -103,4 +103,74 @@ describe('LocationService', () => {
 
         expect(headings).toEqual([0])
     })
+
+    it.each([
+        { latitude: Number.NaN },
+        { latitude: 91 },
+        { longitude: -181 },
+        { accuracy: -1 },
+        { accuracy: Number.POSITIVE_INFINITY },
+    ])('rejects invalid geolocation coordinates: %o', (coords) => {
+        const service = createService()
+        const invalidPosition = {
+            ...position,
+            coords: { ...position.coords, ...coords },
+        } as GeolocationPosition
+
+        const accepted = (
+            service as unknown as {
+                setLocation: (value: GeolocationPosition) => boolean
+            }
+        ).setLocation(invalidPosition)
+
+        expect(accepted).toBe(false)
+        expect(service.location()).toBeUndefined()
+        expect(service.gpsIsReady()).toBe(false)
+    })
+
+    it('builds a finite geodesic accuracy circle at the poles', () => {
+        const service = createService()
+        const polarPosition = {
+            ...position,
+            coords: { ...position.coords, latitude: 90, longitude: 180 },
+        } as GeolocationPosition
+        ;(
+            service as unknown as {
+                setLocation: (value: GeolocationPosition) => boolean
+            }
+        ).setLocation(polarPosition)
+
+        const circle = service.getGeoJSONCirclePosition(8)
+        const coordinates = (circle.features[0].geometry as Polygon)
+            .coordinates[0]
+
+        expect(coordinates).toHaveLength(9)
+        expect(coordinates[0]).toEqual(coordinates.at(-1))
+        expect(coordinates.flat().every(Number.isFinite)).toBe(true)
+        expect(
+            coordinates.every(
+                ([longitude, latitude]) =>
+                    longitude >= -180 &&
+                    longitude <= 180 &&
+                    latitude >= -90 &&
+                    latitude <= 90
+            )
+        ).toBe(true)
+    })
+
+    it.each([0, 2, 3.5, Number.POSITIVE_INFINITY, 4097])(
+        'rejects an invalid accuracy-circle point count: %s',
+        (points) => {
+            const service = createService()
+            ;(
+                service as unknown as {
+                    setLocation: (value: GeolocationPosition) => boolean
+                }
+            ).setLocation(position)
+
+            expect(() => service.getGeoJSONCirclePosition(points)).toThrow(
+                RangeError
+            )
+        }
+    )
 })
