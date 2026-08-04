@@ -50,7 +50,7 @@
       "preset": "recommended",
       "correctness": {
         "noInnerDeclarations": "off",
-        "noSelfAssign": "off",
+        "noSelfAssign": "error",
         "noVoidTypeReturn": "off"
       },
       "style": {
@@ -59,10 +59,10 @@
       "suspicious": {
         "noDoubleEquals": "off",
         "noDuplicateTestHooks": "off",
-        "noExportsInTest": "off",
+        "noExportsInTest": "error",
         "noImplicitAnyLet": "off",
         "noShadowRestrictedNames": "off",
-        "noUnsafeNegation": "off",
+        "noUnsafeNegation": "error",
         "useIterableCallbackReturn": "off"
       }
     }
