@@ -184,6 +184,52 @@ const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     return null
 }
 
+const tagConfigIndexCache = new WeakMap()
+
+const getTagConfigIndex = (presets) => {
+    const cached = tagConfigIndexCache.get(presets)
+    if (cached) return cached
+
+    const byId = new Map()
+    const order = new Map()
+    const byPrimaryTag = new Map()
+    presets.forEach((variant, index) => {
+        byId.set(variant.id, variant)
+        order.set(variant, index)
+        for (const [key, value] of Object.entries(variant.tags)) {
+            const primaryTag = `${key}/${value}`
+            if (!variant.id.includes(primaryTag)) continue
+            const candidates = byPrimaryTag.get(primaryTag) ?? []
+            candidates.push(variant)
+            byPrimaryTag.set(primaryTag, candidates)
+        }
+    })
+
+    const index = { byId, order, byPrimaryTag, inheritedById: new Map() }
+    tagConfigIndexCache.set(presets, index)
+    return index
+}
+
+const getInheritedConfigs = (featureID, index) => {
+    const cached = index.inheritedById.get(featureID)
+    if (cached) return cached
+
+    const inherited = []
+    let separator = featureID.indexOf('/')
+    while (separator !== -1) {
+        const parent = index.byId.get(featureID.slice(0, separator))
+        if (parent) inherited.push(parent)
+        separator = featureID.indexOf('/', separator + 1)
+    }
+    const exact = index.byId.get(featureID)
+    if (exact) inherited.push(exact)
+    inherited.sort(
+        (left, right) => index.order.get(left) - index.order.get(right)
+    )
+    index.inheritedById.set(featureID, inherited)
+    return inherited
+}
+
 export function getConfigTag(feature, presets) {
     const featureID = feature.properties.configId
     const featurePrimaryTag = `${feature.properties.primaryTag.key}/${feature.properties.primaryTag.value}`
@@ -191,7 +237,11 @@ export function getConfigTag(feature, presets) {
     let mostMaches = 0
 
     const match = { exact: undefined, presets: [], moreFields: [] }
-    for (const variant of presets) {
+    const index = getTagConfigIndex(presets)
+    const candidates = featureID
+        ? getInheritedConfigs(featureID, index)
+        : (index.byPrimaryTag.get(featurePrimaryTag) ?? [])
+    for (const variant of candidates) {
         const presetID = variant.id
         if (featureID) {
             // Save presets and moreFields from parent IDs
@@ -199,13 +249,9 @@ export function getConfigTag(feature, presets) {
                 featureID === presetID ||
                 featureID.startsWith(`${presetID}/`)
             ) {
-                if (variant.presets)
-                    match.presets = [...match.presets, ...variant.presets]
+                if (variant.presets) match.presets.push(...variant.presets)
                 if (variant.moreFields)
-                    match.moreFields = [
-                        ...match.moreFields,
-                        ...variant.moreFields,
-                    ]
+                    match.moreFields.push(...variant.moreFields)
             }
             if (featureID == presetID) {
                 match.exact = variant
@@ -223,13 +269,9 @@ export function getConfigTag(feature, presets) {
                 }
             }
             if (matches == Object.keys(variant.tags).length) {
-                if (variant.presets)
-                    match.presets = [...match.presets, ...variant.presets]
+                if (variant.presets) match.presets.push(...variant.presets)
                 if (variant.moreFields)
-                    match.moreFields = [
-                        ...match.moreFields,
-                        ...variant.moreFields,
-                    ]
+                    match.moreFields.push(...variant.moreFields)
                 if (matches > mostMaches) {
                     match.exact = variant
                     mostMaches = matches
