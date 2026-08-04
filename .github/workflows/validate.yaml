@@ -30,35 +30,11 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Check source code
-              run: npm run check
-
-            - name: Check formatting
-              run: npm run prettier:check
-
-            - name: Run unit tests
-              run: npm run test:ci
-
-            - name: Run converter tests
-              run: npm run test:converter
-
-            - name: Run data generation tests
-              run: npm run test:scripts
-
-            - name: Check generated data is committed
-              run: git diff --exit-code -- src/assets/tagsAndPresets
-
-            - name: Run sprite tests
-              run: npm run test:sprites
+            - name: Validate source and behavior
+              uses: ./.github/actions/validate-web
 
             - name: Build the PWA
               run: npm run build
 
             - name: Validate the PWA cache manifest
               run: npm run pwa:validate:built
-
-            - name: Install Chromium
-              run: npx playwright install --with-deps chromium
-
-            - name: Run integration tests
-              run: npm run test:integration

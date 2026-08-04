@@ -32,8 +32,8 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Run tests
-              run: npm run test:ci
+            - name: Validate source and behavior
+              uses: ./.github/actions/validate-web
 
             - name: Build the PWA
               run: npm run build

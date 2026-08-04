@@ -1,0 +1,41 @@
+name: Validate web application
+description: Run every source, catalog, and browser check required before deployment
+
+runs:
+    using: composite
+    steps:
+        - name: Check source code
+          shell: bash
+          run: npm run check
+
+        - name: Check formatting
+          shell: bash
+          run: npm run prettier:check
+
+        - name: Run unit tests
+          shell: bash
+          run: npm run test:ci
+
+        - name: Run converter tests
+          shell: bash
+          run: npm run test:converter
+
+        - name: Run data generation tests
+          shell: bash
+          run: npm run test:scripts
+
+        - name: Check generated data is committed
+          shell: bash
+          run: git diff --exit-code -- src/assets/tagsAndPresets
+
+        - name: Run sprite tests
+          shell: bash
+          run: npm run test:sprites
+
+        - name: Install Chromium
+          shell: bash
+          run: npx playwright install --with-deps chromium
+
+        - name: Run integration tests
+          shell: bash
+          run: npm run test:integration
