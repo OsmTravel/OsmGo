@@ -143,7 +143,13 @@
             "buildTarget": ":build:testing",
             "runner": "vitest",
             "runnerConfig": "vitest.config.mts",
-            "exclude": ["src/app/services/map-alignment.spec.ts"]
+            "exclude": ["src/app/services/map-alignment.spec.ts"],
+            "coverageThresholds": {
+              "statements": 60,
+              "branches": 48,
+              "functions": 60,
+              "lines": 61
+            }
           },
           "configurations": {
             "ci": {
