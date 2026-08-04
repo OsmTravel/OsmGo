@@ -770,9 +770,11 @@ test('keeps the queue when changeset creation fails', async ({ page }) => {
         .getByPlaceholder('Changeset comment')
         .fill('Failing fixture upload')
     await page.getByTestId('upload-changes').click()
-    await expect(page.getByTestId('upload-error')).toContainText(
-        'Fixture changeset failure'
+    const uploadError = page.getByTestId('upload-error')
+    await expect(uploadError).toContainText(
+        'The changeset could not be prepared.'
     )
+    await expect(uploadError.getByText('500', { exact: true })).toBeVisible()
 
     const osmState = await readStoredValue<StoredOsmState>(page, 'osmState')
     expect(Object.keys(osmState.pendingById)).toHaveLength(1)
