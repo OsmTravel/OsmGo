@@ -66,7 +66,7 @@ const isPreset = (value: unknown): value is Preset => {
     if (value.options !== undefined) {
         if (!Array.isArray(value.options)) return false
         for (const option of value.options) {
-            if (!isRecord(option) || !isNonEmptyString(option.v)) return false
+            if (!isRecord(option) || typeof option.v !== 'string') return false
             if (option.lbl !== undefined && !isLocalizedText(option.lbl)) {
                 return false
             }

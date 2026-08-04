@@ -53,6 +53,22 @@ describe('catalog validation', () => {
         expect(requireTagsCatalog(catalog)).toBe(catalog)
     })
 
+    it('accepts empty preset option values used to clear tags', () => {
+        const presets = {
+            horseRiding: {
+                key: 'leisure',
+                type: 'text',
+                lbl: { en: 'Horseback Riding Center' },
+                options: [
+                    { v: '', lbl: { en: 'No' } },
+                    { v: 'horse_riding', lbl: { en: 'Yes' } },
+                ],
+            },
+        }
+
+        expect(requirePresetCatalog(presets, 'presets')).toBe(presets)
+    })
+
     it.each([
         { ...validTagCatalog, primaryKeys: ['amenity', 'amenity'] },
         { ...validTagCatalog, tags: [{ ...validTagCatalog.tags[0], id: '' }] },
