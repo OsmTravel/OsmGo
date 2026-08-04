@@ -1,9 +1,17 @@
 import { signal } from '@angular/core'
 import type { OsmGoFeatureCollection } from '@osmgo/type'
 import type { Config } from '@services/config.service'
-import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
+import type {
+    FilterSpecification,
+    MapGeoJSONFeature,
+    Map as MapLibreMap,
+} from 'maplibre-gl'
 import { of, Subscription, throwError } from 'rxjs'
-import { type MapInitializationError, MapService } from './map.service'
+import {
+    deduplicateSelectableFeatures,
+    type MapInitializationError,
+    MapService,
+} from './map.service'
 import { MapLayerController } from './map-layer.controller'
 import { MapLifecycleController } from './map-lifecycle.controller'
 
@@ -133,6 +141,37 @@ describe('MapService initialization', () => {
         expect(service.map).toBeUndefined()
         expect(service.mapInitializationError()?.messageKey).toBe(
             'MAIN.MAP_INITIALIZATION.CREATION_FAILED'
+        )
+    })
+})
+
+describe('selectable feature deduplication', () => {
+    const feature = (id: number, source: string, label: string) =>
+        ({
+            source,
+            properties: { type: 'node', id, label },
+        }) as unknown as MapGeoJSONFeature
+
+    it.each([
+        ['official first', false],
+        ['pending first', true],
+    ])('prioritizes pending data with %s', (_label, pendingFirst) => {
+        const official = feature(1, 'data', 'official')
+        const pending = feature(1, 'data_changed', 'pending')
+        const other = feature(2, 'data', 'other')
+        const duplicates = pendingFirst
+            ? [pending, other, official]
+            : [official, other, pending]
+
+        const result = deduplicateSelectableFeatures(duplicates)
+
+        expect(result).toHaveLength(2)
+        expect(
+            result.find((candidate) => candidate.properties.id === 1)
+                ?.properties.label
+        ).toBe('pending')
+        expect(result.find((candidate) => candidate.properties.id === 2)).toBe(
+            other
         )
     })
 })

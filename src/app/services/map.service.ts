@@ -66,6 +66,30 @@ export const getMarkerLayout = () => ({
     'icon-anchor': 'bottom' as const,
 })
 
+const selectableFeaturePriority = (feature: MapGeoJSONFeature): number => {
+    if (feature.source === 'data_changed') return 2
+    if (feature.source === 'data') return 1
+    return 0
+}
+
+export const deduplicateSelectableFeatures = (
+    features: MapGeoJSONFeature[]
+): MapGeoJSONFeature[] => {
+    const featuresById = new globalThis.Map<string, MapGeoJSONFeature>()
+    for (const feature of features) {
+        const id = `${feature.properties.type}/${feature.properties.id}`
+        const current = featuresById.get(id)
+        if (
+            !current ||
+            selectableFeaturePriority(feature) >
+                selectableFeaturePriority(current)
+        ) {
+            featuresById.set(id, feature)
+        }
+    }
+    return [...featuresById.values()]
+}
+
 type HeadingWithTrueHeading = CompassHeading & { trueHeading: number }
 type LoadedMapImage = Awaited<ReturnType<Map['loadImage']>>['data']
 type IconParameters = { shape: string; color: string; id: string }
@@ -1409,13 +1433,7 @@ export class MapService {
                 } catch {}
             }
 
-            const seenFeatureIds = new Set<string>()
-            const uniqFeaturesById = features.filter((feature) => {
-                const id = `${feature.properties.type}/${feature.properties.id}`
-                if (seenFeatureIds.has(id)) return false
-                seenFeatureIds.add(id)
-                return true
-            })
+            const uniqFeaturesById = deduplicateSelectableFeatures(features)
 
             if (uniqFeaturesById.length > 1) {
                 this.featureChoiceSubject.next(uniqFeaturesById)
