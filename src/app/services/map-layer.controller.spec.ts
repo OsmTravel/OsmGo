@@ -1,4 +1,4 @@
-import type { FilterSpecification, Map } from 'maplibre-gl'
+import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
 
 import { MapLayerController } from './map-layer.controller'
 
@@ -12,7 +12,7 @@ describe('MapLayerController', () => {
                 filter = next
             },
             setLayoutProperty: vi.fn(),
-        } as unknown as Map
+        } as unknown as MapLibreMap
         return { map, getFilter: () => filter }
     }
 

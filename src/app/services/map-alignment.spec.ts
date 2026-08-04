@@ -1,10 +1,14 @@
-import { Map, type StyleSpecification, setWorkerUrl } from 'maplibre-gl'
+import {
+    Map as MapLibreMap,
+    type StyleSpecification,
+    setWorkerUrl,
+} from 'maplibre-gl'
 
 import { getMarkerLayout, MapService } from './map.service'
 
 describe('map marker alignment', () => {
     let container: HTMLDivElement
-    let map: Map
+    let map: MapLibreMap
 
     beforeEach(() => {
         setWorkerUrl('/node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs')
@@ -33,7 +37,7 @@ describe('map marker alignment', () => {
                 },
             ],
         }
-        map = new Map({
+        map = new MapLibreMap({
             container,
             style,
             center: coordinate,

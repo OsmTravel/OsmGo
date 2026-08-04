@@ -61,7 +61,7 @@
         "noDuplicateTestHooks": "error",
         "noExportsInTest": "error",
         "noImplicitAnyLet": "error",
-        "noShadowRestrictedNames": "off",
+        "noShadowRestrictedNames": "error",
         "noUnsafeNegation": "error",
         "useIterableCallbackReturn": "error"
       }

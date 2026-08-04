@@ -1,4 +1,4 @@
-import type { Map } from 'maplibre-gl'
+import type { Map as MapLibreMap } from 'maplibre-gl'
 import { Subscription, type TeardownLogic } from 'rxjs'
 
 /** Owns resources whose lifetime must match one MapLibre map instance. */
@@ -24,7 +24,7 @@ export class MapLifecycleController {
         this.cleanups.push(...cleanups)
     }
 
-    destroy(map?: Pick<Map, 'remove'>): void {
+    destroy(map?: Pick<MapLibreMap, 'remove'>): void {
         this.runCleanup('map initialization', () =>
             this.initialization?.unsubscribe()
         )

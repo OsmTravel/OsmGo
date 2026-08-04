@@ -1,5 +1,5 @@
 import { cloneDeep } from '@app/utils/clone'
-import type { FilterSpecification, Map } from 'maplibre-gl'
+import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
 
 export const FEATURE_VISIBILITY_LAYER_IDS = [
     'way_fill',
@@ -18,7 +18,7 @@ export const FEATURE_VISIBILITY_LAYER_IDS = [
 /** Applies idempotent mutations to MapLibre layers and their filters. */
 export class MapLayerController {
     excludePropertyValues(
-        map: Map,
+        map: MapLibreMap,
         layerIds: string[],
         propertyName: string,
         values: string[]
@@ -47,7 +47,7 @@ export class MapLayerController {
     }
 
     toggleLessThanFilter(
-        map: Map,
+        map: MapLibreMap,
         layerId: string,
         propertyName: string,
         enabled: boolean,
@@ -63,7 +63,7 @@ export class MapLayerController {
     }
 
     replaceComparisonFilter(
-        map: Map,
+        map: MapLibreMap,
         layerId: string,
         propertyName: string,
         operator: string,
@@ -84,7 +84,7 @@ export class MapLayerController {
     }
 
     setVisibility(
-        map: Map,
+        map: MapLibreMap,
         layerId: string,
         visibility: 'visible' | 'none'
     ): boolean {

@@ -1,4 +1,4 @@
-import type { Map } from 'maplibre-gl'
+import type { Map as MapLibreMap } from 'maplibre-gl'
 import { Subscription } from 'rxjs'
 
 import { MapLifecycleController } from './map-lifecycle.controller'
@@ -17,7 +17,7 @@ describe('MapLifecycleController', () => {
         controller.trackCleanup(firstCleanup, secondCleanup)
 
         expect(controller.initializationInProgress).toBe(true)
-        controller.destroy({ remove } as unknown as Map)
+        controller.destroy({ remove } as unknown as MapLibreMap)
 
         expect(controller.initializationInProgress).toBe(false)
         expect(initializationTeardown).toHaveBeenCalledOnce()
@@ -52,7 +52,7 @@ describe('MapLifecycleController', () => {
             .mockImplementation(() => undefined)
         controller.trackCleanup(firstCleanup, failingCleanup)
 
-        controller.destroy({ remove } as unknown as Map)
+        controller.destroy({ remove } as unknown as MapLibreMap)
 
         expect(failingCleanup).toHaveBeenCalledOnce()
         expect(firstCleanup).toHaveBeenCalledOnce()

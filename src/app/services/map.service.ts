@@ -44,9 +44,9 @@ import {
     type GeoJSONSource,
     type LngLat,
     type LngLatLike,
-    Map,
     type MapGeoJSONFeature,
     type ErrorEvent as MapLibreErrorEvent,
+    Map as MapLibreMap,
     type MapMouseEvent,
     type MapOptions,
     Marker,
@@ -91,7 +91,7 @@ export const deduplicateSelectableFeatures = (
 }
 
 type HeadingWithTrueHeading = CompassHeading & { trueHeading: number }
-type LoadedMapImage = Awaited<ReturnType<Map['loadImage']>>['data']
+type LoadedMapImage = Awaited<ReturnType<MapLibreMap['loadImage']>>['data']
 type IconParameters = { shape: string; color: string; id: string }
 
 export interface MapInitializationError {
@@ -188,7 +188,7 @@ export class MapService {
         })
     }
 
-    map!: Map
+    map!: MapLibreMap
     markerMove?: OsmGoMarker<OsmGoFeature<Point>>
     private readonly markerMoveMovingState = signal(false)
     readonly markerMoveMoving = this.markerMoveMovingState.asReadonly()
@@ -379,7 +379,7 @@ export class MapService {
     }
 
     /** Converts a distance in meters to pixels at the current map scale. */
-    getPixelDistFromMeter(_map: Map, dist: number): number {
+    getPixelDistFromMeter(_map: MapLibreMap, dist: number): number {
         const y = _map.getContainer().clientHeight / 2
         const mapWidth = _map.getContainer().clientWidth
         if (mapWidth <= 0 || !Number.isFinite(dist)) return 0
@@ -701,7 +701,7 @@ export class MapService {
                 this.positionIsFollow = config.centerWhenGpsIsReady
                 this.headingIsLocked = config.centerWhenGpsIsReady
                 this.zone.runOutsideAngular(() => {
-                    let activeMap: Map | undefined
+                    let activeMap: MapLibreMap | undefined
                     try {
                         activeMap = this.createMapInstance({
                             container: 'map',
@@ -887,14 +887,14 @@ export class MapService {
         this.initMap(this.lastMapConfig)
     }
 
-    private createMapInstance(options: MapOptions): Map {
-        return new Map(options)
+    private createMapInstance(options: MapOptions): MapLibreMap {
+        return new MapLibreMap(options)
     }
 
     private failMapInitialization(
         messageKey: MapInitializationError['messageKey'],
         cause?: unknown,
-        activeMap?: Map
+        activeMap?: MapLibreMap
     ): void {
         if (
             activeMap &&
@@ -910,7 +910,7 @@ export class MapService {
         this.loadingDataState.set(false)
         this.lifecycle.destroy(activeMap)
         if (activeMap && this.map === activeMap) {
-            delete (this as { map?: Map }).map
+            delete (this as { map?: MapLibreMap }).map
         }
         this._ngZone.run(() => {
             this.mapInitializationErrorState.set({ messageKey })
@@ -990,7 +990,7 @@ export class MapService {
         enable: boolean,
         layerName: string,
         value: number,
-        _map: Map
+        _map: MapLibreMap
     ): FilterSpecification | undefined {
         return this.layerController.toggleLessThanFilter(
             _map,
