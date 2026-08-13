@@ -174,11 +174,9 @@ const isFilteredByKeys = (tags, keysFilter) => {
 
 const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     const tags = feature.properties.tags
-    let kv = { key: '', value: '' }
-    for (const k in tags) {
-        if (primaryKeys.includes(k)) {
-            kv = { key: k, value: tags[k] }
-            return kv
+    for (const key of primaryKeys) {
+        if (Object.hasOwn(tags, key)) {
+            return { key, value: tags[key] }
         }
     }
     return null

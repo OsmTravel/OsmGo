@@ -264,6 +264,58 @@ const squareElements = [
     { type: 'node', id: 4, lat: 0.01, lon: 0 },
     { type: 'way', id: 10, nodes: [1, 2, 3, 4, 1] },
 ]
+
+const taggedBuildings = convert(
+    relationFixture([
+        ...squareElements.slice(0, 4),
+        {
+            type: 'way',
+            id: 223148298,
+            nodes: [1, 2, 3, 4, 1],
+            tags: {
+                building: 'retail',
+                shop: 'supermarket',
+                name: 'Netto',
+            },
+        },
+        {
+            type: 'way',
+            id: 223146925,
+            nodes: [1, 2, 3, 4, 1],
+            tags: {
+                building: 'commercial',
+                shop: 'garden_centre',
+                name: 'France Rurale',
+            },
+        },
+        {
+            type: 'way',
+            id: 11,
+            nodes: [1, 2, 3, 4, 1],
+            tags: { building: 'yes' },
+        },
+    ]),
+    {
+        tagConfig: tagConfig.tags,
+        primaryKeys: tagConfig.primaryKeys,
+    }
+)
+const taggedBuildingById = new Map(
+    taggedBuildings.geojson.features.map((feature) => [feature.id, feature])
+)
+assert.equal(
+    taggedBuildingById.get('way/223148298').properties.configId,
+    'shop/supermarket'
+)
+assert.equal(
+    taggedBuildingById.get('way/223146925').properties.configId,
+    'shop/garden_centre'
+)
+assert.equal(
+    taggedBuildingById.get('way/11').properties.configId,
+    'building/yes'
+)
+
 const nestedRelations = convert(
     relationFixture([
         ...squareElements,
